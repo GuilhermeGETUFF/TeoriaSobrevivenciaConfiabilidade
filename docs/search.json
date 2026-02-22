@@ -1,0 +1,1290 @@
+[
+  {
+    "objectID": "Aula4.html#revisão-alguns-conceitos-básicos",
+    "href": "Aula4.html#revisão-alguns-conceitos-básicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "REVISÃO: ALGUNS CONCEITOS BÁSICOS",
+    "text": "REVISÃO: ALGUNS CONCEITOS BÁSICOS\n\n\nAnálise de sobrevivência e confiabilidade: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área média e de engenharia, respectivamente.\nTempo: variável aleatória contínua que mede o tempo até a ocorrência de um evento de interesse.\nEvento de interesse: ocorrência que encerra a observação do indivíduo (ex.: morte, falha de um componente, cura, recidiva…).\nCensura: situação em que o tempo exato do evento não é observado; sabe-se apenas que ele ocorre após certo instante (censura à direita)."
+  },
+  {
+    "objectID": "Aula4.html#revisão-funções-básicas",
+    "href": "Aula4.html#revisão-funções-básicas",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "REVISÃO: FUNÇÕES BÁSICAS",
+    "text": "REVISÃO: FUNÇÕES BÁSICAS\n\n\nSeja (T) a variável aleatória que representa o tempo até a ocorrência do evento de interesse.\n\n\n\n\n\n\n\n\n\nFunção\nDefinição\nInterpretação\n\n\n\n\nDensidade\n\\(f(t)\\)\nProbabilidade de falha em torno de \\(t\\)\n\n\nDistribuição\n\\(F(t) = P(T \\le t)\\)\nProbabilidade de o evento ocorrer até \\(t\\)\n\n\nSobrevivência\n\\(S(t) = P(T &gt; t)\\)\nProbabilidade de sobreviver além de \\(t\\)\n\n\nRisco (hazard)\n\\(h(t) = \\dfrac{f(t)}{S(t)}\\)\nTaxa instantânea de falha em \\(t\\)\n\n\nRisco acumulado\n\\(H(t) = \\int_0^t h(u)\\,du\\)\nAcúmulo de risco até \\(t\\)\n\n\nTempo médio\n\\(E(T)\\)\nVida média (quando existe)\n\n\nTempo médio residual\n\\(E(T - t \\mid T &gt; t)\\)\nVida esperada após \\(t\\)"
+  },
+  {
+    "objectID": "Aula4.html#estrutura-dos-dados-observados",
+    "href": "Aula4.html#estrutura-dos-dados-observados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTRUTURA DOS DADOS OBSERVADOS",
+    "text": "ESTRUTURA DOS DADOS OBSERVADOS\n\n\nNa população, cada indivíduo possui um tempo verdadeiro de ocorrência do evento de interesse (T).\nNos dados observados, uma amostra de \\(n\\) elementos é observada.\nA censura é uma característica dos dados observados, não da população.\nDevido ao processo de coleta dos dados, o tempo (T) pode não ser completamente observado para alguns elementos amostrais.\nAssim, os dados contêm informações completas (ocorrências do evento de interesse) e informações parciais (censuras).\nOs métodos de sobrevivência incorporam essa estrutura para permitir inferências válidas sobre a distribuição de (T) e quantidades relacionadas."
+  },
+  {
+    "objectID": "Aula4.html#estatística-descritiva",
+    "href": "Aula4.html#estatística-descritiva",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTATÍSTICA DESCRITIVA",
+    "text": "ESTATÍSTICA DESCRITIVA\n\n\nO passo inicial de qualquer análise estatística é a descrição dos dados.\n\nEm Análise de Sobrevivência e Confiabilidade, isso não é diferente.\n\nSe os seus dados não possuem censuras, você pode conduzir a análise descritiva usual a partir de medidas resumo e gráficos exploratórios:\n\nMedidas resumo: média, moda, percentis, desvio-padrão, entre outras.\nGráficos: Histograma, Boxplot, dispersão, entre outras.\n\nEntretanto, a presença de censura é um problema para essas técnicas convencionais."
+  },
+  {
+    "objectID": "Aula4.html#a-presença-de-censuras",
+    "href": "Aula4.html#a-presença-de-censuras",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A PRESENÇA DE CENSURAS",
+    "text": "A PRESENÇA DE CENSURAS\n\n\nOs problemas causados por observações censuradas podem ser ilustrados na construção de um simples histograma.\nSem censura, divide-se o eixo do tempo em intervalos e contam-se as ocorrências.\nCom censura aleatória, por exemplo, não se conhece a frequência exata em cada intervalo.\nEntretanto, algumas técnicas ainda podem ser utilizadas com cuidado."
+  },
+  {
+    "objectID": "Aula4.html#minimamente",
+    "href": "Aula4.html#minimamente",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MINIMAMENTE",
+    "text": "MINIMAMENTE\n\n\nMinimamente, para qualquer estudo envolvendo dados censurados, reporte:\n\nNúmero total de indivíduos\nNúmero e proporção de eventos\nNúmero e proporção de censuras\nTempo inicial e máximo de acompanhamento\n\nSe o estudo possuir covariáveis, reporte algumas medidas resumo e/ou gráficos sobre elas."
+  },
+  {
+    "objectID": "Aula4.html#estimação-não-paramétrica-de-funções-básicas",
+    "href": "Aula4.html#estimação-não-paramétrica-de-funções-básicas",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMAÇÃO NÃO PARAMÉTRICA DE FUNÇÕES BÁSICAS",
+    "text": "ESTIMAÇÃO NÃO PARAMÉTRICA DE FUNÇÕES BÁSICAS\n\n\nRESUMIR AQUI AS ESTIMAÇÕES…\nSem censura e com censura pra entender…\nEm nenhum momento será suposto algo sobre T.\nNao ha interesse de estimar parametros"
+  },
+  {
+    "objectID": "Aula4.html#metástase-pulmonar-em-osteossarcoma",
+    "href": "Aula4.html#metástase-pulmonar-em-osteossarcoma",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "METÁSTASE PULMONAR EM OSTEOSSARCOMA",
+    "text": "METÁSTASE PULMONAR EM OSTEOSSARCOMA\n\n\nOsteossarcoma é um tumor ósseo maligno comum em adolescentes e jovens adultos.\nUma complicação frequente é a metástase pulmonar, quando as células do tumor se espalham para os pulmões, representando risco de vida.\nBurdette & Gehan (1970) consideram os dados de um estudo descritivo com 11 pacientes do sexo masculino com osteossarcoma e metástase pulmonar\nOs pacientes foram acompanhados desde o diagnóstico da metástase pulmonar até a morte (evento de interesse) de todos os pacientes.\nOs tempos de sobrevivência observados (em meses) são:\n\n\n11, 13, 13, 13, 13, 13, 14, 14, 15, 15 e 17"
+  },
+  {
+    "objectID": "Aula4.html#esteroide-no-tratamento-de-hepatite",
+    "href": "Aula4.html#esteroide-no-tratamento-de-hepatite",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTEROIDE NO TRATAMENTO DE HEPATITE",
+    "text": "ESTEROIDE NO TRATAMENTO DE HEPATITE\n\n\nGregory et al., 1976 propoem um estudo clínico aleatorizado para investigar o efeito da terapia com esteroide no tratamento de hepatite viral aguda.\nVinte e nove pacientes com esta doença foram aleatorizados para receber um placebo ou o tratamento com esteroide\nCada paciente foi acompanhado por 16 semanas ou até a morte (evento de interesse) ou até a perda de acompanhamento"
+  },
+  {
+    "objectID": "Aula4.html#esteroide-no-tratamento-de-hepatite-dados",
+    "href": "Aula4.html#esteroide-no-tratamento-de-hepatite-dados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTEROIDE NO TRATAMENTO DE HEPATITE (DADOS)",
+    "text": "ESTEROIDE NO TRATAMENTO DE HEPATITE (DADOS)\n\n\nConsidere apenas os dados do grupo Esteroide, nesse exemplo:\n\n\n\n\n\n\n\n\nGrupos\nTempos de Sobrevivência\n\n\n\n\nControle\n1+, 2+, 3, 3, 3+, 5+, 5+, 16+, 16+, 16+, 16+, 16+, 16+, 16+, 16+\n\n\nEsteroide\n1, 1, 1, 1+, 4+, 5, 7, 8, 10, 10+, 12+, 16+, 16+, 16+\n\n\n\n\nO símbolo + indica censura"
+  },
+  {
+    "objectID": "Aula4.html#introdução-1",
+    "href": "Aula4.html#introdução-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nA função \\(S(t)\\), chamada função de sobrevivência (confiabilidade), representa a probabilidade de um indivíduo apresentar o evento de interesse em um tempo maior que \\(t\\):\n\n\\[\nS(t) = P(T &gt; t)\n\\]\n\nEstimar a função \\(S(t)\\) é essencial porque nos permite:\n\nentender o comportamento do tempo até o evento de interesse\ncomparar diferentes grupos\ncalcular outras quantidades como os percentis."
+  },
+  {
+    "objectID": "Aula4.html#dados-sem-censura",
+    "href": "Aula4.html#dados-sem-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS SEM CENSURA",
+    "text": "DADOS SEM CENSURA\n\n\nA função de sobrevivência (confiabilidade) no tempo \\(t\\) pode ser estimada a partir da seguinte fórmula:\n\n\\[\n\\hat{S}(t) =\n\\frac{\\text{nº de elementos que não apresentaram o evento de interesse até o tempo } t}\n{\\text{nº de elementos no estudo}}\n\\]"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\nPor exemplo,\n\\[\n\\begin{aligned}\n\\hat{S}(14) &=\n\\frac{\\text{nº de elementos que não morreram até 11 meses }}\n{\\text{nº de elementos no estudo}} \\\\\n&= \\frac{10}{11} = 0{,}909\n\\end{aligned}\n\\]\n\nEm palavras, este número significa que 90,9% dos indivíduos sobrevivem mais do que 11 meses.\nExercício: estime a função de sobrevivência para o tempo \\(t = 13\\) meses."
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-1",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nNote que, para qualquer valor no intervalo [11,13),: \\[\n\\hat{S}(11)=\\hat{S}\\left([11,13)\\right)=0,909\n\\]\n\nOu seja, a função \\(\\hat{S}(t)\\) é uma função escada, que apresenta saltos nos tempos de morte observados\n\nO raciocínio dessa estimação é análogo ao que vocês já fizeram no curso para estimar, a função \\(F(t)\\)."
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-2",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\n\n\nPara formalizar, denote por \\(t_j\\) todos os tempos distintos de ocorrência do evento de interesse mais o tempo inicial 0, com \\(j=1,...,m\\) e \\(t_1=0\\).\n\n\\(m\\) é a quantidade de tempos distintos de ocorrência do evento de interesse.\n\nNo exemplo dos dados de osteossarcoma, tem-se a tabela ao lado com os tempos distintos de morte, os respectivos intervalos e a sobrevivência estimada no intervalo.\n\n\n\n\n\n\n\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(\\hat{S}(t_j)\\)\n\n\n\n\n1\n0\n\\([0,\\;11)\\)\n1.000\n\n\n2\n11\n\\([11,\\;13)\\)\n0.909\n\n\n3\n13\n\\([13,\\;14)\\)\n0.455\n\n\n4\n14\n\\([14,\\;15)\\)\n0.273\n\n\n5\n15\n\\([15,\\;17)\\)\n0.091\n\n\n6\n17\n\\([17,\\;\\infty)\\)\n0.000"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-3",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nPode-se, portanto, construir o seguinte gráfico:"
+  },
+  {
+    "objectID": "Aula4.html#dados-com-censura",
+    "href": "Aula4.html#dados-com-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS COM CENSURA",
+    "text": "DADOS COM CENSURA\n\n\nNo tópico anterior, foi estimada a função de sobrevivência (confiabilidade) para um estudo em que todas as observações apresentaram o evento de interesse, ou seja, não existiram censuras.\nNa prática, entretanto, o conjunto de dados amostrais de tempos de ocorrência do evento de interesse apresenta censuras, o que requer técnicas estatísticas especializadas para acomodar a informação contida nestas observações.\nA observação censurada informa que o tempo até a ocorrência do evento de interesse é maior do que aquele que foi registrado (censura à direita)."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier",
+    "href": "Aula4.html#estimador-de-kaplan-meier",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER",
+    "text": "ESTIMADOR DE KAPLAN-MEIER\n\n\nProposto por Kaplan e Meier (1958) para estimar a função de sobrevivência (confiabilidade) em dados censurados.\nTambém é chamado de estimador limite-produto.\nÉ, sem dúvidas, o mais utilizado em estudos clínicos e vem ganhando cada vez mais espaço em estudos de confiabilidade.\nÉ uma adaptação do estimador da função de sobrevivência para dados não censurados:\n\n\\[\n\\hat{S}(t)=\\frac{\\text{nº de elementos que não apresentaram o evento de interesse até } t}\n{\\text{nº de elementos no estudo}}\n\\]"
+  },
+  {
+    "objectID": "Aula4.html#relembrando-os-dados-de-hepatite",
+    "href": "Aula4.html#relembrando-os-dados-de-hepatite",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELEMBRANDO OS DADOS DE HEPATITE",
+    "text": "RELEMBRANDO OS DADOS DE HEPATITE\n\n\nConsidere apenas os dados do grupo Esteroide:\n\n\n\n\n\n\n\n\nGrupos\nTempos de Sobrevivência\n\n\n\n\nControle\n1+, 2+, 3, 3, 3+, 5+, 5+, 16+, 16+, 16+, 16+, 16+, 16+, 16+, 16+\n\n\nEsteroide\n1, 1, 1, 1+, 4+, 5, 7, 8, 10, 10+, 12+, 16+, 16+, 16+\n\n\n\n\nO símbolo + indica censura."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-1",
+    "href": "Aula4.html#estimador-de-kaplan-meier-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER",
+    "text": "ESTIMADOR DE KAPLAN-MEIER\n\n\nComo estimar \\(S(t)\\) quando há indivíduos censurados?\n\nConsidere o 10º indivíduo, censurado na 10ª semana.\nAté sua saída, sabia-se que estava vivo.\nPara \\(t&lt;10\\), ele pode ser incluído no numerador e denominador.\nApós a semana 10, não se sabe se sobreviveu ou não.\n\nO estimador de Kaplan-Meier traz uma solução para esse problema."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-1",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 1",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 1\n\n\nSelecione somente os tempos de ocorrência do evento de interesse e, como antes, denote-os por \\(t_j\\) incluindo o tempo 0, com \\(t_1=0\\).\n\nNo caso dos dados de hepatite, esses tempos serão \\(t_1=0\\), \\(t_2=1\\), \\(t_3=5\\), \\(t_4=7\\), \\(t_5=8\\) e \\(t_6=10\\).\n\nCom apenas esses tempos, construa os intervalos de modo que:\n\no primeiro intervalo começa com o tempo 0\nO último intervalo termina com \\(\\infty\\) (se o último tempo observado apresenta ocorrência do evento de interesse) ou com a última censura (se o último tempo observado é exclusivamente censura )"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-1-1",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-1-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 1",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 1\n\n\nPara os dados de hepatite (16 semanas = fim do estudo), tem-se os seguintes intervalos:\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\n\n\n\n1\n0\n[0,1)\n\n\n2\n1\n[1,5)\n\n\n3\n5\n[5,7)\n\n\n4\n7\n[7,8)\n\n\n5\n8\n[8,10)\n\n\n6\n10\n[10,16)"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-2",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 2",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 2\n\n\nSeja \\(d_j\\) o número de ocorrências do evento de interesse em \\(t_j\\)\nPara os dados de hepatite, tem-se a seguinte tabela:\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\n\n\n\n1\n0\n[0,1)\n0\n\n\n2\n1\n[1,5)\n3\n\n\n3\n5\n[5,7)\n1\n\n\n4\n7\n[7,8)\n1\n\n\n5\n8\n[8,10)\n1\n\n\n6\n10\n[10,16)\n1"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-3",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 3",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 3\n\n\nAgora considere o \\(n_j\\), o número de elementos sob risco no tempo \\(t_j\\), isto é, quantos elementos não apresentaram o evento de interesse e não foram censurados até o instante imediatamente anterior a \\(t_j\\).\nAssim, para os dados de hepatite, tem-se os seguintes valores para \\(n_j\\):\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n\n\n2\n1\n[1,5)\n3\n14\n\n\n3\n5\n[5,7)\n1\n9\n\n\n4\n7\n[7,8)\n1\n8\n\n\n5\n8\n[8,10)\n1\n7\n\n\n6\n10\n[10,16)\n1\n6"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n\nAgora estamos prontos para construir o estimador de Kaplan-Meier para a função \\(S(t)\\)\nA fórmula deste estimador é dada por: \\[\n\\hat{S}(t)=\\prod_{j:t_j\\leq t}\\left(1-\\frac{d_j}{n_j}\\right)\n\\]\nVamos provar como essa fórmula surge a partir dos dados de hepatite e, posteriormente, fazemos uma definição formal dela."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-1",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n\nO último passo considera, enfim, o cálculo do estimador de Kaplan-Meier para a função de sobrevivência (confiabilidade).\nO estimador utiliza os conceitos de probabilidade condicional.\nO macete é notar que (seja X uma variável aleatória contínua):\n\n\\[\nP(X&gt;5) = P(X&gt;1, X&gt;5) = P(X&gt;5 \\mid X&gt;1) \\cdot P(X&gt;1)\n\\]\n\nVeremos que o estimador de Kaplan-Meier para a função de sobrevivência (confiabilidade) também é uma função escada com saltos somente nos tempos de ocorrência do evento de interesse."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-2",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\nNa prática, isso funciona da seguinte forma (para j=1,2,3):\n\nNo primeiro tempo \\(t_1=0\\), temos que: \\[\n\\hat{S}(0)= P(T&gt;0)=1.\n\\]\n\nEste resultado é bastante intuitivo e segue a definição da função \\(S(t)\\), já que ninguém morre no começo do estudo.\nVamos provar o resultado usando a fórmula do estimador: \\[\n\\hat{S}(0)=\\prod_{j:t_j\\leq 0}\\left(1-\\frac{d_j}{n_j}\\right)=\\prod_{j=1}^{1}\\left(1-\\frac{d_j}{n_j}\\right)=\\left(1-\\frac{d_1}{n_1}\\right)=\\left(1-\\frac{0}{14}\\right)=1\n\\].\nComo \\(\\hat{S}(t)\\) é uma função escada, para todo \\(t\\) em [0,1), \\(\\hat{S}(t)=1\\)."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-3",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n\nNo segundo tempo: \\(t_2=1\\): \\[\n\\begin{aligned}\n\\hat{S}(1) = P(T&gt;1)\n&= P\\big(T&gt;t \\in [0,1)\\big)\\,\nP\\big(T&gt;1 \\mid T&gt;t \\in [0,1)\\big) \\\\\n&= 1 \\times \\left(1-\\frac{3}{14}\\right) \\\\\n&= 0{,}786.\n\\end{aligned}\n\\]\n\nA probabilidade \\(P(T&gt;t\\in[0,1)) = 1\\), pois já vimos este resultado no intervalo anterior.\nA probabilidade \\(P(T&gt;1)|T&gt;t\\in[0,1))\\) significa que, dado um paciente que de fato sobreviveu ao intervalo de tempo \\([0,1)\\), a probabilidade do tempo de morte dele ser maior que 1. Há ainda \\(14\\) pessoas que de fato sobreviveram ao intervalo \\([0,1)\\)] (sob risco). Como morreram \\(3\\) pessoas em \\(t_2=1\\), essa probabilidade é \\(P(T&gt;t\\in[1,5)|T&gt;t\\in[0,1))=\\left(1-\\frac{3}{14}\\right)\\)"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-4",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n(continuação)\n\nVamos provar o resultado usando a fórmula do estimador: \\[\n\\begin{aligned}\n\\hat{S}(1)\n&= \\prod_{j:t_j\\leq 1}\\left(1-\\frac{d_j}{n_j}\\right)\n= \\prod_{j=1}^{2}\\left(1-\\frac{d_j}{n_j}\\right) \\\\[0.4em]\n&= \\left(1-\\frac{d_1}{n_1}\\right)\\left(1-\\frac{d_2}{n_2}\\right)\n= \\hat{S}(0)\\left(1-\\frac{3}{14}\\right) \\\\[0.4em]\n&= 0{,}786\n\\end{aligned}\n\\]\nComo \\(\\hat{S}(t)\\) é uma função escada, para todo \\(t\\) em [1,5), \\(\\hat{S}(t)=0,786\\)."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-5",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-5",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n\nNo terceiro tempo \\((t_j=5)\\): \\[\n\\begin{aligned}\n\\hat{S}(5)= P(T&gt;5)&=P(T&gt;t\\in[1,5),T&gt;5)\\\\\n&=P(T&gt;t\\in[1,5))P(T&gt;5|T&gt;t\\in[1,5))\\\\\n&=0,786*\\left(1-\\frac{1}{9}\\right)= 0,698.\n\\end{aligned}\n\\]\n\nA probabilidade \\(P(T&gt;t\\in[1,5)) = 0,786\\), pois já vimos este resultado no intervalo anterior.\nA probabilidade \\(P(T&gt;5)|T&gt;t\\in[1,5))\\) significa que, dado um paciente que de fato sobreviveu ao intervalo de tempo \\([1,5)\\), a probabilidade do tempo de morte dele ser maior que 5. Há ainda \\(9\\) pessoas que de fato sobreviveram ao intervalo \\([1,5)\\)] (sob risco). Como morreu \\(1\\) pessoa em \\(t_3=5\\), essa probabilidade é \\(P(T&gt;5)|T&gt;t\\in[1,5))=\\left(1-\\frac{1}{9}\\right)\\)"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-6",
+    "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-6",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n(continuação)\n\nVamos provar o resultado anterior usando a fórmula do estimador: \\[\n\\begin{aligned}\n\\hat{S}(5)\n&= \\prod_{j:t_j\\leq 1}\\left(1-\\frac{d_j}{n_j}\\right)\n= \\prod_{j=1}^{3}\\left(1-\\frac{d_j}{n_j}\\right) \\\\[0.4em]\n&= \\left(1-\\frac{d_1}{n_1}\\right)\\left(1-\\frac{d_2}{n_2}\\right)\\left(1-\\frac{d_3}{n_3}\\right)\n= \\hat{S}(0)\\hat{S}(1)\\left(1-\\frac{1}{9}\\right) \\\\[0.4em]\n&= 0{,}698\n\\end{aligned}\n\\]\nComo \\(\\hat{S}(t)\\) é uma função escada, para todo \\(t\\) em [5,7), \\(\\hat{S}(t)=0,698\\)."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-exercício",
+    "href": "Aula4.html#estimador-de-kaplan-meier-exercício",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER: EXERCÍCIO",
+    "text": "ESTIMADOR DE KAPLAN-MEIER: EXERCÍCIO\n\nEncontre o valor de \\(\\hat{S(8)}\\) e:\n\nVerifique como ele é função das “sobrevivências anteriores”\nPerceba que, nesta base de dados, a estimação pelo Kaplan Meier parte da ideia que sobreviver até o tempo \\(t\\) é o mesmo que sobreviver a cada instante de morte observado até \\(t\\), dado que se sobreviveu até o instante imediatamente anterior."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplanmeier-passo-final",
+    "href": "Aula4.html#estimador-de-kaplanmeier-passo-final",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN–MEIER: PASSO FINAL",
+    "text": "ESTIMADOR DE KAPLAN–MEIER: PASSO FINAL\n\nApós todos os passos, tem-se a seguinte tabela com todas as funções de sobrevivência estimadas:\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}_{KM}(t_j)\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n\n\n6\n10\n[10,16)\n1\n6\n0,437"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-gráfico",
+    "href": "Aula4.html#estimador-de-kaplan-meier-gráfico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)",
+    "text": "ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)"
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplanmeier-definição-formal",
+    "href": "Aula4.html#estimador-de-kaplanmeier-definição-formal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN–MEIER: DEFINIÇÃO FORMAL",
+    "text": "ESTIMADOR DE KAPLAN–MEIER: DEFINIÇÃO FORMAL\n\n\nO estimador de Kaplan-Meier para a função de sobrevivência (confiabilidade) é definido por: \\[\n\\hat{S}(t)=\\prod_{j:t_j\\leq t}\\left(1-\\frac{d_j}{n_j}\\right),\n\\]\nEm que:\n\n\\(t_1 &lt; t_2 &lt; \\cdots &lt; t_k\\) são os tempos distintos em que o evento de interesse foi observado (excluem-se tempos censurados).\n\\(d_j\\) é o número de eventos ocorridos em \\(t_j\\).\n\\(n_j\\) é o número de indivíduos sob risco imediatamente antes de $t_j, ou seja, que ainda não sofreram o evento nem foram censurados.\n\nNote que cada termo \\(\\left(1 - \\frac{d_j}{n_j}\\right)\\) representa a chance de sobreviver ao intervalo \\(j\\), dado que o indivíduo sobreviveu até o início dele."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplanmeier-propriedades",
+    "href": "Aula4.html#estimador-de-kaplanmeier-propriedades",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES",
+    "text": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES\n\n\nKaplan e Meier (1958) provaram que o seu estimador é o estimador de máxima verossimilhança de \\(S(t)\\) quando há censura à direita.\nNa ausência de censuras, o estimador de Kaplan-Meier se reduz à função de sobrevivência clássica (confiabilidade), coincidindo com a análise paramétrica de sobrevivência.\nPode-se construir intervalos de confiança para \\(\\hat{S}_{KM}(t)\\) usando, por exemplo, o método de Greenwood, permitindo inferência sobre a curva de sobrevivência."
+  },
+  {
+    "objectID": "Aula4.html#estimador-de-kaplanmeier-propriedades-1",
+    "href": "Aula4.html#estimador-de-kaplanmeier-propriedades-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES",
+    "text": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES\n\n\nO estimador mantém a forma mesmo em estudos com censura à direita (tipos I e II), mas não atinge \\(\\hat{S}_{KM}(t)=0\\) se as últimas observações forem censuradas.\nÉ não-viciado (assintoticamente não enviesado) para amostras grandes, garantindo estimativas confiáveis de sobrevivência.\nÉ fracamente consistente, ou seja, \\(\\hat{S}_{KM}(t) \\to S(t)\\) em probabilidade à medida que \\(n \\to \\infty\\).\nConverge assintoticamente para um processo gaussiano, permitindo usar aproximações normais para inferência.\nPermite comparar grupos diferentes usando testes como log-rank ou Gehan-Breslow, sendo amplamente usado em estudos clínicos e confiabilidade industrial."
+  },
+  {
+    "objectID": "Aula4.html#outros-estimadores-de-st",
+    "href": "Aula4.html#outros-estimadores-de-st",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "OUTROS ESTIMADORES DE \\(S(t)\\)",
+    "text": "OUTROS ESTIMADORES DE \\(S(t)\\)\n\nO estimador de Kaplan-Meier é o mais utilizado na prática. Porém, existem outras alternativas:\n\nNelson–Aalen\n\nEstima a função de risco acumulada (H(t))\nFunção de sobrevivência aproximada: (S(t) (-H(t)))\nÚtil para modelagem de risco cumulativo e regressão de sobrevivência\n\nTábua de vida (Actuarial life table)\n\nDivide o tempo em intervalos discretos\nCalcula probabilidades médias de sobrevivência por intervalo\nMuito usada em demografia, seguros e estudos longos com censura regular"
+  },
+  {
+    "objectID": "Aula4.html#a-variância-do-estimador-hatst",
+    "href": "Aula4.html#a-variância-do-estimador-hatst",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\)",
+    "text": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\)\n\n\nConhecer a variância de qualquer estimador é essencial para a construção de um intervalo de confiança em torno da estimativa pontual.\nA variância do estimador de Kaplan-Meier é dada pela fórmula de Greenwood:\n\n[ ((t)) = ^2 _{j:t_j t} ]\n\nEssa expressão é obtida a partir de propriedades do estimador de máxima verossimilhança."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-plain",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nComo \\(\\hat{S}(t)\\), para \\(t\\) fixo, tem distribuição Normal assintoticamente, o intervalo aproximado de \\(100(1-\\alpha)\\%\\) de confiança para \\(S(t)\\) é dado por:\n\n\\[\nIC_{100(1-\\alpha)\\%}^{plain}(S(t))\\approx\\hat{S}(t) \\pm z_{\\alpha/2}\n\\sqrt{\\text{Var}\\left(\\hat{S}(t)\\right)}\n\\]\n\nem que \\(\\alpha/2\\) denota o \\(\\alpha/2\\)-percentil da distribuição Normal padrão."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain-1",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-plain-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{plain}(S(t_j))\\)\nLS \\(IC_{95\\%}^{plain}(S(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n1,000\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,571\n1,001\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,448\n0,948\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,340\n0,882\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,243\n0,805\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,155\n0,718"
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain-2",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-plain-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nO intervalo é construído usando uma aproximação Normal, que pode ser inadequada para probabilidades.\nOs limites do intervalo não são garantidos em \\([0,1]\\), podendo gerar:\n\nlimites inferiores negativos;\nlimites superiores maiores que 1.\n\nEsse problema é mais frequente em amostras pequenas, quando \\(\\hat{S}_{KM}(t)\\) está próximo de 0 ou de 1 e em situações com alta censura.\nA variância de \\(\\hat{S}(t)\\) não é constante, violando implicitamente a suposição de homocedasticidade da aproximação Normal.\nComo consequência, o intervalo pode apresentar cobertura inferior à nominal \\(100(1-\\alpha)\\%\\).\nPara corrigir isto, podemos utilizar transformações."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-log",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-log",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)\n\n\nPara contornar, inicialmente, os problemas do intervalo sem transformação, aplica-se a transformação logarítmica: \\(\\log\\!\\big(\\hat{S}(t)\\big)\\)\nComo \\(\\log\\!\\big(\\hat{S}(t)\\big)\\), para \\(t\\) fixo, tem distribuição Normal assintoticamente, o intervalo aproximado de \\(100(1-\\alpha)\\%\\) de confiança para \\(S(t)\\) com a transformação log é dado por:\n\n\\[\nIC_{100(1-\\alpha)\\%}^{\\log}(S(t))\n=\n\\left[\n\\hat{S}(t)\\exp\\!\\left(-z_{\\alpha/2}\\frac{\\sqrt{\\text{Var}(\\hat{S}(t))}}{\\hat{S}(t)}\\right),\n\\;\n\\hat{S}(t)\\exp\\!\\left(z_{\\alpha/2}\\frac{\\sqrt{\\text{Var}(\\hat{S}(t))}}{\\hat{S}(t)}\\right)\n\\right]\n\\] - Esse intervalo é obtido aplicando o método delta à transformação logarítmica."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-1",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-log-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)\n\nPor que usar a transformação log?\n\nO intervalo clássico para (S(t)) é construído diretamente na escala original, o que pode gerar\nlimites negativos ou maiores que 1.\nAo aplicar a transformação [ !(S(t)), ] obtém-se um estimador que, para (t) fixo, possui distribuição Normal assintótica.\nO intervalo é então construído nessa nova escala e transformado de volta para a escala de (S(t)).\n\nPrincipais vantagens em relação ao intervalo sem transformação: - garante limites sempre positivos; - introduz assimetria mais compatível com a função de sobrevivência; - apresenta maior estabilidade ao longo do tempo; - melhora a qualidade da inferência assintótica.\n⚠️ Apesar dessas melhorias, o intervalo com transformação log ainda apresenta limitações, especialmente quando (S(t)) está próximo de 1, o que motiva o uso de transformações ainda mais adequadas."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain-3",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-plain-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{plain}(S(t_j))\\)\nLS \\(IC_{95\\%}^{plain}(S(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n1,000\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,571\n1,001\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,448\n0,948\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,340\n0,882\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,243\n0,805\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,155\n0,718"
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-log",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-log-log",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\n\n\nPara garantir que os limites do intervalo pertençam a \\([0,1]\\), aplica-se a transformação log–log: \\[\ng\\!\\big(S(t)\\big) = \\log\\!\\big(-\\log S(t)\\big)\n\\]\nComo \\(\\log\\!\\big(-\\log \\hat{S}(t)\\big)\\), para \\(t\\) fixo, tem distribuição Normal assintoticamente, o intervalo aproximado de \\(100(1-\\alpha)\\%\\) de confiança para \\(S(t)\\) é dado por:\n\n\\[\nIC_{100(1-\\alpha)\\%}^{\\log\\text{–}\\log}(S(t))\n=\n\\left[\n\\exp\\!\\Big(-\\exp\\!\\big(\n\\log(-\\log \\hat{S}(t)) + z_{\\alpha/2}\\,SE\n\\big)\\Big),\n\\;\n\\exp\\!\\Big(-\\exp\\!\\big(\n\\log(-\\log \\hat{S}(t)) - z_{\\alpha/2}\\,SE\n\\big)\\Big)\n\\right]\n\\]\nonde\n\\[\nSE = \\sqrt{\n\\text{Var}\\!\\left(\\log\\!\\big(-\\log \\hat{S}(t)\\big)\\right)\n}.\n\\]"
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-log-1",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-log-log-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\nA figura abaixo apresenta os intervalos de confiança construídos segundo a transformação log-log:"
+  },
+  {
+    "objectID": "Aula2.html#revisão",
+    "href": "Aula2.html#revisão",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "REVISÃO",
+    "text": "REVISÃO\n\n\nLembre-se que os dados de sobrevivência (confiabilidade) são caracterizados por:\n\nTempos até a ocorrência do evento de interesse\nCensuras\n\nEsses dois componentes constituem a variável resposta.\n\nPara cada tempo observado, deve ser reportado se é uma observação completa ou parcial (censura).\n\nAlém disso, em muitos estudos, um conjunto de covariáveis também é observado nas unidades amostrais.\n\nNesses estudos, objetiva-se encontrar fatores que afetam ou não o tempo de ocorrência do evento de interesse."
+  },
+  {
+    "objectID": "Aula2.html#constituição-do-tempo-de-ocorrência-do-evento-de-interesse",
+    "href": "Aula2.html#constituição-do-tempo-de-ocorrência-do-evento-de-interesse",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CONSTITUIÇÃO DO TEMPO DE OCORRÊNCIA DO EVENTO DE INTERESSE",
+    "text": "CONSTITUIÇÃO DO TEMPO DE OCORRÊNCIA DO EVENTO DE INTERESSE\n\n\nO tempo até a ocorrência de um evento de interesse é formado por três elementos essenciais:\n\nTempo inicial\n\nEscala de medida\n\nEvento de interesse\n\nEsses elementos são fundamentais para qualquer estudo de:\n\nSobrevivência\n\nConfiabilidade\n\n💡 O tempo é o eixo central que conecta observações, análises e conclusões.\nToda a metodologia de análise de sobrevivência e confiabilidade depende da correta definição desses elementos."
+  },
+  {
+    "objectID": "Aula2.html#o-tempo-inicial",
+    "href": "Aula2.html#o-tempo-inicial",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O TEMPO INICIAL",
+    "text": "O TEMPO INICIAL\n\n\nO tempo inicial é o ponto de partida para medir o tempo até a ocorrência de um evento de interesse.\n\nSua definição precisa e consistente é fundamental para garantir a validade do estudo.\n\nGarantir que todos os indivíduos ou unidades sejam comparáveis a partir do mesmo ponto evita vieses.\nExemplos práticos:\n\nEstudos clínicos: data da aleatorização\n\nTratamentos médicos: início do tratamento\n\nDiagnósticos: data do diagnóstico de uma doença\n\nConfiabilidade: início do teste de unidades similares"
+  },
+  {
+    "objectID": "Aula2.html#a-escala-de-medida",
+    "href": "Aula2.html#a-escala-de-medida",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A ESCALA DE MEDIDA",
+    "text": "A ESCALA DE MEDIDA\n\n\nA escala de medida define em quais unidades o tempo até a ocorrência do evento de interesse será registrado.\n\nÉ fundamental escolher uma escala adequada ao contexto, garantindo precisão e comparabilidade.\n\nQuase sempre trata-se do tempo real (ou “tempo de relógio”), mas também podem ser escalas operacionais ou de produção.\nExemplos de escala de medida:\n\nTempo real: dias, semanas, meses, anos\n\nTempo fino: horas, minutos, segundos\n\nConfiabilidade/engenharia: ciclos de uso, quilometragem, peso suportado, número de operações"
+  },
+  {
+    "objectID": "Aula2.html#o-evento-de-interesse",
+    "href": "Aula2.html#o-evento-de-interesse",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O EVENTO DE INTERESSE",
+    "text": "O EVENTO DE INTERESSE\n\n\nO evento de interesse é o acontecimento que estamos estudando, cuja ocorrência marca o fim do tempo observado.\n\nNa maioria dos casos, trata-se de eventos indesejáveis, mas podem ser neutros ou até desejáveis, dependendo do estudo.\n\nÉ fundamental que o evento seja precisamente definido e mensurável, para garantir validade e comparabilidade.\nExemplos de evento de interesse:\n\nMedicina e saúde: morte, recidiva, remissão, complicações, recuperação\n\nConfiabilidade/engenharia: falha de um dispositivo, quebra de equipamento, perda de desempenho"
+  },
+  {
+    "objectID": "Aula2.html#tempo-do-estudo",
+    "href": "Aula2.html#tempo-do-estudo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TEMPO DO ESTUDO",
+    "text": "TEMPO DO ESTUDO\n\n\nO tempo do estudo define até quando os indivíduos ou unidades são acompanhados.\nNo Tempo de estudo pré-determinado (fixo), A duração do estudo é definida antes do início do acompanhamento.\n\n🏥 Saúde / clínica: acompanhamento dos pacientes por 6 anos.\n⚙️ Confiabilidade / engenharia: unidades testadas por 1000 horas.\n\n2️⃣ Tempo de estudo determinado durante o acompanhamento, o estudo não tem duração fixa em tempo calendário.\n\n🏥 Estudo clínico que termina após a ocorrência de 200 óbitos.\n⚙️ Ensaio de confiabilidade encerrado após 50 falhas de componentes.\n📈 Monitoramento de sistemas até atingir um limite de eventos críticos."
+  },
+  {
+    "objectID": "Aula2.html#exemplo-dados-de-hepatite",
+    "href": "Aula2.html#exemplo-dados-de-hepatite",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE HEPATITE",
+    "text": "EXEMPLO: DADOS DE HEPATITE\n\nUm estudo clínico aleatorizado foi realizado para investigar o efeito da terapia com esteróide no tratamento de hepatite viral aguda. Vinte e nove pacientes com essa doença foram aleatorizados para receber placebo ou tratamento com esteróide.\nCada paciente foi acompanhado por 16 semanas, ou até a morte (evento de interesse) ou perda de acompanhamento. Os tempos de sobrevivência foram observados em semanas para ambos os grupos.\n\nTempo inicial: ?\nEscala de medida: ?\nEvento de interesse: ?\nTempo do estudo: ?"
+  },
+  {
+    "objectID": "Aula2.html#exemplo-dados-de-hepatite-solução",
+    "href": "Aula2.html#exemplo-dados-de-hepatite-solução",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE HEPATITE (SOLUÇÃO)",
+    "text": "EXEMPLO: DADOS DE HEPATITE (SOLUÇÃO)\n\nUm estudo clínico aleatorizado foi realizado para investigar o efeito da terapia com esteróide no tratamento de hepatite viral aguda. Vinte e nove pacientes com essa doença foram aleatorizados para receber placebo ou tratamento com esteróide.\nCada paciente foi acompanhado por 16 semanas, ou até a morte (evento de interesse) ou perda de acompanhamento. Os tempos de sobrevivência foram observados em semanas para ambos os grupos.\n\nTempo inicial: data da aleatorização do tratamento.\nEscala de medida: semanas.\nEvento de interesse: morte .\nTempo do estudo: 16 semanas."
+  },
+  {
+    "objectID": "Aula2.html#exercício-teste-de-confiabilidade-de-componentes-eletrônicos",
+    "href": "Aula2.html#exercício-teste-de-confiabilidade-de-componentes-eletrônicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXERCÍCIO: TESTE DE CONFIABILIDADE DE COMPONENTES ELETRÔNICOS",
+    "text": "EXERCÍCIO: TESTE DE CONFIABILIDADE DE COMPONENTES ELETRÔNICOS\n\nUma empresa realizou um teste de confiabilidade para avaliar a vida útil de um novo modelo de capacitor eletrônico utilizado em equipamentos industriais.\nCem capacitores foram produzidos no mesmo lote e colocados em operação simultaneamente em um ambiente controlado de laboratório, sob condições constantes de temperatura e tensão elétrica.\nO teste teve duração máxima de 2.000 horas. O acompanhamento de cada componente foi encerrado quando ocorreu a falha do capacitor (evento de interesse) ou quando o teste foi finalizado sem falha.\nO tempo até a falha foi registrado em horas para todos os componentes.\n\nTempo inicial: ?\nEscala de medida: ?\nEvento de interesse: ?\nTempo do estudo: ?"
+  },
+  {
+    "objectID": "Aula2.html#entrada-retardada",
+    "href": "Aula2.html#entrada-retardada",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ENTRADA RETARDADA",
+    "text": "ENTRADA RETARDADA\n\n\n\n\nConsidere o exemplo em que 10 pacientes são acompanhados em um estudo em que:\n\nTempo inicial: Diagnóstico.\nEscala de medida: anos.\nEvento de interesse: Morte.\nTempo de estudo 5 anos \n\n\n\n\nCada linha idndica a trajetória de um paciente.\nNote que alguns pacientes entraram no estudo no início (ano 0) e outros entraram durante o acompanhamento.\nAssim, para o paciente 8, por exemplo, é errado dizer que ele morreu com 4,5 anos, a partir do diagnóstico.\n\nPara corrigir o tempo de morte deste e dos demais pacientes com entrada retardada, tempo deles deve ser deslocado para a origem.\n\nAssim, ninguém é contado como “em risco” antes de realmente entrar, evitando vieses"
+  },
+  {
+    "objectID": "Aula2.html#tempo-deslocado",
+    "href": "Aula2.html#tempo-deslocado",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TEMPO DESLOCADO",
+    "text": "TEMPO DESLOCADO\n\nVeja como ficam agora os dados de forma comparável na origem:\n\n\n\n\n\n\nAgora sim podemos dizer que o tempo de morte do paciente número 8 é aproximadamente 2 anos.\nSempre confira nos dados de sobrevivência (confiabilidade) se as unidades estavam sujeitas à entradas retardadas e, caso positivo, se os tempos observados já foram corrigidos ou não."
+  },
+  {
+    "objectID": "Aula2.html#exemplo-prático-insuficiencia-renal",
+    "href": "Aula2.html#exemplo-prático-insuficiencia-renal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO PRÁTICO: INSUFICIENCIA RENAL",
+    "text": "EXEMPLO PRÁTICO: INSUFICIENCIA RENAL\n\n\nPara compreender bem o conceito de censura, considere o seguinte exemplo prático.\nNo Sistema de Informações Ambulatoriais (SIA/SUS) são registradas mensalmente as sessões de hemodiálise realizadas em pacientes com insuficiência renal.\nEsses dados, registrados por meio da Autorização de Procedimentos de Alta Complexidade (APAC), permitem estudar a sobrevivência dos pacientes desde o início da terapia até o óbito.\nA seguir, uma tabela e um gráfico ilustram o tempo de sobrevivência de 10 pacientes em hemodiálise, medido em meses."
+  },
+  {
+    "objectID": "Aula2.html#visualização-das-trajetórias-de-pacientes",
+    "href": "Aula2.html#visualização-das-trajetórias-de-pacientes",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VISUALIZAÇÃO DAS TRAJETÓRIAS DE PACIENTES",
+    "text": "VISUALIZAÇÃO DAS TRAJETÓRIAS DE PACIENTES\n\n\n\n\n\n\n\nCada linha representa a trajetória de um paciente ao longo do tempo.\nAs bolinhas preenchidas indicam a ocorrência do evento de interesse (morte).\nEsse gráfico ajuda a entender visualmente os eventos observados a as censuras (quando houver)."
+  },
+  {
+    "objectID": "Aula2.html#realidade-dos-dados-de-sobrevivência",
+    "href": "Aula2.html#realidade-dos-dados-de-sobrevivência",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "REALIDADE DOS DADOS DE SOBREVIVÊNCIA",
+    "text": "REALIDADE DOS DADOS DE SOBREVIVÊNCIA\n\n\nNo exemplo anterior, as informações estavam completas: o óbito foi observado para todos os pacientes.\nNa prática, esse cenário é pouco realista: raramente todos os indivíduos são acompanhados até a ocorrência do evento.\nEstudos clínicos com resposta temporal geralmente são prospectivos e de longa duração.\nEm confiabilidade, nem todas as unidades sob teste apresentam falha até o fim do estudo."
+  },
+  {
+    "objectID": "Aula2.html#causas-de-perda-de-dados-censura",
+    "href": "Aula2.html#causas-de-perda-de-dados-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CAUSAS DE PERDA DE DADOS (CENSURA)",
+    "text": "CAUSAS DE PERDA DE DADOS (CENSURA)\n\n\nAs informações temporais completas nem sempre estão disponíveis; as principais causas incluem:\n\nÓbito por causas não relacionadas ao estudo (ex.: causas externas)\nPerda de contato (ex.: mudança de residência)\nRecusa do participante em continuar\nAbandono devido a efeitos adversos do tratamento\nMudança de procedimento (ex.: transplante renal em pacientes em diálise)\nTérmino do estudo clínico sem que todos os indivíduos tenham apresentado o evento de interesse. Término do teste de confiabilidade sem que todas as unidades sob teste tenham apresentado a falha."
+  },
+  {
+    "objectID": "Aula2.html#definição-da-censura",
+    "href": "Aula2.html#definição-da-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA CENSURA",
+    "text": "DEFINIÇÃO DA CENSURA\n\n\nEm todos estes casos, diz-se que houve censura.\nPortanto, a censura é a perda de informação por não se observar o tempo de ocorrência do evento anteriormente.\nMesmo censurados, todos os dados devem ser utilizados na análise.\nObservações censuradas fornecem informação parcial relevante.\nIgnorar censuras pode levar a conclusões viesadas."
+  },
+  {
+    "objectID": "Aula2.html#voltando-ao-exemplo-sobre-insuficiência-renal",
+    "href": "Aula2.html#voltando-ao-exemplo-sobre-insuficiência-renal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VOLTANDO AO EXEMPLO SOBRE INSUFICIÊNCIA RENAL",
+    "text": "VOLTANDO AO EXEMPLO SOBRE INSUFICIÊNCIA RENAL\n\n\nConsidere agora outros 10 pacientes: \nAs bolinhas vazias representam observações censuradas.\nAssim, ao lado do tempo observado, deve ser reportado se houve censura ou nao"
+  },
+  {
+    "objectID": "Aula2.html#indicadora-de-censura",
+    "href": "Aula2.html#indicadora-de-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INDICADORA DE CENSURA",
+    "text": "INDICADORA DE CENSURA\n\n\nAo analisar os dados, é criada uma variável indicadora em que:\n\n1: se o evento de interesse ocorreu\n0: se houve censura"
+  },
+  {
+    "objectID": "Aula2.html#classificação-dos-mecanismos-de-censura",
+    "href": "Aula2.html#classificação-dos-mecanismos-de-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CLASSIFICAÇÃO DOS MECANISMOS DE CENSURA",
+    "text": "CLASSIFICAÇÃO DOS MECANISMOS DE CENSURA\n\n\nOs mecanismos de censura são classificados em:\n\nCensura à direita\n\nTipo I\nTipo II\nAleatória\n\nCensura à esquerda\nCensura intervalar\n\nEssa classificação ajuda a planejar análises estatísticas apropriadas e interpretar corretamente os dados incompletos."
+  },
+  {
+    "objectID": "Aula2.html#censura-à-direita",
+    "href": "Aula2.html#censura-à-direita",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CENSURA À DIREITA",
+    "text": "CENSURA À DIREITA\n\n\nA censura à direita ocorre quando o evento de interesse não foi observado durante o período de acompanhamento.\n\nOu seja, o tempo real até a ocorrência do evento é maior que o tempo registrado no estudo (está à direita).\n\nEssa situação é comum em estudos de sobrevivência e confiabilidade, pois nem sempre todos os indivíduos ou unidades apresentam o evento de interesse até o final do estudo.\nExemplos típicos de censura à direita:\n\nFim do estudo sem ocorrência do evento para todos os participantes.\nPerda de acompanhamento, quando um indivíduo deixa de ser observado antes do evento.\nEm confiabilidade, unidades que não falharam durante o período de teste."
+  },
+  {
+    "objectID": "Aula2.html#tipos-de-censura-à-direita",
+    "href": "Aula2.html#tipos-de-censura-à-direita",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TIPOS DE CENSURA À DIREITA",
+    "text": "TIPOS DE CENSURA À DIREITA\n\n\nTIPO I\nEstudos finalizados após um período pré-fixado, com alguns indivíduos ainda sem evento. Exemplo: estudo clínico de 12 meses sobre recuperação de pacientes, em que alguns ainda não tiveram o desfecho ao final.\nTIPO II\nEstudos finalizados após a ocorrência do evento em um número pré-definido de indivíduos. Exemplo: teste de confiabilidade de 50 máquinas, encerrando o estudo assim que 10 delas falharem.\nALEATÓRIA\nOcorre quando o indivíduo sai do estudo antes do fim sem apresentar o evento (perda de acompanhamento). Exemplo: paciente abandona um estudo antes do estudo acabar."
+  },
+  {
+    "objectID": "Aula2.html#tipos-de-censura-à-direita-ilustração",
+    "href": "Aula2.html#tipos-de-censura-à-direita-ilustração",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TIPOS DE CENSURA À DIREITA (ILUSTRAÇÃO)",
+    "text": "TIPOS DE CENSURA À DIREITA (ILUSTRAÇÃO)"
+  },
+  {
+    "objectID": "Aula2.html#censura-à-esquerda",
+    "href": "Aula2.html#censura-à-esquerda",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CENSURA À ESQUERDA",
+    "text": "CENSURA À ESQUERDA\n\n\nA censura à esquerda ocorre quando o evento de interesse já aconteceu antes do início da observação do indivíduo.\n\nOu seja, o tempo observado no estudo é maior que o tempo real de ocorrência do evento.\n\n\nEsse tipo de censura é menos frequente que a censura à direita, mas é importante em estudos retrospectivos ou de início tardio de acompanhamento.\nExemplos práticos:\n\nCrianças que já sabiam ler no momento da avaliação, mas não lembram a idade em que aprenderam.\n\nIndivíduos que já estavam infectados em um estudo sorológico na primeira coleta de sangue."
+  },
+  {
+    "objectID": "Aula2.html#censura-intervalar",
+    "href": "Aula2.html#censura-intervalar",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CENSURA INTERVALAR",
+    "text": "CENSURA INTERVALAR\n\n\nA censura intervalar ocorre quando o evento de interesse não é observado exatamente, mas sabe-se que ocorreu dentro de um intervalo de tempo específico.\n\nÉ comum em estudos com coletas periódicas, onde os indivíduos são avaliados em momentos pré-determinados.\n\nExemplo prático:\n\nUm paciente testou HIV negativo na segunda visita.\n\nNa terceira visita, ele testou HIV positivo.\n\nConclusão: o evento (infecção) ocorreu entre a segunda e terceira visitas.\n\n\nImportância: permite considerar corretamente a incerteza do momento do evento na análise de sobrevivência, evitando vieses."
+  },
+  {
+    "objectID": "Aula2.html#mecanismos-de-censura-ilustração",
+    "href": "Aula2.html#mecanismos-de-censura-ilustração",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MECANISMOS DE CENSURA (ILUSTRAÇÃO)",
+    "text": "MECANISMOS DE CENSURA (ILUSTRAÇÃO)"
+  },
+  {
+    "objectID": "Aula2.html#exercício-tipos-de-censura",
+    "href": "Aula2.html#exercício-tipos-de-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXERCÍCIO — TIPOS DE CENSURA",
+    "text": "EXERCÍCIO — TIPOS DE CENSURA\n\nUm estudo clínico descritivo observacional acompanhou um conjunto de indivíduos com o objetivo de analisar a idade de aparecimento de um determinado sintoma clínico. O acompanhamento teve início em uma data comum para todos os participantes. Os indivíduos eram avaliados por meio de exames periódicos ao longo do tempo. O estudo foi encerrado após um período previamente definido. Com base nas situações abaixo, identifique o tipo de censura envolvido em cada caso.\n\nUm indivíduo ingressou no estudo já apresentando o sintoma, sem que se conheça a idade exata em que ele surgiu.\nDois indivíduos não apresentaram o sintoma até o término do estudo, permanecendo assintomáticos durante todo o acompanhamento.\nDois indivíduos apresentaram o sintoma em algum momento entre duas avaliações consecutivas, mas o instante exato de ocorrência não pôde ser determinado.\nUm indivíduo mudou de cidade durante o acompanhamento, interrompendo sua participação no estudo sem apresentar o sintoma até então."
+  },
+  {
+    "objectID": "Aula2.html#censura-não-informativa",
+    "href": "Aula2.html#censura-não-informativa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CENSURA NÃO INFORMATIVA",
+    "text": "CENSURA NÃO INFORMATIVA\n\n\nO motivo da censura não está relacionado ao evento de interesse.\nO tempo até o evento e o tempo até a censura podem ser considerados independentes.\nÉ a situação assumida implicitamente pelos métodos clássicos de análise de sobrevivência.\nExemplos:\n\nEncerramento do estudo antes que todos os indivíduos apresentem o evento.\nPerda de seguimento por mudança de cidade sem relação com o estado de saúde.\nFalha de equipamento ou problema administrativo durante o acompanhamento."
+  },
+  {
+    "objectID": "Aula2.html#censura-informativa",
+    "href": "Aula2.html#censura-informativa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CENSURA INFORMATIVA",
+    "text": "CENSURA INFORMATIVA\n\n\nO motivo da censura está associado ao risco do evento.\nA censura carrega informação relevante sobre o desfecho.\nViola a suposição de independência entre censura e tempo até o evento.\nExemplos:\n\nIndivíduos abandonam o estudo porque o quadro clínico se agravou.\nParticipantes em pior estado de saúde têm maior probabilidade de perda de seguimento.\nRetirada do estudo por efeitos adversos relacionados ao tratamento."
+  },
+  {
+    "objectID": "Aula2.html#censura-informativa-não-informativa",
+    "href": "Aula2.html#censura-informativa-não-informativa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CENSURA INFORMATIVA × NÃO INFORMATIVA",
+    "text": "CENSURA INFORMATIVA × NÃO INFORMATIVA\n\n\n\nCENSURA NÃO INFORMATIVA\nVantagens:\n\nSimplifica a análise estatística.\nMétodos clássicos permanecem válidos.\nInterpretação direta das estimativas.\n\nDesvantagens:\n\nSuposição forte e nem sempre verificável.\nPode mascarar problemas no desenho do estudo.\n\n\n\n\nCENSURA INFORMATIVA\nVantagens:\n\nReflete situações reais de muitos estudos observacionais.\nPode revelar fragilidades no acompanhamento ou no tratamento.\n\nDesvantagens:\n\nIntroduz viés de seleção.\nCompromete estimativas de sobrevivência.\nRequer modelos mais complexos ou dados adicionais."
+  },
+  {
+    "objectID": "Aula2.html#a-censura-nesta-disciplina",
+    "href": "Aula2.html#a-censura-nesta-disciplina",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A CENSURA NESTA DISCIPLINA",
+    "text": "A CENSURA NESTA DISCIPLINA\n\n\nNesta disciplina, o foco será em dados com censura à direita e não informativa, que é a situação mais frequente em análise de sobrevivência e confiabilidade.\n\nCensura à direita: ocorre quando o evento de interesse ainda não ocorreu para alguns indivíduos até o fim do acompanhamento.\nCensura não informativa: significa que a censura não depende do risco do evento, ou seja, o motivo pelo qual o indivíduo foi censurado não afeta a análise.\n\nImplicações para a disciplina:\n\nPermite usar métodos clássicos de análise de sobrevivência, como o Kaplan–Meier, Testes log-rank e o Modelo de Cox\nEstimativas de tempo médio até o evento ou probabilidades de sobrevivência são confiáveis sob esta suposição."
+  },
+  {
+    "objectID": "Aula2.html#introdução-motivacional",
+    "href": "Aula2.html#introdução-motivacional",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO MOTIVACIONAL",
+    "text": "INTRODUÇÃO MOTIVACIONAL\n\nImagine que você é pesquisador(a) em oncologia. Você quer estudar o tempo até a ocorrência de uma recidiva de câncer em pacientes. Mas os dados que você consegue têm algumas limitações:\n\nAlguns pacientes só entram no estudo após já terem sobrevivido um certo tempo desde o diagnóstico.\n\nOutros pacientes são monitorados até um certo ponto, e eventos que ocorram depois desse ponto não são observados.\n\nEsses cenários não são censura comum — são exemplos de truncamento."
+  },
+  {
+    "objectID": "Aula2.html#o-que-é-truncamento",
+    "href": "Aula2.html#o-que-é-truncamento",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O que é Truncamento?",
+    "text": "O que é Truncamento?\n\nO truncamento ocorre quando só observamos indivíduos cujo tempo de evento cai dentro de um intervalo específico.\n🔹 Diferente da censura, onde o indivíduo entra no estudo e pode não completar o evento,\n🔹 No truncamento, indivíduos fora do intervalo de observação nem aparecem na amostra.\n\nExemplo intuitivo:\n\nSe só incluímos pacientes que sobreviveram pelo menos 2 anos após o diagnóstico, pacientes que morreram antes não aparecem nos dados → truncamento à esquerda.\nSe só incluímos pacientes que tiveram o evento antes de 10 anos, pacientes que duram mais que isso não aparecem → truncamento à direita."
+  },
+  {
+    "objectID": "Aula2.html#truncamento-à-esquerda",
+    "href": "Aula2.html#truncamento-à-esquerda",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "Truncamento à Esquerda",
+    "text": "Truncamento à Esquerda\n\nOcorre quando indivíduos que experimentaram o evento antes de um certo tempo não entram no estudo.\nExemplo prático:\n\nEstudo sobre tempo até falha de um equipamento industrial.\nApenas equipamentos que sobrevivem ao teste inicial de 6 meses são incluídos.\n\nEquipamentos que falharam antes de 6 meses não entram nos dados → truncamento à esquerda.\n\nImpacto:\n- A amostra está “viciada” para tempos curtos. - Estatísticas estimadas sem correção ficam enviesadas."
+  },
+  {
+    "objectID": "Aula2.html#truncamento-à-direita",
+    "href": "Aula2.html#truncamento-à-direita",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "Truncamento à Direita",
+    "text": "Truncamento à Direita\n\nOcorre quando indivíduos que experimentam o evento após um certo tempo não entram no estudo.\nExemplo prático:\n\nUm estudo sobre recidiva de câncer com duração limitada de 5 anos.\nPacientes que teriam recidiva após 5 anos não entram na amostra → truncamento à direita.\n\nImpacto:\n- Amostra “viciada” para tempos longos. - Estimativas de sobrevivência superestimadas se ignorarmos o truncamento."
+  },
+  {
+    "objectID": "Aula2.html#comparação-truncamento-x-censura",
+    "href": "Aula2.html#comparação-truncamento-x-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "Comparação Truncamento x Censura",
+    "text": "Comparação Truncamento x Censura\n\n\n\n\n\n\n\n\nAspecto\nCensura\nTruncamento\n\n\n\n\nQuem aparece no estudo\nTodos entram\nApenas dentro de certo intervalo\n\n\nObservação completa?\nNem sempre\nSempre (dentro do intervalo)\n\n\nExemplo\nPaciente sai do estudo\nPaciente já morreu antes da inclusão\n\n\nViés se ignorado\nPode subestimar/overestimar\nEstatísticas podem ficar enviesadas"
+  },
+  {
+    "objectID": "Aula2.html#exercício-truncamento",
+    "href": "Aula2.html#exercício-truncamento",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXERCÍCIO: TRUNCAMENTO",
+    "text": "EXERCÍCIO: TRUNCAMENTO\nNos exemplos a seguir, há truncamento à direita ou à esquerda?\n\nPacientes que não morreram foram descartados do estudo.\n\nIndivíduos que morreram antes do início do estudo não foram incluídos."
+  },
+  {
+    "objectID": "Aula1.html#a-importância-da-análise-de-sobrevivência",
+    "href": "Aula1.html#a-importância-da-análise-de-sobrevivência",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A IMPORTÂNCIA DA ANÁLISE DE SOBREVIVÊNCIA",
+    "text": "A IMPORTÂNCIA DA ANÁLISE DE SOBREVIVÊNCIA\n\n\nUma das áreas da estatística que mais cresceu nas últimas décadas do século XX.\nEsse crescimento está fortemente associado:\n\nàs aplicações em medicina e ensaios clínicos.\nao desenvolvimento de métodos estatísticos.\nao avanço dos computadores.\n\nA área de análise de sobrevivência possui 2 artigos que estão entre os mais citados da literatura estatística:\n\nKaplan, E. L. & Meier, P. (1958) - Nonparametric Estimation from Incomplete Observations- Journal of the American Statistical Association 🔗\nCox, D. R. (1972) - Regression Models and Life-Tables - Journal of the Royal Statistical Society – Series B 🔗"
+  },
+  {
+    "objectID": "Aula1.html#introdução",
+    "href": "Aula1.html#introdução",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\nIIIIIIIV\n\n\n\n\nNos estudos de análise de sobrevivência, uma amostra (em geral de pacientes) é coletada e acompanhada.\nA variável resposta é, basicamente, o tempo até a ocorrência de um evento de interesse.\nEm análise de sobrevivência, esse evento de interesse pode ser:\n\nA morte do paciente por determinada enfermidade.\nA remissão (paciente fica livre dos sintomas de determinada doença).\nA recidiva (recorrência de determinada doença).\n\n\n\n\n\n\n\nA principal característica de dados de sobrevivência é a presença de censura, que é a observação parcial da resposta.\nIsto se refere a situações em que, por alguma razão, o acompanhamento do paciente foi interrompido. Por exemplo:\n\nO paciente mudou de cidade e o seu acompanhamento foi perdido.\nO estudo terminou antes do paciente apresentar o evento de interesse.\nO paciente morreu de outra causa, diferente da estudada.\n\nIsso significa que toda a informação referente à variável resposta se resume ao conhecimento de que o tempo de ocorrência até o evento de interesse é superior ao tempo observado no estudo.\n\n\n\n\n\n\nSem a presença de censura, pode-se usar as técnicas usuais de análise de regressão e planejamento de experimentos para analisar os dados.\nPor exemplo, considere um estudo que tem por objetivo estimar o tempo até a cura de pacientes por determinada doença:\n\nOs pacientes foram aleatorizados em dois grupos: Tratamento A e Tratamento B.\nTodos os pacientes apresentaram a cura para a doença (dados sem censura).\nNesse caso, pode-se usar técnicas usuais de análise de variância (ANOVA) para comparação entre os grupos (Tratamento A vs. Tratamento B).\n\n\n\n\n\n\n\nNo entanto, se houver censuras, o que é muito mais provável, as técnicas usuais não podem ser utilizadas, pois necessitam de todos os tempos até a ocorrência de um evento de interesse.\n\nAlém disso, as observações censuradas não podem ser descartadas, já que trazem informação pra análise (mesmo sendo uma informação parcial)\n\nPor isso, faz-se necessário o uso de métodos de análise de sobrevivência, que possibilitam incorporar na análise estatística a informação contida nos dados censurados.\nFinalmente, o termo análise de sobrevivência se refere, basicamente, a situações médicas e/ou epidemiológicas envolvendo dados censurados."
+  },
+  {
+    "objectID": "Aula1.html#investigação-científica-em-saúde",
+    "href": "Aula1.html#investigação-científica-em-saúde",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INVESTIGAÇÃO CIENTÍFICA EM SAÚDE",
+    "text": "INVESTIGAÇÃO CIENTÍFICA EM SAÚDE\n\n\nA pesquisa científica em saúde busca compreender fenômenos relacionados à doença, ao tratamento e ao cuidado, com o objetivo de produzir evidências confiáveis para a tomada de decisão.\nEssas investigações envolvem observação ou intervenção sobre indivíduos ou populações, a coleta sistemática de dados e sua análise por métodos estatísticos.\nDependendo do objetivo do estudo, o pesquisador pode estar interessado não apenas na ocorrência de um desfecho, mas também no tempo até que esse desfecho aconteça e nos fatores que levam ou não à ocorrência desse desfecho."
+  },
+  {
+    "objectID": "Aula1.html#estudos-clínicos",
+    "href": "Aula1.html#estudos-clínicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTUDOS CLÍNICOS",
+    "text": "ESTUDOS CLÍNICOS\n\n\nDentro da pesquisa científica em análise de sobrevivência, os estudos clínicos ocupam um papel central, pois são investigações planejadas para avaliar intervenções, tratamentos ou exposições em seres humanos.\nEssas investigações são conduzidas por meio da coleta de dados e de sua análise com métodos estatísticos.\nEm geral, os estudos clínicos seguem as seguintes etapas:\n\nFormulação da hipótese de interesse.\nPlanejamento e coleta dos dados.\nAnálise estatística dos dados para testar a hipótese formulada."
+  },
+  {
+    "objectID": "Aula1.html#etapas-do-estudo-clínico",
+    "href": "Aula1.html#etapas-do-estudo-clínico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ETAPAS DO ESTUDO CLÍNICO",
+    "text": "ETAPAS DO ESTUDO CLÍNICO\n\n\nEssas etapas são comuns a qualquer estudo que envolva análise estatística de dados, garantindo validade, reprodutibilidade e controle de vieses.\nEm Análise de Sobrevivência, o interesse é específico para situações em que a variável resposta é o tempo até a ocorrência de um evento de interesse, como:\n\nmorte, recorrência de doença, falha de um tratamento ou alta hospitalar.\n\nA compreensão dessas etapas ajuda a planejar o acompanhamento, lidar com censura e selecionar métodos estatísticos apropriados."
+  },
+  {
+    "objectID": "Aula1.html#formulação-da-hipótese-de-interesse",
+    "href": "Aula1.html#formulação-da-hipótese-de-interesse",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FORMULAÇÃO DA HIPÓTESE DE INTERESSE",
+    "text": "FORMULAÇÃO DA HIPÓTESE DE INTERESSE\n\n\nA primeira etapa de um estudo clínico é motivada pela curiosidade científica do(a) pesquisador(a) e define claramente o que será investigado.\nExemplos de questões comuns:\n\nIdentificar fatores de risco ou prognóstico para uma doença.\nComparar drogas ou diferentes opções terapêuticas.\n\nAo formular a hipótese, é importante definir o evento de interesse: o desfecho clínico que será observado.\nEssas definições permitem que a hipótese seja testada de forma estruturada, facilitando o uso de métodos de Análise de Sobrevivência posteriormente."
+  },
+  {
+    "objectID": "Aula1.html#planejamento-e-coleta-de-dados",
+    "href": "Aula1.html#planejamento-e-coleta-de-dados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PLANEJAMENTO E COLETA DE DADOS",
+    "text": "PLANEJAMENTO E COLETA DE DADOS\n\n\nEm análise de sobrevivência, a variável resposta é, por natureza, longitudinal, registrando quando o evento ocorre.\nO planejamento adequado garante que os dados coletados sejam consistentes e confiáveis.\nElementos importantes no planejamento e coleta:\n\nDefinição clara do evento de interesse: o desfecho que será acompanhado.\nDefinição do tempo de acompanhamento (tempo zero): momento em que a contagem do tempo inicia para cada participante.\nDeterminação de variáveis explicativas: fatores clínicos, demográficos ou tratamentos que podem influenciar o evento.\nEstratégias para minimizar perdas: procedimentos para reduzir censura por perda de seguimento.\nRegistro sistemático e padronizado: forma de coletar dados de maneira uniforme ao longo do tempo.\n\nUm bom planejamento nesta etapa é crucial para que a análise estatística seja válida e interpretável."
+  },
+  {
+    "objectID": "Aula1.html#classificação-dos-estudos-clínicos",
+    "href": "Aula1.html#classificação-dos-estudos-clínicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CLASSIFICAÇÃO DOS ESTUDOS CLÍNICOS",
+    "text": "CLASSIFICAÇÃO DOS ESTUDOS CLÍNICOS\n\nQuanto à intervenção do(a) pesquisador(a), o estudo clínico pode ser\n\nObservacional\nExperimental\n\n\n\nQuanto ao tempo de acompanhamento, o estudo clínico pode ser\n\nProspectivo:\nRetrospectivo:"
+  },
+  {
+    "objectID": "Aula1.html#estudos-observacionais-e-experimentais",
+    "href": "Aula1.html#estudos-observacionais-e-experimentais",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTUDOS OBSERVACIONAIS E EXPERIMENTAIS",
+    "text": "ESTUDOS OBSERVACIONAIS E EXPERIMENTAIS\n\n\nQuanto à intervenção do(a) pesquisador(a), os estudos clínicos podem ser:\n\nObservacionais: o(a) pesquisador(a) não interfere, apenas acompanha os participantes ao longo do tempo, registrando quando os eventos de interesse ocorrem. Permite identificar associações entre fatores e desfechos temporais.\n\nExemplo: acompanhar pacientes com diferentes níveis de atividade física para avaliar o tempo até ocorrência de infarto.\n\nExperimentais: o(a) pesquisador(a) intervém com tratamentos ou exposições específicas, permitindo avaliar causalidade no tempo até o evento.\n\nExemplo: estudo clínico comparando dois medicamentos para câncer, acompanhando o tempo até recidiva tumoral. Os medicamentos foram distribuídos de forma aleatória aos pacientes.\n\n\nObservação: Estudos observacionais são úteis para gerar hipóteses sobre fatores de risco e prognóstico, enquanto estudos experimentais permitem avaliar causalidade com maior controle."
+  },
+  {
+    "objectID": "Aula1.html#estudos-prospectivos-e-retrospectivos",
+    "href": "Aula1.html#estudos-prospectivos-e-retrospectivos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTUDOS PROSPECTIVOS E RETROSPECTIVOS",
+    "text": "ESTUDOS PROSPECTIVOS E RETROSPECTIVOS\n\n\nQuanto ao período de tempo em que os dados são registrados, os estudos clínicos podem ser:\n\nProspectivos: os participantes são acompanhados a partir do início do estudo, registrando eventos que ainda irão ocorrer. Permite maior controle sobre a coleta de dados e definição de variáveis.\n\nExemplo: acompanhar pacientes recém-diagnosticados com câncer para avaliar o tempo até a morte pela doença.\n\nRetrospectivos: os eventos já ocorreram, e os pesquisadores analisam dados previamente registrados em prontuários ou bancos de dados. Mais rápido e econômico, mas sujeito a censura e dados incompletos.\n\nExemplo: revisar registros de pacientes que receberam transplante de fígado para identificar fatores associados ao tempo até rejeição do órgão.\n\n\nObservação: Estudos prospectivos fornecem evidências mais robustas sobre tempo até evento, enquanto estudos retrospectivos são úteis para análises exploratórias e geração de hipóteses."
+  },
+  {
+    "objectID": "Aula1.html#tipos-de-estudos-clínicos",
+    "href": "Aula1.html#tipos-de-estudos-clínicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TIPOS DE ESTUDOS CLÍNICOS",
+    "text": "TIPOS DE ESTUDOS CLÍNICOS\n\n\nAs formas básicas de estudos clínicos utilizadas em análise de sobrevivência incluem:\n\nDescritivo\nCaso-controle\nCoorte\nEnsaio clínico aleatorizado"
+  },
+  {
+    "objectID": "Aula1.html#estudos-descritivos",
+    "href": "Aula1.html#estudos-descritivos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTUDOS DESCRITIVOS",
+    "text": "ESTUDOS DESCRITIVOS\n\n\nEstudo observacional que descreve o estado de saúde de uma população ou comunidade.\nPode utilizar:\n\nDados secundários: registros já coletados rotineiramente (prontuários, bancos de dados).\n\nDados primários: coletados diretamente via questionários ou entrevistas específicas.\n\nNormalmente, envolve uma única amostra, sem grupo de comparação.\nFrequentemente, o objetivo é identificar fatores de prognóstico ou padrões de ocorrência de eventos clínicos.\nExemplo em sobrevivência: estimar o tempo médio até recaída em pacientes com uma doença específica em uma população observada."
+  },
+  {
+    "objectID": "Aula1.html#estudos-caso-controle",
+    "href": "Aula1.html#estudos-caso-controle",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTUDOS CASO-CONTROLE",
+    "text": "ESTUDOS CASO-CONTROLE\n\n\nEstudo observacional retrospectivo, baseado em dados já produzidos, como prontuários, registros ou entrevistas.\nO objetivo é observar a frequência de exposições em grupos diferentes com base na ocorrência de um evento.\nOs grupos são selecionados de uma mesma população:\n\nCasos: indivíduos que apresentaram o evento de interesse (ex.: recaída de câncer).\n\nControles: indivíduos que não apresentaram o evento.\n\nRelativamente econômicos, pois os dados já estão disponíveis, mas podem apresentar vieses de memória ou seleção.\nExemplo em sobrevivência: investigar fatores que influenciam o tempo até recidiva de doença em pacientes que já tiveram o evento."
+  },
+  {
+    "objectID": "Aula1.html#estudos-coorte",
+    "href": "Aula1.html#estudos-coorte",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTUDOS COORTE",
+    "text": "ESTUDOS COORTE\n\n\nEstudo observacional prospectivo, em que grupos expostos e não expostos a um fator de interesse são acompanhados ao longo do tempo.\n\nPermite registrar a ocorrência e o tempo até o evento.\nVantagens:\n\nComparabilidade inicial entre grupos;\n\nIdentificação clara de variáveis de interesse;\n\nPossibilidade de estimar risco relativo e curvas de sobrevivência.\n\nDesvantagens:\n\nEstudos longos e mais caros;\n\nNão indicados para eventos muito raros.\n\nExemplo em sobrevivência: acompanhar fumantes e não fumantes para avaliar o tempo até desenvolvimento de câncer de pulmão."
+  },
+  {
+    "objectID": "Aula1.html#ensaios-clínicos-aleatorizados",
+    "href": "Aula1.html#ensaios-clínicos-aleatorizados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ENSAIOS CLÍNICOS ALEATORIZADOS",
+    "text": "ENSAIOS CLÍNICOS ALEATORIZADOS\n\n\nEstudos prospectivos e experimentais, com intervenção direta do(a) pesquisador(a).\nPacientes são aleatoriamente alocados a diferentes tratamentos, garantindo comparabilidade entre os grupos.\nPermitem avaliar eficácia de intervenções sobre tempo até ocorrência de eventos de forma robusta.\nUso frequente de Análise de Sobrevivência:\n\nacompanhamento de coortes de pacientes;\n\nensaios clínicos aleatorizados comparando tratamentos (ex.: tempo até recaída, tempo até morte, tempo até complicações).\n\nExemplo: ensaio clínico randomizado avaliando dois medicamentos para câncer, medindo o tempo até recidiva tumoral."
+  },
+  {
+    "objectID": "Aula1.html#análise-estatística-dos-dados",
+    "href": "Aula1.html#análise-estatística-dos-dados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ANÁLISE ESTATÍSTICA DOS DADOS",
+    "text": "ANÁLISE ESTATÍSTICA DOS DADOS\n\n\nNos textos técnicos de estatística, grande parte do esforço concentra-se na terceira etapa de um estudo clínico: a análise estatística dos dados.\nIsso ocorre mesmo reconhecendo a importância de um planejamento e coleta de dados bem estruturados, que são essenciais para garantir validade dos resultados.\nEm Análise de Sobrevivência, essa etapa inclui aspectos específicos:\n\ntratamento de censura (indivíduos que não apresentam o evento durante o acompanhamento);\n\ncálculo de curvas de sobrevivência (ex.: Kaplan-Meier);\n\ncomparação de grupos com métodos apropriados (ex.: log-rank);\n\nmodelagem de fatores que influenciam o tempo até o evento (ex.: regressão de Cox).\n\nNesta disciplina, a maior parte do conteúdo será dedicada à essa etapa, mostrando como transformar os dados coletados em evidências sobre o tempo até a ocorrência de desfechos clínicos."
+  },
+  {
+    "objectID": "Aula1.html#exemplos-de-bases-de-dados",
+    "href": "Aula1.html#exemplos-de-bases-de-dados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DE BASES DE DADOS",
+    "text": "EXEMPLOS DE BASES DE DADOS\n\n\nAgora, serão apresentados exemplos de bases de dados utilizadas em estudos de Análise de Sobrevivência.\n\nO objetivo é que vocês se familiarizem com os tipos de dados disponíveis e como eles podem ser utilizados para análises.\n\nOs exemplos incluem dados de:\n\ncoortes clínicas;\n\nensaios clínicos aleatorizados;\n\nregistros hospitalares e populações acompanhadas longitudinalmente."
+  },
+  {
+    "objectID": "Aula1.html#dados-de-hepatite",
+    "href": "Aula1.html#dados-de-hepatite",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE HEPATITE",
+    "text": "DADOS DE HEPATITE\n\nDESCRIÇÃOBASE DE DADOS\n\n\n\n\nEstudo clínico aleatorizado.\nObjetivo: investigar o efeito da terapia com esteroide no tratamento de hepatite viral aguda.\n29 pacientes aleatorizados para receber placebo ou esteroide.\n\nPlacebo é um tratamento médico que não tem efeito.\n\nCada paciente acompanhado por 16 semanas ou até a ocorrência do evento (morte) ou perda de acompanhamento (censura).\n\n\n\n\n\n\n\n\n\n\n\n\nGrupos\nTempos de Sobrevivência\n\n\n\n\nPlacebo\n1+, 2+, 3, 3, 3+, 5+, 5+, 16+, 16+, 16+, 16+, 16+, 16+, 16+, 16+\n\n\nEsteroide\n1, 1, 1, 1+, 4+, 5, 7, 8, 10, 10+, 12+, 16+, 16+, 16+\n\n\n\n\nO símbolo + indica censura.\nO objetivo desse estudo é comparar a sobrevivência dos pacientes considerando os dois grupos."
+  },
+  {
+    "objectID": "Aula1.html#dados-de-malária",
+    "href": "Aula1.html#dados-de-malária",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE MALÁRIA",
+    "text": "DADOS DE MALÁRIA\n\nDESCRIÇÃOBASE DE DADOS\n\n\n\n\nEstudo clínico aleatorizado conduzido pela Fiocruz-MG.\n44 camundongos foram acompanhados por 30 dias e divididos em três grupos:\n\nGrupo 1: Imunizados 30 dias antes da infecção por malária e infectados por esquistossomose.\nGrupo 2: Apenas infectados por malária, sem vacina.\nGrupo 3: Infectados por malária e esquistossomose, sem vacina.\n\nO desfecho de interesse é o tempo até a morte dos camundongos.\n\n\n\n\n\n\n\n\n\n\n\n\nGrupos\nTempos de sobrevivência\n\n\n\n\nGrupo 1\n7, 8, 8, 8, 8, 12, 12, 17, 18, 22, 30+, 30+, 30+, 30+, 30+, 30+\n\n\nGrupo 2\n8, 8, 9, 10, 10, 14, 15, 15, 18, 19, 21, 22, 22, 23, 25\n\n\nGrupo 3\n8, 8, 8, 8, 8, 8, 9, 10, 10, 10, 11, 17, 19\n\n\n\n\nO símbolo + indica censura.\nOs objetivos deste estudo são:\n\nEfeito da imunização sobre a progressão da infecção por malária;\nImpacto da coinfecção com esquistossomose no curso da malária."
+  },
+  {
+    "objectID": "Aula1.html#dados-de-leucemia-pediátrica",
+    "href": "Aula1.html#dados-de-leucemia-pediátrica",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE LEUCEMIA PEDIÁTRICA",
+    "text": "DADOS DE LEUCEMIA PEDIÁTRICA\n\nDESCRIÇÃOBASE DE DADOS\n\n\n\n\nEstudo do tipo coorte realizado pelo Grupo Cooperativo Mineiro para Tratamento de Leucemias Agudas.\n120 crianças (&lt;15 anos) acompanhadas em hospitais de BH.\nVariável resposta: tempo desde a remissão até recidiva ou morte.\nOutras variáveis observadas: idade, peso, estatura, contagem de leucócitos, % linfoblastos e % vacúolos.\nO estudo tem por objetivo:\n\nAvaliar a associação entre características clínicas e laboratoriais e o tempo até recidiva ou morte.\nComparar o tempo até o evento entre subgrupos definidos por variáveis clínicas ou laboratoriais, quando pertinente.\n\n\n\n\n\n\n\n\n\n\n\n\n\nleuni\ntempo\ncens\nidade\nzpeso\nzest\npas\nvac\nrisk\nr6\n\n\n\n\n1.2\n0.214\n1\n169.07\n-2.32\n-1.95\n3.3\n2.0\n0.88\n1\n\n\n50.0\n0.003\n0\n112.43\n-1.86\n-2.42\n0.0\n2.7\n1.72\n1\n\n\n84.7\n0.129\n1\n159.93\n-1.84\n-2.17\n0.6\n20.4\n1.26\n1\n\n\n31.7\n1.065\n0\n141.54\n-1.55\n-0.59\n4.2\n6.5\n1.12\n1\n\n\n80.5\n0.151\n0\n137.46\n-1.21\n-0.01\n1.8\n1.6\n1.30\n1\n\n\n400.0\n4.331\n0\n156.98\n-0.84\n-0.82\n13.7\n1.0\n1.32\n1\n\n\n7.5\n2.502\n1\n176.56\n-0.84\n0.52\n0.5\n4.3\n1.06\n0\n\n\n69.3\n1.941\n0\n133.13\n-0.71\n-1.01\n0.0\n12.0\n1.80\n1\n\n\n340.8\n0.654\n1\n132.47\n-0.56\n-0.67\n0.0\n3.6\n1.72\n1\n\n\n24.0\n0.616\n1\n146.37\n-0.49\n0.13\n0.1\n0.0\n1.24\n1\n\n\n4.0\n1.692\n0\n115.25\n-0.48\n0.45\n45.7\n39.5\n0.62\n1\n\n\n176.0\n3.915\n0\n160.13\n-0.33\n-0.98\n0.7\n4.5\n1.06\n1\n\n\n60.0\n0.715\n1\n100.34\n-0.08\n-0.72\n0.2\n6.0\n1.60\n0\n\n\n5.6\n0.742\n0\n122.58\n0.00\n0.34\n0.7\n2.5\n0.72\n1\n\n\n11.7\n3.403\n0\n130.14\n0.04\n-0.05\n0.3\n5.3\n1.22\n1\n\n\n4.8\n0.917\n1\n124.81\n0.11\n0.35\n0.3\n1.0\n1.08\n1\n\n\n4.9\n1.443\n1\n105.53\n0.14\n-0.19\n1.0\n55.7\n2.10\n1\n\n\n168.0\n0.025\n1\n107.99\n0.20\n1.38\n1.8\n16.2\n1.36\n0\n\n\n23.0\n2.355\n0\n153.13\n1.59\n0.64\n0.9\n1.8\n1.38\n1\n\n\n620.0\n0.487\n1\n115.22\n2.06\n1.51\n0.6\n1.0\n2.70\n0\n\n\n328.0\n0.260\n1\n68.04\n0.36\n1.44\n0.6\n1.5\n1.64\n0\n\n\n380.0\n1.760\n1\n60.52\n-0.97\n-0.48\n0.1\n5.7\n1.58\n1\n\n\n2.9\n3.639\n1\n92.91\n-1.06\n-0.69\n0.7\n1.5\n0.96\n1\n\n\n64.0\n4.252\n0\n69.62\n-0.20\n-0.19\n2.3\n2.0\n1.40\n1\n\n\n13.2\n0.687\n1\n79.08\n0.02\n-2.29\n0.3\n2.0\n1.52\n1\n\n\n34.9\n2.070\n1\n47.97\n0.15\n0.49\n4.5\n0.0\n1.80\n1\n\n\n68.3\n0.709\n1\n37.91\n-0.21\n1.27\n0.0\n2.1\n1.20\n1\n\n\n1.0\n3.466\n1\n95.21\n-2.08\n0.00\n43.7\n6.0\n0.54\n1\n\n\n140.0\n3.896\n0\n56.77\n-0.07\n-1.80\n1.2\n1.6\n1.79\n1\n\n\n5.0\n3.830\n0\n32.33\n-0.32\n0.23\n0.7\n15.0\n0.85\n1\n\n\n49.0\n0.454\n1\n29.57\n0.27\n1.11\n0.0\n0.0\n2.26\n1\n\n\n68.0\n2.650\n1\n79.74\n-0.66\n-1.15\n0.1\n1.0\n1.30\n1\n\n\n1.6\n2.333\n1\n65.25\n2.78\n-0.47\n0.0\n5.0\n0.60\n1\n\n\n44.6\n3.754\n0\n57.79\n0.43\n0.19\n6.2\n13.0\n1.60\n1\n\n\n23.3\n1.270\n1\n69.88\n0.57\n-0.74\n0.7\n6.8\n1.40\n1\n\n\n6.4\n3.704\n0\n41.59\n1.78\n1.04\n0.2\n9.6\n0.82\n1\n\n\n15.0\n0.383\n0\n60.06\n-0.51\n-0.75\n0.5\n1.5\n1.54\n0\n\n\n96.0\n3.578\n0\n85.09\n-0.74\n-1.10\n0.3\n1.6\n1.80\n0\n\n\n4.9\n2.902\n1\n87.06\n0.27\n0.38\n7.8\n14.0\n0.72\n1\n\n\n58.2\n3.518\n0\n36.86\n-0.17\n0.64\n0.3\n1.0\n1.14\n1\n\n\n6.6\n3.485\n0\n35.94\n-0.88\n-0.23\n0.9\n12.8\n1.45\n1\n\n\n11.1\n2.119\n1\n86.57\n-1.43\n-0.33\n3.7\n24.5\n1.16\n1\n\n\n4.8\n3.425\n0\n70.28\n-0.79\n-0.36\n11.2\n1.5\n1.30\n1\n\n\n3.4\n3.198\n0\n24.41\n0.94\n2.20\n0.0\n5.6\n0.90\n1\n\n\n8.7\n3.110\n0\n70.44\n-0.31\n-1.10\n1.2\n8.5\n0.95\n1\n\n\n2.9\n3.209\n0\n49.45\n-0.21\n1.60\n0.4\n12.2\n0.58\n1\n\n\n14.8\n0.268\n0\n31.97\n0.52\n-0.26\n0.5\n1.0\n1.58\n1\n\n\n69.8\n3.014\n0\n90.61\n-1.91\n0.26\n0.0\n4.8\n1.66\n1\n\n\n123.0\n0.460\n1\n8.51\n-1.44\n-0.65\n0.0\n15.7\n1.60\n1\n\n\n121.0\n2.762\n1\n38.44\n-0.15\n0.09\n0.4\n2.3\n1.52\n1\n\n\n86.0\n1.306\n1\n55.06\n0.06\n-2.72\n0.3\n5.0\n1.56\n1\n\n\n3.1\n2.053\n1\n51.52\n-3.66\n-2.10\n0.0\n1.1\n0.10\n1\n\n\n74.0\n3.006\n0\n60.32\n3.42\n0.63\n0.0\n44.1\n2.00\n1\n\n\n13.6\n2.861\n0\n72.48\n0.25\n-1.09\n0.0\n0.0\n1.16\n1\n\n\n1.2\n1.227\n1\n57.86\n0.24\n1.33\n0.3\n0.1\n0.64\n1\n\n\n58.7\n2.264\n1\n36.96\n1.48\n0.62\n21.9\n87.7\n1.60\n1\n\n\n62.2\n0.841\n1\n82.89\n-2.26\n-2.77\n0.3\n0.0\n1.14\n1\n\n\n51.0\n2.765\n0\n61.70\n-0.46\n0.16\n35.8\n9.0\n1.28\n1\n\n\n30.1\n2.738\n0\n77.73\n-1.10\n-0.77\n6.0\n7.2\n1.18\n1\n\n\n8.7\n2.757\n0\n94.29\n-1.43\n-0.04\n0.1\n2.5\n1.26\n1\n\n\n3.9\n2.639\n0\n90.22\n1.07\n2.98\n51.7\n11.7\n0.58\n1\n\n\n2.9\n0.736\n1\n99.48\n-1.49\n-0.98\n1.8\n0.7\n1.42\n1\n\n\n81.0\n0.630\n1\n132.40\n-1.50\n-1.85\n0.0\n1.0\n2.10\n1\n\n\n8.1\n2.464\n0\n46.16\n-1.44\n-0.38\n39.5\n50.3\n0.70\n1\n\n\n5.8\n2.428\n0\n42.12\n1.04\n0.45\n4.5\n0.2\n1.25\n1\n\n\n27.2\n2.278\n0\n84.34\n-0.51\n0.23\n0.0\n1.5\n1.30\n1\n\n\n40.8\n0.843\n1\n16.56\n-1.63\n-0.34\n0.0\n0.1\n1.74\n1\n\n\n22.5\n2.344\n0\n48.07\n0.01\n-0.41\n1.0\n2.1\n1.68\n1\n\n\n13.2\n2.171\n0\n54.93\n0.07\n-1.14\n29.9\n0.0\n1.50\n1\n\n\n9.7\n2.133\n0\n18.96\n0.87\n0.68\n27.4\n11.9\n1.65\n1\n\n\n32.6\n2.220\n0\n29.21\n-0.66\n0.05\n3.3\n15.9\n1.20\n1\n\n\n8.1\n1.322\n1\n39.69\n0.12\n0.63\n57.4\n5.6\n1.26\n1\n\n\n113.0\n0.594\n1\n60.85\n0.43\n0.71\n0.0\n2.0\n2.28\n1\n\n\n19.4\n1.960\n0\n94.46\n1.26\n-0.95\n0.0\n5.0\n1.78\n1\n\n\n4.2\n1.927\n0\n43.93\n-0.56\n-0.09\n4.7\n0.0\n0.95\n1\n\n\n10.8\n1.832\n0\n21.98\n-0.70\n-0.22\n49.4\n11.5\n1.00\n1\n\n\n120.0\n0.099\n1\n90.25\n-0.73\n-1.43\n0.3\n0.0\n1.21\n1\n\n\n5.3\n1.714\n0\n33.25\n0.53\n1.40\n0.0\n0.0\n0.92\n1\n\n\n4.5\n1.697\n0\n79.67\n0.28\n0.10\n22.0\n0.1\n0.89\n1\n\n\n69.4\n1.624\n0\n52.96\n-0.93\n-1.08\n37.1\n17.9\n1.52\n1\n\n\n4.1\n1.566\n1\n75.17\n-1.02\n0.08\n8.4\n19.7\n1.50\n1\n\n\n4.2\n1.528\n0\n48.99\n-1.56\n-0.36\n0.3\n1.0\n0.76\n1\n\n\n61.0\n1.520\n0\n62.00\n0.71\n-0.99\n0.4\n0.0\n1.06\n1\n\n\n2.1\n1.481\n0\n81.64\n0.04\n0.48\n83.1\n64.4\n0.78\n1\n\n\n107.5\n1.410\n0\n105.00\n-0.38\n-0.15\n40.5\n5.0\n1.40\n1\n\n\n11.4\n0.003\n0\n63.08\n-1.65\n-0.34\n0.5\n1.5\n1.28\n1\n\n\n1.3\n1.259\n0\n98.30\n-1.03\n-0.55\n21.3\n68.7\n1.10\n1\n\n\n1.4\n1.205\n0\n49.68\n-1.23\n-2.55\n0.7\n0.3\n0.78\n1\n\n\n65.4\n1.180\n0\n79.11\n0.31\n1.01\n0.4\n10.1\n1.40\n1\n\n\n9.7\n0.572\n1\n66.76\n-2.46\n-3.05\n71.4\n19.7\n1.12\n1\n\n\n3.8\n1.120\n0\n97.18\n-0.33\n-0.16\n5.7\n4.0\n1.70\n1\n\n\n3.6\n1.103\n0\n20.47\n-0.93\n-0.42\n52.3\n8.2\n1.42\n1\n\n\n6.0\n0.498\n1\n23.69\n-2.72\n-2.21\n1.5\n40.5\n0.92\n1\n\n\n9.0\n0.991\n0\n52.27\n-0.91\n-0.35\n1.5\n4.9\n1.20\n1\n\n\n17.1\n0.991\n0\n74.55\n-1.86\n-1.18\n7.9\n3.1\n1.00\n1\n\n\n26.1\n0.994\n0\n86.70\n-0.16\n-0.34\n6.6\n5.7\n0.88\n1\n\n\n112.0\n0.898\n0\n57.43\n-0.12\n-0.99\n3.0\n1.7\n1.70\n1\n\n\n7.0\n0.969\n0\n37.91\n-1.79\n-1.61\n0.9\n1.1\n1.60\n1\n\n\n5.9\n0.895\n0\n90.09\n-1.06\n-0.96\n0.2\n2.0\n0.85\n1\n\n\n102.0\n0.893\n0\n56.54\n0.35\n-0.35\n53.0\n14.2\n1.24\n1\n\n\n24.4\n0.701\n0\n72.18\n-2.68\n-3.70\n2.9\n3.2\n1.46\n0\n\n\n14.1\n0.810\n0\n21.59\n-0.82\n-0.19\n13.3\n12.7\n1.20\n1\n\n\n6.5\n0.758\n0\n88.25\n-0.97\n-0.11\n6.3\n1.7\n0.75\n1\n\n\n\n\n\n\nNote que, para a análise dos dados de sobrevivência, será necessário sempre ter uma variável indicadora cens, em que:\n\ncens = 1 \\(\\rightarrow\\) observação que apresentou o evento de interesse.\ncens = 0 \\(\\rightarrow\\) observação censurada."
+  },
+  {
+    "objectID": "Aula1.html#dados-de-sinusite-em-pacientes-infectados-por-hiv",
+    "href": "Aula1.html#dados-de-sinusite-em-pacientes-infectados-por-hiv",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE SINUSITE EM PACIENTES INFECTADOS POR HIV",
+    "text": "DADOS DE SINUSITE EM PACIENTES INFECTADOS POR HIV\n\nDESCRIÇÃOBASE DE DADOS\n\n\n\n\nEstudo descritivo no departamento de otorrinolaringologia da UFMG.\n112 pacientes acompanhados.\nVariável resposta: tempo desde a primeira consulta até ocorrência de sinusite.\nVariáveis observadas: idade, sexo, grupo de risco, orientação sexual, uso de drogas injetáveis, uso de cocaína por aspiração.\n\n\n\n\n\n\n\n\n\n\n\n\npac\nid\nsex\ngrp\nti\ntf\ncens\ncd4\ncd8\nats\nud\nac\n…13\n\n\n\n\n1\n31\n0\n4\n0.0\n0.0\n1\nNA\nNA\n3\n2\n2\nNA\n\n\n2\n22\n1\n2\n0.0\n378.0\n0\n132\n715\n3\n2\n2\nNA\n\n\n3\n32\n0\n4\n0.0\n84.0\n1\n75\n315\n3\n2\n2\nNA\n\n\n4\n36\n0\n2\n0.0\n109.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n5\n34\n0\n2\n0.0\n134.0\n1\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n6\n29\n0\n2\n0.0\n338.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n7\n29\n1\n3\n0.0\n311.0\n0\n73\n590\n3\n2\n2\nNA\n\n\n8\n22\n0\n4\n0.0\n0.0\n0\n58\n775\n2\n2\n2\nNA\n\n\n9\n38\n0\n4\n0.0\n182.0\n1\nNA\nNA\n1\n2\n2\nNA\n\n\n10\n32\n1\n1\n0.0\n77.0\n1\nNA\nNA\n3\n2\n2\nNA\n\n\n11\n30\n1\n1\n0.0\n184.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n12\n33\n0\n2\n0.0\n543.0\n0\n310\na\n870\n1\n2\n2\n\n\n13\n35\n1\n1\n0.0\n286.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n14\n41\n0\n4\n0.0\n470.0\n1\n235\n746\n1\n2\n2\nNA\n\n\n15\n31\n0\n4\n0.0\n407.0\n1\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n16\n48\n1\n3\n0.0\n231.0\n1\nNA\nNA\n3\n2\n2\nNA\n\n\n17\n31\n0\n2\n0.0\n205.0\n0\n420\n725\nNA\nNA\nNA\nNA\n\n\n18\n21\n1\n1\n0.0\n637.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n19\n22\n1\n1\n0.0\n345.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n20\n32\n0\n1\n0.0\n638.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n21\n37\n1\n1\n0.0\n292.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n22\n25\n0\n1\n0.0\n294.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n23\nNA\n0\n2\n0.0\n471.5\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n23\nNA\n0\n4\n471.5\n507.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n24\n34\n1\n3\n0.0\n141.5\n0\n5\n200\n3\n2\n2\nNA\n\n\n24\n34\n1\n4\n141.5\n244.5\n1\n5\n200\n3\n2\n2\nNA\n\n\n25\n31\n0\n4\n0.0\n49.0\n1\nNA\nNA\n1\n1\n2\nNA\n\n\n26\n27\n0\n4\n0.0\n511.0\n0\nNA\nNA\n3\n1\n1\nNA\n\n\n27\n20\n0\n2\n0.0\n498.0\n0\n210\n606\n3\n2\n2\nNA\n\n\n27\n20\n0\n4\n498.0\n611.0\n1\n210\n606\n3\n2\n2\nNA\n\n\n28\n27\n0\n2\n0.0\n308.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n28\n27\n0\n4\n308.0\n371.0\n1\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n29\n31\n0\n4\n0.0\n681.0\n0\n30\n700\n3\n2\n2\nNA\n\n\n30\n48\n1\n2\n0.0\n703.0\n0\n610\n585\n3\n2\n2\nNA\n\n\n31\n41\n1\n1\n0.0\n660.0\n0\n417\n190\n3\n2\n2\nNA\n\n\n32\n23\n0\n1\n0.0\n661.0\n0\n527\n320\n2\n2\n2\nNA\n\n\n33\n22\n1\n2\n0.0\n492.0\n0\nNA\nNA\n3\n1\n1\nNA\n\n\n34\n40\n0\n3\n0.0\n42.0\n0\n48\n885\n2\n2\n2\nNA\n\n\n34\n40\n0\n4\n42.0\n583.0\n0\n48\n885\n2\n2\n2\nNA\n\n\n35\n53\n0\n2\n0.0\n276.5\n0\n200\n475\n3\n2\n2\nNA\n\n\n35\n53\n0\n3\n276.5\n611.0\n0\n200\n475\n3\n2\n2\nNA\n\n\n36\n44\n0\n4\n0.0\n35.0\n1\n5\n250\n2\n2\n2\nNA\n\n\n37\n25\n1\n1\n0.0\n562.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n38\n23\n0\n2\n0.0\n665.0\n0\n458\n420\nNA\nNA\nNA\nNA\n\n\n39\n32\n0\n4\n0.0\n294.0\n0\n53\n160\n2\n1\n1\nNA\n\n\n40\n20\n0\n2\n0.0\n0.0\n1\n278\n865\n1\n2\n2\nNA\n\n\n41\n32\n1\n2\n0.0\n644.0\n0\n218\n400\n3\n2\n2\nNA\n\n\n42\n23\n0\n2\n0.0\n266.0\n0\n360\n850\n1\n1\n1\nNA\n\n\n43\n25\n0\n2\n0.0\n273.0\n0\n55\n295\n2\n2\n2\nNA\n\n\n44\n47\n1\n4\n0.0\n525.0\n0\n250\n485\n3\n2\n2\nNA\n\n\n45\n52\n1\n2\n0.0\n143.5\n0\n130\n840\n3\n2\n2\nNA\n\n\n45\n52\n1\n4\n143.5\n619.0\n0\n130\n840\n3\n2\n2\nNA\n\n\n46\n32\n0\n2\n0.0\n94.5\n0\n173\n1070\n3\n2\n2\nNA\n\n\n46\n32\n0\n3\n94.5\n617.0\n0\n173\n1070\n3\n2\n2\nNA\n\n\n47\n26\n0\n2\n0.0\n634.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n48\n30\n0\n3\n0.0\n274.0\n0\n12.5\n235\nNA\nNA\nNA\nNA\n\n\n48\n30\n0\n4\n274.0\n315.0\n0\n12.5\n235\nNA\nNA\nNA\nNA\n\n\n49\n37\n1\n2\n0.0\n609.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n50\n40\n0\n2\n0.0\n598.0\n0\n373\n420\n3\n2\n2\nNA\n\n\n51\n35\n0\n2\n0.0\n548.0\n0\n305\n715\n1\n2\n2\nNA\n\n\n52\n26\n1\n2\n0.0\n589.0\n0\n295\n1145\n3\n2\n2\nNA\n\n\n53\n26\n0\n2\n0.0\n527.0\n0\n268\n405\n2\n2\n2\nNA\n\n\n54\n28\n1\n2\n0.0\n597.0\n0\n187\n255\n3\n2\n2\nNA\n\n\n55\n24\n0\n2\n0.0\n323.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n56\n35\n1\n4\n0.0\n415.0\n1\n8\n140\n3\n2\n2\nNA\n\n\n57\n24\n1\n2\n0.0\n469.5\n1\n185\n670\n3\n2\n2\nNA\n\n\n58\n38\n0\n1\n0.0\n330.0\n0\n507\n550\n1\n2\n2\nNA\n\n\n59\n20\n0\n1\n0.0\n499.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n60\n27\n0\n4\n0.0\n199.5\n1\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n61\n23\n0\n2\n0.0\n425.5\n0\n213\n1055\n3\n2\n2\nNA\n\n\n61\n23\n0\n3\n425.5\n478.0\n0\n213\n1055\n3\n2\n2\nNA\n\n\n62\n28\n0\n3\n0.0\n101.5\n1\nNA\nNA\n2\n1\n1\nNA\n\n\n63\n55\n1\n4\n0.0\n0.0\n1\n135\n595\n3\n2\n2\nNA\n\n\n64\n40\n0\n2\n0.0\n42.0\n0\n50\n480\n2\n2\n2\nNA\n\n\n64\n40\n0\n3\n42.0\n140.0\n0\n50\n480\n2\n2\n2\nNA\n\n\n64\n40\n0\n4\n140.0\n310.5\n1\n50\n480\n2\n2\n2\nNA\n\n\n65\n42\n0\n4\n0.0\n455.0\n0\n17.5\n340\n3\n2\n2\nNA\n\n\n66\n19\n0\n2\n0.0\n444.0\n0\n900\n1085\n1\n2\n2\nNA\n\n\n67\n34\n0\n4\n0.0\n98.0\n0\n5\n227\n1\n2\n2\nNA\n\n\n68\n29\n0\n3\n0.0\n204.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n68\n29\n0\n4\n204.0\n248.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n69\n29\n0\n3\n0.0\n147.0\n1\n327\n1505\nNA\nNA\nNA\nNA\n\n\n70\n49\n0\n1\n0.0\n283.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n71\n50\n0\n4\n0.0\n0.0\n1\n67.5\n950\n3\n2\n2\nNA\n\n\n72\n37\n0\n1\n0.0\n351.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n73\n35\n0\n2\n0.0\n365.0\n0\n275\n1210\n1\n2\n2\nNA\n\n\n74\n27\n1\n2\n0.0\n329.0\n0\n427\n1315\n3\n2\n2\nNA\n\n\n75\n26\n0\n3\n0.0\n52.5\n1\n72\n430\n2\n2\n2\nNA\n\n\n76\n33\n0\n4\n0.0\n59.5\n1\n12.5\n85\n3\n2\n2\nNA\n\n\n77\n22\n0\n1\n0.0\n367.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n78\n37\n0\n3\n0.0\n0.0\n1\n85\n1215\n2\n2\n2\nNA\n\n\n79\n47\n0\n2\n0.0\n371.0\n0\n127\n790\n1\n2\n2\nNA\n\n\n80\n25\n0\n1\n0.0\n306.5\n1\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n81\n23\n0\n2\n0.0\n343.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n82\n35\n1\n4\n0.0\n278.5\n1\nNA\nNA\n3\n2\n2\nNA\n\n\n83\n34\n0\n4\n0.0\n325.0\n0\n20\n97\nNA\nNA\nNA\nNA\n\n\n84\n26\n0\n2\n0.0\n330.0\n0\n243\n705\nNA\nNA\nNA\nNA\n\n\n85\n35\n0\n1\n0.0\n260.0\n0\nNA\nNA\n2\n2\n2\nNA\n\n\n86\n24\n0\n1\n0.0\n304.0\n0\nNA\nNA\n2\n1\n1\nNA\n\n\n87\n31\n0\n3\n0.0\n158.5\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n87\n31\n0\n4\n158.5\n267.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n88\n32\n1\n2\n0.0\n297.0\n0\n563\n975\n3\n2\n2\nNA\n\n\n89\n36\n0\n2\n0.0\n297.0\n0\n327\n525\nNA\nNA\nNA\nNA\n\n\n90\n53\n0\n3\n0.0\n275.0\n0\n38\n290\n1\n2\n2\nNA\n\n\n91\n31\n1\n4\n0.0\n13.0\n0\n68\n425\n3\n1\n1\nNA\n\n\n92\n22\n0\n2\n0.0\n125.5\n0\n370\n905\n1\n2\n2\nNA\n\n\n92\n22\n0\n3\n125.5\n254.5\n1\n370\n905\n1\n2\n2\nNA\n\n\n93\n40\n0\n3\n0.0\n43.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n93\n40\n0\n4\n43.0\n259.0\n0\nNA\nNA\n1\n2\n2\nNA\n\n\n94\n37\n0\n2\n0.0\n295.0\n0\n290\n805\n1\n2\n2\nNA\n\n\n95\n45\n0\n3\n0.0\n303.0\n0\n35\n410\n1\n2\n2\nNA\n\n\n96\n22\n1\n2\n0.0\n290.0\n0\n368\n625\n3\n2\n2\nNA\n\n\n97\n38\n0\n4\n0.0\n0.0\n1\n18\n233\n2\n2\n2\nNA\n\n\n98\n27\n1\n2\n0.0\n295.0\n0\nNA\nNA\n3\n2\n2\nNA\n\n\n99\n35\n0\n4\n0.0\n209.5\n1\n670\n900\n3\n2\n2\nNA\n\n\n100\n31\n0\n2\n0.0\n139.0\n0\n50\n560\n2\n1\n2\nNA\n\n\n100\n31\n0\n4\n139.0\n283.0\n0\n50\n560\n2\n1\n2\nNA\n\n\n101\n23\n0\n2\n0.0\n242.0\n0\n413\n810\nNA\nNA\nNA\nNA\n\n\n102\n49\n0\n3\n0.0\n125.5\n0\n42.5\n320\n2\n2\n2\nNA\n\n\n102\n49\n0\n4\n125.5\n295.0\n0\n42.5\n320\n2\n2\n2\nNA\n\n\n103\n27\n0\n2\n0.0\n247.0\n0\n437\n850\n3\n2\n2\nNA\n\n\n104\n38\n0\n4\n0.0\n0.0\n1\n20\n155\nNA\nNA\nNA\nNA\n\n\n105\n25\n0\n1\n0.0\n267.0\n0\n290\n173\nNA\nNA\nNA\nNA\n\n\n106\n40\n0\n2\n0.0\n0.0\n1\n270\n1920\n1\n2\n2\nNA\n\n\n107\n26\n0\n4\n0.0\n19.0\n1\n193\n770\nNA\nNA\nNA\nNA\n\n\n108\n59\n0\n1\n0.0\n269.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n109\n30\n1\n2\n0.0\n130.5\n0\n277\n1530\n3\n2\n2\nNA\n\n\n109\n30\n1\n3\n130.5\n247.0\n0\n277\n1530\n3\n2\n2\nNA\n\n\n109\n30\n1\n4\n247.0\n296.0\n0\n277\n1530\n3\n2\n2\nNA\n\n\n110\n42\n0\n2\n0.0\n247.0\n0\n257\n510\n2\n2\n2\nNA\n\n\n111\n24\n0\n2\n0.0\n86.5\n0\n57\n170\nNA\nNA\nNA\nNA\n\n\n111\n24\n0\n3\n86.5\n192.5\n1\n57\n170\nNA\nNA\nNA\nNA\n\n\n112\n24\n0\n2\n0.0\n226.0\n0\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n\n\n\n\nNote que, para a análise dos dados de sobrevivência, será necessário sempre ter uma variável indicadora cens, em que:\n\ncens = 1 \\(\\rightarrow\\) observação que apresentou o evento de interesse.\ncens = 0 \\(\\rightarrow\\) observação censurada."
+  },
+  {
+    "objectID": "Aula1.html#a-importância-da-confiabilidade",
+    "href": "Aula1.html#a-importância-da-confiabilidade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A IMPORTÂNCIA DA CONFIABILIDADE",
+    "text": "A IMPORTÂNCIA DA CONFIABILIDADE\n\n\nConfiabilidade é uma área da estatística estreitamente relacionada à Análise de Sobrevivência, mas aplicada a produtos, sistemas e componentes.\nInvestiga quanto tempo um item funciona antes de falhar, fornecendo informações para manutenção, segurança e tomada de decisão.\nCrescimento associado a:\n\nindústria (aeronáutica, automotiva, eletrônica);\nengenharia de sistemas complexos;\nmétodos probabilísticos e computacionais."
+  },
+  {
+    "objectID": "Aula1.html#introdução-1",
+    "href": "Aula1.html#introdução-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\nIII\n\n\n\n\nNa confiabilidade, o objeto de estudo é um sistema, componente ou dispositivo, e a variável resposta é o tempo até a falha.\nExemplos de eventos de interesse:\n\nQuebra de um equipamento industrial;\nFalha de um motor de aeronave;\nMal funcionamento de um dispositivo eletrônico.\n\n\n\n\n\n\n\nAssim, como em análise de sobrevivência, em confiabilidade os dados censurados são comuns, por exemplo:\n\nEquipamento ainda funcionando ao final do teste;\nInterrupção do teste por razões externas;\nRetirada do componente antes da falha.\n\nMesmo censurados, esses dados trazem informação valiosa sobre a vida útil."
+  },
+  {
+    "objectID": "Aula1.html#planejamento-dos-estudos-em-confiabilidade",
+    "href": "Aula1.html#planejamento-dos-estudos-em-confiabilidade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PLANEJAMENTO DOS ESTUDOS EM CONFIABILIDADE",
+    "text": "PLANEJAMENTO DOS ESTUDOS EM CONFIABILIDADE\n\n\nAssim como em estudos clínicos, o planejamento é fundamental para garantir dados confiáveis.\nEtapas principais:\n\nFormulação da hipótese: determinar o que será estudado (ex.: vida útil de um motor, falha de um componente eletrônico).\nDefinição do evento de interesse: falha completa, degradação crítica ou mau funcionamento parcial.\nDefinição do tempo zero: início do teste ou operação do equipamento.\nDeterminação de variáveis explicativas: condições ambientais, carga de trabalho, tipo de material.\nColeta e registro sistemático: controlar o acompanhamento e registrar eventos e censuras.\nEstratégias para censura: planejar testes interrompidos ou itens ainda funcionando ao final do estudo.\n\nUm bom planejamento permite que as análises estatísticas estimem corretamente a confiabilidade e vida útil dos itens."
+  },
+  {
+    "objectID": "Aula1.html#tipos-de-estudos-em-confiabilidade",
+    "href": "Aula1.html#tipos-de-estudos-em-confiabilidade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TIPOS DE ESTUDOS EM CONFIABILIDADE",
+    "text": "TIPOS DE ESTUDOS EM CONFIABILIDADE\n\n\nEnsaios de vida em uso (field data)\nAcompanha-se o tempo até falha de unidades em condições reais de operação (coorte natural de equipamentos).\nEnsaios de vida em bancada (life testing)\nUnidades testadas em laboratório, sob condições controladas, até falha ou censura; podem ser com ou sem estresse acelerado.\nTestes de vida acelerada (accelerated life tests)\nAplica-se estresse (temperatura, carga, vibração, tensão elétrica etc.) para induzir falha rapidamente; extrapola-se para condições normais usando modelos como Arrhenius, Eyring, log-linear.\nTestes de vida por amostragem (acceptance/reliability demonstration tests)\nPlaneja-se experimento (n de unidades, tempo de teste) para demonstrar que a confiabilidade atinge certo nível (ex.: MTBF mínimo, probabilidade de sobreviver até T maior que p) com dados de amostra de aceitação.\nEstudos de reparo e renovação (sistemas reparáveis)\nAcompanham processos de falha-reparo ao longo do tempo, usando processos pontuais, modelos NHPP, renovação etc.; análogos a eventos recorrentes em sobrevivência.\nEstudos de confiabilidade de sistemas (series/parallel)\nAvalia-se confiabilidade de sistemas compostos (séries, paralelo, k-de-n, redes) com dados de falha de componentes, combinando ensaios de bancada, dados de campo e diagramas de blocos."
+  },
+  {
+    "objectID": "Aula1.html#análise-estatística-dos-dados-1",
+    "href": "Aula1.html#análise-estatística-dos-dados-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ANÁLISE ESTATÍSTICA DOS DADOS",
+    "text": "ANÁLISE ESTATÍSTICA DOS DADOS\n\n\nNos textos de confiabilidade e engenharia de sistemas, grande parte do esforço concentra-se na etapa de análise estatística dos dados de falha.\n\nIsso ocorre mesmo reconhecendo a importância de um bom planejamento e coleta de dados de vida útil, fundamentais para garantir resultados confiáveis.\n\nNa Análise de Confiabilidade, essa etapa inclui aspectos específicos:\n\ntratamento de censura (unidades que não falham durante o período de observação);\n\ncálculo de funções de sobrevivência ou confiabilidade (ex.: Kaplan-Meier, Weibull);\n\ncomparação de grupos ou condições de teste com métodos apropriados (ex.: testes log-rank, frailty models);\n\nmodelagem de fatores que influenciam o tempo até falha (ex.: regressão de Cox, modelos paramétricos de vida útil).\n\n\nNesta disciplina, a maior parte do conteúdo será dedicada a essa etapa, mostrando como transformar os dados de falha em evidências sobre a confiabilidade de componentes e sistemas."
+  },
+  {
+    "objectID": "Aula1.html#exemplos-de-bases-de-dados-1",
+    "href": "Aula1.html#exemplos-de-bases-de-dados-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DE BASES DE DADOS",
+    "text": "EXEMPLOS DE BASES DE DADOS\n\n\nAgora, serão apresentados exemplos de bases de dados utilizadas em estudos de Análise de Sobrevivência.\n\nO objetivo é que vocês se familiarizem com os tipos de dados disponíveis e como eles podem ser utilizados para análises.\n\nOs exemplos incluem dados de:\n\ncoortes clínicas;\n\nensaios clínicos aleatorizados;\n\nregistros hospitalares e populações acompanhadas longitudinalmente."
+  },
+  {
+    "objectID": "Aula1.html#dados-de-ventiladores",
+    "href": "Aula1.html#dados-de-ventiladores",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE VENTILADORES",
+    "text": "DADOS DE VENTILADORES\n\nDESCRIÇÃOBASE DE DADOS\n\n\n\n\nOrigem: Dados de confiabilidade de ventiladores (fans) utilizados em motores a diesel\n(Meeker & Escobar, 1998)\nObjetivo: Estudar o tempo até falha de ventiladores em operação e caracterizar seu comportamento de confiabilidade\nVariáveis principais:\n\nhours → tempo de operação até falha ou censura (em horas)\nstatus → indicador de falha (1 = falhou, 0 = censurado)\n\nCaracterísticas do experimento:\n\nDados observacionais de confiabilidade\nFalhas registradas ao longo do tempo de uso\nPresença de censura à direita, quando unidades não falharam durante o período de acompanhamento\n\nAplicações:\n\nEstimação de funções de confiabilidade e sobrevivência\n\nAjuste de modelos paramétricos de vida útil (ex.: Weibull)\n\nAnálise de falhas em componentes mecânicos\n\nComparação com modelos clássicos de análise de sobrevivência\n\n\n\n\n\n\n\n\n\n\n\n\n\nhours\nstatus\n\n\n\n\n450\n1\n\n\n460\n0\n\n\n1150\n1\n\n\n1150\n1\n\n\n1560\n0\n\n\n1600\n1\n\n\n1660\n0\n\n\n1850\n0\n\n\n1850\n0\n\n\n1850\n0\n\n\n1850\n0\n\n\n1850\n0\n\n\n2030\n0\n\n\n2030\n0\n\n\n2030\n0\n\n\n2070\n1\n\n\n2070\n1\n\n\n2080\n1\n\n\n2200\n0\n\n\n3000\n0\n\n\n3000\n0\n\n\n3000\n0\n\n\n3000\n0\n\n\n3100\n1\n\n\n3200\n0\n\n\n3450\n1\n\n\n3750\n0\n\n\n3750\n0\n\n\n4150\n0\n\n\n4150\n0\n\n\n4150\n0\n\n\n4150\n0\n\n\n4300\n0\n\n\n4300\n0\n\n\n4300\n0\n\n\n4300\n0\n\n\n4600\n1\n\n\n4850\n0\n\n\n4850\n0\n\n\n4850\n0\n\n\n4850\n0\n\n\n5000\n0\n\n\n5000\n0\n\n\n5000\n0\n\n\n6100\n0\n\n\n6100\n1\n\n\n6100\n0\n\n\n6100\n0\n\n\n6300\n0\n\n\n6450\n0\n\n\n6450\n0\n\n\n6700\n0\n\n\n7450\n0\n\n\n7800\n0\n\n\n7800\n0\n\n\n8100\n0\n\n\n8100\n0\n\n\n8200\n0\n\n\n8500\n0\n\n\n8500\n0\n\n\n8500\n0\n\n\n8750\n0\n\n\n8750\n1\n\n\n8750\n0\n\n\n9400\n0\n\n\n9900\n0\n\n\n10100\n0\n\n\n10100\n0\n\n\n10100\n0\n\n\n11500\n0\n\n\n\n\n\n\nNote que, para a análise dos dados de sobrevivência, será necessário sempre ter uma variável indicadora cens, em que:\n\ncens = 1 \\(\\rightarrow\\) observação que apresentou o evento de interesse.\ncens = 0 \\(\\rightarrow\\) observação censurada."
+  },
+  {
+    "objectID": "Aula1.html#dados-de-capacitores",
+    "href": "Aula1.html#dados-de-capacitores",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE CAPACITORES",
+    "text": "DADOS DE CAPACITORES\n\nDESCRIÇÃOBASE DE DADOS\n\n\n\n\nOrigem: Experimentos de confiabilidade de capacitores de vidro sob diferentes condições de estresse\n(Meeker & Escobar, 1998)\nObjetivo: Estudar o tempo até falha de capacitores e analisar efeitos de temperatura e voltagem\nVariáveis principais:\n\ntime → tempo até falha ou censura\nstatus → indicador de falha (1 = falhou, 0 = censurado)\ntemperature → temperatura de teste (°C)\nvoltage → tensão aplicada durante o teste\n\nCaracterísticas do experimento:\n\nTestes realizados em laboratório\nCada combinação de temperatura e voltagem tinha múltiplas unidades\nObservações censuradas quando nem todas as unidades falharam até o fim do teste\n\nAplicações:\n\nAjuste de modelos paramétricos de confiabilidade (Weibull, log-normal)\n\nAnálise de efeitos de fatores de estresse via modelos acelerados\n\nConstrução de curvas de confiabilidade e comparação entre condições de teste\n\n\n\n\n\n\n\n\n\n\n\n\n\ntemperature\nvoltage\ntime\nstatus\n\n\n\n\n170\n200\n439\n1\n\n\n170\n200\n904\n1\n\n\n170\n200\n1092\n1\n\n\n170\n200\n1105\n1\n\n\n170\n250\n572\n1\n\n\n170\n250\n690\n1\n\n\n170\n250\n904\n1\n\n\n170\n250\n1090\n1\n\n\n170\n300\n315\n1\n\n\n170\n300\n315\n1\n\n\n170\n300\n439\n1\n\n\n170\n300\n628\n1\n\n\n170\n350\n258\n1\n\n\n170\n350\n258\n1\n\n\n170\n350\n347\n1\n\n\n170\n350\n588\n1\n\n\n180\n200\n959\n1\n\n\n180\n200\n1065\n1\n\n\n180\n200\n1065\n1\n\n\n180\n200\n1087\n1\n\n\n180\n250\n216\n1\n\n\n180\n250\n315\n1\n\n\n180\n250\n455\n1\n\n\n180\n250\n473\n1\n\n\n180\n300\n241\n1\n\n\n180\n300\n315\n1\n\n\n180\n300\n332\n1\n\n\n180\n300\n380\n1\n\n\n180\n350\n241\n1\n\n\n180\n350\n241\n1\n\n\n180\n350\n435\n1\n\n\n180\n350\n455\n1\n\n\n170\n200\n1105\n0\n\n\n170\n200\n1105\n0\n\n\n170\n200\n1105\n0\n\n\n170\n200\n1105\n0\n\n\n170\n250\n1090\n0\n\n\n170\n250\n1090\n0\n\n\n170\n250\n1090\n0\n\n\n170\n250\n1090\n0\n\n\n170\n300\n628\n0\n\n\n170\n300\n628\n0\n\n\n170\n300\n628\n0\n\n\n170\n300\n628\n0\n\n\n170\n350\n588\n0\n\n\n170\n350\n588\n0\n\n\n170\n350\n588\n0\n\n\n170\n350\n588\n0\n\n\n180\n200\n1087\n0\n\n\n180\n200\n1087\n0\n\n\n180\n200\n1087\n0\n\n\n180\n200\n1087\n0\n\n\n180\n250\n473\n0\n\n\n180\n250\n473\n0\n\n\n180\n250\n473\n0\n\n\n180\n250\n473\n0\n\n\n180\n300\n380\n0\n\n\n180\n300\n380\n0\n\n\n180\n300\n380\n0\n\n\n180\n300\n380\n0\n\n\n180\n350\n455\n0\n\n\n180\n350\n455\n0\n\n\n180\n350\n455\n0\n\n\n180\n350\n455\n0\n\n\n\n\n\n\nNote que, para a análise dos dados de sobrevivência, será necessário sempre ter uma variável indicadora cens, em que:\n\ncens = 1 \\(\\rightarrow\\) observação que apresentou o evento de interesse.\ncens = 0 \\(\\rightarrow\\) observação censurada."
+  },
+  {
+    "objectID": "Aula1.html#sobrevivência-e-confiabilidade-duas-áreas-um-mesmo-arcabouço",
+    "href": "Aula1.html#sobrevivência-e-confiabilidade-duas-áreas-um-mesmo-arcabouço",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SOBREVIVÊNCIA E CONFIABILIDADE: DUAS ÁREAS, UM MESMO ARCABOUÇO",
+    "text": "SOBREVIVÊNCIA E CONFIABILIDADE: DUAS ÁREAS, UM MESMO ARCABOUÇO\n\n\nA análise de sobrevivência e a análise de confiabilidade compartilham a mesma estrutura estatística fundamental.\nA principal diferença está no contexto de aplicação:\n\nmedicina e ciências da saúde (tempo até evento clínico);\nengenharia e indústria (tempo até falha de componentes ou sistemas).\n\nEm ambos os casos, o interesse central é modelar o tempo até a ocorrência de um evento."
+  },
+  {
+    "objectID": "Aula1.html#similaridades-fundamentais",
+    "href": "Aula1.html#similaridades-fundamentais",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SIMILARIDADES FUNDAMENTAIS",
+    "text": "SIMILARIDADES FUNDAMENTAIS\n\n\nAmbas as áreas lidam com dados censurados, exigindo métodos estatísticos específicos.\nA variável resposta é sempre um tempo positivo, o que restringe o uso de distribuições clássicas.\nDistribuições comumente utilizadas:\n\nExponencial\n\nWeibull\n\nGama\n\nLognormal\n\n\nA distribuição Normal é raramente apropriada nesse contexto."
+  },
+  {
+    "objectID": "Aula1.html#o-que-realmente-interessa-na-análise",
+    "href": "Aula1.html#o-que-realmente-interessa-na-análise",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE REALMENTE INTERESSA NA ANÁLISE",
+    "text": "O QUE REALMENTE INTERESSA NA ANÁLISE\n\n\nParâmetros tradicionais como média e desvio padrão não são o foco principal.\nO interesse está em quantidades funcionais, como:\n\nFunção de sobrevivência / confiabilidade;\nProbabilidade de sobreviver além de um tempo T;\nTempo mediano até o evento;\nTaxa de falha (hazard).\n\nO objetivo é entender quando e com que risco o evento ocorre."
+  },
+  {
+    "objectID": "Aula1.html#vocabulário-médico-engenharia",
+    "href": "Aula1.html#vocabulário-médico-engenharia",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VOCABULÁRIO: MÉDICO × ENGENHARIA",
+    "text": "VOCABULÁRIO: MÉDICO × ENGENHARIA\n\n\nEvento:\n\nMedicina → óbito, recaída, progressão da doença\nEngenharia → falha, quebra, mau funcionamento\n\nSobrevivência:\n\nMedicina → probabilidade de permanecer vivo\nEngenharia → probabilidade de o sistema continuar operando\n\nCensura:\n\nPaciente não apresentou evento até o fim do estudo\nEquipamento não falhou até o fim do teste"
+  },
+  {
+    "objectID": "Aula1.html#extrapolações-e-previsões",
+    "href": "Aula1.html#extrapolações-e-previsões",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXTRAPOLAÇÕES E PREVISÕES",
+    "text": "EXTRAPOLAÇÕES E PREVISÕES\n\n\nMuitas inferências exigem extrapolar além do período observado:\n\nEstimar a proporção de pacientes vivos em 5 anos com base em estudo de 3 anos;\nEstimar a proporção de produtos que falharão após 900 horas com testes de 400 horas;\nEstimar o tempo em que 1% de um componente falhará a 50°C usando dados coletados a 85°C.\n\nEssas situações mostram que o problema estatístico é o mesmo, mudando apenas o contexto."
+  },
+  {
+    "objectID": "Aula1.html#modelos-como-ferramentas-de-extrapolação",
+    "href": "Aula1.html#modelos-como-ferramentas-de-extrapolação",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MODELOS COMO FERRAMENTAS DE EXTRAPOLAÇÃO",
+    "text": "MODELOS COMO FERRAMENTAS DE EXTRAPOLAÇÃO\n\n\nA extrapolação depende fortemente do modelo estatístico assumido.\nPequenas diferenças no ajuste podem gerar grandes diferenças nas previsões.\nPor isso:\n\nescolha do modelo é crítica;\ninterpretação deve ser cuidadosa;\nvalidação é essencial."
+  },
+  {
+    "objectID": "Aula1.html#implementação-computacional",
+    "href": "Aula1.html#implementação-computacional",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "IMPLEMENTAÇÃO COMPUTACIONAL",
+    "text": "IMPLEMENTAÇÃO COMPUTACIONAL\n\n\nA presença de censura torna inviável, em muitos casos, soluções analíticas simples.\nA estimação de parâmetros geralmente envolve:\n\nmétodos numéricos;\nmaximização da verossimilhança;\nalgoritmos iterativos.\n\nTanto em sobrevivência quanto em confiabilidade, o uso de software estatístico é indispensável.\nFerramentas essenciais:\n\nR: pacotes survival, flexsurv, survminer, reliability.\nPython: lifelines, scikit-survival."
+  },
+  {
+    "objectID": "Aula1.html#a-disciplina",
+    "href": "Aula1.html#a-disciplina",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A DISCIPLINA",
+    "text": "A DISCIPLINA\n\n\nA literatura é mais abundante em análise de sobrevivência, especialmente no contexto médico.\nA disciplina será apresentada sob esse contexto, por motivos históricos e pedagógicos.\nSempre que possível, serão destacados os paralelos diretos com confiabilidade.\nMétodos são essencialmente os mesmos — mudam:\n\na linguagem;\nos exemplos;\no campo de aplicação."
+  },
+  {
+    "objectID": "Aula1.html#outras-áreas-de-aplicação",
+    "href": "Aula1.html#outras-áreas-de-aplicação",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "OUTRAS ÁREAS DE APLICAÇÃO",
+    "text": "OUTRAS ÁREAS DE APLICAÇÃO\n\n\nDados censurados e eventos no tempo aparecem em muitas áreas:\n\nEconomia: tempo até falência de empresas;\nEducação: tempo até evasão escolar;\nCriminalística: tempo até reincidência;\nMercado de trabalho: tempo até desemprego, promoção ou aposentadoria;\nDemografia: nascimentos, mortes, migração.\n\nA análise de sobrevivência e confiabilidade oferece um arcabouço unificado para todos esses problemas."
+  },
+  {
+    "objectID": "Aula3.html#introdução-1",
+    "href": "Aula3.html#introdução-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nPara descrever adequadamente o tempo de ocorrência até a ocorrência de um evento de interesse, a Análise de Sobrevivência e Confiabilidade utilizam um conjunto de funções fundamentais.\nEssas funções permitem:\n\nDescrever o comportamento do tempo até a ocorrência do evento;\nQuantificar riscos e probabilidades ao longo do tempo;\nResponder perguntas práticas em contextos médicos e de engenharia.\n\nTodas essas funções são derivadas da distribuição do tempo até o evento e estão matematicamente interligadas.\nA partir delas, será possível realizar descrição, comparação entre grupos e inferência estatística."
+  },
+  {
+    "objectID": "Aula3.html#motivação-i-dados-de-aids",
+    "href": "Aula3.html#motivação-i-dados-de-aids",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MOTIVAÇÃO I: DADOS DE AIDS",
+    "text": "MOTIVAÇÃO I: DADOS DE AIDS\n\n\nUm estudo clínico teve 50 pacientes acompanhados por quatro anos para estudar a sobrevivência após o diagnóstico de AIDS.\nNo caso da AIDS, a probabilidade de morte é uma função que depende do tempo desde o diagnóstico.\nEm Análise de Sobrevivência, é necessário acomodar também os problemas nos quais a ocorrência do evento de interesse não é constante ao longo do tempo."
+  },
+  {
+    "objectID": "Aula3.html#motivação-ii-dados-de-dispositivos",
+    "href": "Aula3.html#motivação-ii-dados-de-dispositivos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MOTIVAÇÃO II: DADOS DE DISPOSITIVOS",
+    "text": "MOTIVAÇÃO II: DADOS DE DISPOSITIVOS\n\n\nConsidere que 35 dispositivos foram colocados sob teste durante 2.000 horas.\nAssim como no exemplo anterior, a falha não é constante ao longo do tempo.\nEm Confiabilidade, é necessário acomodar também os problemas nos quais a ocorrência do evento de interesse não é constante ao longo do tempo."
+  },
+  {
+    "objectID": "Aula3.html#perguntas-de-interesse",
+    "href": "Aula3.html#perguntas-de-interesse",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PERGUNTAS DE INTERESSE",
+    "text": "PERGUNTAS DE INTERESSE\n\n\nSuponha o interesse de responder às seguintes perguntas:\n\nQual a probabilidade de um paciente diagnosticado com AIDS falecer em até três anos após o diagnóstico?\nQual a probabilidade de um paciente sobreviver por mais de dois anos após o diagnóstico?\nQual o número esperado de óbitos em um estudo clínico de pacientes acompanhados por cinco anos?\nQual o tempo mediano de sobrevivência dos pacientes com AIDS?\nQual a probabilidade de um dispositivo falhar após 1000 horas?\nSe a garantia é de 500 horas, qual a probabilidade de falha nesse período?\nQual o número esperado de falhas em um estudo acompanhado por 4000 horas?\nQual o tempo mediano de falha?"
+  },
+  {
+    "objectID": "Aula3.html#funções-básicas",
+    "href": "Aula3.html#funções-básicas",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÕES BÁSICAS",
+    "text": "FUNÇÕES BÁSICAS\n\n\nPara responder a todas as questões anteriores, vamos utilizar as funções básicas da Análise de Sobrevivência e Confiabilidade.\nAs funções vistas nesta aula serão:\n\nFunção Densidade de Probabilidade\nFunção de Sobrevivência (Confiabilidade)\nPercentis\nFunção de risco\nFunção de risco acumulado\nTempo médio\nTempo médio residual\n\nEssas funções possuem a mesma estrutura matemática em Análise de Sobrevivência e Confiabilidade.\nTodas essas funções devem ser atribuídas a uma variável aleatória."
+  },
+  {
+    "objectID": "Aula3.html#notação-para-o-tempo",
+    "href": "Aula3.html#notação-para-o-tempo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "NOTAÇÃO PARA O TEMPO",
+    "text": "NOTAÇÃO PARA O TEMPO\n\n\nConsidere a variável aleatória não negativa e contínua \\(T\\), que representa o\ntempo até a ocorrência do evento de interesse.\n\nJá sabemos que o evento de interesse pode ser, por exemplo, morte, recidiva, remissão, falha, entre outros.\nA letra \\(t\\) representa um valor específico (fixo) dessa variável.\n\nO objeto central da Análise de Sobrevivência e Confiabilidade é a distribuição do tempo até a ocorrência do evento de interesse.\nA partir dessa distribuição, são definidas as funções básicas de Análise de Sobrevivência e Confiabilidade.\nOs dados observados nos estudos fornecem a base para descrever essa distribuição e realizar inferência estatística sobre o processo ao longo do tempo."
+  },
+  {
+    "objectID": "Aula3.html#histogramas-com-frequência-absoluta",
+    "href": "Aula3.html#histogramas-com-frequência-absoluta",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "HISTOGRAMAS COM FREQUÊNCIA ABSOLUTA",
+    "text": "HISTOGRAMAS COM FREQUÊNCIA ABSOLUTA\n\n\n\n\nConsidere o seguinte histograma:\n\n\n\n\nNeste histograma com intervalos desiguais, a frequência absoluta não ajuda na comparação das classes.\nNa classe (2,5], a frequência observada é maior, mas essa classe possui amplitude diferente das demais.\nÉ preciso uma medida que pondere pela amplitude da classe, nesses casos."
+  },
+  {
+    "objectID": "Aula3.html#relembrando-a-densidade",
+    "href": "Aula3.html#relembrando-a-densidade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELEMBRANDO A DENSIDADE",
+    "text": "RELEMBRANDO A DENSIDADE\n\n\nAssim, para cada intervalo, define-se a densidade como:\n\n\\[\n\\text{Densidade} = \\frac{\\text{Frequência Relativa}}{\\text{Amplitude}}\n\\]\n\nA frequência relativa é uma probabilidade.\nTem-se, agora, os seguintes valores:\n\n\n\n\nIntervalo\nFrequência Relativa\nAmplitude\nDensidade\n\n\n\n\n[0,1)\n0,12\n1\n0,12\n\n\n[1,2)\n0,26\n1\n0,26\n\n\n[2,5)\n0,591\n3\n0,197\n\n\n[5,15]\n0,027\n10\n0,003"
+  },
+  {
+    "objectID": "Aula3.html#histograma-com-densidade",
+    "href": "Aula3.html#histograma-com-densidade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "HISTOGRAMA COM DENSIDADE",
+    "text": "HISTOGRAMA COM DENSIDADE\n\n\nAssim, é possível medir a densidade de valores de cada intervalo.\n\n\n\nApesar do intervalo (2,5] possuir a maior frequência relativa, o intervalo (1,2] é mais denso."
+  },
+  {
+    "objectID": "Aula3.html#introdução-da-função-ft",
+    "href": "Aula3.html#introdução-da-função-ft",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO DA FUNÇÃO \\(f(t)\\)",
+    "text": "INTRODUÇÃO DA FUNÇÃO \\(f(t)\\)\n\n\nVoltando ao contexto de Análise de Sobrevivência e Confiabilidade:\n\n\\(T\\) é a variável aleatória que representa o\ntempo até a ocorrência do evento de interesse.\n\\(t\\) representa um valor observado (fixo) da variável \\(T\\).\n\nConsidere o intervalo \\([t,t+\\Delta)\\), , em que \\(\\Delta\\) é um incremento:\n\n\n\nA densidade da variável aleatória \\(T\\) nesse intervalo é:\n\n\\[\n\\text{Densidade} = \\frac{\\text{Frequência Relativa}}{\\text{Amplitude}} = \\frac{P(t \\leq T &lt; t+\\Delta)}{\\Delta}\n\\]"
+  },
+  {
+    "objectID": "Aula3.html#definição-da-função-ft",
+    "href": "Aula3.html#definição-da-função-ft",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA FUNÇÃO \\(f(t)\\)",
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(f(t)\\)\n\n\nAgora considere esse incremento \\(\\Delta\\) cada vez mais se aproximando de 0. \nEssa é a definição da função densidade de probabilidade da variável contínua \\(T\\), representada por \\(f(t)\\):\n\n\\[\nf(t) = \\lim_{\\Delta \\to 0} \\frac{P(t \\leq T &lt; t+\\Delta)}{\\Delta}\n\\] - Essa é a definição de qualquer função densidade de probabilidade associada a uma variável contínua."
+  },
+  {
+    "objectID": "Aula3.html#interpretação-da-função-ft",
+    "href": "Aula3.html#interpretação-da-função-ft",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DA FUNÇÃO \\(f(t)\\)",
+    "text": "INTERPRETAÇÃO DA FUNÇÃO \\(f(t)\\)\n\n\nA função \\(f(t)\\) dá a densidade de probabilidade da variável aleatória \\(T\\) no ponto \\(t\\).\nÉ o limite da probabilidade do intervalo \\([t,t+\\Delta)\\) dividido pelo incremento à medida que ele vai para 0.\nNo contexto de Análise de Sobrevivência e Confiabilidade, \\(f(t)\\) é interpretada como a densidade de probabilidade de um elemento apresentar o evento de interesse em um intervalo instantâneo de tempo.\nEssa função permite que a ocorrência do evento de interesse ao longo do tempo seja variável, já que depende de \\(t\\)."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\n\n\nConsidere, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem a seguinte função densidade de probabilidade:\n\n\\[\nf(t) = 2 e^{-2 t}, \\quad t&gt;0\n\\]\n\n\n\n\n\n\n\n\n\n\n\nO gráfico da densidade mostra que as falhas tendem a ocorrer mais cedo.\nÀ medida que o tempo passa, as falhas se tornam progressivamente menos prováveis.\nTome cuidado ao interpretar essa função, já que ela não expressa a probabilidade de maneira imediata e sim a partir da integral \\(P(a&lt;T&lt;b) = \\int_a^bf(t)dt\\)."
+  },
+  {
+    "objectID": "Aula3.html#intro",
+    "href": "Aula3.html#intro",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nÉ a principal função utilizada em Análise de Sobrevivência e Confiabilidade.\nEla ajuda a responder questões do tipo:\n\nA partir do seu diagnóstico, qual a probabilidade de um paciente com AIDS morrer após 365 dias?\nQual a probabilidade de um determinado dispositivo falhar após 4000 horas de operação?"
+  },
+  {
+    "objectID": "Aula3.html#definição-da-função-st",
+    "href": "Aula3.html#definição-da-função-st",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA FUNÇÃO \\(S(T)\\)",
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(S(T)\\)\n\n\nA função de sobrevivência (confiabilidade) \\(S(t)\\) da variável aleatória \\(T\\) avaliada no tempo observado \\(t\\) representa a probabilidade do tempo de ocorrência do evento de interesse ser maior que \\(t\\), isto é,\n\n\\[\nS(t)=P(T &gt; t)\n\\]\n\nAssim:\n\nA probabilidade de um paciente com AIDS morrer após 365 dias é \\(S(365)=P(T&gt;365)\\).\nA probabilidade de um dispositivo falhar após 4000 horas é \\(S(4000)=P(T&gt;4000)\\).\n\nEm Confiabilidade, a função de confiabilidade é, comumente, denotada por \\(R(t)\\). Para facilitar a notação, usaremos \\(S(t)\\) nos dois contextos."
+  },
+  {
+    "objectID": "Aula3.html#relação-com-a-função-ft",
+    "href": "Aula3.html#relação-com-a-função-ft",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELAÇÃO COM A FUNÇÃO \\(F(t)\\)",
+    "text": "RELAÇÃO COM A FUNÇÃO \\(F(t)\\)\n\n\nRelembrando que a função de distribuição acumulada \\(F(t)\\) avaliada para a variável aleatória contínua \\(T\\), no tempo \\(t\\) é:\n\n\\[\nF(t)=P(T\\leq t)\n\\]\n\nFica claro que a função de sobrevivência (confiabilidade) \\(S(t)\\) pode ser reescrita como:\n\n\\[\nS(t)=P(T&gt;t)=1-P(T\\leq t)=1-F(t)\n\\]"
+  },
+  {
+    "objectID": "Aula3.html#exemplo-de-uma-função-st",
+    "href": "Aula3.html#exemplo-de-uma-função-st",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO DE UMA FUNÇÃO \\(S(t)\\)",
+    "text": "EXEMPLO DE UMA FUNÇÃO \\(S(t)\\)\n\n - O tempo de ocorrência mediano do evento foi de 35 dias, pois este é o tempo no qual 50% dos elementos não sofreram o evento \\((S(35) = 0,5)\\)"
+  },
+  {
+    "objectID": "Aula3.html#características-da-função-st",
+    "href": "Aula3.html#características-da-função-st",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CARACTERÍSTICAS DA FUNÇÃO \\(S(t)\\)",
+    "text": "CARACTERÍSTICAS DA FUNÇÃO \\(S(t)\\)\n\n\nA função \\(S(t)\\) começa sempre com \\(S(0) = 1\\), ou seja, a probabilidade de um elemento apresentar o evento após 0 unidades de tempo é 1.\n\nÀ medida que o tempo passa, \\(S(t)\\) decresce ou permanece constante e, no limite, quando \\(t \\rightarrow \\infty\\), \\(S(\\infty) = 0\\).\nExiste a possibilidade de quando \\(t \\rightarrow \\infty\\), \\(S(\\infty) = p\\neq0\\)\n\nComum em estudos de fração de cura, onde uma proporção \\(p\\) de elementos jamais apresentarão o evento de interesse (não será abordado aqui)."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-avaliando-2-tratamentos",
+    "href": "Aula3.html#exemplo-avaliando-2-tratamentos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: AVALIANDO 2 TRATAMENTOS",
+    "text": "EXEMPLO: AVALIANDO 2 TRATAMENTOS\n\n\nConsidere o objetivo de avaliar o tempo até a morte de pacientes acometidos por certa enfermidade, desde a aleatorização de dois tipos de tratamento.\n\nO grupo 1 foi tratado com a droga A e\nO grupo 2 foi tratado com a droga B."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-avaliando-2-tratamentos-1",
+    "href": "Aula3.html#exemplo-avaliando-2-tratamentos-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: AVALIANDO 2 TRATAMENTOS",
+    "text": "EXEMPLO: AVALIANDO 2 TRATAMENTOS"
+  },
+  {
+    "objectID": "Aula3.html#exemplo-avaliando-2-tratamentos-2",
+    "href": "Aula3.html#exemplo-avaliando-2-tratamentos-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: AVALIANDO 2 TRATAMENTOS",
+    "text": "EXEMPLO: AVALIANDO 2 TRATAMENTOS\n\n\nO tempo de vida dos pacientes do grupo 1 é superior ao dos pacientes do grupo 2 na maior parte do acompanhamento.\n\nPara o grupo 1, o tempo mediano é 20 anos, enquanto para o grupo 2 é 10 anos.\n\nCerca de 90% do grupo 1 ainda está vivo após 10 anos, enquanto 50% do grupo 2 permanece."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-1",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem a seguinte função densidade de probabilidade:\n\n\\[\nf(t) = 2 e^{-2 t}, \\quad t&gt;0\n\\] a) Encontre a função de sobrevivência \\(S(t)\\)\n\nEncontre a função de distribuição acumulada \\(F(t)\\)\nProve que \\(S(t)=1-F(t)\\)"
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-resposta",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-resposta",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (RESPOSTA)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (RESPOSTA)\n\n\nA função de confiabilidade \\(S(t)\\) é obtida da seguinte forma:\n\n\\[\nS(t)=P(T&gt;t)=\\int_{t}^\\infty f(x)dx=\\int_{t}^\\infty 2 e^{-2 x}dx=e^{-2 t}\n\\]\n\nA função de distribuição acumulada é obtida da seguinte forma:\n\n\\[\nF(t)=P(T&lt;t)=\\int_0^t f(x) dx = 1 - e^{-2 t}\n\\]\n\nLogo, conclui-se que : \\(S(t)=1-F(t)=1-(1 - e^{-2 t})=e^{-2 t}\\)"
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-gráfico-de-st",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-gráfico-de-st",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (GRÁFICO DE \\(S(t)\\)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (GRÁFICO DE \\(S(t)\\)\n\n\n\n\nO gráfico da função de confiabilidade \\(S(t)=e^{-2 t}\\) é dado por:\n\n\n\n\n\n\n\n\n\n\n\nObserve que \\(S(0)=1\\) e \\(S(t\\rightarrow \\infty)=0\\).\n\n\n\nA probabilidade de permanecer sem o evento por muito tempo torna-se cada vez menor, tendendo a zero.\nA probabilidade de um dispositivo durar mais que 1000 horas é \\(S(1)=e^{-2\\times 1}=0.1353\\).\nA probabilidade de um dispositivo durar mais que 4000 horas é \\(S(4)=e^{-2 \\times 4}=0.0003\\)."
+  },
+  {
+    "objectID": "Aula3.html#introdução-2",
+    "href": "Aula3.html#introdução-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nConsidere o objetivo de responder às seguintes perguntas:\n\nQual é o tempo tal que 70% dos pacientes diagnosticados com HIV já morreram, a partir do diagnóstico?\nQual é o tempo de operação tal que 80% dos dispositivos já falharam?\n\nPara responder a estas e outras perguntas similares, usamos os percentis dos tempo de ocorrência do evento de interesse."
+  },
+  {
+    "objectID": "Aula3.html#definição-do-percentil-t_p",
+    "href": "Aula3.html#definição-do-percentil-t_p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DO PERCENTIL \\(t_p\\)",
+    "text": "DEFINIÇÃO DO PERCENTIL \\(t_p\\)\n\n\nO percentil \\(t_p\\) é definido como o tempo \\(t\\) tal que:\n\n\\[\nP(T \\leq t_p) = F(t_p)= p\n\\]\n\nEquivalentemente, em termos da função de sobrevivência:\n\n\\[\nS(T_p) = 1 - p\n\\]"
+  },
+  {
+    "objectID": "Aula3.html#interpretação-do-percentil-t_p",
+    "href": "Aula3.html#interpretação-do-percentil-t_p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DO PERCENTIL \\(t_p\\)",
+    "text": "INTERPRETAÇÃO DO PERCENTIL \\(t_p\\)\n\n\nEm palavras, \\(t_p\\) corresponde ao tempo para o qual \\(p \\times 100\\%\\) dos indivíduos já apresentaram o evento de interesse.\nIsso significa que, no tempo \\(t_p\\):\n\numa proporção \\(p\\) dos indivíduos já teve o evento;\numa proporção \\(1-p\\) ainda não apresentou o evento.\n\nEm particular:\n\n\\(t_{0.50}\\) é o tempo mediano de ocorrência do evento;\n\\(t_{0.25}\\) e \\(t_{0.75}\\) são os outros quartis do tempo até o evento."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-2",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem a seguinte função densidade de probabilidade:\n\n\\[\nf(t) = 2 e^{-2 t}, \\quad t&gt;0\n\\]\nAlém disso, já sabemos também que o tempo \\(T\\) tem a seguinte função de confiabilidade:\n\\[\ne^{-2 t}\n\\]\nDerive a fórmula do percentil \\(t_p\\). A partir dela, encontre o tempo mediano de falha dos dispositivos."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-solução",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-solução",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nA partir da função \\(F(t)=1-e^{-2t}\\), tem-se que:\n\n\\[\n\\begin{aligned}\nP(T \\leq t_p) &= F(t_p) = p \\\\\n&\\Rightarrow 1 - e^{-2t_p} = p \\\\\n&\\Rightarrow e^{-2t_p} = 1 - p \\\\\n&\\Rightarrow -2t_p = \\ln(1 - p) \\\\\n&\\Rightarrow t_p = -\\frac{\\ln(1 - p)}{2}\n\\end{aligned}\n\\] - Assim, o tempo mediano de falha é \\(t_{0.5}=\\frac{\\ln(1 - 0.5)}{2}=0,346\\) mil horas ou 346 horas."
+  },
+  {
+    "objectID": "Aula3.html#introdução-3",
+    "href": "Aula3.html#introdução-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nA função de risco \\(\\lambda(t)\\) ajuda a responder questões do tipo:\n\nQual é o risco instantâneo de um paciente com AIDS vir a óbito após sobreviver a 365 dias?\nQual é o risco instantâneo de um emissor de laser apresentar falha após não ter falhado em 2000 horas?"
+  },
+  {
+    "objectID": "Aula3.html#definição-da-função-lambdat",
+    "href": "Aula3.html#definição-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nA função de risco \\(\\lambda(t)\\) é definida como o risco instantâneo de um elemento apresentar o evento de interesse entre os tempos \\(t\\) e \\(t+\\Delta\\), dado que o evento não ocorreu até \\(t\\).\nComo \\(\\Delta\\) pode ser infinitamente pequeno, a função de risco expressa o risco instantâneo de ocorrência do evento, dado que até então ele não ocorreu.\n\n\\[\n\\lambda(t)= \\lim_{\\Delta \\to 0}\n\\frac{P(t \\le T &lt; t+\\Delta \\mid T&gt;t)}{\\Delta}\n\\]\n\nA função \\(\\lambda(t)\\) pode ser vista como uma adaptação da densidade \\(f(t)\\), incorporando a informação de sobrevivência até \\(t\\)."
+  },
+  {
+    "objectID": "Aula3.html#nomenclaturas-da-função-lambdat",
+    "href": "Aula3.html#nomenclaturas-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "NOMENCLATURAS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "NOMENCLATURAS DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nA função de risco \\(\\lambda(t)\\) também é chamada de:\n\ntaxa de incidência,\nforça de infecção,\ntaxa de falha,\nforça de mortalidade,\nforça de mortalidade condicional.\n\nApesar do nome, \\(\\lambda(t)\\) é uma taxa, não uma probabilidade.\nEla pode assumir qualquer valor real positivo."
+  },
+  {
+    "objectID": "Aula3.html#interpretação-da-função-lambdat",
+    "href": "Aula3.html#interpretação-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "INTERPRETAÇÃO DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nA função de risco permite analisar o risco de ocorrência do evento de interesse em um tempo \\(t\\), dado que o indivíduo não apresentou o evento de interesse até esse momento.\nPor exemplo:\n\nO risco de um paciente falecer logo após uma cirurgia é o mesmo no primeiro e no trigésimo dia?\n\nProvavelmente não: o risco de óbito pós-cirúrgico tende a diminuir com o tempo."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-aids",
+    "href": "Aula3.html#exemplo-dados-de-aids",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE AIDS",
+    "text": "EXEMPLO: DADOS DE AIDS\n\n\nNo caso da AIDS, como a doença compromete progressivamente o sistema imunológico, supor risco constante não parece razoável.\nAntes da terapia antirretroviral, a hipótese de risco de óbito crescente após o diagnóstico parecia plausível.\nApós a introdução da terapia antirretroviral de alta potência, essa hipótese pode não ser mais válida."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-aids-1",
+    "href": "Aula3.html#exemplo-dados-de-aids-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE AIDS",
+    "text": "EXEMPLO: DADOS DE AIDS\n\n\nPode-se supor um comportamento mais complexo:\n\nrisco elevado logo após o diagnóstico, devido a doenças oportunistas;\nredução do risco nos primeiros anos graças ao tratamento;\naumento tardio do risco devido à diminuição do efeito terapêutico."
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat",
+    "href": "Aula3.html#exemplos-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)"
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-1",
+    "href": "Aula3.html#exemplos-da-função-lambdat-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nFigura A: risco constante ao longo do tempo.\n\nExemplo: risco de fratura em uma população de estudantes ao longo de 12 meses.\nSe as atividades de risco são semelhantes durante todo o período, a taxa pode ser considerada aproximadamente constante."
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-2",
+    "href": "Aula3.html#exemplos-da-função-lambdat-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nQuando o risco é constante:\n\no processo é dito sem memória;\na chance de ocorrência do evento é independente do tempo decorrido.\n\nFigura B: risco decrescente.\n\nExemplo: óbito pós-cirúrgico, com risco alto inicialmente e queda rápida ao longo do tempo."
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-3",
+    "href": "Aula3.html#exemplos-da-função-lambdat-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)"
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-4",
+    "href": "Aula3.html#exemplos-da-função-lambdat-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nFigura C: risco crescente.\n\nExemplo: tempo até solidificação de uma fratura óssea.\nO risco de cura é baixo no início e aumenta com o tempo.\n\nNeste caso, o evento de interesse é a cura."
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-5",
+    "href": "Aula3.html#exemplos-da-função-lambdat-5",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nFigura D:\n\nrisco nulo no início,\ncrescimento intermediário,\nestabilização posterior.\n\nExemplo: surgimento de metástases durante e após quimioterapia."
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-6",
+    "href": "Aula3.html#exemplos-da-função-lambdat-6",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)"
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-7",
+    "href": "Aula3.html#exemplos-da-função-lambdat-7",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nFigura E: risco alto inicialmente, queda e novo crescimento.\n\nExemplo: mortalidade por AIDS após terapias antirretrovirais.\n\nFigura F: risco sobe rapidamente e depois cai.\n\nExemplo: tuberculose após início do tratamento."
+  },
+  {
+    "objectID": "Aula3.html#exemplos-da-função-lambdat-8",
+    "href": "Aula3.html#exemplos-da-função-lambdat-8",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "EXEMPLOS DA FUNÇÃO \\(\\lambda(t)\\)"
+  },
+  {
+    "objectID": "Aula3.html#comportamento-da-função-lambdat",
+    "href": "Aula3.html#comportamento-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPORTAMENTO DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "COMPORTAMENTO DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nFigura G: combinação de risco decrescente, constante e crescente.\nConhecida como curva da banheira.\nRepresenta o risco ao longo da vida humana:\n\nalto no início (mortalidade infantil),\naproximadamente constante na fase intermediária,\ncrescente na velhice."
+  },
+  {
+    "objectID": "Aula3.html#fórmula-alternativa-da-função-lambdat",
+    "href": "Aula3.html#fórmula-alternativa-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FÓRMULA ALTERNATIVA DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "FÓRMULA ALTERNATIVA DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nEmbora a definição da função \\(\\lambda(t)\\) pareça complexa, é possível demonstrar que:\n\n\\[\n\\lambda(t)=\\frac{f(t)}{S(t)}\n\\]"
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-3",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem:\n\na função densidade de probabilidade \\(f(t) = 2 e^{-2 t}, \\quad t&gt;0\\)\na função de confiabilidade: \\(S(t)=e^{-2 t}\\)\no percentil \\(t_p = -\\frac{\\ln(1 - p)}{2}\\).\n\nEncontre agora a função de risco \\(\\lambda(t)\\)."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-solução-1",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-solução-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nA função de risco é dada por:\n\n\\[\n\\lambda(t)=\\frac{f(t)}{S(t)}=\\frac{2 e^{-2 t}}{e^{-2 t}}=2\n\\]\n\nAssim, a função de risco neste caso é constante."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-gráfico",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-gráfico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (GRÁFICO)\n\n\nO gráfico da função de risco \\(\\lambda(t)=2\\) é dado por:\n\n\n\n\n\n\n\n\n\n\n\nAssim, o risco instantâneo de falha no tempo \\(t\\) dado que o dispositivo não falhou até esse instante é constante para todo \\(t\\)."
+  },
+  {
+    "objectID": "Aula3.html#comparando-as-funções-ft-e-lambdat",
+    "href": "Aula3.html#comparando-as-funções-ft-e-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARANDO AS FUNÇÕES \\(f(t)\\) e \\(\\lambda(t)\\)",
+    "text": "COMPARANDO AS FUNÇÕES \\(f(t)\\) e \\(\\lambda(t)\\)"
+  },
+  {
+    "objectID": "Aula3.html#comparando-as-funções-ft-e-lambdat-1",
+    "href": "Aula3.html#comparando-as-funções-ft-e-lambdat-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARANDO AS FUNÇÕES \\(f(t)\\) e \\(\\lambda(t)\\)",
+    "text": "COMPARANDO AS FUNÇÕES \\(f(t)\\) e \\(\\lambda(t)\\)\n\n\nÉ muito comum a confusão na interpretação das funções \\(\\lambda(t)\\) e \\(f(t)\\).\nDensidade \\(f(t)\\):\n\nMostra quando os eventos tendem a ocorrer.\nNo caso do exemplo anterior, é mais alta no início e decai com o tempo.\nInterpretação: os eventos são mais prováveis logo no começo.\n\\(f(2)\\) retrata a densidade de falhas que ocorrem em 2000 horas, sem considerar se o elemento apresentou o evento de interesse até lá."
+  },
+  {
+    "objectID": "Aula3.html#comparando-as-funções-ft-e-lambdat-2",
+    "href": "Aula3.html#comparando-as-funções-ft-e-lambdat-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARANDO AS FUNÇÕES \\(f(t)\\) e \\(\\lambda(t)\\)",
+    "text": "COMPARANDO AS FUNÇÕES \\(f(t)\\) e \\(\\lambda(t)\\)\n\n\nFunção de risco \\(\\lambda(t)\\):\n\nMede o risco instantâneo de ocorrência do evento de interesse, dado que o indivíduo ainda não teve o evento.\nNo caso do exemplo anterior a função de risco é constante.\n\nInterpretação: o risco instantâneo de falhar em cada instante é sempre o mesmo, independentemente do quanto tempo a unidade não falhou.\n\nPor exemplo, \\(\\lambda(2)\\) retrata a risco instantâneo de falhas em 2000 horas, dado que o dispositivo ainda não falhou até este momento.\n\nEm resumo:\n\n\\(f(t)\\): “onde os eventos tendem a ocorrer”.\n\\(\\lambda(t)\\): “qual é o risco agora, dado que ainda não ocorreu”."
+  },
+  {
+    "objectID": "Aula3.html#introdução-4",
+    "href": "Aula3.html#introdução-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nA função de risco acumulado \\(\\Lambda(t)\\) ajuda a responder questões do tipo:\n\nQual é o risco total acumulado de um paciente com AIDS vir a óbito até 365 dias?\nQual é o risco total acumulado de um emissor de laser apresentar falha até 2000 horas?"
+  },
+  {
+    "objectID": "Aula3.html#definição-da-função-lambdat-1",
+    "href": "Aula3.html#definição-da-função-lambdat-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)",
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nA função de risco acumulado \\(\\Lambda(t)\\) mede o risco de ocorrência do evento até um determinado tempo \\(t\\).\nMatematicamente, isso significa a soma de todos os riscos em todos os tempos até o tempo \\(t\\).\nComo \\(T\\) é uma variável aleatória contínua, esta é uma soma infinitesimal e pode ser calculada a partir de uma integral da função de risco: [ (t) = _0^t (u) , du ]"
+  },
+  {
+    "objectID": "Aula3.html#interpretação-da-função-lambdat-1",
+    "href": "Aula3.html#interpretação-da-função-lambdat-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)",
+    "text": "INTERPRETAÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nA função de risco acumulado \\(\\Lambda(t)\\) mede o risco total que um indivíduo enfrentou até um determinado tempo \\(t\\).\nDiferente da função de risco \\(\\lambda(t)\\), que olha o risco instantâneo em cada ponto do tempo, \\(\\Lambda(t)\\) acumula esses riscos ao longo do tempo.\nExemplos práticos:\n\nPara um paciente com AIDS: \\(\\Lambda(365)\\) indica o risco total de óbito acumulado até 1 ano após o diagnóstico.\nPara um emissor de laser: \\(\\Lambda(2)\\) mostra o risco total de falha acumulado até 2000 horas de operação.\n\nIntuição:\n\nQuanto maior \\(\\Lambda(t)\\), maior a chance de que o evento de interesse já tenha ocorrido até o tempo \\(t\\)."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-4",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem:\n\na função densidade de probabilidade \\(f(t) = 2 e^{-2 t}, \\quad t&gt;0\\)\na função de confiabilidade: \\(S(t)=e^{-2 t}\\)\no percentil \\(t_p = -\\frac{\\ln(1 - p)}{2}\\).\na função de risco \\(\\lambda(t)=2\\)\n\nEncontre agora a função de risco acumulado \\(\\Lambda(t)\\). Calcule \\(\\Lambda(2)\\) e interprete o seu valor."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-solução-2",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-solução-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nA função de risco acumulada é: \\[\n\\Lambda(t) = \\int_0^t \\lambda(u) \\, du = \\int_0^t 2 \\, du = 2 t\n\\]\nIsto é, \\(\\Lambda(t)\\) é uma função de linear."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-gráfico-1",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-gráfico-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (GRÁFICO)\n\n\n\n\nO gráfico da função de risco acumulado \\(\\Lambda(t)=2t\\) é dada por:\n\n\n\n\n\n\n\n\n\n\n\nObserve como a função é linear.\n\n\n\nA função de risco acumulado representa o total de risco enfrentado até o tempo (t).\nSe o risco instantâneo é o mesmo em todos os instantes, então:\n\nCada unidade adicional de tempo adiciona a mesma quantidade de risco.\n\nAssim, o risco total cresce de forma proporcional ao tempo, resultando em uma função linear.\nEm resumo:\n\nrisco instantâneo constante ⟶ acréscimos constantes de risco ⟶ risco acumulado linear."
+  },
+  {
+    "objectID": "Aula3.html#introdução-5",
+    "href": "Aula3.html#introdução-5",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\nOutras duas quantidades de interesse em Análise de Sobrevivência e Confiabilidade são: - o tempo médio de ocorrência do evento de interesse; - o tempo médio residual de ocorrência do evento de interesse."
+  },
+  {
+    "objectID": "Aula3.html#tempo-médio-t_m",
+    "href": "Aula3.html#tempo-médio-t_m",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TEMPO MÉDIO \\(t_m\\)",
+    "text": "TEMPO MÉDIO \\(t_m\\)\n\n\nO tempo médio de ocorrência do evento de interesse, denotado por \\(t_m\\), é definido como o valor esperado de \\(T\\).\nMatematicamente:\n\n[ t_m = E(T) = _0^t f(t),dt ]\n\nUma forma equivalente, muito utilizada em Análise de Sobrevivência, é:\n\n[ t_m = _0^S(t),dt ]\n\nOu seja, o tempo médio corresponde à área sob a curva de sobrevivência.\n\nEssa fórmula só é possível porque \\(T\\) é uma variável aleatória positiva (Teorema de Fubini)"
+  },
+  {
+    "objectID": "Aula3.html#tempo-médio-residual-textvmrt",
+    "href": "Aula3.html#tempo-médio-residual-textvmrt",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TEMPO MÉDIO RESIDUAL \\(\\text{vmr}(t)\\)",
+    "text": "TEMPO MÉDIO RESIDUAL \\(\\text{vmr}(t)\\)\n\n\nO tempo médio residual é definido condicionalmente a um certo tempo \\(t\\).\nPara indivíduos que não apresentaram o evento até o tempo \\(t\\), a pergunta é:\n\nQuanto tempo, em média, ainda falta para o evento ocorrer?\n\nO tempo médio residual é dado por:\n\n[ (t)= ]\n\nUma forma equivalente é:\n\n[ (t)= ]\n\nObserve que: [ (0)=t_m ]"
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-5",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-5",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem:\n\na função densidade de probabilidade \\(f(t) = 2 e^{-2 t}, \\quad t&gt;0\\)\na função de confiabilidade: \\(S(t)=e^{-2 t}\\)\no percentil \\(t_p = -\\frac{\\ln(1 - p)}{2}\\).\na função de risco \\(\\lambda(t)=2\\)\na função de risco acumulado \\(\\Lambda(t)\\)\n\nEncontre agora o tempo médio \\(t_m\\) e o tempo médio residual \\(vmr(t)\\)."
+  },
+  {
+    "objectID": "Aula3.html#exemplo-dados-de-dispositivos-solução-3",
+    "href": "Aula3.html#exemplo-dados-de-dispositivos-solução-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)",
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nO tempo médio de ocorrência do evento de interesse é:\n\n[ t_m = E(T) = _0^t f(t),dt = _0^t e^{-t},dt = ]\n\nO tempo médio residual é:\n\n[ (t) = = = ]\n\nOu seja, para a distribuição exponencial:\n\no tempo médio residual não depende de \\(t\\)."
+  }
+]
