@@ -592,7 +592,28 @@
     "href": "Aula1.html#introdução",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\nIIIIIIIV\n\n\n\n\nNos estudos de análise de sobrevivência, uma amostra (em geral de pacientes) é coletada e acompanhada.\nA variável resposta é, basicamente, o tempo até a ocorrência de um evento de interesse.\nEm análise de sobrevivência, esse evento de interesse pode ser:\n\nA morte do paciente por determinada enfermidade.\nA remissão (paciente fica livre dos sintomas de determinada doença).\nA recidiva (recorrência de determinada doença).\n\n\n\n\n\n\n\nA principal característica de dados de sobrevivência é a presença de censura, que é a observação parcial da resposta.\nIsto se refere a situações em que, por alguma razão, o acompanhamento do paciente foi interrompido. Por exemplo:\n\nO paciente mudou de cidade e o seu acompanhamento foi perdido.\nO estudo terminou antes do paciente apresentar o evento de interesse.\nO paciente morreu de outra causa, diferente da estudada.\n\nIsso significa que toda a informação referente à variável resposta se resume ao conhecimento de que o tempo de ocorrência até o evento de interesse é superior ao tempo observado no estudo.\n\n\n\n\n\n\nSem a presença de censura, pode-se usar as técnicas usuais de análise de regressão e planejamento de experimentos para analisar os dados.\nPor exemplo, considere um estudo que tem por objetivo estimar o tempo até a cura de pacientes por determinada doença:\n\nOs pacientes foram aleatorizados em dois grupos: Tratamento A e Tratamento B.\nTodos os pacientes apresentaram a cura para a doença (dados sem censura).\nNesse caso, pode-se usar técnicas usuais de análise de variância (ANOVA) para comparação entre os grupos (Tratamento A vs. Tratamento B).\n\n\n\n\n\n\n\nNo entanto, se houver censuras, o que é muito mais provável, as técnicas usuais não podem ser utilizadas, pois necessitam de todos os tempos até a ocorrência de um evento de interesse.\n\nAlém disso, as observações censuradas não podem ser descartadas, já que trazem informação pra análise (mesmo sendo uma informação parcial)\n\nPor isso, faz-se necessário o uso de métodos de análise de sobrevivência, que possibilitam incorporar na análise estatística a informação contida nos dados censurados.\nFinalmente, o termo análise de sobrevivência se refere, basicamente, a situações médicas e/ou epidemiológicas envolvendo dados censurados."
+    "text": "INTRODUÇÃO\n\n\nNos estudos de análise de sobrevivência, uma amostra (em geral de pacientes) é coletada e acompanhada.\nA variável resposta é, basicamente, o tempo até a ocorrência de um evento de interesse.\nEm análise de sobrevivência, esse evento de interesse pode ser:\n\nA morte do paciente por determinada enfermidade.\nA remissão (paciente fica livre dos sintomas de determinada doença).\nA recidiva (recorrência de determinada doença)."
+  },
+  {
+    "objectID": "Aula1.html#introdução-1",
+    "href": "Aula1.html#introdução-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nA principal característica de dados de sobrevivência é a presença de censura, que é a observação parcial da resposta.\nIsto se refere a situações em que, por alguma razão, o acompanhamento do paciente foi interrompido. Por exemplo:\n\nO paciente mudou de cidade e o seu acompanhamento foi perdido.\nO estudo terminou antes do paciente apresentar o evento de interesse.\nO paciente morreu de outra causa, diferente da estudada.\n\nIsso significa que toda a informação referente à variável resposta se resume ao conhecimento de que o tempo de ocorrência até o evento de interesse é superior ao tempo observado no estudo."
+  },
+  {
+    "objectID": "Aula1.html#introdução-2",
+    "href": "Aula1.html#introdução-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nSem a presença de censura, pode-se usar as técnicas usuais de análise de regressão e planejamento de experimentos para analisar os dados.\nPor exemplo, considere um estudo que tem por objetivo estimar o tempo até a cura de pacientes por determinada doença:\n\nOs pacientes foram aleatorizados em dois grupos: Tratamento A e Tratamento B.\nTodos os pacientes apresentaram a cura para a doença (dados sem censura).\nNesse caso, pode-se usar técnicas usuais de análise de variância (ANOVA) para comparação entre os grupos (Tratamento A vs. Tratamento B)."
+  },
+  {
+    "objectID": "Aula1.html#introdução-3",
+    "href": "Aula1.html#introdução-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nNo entanto, se houver censuras, o que é muito mais provável, as técnicas usuais não podem ser utilizadas, pois necessitam de todos os tempos até a ocorrência de um evento de interesse.\n\nAlém disso, as observações censuradas não podem ser descartadas, já que trazem informação pra análise (mesmo sendo uma informação parcial)\n\nPor isso, faz-se necessário o uso de métodos de análise de sobrevivência, que possibilitam incorporar na análise estatística a informação contida nos dados censurados.\nFinalmente, o termo análise de sobrevivência se refere, basicamente, a situações médicas e/ou epidemiológicas envolvendo dados censurados."
   },
   {
     "objectID": "Aula1.html#investigação-científica-em-saúde",
@@ -735,8 +756,8 @@
     "text": "A IMPORTÂNCIA DA CONFIABILIDADE\n\n\nConfiabilidade é uma área da estatística estreitamente relacionada à Análise de Sobrevivência, mas aplicada a produtos, sistemas e componentes.\nInvestiga quanto tempo um item funciona antes de falhar, fornecendo informações para manutenção, segurança e tomada de decisão.\nCrescimento associado a:\n\nindústria (aeronáutica, automotiva, eletrônica);\nengenharia de sistemas complexos;\nmétodos probabilísticos e computacionais."
   },
   {
-    "objectID": "Aula1.html#introdução-1",
-    "href": "Aula1.html#introdução-1",
+    "objectID": "Aula1.html#introdução-4",
+    "href": "Aula1.html#introdução-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
     "text": "INTRODUÇÃO\n\nIII\n\n\n\n\nNa confiabilidade, o objeto de estudo é um sistema, componente ou dispositivo, e a variável resposta é o tempo até a falha.\nExemplos de eventos de interesse:\n\nQuebra de um equipamento industrial;\nFalha de um motor de aeronave;\nMal funcionamento de um dispositivo eletrônico.\n\n\n\n\n\n\n\nAssim, como em análise de sobrevivência, em confiabilidade os dados censurados são comuns, por exemplo:\n\nEquipamento ainda funcionando ao final do teste;\nInterrupção do teste por razões externas;\nRetirada do componente antes da falha.\n\nMesmo censurados, esses dados trazem informação valiosa sobre a vida útil."
