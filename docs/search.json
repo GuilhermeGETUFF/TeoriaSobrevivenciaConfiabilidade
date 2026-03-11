@@ -340,14 +340,14 @@
     "href": "Aula2.html#constituição-do-tempo-de-ocorrência-do-evento-de-interesse",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CONSTITUIÇÃO DO TEMPO DE OCORRÊNCIA DO EVENTO DE INTERESSE",
-    "text": "CONSTITUIÇÃO DO TEMPO DE OCORRÊNCIA DO EVENTO DE INTERESSE\n\n\nO tempo até a ocorrência de um evento de interesse é formado por três elementos essenciais:\n\nTempo inicial\n\nEscala de medida\n\nEvento de interesse\n\nEsses elementos são fundamentais para qualquer estudo de:\n\nSobrevivência\n\nConfiabilidade\n\n💡 O tempo é o eixo central que conecta observações, análises e conclusões.\nToda a metodologia de análise de sobrevivência e confiabilidade depende da correta definição desses elementos."
+    "text": "CONSTITUIÇÃO DO TEMPO DE OCORRÊNCIA DO EVENTO DE INTERESSE\n\n\nO tempo até a ocorrência de um evento de interesse é formado por três elementos essenciais:\n\nTempo inicial\n\nEscala de medida\n\nEvento de interesse\n\nEsses elementos são fundamentais para qualquer estudo de:\n\nSobrevivência\n\nConfiabilidade\n\nO tempo é o eixo central que conecta observações, análises e conclusões.\nToda a metodologia de análise de sobrevivência e confiabilidade depende da correta definição desses elementos."
   },
   {
     "objectID": "Aula2.html#o-tempo-inicial",
     "href": "Aula2.html#o-tempo-inicial",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "O TEMPO INICIAL",
-    "text": "O TEMPO INICIAL\n\n\nO tempo inicial é o ponto de partida para medir o tempo até a ocorrência de um evento de interesse.\n\nSua definição precisa e consistente é fundamental para garantir a validade do estudo.\n\nGarantir que todos os indivíduos ou unidades sejam comparáveis a partir do mesmo ponto evita vieses.\nExemplos práticos:\n\nEstudos clínicos: data da aleatorização\n\nTratamentos médicos: início do tratamento\n\nDiagnósticos: data do diagnóstico de uma doença\n\nConfiabilidade: início do teste de unidades similares"
+    "text": "O TEMPO INICIAL\n\n\nO tempo inicial é o ponto de partida para medir o tempo até a ocorrência de um evento de interesse.\n\nSua definição precisa e consistente é fundamental para garantir a validade do estudo.\n\nGarantir que todos os indivíduos ou unidades sejam comparáveis a partir do mesmo ponto evita vieses.\nExemplos práticos:\n\nEstudos clínicos: data da aleatorização\n\nTratamentos médicos: início do tratamento\n\nDiagnósticos: data do diagnóstico de uma doença\n\nConfiabilidade: início do teste de unidades similares (unidades novas, por exemplo)"
   },
   {
     "objectID": "Aula2.html#a-escala-de-medida",
@@ -361,49 +361,49 @@
     "href": "Aula2.html#o-evento-de-interesse",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "O EVENTO DE INTERESSE",
-    "text": "O EVENTO DE INTERESSE\n\n\nO evento de interesse é o acontecimento que estamos estudando, cuja ocorrência marca o fim do tempo observado.\n\nNa maioria dos casos, trata-se de eventos indesejáveis, mas podem ser neutros ou até desejáveis, dependendo do estudo.\n\nÉ fundamental que o evento seja precisamente definido e mensurável, para garantir validade e comparabilidade.\nExemplos de evento de interesse:\n\nMedicina e saúde: morte, recidiva, remissão, complicações, recuperação\n\nConfiabilidade/engenharia: falha de um dispositivo, quebra de equipamento, perda de desempenho"
+    "text": "O EVENTO DE INTERESSE\n\n\nO evento de interesse é o acontecimento que estamos estudando, cuja ocorrência marca o fim do tempo observado.\n\nNa maioria dos casos, trata-se de eventos indesejáveis, mas podem ser neutros ou até desejáveis, dependendo do estudo.\n\nÉ fundamental que o evento seja precisamente definido e mensurável, para garantir validade e comparabilidade.\nExemplos de eventos de interesse:\n\nMedicina e saúde: morte, recidiva, remissão, complicações, recuperação\n\nConfiabilidade/engenharia: falha de um dispositivo, quebra de equipamento, perda de desempenho"
   },
   {
     "objectID": "Aula2.html#tempo-do-estudo",
     "href": "Aula2.html#tempo-do-estudo",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPO DO ESTUDO",
-    "text": "TEMPO DO ESTUDO\n\n\nO tempo do estudo define até quando os indivíduos ou unidades são acompanhados.\nNo Tempo de estudo pré-determinado (fixo), A duração do estudo é definida antes do início do acompanhamento.\n\n🏥 Saúde / clínica: acompanhamento dos pacientes por 6 anos.\n⚙️ Confiabilidade / engenharia: unidades testadas por 1000 horas.\n\n2️⃣ Tempo de estudo determinado durante o acompanhamento, o estudo não tem duração fixa em tempo calendário.\n\n🏥 Estudo clínico que termina após a ocorrência de 200 óbitos.\n⚙️ Ensaio de confiabilidade encerrado após 50 falhas de componentes.\n📈 Monitoramento de sistemas até atingir um limite de eventos críticos."
+    "text": "TEMPO DO ESTUDO\n\n\nSomado a esses elementos essenciais, o tempo do estudo define até quando os indivíduos ou unidades são acompanhados.\nNo Tempo de estudo pré-determinado (fixo), A duração do estudo é definida antes do início do acompanhamento.\n\nSaúde / clínica: acompanhamento dos pacientes por 6 anos.\nConfiabilidade / engenharia: unidades testadas por 1000 horas.\n\nTempo de estudo determinado durante o acompanhamento, o estudo não tem duração fixa em tempo calendário.\n\nEstudo clínico que termina após a ocorrência de 200 óbitos.\nEnsaio de confiabilidade encerrado após 50 falhas de componentes."
   },
   {
     "objectID": "Aula2.html#exemplo-dados-de-hepatite",
     "href": "Aula2.html#exemplo-dados-de-hepatite",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\nUm estudo clínico aleatorizado foi realizado para investigar o efeito da terapia com esteróide no tratamento de hepatite viral aguda. Vinte e nove pacientes com essa doença foram aleatorizados para receber placebo ou tratamento com esteróide.\nCada paciente foi acompanhado por 16 semanas, ou até a morte (evento de interesse) ou perda de acompanhamento. Os tempos de sobrevivência foram observados em semanas para ambos os grupos.\n\nTempo inicial: ?\nEscala de medida: ?\nEvento de interesse: ?\nTempo do estudo: ?"
+    "text": "EXEMPLO: DADOS DE HEPATITE\n\nUm estudo clínico aleatorizado foi realizado para investigar o efeito da terapia com esteróide no tratamento de hepatite viral aguda. Vinte e nove pacientes com essa doença foram aleatorizados para receber placebo ou tratamento com esteróide.\nCada paciente foi acompanhado por 16 semanas, observando-se o tempo até a morte (evento de interesse) ou o tempo de perda de acompanhamento. Os tempos de sobrevivência foram observados em semanas para ambos os grupos.\n\nTempo inicial: ?\nEscala de medida: ?\nEvento de interesse: ?\nTempo do estudo: ?"
   },
   {
     "objectID": "Aula2.html#exemplo-dados-de-hepatite-solução",
     "href": "Aula2.html#exemplo-dados-de-hepatite-solução",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE (SOLUÇÃO)",
-    "text": "EXEMPLO: DADOS DE HEPATITE (SOLUÇÃO)\n\nUm estudo clínico aleatorizado foi realizado para investigar o efeito da terapia com esteróide no tratamento de hepatite viral aguda. Vinte e nove pacientes com essa doença foram aleatorizados para receber placebo ou tratamento com esteróide.\nCada paciente foi acompanhado por 16 semanas, ou até a morte (evento de interesse) ou perda de acompanhamento. Os tempos de sobrevivência foram observados em semanas para ambos os grupos.\n\nTempo inicial: data da aleatorização do tratamento.\nEscala de medida: semanas.\nEvento de interesse: morte .\nTempo do estudo: 16 semanas."
+    "text": "EXEMPLO: DADOS DE HEPATITE (SOLUÇÃO)\n\nUm estudo clínico aleatorizado foi realizado para investigar o efeito da terapia com esteróide no tratamento de hepatite viral aguda. Vinte e nove pacientes com essa doença foram aleatorizados para receber placebo ou tratamento com esteróide.\nCada paciente foi acompanhado por 16 semanas, observando-se o tempo até a morte (evento de interesse) ou o tempo de perda de acompanhamento. Os tempos de sobrevivência foram observados em semanas para ambos os grupos.\n\nTempo inicial: data da aleatorização do tratamento.\nEscala de medida: semanas.\nEvento de interesse: morte .\nTempo do estudo: 16 semanas."
   },
   {
     "objectID": "Aula2.html#exercício-teste-de-confiabilidade-de-componentes-eletrônicos",
     "href": "Aula2.html#exercício-teste-de-confiabilidade-de-componentes-eletrônicos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXERCÍCIO: TESTE DE CONFIABILIDADE DE COMPONENTES ELETRÔNICOS",
-    "text": "EXERCÍCIO: TESTE DE CONFIABILIDADE DE COMPONENTES ELETRÔNICOS\n\nUma empresa realizou um teste de confiabilidade para avaliar a vida útil de um novo modelo de capacitor eletrônico utilizado em equipamentos industriais.\nCem capacitores foram produzidos no mesmo lote e colocados em operação simultaneamente em um ambiente controlado de laboratório, sob condições constantes de temperatura e tensão elétrica.\nO teste teve duração máxima de 2.000 horas. O acompanhamento de cada componente foi encerrado quando ocorreu a falha do capacitor (evento de interesse) ou quando o teste foi finalizado sem falha.\nO tempo até a falha foi registrado em horas para todos os componentes.\n\nTempo inicial: ?\nEscala de medida: ?\nEvento de interesse: ?\nTempo do estudo: ?"
+    "text": "EXERCÍCIO: TESTE DE CONFIABILIDADE DE COMPONENTES ELETRÔNICOS\n\nUma empresa realizou um teste de confiabilidade para avaliar a vida útil de um novo modelo de capacitor eletrônico utilizado em equipamentos industriais. Cem capacitores foram produzidos no mesmo lote e colocados em operação simultaneamente em um ambiente controlado de laboratório, sob condições constantes de temperatura e tensão elétrica. O teste teve duração máxima de 2.000 horas. O acompanhamento de cada componente foi encerrado quando ocorreu a falha do capacitor (evento de interesse) ou quando o teste foi finalizado sem falha. O tempo até a falha foi registrado em horas para todos os componentes.\n\nTempo inicial: ?\nEscala de medida: ?\nEvento de interesse: ?\nTempo do estudo: ?"
   },
   {
-    "objectID": "Aula2.html#entrada-retardada",
-    "href": "Aula2.html#entrada-retardada",
+    "objectID": "Aula2.html#entrada-tardia",
+    "href": "Aula2.html#entrada-tardia",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "ENTRADA RETARDADA",
-    "text": "ENTRADA RETARDADA\n\n\n\n\nConsidere o exemplo em que 10 pacientes são acompanhados em um estudo em que:\n\nTempo inicial: Diagnóstico.\nEscala de medida: anos.\nEvento de interesse: Morte.\nTempo de estudo 5 anos \n\n\n\n\nCada linha idndica a trajetória de um paciente.\nNote que alguns pacientes entraram no estudo no início (ano 0) e outros entraram durante o acompanhamento.\nAssim, para o paciente 8, por exemplo, é errado dizer que ele morreu com 4,5 anos, a partir do diagnóstico.\n\nPara corrigir o tempo de morte deste e dos demais pacientes com entrada retardada, tempo deles deve ser deslocado para a origem.\n\nAssim, ninguém é contado como “em risco” antes de realmente entrar, evitando vieses"
+    "section": "ENTRADA TARDIA",
+    "text": "ENTRADA TARDIA\n\n\n\n\nConsidere o exemplo em que 10 pacientes são acompanhados em um estudo em que:\n\nTempo inicial: Diagnóstico.\nEscala de medida: anos.\nEvento de interesse: Morte.\nTempo de estudo: 5 anos \n\n\n\n\nCada linha indica a trajetória de um paciente.\nA bolinha preenchida indica a ocorrência do evento.\nNote que alguns pacientes entraram no estudo no início (ano 0) e outros entraram durante o acompanhamento.\nAssim, para o paciente 8, por exemplo, é errado dizer que ele morreu com 4,5 anos, a partir do diagnóstico.\n\nPara corrigir o tempo de morte deste e dos demais pacientes com entrada retardada, tempo deles deve ser deslocado para a origem.\n\nAssim, ninguém é contado como “em risco” antes de realmente entrar, evitando vieses"
   },
   {
-    "objectID": "Aula2.html#tempo-deslocado",
-    "href": "Aula2.html#tempo-deslocado",
+    "objectID": "Aula2.html#entrada-tardia-1",
+    "href": "Aula2.html#entrada-tardia-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO DESLOCADO",
-    "text": "TEMPO DESLOCADO\n\nVeja como ficam agora os dados de forma comparável na origem:\n\n\n\n\n\n\nAgora sim podemos dizer que o tempo de morte do paciente número 8 é aproximadamente 2 anos.\nSempre confira nos dados de sobrevivência (confiabilidade) se as unidades estavam sujeitas à entradas retardadas e, caso positivo, se os tempos observados já foram corrigidos ou não."
+    "section": "ENTRADA TARDIA",
+    "text": "ENTRADA TARDIA\n\nVeja como ficam agora os dados de forma comparável na origem:\n\n\n\n\n\n\nAgora sim podemos dizer que o tempo de morte do paciente número 8 é aproximadamente 2 anos.\nSempre confira nos dados de sobrevivência (confiabilidade) se as unidades estavam sujeitas à entradas tardias e, caso positivo, se os tempos observados já foram deslocados ou não."
   },
   {
     "objectID": "Aula2.html#exemplo-prático-insuficiencia-renal",
@@ -431,7 +431,7 @@
     "href": "Aula2.html#causas-de-perda-de-dados-censura",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CAUSAS DE PERDA DE DADOS (CENSURA)",
-    "text": "CAUSAS DE PERDA DE DADOS (CENSURA)\n\n\nAs informações temporais completas nem sempre estão disponíveis; as principais causas incluem:\n\nÓbito por causas não relacionadas ao estudo (ex.: causas externas)\nPerda de contato (ex.: mudança de residência)\nRecusa do participante em continuar\nAbandono devido a efeitos adversos do tratamento\nMudança de procedimento (ex.: transplante renal em pacientes em diálise)\nTérmino do estudo clínico sem que todos os indivíduos tenham apresentado o evento de interesse. Término do teste de confiabilidade sem que todas as unidades sob teste tenham apresentado a falha."
+    "text": "CAUSAS DE PERDA DE DADOS (CENSURA)\n\n\nAs informações temporais completas nem sempre estão disponíveis; as principais causas incluem:\n\nÓbito por causas não relacionadas ao estudo (ex.: causas externas)\nPerda de contato (ex.: mudança de residência)\nRecusa do participante em continuar\nAbandono devido a efeitos adversos do tratamento\nMudança de procedimento (ex.: transplante renal em pacientes em diálise)\nTérmino do estudo clínico sem que todos os indivíduos tenham apresentado o evento de interesse.\nTérmino do teste de confiabilidade sem que todas as unidades sob teste tenham apresentado a falha."
   },
   {
     "objectID": "Aula2.html#definição-da-censura",
@@ -497,13 +497,6 @@
     "text": "CENSURA INTERVALAR\n\n\nA censura intervalar ocorre quando o evento de interesse não é observado exatamente, mas sabe-se que ocorreu dentro de um intervalo de tempo específico.\n\nÉ comum em estudos com coletas periódicas, onde os indivíduos são avaliados em momentos pré-determinados.\n\nExemplo prático:\n\nUm paciente testou HIV negativo na segunda visita.\n\nNa terceira visita, ele testou HIV positivo.\n\nConclusão: o evento (infecção) ocorreu entre a segunda e terceira visitas.\n\n\nImportância: permite considerar corretamente a incerteza do momento do evento na análise de sobrevivência, evitando vieses."
   },
   {
-    "objectID": "Aula2.html#mecanismos-de-censura-ilustração",
-    "href": "Aula2.html#mecanismos-de-censura-ilustração",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MECANISMOS DE CENSURA (ILUSTRAÇÃO)",
-    "text": "MECANISMOS DE CENSURA (ILUSTRAÇÃO)"
-  },
-  {
     "objectID": "Aula2.html#exercício-tipos-de-censura",
     "href": "Aula2.html#exercício-tipos-de-censura",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
@@ -536,49 +529,84 @@
     "href": "Aula2.html#a-censura-nesta-disciplina",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "A CENSURA NESTA DISCIPLINA",
-    "text": "A CENSURA NESTA DISCIPLINA\n\n\nNesta disciplina, o foco será em dados com censura à direita e não informativa, que é a situação mais frequente em análise de sobrevivência e confiabilidade.\n\nCensura à direita: ocorre quando o evento de interesse ainda não ocorreu para alguns indivíduos até o fim do acompanhamento.\nCensura não informativa: significa que a censura não depende do risco do evento, ou seja, o motivo pelo qual o indivíduo foi censurado não afeta a análise.\n\nImplicações para a disciplina:\n\nPermite usar métodos clássicos de análise de sobrevivência, como o Kaplan–Meier, Testes log-rank e o Modelo de Cox\nEstimativas de tempo médio até o evento ou probabilidades de sobrevivência são confiáveis sob esta suposição."
+    "text": "A CENSURA NESTA DISCIPLINA\n\n\nNesta disciplina, o foco será em dados com censura à direita e não informativa, que é a situação mais frequente em análise de sobrevivência e confiabilidade.\n\nCensura à direita: ocorre quando o evento de interesse ainda não ocorreu para alguns indivíduos até o fim do acompanhamento.\nCensura não informativa: significa que a censura não depende do risco do evento, ou seja, o motivo pelo qual o indivíduo foi censurado não afeta a análise.\n\nImplicações para a disciplina:\n\nPermite usar métodos clássicos de análise de sobrevivência, como o Kaplan–Meier, Testes log-rank e o Modelo de Cox\nEstimativas de tempo mediano até o evento ou probabilidades de sobrevivência são confiáveis sob esta suposição."
   },
   {
-    "objectID": "Aula2.html#introdução-motivacional",
-    "href": "Aula2.html#introdução-motivacional",
+    "objectID": "Aula2.html#introdução",
+    "href": "Aula2.html#introdução",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTRODUÇÃO MOTIVACIONAL",
-    "text": "INTRODUÇÃO MOTIVACIONAL\n\nImagine que você é pesquisador(a) em oncologia. Você quer estudar o tempo até a ocorrência de uma recidiva de câncer em pacientes. Mas os dados que você consegue têm algumas limitações:\n\nAlguns pacientes só entram no estudo após já terem sobrevivido um certo tempo desde o diagnóstico.\n\nOutros pacientes são monitorados até um certo ponto, e eventos que ocorram depois desse ponto não são observados.\n\nEsses cenários não são censura comum — são exemplos de truncamento."
-  },
-  {
-    "objectID": "Aula2.html#o-que-é-truncamento",
-    "href": "Aula2.html#o-que-é-truncamento",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "O que é Truncamento?",
-    "text": "O que é Truncamento?\n\nO truncamento ocorre quando só observamos indivíduos cujo tempo de evento cai dentro de um intervalo específico.\n🔹 Diferente da censura, onde o indivíduo entra no estudo e pode não completar o evento,\n🔹 No truncamento, indivíduos fora do intervalo de observação nem aparecem na amostra.\n\nExemplo intuitivo:\n\nSe só incluímos pacientes que sobreviveram pelo menos 2 anos após o diagnóstico, pacientes que morreram antes não aparecem nos dados → truncamento à esquerda.\nSe só incluímos pacientes que tiveram o evento antes de 10 anos, pacientes que duram mais que isso não aparecem → truncamento à direita."
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nO truncamento ocorre quando certos indivíduos não podem entrar no estudo, pois não satisfazem um critério de inclusão relacionado ao tempo do evento.\nOu seja, algumas observações são completamente excluídas da amostra, pois o evento ocorreu fora de uma janela temporal de observação.\nDiferentemente da censura, no truncamento os indivíduos sequer aparecem no banco de dados, pois não são observados no estudo.\nEm muitos estudos, os indivíduos não são acompanhados desde o tempo inicial, mas apenas após um determinado momento ou evento.\nAssim, o estudo inclui apenas indivíduos cujo tempo do evento ocorreu dentro de uma janela temporal pré-estabelecida."
   },
   {
     "objectID": "Aula2.html#truncamento-à-esquerda",
     "href": "Aula2.html#truncamento-à-esquerda",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "Truncamento à Esquerda",
-    "text": "Truncamento à Esquerda\n\nOcorre quando indivíduos que experimentaram o evento antes de um certo tempo não entram no estudo.\nExemplo prático:\n\nEstudo sobre tempo até falha de um equipamento industrial.\nApenas equipamentos que sobrevivem ao teste inicial de 6 meses são incluídos.\n\nEquipamentos que falharam antes de 6 meses não entram nos dados → truncamento à esquerda.\n\nImpacto:\n- A amostra está “viciada” para tempos curtos. - Estatísticas estimadas sem correção ficam enviesadas."
+    "section": "TRUNCAMENTO À ESQUERDA",
+    "text": "TRUNCAMENTO À ESQUERDA\n\n\nO truncamento à esquerda ocorre quando somente indivíduos cujo evento ocorreu após um determinado limite inferior podem ser observados.\nOu seja, indivíduos cujo evento ocorreu antes desse limite não entram no estudo.\nEsse tipo de truncamento ocorre quando indivíduos que tiveram o evento muito cedo não podem ser observados, pois já haviam experimentado o evento antes do início do estudo.\nEsse fenômeno aparece frequentemente em estudos com dados prevalentes, em que apenas indivíduos ainda vivos ou em acompanhamento são observados."
+  },
+  {
+    "objectID": "Aula2.html#exemplo-de-truncamento-à-esquerda",
+    "href": "Aula2.html#exemplo-de-truncamento-à-esquerda",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO DE TRUNCAMENTO À ESQUERDA",
+    "text": "EXEMPLO DE TRUNCAMENTO À ESQUERDA\n\n\nConsidere um estudo sobre pacientes em hemodiálise devido à insuficiência renal.\nSuponha que exista um registro mensal das sessões de hemodiálise no período:\n\nJaneiro de 1988 até Outubro de 2001\n\nO estudo inclui:\n\nPacientes que já estavam em tratamento em Janeiro de 1988\nPacientes que iniciaram o tratamento após essa data\n\nEntretanto, não existem dados sobre pacientes que:\n\nIniciaram o tratamento antes de 1988\nMorreram antes de Janeiro de 1988\n\nAssim, esses pacientes não aparecem no banco de dados, caracterizando truncamento à esquerda."
+  },
+  {
+    "objectID": "Aula2.html#interpretação-do-truncamento-à-esquerda",
+    "href": "Aula2.html#interpretação-do-truncamento-à-esquerda",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DO TRUNCAMENTO À ESQUERDA",
+    "text": "INTERPRETAÇÃO DO TRUNCAMENTO À ESQUERDA\n\n\nNesse tipo de estudo, parte da informação é observada retrospectivamente e parte prospectivamente.\nO problema é que indivíduos que tiveram o evento muito cedo não podem ser incluídos na amostra.\nComo consequência, ocorre um viés de seleção, pois:\n\nindivíduos com maior tempo de sobrevivência têm maior chance de aparecer no estudo\n\nEsse viés pode levar à subestimação do risco do evento, pois indivíduos que morreram cedo não são observados."
+  },
+  {
+    "objectID": "Aula2.html#interpretação-dos-resultados",
+    "href": "Aula2.html#interpretação-dos-resultados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DOS RESULTADOS",
+    "text": "INTERPRETAÇÃO DOS RESULTADOS\n\n\nQuando analisamos dados com truncamento à esquerda, os resultados devem ser interpretados com cuidado.\nNa prática, os resultados são condicionados ao fato de o indivíduo ter sobrevivido até o início do estudo.\nPor exemplo, no estudo de hemodiálise:\n\nAs estimativas obtidas são condicionadas ao fato de o paciente estar vivo em Janeiro de 1988.\n\nPortanto, o estudo não representa todos os pacientes, mas apenas aqueles que sobreviveram até o início da observação."
   },
   {
     "objectID": "Aula2.html#truncamento-à-direita",
     "href": "Aula2.html#truncamento-à-direita",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "Truncamento à Direita",
-    "text": "Truncamento à Direita\n\nOcorre quando indivíduos que experimentam o evento após um certo tempo não entram no estudo.\nExemplo prático:\n\nUm estudo sobre recidiva de câncer com duração limitada de 5 anos.\nPacientes que teriam recidiva após 5 anos não entram na amostra → truncamento à direita.\n\nImpacto:\n- Amostra “viciada” para tempos longos. - Estimativas de sobrevivência superestimadas se ignorarmos o truncamento."
+    "section": "TRUNCAMENTO À DIREITA",
+    "text": "TRUNCAMENTO À DIREITA\n\n\nO truncamento à direita ocorre quando somente indivíduos que já apresentaram o evento podem entrar no estudo.\nNesse caso, indivíduos que ainda não tiveram o evento não aparecem no banco de dados.\nAssim, apenas eventos que ocorreram antes de um limite superior da janela temporal são observados.\nEsse tipo de truncamento aparece em estudos em que a amostra é construída a partir da ocorrência do evento."
   },
   {
-    "objectID": "Aula2.html#comparação-truncamento-x-censura",
-    "href": "Aula2.html#comparação-truncamento-x-censura",
+    "objectID": "Aula2.html#exemplo-de-truncamento-à-direita",
+    "href": "Aula2.html#exemplo-de-truncamento-à-direita",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "Comparação Truncamento x Censura",
-    "text": "Comparação Truncamento x Censura\n\n\n\n\n\n\n\n\nAspecto\nCensura\nTruncamento\n\n\n\n\nQuem aparece no estudo\nTodos entram\nApenas dentro de certo intervalo\n\n\nObservação completa?\nNem sempre\nSempre (dentro do intervalo)\n\n\nExemplo\nPaciente sai do estudo\nPaciente já morreu antes da inclusão\n\n\nViés se ignorado\nPode subestimar/overestimar\nEstatísticas podem ficar enviesadas"
+    "section": "EXEMPLO DE TRUNCAMENTO À DIREITA",
+    "text": "EXEMPLO DE TRUNCAMENTO À DIREITA\n\n\nConsidere um estudo sobre fatores associados à sobrevivência de pacientes com AIDS.\nSuponha que os dados sejam obtidos a partir de registros de óbito.\nNesse caso, o banco de dados inclui apenas:\n\nindivíduos que morreram dentro do período do estudo\n\nIndivíduos que:\n\nainda estão vivos\nou não tiveram o evento\n\nnão aparecem na base de dados.\nAssim, a amostra é formada apenas por indivíduos que apresentaram o evento, caracterizando truncamento à direita."
   },
   {
-    "objectID": "Aula2.html#exercício-truncamento",
-    "href": "Aula2.html#exercício-truncamento",
+    "objectID": "Aula2.html#consequências-do-truncamento-à-direita",
+    "href": "Aula2.html#consequências-do-truncamento-à-direita",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "EXERCÍCIO: TRUNCAMENTO",
-    "text": "EXERCÍCIO: TRUNCAMENTO\nNos exemplos a seguir, há truncamento à direita ou à esquerda?\n\nPacientes que não morreram foram descartados do estudo.\n\nIndivíduos que morreram antes do início do estudo não foram incluídos."
+    "section": "CONSEQUÊNCIAS DO TRUNCAMENTO À DIREITA",
+    "text": "CONSEQUÊNCIAS DO TRUNCAMENTO À DIREITA\n\n\nO truncamento à direita também pode gerar viés de seleção.\nComo apenas indivíduos que apresentaram o evento são incluídos, o estudo pode:\n\nsuperestimar o risco do evento\n\nIsso ocorre porque indivíduos que não apresentaram o evento nunca entram na amostra.\nEsse problema tende a ser menos grave em doenças de curta duração, nas quais praticamente todos os indivíduos acabam apresentando o evento."
+  },
+  {
+    "objectID": "Aula2.html#como-lidar-com-o-truncamento",
+    "href": "Aula2.html#como-lidar-com-o-truncamento",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO LIDAR COM O TRUNCAMENTO?",
+    "text": "COMO LIDAR COM O TRUNCAMENTO?\n\n\nO truncamento nem sempre pode ser evitado, pois muitas vezes ele surge devido ao próprio desenho do estudo ou à disponibilidade dos dados.\nNo entanto, é importante identificá-lo, pois ele pode gerar viés de seleção nas análises."
+  },
+  {
+    "objectID": "Aula2.html#como-detectar-o-truncamento",
+    "href": "Aula2.html#como-detectar-o-truncamento",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO DETECTAR O TRUNCAMENTO?",
+    "text": "COMO DETECTAR O TRUNCAMENTO?\n\n\nVerifique se existem indivíduos que nunca poderiam aparecer no banco de dados, mesmo que tenham experimentado o evento.\nPergunte:\n\nO estudo inclui apenas indivíduos que sobreviveram até certa data?\nO estudo inclui apenas indivíduos que já apresentaram o evento?\n\nSe a resposta for sim, pode haver truncamento nos dados."
+  },
+  {
+    "objectID": "Aula2.html#o-que-fazer-na-análise",
+    "href": "Aula2.html#o-que-fazer-na-análise",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE FAZER NA ANÁLISE",
+    "text": "O QUE FAZER NA ANÁLISE\n\n\nUtilizar métodos de análise de sobrevivência que considerem truncamento, como:\n\nmodelos com entrada retardada (delayed entry)\n\nversões adaptadas do estimador de Kaplan–Meier\nmodelos de Cox com truncamento\n\nAlém disso, é fundamental interpretar os resultados de forma condicional, reconhecendo que:\n\na amostra não representa toda a população,\n\nmas apenas os indivíduos que puderam ser observados dentro da janela do estudo."
   },
   {
     "objectID": "Aula1.html#a-importância-da-análise-de-sobrevivência",
