@@ -349,7 +349,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>DEFINIÇÃO DA FUNÇÃO <span class="math inline">\(f(t)\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li>Agora considere esse incremento <span class="math inline">\(\Delta\)</span> cada vez mais se aproximando de 0. <img data-src="Images/Reta2.png" style="width:80.0%"></li>
+<li>Agora considere esse incremento <span class="math inline">\(\Delta\)</span> cada vez mais se aproximando de 0. <img data-src="Images/Reta2.png" style="width:50.0%"></li>
 <li><strong>Essa é a definição da função densidade de probabilidade da variável contínua <span class="math inline">\(T\)</span></strong>, representada por <span class="math inline">\(f(t)\)</span>:</li>
 </ul>
 <p><span class="math display">\[
@@ -454,7 +454,7 @@ S(t)=P(T&gt;t)=1-P(T\leq t)=1-F(t)
 <section id="exemplo-de-uma-função-st" class="slide level2">
 <h2><strong>EXEMPLO DE UMA FUNÇÃO <span class="math inline">\(S(t)\)</span></strong></h2>
 <div class="box-blue">
-<p><img data-src="Images/ExemploS_t.png" style="width:75.0%"> - O <strong>tempo de ocorrência mediano do evento</strong> foi de 35 dias, pois este é o tempo no qual <strong>50% dos elementos não sofreram o evento</strong> <span class="math inline">\((S(35) = 0,5)\)</span></p>
+<p><img data-src="Images/ExemploS_t.png" style="width:45.0%"> - O <strong>tempo de ocorrência mediano do evento</strong> foi de 35 dias, pois este é o tempo no qual <strong>50% dos elementos não sofreram o evento</strong> <span class="math inline">\((S(35) = 0,5)\)</span></p>
 </div>
 </section>
 <section id="características-da-função-st" class="slide level2">
@@ -463,7 +463,10 @@ S(t)=P(T&gt;t)=1-P(T\leq t)=1-F(t)
 <ul>
 <li>A função <span class="math inline">\(S(t)\)</span> começa sempre com <span class="math inline">\(S(0) = 1\)</span>, ou seja, <strong>a probabilidade de um elemento apresentar o evento após 0 unidades de tempo é 1</strong>.<br>
 </li>
-<li>À medida que o tempo passa, <span class="math inline">\(S(t)\)</span> <strong>decresce ou permanece constante</strong> e, no limite, quando <span class="math inline">\(t \rightarrow \infty\)</span>, <span class="math inline">\(S(\infty) = 0\)</span>.</li>
+<li>À medida que o tempo passa, <span class="math inline">\(S(t)\)</span> <strong>decresce ou permanece constante</strong> e, no limite, quando <span class="math inline">\(t \rightarrow \infty\)</span>, <span class="math inline">\(S(\infty) = 0\)</span>.
+<ul>
+<li>Eventualmente, todos os indivíduos experimentarão o evento de interesse se o tempo for suficientemente longo.</li>
+</ul></li>
 <li>Existe a possibilidade de quando <span class="math inline">\(t \rightarrow \infty\)</span>, <span class="math inline">\(S(\infty) = p\neq0\)</span>
 <ul>
 <li>Comum em estudos de fração de cura, onde uma proporção <span class="math inline">\(p\)</span> de elementos jamais apresentarão o evento de interesse (não será abordado aqui).</li>
@@ -486,7 +489,7 @@ S(t)=P(T&gt;t)=1-P(T\leq t)=1-F(t)
 <section id="exemplo-avaliando-2-tratamentos-1" class="slide level2">
 <h2><strong>EXEMPLO: AVALIANDO 2 TRATAMENTOS</strong></h2>
 <div class="box-blue">
-<p><img data-src="Images/ExemploCurvas.png" style="width:84.0%"></p>
+<p><img data-src="Images/ExemploCurvas.png" style="width:75.0%"></p>
 </div>
 </section>
 <section id="exemplo-avaliando-2-tratamentos-2" class="slide level2">
@@ -708,9 +711,9 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <li>A função de risco permite analisar o <strong>risco de ocorrência do evento de interesse em um tempo <span class="math inline">\(t\)</span>, dado que o indivíduo não apresentou o evento de interesse até esse momento</strong>.</li>
 <li>Por exemplo:
 <ul>
-<li>O risco de um paciente falecer logo após uma cirurgia é o mesmo no primeiro e no trigésimo dia?
+<li>O risco instantâneo de um paciente falecer logo após uma cirurgia é o mesmo no primeiro e no trigésimo dia?
 <ul>
-<li><strong>Provavelmente não</strong>: o risco de óbito pós-cirúrgico tende a <strong>diminuir com o tempo</strong>.</li>
+<li><strong>Provavelmente não</strong>: o risco de óbito pós-cirúrgico tende a <strong>diminuir com o tempo</strong>, dado que o paciente está vivo.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -830,7 +833,7 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <section id="exemplos-da-função-lambdat-8" class="slide level2">
 <h2><strong>EXEMPLOS DA FUNÇÃO <span class="math inline">\(\lambda(t)\)</span></strong></h2>
 <div class="box-blue">
-<p><img data-src="Images/Risk4.png" style="width:100.0%"></p>
+<p><img data-src="Images/Risk4.png" style="width:90.0%"></p>
 </div>
 </section>
 <section id="comportamento-da-função-lambdat" class="slide level2">
@@ -897,7 +900,7 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Aula3_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="Aula3_files/figure-revealjs/unnamed-chunk-4-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1028,7 +1031,7 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <li>o percentil <span class="math inline">\(t_p = -\frac{\ln(1 - p)}{2}\)</span>.</li>
 <li>a função de risco <span class="math inline">\(\lambda(t)=2\)</span></li>
 </ul></li>
-<li>Encontre agora a função de risco acumulado <span class="math inline">\(\Lambda(t)\)</span>. Calcule <span class="math inline">\(\Lambda(2)\)</span> e interprete o seu valor.</li>
+<li>Encontre agora a função de risco acumulado <span class="math inline">\(\Lambda(t)\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -1071,10 +1074,6 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <li>Cada unidade adicional de tempo adiciona <strong>a mesma quantidade de risco</strong>.</li>
 </ul></li>
 <li>Assim, o risco total cresce de forma <strong>proporcional ao tempo</strong>, resultando em uma <strong>função linear</strong>.</li>
-<li>Em resumo:
-<ul>
-<li>risco instantâneo constante ⟶ acréscimos constantes de risco ⟶ risco acumulado linear.</li>
-</ul></li>
 </ul>
 </div></div>
 </div>
@@ -1098,20 +1097,14 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <h2><strong>TEMPO MÉDIO <span class="math inline">\(t_m\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li>O <strong>tempo médio de ocorrência do evento de interesse</strong>, denotado por <span class="math inline">\(t_m\)</span>, é definido como o valor esperado de <span class="math inline">\(T\)</span>.</li>
-<li>Matematicamente:</li>
-</ul>
-<p><span class="math display">\[
+<li><p>O <strong>tempo médio de ocorrência do evento de interesse</strong>, denotado por <span class="math inline">\(t_m\)</span>, é definido como o valor esperado de <span class="math inline">\(T\)</span>.</p></li>
+<li><p>Matematicamente: <span class="math display">\[
 t_m = E(T) = \int_0^\infty t f(t)\,dt
-\]</span></p>
-<ul>
-<li>Uma forma equivalente, muito utilizada em Análise de Sobrevivência, é:</li>
-</ul>
-<p><span class="math display">\[
+\]</span></p></li>
+<li><p>Uma forma equivalente, muito utilizada em Análise de Sobrevivência, é: <span class="math display">\[
 t_m = \int_0^\infty S(t)\,dt
-\]</span></p>
-<ul>
-<li>Ou seja, o tempo médio corresponde <strong>à área sob a curva de sobrevivência</strong>.
+\]</span></p></li>
+<li><p>Ou seja, o tempo médio corresponde <strong>à área sob a curva de sobrevivência</strong>.</p>
 <ul>
 <li>Essa fórmula só é possível porque <span class="math inline">\(T\)</span> é uma variável aleatória positiva (Teorema de Fubini)</li>
 </ul></li>
@@ -1122,26 +1115,18 @@ t_m = \int_0^\infty S(t)\,dt
 <h2><strong>TEMPO MÉDIO RESIDUAL <span class="math inline">\(\text{vmr}(t)\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li>O <strong>tempo médio residual</strong> é definido <strong>condicionalmente a um certo tempo <span class="math inline">\(t\)</span></strong>.</li>
-<li>Para indivíduos que <strong>não apresentaram o evento até o tempo <span class="math inline">\(t\)</span></strong>, a pergunta é:
+<li><p>O <strong>tempo médio residual</strong> é definido <strong>condicionalmente a um certo tempo <span class="math inline">\(t\)</span></strong>.</p></li>
+<li><p>Para indivíduos que <strong>não apresentaram o evento até o tempo <span class="math inline">\(t\)</span></strong>, a pergunta é:</p>
 <ul>
 <li><em>Quanto tempo, em média, ainda falta para o evento ocorrer?</em></li>
 </ul></li>
-<li>O tempo médio residual é dado por:</li>
-</ul>
-<p><span class="math display">\[
+<li><p>O tempo médio residual é dado por: <span class="math display">\[
 \text{vmr}(t)=\frac{\int_t^\infty (u-t)f(u)\,du}{S(t)}
-\]</span></p>
-<ul>
-<li>Uma forma equivalente é:</li>
-</ul>
-<p><span class="math display">\[
+\]</span></p></li>
+<li><p>Uma forma equivalente é: <span class="math display">\[
 \text{vmr}(t)=\frac{\int_t^\infty S(u)\,du}{S(t)}
-\]</span></p>
-<ul>
-<li>Observe que: <span class="math display">\[
-\text{vmr}(0)=t_m
-\]</span></li>
+\]</span></p></li>
+<li><p>Observe que <span class="math inline">\(\text{vmr}(0)=t_m\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -1168,9 +1153,9 @@ t_m = \int_0^\infty S(t)\,dt
 <li>O <strong>tempo médio de ocorrência do evento de interesse</strong> é:</li>
 </ul>
 <p><span class="math display">\[
-t_m = E(T) = \int_0^\infty t f(t)\,dt
-      = \int_0^\infty t \alpha e^{-\alpha t}\,dt
-      = \frac{1}{\alpha}
+t_m = E(T) = \int_0^\infty S(t)\,dt
+      = \int_0^\infty e^{-2 t}\,dt
+      = \frac{1}{2} = 500 \textrm{ horas }
 \]</span></p>
 <ul>
 <li>O <strong>tempo médio residual</strong> é:</li>
@@ -1178,8 +1163,8 @@ t_m = E(T) = \int_0^\infty t f(t)\,dt
 <p><span class="math display">\[
 \text{vmr}(t)
 = \frac{\int_t^\infty S(u)\,du}{S(t)}
-= \frac{\int_t^\infty e^{-\alpha u}\,du}{e^{-\alpha t}}
-= \frac{1}{\alpha}
+= \frac{\int_t^\infty e^{-2 u}\,du}{e^{-2 t}}
+= \frac{1}{2} = 500 \textrm{ horas }
 \]</span></p>
 <ul>
 <li>Ou seja, para a distribuição exponencial:
@@ -1217,7 +1202,7 @@ t_m = E(T) = \int_0^\infty t f(t)\,dt
 </ul>
 </div>
 </section>
-<section id="relação-matemática-entre-as-funções" class="slide level2">
+<section id="relação-matemática-entre-as-funções" class="slide level2 scrollable">
 <h2><strong>RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES</strong></h2>
 <div class="box-blue">
 <p>As funções da análise de sobrevivência possuem <strong>relações matemáticas diretas</strong> entre si.</p>
@@ -1242,7 +1227,7 @@ S(t) = 1 - F(t)
 \]</span></p>
 </div>
 </section>
-<section id="relação-matemática-entre-as-funções-1" class="slide level2">
+<section id="relação-matemática-entre-as-funções-1" class="slide level2 scrollable">
 <h2><strong>RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES</strong></h2>
 <div class="box-blue">
 <ol start="4" type="1">
