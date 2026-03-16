@@ -336,7 +336,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul></li>
 <li>Considere o intervalo <span class="math inline">\([t,t+\Delta)\)</span>, , em que <span class="math inline">\(\Delta\)</span> é um incremento:</li>
 </ul>
-<p><img data-src="Images/Reta1.png" style="width:10.0%"></p>
+<p><img data-src="Images/Reta1.png" style="width:30.0%"></p>
 <ul>
 <li>A <strong>densidade da variável aleatória <span class="math inline">\(T\)</span> nesse intervalo</strong> é:</li>
 </ul>
@@ -454,7 +454,7 @@ S(t)=P(T&gt;t)=1-P(T\leq t)=1-F(t)
 <section id="exemplo-de-uma-função-st" class="slide level2">
 <h2><strong>EXEMPLO DE UMA FUNÇÃO <span class="math inline">\(S(t)\)</span></strong></h2>
 <div class="box-blue">
-<p><img data-src="Images/ExemploS_t.png" style="width:80.0%"> - O <strong>tempo de ocorrência mediano do evento</strong> foi de 35 dias, pois este é o tempo no qual <strong>50% dos elementos não sofreram o evento</strong> <span class="math inline">\((S(35) = 0,5)\)</span></p>
+<p><img data-src="Images/ExemploS_t.png" style="width:75.0%"> - O <strong>tempo de ocorrência mediano do evento</strong> foi de 35 dias, pois este é o tempo no qual <strong>50% dos elementos não sofreram o evento</strong> <span class="math inline">\((S(35) = 0,5)\)</span></p>
 </div>
 </section>
 <section id="características-da-função-st" class="slide level2">
@@ -629,7 +629,7 @@ f(t) = 2 e^{-2 t}, \quad t&gt;0
 \]</span></p>
 <p>Além disso, já sabemos também que o tempo <span class="math inline">\(T\)</span> tem a seguinte função de confiabilidade:</p>
 <p><span class="math display">\[
-e^{-2 t}
+S(t)=e^{-2 t}
 \]</span></p>
 <p>Derive a fórmula do percentil <span class="math inline">\(t_p\)</span>. A partir dela, encontre o tempo mediano de falha dos dispositivos.</p>
 </div>
@@ -993,7 +993,9 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <ul>
 <li>A <strong>função de risco acumulado</strong> <span class="math inline">\(\Lambda(t)\)</span> <strong>mede o risco de ocorrência do evento até um determinado tempo <span class="math inline">\(t\)</span></strong>.</li>
 <li>Matematicamente, <strong>isso significa a soma de todos os riscos em todos os tempos até o tempo <span class="math inline">\(t\)</span></strong>.</li>
-<li>Como <span class="math inline">\(T\)</span> é uma variável aleatória contínua, esta é uma <strong>soma infinitesimal</strong> e pode ser calculada a partir de uma <strong>integral da função de risco</strong>: [ (t) = _0^t (u) , du ]</li>
+<li>Como <span class="math inline">\(T\)</span> é uma variável aleatória contínua, esta é uma <strong>soma infinitesimal</strong> e pode ser calculada a partir de uma <strong>integral da função de risco</strong>: <span class="math display">\[
+\Lambda(t) = \int_0^t \lambda(u) \, du
+\]</span></li>
 </ul>
 </div>
 </section>
@@ -1037,7 +1039,7 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <li><p>A função de risco acumulada é: <span class="math display">\[
 \Lambda(t) = \int_0^t \lambda(u) \, du = \int_0^t 2 \, du = 2 t
 \]</span></p></li>
-<li><p>Isto é, <span class="math inline">\(\Lambda(t)\)</span> é uma função de linear.</p></li>
+<li><p>Isto é, <span class="math inline">\(\Lambda(t)\)</span> é uma função linear.</p></li>
 </ul>
 </div>
 </section>
@@ -1085,7 +1087,11 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <section id="introdução-5" class="slide level2">
 <h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
-<p>Outras <strong>duas quantidades</strong> de interesse em Análise de Sobrevivência e Confiabilidade são: - o <strong>tempo médio</strong> de ocorrência do evento de interesse; - o <strong>tempo médio residual</strong> de ocorrência do evento de interesse.</p>
+<p>Outras <strong>duas quantidades</strong> de interesse em Análise de Sobrevivência e Confiabilidade são:</p>
+<ul>
+<li>o <strong>tempo médio</strong> de ocorrência do evento de interesse;</li>
+<li>o <strong>tempo médio residual</strong> de ocorrência do evento de interesse.</li>
+</ul>
 </div>
 </section>
 <section id="tempo-médio-t_m" class="slide level2">
@@ -1095,11 +1101,15 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <li>O <strong>tempo médio de ocorrência do evento de interesse</strong>, denotado por <span class="math inline">\(t_m\)</span>, é definido como o valor esperado de <span class="math inline">\(T\)</span>.</li>
 <li>Matematicamente:</li>
 </ul>
-<p>[ t_m = E(T) = _0^t f(t),dt ]</p>
+<p><span class="math display">\[
+t_m = E(T) = \int_0^\infty t f(t)\,dt
+\]</span></p>
 <ul>
 <li>Uma forma equivalente, muito utilizada em Análise de Sobrevivência, é:</li>
 </ul>
-<p>[ t_m = _0^S(t),dt ]</p>
+<p><span class="math display">\[
+t_m = \int_0^\infty S(t)\,dt
+\]</span></p>
 <ul>
 <li>Ou seja, o tempo médio corresponde <strong>à área sob a curva de sobrevivência</strong>.
 <ul>
@@ -1119,13 +1129,19 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 </ul></li>
 <li>O tempo médio residual é dado por:</li>
 </ul>
-<p>[ (t)= ]</p>
+<p><span class="math display">\[
+\text{vmr}(t)=\frac{\int_t^\infty (u-t)f(u)\,du}{S(t)}
+\]</span></p>
 <ul>
 <li>Uma forma equivalente é:</li>
 </ul>
-<p>[ (t)= ]</p>
+<p><span class="math display">\[
+\text{vmr}(t)=\frac{\int_t^\infty S(u)\,du}{S(t)}
+\]</span></p>
 <ul>
-<li>Observe que: [ (0)=t_m ]</li>
+<li>Observe que: <span class="math display">\[
+\text{vmr}(0)=t_m
+\]</span></li>
 </ul>
 </div>
 </section>
@@ -1151,11 +1167,20 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 <ul>
 <li>O <strong>tempo médio de ocorrência do evento de interesse</strong> é:</li>
 </ul>
-<p>[ t_m = E(T) = _0^t f(t),dt = _0^t e^{-t},dt = ]</p>
+<p><span class="math display">\[
+t_m = E(T) = \int_0^\infty t f(t)\,dt
+      = \int_0^\infty t \alpha e^{-\alpha t}\,dt
+      = \frac{1}{\alpha}
+\]</span></p>
 <ul>
 <li>O <strong>tempo médio residual</strong> é:</li>
 </ul>
-<p>[ (t) = = = ]</p>
+<p><span class="math display">\[
+\text{vmr}(t)
+= \frac{\int_t^\infty S(u)\,du}{S(t)}
+= \frac{\int_t^\infty e^{-\alpha u}\,du}{e^{-\alpha t}}
+= \frac{1}{\alpha}
+\]</span></p>
 <ul>
 <li>Ou seja, para a distribuição exponencial:
 <ul>
@@ -1164,11 +1189,102 @@ P(T \leq t_p) &amp;= F(t_p) = p \\
 </ul>
 </div>
 </section></section>
+<section>
 <section id="relações-entre-as-funções-básicas" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
 <h1><strong>RELAÇÕES ENTRE AS FUNÇÕES BÁSICAS</strong></h1>
 
-
 </section>
+<section id="relação-entre-as-funções" class="slide level2 scrollable">
+<h2><strong>RELAÇÃO ENTRE AS FUNÇÕES</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>As <strong>funções básicas da análise de sobrevivência estão relacionadas entre si</strong>.</p></li>
+<li><p>Antes de explorar essas relações matemáticas, vamos <strong>relembrar rapidamente o papel de cada função</strong> a partir de algumas perguntas fundamentais.</p></li>
+<li><p>Perguntas importantes:</p>
+<ul>
+<li><p>Em qual instante de tempo os eventos tendem a ocorrer mais? → <strong>Função Densidade de Probabilidade</strong> <span class="math inline">\(f(t)\)</span>.</p></li>
+<li><p>Qual a <strong>probabilidade de sobreviver por mais de <span class="math inline">\(t\)</span> unidades de tempo</strong>?<br>
+→ <strong>Função de sobrevivência</strong> <span class="math inline">\(S(t)\)</span>.</p></li>
+<li><p>Qual o <strong>risco de ocorrência do evento no tempo <span class="math inline">\(t\)</span></strong>, sabendo que o indivíduo <strong>sobreviveu até esse momento</strong>?<br>
+→ <strong>Função de risco</strong> <span class="math inline">\(\lambda(t)\)</span>.</p></li>
+<li><p>Qual o <strong>risco total acumulado de ocorrência do evento até um tempo <span class="math inline">\(t\)</span></strong>?<br>
+→ <strong>Função de risco acumulado</strong> <span class="math inline">\(\Lambda(t)\)</span>.</p></li>
+<li><p>Qual o <strong>tempo médio esperado até a ocorrência do evento</strong>?<br>
+→ <strong>Tempo médio de vida</strong> <span class="math inline">\(t_m\)</span>.</p></li>
+<li><p>Qual o <strong>tempo médio restante até a ocorrência do evento, dado que o indivíduo já sobreviveu até <span class="math inline">\(t\)</span></strong>?<br>
+→ <strong>Vida média residual</strong> <span class="math inline">\(vmr(t)\)</span>.</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="relação-matemática-entre-as-funções" class="slide level2">
+<h2><strong>RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES</strong></h2>
+<div class="box-blue">
+<p>As funções da análise de sobrevivência possuem <strong>relações matemáticas diretas</strong> entre si.</p>
+<p>Principais relações:</p>
+<ol type="1">
+<li>Relação entre sobrevivência e distribuição acumulada:</li>
+</ol>
+<p><span class="math display">\[
+S(t) = 1 - F(t)
+\]</span></p>
+<ol start="2" type="1">
+<li>Relação entre função de risco e densidade:</li>
+</ol>
+<p><span class="math display">\[
+\lambda(t) = \frac{f(t)}{S(t)} = -\frac{d}{dt}\left( \ln S(t) \right)
+\]</span></p>
+<ol start="3" type="1">
+<li>Relação entre risco acumulado e risco instantâneo:</li>
+</ol>
+<p><span class="math display">\[
+\Lambda(t) = \int_0^t \lambda(u)\,du = -\ln S(t)
+\]</span></p>
+</div>
+</section>
+<section id="relação-matemática-entre-as-funções-1" class="slide level2">
+<h2><strong>RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES</strong></h2>
+<div class="box-blue">
+<ol start="4" type="1">
+<li>Relação entre sobrevivência e risco acumulado:</li>
+</ol>
+<p><span class="math display">\[
+S(t) = e^{-\Lambda(t)} = e^{-\int_0^t \lambda(u)\,du}
+\]</span></p>
+<ol start="5" type="1">
+<li>Relação envolvendo a vida média residual:</li>
+</ol>
+<p><span class="math display">\[
+S(t) = \frac{vmr(0)}{vmr(t)}
+\exp\left\{-\int_0^t \frac{du}{vmr(u)}\right\}
+\]</span></p>
+<ol start="6" type="1">
+<li>Relação entre risco e vida média residual:</li>
+</ol>
+<p><span class="math display">\[
+\lambda(t) = \frac{\frac{d}{dt}vmr(t)+1}{vmr(t)}
+\]</span></p>
+<ul>
+<li>Essas relações mostram que <strong>o conhecimento da função de sobrevivência <span class="math inline">\(S(t)\)</span> implica no conhecimento das demais funções</strong>, como: <span class="math inline">\(F(t)\)</span>, <span class="math inline">\(f(t)\)</span>, <span class="math inline">\(\lambda(t)\)</span>, <span class="math inline">\(\Lambda(t)\)</span> e <span class="math inline">\(vmr(t)\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="exercício" class="slide level2">
+<h2><strong>EXERCÍCIO</strong></h2>
+<div class="box-blue">
+<p>Considere que o <strong>tempo do diagnóstico até a morte <span class="math inline">\(T\)</span></strong> de pacientes acometidos por uma certa enfermidade possui <strong>função de sobrevivência dada por</strong></p>
+<p><span class="math display">\[
+S(t) = e^{-t^\gamma}, \quad \gamma &gt; 0
+\]</span></p>
+<p>Determine:</p>
+<ul>
+<li><p>a <strong>função densidade de probabilidade</strong> <span class="math inline">\(f(t)\)</span>;</p></li>
+<li><p>a <strong>função de risco</strong> <span class="math inline">\(\lambda(t)\)</span>.</p></li>
+</ul>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

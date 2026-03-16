@@ -4,7 +4,7 @@
     "href": "Aula4.html#revisão-alguns-conceitos-básicos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "REVISÃO: ALGUNS CONCEITOS BÁSICOS",
-    "text": "REVISÃO: ALGUNS CONCEITOS BÁSICOS\n\n\nAnálise de sobrevivência e confiabilidade: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área média e de engenharia, respectivamente.\nTempo: variável aleatória contínua que mede o tempo até a ocorrência de um evento de interesse.\nEvento de interesse: ocorrência que encerra a observação do indivíduo (ex.: morte, falha de um componente, cura, recidiva…).\nCensura: situação em que o tempo exato do evento não é observado; sabe-se apenas que ele ocorre após certo instante (censura à direita)."
+    "text": "REVISÃO: ALGUNS CONCEITOS BÁSICOS\n\n\n\nAnálise de sobrevivência e confiabilidade: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área média e de engenharia, respectivamente.\nTempo: variável aleatória contínua que mede o tempo até a ocorrência de um evento de interesse.\nEvento de interesse: ocorrência que encerra a observação do indivíduo (ex.: morte, falha de um componente, cura, recidiva…).\nCensura: situação em que o tempo exato do evento não é observado; sabe-se apenas que ele ocorre após certo instante (censura à direita)."
   },
   {
     "objectID": "Aula4.html#revisão-funções-básicas",
@@ -1096,7 +1096,7 @@
     "href": "Aula3.html#exemplo-dados-de-dispositivos-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE DISPOSITIVOS",
-    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem a seguinte função densidade de probabilidade:\n\n\\[\nf(t) = 2 e^{-2 t}, \\quad t&gt;0\n\\]\nAlém disso, já sabemos também que o tempo \\(T\\) tem a seguinte função de confiabilidade:\n\\[\ne^{-2 t}\n\\]\nDerive a fórmula do percentil \\(t_p\\). A partir dela, encontre o tempo mediano de falha dos dispositivos."
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS\n\n\nNesse exemplo, consideramos que, por estudos anteriores, que o tempo de falha \\(T\\) (em mil horas) dos dispositivos tem a seguinte função densidade de probabilidade:\n\n\\[\nf(t) = 2 e^{-2 t}, \\quad t&gt;0\n\\]\nAlém disso, já sabemos também que o tempo \\(T\\) tem a seguinte função de confiabilidade:\n\\[\nS(t)=e^{-2 t}\n\\]\nDerive a fórmula do percentil \\(t_p\\). A partir dela, encontre o tempo mediano de falha dos dispositivos."
   },
   {
     "objectID": "Aula3.html#exemplo-dados-de-dispositivos-solução",
@@ -1278,7 +1278,7 @@
     "href": "Aula3.html#definição-da-função-lambdat-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)",
-    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nA função de risco acumulado \\(\\Lambda(t)\\) mede o risco de ocorrência do evento até um determinado tempo \\(t\\).\nMatematicamente, isso significa a soma de todos os riscos em todos os tempos até o tempo \\(t\\).\nComo \\(T\\) é uma variável aleatória contínua, esta é uma soma infinitesimal e pode ser calculada a partir de uma integral da função de risco: [ (t) = _0^t (u) , du ]"
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nA função de risco acumulado \\(\\Lambda(t)\\) mede o risco de ocorrência do evento até um determinado tempo \\(t\\).\nMatematicamente, isso significa a soma de todos os riscos em todos os tempos até o tempo \\(t\\).\nComo \\(T\\) é uma variável aleatória contínua, esta é uma soma infinitesimal e pode ser calculada a partir de uma integral da função de risco: \\[\n\\Lambda(t) = \\int_0^t \\lambda(u) \\, du\n\\]"
   },
   {
     "objectID": "Aula3.html#interpretação-da-função-lambdat-1",
@@ -1299,7 +1299,7 @@
     "href": "Aula3.html#exemplo-dados-de-dispositivos-solução-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)",
-    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nA função de risco acumulada é: \\[\n\\Lambda(t) = \\int_0^t \\lambda(u) \\, du = \\int_0^t 2 \\, du = 2 t\n\\]\nIsto é, \\(\\Lambda(t)\\) é uma função de linear."
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nA função de risco acumulada é: \\[\n\\Lambda(t) = \\int_0^t \\lambda(u) \\, du = \\int_0^t 2 \\, du = 2 t\n\\]\nIsto é, \\(\\Lambda(t)\\) é uma função linear."
   },
   {
     "objectID": "Aula3.html#exemplo-dados-de-dispositivos-gráfico-1",
@@ -1313,21 +1313,21 @@
     "href": "Aula3.html#introdução-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\nOutras duas quantidades de interesse em Análise de Sobrevivência e Confiabilidade são: - o tempo médio de ocorrência do evento de interesse; - o tempo médio residual de ocorrência do evento de interesse."
+    "text": "INTRODUÇÃO\n\nOutras duas quantidades de interesse em Análise de Sobrevivência e Confiabilidade são:\n\no tempo médio de ocorrência do evento de interesse;\no tempo médio residual de ocorrência do evento de interesse."
   },
   {
     "objectID": "Aula3.html#tempo-médio-t_m",
     "href": "Aula3.html#tempo-médio-t_m",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPO MÉDIO \\(t_m\\)",
-    "text": "TEMPO MÉDIO \\(t_m\\)\n\n\nO tempo médio de ocorrência do evento de interesse, denotado por \\(t_m\\), é definido como o valor esperado de \\(T\\).\nMatematicamente:\n\n[ t_m = E(T) = _0^t f(t),dt ]\n\nUma forma equivalente, muito utilizada em Análise de Sobrevivência, é:\n\n[ t_m = _0^S(t),dt ]\n\nOu seja, o tempo médio corresponde à área sob a curva de sobrevivência.\n\nEssa fórmula só é possível porque \\(T\\) é uma variável aleatória positiva (Teorema de Fubini)"
+    "text": "TEMPO MÉDIO \\(t_m\\)\n\n\nO tempo médio de ocorrência do evento de interesse, denotado por \\(t_m\\), é definido como o valor esperado de \\(T\\).\nMatematicamente:\n\n\\[\nt_m = E(T) = \\int_0^\\infty t f(t)\\,dt\n\\]\n\nUma forma equivalente, muito utilizada em Análise de Sobrevivência, é:\n\n\\[\nt_m = \\int_0^\\infty S(t)\\,dt\n\\]\n\nOu seja, o tempo médio corresponde à área sob a curva de sobrevivência.\n\nEssa fórmula só é possível porque \\(T\\) é uma variável aleatória positiva (Teorema de Fubini)"
   },
   {
     "objectID": "Aula3.html#tempo-médio-residual-textvmrt",
     "href": "Aula3.html#tempo-médio-residual-textvmrt",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPO MÉDIO RESIDUAL \\(\\text{vmr}(t)\\)",
-    "text": "TEMPO MÉDIO RESIDUAL \\(\\text{vmr}(t)\\)\n\n\nO tempo médio residual é definido condicionalmente a um certo tempo \\(t\\).\nPara indivíduos que não apresentaram o evento até o tempo \\(t\\), a pergunta é:\n\nQuanto tempo, em média, ainda falta para o evento ocorrer?\n\nO tempo médio residual é dado por:\n\n[ (t)= ]\n\nUma forma equivalente é:\n\n[ (t)= ]\n\nObserve que: [ (0)=t_m ]"
+    "text": "TEMPO MÉDIO RESIDUAL \\(\\text{vmr}(t)\\)\n\n\nO tempo médio residual é definido condicionalmente a um certo tempo \\(t\\).\nPara indivíduos que não apresentaram o evento até o tempo \\(t\\), a pergunta é:\n\nQuanto tempo, em média, ainda falta para o evento ocorrer?\n\nO tempo médio residual é dado por:\n\n\\[\n\\text{vmr}(t)=\\frac{\\int_t^\\infty (u-t)f(u)\\,du}{S(t)}\n\\]\n\nUma forma equivalente é:\n\n\\[\n\\text{vmr}(t)=\\frac{\\int_t^\\infty S(u)\\,du}{S(t)}\n\\]\n\nObserve que: \\[\n\\text{vmr}(0)=t_m\n\\]"
   },
   {
     "objectID": "Aula3.html#exemplo-dados-de-dispositivos-5",
@@ -1341,6 +1341,34 @@
     "href": "Aula3.html#exemplo-dados-de-dispositivos-solução-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)",
-    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nO tempo médio de ocorrência do evento de interesse é:\n\n[ t_m = E(T) = _0^t f(t),dt = _0^t e^{-t},dt = ]\n\nO tempo médio residual é:\n\n[ (t) = = = ]\n\nOu seja, para a distribuição exponencial:\n\no tempo médio residual não depende de \\(t\\)."
+    "text": "EXEMPLO: DADOS DE DISPOSITIVOS (SOLUÇÃO)\n\n\nO tempo médio de ocorrência do evento de interesse é:\n\n\\[\nt_m = E(T) = \\int_0^\\infty t f(t)\\,dt\n      = \\int_0^\\infty t \\alpha e^{-\\alpha t}\\,dt\n      = \\frac{1}{\\alpha}\n\\]\n\nO tempo médio residual é:\n\n\\[\n\\text{vmr}(t)\n= \\frac{\\int_t^\\infty S(u)\\,du}{S(t)}\n= \\frac{\\int_t^\\infty e^{-\\alpha u}\\,du}{e^{-\\alpha t}}\n= \\frac{1}{\\alpha}\n\\]\n\nOu seja, para a distribuição exponencial:\n\no tempo médio residual não depende de \\(t\\)."
+  },
+  {
+    "objectID": "Aula3.html#relação-entre-as-funções",
+    "href": "Aula3.html#relação-entre-as-funções",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELAÇÃO ENTRE AS FUNÇÕES",
+    "text": "RELAÇÃO ENTRE AS FUNÇÕES\n\n\nAs funções básicas da análise de sobrevivência estão relacionadas entre si.\nAntes de explorar essas relações matemáticas, vamos relembrar rapidamente o papel de cada função a partir de algumas perguntas fundamentais.\nPerguntas importantes:\n\nEm qual instante de tempo os eventos tendem a ocorrer mais? → Função Densidade de Probabilidade \\(f(t)\\).\nQual a probabilidade de sobreviver por mais de \\(t\\) unidades de tempo?\n→ Função de sobrevivência \\(S(t)\\).\nQual o risco de ocorrência do evento no tempo \\(t\\), sabendo que o indivíduo sobreviveu até esse momento?\n→ Função de risco \\(\\lambda(t)\\).\nQual o risco total acumulado de ocorrência do evento até um tempo \\(t\\)?\n→ Função de risco acumulado \\(\\Lambda(t)\\).\nQual o tempo médio esperado até a ocorrência do evento?\n→ Tempo médio de vida \\(t_m\\).\nQual o tempo médio restante até a ocorrência do evento, dado que o indivíduo já sobreviveu até \\(t\\)?\n→ Vida média residual \\(vmr(t)\\)."
+  },
+  {
+    "objectID": "Aula3.html#relação-matemática-entre-as-funções",
+    "href": "Aula3.html#relação-matemática-entre-as-funções",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES",
+    "text": "RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES\n\nAs funções da análise de sobrevivência possuem relações matemáticas diretas entre si.\nPrincipais relações:\n\nRelação entre sobrevivência e distribuição acumulada:\n\n\\[\nS(t) = 1 - F(t)\n\\]\n\nRelação entre função de risco e densidade:\n\n\\[\n\\lambda(t) = \\frac{f(t)}{S(t)} = -\\frac{d}{dt}\\left( \\ln S(t) \\right)\n\\]\n\nRelação entre risco acumulado e risco instantâneo:\n\n\\[\n\\Lambda(t) = \\int_0^t \\lambda(u)\\,du = -\\ln S(t)\n\\]"
+  },
+  {
+    "objectID": "Aula3.html#relação-matemática-entre-as-funções-1",
+    "href": "Aula3.html#relação-matemática-entre-as-funções-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES",
+    "text": "RELAÇÃO MATEMÁTICA ENTRE AS FUNÇÕES\n\n\nRelação entre sobrevivência e risco acumulado:\n\n\\[\nS(t) = e^{-\\Lambda(t)} = e^{-\\int_0^t \\lambda(u)\\,du}\n\\]\n\nRelação envolvendo a vida média residual:\n\n\\[\nS(t) = \\frac{vmr(0)}{vmr(t)}\n\\exp\\left\\{-\\int_0^t \\frac{du}{vmr(u)}\\right\\}\n\\]\n\nRelação entre risco e vida média residual:\n\n\\[\n\\lambda(t) = \\frac{\\frac{d}{dt}vmr(t)+1}{vmr(t)}\n\\]\n\nEssas relações mostram que o conhecimento da função de sobrevivência \\(S(t)\\) implica no conhecimento das demais funções, como: \\(F(t)\\), \\(f(t)\\), \\(\\lambda(t)\\), \\(\\Lambda(t)\\) e \\(vmr(t)\\)."
+  },
+  {
+    "objectID": "Aula3.html#exercício",
+    "href": "Aula3.html#exercício",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXERCÍCIO",
+    "text": "EXERCÍCIO\n\nConsidere que o tempo do diagnóstico até a morte \\(T\\) de pacientes acometidos por uma certa enfermidade possui função de sobrevivência dada por\n\\[\nS(t) = e^{-t^\\gamma}, \\quad \\gamma &gt; 0\n\\]\nDetermine:\n\na função densidade de probabilidade \\(f(t)\\);\na função de risco \\(\\lambda(t)\\)."
   }
 ]
