@@ -157,24 +157,24 @@ padding-right: 5%;
 }
 </style>
 <ul>
-<li><strong>Análise de sobrevivência e confiabilidade</strong>: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área média e de engenharia, respectivamente.</li>
+<li><strong>Análise de sobrevivência e confiabilidade</strong>: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área médica e de engenharia, respectivamente.</li>
 <li><strong>Tempo</strong>: variável aleatória contínua que mede o tempo até a ocorrência de um evento de interesse.</li>
 <li><strong>Evento de interesse</strong>: ocorrência que encerra a observação do indivíduo (ex.: morte, falha de um componente, cura, recidiva…).</li>
 <li><strong>Censura</strong>: situação em que o tempo exato do evento não é observado; sabe-se apenas que ele ocorre após certo instante (<strong>censura à direita</strong>).</li>
 </ul>
 </div>
 </section>
-<section id="revisão-funções-básicas" class="slide level2">
+<section id="revisão-funções-básicas" class="slide level2 scrollable">
 <h2><strong>REVISÃO: FUNÇÕES BÁSICAS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Seja (T) a variável aleatória que representa o <strong>tempo até a ocorrência do evento de interesse</strong>.</li>
+<li>Seja <span class="math inline">\(T\)</span> a variável aleatória que representa o <strong>tempo até a ocorrência do evento de interesse</strong>. Vimos as seguintes funções atreladas a esta variável:</li>
 </ul>
 <table class="caption-top">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 34%">
-<col style="width: 46%">
+<col style="width: 20%">
+<col style="width: 27%">
+<col style="width: 51%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -187,37 +187,37 @@ padding-right: 5%;
 <tr class="odd">
 <td>Densidade</td>
 <td><span class="math inline">\(f(t)\)</span></td>
-<td>Probabilidade de falha em torno de <span class="math inline">\(t\)</span></td>
+<td>Densidade de probabilidade de ocorrência do evento em <span class="math inline">\(t\)</span></td>
 </tr>
 <tr class="even">
 <td>Distribuição</td>
 <td><span class="math inline">\(F(t) = P(T \le t)\)</span></td>
-<td>Probabilidade de o evento ocorrer até <span class="math inline">\(t\)</span></td>
+<td>Probabilidade do evento ocorrer até <span class="math inline">\(t\)</span></td>
 </tr>
 <tr class="odd">
 <td>Sobrevivência</td>
 <td><span class="math inline">\(S(t) = P(T &gt; t)\)</span></td>
-<td>Probabilidade de sobreviver além de <span class="math inline">\(t\)</span></td>
+<td>Probabilidade do evento ocorrer após <span class="math inline">\(t\)</span></td>
 </tr>
 <tr class="even">
-<td>Risco (hazard)</td>
-<td><span class="math inline">\(h(t) = \dfrac{f(t)}{S(t)}\)</span></td>
-<td>Taxa instantânea de falha em <span class="math inline">\(t\)</span></td>
+<td>Risco</td>
+<td><span class="math inline">\(\lambda(t) = \dfrac{f(t)}{S(t)}\)</span></td>
+<td>Risco instantâneo de ocorrer o evento em <span class="math inline">\(t\)</span> dado que o elemento ainda não o apresentou até este instante</td>
 </tr>
 <tr class="odd">
 <td>Risco acumulado</td>
-<td><span class="math inline">\(H(t) = \int_0^t h(u)\,du\)</span></td>
+<td><span class="math inline">\(\Lambda(t) = \int_0^t h(u)\,du\)</span></td>
 <td>Acúmulo de risco até <span class="math inline">\(t\)</span></td>
 </tr>
 <tr class="even">
-<td>Tempo médio</td>
-<td><span class="math inline">\(E(T)\)</span></td>
-<td>Vida média (quando existe)</td>
+<td>Tempo médio de ocorrência do evento</td>
+<td><span class="math inline">\(t_m=E(T)\)</span></td>
+<td>Tempo médio de ocorrência do evento</td>
 </tr>
 <tr class="odd">
 <td>Tempo médio residual</td>
-<td><span class="math inline">\(E(T - t \mid T &gt; t)\)</span></td>
-<td>Vida esperada após <span class="math inline">\(t\)</span></td>
+<td><span class="math inline">\(vmr(t)\)</span></td>
+<td>Tempo médio de ocorrência do evento em <span class="math inline">\(t\)</span>, dado que o elemento não apresentou o evento até este instante</td>
 </tr>
 </tbody>
 </table>
@@ -227,91 +227,181 @@ padding-right: 5%;
 <h2><strong>ESTRUTURA DOS DADOS OBSERVADOS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Na população, cada indivíduo possui um tempo verdadeiro de ocorrência do evento de interesse (T).</li>
+<li>Na população, cada indivíduo possui um tempo verdadeiro de ocorrência do evento de interesse <span class="math inline">\(T\)</span>.</li>
 <li>Nos dados observados, uma amostra de <span class="math inline">\(n\)</span> elementos é observada.</li>
 <li><strong>A censura é uma característica dos dados observados, não da população</strong>.</li>
-<li>Devido ao processo de coleta dos dados, o tempo (T) pode não ser completamente observado para alguns elementos amostrais.</li>
+<li>Devido ao processo de coleta dos dados, o tempo <span class="math inline">\(T\)</span> pode não ser completamente observado para alguns elementos amostrais.</li>
 <li>Assim, os dados contêm <strong>informações completas (ocorrências do evento de interesse)</strong> e <strong>informações parciais (censuras)</strong>.</li>
-<li>Os métodos de sobrevivência incorporam essa estrutura para permitir inferências válidas sobre a distribuição de (T) e quantidades relacionadas.</li>
+<li>Os métodos de sobrevivência incorporam essa estrutura para permitir inferências válidas sobre a distribuição de <span class="math inline">\(T\)</span> e quantidades relacionadas.</li>
 </ul>
 </div>
 </section>
-<section id="estatística-descritiva" class="slide level2">
-<h2><strong>ESTATÍSTICA DESCRITIVA</strong></h2>
+<section id="estatística-descritiva-em-dados-de-sobrevivência" class="slide level2 scrollable">
+<h2><strong>ESTATÍSTICA DESCRITIVA EM DADOS DE SOBREVIVÊNCIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O <strong>passo inicial</strong> de qualquer análise estatística é a <strong>descrição dos dados</strong>.
+<li><p>O <strong>primeiro passo</strong> de qualquer análise estatística é a <strong>descrição dos dados</strong>.<br>
+</p></li>
+<li><p>Em <strong>Análise de Sobrevivência</strong> e <strong>Confiabilidade</strong>, isso também é essencial.</p></li>
+<li><p>Entretanto, nesses contextos surge um desafio importante: <strong>a presença de observações censuradas.</strong></p></li>
+<li><p>Quando <strong>não há censura</strong>, podemos utilizar as técnicas usuais de análise descritiva:</p>
 <ul>
-<li>Em Análise de Sobrevivência e Confiabilidade, isso não é diferente.</li>
+<li><strong>Medidas resumo:</strong> média, mediana, percentis e desvio-padrão<br>
+</li>
+<li><strong>Gráficos exploratórios:</strong> histogramas, boxplots e gráficos de dispersão</li>
 </ul></li>
-<li>Se os seus dados não possuem censuras, você pode conduzir a análise descritiva usual a partir de medidas resumo e gráficos exploratórios:
-<ul>
-<li>Medidas resumo: média, moda, percentis, desvio-padrão, entre outras.</li>
-<li>Gráficos: Histograma, Boxplot, dispersão, entre outras.</li>
-</ul></li>
-<li>Entretanto, a <strong>presença de censura</strong> é um <strong>problema</strong> para essas técnicas convencionais.</li>
+<li><p>Contudo, <strong>essas ferramentas podem se tornar inadequadas quando há censura</strong>.</p></li>
 </ul>
 </div>
 </section>
-<section id="a-presença-de-censuras" class="slide level2">
-<h2><strong>A PRESENÇA DE CENSURAS</strong></h2>
+<section id="por-que-a-censura-é-um-problema" class="slide level2">
+<h2><strong>POR QUE A CENSURA É UM PROBLEMA?</strong></h2>
 <div class="box-blue">
+<p>A censura significa que <strong>o tempo real do evento não é completamente observado</strong>.</p>
+<p>Por exemplo, se um indivíduo foi acompanhado até certo tempo sem apresentar o evento, sabemos apenas que</p>
+<p><span class="math display">\[
+T &gt; t
+\]</span></p>
+<p>Portanto:</p>
 <ul>
-<li>Os problemas causados por <strong>observações censuradas</strong> podem ser ilustrados na construção de um simples <strong>histograma</strong>.</li>
-<li>Sem censura, divide-se o eixo do tempo em intervalos e contam-se as ocorrências.</li>
-<li>Com censura aleatória, por exemplo, <strong>não se conhece a frequência exata</strong> em cada intervalo.</li>
-<li>Entretanto, algumas técnicas ainda podem ser utilizadas com <strong>cuidado</strong>.</li>
+<li><strong>não sabemos exatamente quando o evento ocorrerá</strong></li>
+<li><strong>parte da informação sobre o tempo de falha está incompleta</strong></li>
 </ul>
 </div>
 </section>
-<section id="minimamente" class="slide level2">
-<h2><strong>MINIMAMENTE</strong></h2>
+<section id="por-que-a-censura-é-um-problema-1" class="slide level2">
+<h2><strong>POR QUE A CENSURA É UM PROBLEMA?</strong></h2>
 <div class="box-blue">
+<p>Como consequência:</p>
 <ul>
-<li>Minimamente, para qualquer estudo envolvendo dados censurados, reporte:
-<ul>
-<li>Número total de indivíduos</li>
-<li>Número e proporção de eventos</li>
-<li>Número e proporção de censuras</li>
-<li>Tempo inicial e máximo de acompanhamento</li>
-</ul></li>
-<li>Se o estudo possuir covariáveis, reporte algumas medidas resumo e/ou gráficos sobre elas.</li>
+<li>a <strong>média do tempo até o evento pode ser subestimada</strong></li>
+<li><strong>percentis podem ser distorcidos</strong></li>
+<li><strong>gráficos como histogramas podem representar mal os dados</strong></li>
 </ul>
+<p>Assim, a <strong>estatística descritiva clássica deve ser utilizada com cautela</strong>.</p>
+</div>
+</section>
+<section id="descrição-mínima-dos-dados" class="slide level2">
+<h2><strong>DESCRIÇÃO MÍNIMA DOS DADOS</strong></h2>
+<div class="box-blue">
+<p>Em qualquer estudo com <strong>dados censurados</strong>, recomenda-se reportar pelo menos:</p>
+<ul>
+<li><strong>Número total de indivíduos no estudo</strong></li>
+<li><strong>Número de eventos observados</strong></li>
+<li><strong>Número de observações censuradas</strong></li>
+<li><strong>Proporção de censuras</strong></li>
+<li><strong>Tempo mínimo e máximo de acompanhamento</strong></li>
+</ul>
+<p>Essas informações fornecem uma <strong>visão geral da quantidade de informação disponível no estudo</strong>.</p>
+</div>
+</section>
+<section id="descrição-das-covariáveis" class="slide level2">
+<h2><strong>DESCRIÇÃO DAS COVARIÁVEIS</strong></h2>
+<div class="box-blue">
+<p>Se o estudo possuir <strong>covariáveis explicativas</strong>, elas também devem ser descritas.</p>
+<p><strong>Para variáveis categóricas:</strong> tabelas de frequência e proporções por grupo</p>
+<p><strong>Para variáveis numéricas:</strong> média ou mediana, quartis e desvio-padrão</p>
+<p><strong>Visualizações úteis:</strong> boxplots por grupo, histogramas das covariáveis e tabelas comparativas entre grupos</p>
+</div>
+</section>
+<section id="gráficos-apropriados-para-dados-censurados" class="slide level2">
+<h2><strong>GRÁFICOS APROPRIADOS PARA DADOS CENSURADOS</strong></h2>
+<div class="box-blue">
+<p>Sempre que possível, utilize <strong>gráficos que respeitem a presença de censura</strong>, como:</p>
+<ul>
+<li><strong>Curvas de sobrevivência de Kaplan–Meier</strong></li>
+<li><strong>Curvas de sobrevivência estratificadas por covariáveis</strong></li>
+</ul>
+<p>Essas representações permitem visualizar:</p>
+<ul>
+<li>a <strong>probabilidade de sobrevivência ao longo do tempo</strong></li>
+<li><strong>diferenças entre grupos</strong></li>
+<li>o <strong>impacto da censura nos dados</strong></li>
+</ul>
+<p>Assim, elas constituem uma <strong>forma mais adequada de estatística descritiva em estudos de sobrevivência</strong>.</p>
 </div>
 </section>
 <section id="estimação-não-paramétrica-de-funções-básicas" class="slide level2">
 <h2><strong>ESTIMAÇÃO NÃO PARAMÉTRICA DE FUNÇÕES BÁSICAS</strong></h2>
 <div class="box-blue">
+<p>Em Análise de Sobrevivência, nosso objetivo é estimar algumas <strong>funções fundamentais que descrevem o tempo até a ocorrência de um evento</strong>, como:</p>
 <ul>
-<li>RESUMIR AQUI AS ESTIMAÇÕES…</li>
-<li>Sem censura e com censura pra entender…</li>
-<li>Em nenhum momento será suposto algo sobre T.</li>
-<li>Nao ha interesse de estimar parametros</li>
+<li>a <strong>função de sobrevivência</strong> <span class="math inline">\(S(t)\)</span></li>
+<li>a <strong>função de risco</strong> <span class="math inline">\(\lambda(t)\)</span></li>
+<li>a <strong>função de risco acumulada</strong> <span class="math inline">\(\Lambda(t)\)</span></li>
+<li>o <strong>percentil</strong> do tempo de ocorrência do evento de interesse <span class="math inline">\(t_p\)</span></li>
+<li>o <strong>tempo médio</strong> até a ocorrência do evento <span class="math inline">\(t_m\)</span></li>
+<li>o <strong>tempo médio residual</strong> de ocorrência do evento <span class="math inline">\(vmr(t)\)</span></li>
+</ul>
+<p>Entretanto, em muitos estudos <strong>não sabemos qual é a distribuição do tempo até o evento</strong>.</p>
+</div>
+</section>
+<section id="o-que-significa-não-paramétrico" class="slide level2">
+<h2><strong>O QUE SIGNIFICA “NÃO PARAMÉTRICO”?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A <strong>estimação não paramétrica</strong> consiste em estimar essas funções <strong>sem assumir uma forma específica de distribuição para os dados</strong>.</p></li>
+<li><p>Ou seja, <strong>não supomos que os tempos seguem uma distribuição conhecida</strong>, como:</p>
+<ul>
+<li>exponencial</li>
+<li>Weibull</li>
+<li>log-normal</li>
+<li>gama</li>
+</ul></li>
+<li><p>Em vez disso, as estimativas são construídas <strong>diretamente a partir dos dados observados</strong>.</p></li>
 </ul>
 </div>
 </section>
-<section id="metástase-pulmonar-em-osteossarcoma" class="slide level2">
-<h2><strong>METÁSTASE PULMONAR EM OSTEOSSARCOMA</strong></h2>
+<section id="ideia-principal" class="slide level2">
+<h2><strong>IDEIA PRINCIPAL</strong></h2>
+<div class="box-blue">
+<p>Nos métodos <strong>não paramétricos</strong>, as estimativas são obtidas:</p>
+<ul>
+<li>utilizando <strong>apenas as informações observadas na amostra</strong></li>
+<li>sem impor <strong>restrições estruturais fortes sobre a distribuição</strong></li>
+</ul>
+<p>Isso torna esses métodos:</p>
+<ul>
+<li><strong>mais flexíveis</strong></li>
+<li><strong>mais robustos a especificações incorretas de modelo</strong></li>
+</ul>
+<p>Por essa razão, eles costumam ser o <strong>primeiro passo em uma análise de sobrevivência</strong>.</p>
+</div>
+</section>
+<section id="situações-práticas-motivadoras" class="slide level2">
+<h2><strong>SITUAÇÕES PRÁTICAS MOTIVADORAS</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Osteossarcoma é um tumor ósseo maligno comum em adolescentes e jovens adultos.</p></li>
+<li>Para exemplificar a estimação não paramétrica de <strong>funções importantes, serão apresentadas duas situações práticas motivadoras</strong>:
+<ul>
+<li>Uma situação <strong>sem censuras (dados completos)</strong></li>
+<li>Uma situação <strong>com censuras</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="metástase-pulmonar-em-osteossarcoma-dados-completos" class="slide level2">
+<h2><strong>METÁSTASE PULMONAR EM OSTEOSSARCOMA (DADOS COMPLETOS)</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Osteossarcoma</strong> é um tumor ósseo maligno comum <strong>em adolescentes e jovens adultos</strong>.</p></li>
 <li><p>Uma complicação frequente é a <strong>metástase pulmonar</strong>, quando as células do tumor se espalham para os pulmões, representando risco de vida.</p></li>
-<li><p>Burdette &amp; Gehan (1970) consideram os dados de um estudo descritivo com 11 pacientes do sexo masculino com osteossarcoma e metástase pulmonar</p></li>
-<li><p>Os pacientes foram acompanhados desde o diagnóstico da metástase pulmonar até a morte (evento de interesse) de todos os pacientes.</p></li>
-<li><p>Os tempos de sobrevivência observados (em meses) são:</p></li>
+<li><p>Burdette &amp; Gehan (1970) consideram os <strong>dados de um estudo descritivo com 11 pacientes do sexo masculino</strong> com osteossarcoma e metástase pulmonar</p></li>
+<li><p>Os pacientes <strong>foram acompanhados desde o diagnóstico da metástase pulmonar</strong> até a morte (evento de interesse) de <strong>todos os pacientes</strong>.</p></li>
+<li><p>Os <strong>tempos de sobrevivência</strong> observados (em meses) são:</p></li>
 </ul>
 <div style="text-align: center;">
 <p>11, 13, 13, 13, 13, 13, 14, 14, 15, 15 e 17</p>
 </div>
 </div>
 </section>
-<section id="esteroide-no-tratamento-de-hepatite" class="slide level2">
-<h2><strong>ESTEROIDE NO TRATAMENTO DE HEPATITE</strong></h2>
+<section id="esteroide-no-tratamento-de-hepatite-dados-com-censura" class="slide level2">
+<h2><strong>ESTEROIDE NO TRATAMENTO DE HEPATITE (DADOS COM CENSURA)</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Gregory et al., 1976 propoem um estudo clínico aleatorizado para investigar o efeito da terapia com esteroide no tratamento de hepatite viral aguda.</li>
-<li>Vinte e nove pacientes com esta doença foram aleatorizados para receber um placebo ou o tratamento com esteroide</li>
-<li>Cada paciente foi acompanhado por 16 semanas ou até a morte (evento de interesse) ou até a perda de acompanhamento</li>
+<li>Gregory et al., 1976 propoem um <strong>estudo clínico aleatorizado</strong> para investigar o efeito da terapia com <strong>esteroide</strong> no tratamento de hepatite viral aguda.</li>
+<li>Vinte e nove pacientes com esta doença foram <strong>aleatorizados para receber um placebo ou o tratamento com esteroide</strong></li>
+<li>Cada paciente foi acompanhado por <strong>16 semanas ou até a morte</strong> (evento de interesse) ou até a <strong>perda de acompanhamento</strong>.</li>
 </ul>
 </div>
 </section>
@@ -366,8 +456,8 @@ S(t) = P(T &gt; t)
 <li>Estimar a função <span class="math inline">\(S(t)\)</span> é essencial porque nos permite:
 <ul>
 <li><strong>entender o comportamento do tempo até o evento de interesse</strong></li>
-<li>comparar diferentes grupos</li>
-<li>calcular outras quantidades como os percentis.</li>
+<li><strong>comparar</strong> diferentes grupos</li>
+<li>calcular outras quantidades como os <strong>percentis</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -376,7 +466,7 @@ S(t) = P(T &gt; t)
 <h2><strong>DADOS SEM CENSURA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A função de sobrevivência (confiabilidade) no tempo <span class="math inline">\(t\)</span> pode ser estimada a partir da seguinte fórmula:</li>
+<li>A <strong>função de sobrevivência (confiabilidade) no tempo <span class="math inline">\(t\)</span></strong> pode ser <strong>estimada a partir da seguinte fórmula</strong>:</li>
 </ul>
 <p><span class="math display">\[
 \hat{S}(t) =
@@ -391,7 +481,7 @@ S(t) = P(T &gt; t)
 <p>Por exemplo,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\hat{S}(14) &amp;=
+\hat{S}(11) &amp;=
 \frac{\text{nº de elementos que não morreram até 11 meses }}
 {\text{nº de elementos no estudo}} \\
 &amp;= \frac{10}{11} = 0{,}909
@@ -407,13 +497,13 @@ S(t) = P(T &gt; t)
 <h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Note que, para qualquer valor no intervalo [11,13),: <span class="math display">\[
+<li>Note que, para <strong>qualquer valor no intervalo</strong> [11,13),: <span class="math display">\[
 \hat{S}(11)=\hat{S}\left([11,13)\right)=0,909
 \]</span>
 <ul>
-<li>Ou seja, a função <span class="math inline">\(\hat{S}(t)\)</span> é uma função escada, que apresenta saltos nos tempos de morte observados</li>
+<li>Ou seja, a função <span class="math inline">\(\hat{S}(t)\)</span> é uma função <strong>escada</strong>, que apresenta saltos nos *<strong>tempos de morte observados</strong>.</li>
 </ul></li>
-<li>O raciocínio dessa estimação é análogo ao que vocês já fizeram no curso para estimar, a função <span class="math inline">\(F(t)\)</span>.</li>
+<li>O raciocínio dessa <strong>estimação</strong> é análogo ao que vocês já fizeram no <strong>curso para estimar</strong> a função <span class="math inline">\(F(t)\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -423,11 +513,11 @@ S(t) = P(T &gt; t)
 <div class="columns">
 <div class="column add-space" style="width:55%;">
 <ul>
-<li>Para formalizar, denote por <span class="math inline">\(t_j\)</span> todos os tempos distintos de ocorrência do evento de interesse mais o tempo inicial 0, com <span class="math inline">\(j=1,...,m\)</span> e <span class="math inline">\(t_1=0\)</span>.
+<li>Para formalizar, denote por <span class="math inline">\(t_j\)</span> <strong>todos os tempos distintos de ocorrência do evento de interesse mais o tempo inicial 0</strong>, com <span class="math inline">\(j=1,...,m\)</span> e <span class="math inline">\(t_1=0\)</span>.
 <ul>
-<li><span class="math inline">\(m\)</span> é a quantidade de tempos distintos de ocorrência do evento de interesse.</li>
+<li><span class="math inline">\(m\)</span> é a quantidade de tempos distintos de ocorrência do evento de interesse mais o zero.</li>
 </ul></li>
-<li>No exemplo dos dados de osteossarcoma, tem-se a tabela ao lado com os tempos distintos de morte, os respectivos intervalos e a sobrevivência estimada no intervalo.</li>
+<li>No exemplo dos dados de osteossarcoma, tem-se a <strong>tabela ao lado com os tempos distintos de morte</strong>, os respectivos intervalos e <strong>a sobrevivência estimada no intervalo</strong>.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <table class="caption-top">
@@ -491,7 +581,7 @@ S(t) = P(T &gt; t)
 <h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Pode-se, portanto, construir o seguinte gráfico:</li>
+<li>Pode-se, portanto, construir o seguinte <strong>gráfico</strong>:</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -809,13 +899,14 @@ P(X&gt;5) = P(X&gt;1, X&gt;5) = P(X&gt;5 \mid X&gt;1) \cdot P(X&gt;1)
 </ul>
 </div>
 </section>
-<section id="estimador-de-kaplan-meier-passo-4-3" class="slide level2">
+<section id="estimador-de-kaplan-meier-passo-4-3" class="slide level2 scrollable">
 <h2><strong>ESTIMADOR DE KAPLAN-MEIER: PASSO 4</strong></h2>
 <div class="box-blue">
 <ul>
 <li>No segundo tempo: <span class="math inline">\(t_2=1\)</span>: <span class="math display">\[
 \begin{aligned}
 \hat{S}(1) = P(T&gt;1)
+&amp;= P\big(T&gt;t \in [0,1),T&gt;1\big)\\
 &amp;= P\big(T&gt;t \in [0,1)\big)\,
 P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 &amp;= 1 \times \left(1-\frac{3}{14}\right) \\
@@ -877,7 +968,7 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 &amp;= \prod_{j:t_j\leq 1}\left(1-\frac{d_j}{n_j}\right)
 = \prod_{j=1}^{3}\left(1-\frac{d_j}{n_j}\right) \\[0.4em]
 &amp;= \left(1-\frac{d_1}{n_1}\right)\left(1-\frac{d_2}{n_2}\right)\left(1-\frac{d_3}{n_3}\right)
-= \hat{S}(0)\hat{S}(1)\left(1-\frac{1}{9}\right) \\[0.4em]
+= \hat{S}(1)\left(1-\frac{1}{9}\right) \\[0.4em]
 &amp;= 0{,}698
 \end{aligned}
 \]</span></li>
@@ -888,26 +979,20 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <section id="estimador-de-kaplan-meier-exercício" class="slide level2">
 <h2><strong>ESTIMADOR DE KAPLAN-MEIER: EXERCÍCIO</strong></h2>
 <div class="box-blue">
-<p>Encontre o valor de <span class="math inline">\(\hat{S(8)}\)</span> e:</p>
+<p>Calcule o valor de <span class="math inline">\(\hat{S}(7)\)</span>.</p>
+<p>Em seguida, observe que:</p>
 <ul>
-<li>Verifique como ele é função das “sobrevivências anteriores”</li>
-<li>Perceba que, nesta base de dados, a estimação pelo Kaplan Meier parte da ideia que sobreviver até o tempo <span class="math inline">\(t\)</span> é o mesmo que sobreviver a cada instante de morte observado até <span class="math inline">\(t\)</span>, dado que se sobreviveu até o instante imediatamente anterior.</li>
+<li><p>Cada estimativa de sobrevivência é construída <strong>a partir das anteriores</strong>, isto é, a função <span class="math inline">\(\hat{S}(t)\)</span> possui uma <strong>estrutura multiplicativa acumulada</strong>;</p></li>
+<li><p>No estimador de Kaplan–Meier, sobreviver até um tempo <span class="math inline">\(t\)</span> equivale a <strong>sobreviver sucessivamente a cada instante de falha observado até <span class="math inline">\(t\)</span></strong>, sempre <strong>condicionado à sobrevivência até o instante imediatamente anterior</strong>.</p></li>
 </ul>
+<p>💡 Em outras palavras, a sobrevivência até <span class="math inline">\(t\)</span> é obtida como um produto de probabilidades condicionais de “passar” por cada tempo de ocorrência do evento.</p>
 </div>
 </section>
 <section id="estimador-de-kaplanmeier-passo-final" class="slide level2">
 <h2><strong>ESTIMADOR DE KAPLAN–MEIER: PASSO FINAL</strong></h2>
 <div class="box-blue">
 <p><strong>Após todos os passos</strong>, tem-se a seguinte tabela com <strong>todas as funções de sobrevivência estimadas</strong>:</p>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 50%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-</colgroup>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: right;">j</th>
@@ -915,7 +1000,7 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <th style="text-align: center;"><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(\hat{S}_{KM}(t_j)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -975,7 +1060,19 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <h2><strong>ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)</strong></h2>
 
 <img data-src="Aula4_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="estimador-de-kaplanmeier-definição-formal" class="slide level2">
+<section id="estimador-de-kaplan-meier-gráfico-1" class="slide level2">
+<h2><strong>ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)</strong></h2>
+<div class="box-blue">
+<p>💡 <strong>Importante:</strong> a curva de Kaplan–Meier <strong>nem sempre decresce até zero</strong>.</p>
+<ul>
+<li><p>Isso ocorre porque pode haver <strong>censura nos maiores tempos observados</strong>, ou seja, alguns indivíduos não apresentaram o evento até o final do estudo;</p></li>
+<li><p>Nessa situação, a curva “para” em um valor positivo, pois <strong>não há informação suficiente</strong> para determinar o que acontece após aquele ponto.</p></li>
+</ul>
+<p>✔️ A curva de Kaplan–Meier <strong>atinge zero apenas quando, no último tempo observado, todos os indivíduos sob risco experimentam o evento</strong>, isto é, quando <span class="math inline">\(d_j = n_j\)</span>.</p>
+<p>⚠️ Em particular, se no último tempo houver <strong>censuras (mesmo que junto com falhas)</strong>, a curva <strong>não atinge zero</strong>, pois nem todos os indivíduos tiveram o evento.</p>
+</div>
+</section>
+<section id="estimador-de-kaplanmeier-definição-formal" class="slide level2 scrollable">
 <h2><strong>ESTIMADOR DE KAPLAN–MEIER: DEFINIÇÃO FORMAL</strong></h2>
 <div class="box-blue">
 <ul>
@@ -986,7 +1083,7 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <ul>
 <li><span class="math inline">\(t_1 &lt; t_2 &lt; \cdots &lt; t_k\)</span> são os tempos distintos em que o evento de interesse foi observado (excluem-se tempos censurados).</li>
 <li><span class="math inline">\(d_j\)</span> é o número de eventos ocorridos em <span class="math inline">\(t_j\)</span>.</li>
-<li><span class="math inline">\(n_j\)</span> é o número de indivíduos sob risco imediatamente antes de $t_j, ou seja, que ainda não sofreram o evento nem foram censurados.</li>
+<li><span class="math inline">\(n_j\)</span> é o número de indivíduos sob risco imediatamente antes de <span class="math inline">\(t_j\)</span>, ou seja, que ainda não sofreram o evento nem foram censurados.</li>
 </ul></li>
 <li>Note que cada termo <span class="math inline">\(\left(1 - \frac{d_j}{n_j}\right)\)</span> representa a chance de sobreviver ao intervalo <span class="math inline">\(j\)</span>, dado que o indivíduo sobreviveu até o início dele.</li>
 </ul>
@@ -997,8 +1094,8 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <div class="box-blue">
 <ul>
 <li><strong>Kaplan e Meier (1958)</strong> provaram que o seu estimador é o estimador de <strong>máxima verossimilhança</strong> de <span class="math inline">\(S(t)\)</span> quando há censura à direita.</li>
-<li>Na <strong>ausência de censuras</strong>, o estimador de Kaplan-Meier se reduz à função de sobrevivência clássica (confiabilidade), coincidindo com a análise paramétrica de sobrevivência.</li>
-<li>Pode-se construir <strong>intervalos de confiança para <span class="math inline">\(\hat{S}_{KM}(t)\)</span></strong> usando, por exemplo, o método de <strong>Greenwood</strong>, permitindo inferência sobre a curva de sobrevivência.</li>
+<li>Na <strong>ausência de censuras</strong>, o estimador de Kaplan-Meier se reduz à estimação feita anteriormente para dados completos.</li>
+<li>O estimador <strong>mantém a forma mesmo em estudos com censura à direita (tipos I e II)</strong>, mas <strong>não atinge <span class="math inline">\(\hat{S}_{KM}(t)=0\)</span> se as últimas observações forem censuradas</strong>.</li>
 </ul>
 </div>
 </section>
@@ -1006,11 +1103,9 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <h2><strong>ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O estimador <strong>mantém a forma mesmo em estudos com censura à direita (tipos I e II)</strong>, mas <strong>não atinge <span class="math inline">\(\hat{S}_{KM}(t)=0\)</span> se as últimas observações forem censuradas</strong>.</li>
 <li>É <strong>não-viciado (assintoticamente não enviesado) para amostras grandes</strong>, garantindo estimativas confiáveis de sobrevivência.</li>
-<li>É <strong>fracamente consistente</strong>, ou seja, <span class="math inline">\(\hat{S}_{KM}(t) \to S(t)\)</span> em probabilidade à medida que <span class="math inline">\(n \to \infty\)</span>.</li>
+<li>É <strong>consistente</strong>, ou seja, <span class="math inline">\(\hat{S}_{KM}(t) \to S(t)\)</span> em probabilidade à medida que <span class="math inline">\(n \to \infty\)</span>.</li>
 <li><strong>Converge assintoticamente para um processo gaussiano</strong>, permitindo usar aproximações normais para inferência.</li>
-<li>Permite <strong>comparar grupos diferentes</strong> usando testes como <strong>log-rank</strong> ou <strong>Gehan-Breslow</strong>, sendo amplamente usado em estudos clínicos e confiabilidade industrial.</li>
 </ul>
 </div>
 </section>
@@ -1021,9 +1116,8 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <ul>
 <li><strong>Nelson–Aalen</strong>
 <ul>
-<li>Estima a <strong>função de risco acumulada</strong> (H(t))</li>
-<li>Função de sobrevivência aproximada: (S(t) (-H(t)))</li>
-<li>Útil para <strong>modelagem de risco cumulativo</strong> e <strong>regressão de sobrevivência</strong></li>
+<li>Estima a <strong>função de risco acumulada</strong> <span class="math inline">\(H(t)\)</span></li>
+<li>Função de sobrevivência aproximada: <span class="math inline">\(S(t)\)</span> = <span class="math inline">\(\exp(-H(t))\)</span>)</li>
 </ul></li>
 <li><strong>Tábua de vida (Actuarial life table)</strong>
 <ul>
@@ -1041,10 +1135,98 @@ P\big(T&gt;1 \mid T&gt;t \in [0,1)\big) \\
 <li>Conhecer a <strong>variância</strong> de qualquer estimador é essencial para a <strong>construção de um intervalo de confiança</strong> em torno da estimativa pontual.</li>
 <li>A <strong>variância</strong> do estimador de Kaplan-Meier é dada pela <strong>fórmula de Greenwood</strong>:</li>
 </ul>
-<p>[ ((t)) = ^2 _{j:t_j t} ]</p>
+<p><span class="math display">\[
+\text{Var}\left(\hat{S}(t)\right) = \left[\hat{S}(t)\right]^2 \sum_{j:t_j \le t} \frac{d_j}{n_j (n_j - d_j)}
+\]</span></p>
 <ul>
 <li>Essa <strong>expressão</strong> é obtida a partir de <strong>propriedades do estimador de máxima verossimilhança</strong>.</li>
 </ul>
+</div>
+</section>
+<section id="a-variância-do-estimador-hatst-exemplo" class="slide level2">
+<h2><strong>A VARIÂNCIA DO ESTIMADOR <span class="math inline">\(\hat{S}(t)\)</span> (EXEMPLO)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para os dados de hepatite, tem-se se os valores de <span class="math inline">\(\sqrt{\text{Var}\left(\hat{S}(t)\right)}\)</span>:</li>
+</ul>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 7%">
+<col style="width: 33%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 29%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">j</th>
+<th style="text-align: right;"><span class="math inline">\(t_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\sqrt{\text{Var}\left(\hat{S}(t)\right)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: center;">[0,1)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">[1,5)</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0,786</td>
+<td style="text-align: right;">0,110</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">[5,7)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,698</td>
+<td style="text-align: right;">0,128</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">[7,8)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0,611</td>
+<td style="text-align: right;">0,138</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">[8,10)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0,524</td>
+<td style="text-align: right;">0,143</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">[10,16)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0,437</td>
+<td style="text-align: right;">0,144</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 <section id="intervalo-de-confiança-para-st-plain" class="slide level2">
@@ -1087,8 +1269,8 @@ IC_{100(1-\alpha)\%}^{plain}(S(t))\approx\hat{S}(t) \pm z_{\alpha/2}
 <th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
-<th style="text-align: right;">LI <span class="math inline">\(IC_{95\%}^{plain}(S(t_j))\)</span></th>
-<th style="text-align: right;">LS <span class="math inline">\(IC_{95\%}^{plain}(S(t_j))\)</span></th>
+<th style="text-align: right;">LI <span class="math inline">\(IC_{95\%}^{plain}(\hat{S}(t_j))\)</span></th>
+<th style="text-align: right;">LS <span class="math inline">\(IC_{95\%}^{plain}(\hat{S}(t_j))\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -1099,7 +1281,7 @@ IC_{100(1-\alpha)\%}^{plain}(S(t))\approx\hat{S}(t) \pm z_{\alpha/2}
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">1,000</td>
-<td style="text-align: right;">1,000</td>
+<td style="text-align: right;"></td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
@@ -1156,7 +1338,7 @@ IC_{100(1-\alpha)\%}^{plain}(S(t))\approx\hat{S}(t) \pm z_{\alpha/2}
 </table>
 </div>
 </section>
-<section id="intervalo-de-confiança-para-st-plain-2" class="slide level2">
+<section id="intervalo-de-confiança-para-st-plain-2" class="slide level2 scrollable">
 <h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>plain</em>)</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1191,36 +1373,35 @@ IC_{100(1-\alpha)\%}^{\log}(S(t))
 \]</span> - Esse intervalo é obtido aplicando o método delta à transformação logarítmica.</p>
 </div>
 </section>
-<section id="intervalo-de-confiança-para-st-log-1" class="slide level2">
+<section id="intervalo-de-confiança-para-st-log-1" class="slide level2 scrollable">
 <h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>log</em>)</strong></h2>
 <div class="box-blue">
 <p><strong>Por que usar a transformação log?</strong></p>
 <ul>
-<li><p>O intervalo clássico para (S(t)) é construído diretamente na escala original, o que pode gerar<br>
-limites negativos ou maiores que 1.</p></li>
-<li><p>Ao aplicar a transformação [ !(S(t)), ] obtém-se um estimador que, para (t) fixo, possui <strong>distribuição Normal assintótica</strong>.</p></li>
-<li><p>O intervalo é então construído nessa nova escala e transformado de volta para a escala de (S(t)).</p></li>
+<li><p>O intervalo clássico para <span class="math inline">\(S(t)\)</span> é construído diretamente na escala original, o que pode gerar limites negativos ou maiores que 1.</p></li>
+<li><p>Ao aplicar a transformação log, obtém-se um estimador que, para <span class="math inline">\(t\)</span> fixo, possui <strong>distribuição Normal assintótica</strong>.</p></li>
+<li><p>O intervalo é então construído nessa nova escala e transformado de volta para a escala de <span class="math inline">\(S(t)\)</span>.</p></li>
 </ul>
 <p><strong>Principais vantagens em relação ao intervalo sem transformação:</strong> - garante <strong>limites sempre positivos</strong>; - introduz <strong>assimetria mais compatível</strong> com a função de sobrevivência; - apresenta <strong>maior estabilidade</strong> ao longo do tempo; - melhora a qualidade da inferência assintótica.</p>
-<p>⚠️ <strong>Apesar dessas melhorias</strong>, o intervalo com transformação log <strong>ainda apresenta limitações</strong>, especialmente quando (S(t)) está próximo de 1, o que motiva o uso de transformações ainda mais adequadas.</p>
+<p>⚠️ <strong>Apesar dessas melhorias</strong>, o intervalo com transformação log <strong>ainda apresenta limitações</strong>, especialmente quando <span class="math inline">\(S(t)\)</span> está próximo de 1, o que motiva o uso de transformações ainda mais adequadas.</p>
 </div>
 </section>
-<section id="intervalo-de-confiança-para-st-plain-3" class="slide level2">
-<h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>plain</em>)</strong></h2>
+<section id="intervalo-de-confiança-para-st-log-2" class="slide level2">
+<h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>log</em>)</strong></h2>
 <div class="box-blue">
 <ul>
 <li>Para aos dados de hepatite, tem-se os seguintes intervalos:</li>
 </ul>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 30%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 18%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 11%">
+<col style="width: 27%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1230,8 +1411,8 @@ limites negativos ou maiores que 1.</p></li>
 <th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
-<th style="text-align: right;">LI <span class="math inline">\(IC_{95\%}^{plain}(S(t_j))\)</span></th>
-<th style="text-align: right;">LS <span class="math inline">\(IC_{95\%}^{plain}(S(t_j))\)</span></th>
+<th style="text-align: right;">LI <span class="math inline">\(IC_{95\%}^{log}(\hat{S}(t_j))\)</span></th>
+<th style="text-align: right;">LS <span class="math inline">\(IC_{95\%}^{log}(\hat{S}(t_j))\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -1242,7 +1423,7 @@ limites negativos ou maiores que 1.</p></li>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">1,000</td>
-<td style="text-align: right;">1,000</td>
+<td style="text-align: right;"></td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
@@ -1252,8 +1433,8 @@ limites negativos ou maiores que 1.</p></li>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">0,786</td>
-<td style="text-align: right;">0,571</td>
-<td style="text-align: right;">1,001</td>
+<td style="text-align: right;">0,598</td>
+<td style="text-align: right;">1,000</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
@@ -1262,8 +1443,8 @@ limites negativos ou maiores que 1.</p></li>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">0,698</td>
-<td style="text-align: right;">0,448</td>
-<td style="text-align: right;">0,948</td>
+<td style="text-align: right;">0,488</td>
+<td style="text-align: right;">0,999</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
@@ -1272,8 +1453,8 @@ limites negativos ou maiores que 1.</p></li>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0,611</td>
-<td style="text-align: right;">0,340</td>
-<td style="text-align: right;">0,882</td>
+<td style="text-align: right;">0,392</td>
+<td style="text-align: right;">0,952</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
@@ -1282,8 +1463,8 @@ limites negativos ou maiores que 1.</p></li>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">0,524</td>
-<td style="text-align: right;">0,243</td>
-<td style="text-align: right;">0,805</td>
+<td style="text-align: right;">0,306</td>
+<td style="text-align: right;">0,896</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
@@ -1292,8 +1473,8 @@ limites negativos ou maiores que 1.</p></li>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">0,437</td>
-<td style="text-align: right;">0,155</td>
-<td style="text-align: right;">0,718</td>
+<td style="text-align: right;">0,229</td>
+<td style="text-align: right;">0,832</td>
 </tr>
 </tbody>
 </table>
@@ -1303,7 +1484,7 @@ limites negativos ou maiores que 1.</p></li>
 <h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>log-log</em>)</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Para garantir que os limites do intervalo pertençam a <span class="math inline">\([0,1]\)</span>, aplica-se a <strong>transformação log–log</strong>: <span class="math display">\[
+<li><p>Para garantir um intervalo mais robusto, aplica-se a <strong>transformação log–log</strong>: <span class="math display">\[
 g\!\big(S(t)\big) = \log\!\big(-\log S(t)\big)
 \]</span></p></li>
 <li><p>Como <span class="math inline">\(\log\!\big(-\log \hat{S}(t)\big)\)</span>, para <span class="math inline">\(t\)</span> fixo, <strong>tem distribuição Normal assintoticamente</strong>, o <strong>intervalo aproximado de <span class="math inline">\(100(1-\alpha)\%\)</span> de confiança para <span class="math inline">\(S(t)\)</span> é dado por</strong>:</p></li>
@@ -1330,6 +1511,100 @@ SE = \sqrt{
 </div>
 </section>
 <section id="intervalo-de-confiança-para-st-log-log-1" class="slide level2">
+<h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>log-log</em>)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para aos dados de hepatite, tem-se os seguintes intervalos:</li>
+</ul>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 20%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">j</th>
+<th style="text-align: right;"><span class="math inline">\(t_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
+<th style="text-align: right;">LI <span class="math inline">\(IC_{95\%}^{log-log}(\hat{S}(t_j))\)</span></th>
+<th style="text-align: right;">LS <span class="math inline">\(IC_{95\%}^{log-log}(\hat{S}(t_j))\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: center;">[0,1)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">[1,5)</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0,786</td>
+<td style="text-align: right;">0,472</td>
+<td style="text-align: right;">0,925</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">[5,7)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,698</td>
+<td style="text-align: right;">0,378</td>
+<td style="text-align: right;">0,876</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">[7,8)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0,611</td>
+<td style="text-align: right;">0,298</td>
+<td style="text-align: right;">0,819</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">[8,10)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0,524</td>
+<td style="text-align: right;">0,227</td>
+<td style="text-align: right;">0,754</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">[10,16)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0,437</td>
+<td style="text-align: right;">0,164</td>
+<td style="text-align: right;">0,683</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="intervalo-de-confiança-para-st-log-log-2" class="slide level2">
 <h2><strong>INTERVALO DE CONFIANÇA PARA <span class="math inline">\(S(t)\)</span> (<em>log-log</em>)</strong></h2>
 <p>A figura abaixo apresenta os intervalos de confiança construídos segundo a transformação log-log:</p>
 

@@ -4,63 +4,105 @@
     "href": "Aula4.html#revisão-alguns-conceitos-básicos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "REVISÃO: ALGUNS CONCEITOS BÁSICOS",
-    "text": "REVISÃO: ALGUNS CONCEITOS BÁSICOS\n\n\n\nAnálise de sobrevivência e confiabilidade: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área média e de engenharia, respectivamente.\nTempo: variável aleatória contínua que mede o tempo até a ocorrência de um evento de interesse.\nEvento de interesse: ocorrência que encerra a observação do indivíduo (ex.: morte, falha de um componente, cura, recidiva…).\nCensura: situação em que o tempo exato do evento não é observado; sabe-se apenas que ele ocorre após certo instante (censura à direita)."
+    "text": "REVISÃO: ALGUNS CONCEITOS BÁSICOS\n\n\n\nAnálise de sobrevivência e confiabilidade: conjunto de métodos estatísticos para analisar dados de tempo até a ocorrência de um evento de interesse na área médica e de engenharia, respectivamente.\nTempo: variável aleatória contínua que mede o tempo até a ocorrência de um evento de interesse.\nEvento de interesse: ocorrência que encerra a observação do indivíduo (ex.: morte, falha de um componente, cura, recidiva…).\nCensura: situação em que o tempo exato do evento não é observado; sabe-se apenas que ele ocorre após certo instante (censura à direita)."
   },
   {
     "objectID": "Aula4.html#revisão-funções-básicas",
     "href": "Aula4.html#revisão-funções-básicas",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "REVISÃO: FUNÇÕES BÁSICAS",
-    "text": "REVISÃO: FUNÇÕES BÁSICAS\n\n\nSeja (T) a variável aleatória que representa o tempo até a ocorrência do evento de interesse.\n\n\n\n\n\n\n\n\n\nFunção\nDefinição\nInterpretação\n\n\n\n\nDensidade\n\\(f(t)\\)\nProbabilidade de falha em torno de \\(t\\)\n\n\nDistribuição\n\\(F(t) = P(T \\le t)\\)\nProbabilidade de o evento ocorrer até \\(t\\)\n\n\nSobrevivência\n\\(S(t) = P(T &gt; t)\\)\nProbabilidade de sobreviver além de \\(t\\)\n\n\nRisco (hazard)\n\\(h(t) = \\dfrac{f(t)}{S(t)}\\)\nTaxa instantânea de falha em \\(t\\)\n\n\nRisco acumulado\n\\(H(t) = \\int_0^t h(u)\\,du\\)\nAcúmulo de risco até \\(t\\)\n\n\nTempo médio\n\\(E(T)\\)\nVida média (quando existe)\n\n\nTempo médio residual\n\\(E(T - t \\mid T &gt; t)\\)\nVida esperada após \\(t\\)"
+    "text": "REVISÃO: FUNÇÕES BÁSICAS\n\n\nSeja \\(T\\) a variável aleatória que representa o tempo até a ocorrência do evento de interesse. Vimos as seguintes funções atreladas a esta variável:\n\n\n\n\n\n\n\n\n\nFunção\nDefinição\nInterpretação\n\n\n\n\nDensidade\n\\(f(t)\\)\nDensidade de probabilidade de ocorrência do evento em \\(t\\)\n\n\nDistribuição\n\\(F(t) = P(T \\le t)\\)\nProbabilidade do evento ocorrer até \\(t\\)\n\n\nSobrevivência\n\\(S(t) = P(T &gt; t)\\)\nProbabilidade do evento ocorrer após \\(t\\)\n\n\nRisco\n\\(\\lambda(t) = \\dfrac{f(t)}{S(t)}\\)\nRisco instantâneo de ocorrer o evento em \\(t\\) dado que o elemento ainda não o apresentou até este instante\n\n\nRisco acumulado\n\\(\\Lambda(t) = \\int_0^t h(u)\\,du\\)\nAcúmulo de risco até \\(t\\)\n\n\nTempo médio de ocorrência do evento\n\\(t_m=E(T)\\)\nTempo médio de ocorrência do evento\n\n\nTempo médio residual\n\\(vmr(t)\\)\nTempo médio de ocorrência do evento em \\(t\\), dado que o elemento não apresentou o evento até este instante"
   },
   {
     "objectID": "Aula4.html#estrutura-dos-dados-observados",
     "href": "Aula4.html#estrutura-dos-dados-observados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTRUTURA DOS DADOS OBSERVADOS",
-    "text": "ESTRUTURA DOS DADOS OBSERVADOS\n\n\nNa população, cada indivíduo possui um tempo verdadeiro de ocorrência do evento de interesse (T).\nNos dados observados, uma amostra de \\(n\\) elementos é observada.\nA censura é uma característica dos dados observados, não da população.\nDevido ao processo de coleta dos dados, o tempo (T) pode não ser completamente observado para alguns elementos amostrais.\nAssim, os dados contêm informações completas (ocorrências do evento de interesse) e informações parciais (censuras).\nOs métodos de sobrevivência incorporam essa estrutura para permitir inferências válidas sobre a distribuição de (T) e quantidades relacionadas."
+    "text": "ESTRUTURA DOS DADOS OBSERVADOS\n\n\nNa população, cada indivíduo possui um tempo verdadeiro de ocorrência do evento de interesse \\(T\\).\nNos dados observados, uma amostra de \\(n\\) elementos é observada.\nA censura é uma característica dos dados observados, não da população.\nDevido ao processo de coleta dos dados, o tempo \\(T\\) pode não ser completamente observado para alguns elementos amostrais.\nAssim, os dados contêm informações completas (ocorrências do evento de interesse) e informações parciais (censuras).\nOs métodos de sobrevivência incorporam essa estrutura para permitir inferências válidas sobre a distribuição de \\(T\\) e quantidades relacionadas."
   },
   {
-    "objectID": "Aula4.html#estatística-descritiva",
-    "href": "Aula4.html#estatística-descritiva",
+    "objectID": "Aula4.html#estatística-descritiva-em-dados-de-sobrevivência",
+    "href": "Aula4.html#estatística-descritiva-em-dados-de-sobrevivência",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "ESTATÍSTICA DESCRITIVA",
-    "text": "ESTATÍSTICA DESCRITIVA\n\n\nO passo inicial de qualquer análise estatística é a descrição dos dados.\n\nEm Análise de Sobrevivência e Confiabilidade, isso não é diferente.\n\nSe os seus dados não possuem censuras, você pode conduzir a análise descritiva usual a partir de medidas resumo e gráficos exploratórios:\n\nMedidas resumo: média, moda, percentis, desvio-padrão, entre outras.\nGráficos: Histograma, Boxplot, dispersão, entre outras.\n\nEntretanto, a presença de censura é um problema para essas técnicas convencionais."
+    "section": "ESTATÍSTICA DESCRITIVA EM DADOS DE SOBREVIVÊNCIA",
+    "text": "ESTATÍSTICA DESCRITIVA EM DADOS DE SOBREVIVÊNCIA\n\n\nO primeiro passo de qualquer análise estatística é a descrição dos dados.\n\nEm Análise de Sobrevivência e Confiabilidade, isso também é essencial.\nEntretanto, nesses contextos surge um desafio importante: a presença de observações censuradas.\nQuando não há censura, podemos utilizar as técnicas usuais de análise descritiva:\n\nMedidas resumo: média, mediana, percentis e desvio-padrão\n\nGráficos exploratórios: histogramas, boxplots e gráficos de dispersão\n\nContudo, essas ferramentas podem se tornar inadequadas quando há censura."
   },
   {
-    "objectID": "Aula4.html#a-presença-de-censuras",
-    "href": "Aula4.html#a-presença-de-censuras",
+    "objectID": "Aula4.html#por-que-a-censura-é-um-problema",
+    "href": "Aula4.html#por-que-a-censura-é-um-problema",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "A PRESENÇA DE CENSURAS",
-    "text": "A PRESENÇA DE CENSURAS\n\n\nOs problemas causados por observações censuradas podem ser ilustrados na construção de um simples histograma.\nSem censura, divide-se o eixo do tempo em intervalos e contam-se as ocorrências.\nCom censura aleatória, por exemplo, não se conhece a frequência exata em cada intervalo.\nEntretanto, algumas técnicas ainda podem ser utilizadas com cuidado."
+    "section": "POR QUE A CENSURA É UM PROBLEMA?",
+    "text": "POR QUE A CENSURA É UM PROBLEMA?\n\nA censura significa que o tempo real do evento não é completamente observado.\nPor exemplo, se um indivíduo foi acompanhado até certo tempo sem apresentar o evento, sabemos apenas que\n\\[\nT &gt; t\n\\]\nPortanto:\n\nnão sabemos exatamente quando o evento ocorrerá\nparte da informação sobre o tempo de falha está incompleta"
   },
   {
-    "objectID": "Aula4.html#minimamente",
-    "href": "Aula4.html#minimamente",
+    "objectID": "Aula4.html#por-que-a-censura-é-um-problema-1",
+    "href": "Aula4.html#por-que-a-censura-é-um-problema-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MINIMAMENTE",
-    "text": "MINIMAMENTE\n\n\nMinimamente, para qualquer estudo envolvendo dados censurados, reporte:\n\nNúmero total de indivíduos\nNúmero e proporção de eventos\nNúmero e proporção de censuras\nTempo inicial e máximo de acompanhamento\n\nSe o estudo possuir covariáveis, reporte algumas medidas resumo e/ou gráficos sobre elas."
+    "section": "POR QUE A CENSURA É UM PROBLEMA?",
+    "text": "POR QUE A CENSURA É UM PROBLEMA?\n\nComo consequência:\n\na média do tempo até o evento pode ser subestimada\npercentis podem ser distorcidos\ngráficos como histogramas podem representar mal os dados\n\nAssim, a estatística descritiva clássica deve ser utilizada com cautela."
+  },
+  {
+    "objectID": "Aula4.html#descrição-mínima-dos-dados",
+    "href": "Aula4.html#descrição-mínima-dos-dados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DESCRIÇÃO MÍNIMA DOS DADOS",
+    "text": "DESCRIÇÃO MÍNIMA DOS DADOS\n\nEm qualquer estudo com dados censurados, recomenda-se reportar pelo menos:\n\nNúmero total de indivíduos no estudo\nNúmero de eventos observados\nNúmero de observações censuradas\nProporção de censuras\nTempo mínimo e máximo de acompanhamento\n\nEssas informações fornecem uma visão geral da quantidade de informação disponível no estudo."
+  },
+  {
+    "objectID": "Aula4.html#descrição-das-covariáveis",
+    "href": "Aula4.html#descrição-das-covariáveis",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DESCRIÇÃO DAS COVARIÁVEIS",
+    "text": "DESCRIÇÃO DAS COVARIÁVEIS\n\nSe o estudo possuir covariáveis explicativas, elas também devem ser descritas.\nPara variáveis categóricas: tabelas de frequência e proporções por grupo\nPara variáveis numéricas: média ou mediana, quartis e desvio-padrão\nVisualizações úteis: boxplots por grupo, histogramas das covariáveis e tabelas comparativas entre grupos"
+  },
+  {
+    "objectID": "Aula4.html#gráficos-apropriados-para-dados-censurados",
+    "href": "Aula4.html#gráficos-apropriados-para-dados-censurados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "GRÁFICOS APROPRIADOS PARA DADOS CENSURADOS",
+    "text": "GRÁFICOS APROPRIADOS PARA DADOS CENSURADOS\n\nSempre que possível, utilize gráficos que respeitem a presença de censura, como:\n\nCurvas de sobrevivência de Kaplan–Meier\nCurvas de sobrevivência estratificadas por covariáveis\n\nEssas representações permitem visualizar:\n\na probabilidade de sobrevivência ao longo do tempo\ndiferenças entre grupos\no impacto da censura nos dados\n\nAssim, elas constituem uma forma mais adequada de estatística descritiva em estudos de sobrevivência."
   },
   {
     "objectID": "Aula4.html#estimação-não-paramétrica-de-funções-básicas",
     "href": "Aula4.html#estimação-não-paramétrica-de-funções-básicas",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMAÇÃO NÃO PARAMÉTRICA DE FUNÇÕES BÁSICAS",
-    "text": "ESTIMAÇÃO NÃO PARAMÉTRICA DE FUNÇÕES BÁSICAS\n\n\nRESUMIR AQUI AS ESTIMAÇÕES…\nSem censura e com censura pra entender…\nEm nenhum momento será suposto algo sobre T.\nNao ha interesse de estimar parametros"
+    "text": "ESTIMAÇÃO NÃO PARAMÉTRICA DE FUNÇÕES BÁSICAS\n\nEm Análise de Sobrevivência, nosso objetivo é estimar algumas funções fundamentais que descrevem o tempo até a ocorrência de um evento, como:\n\na função de sobrevivência \\(S(t)\\)\na função de risco \\(\\lambda(t)\\)\na função de risco acumulada \\(\\Lambda(t)\\)\no percentil do tempo de ocorrência do evento de interesse \\(t_p\\)\no tempo médio até a ocorrência do evento \\(t_m\\)\no tempo médio residual de ocorrência do evento \\(vmr(t)\\)\n\nEntretanto, em muitos estudos não sabemos qual é a distribuição do tempo até o evento."
   },
   {
-    "objectID": "Aula4.html#metástase-pulmonar-em-osteossarcoma",
-    "href": "Aula4.html#metástase-pulmonar-em-osteossarcoma",
+    "objectID": "Aula4.html#o-que-significa-não-paramétrico",
+    "href": "Aula4.html#o-que-significa-não-paramétrico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "METÁSTASE PULMONAR EM OSTEOSSARCOMA",
-    "text": "METÁSTASE PULMONAR EM OSTEOSSARCOMA\n\n\nOsteossarcoma é um tumor ósseo maligno comum em adolescentes e jovens adultos.\nUma complicação frequente é a metástase pulmonar, quando as células do tumor se espalham para os pulmões, representando risco de vida.\nBurdette & Gehan (1970) consideram os dados de um estudo descritivo com 11 pacientes do sexo masculino com osteossarcoma e metástase pulmonar\nOs pacientes foram acompanhados desde o diagnóstico da metástase pulmonar até a morte (evento de interesse) de todos os pacientes.\nOs tempos de sobrevivência observados (em meses) são:\n\n\n11, 13, 13, 13, 13, 13, 14, 14, 15, 15 e 17"
+    "section": "O QUE SIGNIFICA “NÃO PARAMÉTRICO”?",
+    "text": "O QUE SIGNIFICA “NÃO PARAMÉTRICO”?\n\n\nA estimação não paramétrica consiste em estimar essas funções sem assumir uma forma específica de distribuição para os dados.\nOu seja, não supomos que os tempos seguem uma distribuição conhecida, como:\n\nexponencial\nWeibull\nlog-normal\ngama\n\nEm vez disso, as estimativas são construídas diretamente a partir dos dados observados."
   },
   {
-    "objectID": "Aula4.html#esteroide-no-tratamento-de-hepatite",
-    "href": "Aula4.html#esteroide-no-tratamento-de-hepatite",
+    "objectID": "Aula4.html#ideia-principal",
+    "href": "Aula4.html#ideia-principal",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "ESTEROIDE NO TRATAMENTO DE HEPATITE",
-    "text": "ESTEROIDE NO TRATAMENTO DE HEPATITE\n\n\nGregory et al., 1976 propoem um estudo clínico aleatorizado para investigar o efeito da terapia com esteroide no tratamento de hepatite viral aguda.\nVinte e nove pacientes com esta doença foram aleatorizados para receber um placebo ou o tratamento com esteroide\nCada paciente foi acompanhado por 16 semanas ou até a morte (evento de interesse) ou até a perda de acompanhamento"
+    "section": "IDEIA PRINCIPAL",
+    "text": "IDEIA PRINCIPAL\n\nNos métodos não paramétricos, as estimativas são obtidas:\n\nutilizando apenas as informações observadas na amostra\nsem impor restrições estruturais fortes sobre a distribuição\n\nIsso torna esses métodos:\n\nmais flexíveis\nmais robustos a especificações incorretas de modelo\n\nPor essa razão, eles costumam ser o primeiro passo em uma análise de sobrevivência."
+  },
+  {
+    "objectID": "Aula4.html#situações-práticas-motivadoras",
+    "href": "Aula4.html#situações-práticas-motivadoras",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SITUAÇÕES PRÁTICAS MOTIVADORAS",
+    "text": "SITUAÇÕES PRÁTICAS MOTIVADORAS\n\n\nPara exemplificar a estimação não paramétrica de funções importantes, serão apresentadas duas situações práticas motivadoras:\n\nUma situação sem censuras (dados completos)\nUma situação com censuras"
+  },
+  {
+    "objectID": "Aula4.html#metástase-pulmonar-em-osteossarcoma-dados-completos",
+    "href": "Aula4.html#metástase-pulmonar-em-osteossarcoma-dados-completos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "METÁSTASE PULMONAR EM OSTEOSSARCOMA (DADOS COMPLETOS)",
+    "text": "METÁSTASE PULMONAR EM OSTEOSSARCOMA (DADOS COMPLETOS)\n\n\nOsteossarcoma é um tumor ósseo maligno comum em adolescentes e jovens adultos.\nUma complicação frequente é a metástase pulmonar, quando as células do tumor se espalham para os pulmões, representando risco de vida.\nBurdette & Gehan (1970) consideram os dados de um estudo descritivo com 11 pacientes do sexo masculino com osteossarcoma e metástase pulmonar\nOs pacientes foram acompanhados desde o diagnóstico da metástase pulmonar até a morte (evento de interesse) de todos os pacientes.\nOs tempos de sobrevivência observados (em meses) são:\n\n\n11, 13, 13, 13, 13, 13, 14, 14, 15, 15 e 17"
+  },
+  {
+    "objectID": "Aula4.html#esteroide-no-tratamento-de-hepatite-dados-com-censura",
+    "href": "Aula4.html#esteroide-no-tratamento-de-hepatite-dados-com-censura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTEROIDE NO TRATAMENTO DE HEPATITE (DADOS COM CENSURA)",
+    "text": "ESTEROIDE NO TRATAMENTO DE HEPATITE (DADOS COM CENSURA)\n\n\nGregory et al., 1976 propoem um estudo clínico aleatorizado para investigar o efeito da terapia com esteroide no tratamento de hepatite viral aguda.\nVinte e nove pacientes com esta doença foram aleatorizados para receber um placebo ou o tratamento com esteroide\nCada paciente foi acompanhado por 16 semanas ou até a morte (evento de interesse) ou até a perda de acompanhamento."
   },
   {
     "objectID": "Aula4.html#esteroide-no-tratamento-de-hepatite-dados",
@@ -88,21 +130,21 @@
     "href": "Aula4.html#exemplo-dados-de-osteossarcoma",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
-    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\nPor exemplo,\n\\[\n\\begin{aligned}\n\\hat{S}(14) &=\n\\frac{\\text{nº de elementos que não morreram até 11 meses }}\n{\\text{nº de elementos no estudo}} \\\\\n&= \\frac{10}{11} = 0{,}909\n\\end{aligned}\n\\]\n\nEm palavras, este número significa que 90,9% dos indivíduos sobrevivem mais do que 11 meses.\nExercício: estime a função de sobrevivência para o tempo \\(t = 13\\) meses."
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\nPor exemplo,\n\\[\n\\begin{aligned}\n\\hat{S}(11) &=\n\\frac{\\text{nº de elementos que não morreram até 11 meses }}\n{\\text{nº de elementos no estudo}} \\\\\n&= \\frac{10}{11} = 0{,}909\n\\end{aligned}\n\\]\n\nEm palavras, este número significa que 90,9% dos indivíduos sobrevivem mais do que 11 meses.\nExercício: estime a função de sobrevivência para o tempo \\(t = 13\\) meses."
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-1",
     "href": "Aula4.html#exemplo-dados-de-osteossarcoma-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
-    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nNote que, para qualquer valor no intervalo [11,13),: \\[\n\\hat{S}(11)=\\hat{S}\\left([11,13)\\right)=0,909\n\\]\n\nOu seja, a função \\(\\hat{S}(t)\\) é uma função escada, que apresenta saltos nos tempos de morte observados\n\nO raciocínio dessa estimação é análogo ao que vocês já fizeram no curso para estimar, a função \\(F(t)\\)."
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nNote que, para qualquer valor no intervalo [11,13),: \\[\n\\hat{S}(11)=\\hat{S}\\left([11,13)\\right)=0,909\n\\]\n\nOu seja, a função \\(\\hat{S}(t)\\) é uma função escada, que apresenta saltos nos *tempos de morte observados.\n\nO raciocínio dessa estimação é análogo ao que vocês já fizeram no curso para estimar a função \\(F(t)\\)."
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-2",
     "href": "Aula4.html#exemplo-dados-de-osteossarcoma-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
-    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\n\n\nPara formalizar, denote por \\(t_j\\) todos os tempos distintos de ocorrência do evento de interesse mais o tempo inicial 0, com \\(j=1,...,m\\) e \\(t_1=0\\).\n\n\\(m\\) é a quantidade de tempos distintos de ocorrência do evento de interesse.\n\nNo exemplo dos dados de osteossarcoma, tem-se a tabela ao lado com os tempos distintos de morte, os respectivos intervalos e a sobrevivência estimada no intervalo.\n\n\n\n\n\n\n\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(\\hat{S}(t_j)\\)\n\n\n\n\n1\n0\n\\([0,\\;11)\\)\n1.000\n\n\n2\n11\n\\([11,\\;13)\\)\n0.909\n\n\n3\n13\n\\([13,\\;14)\\)\n0.455\n\n\n4\n14\n\\([14,\\;15)\\)\n0.273\n\n\n5\n15\n\\([15,\\;17)\\)\n0.091\n\n\n6\n17\n\\([17,\\;\\infty)\\)\n0.000"
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\n\n\nPara formalizar, denote por \\(t_j\\) todos os tempos distintos de ocorrência do evento de interesse mais o tempo inicial 0, com \\(j=1,...,m\\) e \\(t_1=0\\).\n\n\\(m\\) é a quantidade de tempos distintos de ocorrência do evento de interesse mais o zero.\n\nNo exemplo dos dados de osteossarcoma, tem-se a tabela ao lado com os tempos distintos de morte, os respectivos intervalos e a sobrevivência estimada no intervalo.\n\n\n\n\n\n\n\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(\\hat{S}(t_j)\\)\n\n\n\n\n1\n0\n\\([0,\\;11)\\)\n1.000\n\n\n2\n11\n\\([11,\\;13)\\)\n0.909\n\n\n3\n13\n\\([13,\\;14)\\)\n0.455\n\n\n4\n14\n\\([14,\\;15)\\)\n0.273\n\n\n5\n15\n\\([15,\\;17)\\)\n0.091\n\n\n6\n17\n\\([17,\\;\\infty)\\)\n0.000"
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-3",
@@ -193,7 +235,7 @@
     "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
-    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n\nNo segundo tempo: \\(t_2=1\\): \\[\n\\begin{aligned}\n\\hat{S}(1) = P(T&gt;1)\n&= P\\big(T&gt;t \\in [0,1)\\big)\\,\nP\\big(T&gt;1 \\mid T&gt;t \\in [0,1)\\big) \\\\\n&= 1 \\times \\left(1-\\frac{3}{14}\\right) \\\\\n&= 0{,}786.\n\\end{aligned}\n\\]\n\nA probabilidade \\(P(T&gt;t\\in[0,1)) = 1\\), pois já vimos este resultado no intervalo anterior.\nA probabilidade \\(P(T&gt;1)|T&gt;t\\in[0,1))\\) significa que, dado um paciente que de fato sobreviveu ao intervalo de tempo \\([0,1)\\), a probabilidade do tempo de morte dele ser maior que 1. Há ainda \\(14\\) pessoas que de fato sobreviveram ao intervalo \\([0,1)\\)] (sob risco). Como morreram \\(3\\) pessoas em \\(t_2=1\\), essa probabilidade é \\(P(T&gt;t\\in[1,5)|T&gt;t\\in[0,1))=\\left(1-\\frac{3}{14}\\right)\\)"
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n\nNo segundo tempo: \\(t_2=1\\): \\[\n\\begin{aligned}\n\\hat{S}(1) = P(T&gt;1)\n&= P\\big(T&gt;t \\in [0,1),T&gt;1\\big)\\\\\n&= P\\big(T&gt;t \\in [0,1)\\big)\\,\nP\\big(T&gt;1 \\mid T&gt;t \\in [0,1)\\big) \\\\\n&= 1 \\times \\left(1-\\frac{3}{14}\\right) \\\\\n&= 0{,}786.\n\\end{aligned}\n\\]\n\nA probabilidade \\(P(T&gt;t\\in[0,1)) = 1\\), pois já vimos este resultado no intervalo anterior.\nA probabilidade \\(P(T&gt;1)|T&gt;t\\in[0,1))\\) significa que, dado um paciente que de fato sobreviveu ao intervalo de tempo \\([0,1)\\), a probabilidade do tempo de morte dele ser maior que 1. Há ainda \\(14\\) pessoas que de fato sobreviveram ao intervalo \\([0,1)\\)] (sob risco). Como morreram \\(3\\) pessoas em \\(t_2=1\\), essa probabilidade é \\(P(T&gt;t\\in[1,5)|T&gt;t\\in[0,1))=\\left(1-\\frac{3}{14}\\right)\\)"
   },
   {
     "objectID": "Aula4.html#estimador-de-kaplan-meier-passo-4-4",
@@ -214,21 +256,21 @@
     "href": "Aula4.html#estimador-de-kaplan-meier-passo-4-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4",
-    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n(continuação)\n\nVamos provar o resultado anterior usando a fórmula do estimador: \\[\n\\begin{aligned}\n\\hat{S}(5)\n&= \\prod_{j:t_j\\leq 1}\\left(1-\\frac{d_j}{n_j}\\right)\n= \\prod_{j=1}^{3}\\left(1-\\frac{d_j}{n_j}\\right) \\\\[0.4em]\n&= \\left(1-\\frac{d_1}{n_1}\\right)\\left(1-\\frac{d_2}{n_2}\\right)\\left(1-\\frac{d_3}{n_3}\\right)\n= \\hat{S}(0)\\hat{S}(1)\\left(1-\\frac{1}{9}\\right) \\\\[0.4em]\n&= 0{,}698\n\\end{aligned}\n\\]\nComo \\(\\hat{S}(t)\\) é uma função escada, para todo \\(t\\) em [5,7), \\(\\hat{S}(t)=0,698\\)."
+    "text": "ESTIMADOR DE KAPLAN-MEIER: PASSO 4\n\n(continuação)\n\nVamos provar o resultado anterior usando a fórmula do estimador: \\[\n\\begin{aligned}\n\\hat{S}(5)\n&= \\prod_{j:t_j\\leq 1}\\left(1-\\frac{d_j}{n_j}\\right)\n= \\prod_{j=1}^{3}\\left(1-\\frac{d_j}{n_j}\\right) \\\\[0.4em]\n&= \\left(1-\\frac{d_1}{n_1}\\right)\\left(1-\\frac{d_2}{n_2}\\right)\\left(1-\\frac{d_3}{n_3}\\right)\n= \\hat{S}(1)\\left(1-\\frac{1}{9}\\right) \\\\[0.4em]\n&= 0{,}698\n\\end{aligned}\n\\]\nComo \\(\\hat{S}(t)\\) é uma função escada, para todo \\(t\\) em [5,7), \\(\\hat{S}(t)=0,698\\)."
   },
   {
     "objectID": "Aula4.html#estimador-de-kaplan-meier-exercício",
     "href": "Aula4.html#estimador-de-kaplan-meier-exercício",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN-MEIER: EXERCÍCIO",
-    "text": "ESTIMADOR DE KAPLAN-MEIER: EXERCÍCIO\n\nEncontre o valor de \\(\\hat{S(8)}\\) e:\n\nVerifique como ele é função das “sobrevivências anteriores”\nPerceba que, nesta base de dados, a estimação pelo Kaplan Meier parte da ideia que sobreviver até o tempo \\(t\\) é o mesmo que sobreviver a cada instante de morte observado até \\(t\\), dado que se sobreviveu até o instante imediatamente anterior."
+    "text": "ESTIMADOR DE KAPLAN-MEIER: EXERCÍCIO\n\nCalcule o valor de \\(\\hat{S}(7)\\).\nEm seguida, observe que:\n\nCada estimativa de sobrevivência é construída a partir das anteriores, isto é, a função \\(\\hat{S}(t)\\) possui uma estrutura multiplicativa acumulada;\nNo estimador de Kaplan–Meier, sobreviver até um tempo \\(t\\) equivale a sobreviver sucessivamente a cada instante de falha observado até \\(t\\), sempre condicionado à sobrevivência até o instante imediatamente anterior.\n\n💡 Em outras palavras, a sobrevivência até \\(t\\) é obtida como um produto de probabilidades condicionais de “passar” por cada tempo de ocorrência do evento."
   },
   {
     "objectID": "Aula4.html#estimador-de-kaplanmeier-passo-final",
     "href": "Aula4.html#estimador-de-kaplanmeier-passo-final",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN–MEIER: PASSO FINAL",
-    "text": "ESTIMADOR DE KAPLAN–MEIER: PASSO FINAL\n\nApós todos os passos, tem-se a seguinte tabela com todas as funções de sobrevivência estimadas:\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}_{KM}(t_j)\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n\n\n6\n10\n[10,16)\n1\n6\n0,437"
+    "text": "ESTIMADOR DE KAPLAN–MEIER: PASSO FINAL\n\nApós todos os passos, tem-se a seguinte tabela com todas as funções de sobrevivência estimadas:\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n\n\n6\n10\n[10,16)\n1\n6\n0,437"
   },
   {
     "objectID": "Aula4.html#estimador-de-kaplan-meier-gráfico",
@@ -238,39 +280,53 @@
     "text": "ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)"
   },
   {
+    "objectID": "Aula4.html#estimador-de-kaplan-meier-gráfico-1",
+    "href": "Aula4.html#estimador-de-kaplan-meier-gráfico-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)",
+    "text": "ESTIMADOR DE KAPLAN-MEIER (GRÁFICO)\n\n💡 Importante: a curva de Kaplan–Meier nem sempre decresce até zero.\n\nIsso ocorre porque pode haver censura nos maiores tempos observados, ou seja, alguns indivíduos não apresentaram o evento até o final do estudo;\nNessa situação, a curva “para” em um valor positivo, pois não há informação suficiente para determinar o que acontece após aquele ponto.\n\n✔️ A curva de Kaplan–Meier atinge zero apenas quando, no último tempo observado, todos os indivíduos sob risco experimentam o evento, isto é, quando \\(d_j = n_j\\).\n⚠️ Em particular, se no último tempo houver censuras (mesmo que junto com falhas), a curva não atinge zero, pois nem todos os indivíduos tiveram o evento."
+  },
+  {
     "objectID": "Aula4.html#estimador-de-kaplanmeier-definição-formal",
     "href": "Aula4.html#estimador-de-kaplanmeier-definição-formal",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN–MEIER: DEFINIÇÃO FORMAL",
-    "text": "ESTIMADOR DE KAPLAN–MEIER: DEFINIÇÃO FORMAL\n\n\nO estimador de Kaplan-Meier para a função de sobrevivência (confiabilidade) é definido por: \\[\n\\hat{S}(t)=\\prod_{j:t_j\\leq t}\\left(1-\\frac{d_j}{n_j}\\right),\n\\]\nEm que:\n\n\\(t_1 &lt; t_2 &lt; \\cdots &lt; t_k\\) são os tempos distintos em que o evento de interesse foi observado (excluem-se tempos censurados).\n\\(d_j\\) é o número de eventos ocorridos em \\(t_j\\).\n\\(n_j\\) é o número de indivíduos sob risco imediatamente antes de $t_j, ou seja, que ainda não sofreram o evento nem foram censurados.\n\nNote que cada termo \\(\\left(1 - \\frac{d_j}{n_j}\\right)\\) representa a chance de sobreviver ao intervalo \\(j\\), dado que o indivíduo sobreviveu até o início dele."
+    "text": "ESTIMADOR DE KAPLAN–MEIER: DEFINIÇÃO FORMAL\n\n\nO estimador de Kaplan-Meier para a função de sobrevivência (confiabilidade) é definido por: \\[\n\\hat{S}(t)=\\prod_{j:t_j\\leq t}\\left(1-\\frac{d_j}{n_j}\\right),\n\\]\nEm que:\n\n\\(t_1 &lt; t_2 &lt; \\cdots &lt; t_k\\) são os tempos distintos em que o evento de interesse foi observado (excluem-se tempos censurados).\n\\(d_j\\) é o número de eventos ocorridos em \\(t_j\\).\n\\(n_j\\) é o número de indivíduos sob risco imediatamente antes de \\(t_j\\), ou seja, que ainda não sofreram o evento nem foram censurados.\n\nNote que cada termo \\(\\left(1 - \\frac{d_j}{n_j}\\right)\\) representa a chance de sobreviver ao intervalo \\(j\\), dado que o indivíduo sobreviveu até o início dele."
   },
   {
     "objectID": "Aula4.html#estimador-de-kaplanmeier-propriedades",
     "href": "Aula4.html#estimador-de-kaplanmeier-propriedades",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES",
-    "text": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES\n\n\nKaplan e Meier (1958) provaram que o seu estimador é o estimador de máxima verossimilhança de \\(S(t)\\) quando há censura à direita.\nNa ausência de censuras, o estimador de Kaplan-Meier se reduz à função de sobrevivência clássica (confiabilidade), coincidindo com a análise paramétrica de sobrevivência.\nPode-se construir intervalos de confiança para \\(\\hat{S}_{KM}(t)\\) usando, por exemplo, o método de Greenwood, permitindo inferência sobre a curva de sobrevivência."
+    "text": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES\n\n\nKaplan e Meier (1958) provaram que o seu estimador é o estimador de máxima verossimilhança de \\(S(t)\\) quando há censura à direita.\nNa ausência de censuras, o estimador de Kaplan-Meier se reduz à estimação feita anteriormente para dados completos.\nO estimador mantém a forma mesmo em estudos com censura à direita (tipos I e II), mas não atinge \\(\\hat{S}_{KM}(t)=0\\) se as últimas observações forem censuradas."
   },
   {
     "objectID": "Aula4.html#estimador-de-kaplanmeier-propriedades-1",
     "href": "Aula4.html#estimador-de-kaplanmeier-propriedades-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES",
-    "text": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES\n\n\nO estimador mantém a forma mesmo em estudos com censura à direita (tipos I e II), mas não atinge \\(\\hat{S}_{KM}(t)=0\\) se as últimas observações forem censuradas.\nÉ não-viciado (assintoticamente não enviesado) para amostras grandes, garantindo estimativas confiáveis de sobrevivência.\nÉ fracamente consistente, ou seja, \\(\\hat{S}_{KM}(t) \\to S(t)\\) em probabilidade à medida que \\(n \\to \\infty\\).\nConverge assintoticamente para um processo gaussiano, permitindo usar aproximações normais para inferência.\nPermite comparar grupos diferentes usando testes como log-rank ou Gehan-Breslow, sendo amplamente usado em estudos clínicos e confiabilidade industrial."
+    "text": "ESTIMADOR DE KAPLAN–MEIER: PROPRIEDADES\n\n\nÉ não-viciado (assintoticamente não enviesado) para amostras grandes, garantindo estimativas confiáveis de sobrevivência.\nÉ consistente, ou seja, \\(\\hat{S}_{KM}(t) \\to S(t)\\) em probabilidade à medida que \\(n \\to \\infty\\).\nConverge assintoticamente para um processo gaussiano, permitindo usar aproximações normais para inferência."
   },
   {
     "objectID": "Aula4.html#outros-estimadores-de-st",
     "href": "Aula4.html#outros-estimadores-de-st",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "OUTROS ESTIMADORES DE \\(S(t)\\)",
-    "text": "OUTROS ESTIMADORES DE \\(S(t)\\)\n\nO estimador de Kaplan-Meier é o mais utilizado na prática. Porém, existem outras alternativas:\n\nNelson–Aalen\n\nEstima a função de risco acumulada (H(t))\nFunção de sobrevivência aproximada: (S(t) (-H(t)))\nÚtil para modelagem de risco cumulativo e regressão de sobrevivência\n\nTábua de vida (Actuarial life table)\n\nDivide o tempo em intervalos discretos\nCalcula probabilidades médias de sobrevivência por intervalo\nMuito usada em demografia, seguros e estudos longos com censura regular"
+    "text": "OUTROS ESTIMADORES DE \\(S(t)\\)\n\nO estimador de Kaplan-Meier é o mais utilizado na prática. Porém, existem outras alternativas:\n\nNelson–Aalen\n\nEstima a função de risco acumulada \\(H(t)\\)\nFunção de sobrevivência aproximada: \\(S(t)\\) = \\(\\exp(-H(t))\\))\n\nTábua de vida (Actuarial life table)\n\nDivide o tempo em intervalos discretos\nCalcula probabilidades médias de sobrevivência por intervalo\nMuito usada em demografia, seguros e estudos longos com censura regular"
   },
   {
     "objectID": "Aula4.html#a-variância-do-estimador-hatst",
     "href": "Aula4.html#a-variância-do-estimador-hatst",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\)",
-    "text": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\)\n\n\nConhecer a variância de qualquer estimador é essencial para a construção de um intervalo de confiança em torno da estimativa pontual.\nA variância do estimador de Kaplan-Meier é dada pela fórmula de Greenwood:\n\n[ ((t)) = ^2 _{j:t_j t} ]\n\nEssa expressão é obtida a partir de propriedades do estimador de máxima verossimilhança."
+    "text": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\)\n\n\nConhecer a variância de qualquer estimador é essencial para a construção de um intervalo de confiança em torno da estimativa pontual.\nA variância do estimador de Kaplan-Meier é dada pela fórmula de Greenwood:\n\n\\[\n\\text{Var}\\left(\\hat{S}(t)\\right) = \\left[\\hat{S}(t)\\right]^2 \\sum_{j:t_j \\le t} \\frac{d_j}{n_j (n_j - d_j)}\n\\]\n\nEssa expressão é obtida a partir de propriedades do estimador de máxima verossimilhança."
+  },
+  {
+    "objectID": "Aula4.html#a-variância-do-estimador-hatst-exemplo",
+    "href": "Aula4.html#a-variância-do-estimador-hatst-exemplo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\) (EXEMPLO)",
+    "text": "A VARIÂNCIA DO ESTIMADOR \\(\\hat{S}(t)\\) (EXEMPLO)\n\n\nPara os dados de hepatite, tem-se se os valores de \\(\\sqrt{\\text{Var}\\left(\\hat{S}(t)\\right)}\\):\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\n\\(\\sqrt{\\text{Var}\\left(\\hat{S}(t)\\right)}\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,110\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,128\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,138\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,143\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,144"
   },
   {
     "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain",
@@ -284,7 +340,7 @@
     "href": "Aula4.html#intervalo-de-confiança-para-st-plain-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)",
-    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{plain}(S(t_j))\\)\nLS \\(IC_{95\\%}^{plain}(S(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n1,000\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,571\n1,001\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,448\n0,948\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,340\n0,882\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,243\n0,805\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,155\n0,718"
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{plain}(\\hat{S}(t_j))\\)\nLS \\(IC_{95\\%}^{plain}(\\hat{S}(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,571\n1,001\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,448\n0,948\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,340\n0,882\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,243\n0,805\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,155\n0,718"
   },
   {
     "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain-2",
@@ -305,25 +361,32 @@
     "href": "Aula4.html#intervalo-de-confiança-para-st-log-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)",
-    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)\n\nPor que usar a transformação log?\n\nO intervalo clássico para (S(t)) é construído diretamente na escala original, o que pode gerar\nlimites negativos ou maiores que 1.\nAo aplicar a transformação [ !(S(t)), ] obtém-se um estimador que, para (t) fixo, possui distribuição Normal assintótica.\nO intervalo é então construído nessa nova escala e transformado de volta para a escala de (S(t)).\n\nPrincipais vantagens em relação ao intervalo sem transformação: - garante limites sempre positivos; - introduz assimetria mais compatível com a função de sobrevivência; - apresenta maior estabilidade ao longo do tempo; - melhora a qualidade da inferência assintótica.\n⚠️ Apesar dessas melhorias, o intervalo com transformação log ainda apresenta limitações, especialmente quando (S(t)) está próximo de 1, o que motiva o uso de transformações ainda mais adequadas."
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)\n\nPor que usar a transformação log?\n\nO intervalo clássico para \\(S(t)\\) é construído diretamente na escala original, o que pode gerar limites negativos ou maiores que 1.\nAo aplicar a transformação log, obtém-se um estimador que, para \\(t\\) fixo, possui distribuição Normal assintótica.\nO intervalo é então construído nessa nova escala e transformado de volta para a escala de \\(S(t)\\).\n\nPrincipais vantagens em relação ao intervalo sem transformação: - garante limites sempre positivos; - introduz assimetria mais compatível com a função de sobrevivência; - apresenta maior estabilidade ao longo do tempo; - melhora a qualidade da inferência assintótica.\n⚠️ Apesar dessas melhorias, o intervalo com transformação log ainda apresenta limitações, especialmente quando \\(S(t)\\) está próximo de 1, o que motiva o uso de transformações ainda mais adequadas."
   },
   {
-    "objectID": "Aula4.html#intervalo-de-confiança-para-st-plain-3",
-    "href": "Aula4.html#intervalo-de-confiança-para-st-plain-3",
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-2",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-log-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)",
-    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (plain)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{plain}(S(t_j))\\)\nLS \\(IC_{95\\%}^{plain}(S(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n1,000\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,571\n1,001\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,448\n0,948\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,340\n0,882\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,243\n0,805\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,155\n0,718"
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{log}(\\hat{S}(t_j))\\)\nLS \\(IC_{95\\%}^{log}(\\hat{S}(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,598\n1,000\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,488\n0,999\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,392\n0,952\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,306\n0,896\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,229\n0,832"
   },
   {
     "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-log",
     "href": "Aula4.html#intervalo-de-confiança-para-st-log-log",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)",
-    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\n\n\nPara garantir que os limites do intervalo pertençam a \\([0,1]\\), aplica-se a transformação log–log: \\[\ng\\!\\big(S(t)\\big) = \\log\\!\\big(-\\log S(t)\\big)\n\\]\nComo \\(\\log\\!\\big(-\\log \\hat{S}(t)\\big)\\), para \\(t\\) fixo, tem distribuição Normal assintoticamente, o intervalo aproximado de \\(100(1-\\alpha)\\%\\) de confiança para \\(S(t)\\) é dado por:\n\n\\[\nIC_{100(1-\\alpha)\\%}^{\\log\\text{–}\\log}(S(t))\n=\n\\left[\n\\exp\\!\\Big(-\\exp\\!\\big(\n\\log(-\\log \\hat{S}(t)) + z_{\\alpha/2}\\,SE\n\\big)\\Big),\n\\;\n\\exp\\!\\Big(-\\exp\\!\\big(\n\\log(-\\log \\hat{S}(t)) - z_{\\alpha/2}\\,SE\n\\big)\\Big)\n\\right]\n\\]\nonde\n\\[\nSE = \\sqrt{\n\\text{Var}\\!\\left(\\log\\!\\big(-\\log \\hat{S}(t)\\big)\\right)\n}.\n\\]"
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\n\n\nPara garantir um intervalo mais robusto, aplica-se a transformação log–log: \\[\ng\\!\\big(S(t)\\big) = \\log\\!\\big(-\\log S(t)\\big)\n\\]\nComo \\(\\log\\!\\big(-\\log \\hat{S}(t)\\big)\\), para \\(t\\) fixo, tem distribuição Normal assintoticamente, o intervalo aproximado de \\(100(1-\\alpha)\\%\\) de confiança para \\(S(t)\\) é dado por:\n\n\\[\nIC_{100(1-\\alpha)\\%}^{\\log\\text{–}\\log}(S(t))\n=\n\\left[\n\\exp\\!\\Big(-\\exp\\!\\big(\n\\log(-\\log \\hat{S}(t)) + z_{\\alpha/2}\\,SE\n\\big)\\Big),\n\\;\n\\exp\\!\\Big(-\\exp\\!\\big(\n\\log(-\\log \\hat{S}(t)) - z_{\\alpha/2}\\,SE\n\\big)\\Big)\n\\right]\n\\]\nonde\n\\[\nSE = \\sqrt{\n\\text{Var}\\!\\left(\\log\\!\\big(-\\log \\hat{S}(t)\\big)\\right)\n}.\n\\]"
   },
   {
     "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-log-1",
     "href": "Aula4.html#intervalo-de-confiança-para-st-log-log-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)",
+    "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\n\n\nPara aos dados de hepatite, tem-se os seguintes intervalos:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\nLI \\(IC_{95\\%}^{log-log}(\\hat{S}(t_j))\\)\nLS \\(IC_{95\\%}^{log-log}(\\hat{S}(t_j))\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,472\n0,925\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,378\n0,876\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,298\n0,819\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,227\n0,754\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,164\n0,683"
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-st-log-log-2",
+    "href": "Aula4.html#intervalo-de-confiança-para-st-log-log-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)",
     "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\nA figura abaixo apresenta os intervalos de confiança construídos segundo a transformação log-log:"
