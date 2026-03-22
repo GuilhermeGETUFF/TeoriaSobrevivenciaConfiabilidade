@@ -403,7 +403,7 @@
     "href": "Aula4.html#estimação-do-percentil-t_p",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMAÇÃO DO PERCENTIL \\(t_p\\)",
-    "text": "ESTIMAÇÃO DO PERCENTIL \\(t_p\\)\n\n\nA estimação não paramétrica do percentil \\(t_p\\) é feita a partir da função \\(\\hat{S(t)}\\) tanto no caso sem e com censura.\nComo as estimativas não paramétricas de \\(S(t)\\) são funções em degraus, o precentil \\(t_P\\) é estimado como o menor tempo observado para o qual o valor da função de sobrevivência estimada é menor que \\(1-p/100\\).\nEm termos matemáticos:\n\n\\[\n\\hat{t_p} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 1-\\frac{p}{100} \\}\n\\]"
+    "text": "ESTIMAÇÃO DO PERCENTIL \\(t_p\\)\n\n\nA estimação não paramétrica do percentil \\(t_p\\) é feita a partir da função \\(\\hat{S(t)}\\) tanto no caso sem e com censura.\nComo as estimativas não paramétricas de \\(S(t)\\) são funções em degraus, o precentil \\(t_p\\) é estimado como o menor tempo observado para o qual o valor da função de sobrevivência estimada é menor que \\(1-p/100\\).\nEm termos matemáticos:\n\n\\[\n\\hat{t_p} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 1-\\frac{p}{100} \\}\n\\]"
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-4",
@@ -459,7 +459,7 @@
     "href": "Aula4.html#método-da-intersecção-gráfico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÉTODO DA INTERSECÇÃO (GRÁFICO)",
-    "text": "MÉTODO DA INTERSECÇÃO (GRÁFICO)\n\n\nTrace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.\nPara a mediana (p = 0.5), você traça uma linha em \\(\\hat{S(t)}=0,5\\).\nEncontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.\nProjete essas interseções para o eixo do tempo.\n\nO valor do tempo na curva de sobrevivência é a estimação pontual do percentil \\(t_p\\).\nOs valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil \\(t_p\\).\n\nVeja que o IC “herda” a transformação que você usou no intervalo para a função de sobrevivência."
+    "text": "MÉTODO DA INTERSECÇÃO (GRÁFICO)\n\n\nTrace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.\nPara a mediana (p = 0.5), por exemplo, trace uma linha em \\(\\hat{S(t)}=0,5\\).\nEncontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.\nProjete essas interseções para o eixo do tempo.\n\nO valor do tempo na curva de sobrevivência é a estimação pontual do percentil \\(t_p\\).\nOs valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil \\(t_p\\).\n\nVeja que o IC “herda” a transformação que você usou no intervalo para a função de sobrevivência."
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-esteroide-2",
@@ -529,21 +529,21 @@
     "href": "Aula4.html#variância-do-estimador-de-nelson-aalen",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN",
-    "text": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN\n\nVariância do estimador \\(\\hat{\\Lambda}(t)\\)\nA variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:\n\\[\n\\hat{Var}[\\hat{\\Lambda}(t)] = \\sum_{t_i \\leq t} \\frac{d_i}{n_i^2}\n\\]\nonde: - \\(d_i\\) = número de eventos no tempo \\(t_i\\) - \\(n_i\\) = número de indivíduos em risco no tempo \\(t_i\\)\nIntuição: Cada evento contribui com \\(1/n_i^2\\) para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.\nPropriedade: Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado."
+    "text": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN\n\n\nA variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:\n\n\\[\n\\hat{Var}[\\hat{\\Lambda}(t)] = \\sum_{t_i \\leq t} \\frac{d_i}{n_i^2}\n\\]\n\nIntuição: Cada evento contribui com \\(1/n_i^2\\) para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.\nPropriedade: Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado."
   },
   {
-    "objectID": "Aula4.html#slide-2-intervalo-de-confiança-com-transformação-log",
-    "href": "Aula4.html#slide-2-intervalo-de-confiança-com-transformação-log",
+    "objectID": "Aula4.html#intervalo-de-confiança-com-transformação-log",
+    "href": "Aula4.html#intervalo-de-confiança-com-transformação-log",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "SLIDE 2: INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG",
-    "text": "SLIDE 2: INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG\n\nConstrução do Intervalo com Transformação Log\nPara garantir limites positivos e melhor aproximação normal, utiliza-se a transformação \\(\\ln(\\hat{\\Lambda}(t))\\):\nPasso 1: Calcula-se o erro padrão na escala log: \\[\nSE[\\ln(\\hat{\\Lambda}(t))] = \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nPasso 2: Constrói-se o intervalo na escala log: \\[\n\\ln(\\hat{\\Lambda}(t)) \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nPasso 3: Transforma-se de volta para escala original: \\[\nIC: \\hat{\\Lambda}(t) \\times \\exp\\left( \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)} \\right)\n\\]\nResultado: Intervalo assimétrico, sempre positivo, com cobertura mais precisa para amostras pequenas."
+    "section": "INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG",
+    "text": "INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG\n\n\nPara garantir limites positivos e melhor aproximação normal, utiliza-se a transformação \\(\\ln(\\hat{\\Lambda}(t))\\):\n\n\nCalcula-se o erro padrão na escala log: \\[\nSE[\\ln(\\hat{\\Lambda}(t))] = \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nConstrói-se o intervalo na escala log: \\[\n\\ln(\\hat{\\Lambda}(t)) \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nTransforma-se de volta para escala original: \\[\nIC: \\hat{\\Lambda}(t) \\times \\exp\\left( \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)} \\right)\n\\]"
   },
   {
-    "objectID": "Aula4.html#slide-3-vantagens-da-transformação-log-e-por-que-não-usar-plain",
-    "href": "Aula4.html#slide-3-vantagens-da-transformação-log-e-por-que-não-usar-plain",
+    "objectID": "Aula4.html#vantagens-da-transformação-log-e-por-que-não-usar-plain",
+    "href": "Aula4.html#vantagens-da-transformação-log-e-por-que-não-usar-plain",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "SLIDE 3: VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”",
-    "text": "SLIDE 3: VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”\n\nPor que \\(\\boldsymbol{\\ln}\\) é superior à transformação “plain”?\n\n\n\n\n\n\n\n\nAspecto\nTransformação Log\nTransformação Plain\n\n\n\n\nLimites inferiores\n\\(\\geq 0\\) (biológico)\nPode ser negativo ❌\n\n\nAproximação normal\nMelhor para \\(\\hat{\\Lambda}(t)\\) pequeno\nRuim no início da curva\n\n\nPoucos eventos\nEstável\nInstável, cobertura inadequada\n\n\nInterpretação\nIntervalos assimétricos realistas\nSimétrico, muitas vezes irreal\n\n\n\nPor que não usar “plain”? - \\(\\Lambda(t)\\) é não negativa por definição → limites negativos são sem sentido biológico - Distribuição de \\(\\hat{\\Lambda}(t)\\) é assimétrica, especialmente no início - A transformação log estabiliza a variância e acelera convergência à normalidade\nConclusão: \\(\\texttt{conf.type = \"log\"}\\) é a escolha teoricamente correta e padrão na literatura para função de risco acumulada."
+    "section": "VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”",
+    "text": "VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”\n\nPor que \\(\\boldsymbol{\\ln}\\) é superior à transformação “plain”?\n\n\n\n\n\n\n\n\nAspecto\nTransformação Log\nTransformação Plain\n\n\n\n\nLimites inferiores\n\\(\\geq 0\\) (biológico)\nPode ser negativo ❌\n\n\nAproximação normal\nMelhor para \\(\\hat{\\Lambda}(t)\\) pequeno\nRuim no início da curva\n\n\nPoucos eventos\nEstável\nInstável, cobertura inadequada\n\n\nInterpretação\nIntervalos assimétricos realistas\nSimétrico, muitas vezes irreal\n\n\n\nPor que não usar “plain”? - \\(\\Lambda(t)\\) é não negativa por definição → limites negativos são sem sentido biológico - Distribuição de \\(\\hat{\\Lambda}(t)\\) é assimétrica, especialmente no início - A transformação log estabiliza a variância e acelera convergência à normalidade"
   },
   {
     "objectID": "Aula2.html#revisão",

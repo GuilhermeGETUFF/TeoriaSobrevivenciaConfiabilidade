@@ -1636,7 +1636,7 @@ S(T_p) = 1 - p
 <div class="box-blue">
 <ul>
 <li><p>A estimação não paramétrica do percentil <span class="math inline">\(t_p\)</span> é feita a partir da função <span class="math inline">\(\hat{S(t)}\)</span> tanto no caso sem e com censura.</p></li>
-<li><p>Como as estimativas não paramétricas de <span class="math inline">\(S(t)\)</span> são <strong>funções em degraus</strong>, o precentil <span class="math inline">\(t_P\)</span> é estimado como o <strong>menor tempo observado</strong> para o qual o valor da função de sobrevivência estimada é menor que <span class="math inline">\(1-p/100\)</span>.</p></li>
+<li><p>Como as estimativas não paramétricas de <span class="math inline">\(S(t)\)</span> são <strong>funções em degraus</strong>, o precentil <span class="math inline">\(t_p\)</span> é estimado como o <strong>menor tempo observado</strong> para o qual o valor da função de sobrevivência estimada é menor que <span class="math inline">\(1-p/100\)</span>.</p></li>
 <li><p>Em termos matemáticos:</p></li>
 </ul>
 <p><span class="math display">\[
@@ -1839,7 +1839,7 @@ S(T_p) = 1 - p
 <div class="box-blue">
 <ul>
 <li><p>Trace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.</p></li>
-<li><p>Para a mediana (p = 0.5), você traça uma linha em <span class="math inline">\(\hat{S(t)}=0,5\)</span>.</p></li>
+<li><p>Para a mediana (p = 0.5), por exemplo, trace uma linha em <span class="math inline">\(\hat{S(t)}=0,5\)</span>.</p></li>
 <li><p>Encontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.</p></li>
 <li><p>Projete essas interseções para o eixo do tempo.</p>
 <ul>
@@ -2167,36 +2167,40 @@ S(T_p) = 1 - p
 </section>
 <section id="variância-do-estimador-de-nelson-aalen" class="slide level2">
 <h2><strong>VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN</strong></h2>
-<section id="variância-do-estimador-hatlambdat" class="box-blue">
-<h3><strong>Variância do estimador <span class="math inline">\(\hat{\Lambda}(t)\)</span></strong></h3>
-<p>A variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:</p>
+<div class="box-blue">
+<ul>
+<li>A variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:</li>
+</ul>
 <p><span class="math display">\[
 \hat{Var}[\hat{\Lambda}(t)] = \sum_{t_i \leq t} \frac{d_i}{n_i^2}
 \]</span></p>
-<p>onde: - <span class="math inline">\(d_i\)</span> = número de eventos no tempo <span class="math inline">\(t_i\)</span> - <span class="math inline">\(n_i\)</span> = número de indivíduos em risco no tempo <span class="math inline">\(t_i\)</span></p>
-<p><strong>Intuição:</strong> Cada evento contribui com <span class="math inline">\(1/n_i^2\)</span> para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.</p>
-<p><strong>Propriedade:</strong> Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado.</p>
+<ul>
+<li><p><strong>Intuição:</strong> Cada evento contribui com <span class="math inline">\(1/n_i^2\)</span> para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.</p></li>
+<li><p><strong>Propriedade:</strong> Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado.</p></li>
+</ul>
+</div>
 </section>
-</section>
-<section id="slide-2-intervalo-de-confiança-com-transformação-log" class="slide level2">
-<h2><strong>SLIDE 2: INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG</strong></h2>
-<section id="construção-do-intervalo-com-transformação-log" class="box-blue">
-<h3><strong>Construção do Intervalo com Transformação Log</strong></h3>
-<p>Para garantir limites positivos e melhor aproximação normal, utiliza-se a transformação <span class="math inline">\(\ln(\hat{\Lambda}(t))\)</span>:</p>
-<p><strong>Passo 1:</strong> Calcula-se o erro padrão na escala log: <span class="math display">\[
+<section id="intervalo-de-confiança-com-transformação-log" class="slide level2">
+<h2><strong>INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para garantir limites positivos e melhor aproximação normal, utiliza-se a transformação <span class="math inline">\(\ln(\hat{\Lambda}(t))\)</span>:</li>
+</ul>
+<ol type="1">
+<li><p>Calcula-se o erro padrão na escala log: <span class="math display">\[
 SE[\ln(\hat{\Lambda}(t))] = \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
-\]</span></p>
-<p><strong>Passo 2:</strong> Constrói-se o intervalo na escala log: <span class="math display">\[
+\]</span></p></li>
+<li><p>Constrói-se o intervalo na escala log: <span class="math display">\[
 \ln(\hat{\Lambda}(t)) \pm z_{1-\alpha/2} \times \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
-\]</span></p>
-<p><strong>Passo 3:</strong> Transforma-se de volta para escala original: <span class="math display">\[
+\]</span></p></li>
+<li><p>Transforma-se de volta para escala original: <span class="math display">\[
 IC: \hat{\Lambda}(t) \times \exp\left( \pm z_{1-\alpha/2} \times \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)} \right)
-\]</span></p>
-<p><strong>Resultado:</strong> Intervalo assimétrico, sempre positivo, com cobertura mais precisa para amostras pequenas.</p>
+\]</span></p></li>
+</ol>
+</div>
 </section>
-</section>
-<section id="slide-3-vantagens-da-transformação-log-e-por-que-não-usar-plain" class="slide level2">
-<h2><strong>SLIDE 3: VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”</strong></h2>
+<section id="vantagens-da-transformação-log-e-por-que-não-usar-plain" class="slide level2">
+<h2><strong>VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”</strong></h2>
 <section id="por-que-boldsymbolln-é-superior-à-transformação-plain" class="box-blue">
 <h3><strong>Por que <span class="math inline">\(\boldsymbol{\ln}\)</span> é superior à transformação “plain”?</strong></h3>
 <table class="caption-top">
@@ -2236,7 +2240,6 @@ IC: \hat{\Lambda}(t) \times \exp\left( \pm z_{1-\alpha/2} \times \frac{\sqrt{\ha
 </tbody>
 </table>
 <p><strong>Por que não usar “plain”?</strong> - <span class="math inline">\(\Lambda(t)\)</span> é <strong>não negativa por definição</strong> → limites negativos são <strong>sem sentido biológico</strong> - Distribuição de <span class="math inline">\(\hat{\Lambda}(t)\)</span> é <strong>assimétrica</strong>, especialmente no início - A transformação log <strong>estabiliza a variância</strong> e acelera convergência à normalidade</p>
-<p><strong>Conclusão:</strong> <span class="math inline">\(\texttt{conf.type = "log"}\)</span> é a escolha teoricamente correta e padrão na literatura para função de risco acumulada.</p>
 </section>
 </section></section>
 <section id="estimando-a-função-lambdat-1" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
