@@ -1609,23 +1609,643 @@ SE = \sqrt{
 <p>A figura abaixo apresenta os intervalos de confiança construídos segundo a transformação log-log:</p>
 
 <img data-src="Aula4_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section></section>
+<section>
 <section id="estimando-percentis-t_p" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
 <h1><strong>ESTIMANDO PERCENTIS <span class="math inline">\(T_p\)</span></strong></h1>
 
 </section>
+<section id="definição-do-percentil-t_p" class="slide level2">
+<h2><strong>DEFINIÇÃO DO PERCENTIL <span class="math inline">\(t_p\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li>Relembrando, vimos que o <strong>percentil <span class="math inline">\(t_p\)</span></strong> é definido como o tempo tal que:</li>
+</ul>
+<p><span class="math display">\[
+P(T \leq t_p) = F(t_p)= p
+\]</span></p>
+<ul>
+<li>Equivalentemente, em termos da função de sobrevivência:</li>
+</ul>
+<p><span class="math display">\[
+S(T_p) = 1 - p
+\]</span></p>
+</div>
+</section>
+<section id="estimação-do-percentil-t_p" class="slide level2">
+<h2><strong>ESTIMAÇÃO DO PERCENTIL <span class="math inline">\(t_p\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A estimação não paramétrica do percentil <span class="math inline">\(t_p\)</span> é feita a partir da função <span class="math inline">\(\hat{S(t)}\)</span> tanto no caso sem e com censura.</p></li>
+<li><p>Como as estimativas não paramétricas de <span class="math inline">\(S(t)\)</span> são <strong>funções em degraus</strong>, o precentil <span class="math inline">\(t_P\)</span> é estimado como o <strong>menor tempo observado</strong> para o qual o valor da função de sobrevivência estimada é menor que <span class="math inline">\(1-p/100\)</span>.</p></li>
+<li><p>Em termos matemáticos:</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{t_p} = \min \{ t_j \mid \hat{S}(t_j) \leq 1-\frac{p}{100} \}
+\]</span></p>
+</div>
+</section>
+<section id="exemplo-dados-de-osteossarcoma-4" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Relembre as estimativas não paramétricas da função de sobrevivência atrelada aos dados de osteossarcoma:</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(j\)</span></th>
+<th><span class="math inline">\(t_j\)</span></th>
+<th><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
+<th><span class="math inline">\(\hat{S}(t_j)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td><span class="math inline">\([0,\;11)\)</span></td>
+<td>1.000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>11</td>
+<td><span class="math inline">\([11,\;13)\)</span></td>
+<td>0.909</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>13</td>
+<td><span class="math inline">\([13,\;14)\)</span></td>
+<td>0.455</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>14</td>
+<td><span class="math inline">\([14,\;15)\)</span></td>
+<td>0.273</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>15</td>
+<td><span class="math inline">\([15,\;17)\)</span></td>
+<td>0.091</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>17</td>
+<td><span class="math inline">\([17,\;\infty)\)</span></td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exemplo-dados-de-osteossarcoma-5" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Suponha que seja de interesse a estimação do percentil <span class="math inline">\(t_{20}\)</span>, o tempo para o qual 20% dos pacientes já morreram</p></li>
+<li><p>A partir da definição, tem-se que:</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{t_{20}} = \min \{ t_j \mid \hat{S}(t_j) \leq 1-\frac{20}{100} \} = \min \{ t_j \mid \hat{S}(t_j) \leq 0,8 \} = 13
+\]</span></p>
+<ul>
+<li>Assim, estima-se que com 13 semanas 20% dos pacientes já faleceram.</li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-osteossarcoma-gráfico" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA (GRÁFICO)</strong></h2>
+<ul>
+<li>Veja o percentil estimado <span class="math inline">\(\hat{t_{20}}=13\)</span> no seguinte gráfico:</li>
+</ul>
 
-<section id="estimando-a-função-lambdat-t_p" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
-<h1><strong>ESTIMANDO A FUNÇÃO <span class="math inline">\(\Lambda(t)\)</span> <span class="math inline">\(T_p\)</span></strong></h1>
+<img data-src="Aula4_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="exemplo-dados-de-esteroide" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Relembre as estimativas não paramétricas da função de sobrevivência atrelada aos dados de hepatite em pacientes tratados com esteroide:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">j</th>
+<th style="text-align: right;"><span class="math inline">\(t_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: center;">[0,1)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">[1,5)</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0,786</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">[5,7)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,698</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">[7,8)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0,611</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">[8,10)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0,524</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">[10,16)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0,437</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exemplo-dados-de-esteroide-1" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Suponha que seja de interesse a estimação do percentil <span class="math inline">\(t_{50}\)</span>, o tempo mediano de morte dos pacientes.</p></li>
+<li><p>A partir da definição, tem-se que:</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{t_{50}} = \min \{ t_j \mid \hat{S}(t_j) \leq 1-\frac{50}{100} \} = \min \{ t_j \mid \hat{S}(t_j) \leq 0,5 \} = 10
+\]</span></p>
+<ul>
+<li>Assim, estima-se que com 10 semanas 50% dos pacientes já faleceram.</li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-esteroide-gráfico" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)</strong></h2>
+<ul>
+<li>Veja o percentil estimado <span class="math inline">\(\hat{t_{50}}=10\)</span> no seguinte gráfico:</li>
+</ul>
+
+<img data-src="Aula4_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="intervalo-de-confiança-para-o-percentil-t_p" class="slide level2">
+<h2><strong>INTERVALO DE CONFIANÇA PARA O PERCENTIL <span class="math inline">\(t_p\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O percentil <span class="math inline">\(t_p\)</span> é definido por: <span class="math inline">\(S(t_p) = 1 - p\)</span></p></li>
+<li><p>Logo, estimar <span class="math inline">\(t_p\)</span> equivale a <strong>inverter a função de sobrevivência</strong> <span class="math inline">\(\hat{S}(t)\)</span>.</p></li>
+<li><p>A ideia central é:</p>
+<ul>
+<li>Primeiro construir um <strong>intervalo de confiança para <span class="math inline">\(S(t)\)</span></strong></li>
+<li>Depois <strong>inverter esse intervalo</strong> para obter um intervalo para <span class="math inline">\(t_p\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="método-da-intersecção-gráfico" class="slide level2">
+<h2><strong>MÉTODO DA INTERSECÇÃO (GRÁFICO)</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Trace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.</p></li>
+<li><p>Para a mediana (p = 0.5), você traça uma linha em <span class="math inline">\(\hat{S(t)}=0,5\)</span>.</p></li>
+<li><p>Encontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.</p></li>
+<li><p>Projete essas interseções para o eixo do tempo.</p>
+<ul>
+<li>O valor do tempo na curva de sobrevivência é a estimação pontual do percentil <span class="math inline">\(t_p\)</span>.</li>
+<li>Os valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil <span class="math inline">\(t_p\)</span>.</li>
+</ul></li>
+<li><p>Veja que o IC “herda” a transformação que você usou no intervalo para a função de sobrevivência.</p></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-esteroide-2" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE</strong></h2>
+<ul>
+<li>Veja como provamos graficamente que um intervalo com 95% de confiança para <span class="math inline">\(t_{50}\)</span> é [5,NA]:</li>
+</ul>
+<div class="box-blue">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula4_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="estimando-a-função-lambdat" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ESTIMANDO A FUNÇÃO <span class="math inline">\(\Lambda(t)\)</span></strong></h1>
+
+</section>
+<section id="definição-da-função-lambdat" class="slide level2">
+<h2><strong>DEFINIÇÃO DA FUNÇÃO <span class="math inline">\(\Lambda(t)\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li>Relembrando, a <strong>função de risco acumulada</strong> é definida como:</li>
+</ul>
+<p><span class="math display">\[
+\Lambda(t) = \int_0^t \lambda(u)\,du
+\]</span></p>
+<ul>
+<li><p>Essa função representa o <strong>risco acumulado até o tempo <span class="math display">\[ t \]</span></strong>.</p></li>
+<li><p>Ou seja, ela agrega, ao longo do tempo, o efeito do risco instantâneo.</p></li>
+<li><p>Valores maiores de $ (t) $ indicam <strong>maior acúmulo de risco</strong> e, portanto, menor sobrevivência.</p></li>
+</ul>
+</div>
+</section>
+<section id="o-estimador-nelson-aalen" class="slide level2">
+<h2><strong>O ESTIMADOR NELSON AALEN</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Este estimador é <strong>mais recente que o estimador de Kaplan-Meier</strong>, sendo dado por:</li>
+</ul>
+<p><span class="math display">\[
+\hat{\Lambda}_{NA}(t)=\sum_{j:t_j\leq t}\left(\frac{d_j}{n_j}\right)
+\]</span></p>
+<ul>
+<li><p>A <strong>notação é a mesma</strong> utilizada no estimador de Kaplan-Meier e esta também é uma função escada.</p></li>
+<li><p>A ideia por trás dessa expressão é que a <strong>função de risco acumulado até o tempo <span class="math inline">\(t\)</span> representa exatamente o risco acumulado de ocorrência do evento até <span class="math inline">\(t\)</span></strong>.</p>
+<ul>
+<li>Note como o risco <span class="math inline">\(\frac{d_j}{n_j}\)</span> é adicionado até o tempo <span class="math inline">\(t\)</span>.</li>
+</ul></li>
+<li><p>Tanto para o caso sem e com censura utilizamos a mesma expressão para <span class="math inline">\(\hat{\Lambda}_{NA}(t)\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-osteossarcoma-6" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para os dados de osteossarcoma, tem-se as seguintes estimativas para a função de risco acumulado:</li>
+</ul>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(j\)</span></th>
+<th><span class="math inline">\(t_j\)</span></th>
+<th><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
+<th><span class="math inline">\(d_j\)</span></th>
+<th><span class="math inline">\(n_j\)</span></th>
+<th><span class="math inline">\(\hat{S}(t_j)\)</span></th>
+<th><span class="math inline">\(\hat{\Lambda}(t_j)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td><span class="math inline">\([0,\;11)\)</span></td>
+<td>0</td>
+<td>11</td>
+<td>1.000</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>11</td>
+<td><span class="math inline">\([11,\;13)\)</span></td>
+<td>1</td>
+<td>11</td>
+<td>0.909</td>
+<td>0.091</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>13</td>
+<td><span class="math inline">\([13,\;14)\)</span></td>
+<td>5</td>
+<td>10</td>
+<td>0.455</td>
+<td>0.591</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>14</td>
+<td><span class="math inline">\([14,\;15)\)</span></td>
+<td>2</td>
+<td>5</td>
+<td>0.273</td>
+<td>0.991</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>15</td>
+<td><span class="math inline">\([15,\;17)\)</span></td>
+<td>2</td>
+<td>3</td>
+<td>0.091</td>
+<td>1.658</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>17</td>
+<td><span class="math inline">\([17,\;\infty)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>0.000</td>
+<td>2.658</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exemplo-dados-de-osteossarcoma-gráfico-1" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE OSTEOSSARCOMA (GRÁFICO)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Com essas estimativas, pode-se construir o seguinte gráfico:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula4_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplo-dados-de-esteroide-3" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para os dados de esteroide, tem-se as seguintes estimativas para a função de risco acumulado:</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 45%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">j</th>
+<th style="text-align: right;"><span class="math inline">\(t_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\textrm{Intervalo}_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(d_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(n_j\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\hat{S}(t_j)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\hat{\Lambda}(t_j)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: center;">[0,1)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">0,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">[1,5)</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0,786</td>
+<td style="text-align: right;">0,214</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">[5,7)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,698</td>
+<td style="text-align: right;">0,325</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;">[7,8)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0,611</td>
+<td style="text-align: right;">0,450</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: center;">[8,10)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0,524</td>
+<td style="text-align: right;">0,593</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: center;">[10,16)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0,437</td>
+<td style="text-align: right;">0,760</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exemplo-dados-de-esteroide-gráfico-1" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Com essas estimativas, pode-se construir o seguinte gráfico:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula4_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="propriedades-do-estimador-nelsonaalen" class="slide level2">
+<h2><strong>PROPRIEDADES DO ESTIMADOR NELSON–AALEN</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O estimador de Nelson–Aalen é um <strong>estimador não paramétrico consistente</strong> para a função de risco acumulada <span class="math inline">\(\Lambda(t)\)</span>.</p></li>
+<li><p>É um estimador <strong>não viesado assintoticamente</strong>, ou seja:</p>
+<ul>
+<li>para amostras grandes, <span class="math inline">\(\hat{\Lambda}_{NA}(t)\)</span> aproxima bem <span class="math inline">\(\Lambda(t)\)</span>.</li>
+</ul></li>
+<li><p>Possui <strong>distribuição assintoticamente normal</strong>, o que permite a construção de intervalos de confiança.</p></li>
+</ul>
+</div>
+</section>
+<section id="relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier" class="slide level2 scrollable">
+<h2><strong>RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Os estimadores de Nelson–Aalen e Kaplan-Meier estão <strong>diretamente relacionados</strong> por uma transformação exponencial.</p></li>
+<li><p>A relação fundamental é dada por:</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{S}(t) = \exp\big(-\hat{\Lambda}_{NA}(t)\big)
+\]</span></p>
+<ul>
+<li>Ou, de forma equivalente:</li>
+</ul>
+<p><span class="math display">\[
+\hat{\Lambda}_{NA}(t) \approx -\log\big(\hat{S}_{KM}(t)\big)
+\]</span></p>
+<ul>
+<li><p>Isso mostra que:</p>
+<ul>
+<li>O estimador de Kaplan-Meier atua na <strong>escala da sobrevivência</strong><br>
+</li>
+<li>O estimador de Nelson–Aalen atua na <strong>escala do risco acumulado</strong></li>
+</ul></li>
+<li><p>Embora diferentes na forma, ambos utilizam a <strong>mesma informação amostral</strong>:</p>
+<ul>
+<li>número de falhas <span class="math inline">\(d_j\)</span><br>
+</li>
+<li>número em risco <span class="math inline">\(n_j\)</span></li>
+</ul></li>
+<li><p>Em amostras grandes, os dois estimadores são <strong>assintoticamente equivalentes</strong>.</p></li>
+<li><p>Na prática:</p>
+<ul>
+<li>Kaplan-Meier é mais usado para <strong>interpretar probabilidades de sobrevivência</strong><br>
+</li>
+<li>Nelson–Aalen é mais usado para <strong>modelagem e análise de risco</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="variância-do-estimador-de-nelson-aalen" class="slide level2">
+<h2><strong>VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN</strong></h2>
+<section id="variância-do-estimador-hatlambdat" class="box-blue">
+<h3><strong>Variância do estimador <span class="math inline">\(\hat{\Lambda}(t)\)</span></strong></h3>
+<p>A variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:</p>
+<p><span class="math display">\[
+\hat{Var}[\hat{\Lambda}(t)] = \sum_{t_i \leq t} \frac{d_i}{n_i^2}
+\]</span></p>
+<p>onde: - <span class="math inline">\(d_i\)</span> = número de eventos no tempo <span class="math inline">\(t_i\)</span> - <span class="math inline">\(n_i\)</span> = número de indivíduos em risco no tempo <span class="math inline">\(t_i\)</span></p>
+<p><strong>Intuição:</strong> Cada evento contribui com <span class="math inline">\(1/n_i^2\)</span> para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.</p>
+<p><strong>Propriedade:</strong> Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado.</p>
+</section>
+</section>
+<section id="slide-2-intervalo-de-confiança-com-transformação-log" class="slide level2">
+<h2><strong>SLIDE 2: INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG</strong></h2>
+<section id="construção-do-intervalo-com-transformação-log" class="box-blue">
+<h3><strong>Construção do Intervalo com Transformação Log</strong></h3>
+<p>Para garantir limites positivos e melhor aproximação normal, utiliza-se a transformação <span class="math inline">\(\ln(\hat{\Lambda}(t))\)</span>:</p>
+<p><strong>Passo 1:</strong> Calcula-se o erro padrão na escala log: <span class="math display">\[
+SE[\ln(\hat{\Lambda}(t))] = \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
+\]</span></p>
+<p><strong>Passo 2:</strong> Constrói-se o intervalo na escala log: <span class="math display">\[
+\ln(\hat{\Lambda}(t)) \pm z_{1-\alpha/2} \times \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
+\]</span></p>
+<p><strong>Passo 3:</strong> Transforma-se de volta para escala original: <span class="math display">\[
+IC: \hat{\Lambda}(t) \times \exp\left( \pm z_{1-\alpha/2} \times \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)} \right)
+\]</span></p>
+<p><strong>Resultado:</strong> Intervalo assimétrico, sempre positivo, com cobertura mais precisa para amostras pequenas.</p>
+</section>
+</section>
+<section id="slide-3-vantagens-da-transformação-log-e-por-que-não-usar-plain" class="slide level2">
+<h2><strong>SLIDE 3: VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”</strong></h2>
+<section id="por-que-boldsymbolln-é-superior-à-transformação-plain" class="box-blue">
+<h3><strong>Por que <span class="math inline">\(\boldsymbol{\ln}\)</span> é superior à transformação “plain”?</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 40%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspecto</th>
+<th>Transformação <strong>Log</strong></th>
+<th>Transformação <strong>Plain</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Limites inferiores</strong></td>
+<td><span class="math inline">\(\geq 0\)</span> (biológico)</td>
+<td>Pode ser negativo ❌</td>
+</tr>
+<tr class="even">
+<td><strong>Aproximação normal</strong></td>
+<td>Melhor para <span class="math inline">\(\hat{\Lambda}(t)\)</span> pequeno</td>
+<td>Ruim no início da curva</td>
+</tr>
+<tr class="odd">
+<td><strong>Poucos eventos</strong></td>
+<td>Estável</td>
+<td>Instável, cobertura inadequada</td>
+</tr>
+<tr class="even">
+<td><strong>Interpretação</strong></td>
+<td>Intervalos assimétricos realistas</td>
+<td>Simétrico, muitas vezes irreal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Por que não usar “plain”?</strong> - <span class="math inline">\(\Lambda(t)\)</span> é <strong>não negativa por definição</strong> → limites negativos são <strong>sem sentido biológico</strong> - Distribuição de <span class="math inline">\(\hat{\Lambda}(t)\)</span> é <strong>assimétrica</strong>, especialmente no início - A transformação log <strong>estabiliza a variância</strong> e acelera convergência à normalidade</p>
+<p><strong>Conclusão:</strong> <span class="math inline">\(\texttt{conf.type = "log"}\)</span> é a escolha teoricamente correta e padrão na literatura para função de risco acumulada.</p>
+</section>
+</section></section>
+<section id="estimando-a-função-lambdat-1" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ESTIMANDO A FUNÇÃO <span class="math inline">\(\lambda(t)\)</span> </strong></h1>
 
 </section>
 
-<section id="estimando-a-função-lambdat-t_p-1" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
-<h1><strong>ESTIMANDO A FUNÇÃO <span class="math inline">\(\lambda(t)\)</span> <span class="math inline">\(T_p\)</span></strong></h1>
-
-</section>
-
-<section id="estimando-t_m-e-vmrt" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
-<h1><strong>ESTIMANDO <span class="math inline">\(t_m\)</span> e <span class="math inline">\(vmr(t)\)</span></strong></h1>
+<section id="estimando-os-tempos-médios-t_m-e-vmrt" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ESTIMANDO OS TEMPOS MÉDIOS <span class="math inline">\(t_m\)</span> e <span class="math inline">\(vmr(t)\)</span></strong></h1>
 
 
 </section>

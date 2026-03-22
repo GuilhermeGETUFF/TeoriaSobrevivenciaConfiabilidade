@@ -392,6 +392,160 @@
     "text": "INTERVALO DE CONFIANÇA PARA \\(S(t)\\) (log-log)\nA figura abaixo apresenta os intervalos de confiança construídos segundo a transformação log-log:"
   },
   {
+    "objectID": "Aula4.html#definição-do-percentil-t_p",
+    "href": "Aula4.html#definição-do-percentil-t_p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DO PERCENTIL \\(t_p\\)",
+    "text": "DEFINIÇÃO DO PERCENTIL \\(t_p\\)\n\n\nRelembrando, vimos que o percentil \\(t_p\\) é definido como o tempo tal que:\n\n\\[\nP(T \\leq t_p) = F(t_p)= p\n\\]\n\nEquivalentemente, em termos da função de sobrevivência:\n\n\\[\nS(T_p) = 1 - p\n\\]"
+  },
+  {
+    "objectID": "Aula4.html#estimação-do-percentil-t_p",
+    "href": "Aula4.html#estimação-do-percentil-t_p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMAÇÃO DO PERCENTIL \\(t_p\\)",
+    "text": "ESTIMAÇÃO DO PERCENTIL \\(t_p\\)\n\n\nA estimação não paramétrica do percentil \\(t_p\\) é feita a partir da função \\(\\hat{S(t)}\\) tanto no caso sem e com censura.\nComo as estimativas não paramétricas de \\(S(t)\\) são funções em degraus, o precentil \\(t_P\\) é estimado como o menor tempo observado para o qual o valor da função de sobrevivência estimada é menor que \\(1-p/100\\).\nEm termos matemáticos:\n\n\\[\n\\hat{t_p} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 1-\\frac{p}{100} \\}\n\\]"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-4",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nRelembre as estimativas não paramétricas da função de sobrevivência atrelada aos dados de osteossarcoma:\n\n\n\n\n\n\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(\\hat{S}(t_j)\\)\n\n\n\n\n1\n0\n\\([0,\\;11)\\)\n1.000\n\n\n2\n11\n\\([11,\\;13)\\)\n0.909\n\n\n3\n13\n\\([13,\\;14)\\)\n0.455\n\n\n4\n14\n\\([14,\\;15)\\)\n0.273\n\n\n5\n15\n\\([15,\\;17)\\)\n0.091\n\n\n6\n17\n\\([17,\\;\\infty)\\)\n0.000"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-5",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-5",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nSuponha que seja de interesse a estimação do percentil \\(t_{20}\\), o tempo para o qual 20% dos pacientes já morreram\nA partir da definição, tem-se que:\n\n\\[\n\\hat{t_{20}} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 1-\\frac{20}{100} \\} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 0,8 \\} = 13\n\\]\n\nAssim, estima-se que com 13 semanas 20% dos pacientes já faleceram."
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-gráfico",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-gráfico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA (GRÁFICO)\n\nVeja o percentil estimado \\(\\hat{t_{20}}=13\\) no seguinte gráfico:"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide",
+    "href": "Aula4.html#exemplo-dados-de-esteroide",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE\n\n\nRelembre as estimativas não paramétricas da função de sobrevivência atrelada aos dados de hepatite em pacientes tratados com esteroide:\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n\n\n6\n10\n[10,16)\n1\n6\n0,437"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide-1",
+    "href": "Aula4.html#exemplo-dados-de-esteroide-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE\n\n\nSuponha que seja de interesse a estimação do percentil \\(t_{50}\\), o tempo mediano de morte dos pacientes.\nA partir da definição, tem-se que:\n\n\\[\n\\hat{t_{50}} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 1-\\frac{50}{100} \\} = \\min \\{ t_j \\mid \\hat{S}(t_j) \\leq 0,5 \\} = 10\n\\]\n\nAssim, estima-se que com 10 semanas 50% dos pacientes já faleceram."
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide-gráfico",
+    "href": "Aula4.html#exemplo-dados-de-esteroide-gráfico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)\n\nVeja o percentil estimado \\(\\hat{t_{50}}=10\\) no seguinte gráfico:"
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-o-percentil-t_p",
+    "href": "Aula4.html#intervalo-de-confiança-para-o-percentil-t_p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA O PERCENTIL \\(t_p\\)",
+    "text": "INTERVALO DE CONFIANÇA PARA O PERCENTIL \\(t_p\\)\n\n\nO percentil \\(t_p\\) é definido por: \\(S(t_p) = 1 - p\\)\nLogo, estimar \\(t_p\\) equivale a inverter a função de sobrevivência \\(\\hat{S}(t)\\).\nA ideia central é:\n\nPrimeiro construir um intervalo de confiança para \\(S(t)\\)\nDepois inverter esse intervalo para obter um intervalo para \\(t_p\\)"
+  },
+  {
+    "objectID": "Aula4.html#método-da-intersecção-gráfico",
+    "href": "Aula4.html#método-da-intersecção-gráfico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MÉTODO DA INTERSECÇÃO (GRÁFICO)",
+    "text": "MÉTODO DA INTERSECÇÃO (GRÁFICO)\n\n\nTrace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.\nPara a mediana (p = 0.5), você traça uma linha em \\(\\hat{S(t)}=0,5\\).\nEncontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.\nProjete essas interseções para o eixo do tempo.\n\nO valor do tempo na curva de sobrevivência é a estimação pontual do percentil \\(t_p\\).\nOs valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil \\(t_p\\).\n\nVeja que o IC “herda” a transformação que você usou no intervalo para a função de sobrevivência."
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide-2",
+    "href": "Aula4.html#exemplo-dados-de-esteroide-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE\n\nVeja como provamos graficamente que um intervalo com 95% de confiança para \\(t_{50}\\) é [5,NA]:"
+  },
+  {
+    "objectID": "Aula4.html#definição-da-função-lambdat",
+    "href": "Aula4.html#definição-da-função-lambdat",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)",
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nRelembrando, a função de risco acumulada é definida como:\n\n\\[\n\\Lambda(t) = \\int_0^t \\lambda(u)\\,du\n\\]\n\nEssa função representa o risco acumulado até o tempo \\[ t \\].\nOu seja, ela agrega, ao longo do tempo, o efeito do risco instantâneo.\nValores maiores de $ (t) $ indicam maior acúmulo de risco e, portanto, menor sobrevivência."
+  },
+  {
+    "objectID": "Aula4.html#o-estimador-nelson-aalen",
+    "href": "Aula4.html#o-estimador-nelson-aalen",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O ESTIMADOR NELSON AALEN",
+    "text": "O ESTIMADOR NELSON AALEN\n\n\nEste estimador é mais recente que o estimador de Kaplan-Meier, sendo dado por:\n\n\\[\n\\hat{\\Lambda}_{NA}(t)=\\sum_{j:t_j\\leq t}\\left(\\frac{d_j}{n_j}\\right)\n\\]\n\nA notação é a mesma utilizada no estimador de Kaplan-Meier e esta também é uma função escada.\nA ideia por trás dessa expressão é que a função de risco acumulado até o tempo \\(t\\) representa exatamente o risco acumulado de ocorrência do evento até \\(t\\).\n\nNote como o risco \\(\\frac{d_j}{n_j}\\) é adicionado até o tempo \\(t\\).\n\nTanto para o caso sem e com censura utilizamos a mesma expressão para \\(\\hat{\\Lambda}_{NA}(t)\\)"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-6",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-6",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA\n\n\nPara os dados de osteossarcoma, tem-se as seguintes estimativas para a função de risco acumulado:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(j\\)\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\n\\(\\hat{\\Lambda}(t_j)\\)\n\n\n\n\n1\n0\n\\([0,\\;11)\\)\n0\n11\n1.000\n0.000\n\n\n2\n11\n\\([11,\\;13)\\)\n1\n11\n0.909\n0.091\n\n\n3\n13\n\\([13,\\;14)\\)\n5\n10\n0.455\n0.591\n\n\n4\n14\n\\([14,\\;15)\\)\n2\n5\n0.273\n0.991\n\n\n5\n15\n\\([15,\\;17)\\)\n2\n3\n0.091\n1.658\n\n\n6\n17\n\\([17,\\;\\infty)\\)\n1\n1\n0.000\n2.658"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-gráfico-1",
+    "href": "Aula4.html#exemplo-dados-de-osteossarcoma-gráfico-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE OSTEOSSARCOMA (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE OSTEOSSARCOMA (GRÁFICO)\n\n\nCom essas estimativas, pode-se construir o seguinte gráfico:"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide-3",
+    "href": "Aula4.html#exemplo-dados-de-esteroide-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE\n\n\nPara os dados de esteroide, tem-se as seguintes estimativas para a função de risco acumulado:\n\n\n\n\n\n\n\n\n\n\n\n\n\nj\n\\(t_j\\)\n\\(\\textrm{Intervalo}_j\\)\n\\(d_j\\)\n\\(n_j\\)\n\\(\\hat{S}(t_j)\\)\n\\(\\hat{\\Lambda}(t_j)\\)\n\n\n\n\n1\n0\n[0,1)\n0\n14\n1,000\n0,000\n\n\n2\n1\n[1,5)\n3\n14\n0,786\n0,214\n\n\n3\n5\n[5,7)\n1\n9\n0,698\n0,325\n\n\n4\n7\n[7,8)\n1\n8\n0,611\n0,450\n\n\n5\n8\n[8,10)\n1\n7\n0,524\n0,593\n\n\n6\n10\n[10,16)\n1\n6\n0,437\n0,760"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide-gráfico-1",
+    "href": "Aula4.html#exemplo-dados-de-esteroide-gráfico-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)\n\n\nCom essas estimativas, pode-se construir o seguinte gráfico:"
+  },
+  {
+    "objectID": "Aula4.html#propriedades-do-estimador-nelsonaalen",
+    "href": "Aula4.html#propriedades-do-estimador-nelsonaalen",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PROPRIEDADES DO ESTIMADOR NELSON–AALEN",
+    "text": "PROPRIEDADES DO ESTIMADOR NELSON–AALEN\n\n\nO estimador de Nelson–Aalen é um estimador não paramétrico consistente para a função de risco acumulada \\(\\Lambda(t)\\).\nÉ um estimador não viesado assintoticamente, ou seja:\n\npara amostras grandes, \\(\\hat{\\Lambda}_{NA}(t)\\) aproxima bem \\(\\Lambda(t)\\).\n\nPossui distribuição assintoticamente normal, o que permite a construção de intervalos de confiança."
+  },
+  {
+    "objectID": "Aula4.html#relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier",
+    "href": "Aula4.html#relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER",
+    "text": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER\n\n\nOs estimadores de Nelson–Aalen e Kaplan-Meier estão diretamente relacionados por uma transformação exponencial.\nA relação fundamental é dada por:\n\n\\[\n\\hat{S}(t) = \\exp\\big(-\\hat{\\Lambda}_{NA}(t)\\big)\n\\]\n\nOu, de forma equivalente:\n\n\\[\n\\hat{\\Lambda}_{NA}(t) \\approx -\\log\\big(\\hat{S}_{KM}(t)\\big)\n\\]\n\nIsso mostra que:\n\nO estimador de Kaplan-Meier atua na escala da sobrevivência\n\nO estimador de Nelson–Aalen atua na escala do risco acumulado\n\nEmbora diferentes na forma, ambos utilizam a mesma informação amostral:\n\nnúmero de falhas \\(d_j\\)\n\nnúmero em risco \\(n_j\\)\n\nEm amostras grandes, os dois estimadores são assintoticamente equivalentes.\nNa prática:\n\nKaplan-Meier é mais usado para interpretar probabilidades de sobrevivência\n\nNelson–Aalen é mais usado para modelagem e análise de risco"
+  },
+  {
+    "objectID": "Aula4.html#variância-do-estimador-de-nelson-aalen",
+    "href": "Aula4.html#variância-do-estimador-de-nelson-aalen",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN",
+    "text": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN\n\nVariância do estimador \\(\\hat{\\Lambda}(t)\\)\nA variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:\n\\[\n\\hat{Var}[\\hat{\\Lambda}(t)] = \\sum_{t_i \\leq t} \\frac{d_i}{n_i^2}\n\\]\nonde: - \\(d_i\\) = número de eventos no tempo \\(t_i\\) - \\(n_i\\) = número de indivíduos em risco no tempo \\(t_i\\)\nIntuição: Cada evento contribui com \\(1/n_i^2\\) para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.\nPropriedade: Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado."
+  },
+  {
+    "objectID": "Aula4.html#slide-2-intervalo-de-confiança-com-transformação-log",
+    "href": "Aula4.html#slide-2-intervalo-de-confiança-com-transformação-log",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SLIDE 2: INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG",
+    "text": "SLIDE 2: INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG\n\nConstrução do Intervalo com Transformação Log\nPara garantir limites positivos e melhor aproximação normal, utiliza-se a transformação \\(\\ln(\\hat{\\Lambda}(t))\\):\nPasso 1: Calcula-se o erro padrão na escala log: \\[\nSE[\\ln(\\hat{\\Lambda}(t))] = \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nPasso 2: Constrói-se o intervalo na escala log: \\[\n\\ln(\\hat{\\Lambda}(t)) \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nPasso 3: Transforma-se de volta para escala original: \\[\nIC: \\hat{\\Lambda}(t) \\times \\exp\\left( \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)} \\right)\n\\]\nResultado: Intervalo assimétrico, sempre positivo, com cobertura mais precisa para amostras pequenas."
+  },
+  {
+    "objectID": "Aula4.html#slide-3-vantagens-da-transformação-log-e-por-que-não-usar-plain",
+    "href": "Aula4.html#slide-3-vantagens-da-transformação-log-e-por-que-não-usar-plain",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SLIDE 3: VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”",
+    "text": "SLIDE 3: VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”\n\nPor que \\(\\boldsymbol{\\ln}\\) é superior à transformação “plain”?\n\n\n\n\n\n\n\n\nAspecto\nTransformação Log\nTransformação Plain\n\n\n\n\nLimites inferiores\n\\(\\geq 0\\) (biológico)\nPode ser negativo ❌\n\n\nAproximação normal\nMelhor para \\(\\hat{\\Lambda}(t)\\) pequeno\nRuim no início da curva\n\n\nPoucos eventos\nEstável\nInstável, cobertura inadequada\n\n\nInterpretação\nIntervalos assimétricos realistas\nSimétrico, muitas vezes irreal\n\n\n\nPor que não usar “plain”? - \\(\\Lambda(t)\\) é não negativa por definição → limites negativos são sem sentido biológico - Distribuição de \\(\\hat{\\Lambda}(t)\\) é assimétrica, especialmente no início - A transformação log estabiliza a variância e acelera convergência à normalidade\nConclusão: \\(\\texttt{conf.type = \"log\"}\\) é a escolha teoricamente correta e padrão na literatura para função de risco acumulada."
+  },
+  {
     "objectID": "Aula2.html#revisão",
     "href": "Aula2.html#revisão",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
