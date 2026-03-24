@@ -641,7 +641,14 @@
     "href": "Aula4.html#intervalo-de-confiança-para-a-rmst-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALO DE CONFIANÇA PARA A RMST",
-    "text": "INTERVALO DE CONFIANÇA PARA A RMST\n\n\nSob condições gerais, a RMST possui uma distribuição aproximadamente normal.\nAssim, o intervalo de confiança é construído como: \\[\n\\text{estimativa} \\;\\pm\\; \\text{margem de erro}\n\\]\nonde a margem de erro depende do erro padrão da RMST.\no R possui o pacote survRM2 que calcula a estimativa pontual e intervalar para \\(t_m(\\tau)\\)\n\n\nTEMPO MÉDIO RESIDUAL RESTRITO\n\n\nO tempo médio residual restrito também pode ser estimada via Kaplan-Meier:\n\n\\[\n\\widehat{vmr}(t) = \\frac{\\int_t^\\tau \\widehat{S}(u)\\,du}{\\widehat{S}(t)}\n\\]\n\nInterpretação: 👉 “quanto tempo, em média, ainda resta após o tempo \\(t\\)”\nAssim como a média, ela depende da área sob a curva de sobrevivência."
+    "text": "INTERVALO DE CONFIANÇA PARA A RMST\n\n\nSob condições gerais, a RMST possui uma distribuição aproximadamente normal.\nAssim, o intervalo de confiança é construído como: \\[\n\\text{estimativa} \\;\\pm\\; \\text{margem de erro}\n\\]\nonde a margem de erro depende do erro padrão da RMST.\no R possui o pacote survRM2 que calcula a estimativa pontual e intervalar para \\(t_m(\\tau)\\)"
+  },
+  {
+    "objectID": "Aula4.html#tempo-médio-residual-restrito",
+    "href": "Aula4.html#tempo-médio-residual-restrito",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TEMPO MÉDIO RESIDUAL RESTRITO",
+    "text": "TEMPO MÉDIO RESIDUAL RESTRITO\n\n\nO tempo médio residual restrito também pode ser estimada via Kaplan-Meier:\n\n\\[\n\\widehat{vmr}(t) = \\frac{\\int_t^\\tau \\widehat{S}(u)\\,du}{\\widehat{S}(t)}\n\\]\n\nInterpretação: 👉 “quanto tempo, em média, ainda resta após o tempo \\(t\\)”\nAssim como a média, ela depende da área sob a curva de sobrevivência."
   },
   {
     "objectID": "Aula4.html#implementação-no-r",
