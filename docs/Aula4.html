@@ -1846,7 +1846,7 @@ S(T_p) = 1 - p
 <li>O valor do tempo na curva de sobrevivência é a estimação pontual do percentil <span class="math inline">\(t_p\)</span>.</li>
 <li>Os valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil <span class="math inline">\(t_p\)</span>.</li>
 </ul></li>
-<li><p>Veja que o IC “herda” a transformação que você usou no intervalo para a função de sobrevivência.</p></li>
+<li><p>Veja que o IC “herda” a transformação que foi usada no intervalo para a função de sobrevivência.</p></li>
 </ul>
 </div>
 </section>
@@ -1882,9 +1882,9 @@ S(T_p) = 1 - p
 \Lambda(t) = \int_0^t \lambda(u)\,du
 \]</span></p>
 <ul>
-<li><p>Essa função representa o <strong>risco acumulado até o tempo <span class="math display">\[ t \]</span></strong>.</p></li>
+<li><p>Essa função representa o <strong>risco acumulado até o tempo <span class="math inline">\(t\)</span></strong>.</p></li>
 <li><p>Ou seja, ela agrega, ao longo do tempo, o efeito do risco instantâneo.</p></li>
-<li><p>Valores maiores de $ (t) $ indicam <strong>maior acúmulo de risco</strong> e, portanto, menor sobrevivência.</p></li>
+<li><p>Valores maiores de <span class="math inline">\(\Lambda(t)\)</span> indicam <strong>maior acúmulo de risco</strong> e, portanto, menor sobrevivência.</p></li>
 </ul>
 </div>
 </section>
@@ -1895,15 +1895,15 @@ S(T_p) = 1 - p
 <li>Este estimador é <strong>mais recente que o estimador de Kaplan-Meier</strong>, sendo dado por:</li>
 </ul>
 <p><span class="math display">\[
-\hat{\Lambda}_{NA}(t)=\sum_{j:t_j\leq t}\left(\frac{d_j}{n_j}\right)
+\hat{\Lambda}(t)=\sum_{j:t_j\leq t}\left(\frac{d_j}{n_j}\right)
 \]</span></p>
 <ul>
-<li><p>A <strong>notação é a mesma</strong> utilizada no estimador de Kaplan-Meier e esta também é uma função escada.</p></li>
+<li><p>A <strong>notação é a mesma</strong> utilizada no estimador de Kaplan-Meier e ele também é um estimador que possui uma função escada.</p></li>
 <li><p>A ideia por trás dessa expressão é que a <strong>função de risco acumulado até o tempo <span class="math inline">\(t\)</span> representa exatamente o risco acumulado de ocorrência do evento até <span class="math inline">\(t\)</span></strong>.</p>
 <ul>
 <li>Note como o risco <span class="math inline">\(\frac{d_j}{n_j}\)</span> é adicionado até o tempo <span class="math inline">\(t\)</span>.</li>
 </ul></li>
-<li><p>Tanto para o caso sem e com censura utilizamos a mesma expressão para <span class="math inline">\(\hat{\Lambda}_{NA}(t)\)</span></p></li>
+<li><p>Tanto para o caso sem e com censura utilizamos a mesma expressão para <span class="math inline">\(\hat{\Lambda}(t)\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -2120,7 +2120,7 @@ S(T_p) = 1 - p
 <li><p>O estimador de Nelson–Aalen é um <strong>estimador não paramétrico consistente</strong> para a função de risco acumulada <span class="math inline">\(\Lambda(t)\)</span>.</p></li>
 <li><p>É um estimador <strong>não viesado assintoticamente</strong>, ou seja:</p>
 <ul>
-<li>para amostras grandes, <span class="math inline">\(\hat{\Lambda}_{NA}(t)\)</span> aproxima bem <span class="math inline">\(\Lambda(t)\)</span>.</li>
+<li>para amostras grandes, <span class="math inline">\(\hat{\Lambda}(t)\)</span> aproxima bem <span class="math inline">\(\Lambda(t)\)</span>.</li>
 </ul></li>
 <li><p>Possui <strong>distribuição assintoticamente normal</strong>, o que permite a construção de intervalos de confiança.</p></li>
 </ul>
@@ -2131,32 +2131,36 @@ S(T_p) = 1 - p
 <div class="box-blue">
 <ul>
 <li><p>Os estimadores de Nelson–Aalen e Kaplan-Meier estão <strong>diretamente relacionados</strong> por uma transformação exponencial.</p></li>
-<li><p>A relação fundamental é dada por:</p></li>
+<li><p>Vimos, anteriormente, a seguinte relação entre as funções <span class="math inline">\(S(t)\)</span> e <span class="math inline">\(\Lambda(t)\)</span>:</p></li>
 </ul>
 <p><span class="math display">\[
-\hat{S}(t) = \exp\big(-\hat{\Lambda}_{NA}(t)\big)
+\Lambda(t) = -log(S(t))
 \]</span></p>
 <ul>
-<li>Ou, de forma equivalente:</li>
+<li>Como os estimadores <span class="math inline">\(\hat{S(t)}\)</span> e <span class="math inline">\(\hat{\Lambda(t)}\)</span> são obtidos por fórmulas específicas,</li>
 </ul>
 <p><span class="math display">\[
-\hat{\Lambda}_{NA}(t) \approx -\log\big(\hat{S}_{KM}(t)\big)
-\]</span></p>
+\hat{\Lambda}(t) \approx -\log\big(\hat{S}(t)\big)
+\]</span> - Em amostras grandes, essa relação é <strong>assintoticamente equivalente</strong>.</p>
+</div>
+</section>
+<section id="relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier-1" class="slide level2 scrollable">
+<h2><strong>RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER</strong></h2>
+<div class="box-blue">
 <ul>
-<li><p>Isso mostra que:</p>
+<li>Isso mostra que:
 <ul>
 <li>O estimador de Kaplan-Meier atua na <strong>escala da sobrevivência</strong><br>
 </li>
 <li>O estimador de Nelson–Aalen atua na <strong>escala do risco acumulado</strong></li>
 </ul></li>
-<li><p>Embora diferentes na forma, ambos utilizam a <strong>mesma informação amostral</strong>:</p>
+<li>Embora diferentes na forma, ambos utilizam a <strong>mesma informação amostral</strong>:
 <ul>
 <li>número de falhas <span class="math inline">\(d_j\)</span><br>
 </li>
 <li>número em risco <span class="math inline">\(n_j\)</span></li>
 </ul></li>
-<li><p>Em amostras grandes, os dois estimadores são <strong>assintoticamente equivalentes</strong>.</p></li>
-<li><p>Na prática:</p>
+<li>Na prática:
 <ul>
 <li>Kaplan-Meier é mais usado para <strong>interpretar probabilidades de sobrevivência</strong><br>
 </li>
@@ -2172,10 +2176,10 @@ S(T_p) = 1 - p
 <li>A variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:</li>
 </ul>
 <p><span class="math display">\[
-\hat{Var}[\hat{\Lambda}(t)] = \sum_{t_i \leq t} \frac{d_i}{n_i^2}
+\hat{Var}[\hat{\Lambda}(t)] = \sum_{t_j \leq t} \frac{d_j}{n_j^2}
 \]</span></p>
 <ul>
-<li><p><strong>Intuição:</strong> Cada evento contribui com <span class="math inline">\(1/n_i^2\)</span> para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.</p></li>
+<li><p><strong>Intuição:</strong> Cada evento contribui com <span class="math inline">\(1/n_j^2\)</span> para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.</p></li>
 <li><p><strong>Propriedade:</strong> Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado.</p></li>
 </ul>
 </div>
@@ -2184,11 +2188,10 @@ S(T_p) = 1 - p
 <h2><strong>INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Para garantir limites positivos e melhor aproximação normal, utiliza-se a transformação <span class="math inline">\(\ln(\hat{\Lambda}(t))\)</span>:</li>
+<li>Para garantir limites positivos e um intervalo mais robusto para <span class="math inline">\(\Lambda(t)\)</span>, a melhor transformação é a logarítmica <span class="math inline">\(\ln(\hat{\Lambda}(t))\)</span>:</li>
 </ul>
 <ol type="1">
-<li><p>Calcula-se o erro padrão na escala log: <span class="math display">\[
-SE[\ln(\hat{\Lambda}(t))] = \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
+<li><p>Calcula-se o erro padrão na escala log: <span class="math display">\[SE[\ln(\hat{\Lambda}(t))] = \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
 \]</span></p></li>
 <li><p>Constrói-se o intervalo na escala log: <span class="math display">\[
 \ln(\hat{\Lambda}(t)) \pm z_{1-\alpha/2} \times \frac{\sqrt{\hat{Var}[\hat{\Lambda}(t)]}}{\hat{\Lambda}(t)}
@@ -2199,59 +2202,258 @@ IC: \hat{\Lambda}(t) \times \exp\left( \pm z_{1-\alpha/2} \times \frac{\sqrt{\ha
 </ol>
 </div>
 </section>
-<section id="vantagens-da-transformação-log-e-por-que-não-usar-plain" class="slide level2">
-<h2><strong>VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”</strong></h2>
-<section id="por-que-boldsymbolln-é-superior-à-transformação-plain" class="box-blue">
-<h3><strong>Por que <span class="math inline">\(\boldsymbol{\ln}\)</span> é superior à transformação “plain”?</strong></h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 40%">
-<col style="width: 43%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Aspecto</th>
-<th>Transformação <strong>Log</strong></th>
-<th>Transformação <strong>Plain</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Limites inferiores</strong></td>
-<td><span class="math inline">\(\geq 0\)</span> (biológico)</td>
-<td>Pode ser negativo ❌</td>
-</tr>
-<tr class="even">
-<td><strong>Aproximação normal</strong></td>
-<td>Melhor para <span class="math inline">\(\hat{\Lambda}(t)\)</span> pequeno</td>
-<td>Ruim no início da curva</td>
-</tr>
-<tr class="odd">
-<td><strong>Poucos eventos</strong></td>
-<td>Estável</td>
-<td>Instável, cobertura inadequada</td>
-</tr>
-<tr class="even">
-<td><strong>Interpretação</strong></td>
-<td>Intervalos assimétricos realistas</td>
-<td>Simétrico, muitas vezes irreal</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Por que não usar “plain”?</strong> - <span class="math inline">\(\Lambda(t)\)</span> é <strong>não negativa por definição</strong> → limites negativos são <strong>sem sentido biológico</strong> - Distribuição de <span class="math inline">\(\hat{\Lambda}(t)\)</span> é <strong>assimétrica</strong>, especialmente no início - A transformação log <strong>estabiliza a variância</strong> e acelera convergência à normalidade</p>
+<section id="vantagens-da-transformação-log" class="slide level2">
+<h2><strong>VANTAGENS DA TRANSFORMAÇÃO LOG</strong></h2>
+<div class="box-blue">
+<ul>
+<li><span class="math inline">\(\Lambda(t)\)</span> é <strong>não negativa por definição</strong> → limites negativos são <strong>sem sentido biológico</strong></li>
+<li>Distribuição de <span class="math inline">\(\hat{\Lambda}(t)\)</span> é <strong>assimétrica</strong>, especialmente no início</li>
+<li>A transformação log <strong>estabiliza a variância</strong> e acelera convergência à normalidade</li>
+<li>A transformação log-log é utilizada apenas no suporte [0,1] (para a função de sobrevivência)</li>
+</ul>
+</div>
 </section>
+<section id="exemplo-dados-de-esteroide-gráfico-2" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Segue o gráfico da função de risco acumulado estimada considerando intervalos de confiança com a transformação log:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula4_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section></section>
+<section>
 <section id="estimando-a-função-lambdat-1" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
 <h1><strong>ESTIMANDO A FUNÇÃO <span class="math inline">\(\lambda(t)\)</span> </strong></h1>
 
 </section>
-
+<section id="definição-da-função-lambdat-1" class="slide level2">
+<h2><strong>DEFINIÇÃO DA FUNÇÃO <span class="math inline">\(\lambda(t)\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li>A <strong>função de risco instantâneo</strong> é definida como:</li>
+</ul>
+<p><span class="math display">\[
+\lambda(t) = \lim_{\Delta t \to 0} \frac{P(t \leq T &lt; t+\Delta t \mid T \geq t)}{\Delta t}
+\]</span></p>
+<ul>
+<li><p>Essa função representa o <strong>risco instantâneo no tempo <span class="math inline">\(t\)</span></strong>, dado que o indivíduo sobreviveu até esse momento.</p></li>
+<li><p>Ou seja, ela mede a <strong>intensidade de ocorrência do evento naquele instante</strong>.</p></li>
+<li><p>Valores maiores de <span class="math inline">\(\lambda(t)\)</span> indicam <strong>maior risco imediato</strong>, mesmo entre indivíduos que ainda não apresentaram o evento.</p></li>
+</ul>
+</div>
+</section>
+<section id="por-que-não-estimamos-lambdat-diretamente" class="slide level2">
+<h2><strong>POR QUE NÃO ESTIMAMOS <span class="math inline">\(\lambda(t)\)</span> DIRETAMENTE?</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Já sabemos que a função de risco acumulada pode ser estimada por:</li>
+</ul>
+<p><span class="math display">\[
+\hat{\Lambda}(t)=\sum_{j:t_j\leq t}\left(\frac{d_j}{n_j}\right)
+\]</span></p>
+<ul>
+<li>Uma ideia natural seria obter <span class="math inline">\(\lambda(t)\)</span> por derivação:</li>
+</ul>
+<p><span class="math display">\[
+\lambda(t) = \frac{d}{dt}\Lambda(t)
+\quad \Rightarrow \quad
+\hat{\lambda}(t) = \frac{d}{dt}\hat{\Lambda}(t)
+\]</span></p>
+<ul>
+<li><p><strong>Problema:</strong> <span class="math inline">\(\hat{\Lambda}(t)\)</span> é uma função em <strong>degraus</strong>.</p></li>
+<li><p>Portanto, sua derivada é <strong>nula na maior parte do tempo</strong> e <strong>não definida nos pontos de salto</strong>.</p></li>
+<li><p>Ou seja, <strong>não é possível obter uma estimativa útil de <span class="math inline">\(\lambda(t)\)</span> por derivação direta</strong>.</p></li>
+<li><p>Isso motiva o uso de métodos que <strong>suavizam</strong> ou <strong>aproximam localmente</strong> o risco.</p></li>
+</ul>
+</div>
+</section>
+<section id="ideia-central-suavizar-o-risco" class="slide level2">
+<h2><strong>IDEIA CENTRAL: SUAVIZAR O RISCO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Já vimos que não podemos derivar diretamente <span class="math inline">\(\hat{\Lambda}(t)\)</span>.</p></li>
+<li><p>A solução é estimar <span class="math inline">\(\lambda(t)\)</span> de forma <strong>local</strong>, usando informação <strong>próxima de <span class="math inline">\(t\)</span></strong>.</p></li>
+<li><p>Em vez de olhar apenas o ponto <span class="math inline">\(t\)</span>, consideramos uma <strong>vizinhança ao redor de <span class="math inline">\(t\)</span></strong>.</p></li>
+<li><p>A ideia é construir uma <strong>média ponderada dos incrementos do Nelson-Aalen</strong>.</p></li>
+<li><p>Isso leva aos chamados <strong>estimadores suavizados de risco</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="como-obter-estas-estimativas-suavizadas" class="slide level2">
+<h2><strong>COMO OBTER ESTAS ESTIMATIVAS SUAVIZADAS?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O <code>R</code> possui o pacote <code>muhaz</code>, que implementa métodos não paramétricos baseados em suavização (kernel).</p></li>
+<li><p>Esses métodos envolvem escolhas importantes, como o tipo de kernel e o parâmetro de suavização.</p></li>
+<li><p>Devido à sua maior complexidade, não abordaremos a estimação não paramétrica de <span class="math inline">\(\lambda(t)\)</span> nessa disciplina.</p></li>
+</ul>
+</div>
+</section></section>
+<section>
 <section id="estimando-os-tempos-médios-t_m-e-vmrt" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
 <h1><strong>ESTIMANDO OS TEMPOS MÉDIOS <span class="math inline">\(t_m\)</span> e <span class="math inline">\(vmr(t)\)</span></strong></h1>
 
-
 </section>
+<section id="definição-dos-tempos-médios-t_m-e-vmrt" class="slide level2">
+<h2><strong>DEFINIÇÃO DOS TEMPOS MÉDIOS <span class="math inline">\(t_m\)</span> e <span class="math inline">\(vmr(t)\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li>Em análise de sobrevivência, duas quantidades importantes são:</li>
+</ul>
+<p><span class="math display">\[
+t_m = E(T)
+\]</span></p>
+<p><span class="math display">\[
+vmr(t) = E(T - t \mid T &gt; t)
+\]</span></p>
+<ul>
+<li><p>O tempo médio <span class="math inline">\(t_m\)</span> representa o <strong>tempo esperado até a ocorrência do evento</strong>.</p></li>
+<li><p>A vida média residual <span class="math inline">\(vmr(t)\)</span> representa o <strong>tempo médio restante</strong>, dado que o indivíduo ainda não apresentou o evento até o tempo <span class="math inline">\(t\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="definição-dos-tempos-médios-t_m-e-vmrt-1" class="slide level2">
+<h2><strong>DEFINIÇÃO DOS TEMPOS MÉDIOS <span class="math inline">\(t_m\)</span> e <span class="math inline">\(vmr(t)\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li>Essas quantidades podem ser escritas em função de <span class="math inline">\(S(t)\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+t_m = \int_0^\infty S(t)\,dt
+\]</span></p>
+<p><span class="math display">\[
+vmr(t) = \frac{\int_t^\infty S(u)\,du}{S(t)}
+\]</span></p>
+<ul>
+<li><p>Ou seja, ambas dependem diretamente da <strong>área sob a curva de sobrevivência</strong>.</p></li>
+<li><p>Isso sugere que podemos estimá-las a partir do estimador de Kaplan-Meier.</p></li>
+</ul>
+</div>
+</section>
+<section id="estimando-t_m-com-kaplan-meier" class="slide level2">
+<h2><strong>ESTIMANDO <span class="math inline">\(t_m\)</span> COM KAPLAN-MEIER</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Substituindo <span class="math inline">\(S(t)\)</span> por <span class="math inline">\(\widehat{S}(t)\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\hat{t}_m = \int_0^\infty \widehat{S}(t)\,dt
+\]</span></p>
+<ul>
+<li><p>Como <span class="math inline">\(\widehat{S}(t)\)</span> é uma função em escada, essa integral é calculada como uma <strong>soma de áreas de retângulos</strong>.</p></li>
+<li><p>Portanto, a média é estimada pela <strong>área sob a curva de Kaplan-Meier</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="problema-fundamental" class="slide level2">
+<h2><strong>PROBLEMA FUNDAMENTAL</strong></h2>
+<div class="box-red">
+<ul>
+<li><p>Em muitos estudos, nem todos os indivíduos apresentam o evento.</p></li>
+<li><p>Como consequência, <span class="math inline">\(\widehat{S}(t)\)</span> pode <strong>não chegar a zero</strong>.</p></li>
+<li><p>Isso implica que:</p></li>
+</ul>
+<p><span class="math display">\[
+\int_0^\infty \widehat{S}(t)\,dt = \infty
+\]</span></p>
+<ul>
+<li><p>Ou seja, o estimador da média pode <strong>não existir</strong>.</p></li>
+<li><p>Esse problema é comum na presença de <strong>censura à direita</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="solução-média-restrita" class="slide level2">
+<h2><strong>SOLUÇÃO: MÉDIA RESTRITA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para contornar esse problema, define-se a <strong>média restrita</strong>:</li>
+</ul>
+<p><span class="math display">\[
+t_m(\tau) = \int_0^\tau S(t)\,dt
+\]</span></p>
+<ul>
+<li><p>Aqui, <span class="math inline">\(\tau\)</span> é um tempo máximo fixado.</p></li>
+<li><p>A ideia é calcular a média <strong>até um horizonte de tempo observável</strong>.</p></li>
+<li><p>Isso garante uma estimativa <strong>finita e estável</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="estimação-da-média-restrita" class="slide level2">
+<h2><strong>ESTIMAÇÃO DA MÉDIA RESTRITA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Substituindo por Kaplan-Meier:</li>
+</ul>
+<p><span class="math display">\[
+\widehat{t}_m(\tau) = \int_0^\tau \widehat{S}(t)\,dt
+\]</span></p>
+<ul>
+<li>Essa quantidade é conhecida como:</li>
+</ul>
+<p>👉 <strong>RMST (Restricted Mean Survival Time)</strong></p>
+<ul>
+<li>É amplamente utilizada em análise de sobrevivência, especialmente quando há censura.</li>
+</ul>
+</div>
+</section>
+<section id="intervalo-de-confiança-para-a-rmst" class="slide level2">
+<h2><strong>INTERVALO DE CONFIANÇA PARA A RMST</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A média restrita <span class="math inline">\(\widehat{t}_m(\tau)\)</span> é estimada a partir da <strong>área sob a curva de Kaplan-Meier</strong>.</p></li>
+<li><p>Como essa curva é estimada a partir dos dados, existe <strong>incerteza associada</strong> à RMST.</p></li>
+<li><p>Essa incerteza é obtida a partir da <strong>variabilidade do estimador de Kaplan-Meier</strong>, utilizando a fórmula de Greenwood.</p></li>
+<li><p>A ideia central é que a variabilidade da RMST reflete a <strong>variabilidade acumulada da curva de sobrevivência ao longo do tempo</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="intervalo-de-confiança-para-a-rmst-1" class="slide level2">
+<h2><strong>INTERVALO DE CONFIANÇA PARA A RMST</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Sob condições gerais, a RMST possui uma <strong>distribuição aproximadamente normal</strong>.</p></li>
+<li><p>Assim, o intervalo de confiança é construído como: <span class="math display">\[
+\text{estimativa} \;\pm\; \text{margem de erro}
+\]</span></p></li>
+<li><p>onde a margem de erro depende do <strong>erro padrão da RMST</strong>.</p></li>
+<li><p>o <code>R</code> possui o pacote <code>survRM2</code> que calcula a estimativa pontual e intervalar para <span class="math inline">\(t_m(\tau)\)</span></p></li>
+</ul>
+</div>
+<h3 id="tempo-médio-residual-restrito"><strong>TEMPO MÉDIO RESIDUAL RESTRITO</strong></h3>
+<div class="box-blue">
+<ul>
+<li>O tempo médio residual restrito também pode ser estimada via Kaplan-Meier:</li>
+</ul>
+<p><span class="math display">\[
+\widehat{vmr}(t) = \frac{\int_t^\tau \widehat{S}(u)\,du}{\widehat{S}(t)}
+\]</span></p>
+<ul>
+<li>Interpretação: 👉 “quanto tempo, em média, ainda resta após o tempo <span class="math inline">\(t\)</span>”</li>
+<li>Assim como a média, ela depende da <strong>área sob a curva de sobrevivência</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="implementação-no-r" class="slide level2">
+<h2><strong>IMPLEMENTAÇÃO NO R</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Diferentemente da média restrita (RMST), <strong>não existe uma função pronta no R</strong> que calcule diretamente a vida média residual restrita.</p></li>
+<li><p>Isso ocorre porque a VMR depende de um tempo específico <span class="math inline">\(t\)</span>, ou seja, é uma <strong>quantidade condicional</strong>.</p></li>
+<li><p>No entanto, ela pode ser implementada.</p></li>
+</ul>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

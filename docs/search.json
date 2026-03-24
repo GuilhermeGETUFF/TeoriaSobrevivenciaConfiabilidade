@@ -459,7 +459,7 @@
     "href": "Aula4.html#método-da-intersecção-gráfico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÉTODO DA INTERSECÇÃO (GRÁFICO)",
-    "text": "MÉTODO DA INTERSECÇÃO (GRÁFICO)\n\n\nTrace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.\nPara a mediana (p = 0.5), por exemplo, trace uma linha em \\(\\hat{S(t)}=0,5\\).\nEncontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.\nProjete essas interseções para o eixo do tempo.\n\nO valor do tempo na curva de sobrevivência é a estimação pontual do percentil \\(t_p\\).\nOs valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil \\(t_p\\).\n\nVeja que o IC “herda” a transformação que você usou no intervalo para a função de sobrevivência."
+    "text": "MÉTODO DA INTERSECÇÃO (GRÁFICO)\n\n\nTrace uma linha horizontal no eixo da probabilidade de sobrevivência no valor correspondente ao quantil desejado.\nPara a mediana (p = 0.5), por exemplo, trace uma linha em \\(\\hat{S(t)}=0,5\\).\nEncontre a interseção dessa linha horizontal com as três curvas: a curva de sobrevivência estimada, o limite inferior do IC e o limite superior do IC.\nProjete essas interseções para o eixo do tempo.\n\nO valor do tempo na curva de sobrevivência é a estimação pontual do percentil \\(t_p\\).\nOs valores dos tempos nas curvas de limite inferior e superior são, respectivamente, o limite inferior e superior do IC estimado para o percentil \\(t_p\\).\n\nVeja que o IC “herda” a transformação que foi usada no intervalo para a função de sobrevivência."
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-esteroide-2",
@@ -473,14 +473,14 @@
     "href": "Aula4.html#definição-da-função-lambdat",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)",
-    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nRelembrando, a função de risco acumulada é definida como:\n\n\\[\n\\Lambda(t) = \\int_0^t \\lambda(u)\\,du\n\\]\n\nEssa função representa o risco acumulado até o tempo \\[ t \\].\nOu seja, ela agrega, ao longo do tempo, o efeito do risco instantâneo.\nValores maiores de $ (t) $ indicam maior acúmulo de risco e, portanto, menor sobrevivência."
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\Lambda(t)\\)\n\n\nRelembrando, a função de risco acumulada é definida como:\n\n\\[\n\\Lambda(t) = \\int_0^t \\lambda(u)\\,du\n\\]\n\nEssa função representa o risco acumulado até o tempo \\(t\\).\nOu seja, ela agrega, ao longo do tempo, o efeito do risco instantâneo.\nValores maiores de \\(\\Lambda(t)\\) indicam maior acúmulo de risco e, portanto, menor sobrevivência."
   },
   {
     "objectID": "Aula4.html#o-estimador-nelson-aalen",
     "href": "Aula4.html#o-estimador-nelson-aalen",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "O ESTIMADOR NELSON AALEN",
-    "text": "O ESTIMADOR NELSON AALEN\n\n\nEste estimador é mais recente que o estimador de Kaplan-Meier, sendo dado por:\n\n\\[\n\\hat{\\Lambda}_{NA}(t)=\\sum_{j:t_j\\leq t}\\left(\\frac{d_j}{n_j}\\right)\n\\]\n\nA notação é a mesma utilizada no estimador de Kaplan-Meier e esta também é uma função escada.\nA ideia por trás dessa expressão é que a função de risco acumulado até o tempo \\(t\\) representa exatamente o risco acumulado de ocorrência do evento até \\(t\\).\n\nNote como o risco \\(\\frac{d_j}{n_j}\\) é adicionado até o tempo \\(t\\).\n\nTanto para o caso sem e com censura utilizamos a mesma expressão para \\(\\hat{\\Lambda}_{NA}(t)\\)"
+    "text": "O ESTIMADOR NELSON AALEN\n\n\nEste estimador é mais recente que o estimador de Kaplan-Meier, sendo dado por:\n\n\\[\n\\hat{\\Lambda}(t)=\\sum_{j:t_j\\leq t}\\left(\\frac{d_j}{n_j}\\right)\n\\]\n\nA notação é a mesma utilizada no estimador de Kaplan-Meier e ele também é um estimador que possui uma função escada.\nA ideia por trás dessa expressão é que a função de risco acumulado até o tempo \\(t\\) representa exatamente o risco acumulado de ocorrência do evento até \\(t\\).\n\nNote como o risco \\(\\frac{d_j}{n_j}\\) é adicionado até o tempo \\(t\\).\n\nTanto para o caso sem e com censura utilizamos a mesma expressão para \\(\\hat{\\Lambda}(t)\\)"
   },
   {
     "objectID": "Aula4.html#exemplo-dados-de-osteossarcoma-6",
@@ -515,35 +515,140 @@
     "href": "Aula4.html#propriedades-do-estimador-nelsonaalen",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "PROPRIEDADES DO ESTIMADOR NELSON–AALEN",
-    "text": "PROPRIEDADES DO ESTIMADOR NELSON–AALEN\n\n\nO estimador de Nelson–Aalen é um estimador não paramétrico consistente para a função de risco acumulada \\(\\Lambda(t)\\).\nÉ um estimador não viesado assintoticamente, ou seja:\n\npara amostras grandes, \\(\\hat{\\Lambda}_{NA}(t)\\) aproxima bem \\(\\Lambda(t)\\).\n\nPossui distribuição assintoticamente normal, o que permite a construção de intervalos de confiança."
+    "text": "PROPRIEDADES DO ESTIMADOR NELSON–AALEN\n\n\nO estimador de Nelson–Aalen é um estimador não paramétrico consistente para a função de risco acumulada \\(\\Lambda(t)\\).\nÉ um estimador não viesado assintoticamente, ou seja:\n\npara amostras grandes, \\(\\hat{\\Lambda}(t)\\) aproxima bem \\(\\Lambda(t)\\).\n\nPossui distribuição assintoticamente normal, o que permite a construção de intervalos de confiança."
   },
   {
     "objectID": "Aula4.html#relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier",
     "href": "Aula4.html#relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER",
-    "text": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER\n\n\nOs estimadores de Nelson–Aalen e Kaplan-Meier estão diretamente relacionados por uma transformação exponencial.\nA relação fundamental é dada por:\n\n\\[\n\\hat{S}(t) = \\exp\\big(-\\hat{\\Lambda}_{NA}(t)\\big)\n\\]\n\nOu, de forma equivalente:\n\n\\[\n\\hat{\\Lambda}_{NA}(t) \\approx -\\log\\big(\\hat{S}_{KM}(t)\\big)\n\\]\n\nIsso mostra que:\n\nO estimador de Kaplan-Meier atua na escala da sobrevivência\n\nO estimador de Nelson–Aalen atua na escala do risco acumulado\n\nEmbora diferentes na forma, ambos utilizam a mesma informação amostral:\n\nnúmero de falhas \\(d_j\\)\n\nnúmero em risco \\(n_j\\)\n\nEm amostras grandes, os dois estimadores são assintoticamente equivalentes.\nNa prática:\n\nKaplan-Meier é mais usado para interpretar probabilidades de sobrevivência\n\nNelson–Aalen é mais usado para modelagem e análise de risco"
+    "text": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER\n\n\nOs estimadores de Nelson–Aalen e Kaplan-Meier estão diretamente relacionados por uma transformação exponencial.\nVimos, anteriormente, a seguinte relação entre as funções \\(S(t)\\) e \\(\\Lambda(t)\\):\n\n\\[\n\\Lambda(t) = -log(S(t))\n\\]\n\nComo os estimadores \\(\\hat{S(t)}\\) e \\(\\hat{\\Lambda(t)}\\) são obtidos por fórmulas específicas,\n\n\\[\n\\hat{\\Lambda}(t) \\approx -\\log\\big(\\hat{S}(t)\\big)\n\\] - Em amostras grandes, essa relação é assintoticamente equivalente."
+  },
+  {
+    "objectID": "Aula4.html#relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier-1",
+    "href": "Aula4.html#relação-do-estimador-nelsonaalen-com-o-estimador-kaplan-meier-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER",
+    "text": "RELAÇÃO DO ESTIMADOR NELSON–AALEN COM O ESTIMADOR KAPLAN-MEIER\n\n\nIsso mostra que:\n\nO estimador de Kaplan-Meier atua na escala da sobrevivência\n\nO estimador de Nelson–Aalen atua na escala do risco acumulado\n\nEmbora diferentes na forma, ambos utilizam a mesma informação amostral:\n\nnúmero de falhas \\(d_j\\)\n\nnúmero em risco \\(n_j\\)\n\nNa prática:\n\nKaplan-Meier é mais usado para interpretar probabilidades de sobrevivência\n\nNelson–Aalen é mais usado para modelagem e análise de risco"
   },
   {
     "objectID": "Aula4.html#variância-do-estimador-de-nelson-aalen",
     "href": "Aula4.html#variância-do-estimador-de-nelson-aalen",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN",
-    "text": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN\n\n\nA variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:\n\n\\[\n\\hat{Var}[\\hat{\\Lambda}(t)] = \\sum_{t_i \\leq t} \\frac{d_i}{n_i^2}\n\\]\n\nIntuição: Cada evento contribui com \\(1/n_i^2\\) para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.\nPropriedade: Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado."
+    "text": "VARIÂNCIA DO ESTIMADOR DE NELSON-AALEN\n\n\nA variância do estimador de Nelson-Aalen é dada pela soma das variâncias incrementais em cada tempo de evento:\n\n\\[\n\\hat{Var}[\\hat{\\Lambda}(t)] = \\sum_{t_j \\leq t} \\frac{d_j}{n_j^2}\n\\]\n\nIntuição: Cada evento contribui com \\(1/n_j^2\\) para a variância total, refletindo que a incerteza é maior quando poucos indivíduos estão em risco.\nPropriedade: Este é o estimador de Greenwood para a variância do Nelson-Aalen, consistente e assintoticamente não viesado."
   },
   {
     "objectID": "Aula4.html#intervalo-de-confiança-com-transformação-log",
     "href": "Aula4.html#intervalo-de-confiança-com-transformação-log",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG",
-    "text": "INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG\n\n\nPara garantir limites positivos e melhor aproximação normal, utiliza-se a transformação \\(\\ln(\\hat{\\Lambda}(t))\\):\n\n\nCalcula-se o erro padrão na escala log: \\[\nSE[\\ln(\\hat{\\Lambda}(t))] = \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nConstrói-se o intervalo na escala log: \\[\n\\ln(\\hat{\\Lambda}(t)) \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nTransforma-se de volta para escala original: \\[\nIC: \\hat{\\Lambda}(t) \\times \\exp\\left( \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)} \\right)\n\\]"
+    "text": "INTERVALO DE CONFIANÇA COM TRANSFORMAÇÃO LOG\n\n\nPara garantir limites positivos e um intervalo mais robusto para \\(\\Lambda(t)\\), a melhor transformação é a logarítmica \\(\\ln(\\hat{\\Lambda}(t))\\):\n\n\nCalcula-se o erro padrão na escala log: \\[SE[\\ln(\\hat{\\Lambda}(t))] = \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nConstrói-se o intervalo na escala log: \\[\n\\ln(\\hat{\\Lambda}(t)) \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)}\n\\]\nTransforma-se de volta para escala original: \\[\nIC: \\hat{\\Lambda}(t) \\times \\exp\\left( \\pm z_{1-\\alpha/2} \\times \\frac{\\sqrt{\\hat{Var}[\\hat{\\Lambda}(t)]}}{\\hat{\\Lambda}(t)} \\right)\n\\]"
   },
   {
-    "objectID": "Aula4.html#vantagens-da-transformação-log-e-por-que-não-usar-plain",
-    "href": "Aula4.html#vantagens-da-transformação-log-e-por-que-não-usar-plain",
+    "objectID": "Aula4.html#vantagens-da-transformação-log",
+    "href": "Aula4.html#vantagens-da-transformação-log",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”",
-    "text": "VANTAGENS DA TRANSFORMAÇÃO LOG E POR QUE NÃO USAR “PLAIN”\n\nPor que \\(\\boldsymbol{\\ln}\\) é superior à transformação “plain”?\n\n\n\n\n\n\n\n\nAspecto\nTransformação Log\nTransformação Plain\n\n\n\n\nLimites inferiores\n\\(\\geq 0\\) (biológico)\nPode ser negativo ❌\n\n\nAproximação normal\nMelhor para \\(\\hat{\\Lambda}(t)\\) pequeno\nRuim no início da curva\n\n\nPoucos eventos\nEstável\nInstável, cobertura inadequada\n\n\nInterpretação\nIntervalos assimétricos realistas\nSimétrico, muitas vezes irreal\n\n\n\nPor que não usar “plain”? - \\(\\Lambda(t)\\) é não negativa por definição → limites negativos são sem sentido biológico - Distribuição de \\(\\hat{\\Lambda}(t)\\) é assimétrica, especialmente no início - A transformação log estabiliza a variância e acelera convergência à normalidade"
+    "section": "VANTAGENS DA TRANSFORMAÇÃO LOG",
+    "text": "VANTAGENS DA TRANSFORMAÇÃO LOG\n\n\n\\(\\Lambda(t)\\) é não negativa por definição → limites negativos são sem sentido biológico\nDistribuição de \\(\\hat{\\Lambda}(t)\\) é assimétrica, especialmente no início\nA transformação log estabiliza a variância e acelera convergência à normalidade\nA transformação log-log é utilizada apenas no suporte [0,1] (para a função de sobrevivência)"
+  },
+  {
+    "objectID": "Aula4.html#exemplo-dados-de-esteroide-gráfico-2",
+    "href": "Aula4.html#exemplo-dados-de-esteroide-gráfico-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)",
+    "text": "EXEMPLO: DADOS DE ESTEROIDE (GRÁFICO)\n\n\nSegue o gráfico da função de risco acumulado estimada considerando intervalos de confiança com a transformação log:"
+  },
+  {
+    "objectID": "Aula4.html#definição-da-função-lambdat-1",
+    "href": "Aula4.html#definição-da-função-lambdat-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DA FUNÇÃO \\(\\lambda(t)\\)",
+    "text": "DEFINIÇÃO DA FUNÇÃO \\(\\lambda(t)\\)\n\n\nA função de risco instantâneo é definida como:\n\n\\[\n\\lambda(t) = \\lim_{\\Delta t \\to 0} \\frac{P(t \\leq T &lt; t+\\Delta t \\mid T \\geq t)}{\\Delta t}\n\\]\n\nEssa função representa o risco instantâneo no tempo \\(t\\), dado que o indivíduo sobreviveu até esse momento.\nOu seja, ela mede a intensidade de ocorrência do evento naquele instante.\nValores maiores de \\(\\lambda(t)\\) indicam maior risco imediato, mesmo entre indivíduos que ainda não apresentaram o evento."
+  },
+  {
+    "objectID": "Aula4.html#por-que-não-estimamos-lambdat-diretamente",
+    "href": "Aula4.html#por-que-não-estimamos-lambdat-diretamente",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE NÃO ESTIMAMOS \\(\\lambda(t)\\) DIRETAMENTE?",
+    "text": "POR QUE NÃO ESTIMAMOS \\(\\lambda(t)\\) DIRETAMENTE?\n\n\nJá sabemos que a função de risco acumulada pode ser estimada por:\n\n\\[\n\\hat{\\Lambda}(t)=\\sum_{j:t_j\\leq t}\\left(\\frac{d_j}{n_j}\\right)\n\\]\n\nUma ideia natural seria obter \\(\\lambda(t)\\) por derivação:\n\n\\[\n\\lambda(t) = \\frac{d}{dt}\\Lambda(t)\n\\quad \\Rightarrow \\quad\n\\hat{\\lambda}(t) = \\frac{d}{dt}\\hat{\\Lambda}(t)\n\\]\n\nProblema: \\(\\hat{\\Lambda}(t)\\) é uma função em degraus.\nPortanto, sua derivada é nula na maior parte do tempo e não definida nos pontos de salto.\nOu seja, não é possível obter uma estimativa útil de \\(\\lambda(t)\\) por derivação direta.\nIsso motiva o uso de métodos que suavizam ou aproximam localmente o risco."
+  },
+  {
+    "objectID": "Aula4.html#ideia-central-suavizar-o-risco",
+    "href": "Aula4.html#ideia-central-suavizar-o-risco",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "IDEIA CENTRAL: SUAVIZAR O RISCO",
+    "text": "IDEIA CENTRAL: SUAVIZAR O RISCO\n\n\nJá vimos que não podemos derivar diretamente \\(\\hat{\\Lambda}(t)\\).\nA solução é estimar \\(\\lambda(t)\\) de forma local, usando informação próxima de \\(t\\).\nEm vez de olhar apenas o ponto \\(t\\), consideramos uma vizinhança ao redor de \\(t\\).\nA ideia é construir uma média ponderada dos incrementos do Nelson-Aalen.\nIsso leva aos chamados estimadores suavizados de risco."
+  },
+  {
+    "objectID": "Aula4.html#como-obter-estas-estimativas-suavizadas",
+    "href": "Aula4.html#como-obter-estas-estimativas-suavizadas",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO OBTER ESTAS ESTIMATIVAS SUAVIZADAS?",
+    "text": "COMO OBTER ESTAS ESTIMATIVAS SUAVIZADAS?\n\n\nO R possui o pacote muhaz, que implementa métodos não paramétricos baseados em suavização (kernel).\nEsses métodos envolvem escolhas importantes, como o tipo de kernel e o parâmetro de suavização.\nDevido à sua maior complexidade, não abordaremos a estimação não paramétrica de \\(\\lambda(t)\\) nessa disciplina."
+  },
+  {
+    "objectID": "Aula4.html#definição-dos-tempos-médios-t_m-e-vmrt",
+    "href": "Aula4.html#definição-dos-tempos-médios-t_m-e-vmrt",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DOS TEMPOS MÉDIOS \\(t_m\\) e \\(vmr(t)\\)",
+    "text": "DEFINIÇÃO DOS TEMPOS MÉDIOS \\(t_m\\) e \\(vmr(t)\\)\n\n\nEm análise de sobrevivência, duas quantidades importantes são:\n\n\\[\nt_m = E(T)\n\\]\n\\[\nvmr(t) = E(T - t \\mid T &gt; t)\n\\]\n\nO tempo médio \\(t_m\\) representa o tempo esperado até a ocorrência do evento.\nA vida média residual \\(vmr(t)\\) representa o tempo médio restante, dado que o indivíduo ainda não apresentou o evento até o tempo \\(t\\)."
+  },
+  {
+    "objectID": "Aula4.html#definição-dos-tempos-médios-t_m-e-vmrt-1",
+    "href": "Aula4.html#definição-dos-tempos-médios-t_m-e-vmrt-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DEFINIÇÃO DOS TEMPOS MÉDIOS \\(t_m\\) e \\(vmr(t)\\)",
+    "text": "DEFINIÇÃO DOS TEMPOS MÉDIOS \\(t_m\\) e \\(vmr(t)\\)\n\n\nEssas quantidades podem ser escritas em função de \\(S(t)\\):\n\n\\[\nt_m = \\int_0^\\infty S(t)\\,dt\n\\]\n\\[\nvmr(t) = \\frac{\\int_t^\\infty S(u)\\,du}{S(t)}\n\\]\n\nOu seja, ambas dependem diretamente da área sob a curva de sobrevivência.\nIsso sugere que podemos estimá-las a partir do estimador de Kaplan-Meier."
+  },
+  {
+    "objectID": "Aula4.html#estimando-t_m-com-kaplan-meier",
+    "href": "Aula4.html#estimando-t_m-com-kaplan-meier",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMANDO \\(t_m\\) COM KAPLAN-MEIER",
+    "text": "ESTIMANDO \\(t_m\\) COM KAPLAN-MEIER\n\n\nSubstituindo \\(S(t)\\) por \\(\\widehat{S}(t)\\):\n\n\\[\n\\hat{t}_m = \\int_0^\\infty \\widehat{S}(t)\\,dt\n\\]\n\nComo \\(\\widehat{S}(t)\\) é uma função em escada, essa integral é calculada como uma soma de áreas de retângulos.\nPortanto, a média é estimada pela área sob a curva de Kaplan-Meier."
+  },
+  {
+    "objectID": "Aula4.html#problema-fundamental",
+    "href": "Aula4.html#problema-fundamental",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PROBLEMA FUNDAMENTAL",
+    "text": "PROBLEMA FUNDAMENTAL\n\n\nEm muitos estudos, nem todos os indivíduos apresentam o evento.\nComo consequência, \\(\\widehat{S}(t)\\) pode não chegar a zero.\nIsso implica que:\n\n\\[\n\\int_0^\\infty \\widehat{S}(t)\\,dt = \\infty\n\\]\n\nOu seja, o estimador da média pode não existir.\nEsse problema é comum na presença de censura à direita."
+  },
+  {
+    "objectID": "Aula4.html#solução-média-restrita",
+    "href": "Aula4.html#solução-média-restrita",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SOLUÇÃO: MÉDIA RESTRITA",
+    "text": "SOLUÇÃO: MÉDIA RESTRITA\n\n\nPara contornar esse problema, define-se a média restrita:\n\n\\[\nt_m(\\tau) = \\int_0^\\tau S(t)\\,dt\n\\]\n\nAqui, \\(\\tau\\) é um tempo máximo fixado.\nA ideia é calcular a média até um horizonte de tempo observável.\nIsso garante uma estimativa finita e estável."
+  },
+  {
+    "objectID": "Aula4.html#estimação-da-média-restrita",
+    "href": "Aula4.html#estimação-da-média-restrita",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMAÇÃO DA MÉDIA RESTRITA",
+    "text": "ESTIMAÇÃO DA MÉDIA RESTRITA\n\n\nSubstituindo por Kaplan-Meier:\n\n\\[\n\\widehat{t}_m(\\tau) = \\int_0^\\tau \\widehat{S}(t)\\,dt\n\\]\n\nEssa quantidade é conhecida como:\n\n👉 RMST (Restricted Mean Survival Time)\n\nÉ amplamente utilizada em análise de sobrevivência, especialmente quando há censura."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-a-rmst",
+    "href": "Aula4.html#intervalo-de-confiança-para-a-rmst",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA A RMST",
+    "text": "INTERVALO DE CONFIANÇA PARA A RMST\n\n\nA média restrita \\(\\widehat{t}_m(\\tau)\\) é estimada a partir da área sob a curva de Kaplan-Meier.\nComo essa curva é estimada a partir dos dados, existe incerteza associada à RMST.\nEssa incerteza é obtida a partir da variabilidade do estimador de Kaplan-Meier, utilizando a fórmula de Greenwood.\nA ideia central é que a variabilidade da RMST reflete a variabilidade acumulada da curva de sobrevivência ao longo do tempo."
+  },
+  {
+    "objectID": "Aula4.html#intervalo-de-confiança-para-a-rmst-1",
+    "href": "Aula4.html#intervalo-de-confiança-para-a-rmst-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERVALO DE CONFIANÇA PARA A RMST",
+    "text": "INTERVALO DE CONFIANÇA PARA A RMST\n\n\nSob condições gerais, a RMST possui uma distribuição aproximadamente normal.\nAssim, o intervalo de confiança é construído como: \\[\n\\text{estimativa} \\;\\pm\\; \\text{margem de erro}\n\\]\nonde a margem de erro depende do erro padrão da RMST.\no R possui o pacote survRM2 que calcula a estimativa pontual e intervalar para \\(t_m(\\tau)\\)\n\n\nTEMPO MÉDIO RESIDUAL RESTRITO\n\n\nO tempo médio residual restrito também pode ser estimada via Kaplan-Meier:\n\n\\[\n\\widehat{vmr}(t) = \\frac{\\int_t^\\tau \\widehat{S}(u)\\,du}{\\widehat{S}(t)}\n\\]\n\nInterpretação: 👉 “quanto tempo, em média, ainda resta após o tempo \\(t\\)”\nAssim como a média, ela depende da área sob a curva de sobrevivência."
+  },
+  {
+    "objectID": "Aula4.html#implementação-no-r",
+    "href": "Aula4.html#implementação-no-r",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "IMPLEMENTAÇÃO NO R",
+    "text": "IMPLEMENTAÇÃO NO R\n\n\nDiferentemente da média restrita (RMST), não existe uma função pronta no R que calcule diretamente a vida média residual restrita.\nIsso ocorre porque a VMR depende de um tempo específico \\(t\\), ou seja, é uma quantidade condicional.\nNo entanto, ela pode ser implementada."
   },
   {
     "objectID": "Aula2.html#revisão",
