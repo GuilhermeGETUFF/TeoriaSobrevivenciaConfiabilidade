@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
+
+  <meta name="author" content="Prof.&nbsp;Guilherme Veloso (guilhermev@id.uff.br)">
+  <title>ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="Capa.png" data-background-opacity="number" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title"><strong>ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE</strong></h1>
+  <p class="subtitle"><strong>COMPARAÇÃO DE CURVAS DE SOBREVIVÊNCIA/CONFIABILIDADE</strong></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email">guilhermev@id.uff.br</a>) 
+</div>
+        <p class="quarto-title-affiliation">
+            Universidade Federal Fluminense
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="introdução" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>INTRODUÇÃO</strong></h1>
+
+</section>
+<section id="esteroide-no-tratamento-de-hepatite" class="slide level2">
+<h2><strong>ESTEROIDE NO TRATAMENTO DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Vamos <strong>relembrar</strong> o estudo com os dados de hepatite</p>
+<ul>
+<li><strong>Estudo clínico aleatorizado</strong></li>
+</ul></li>
+<li><p>Objetivo: investigar o <strong>efeito da terapia</strong> com esteroide no tratamento de hepatite viral aguda.</p></li>
+<li><p><strong>Vinte e nove pacientes</strong> com a doença foram <strong>aleatorizados</strong> para receber:</p>
+<ul>
+<li><strong>Placebo</strong></li>
+<li><strong>Tratamento com esteroide</strong></li>
+</ul></li>
+<li><p>Cada paciente foi <strong>acompanhado por 16 semanas</strong> ou até:</p>
+<ul>
+<li><strong>Morte</strong> (<em>evento de interesse</em>)</li>
+<li><strong>Perda de acompanhamento</strong> (<em>censura</em>)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="esteroide-no-tratamento-de-hepatite-1" class="slide level2">
+<h2><strong>ESTEROIDE NO TRATAMENTO DE HEPATITE</strong></h2>
+<div class="box-blue">
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grupos</th>
+<th>Tempos de Sobrevivência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Controle</strong></td>
+<td>1+, 2+, 3, 3, 3+, 5+, 5+, 16+, 16+, 16+, 16+, 16+, 16+, 16+, 16+</td>
+</tr>
+<tr class="even">
+<td><strong>Esteroide</strong></td>
+<td>1, 1, 1, 1+, 4+, 5, 7, 8, 10, 10+, 12+, 16+, 16+, 16+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>O símbolo <code>+</code> indica censura</li>
+</ul>
+</div>
+</section>
+<section id="esteroide-no-tratamento-de-hepatite-2" class="slide level2">
+<h2><strong>ESTEROIDE NO TRATAMENTO DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Nas aulas passadas, vimos as <strong>estimativas de Kaplan-Meier</strong> para as <strong>funções de sobrevivência dos dois grupos</strong>:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula5_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esteroide-no-tratamento-de-hepatite-3" class="slide level2">
+<h2><strong>ESTEROIDE NO TRATAMENTO DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Vimos também que é possível incluir um intervalo com 95% de confiança:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula5_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="motivação" class="slide level2">
+<h2><strong>MOTIVAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Este <strong>estudo clínico aleatorizado</strong> foi conduzido para investigar o <strong>efeito da terapia com esteroide</strong> no tratamento de hepatite viral aguda.</p></li>
+<li><p>O objetivo principal é <strong>comparar</strong>:</p>
+<ul>
+<li>Grupo tratado com <strong>esteroide</strong></li>
+<li>Grupo <strong>controle</strong></li>
+</ul></li>
+<li><p>A partir das curvas de Kaplan-Meier, observamos que:</p>
+<ul>
+<li>A <strong>sobrevivência do grupo controle parece maior</strong> ao longo do tempo</li>
+</ul></li>
+<li><p>Surge então a questão central:</p>
+<ul>
+<li>Essa <strong>diferença observada</strong> é <strong>real</strong> ou pode ser explicada pela variabilidade amostral?</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="uma-primeira-ideia" class="slide level2">
+<h2><strong>UMA PRIMEIRA IDEIA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Uma abordagem inicial seria comparar as curvas em um <strong>tempo específico <span class="math inline">\(t\)</span></strong>.</p></li>
+<li><p>Por exemplo:</p>
+<ul>
+<li>Comparar <span class="math inline">\(\hat{S}_1(t)\)</span> (curva de sobrevivência estimada do grupo controle) e <span class="math inline">\(\hat{S}_2(t)\)</span> (curva de sobrevivência estimada do grupo esteroide) em um <strong>tempo específico</strong> <span class="math inline">\(t\)</span>.</li>
+</ul></li>
+<li><p>Poderíamos então construir um <strong>teste de hipótese</strong> baseado nas propriedades assintóticas de <span class="math inline">\(S(t)\)</span>.</p></li>
+<li><p>Mas isso levanta um problema importante:</p>
+<ul>
+<li><strong>Qual tempo <span class="math inline">\(t\)</span> escolher?</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="limitação-dessa-abordagem" class="slide level2">
+<h2><strong>LIMITAÇÃO DESSA ABORDAGEM</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Comparar as curvas em um único instante <span class="math inline">\(t\)</span> implica que:
+<ul>
+<li>Estamos usando <strong>apenas uma parte da informação disponível</strong></li>
+</ul></li>
+<li>Isso é particularmente problemático porque:
+<ul>
+<li>A <strong>diferença entre os grupos pode variar ao longo do tempo</strong></li>
+<li>Podemos <strong>perder padrões importantes</strong> da sobrevivência</li>
+</ul></li>
+<li>Em outras palavras:
+<ul>
+<li>Essa abordagem <strong>não utiliza todo o período de acompanhamento</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="necessidade-de-novos-métodos" class="slide level2">
+<h2><strong>NECESSIDADE DE NOVOS MÉTODOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Idealmente, queremos um procedimento que:
+<ul>
+<li><strong>Compare os grupos ao longo de todo o tempo</strong></li>
+<li>Leve em conta a <strong>presença de censura</strong></li>
+<li>Utilize <strong>todas as informações disponíveis</strong></li>
+</ul></li>
+<li>Isso nos leva a uma classe de métodos específicos para <strong>testar a comparação de curvas de sobrevivência/confiabilidade:</strong>
+<ul>
+<li><strong>Teste Log-Rank</strong></li>
+<li><strong>Teste Gehan-Breslow</strong></li>
+<li><strong>Teste Tarone-Ware</strong></li>
+<li><strong>Teste Peto-Peto</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="hipóteses-de-interesse" class="slide level2">
+<h2><strong>HIPÓTESES DE INTERESSE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Considere <span class="math inline">\(K\)</span> estratos de uma variável.</p></li>
+<li><p>Em todos esses testes, o objetivo é comparar as <strong>curvas de sobrevivência/condiabilidade</strong> entre os <span class="math inline">\(K\)</span> grupos</p></li>
+<li><p><strong>Hipótese nula (<span class="math inline">\(H_0\)</span>)</strong>: <span class="math inline">\(S_1(t) = S_2(t) = \cdots = S_K(t)\)</span>, para todo <span class="math inline">\(t\)</span></p>
+<ul>
+<li>Todas as funções de sobrevivência são iguais</li>
+</ul></li>
+<li><p><strong>Hipótese alternativa (<span class="math inline">\(H_1\)</span>)</strong>: Existe pelo menos um par <span class="math inline">\((i,j)\)</span> tal que <span class="math inline">\(S_i(t) \neq S_j(t)\)</span>, para algum <span class="math inline">\(t\)</span>.</p>
+<ul>
+<li>Pelo menos uma das funções de sobrevivência difere das demais</li>
+</ul></li>
+<li><p>Observação:</p>
+<ul>
+<li>Trata-se de um <strong>teste global</strong> (não identifica quais grupos diferem)</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="teste-log-rank" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>TESTE LOG-RANK</strong></h1>
+
+</section>
+<section id="introdução-1" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O <strong>teste Log-Rank</strong> é o <strong>principal método</strong> para comparar curvas de sobrevivência/confiabilidade.</p></li>
+<li><p>Objetivo:</p>
+<ul>
+<li>Verificar se há <strong>diferença entre grupos ao longo do tempo</strong></li>
+</ul></li>
+<li><p>Ideia central:</p>
+<ul>
+<li>Comparar, em cada instante de tempo:
+<ul>
+<li><strong>Número de eventos observados</strong></li>
+<li><strong>Número de eventos esperados</strong> sob <span class="math inline">\(H_0\)</span></li>
+</ul></li>
+</ul></li>
+<li><p>Intuição:</p>
+<ul>
+<li>Se os grupos são iguais, o que observamos deve ser <strong>compatível com o esperado</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="intuição-do-teste" class="slide level2">
+<h2><strong>INTUIÇÃO DO TESTE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Sob a hipótese nula (<span class="math inline">\(H_0\)</span>):
+<ul>
+<li>Os grupos têm a <strong>mesma função de sobrevivência/confiabilidade</strong></li>
+</ul></li>
+<li>Equivalentemente:
+<ul>
+<li>Têm a <strong>mesma chance de ocorrência do evento ao longo do tempo</strong></li>
+</ul></li>
+<li>Logo:
+<ul>
+<li>Os eventos devem se distribuir entre os grupos de forma <strong>proporcional ao número de indivíduos em risco</strong></li>
+</ul></li>
+<li>O teste Log-Rank verifica:
+<ul>
+<li>Se essa <strong>proporcionalidade</strong> é respeitada ao longo de <strong>todo o estudo</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-intuitivo" class="slide level2">
+<h2><strong>EXEMPLO INTUITIVO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere dois grupos:
+<ul>
+<li><strong>Controle</strong></li>
+<li><strong>Esteroide</strong></li>
+</ul></li>
+<li>Suponha que, em certo instante:
+<ul>
+<li>Existem <strong>50 pacientes sob risco em cada grupo</strong></li>
+<li>Ocorrem <strong>10 eventos</strong></li>
+</ul></li>
+<li>Sob <span class="math inline">\(H_0\)</span>, esperamos:
+<ul>
+<li>5 <strong>eventos</strong> no grupo controle</li>
+<li>5 <strong>eventos</strong> no grupo esteroide</li>
+</ul></li>
+<li>Ou seja:
+<ul>
+<li>A divisão segue a <strong>proporção de indivíduos em risco</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="outro-cenário" class="slide level2">
+<h2><strong>OUTRO CENÁRIO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Agora suponha que, em certo instante:
+<ul>
+<li>10 pacientes sob risco no <strong>controle</strong></li>
+<li>90 pacientes sob risco no <strong>esteroide</strong></li>
+<li>Total de <strong>10 eventos</strong></li>
+</ul></li>
+<li>Sob <span class="math inline">\(H_0\)</span>, esperamos:
+<ul>
+<li>1 <strong>evento</strong> no controle (10%)</li>
+<li>9 <strong>eventos</strong> no esteroide (90%)</li>
+</ul></li>
+<li>Ou seja:
+<ul>
+<li>A expectativa depende do <strong>tamanho do grupo em risco naquele instante</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="ideia-geral-do-teste" class="slide level2">
+<h2><strong>IDEIA GERAL DO TESTE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Em cada tempo de ocorrência do evento de interesse, calculamos:</p>
+<ul>
+<li><strong>Observado (<span class="math inline">\(O\)</span>)</strong>: eventos no grupo</li>
+<li><strong>Esperado (<span class="math inline">\(E\)</span>)</strong>: eventos esperados sob <span class="math inline">\(H_0\)</span></li>
+</ul></li>
+<li><p>O teste acumula ao longo do tempo as diferenças do tipo <span class="math inline">\((O - E)\)</span>.</p></li>
+<li><p>Intuição:</p>
+<ul>
+<li>Se <span class="math inline">\(H_0\)</span> é verdadeira:
+<ul>
+<li>Essas diferenças devem ser <strong>pequenas e aleatórias</strong></li>
+</ul></li>
+<li>Se <span class="math inline">\(H_0\)</span> é falsa:
+<ul>
+<li>As diferenças tendem a ser <strong>sistemáticas</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-final" class="slide level2">
+<h2><strong>INTERPRETAÇÃO FINAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Se o número de eventos observados é <strong>próximo do esperado</strong>:
+<ul>
+<li>Não há evidência de diferença entre os grupos</li>
+</ul></li>
+<li>Se há grande <strong>discrepância</strong> entre observado e esperado:
+<ul>
+<li>Evidência contra <span class="math inline">\(H_0\)</span></li>
+</ul></li>
+<li>Conclusão:
+<ul>
+<li>O teste log-rank avalia se há uma <strong>diferença global entre as curvas de sobrevivência/confiabilidade</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="notação-e-estrutura-dos-dados" class="slide level2">
+<h2><strong>NOTAÇÃO E ESTRUTURA DOS DADOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere <span class="math inline">\(K\)</span> grupos e <span class="math inline">\(J\)</span> tempos distintos de ocorrência do evento de interesse:
+<ul>
+<li><span class="math inline">\(t_1 &lt; t_2 &lt; \cdots &lt; t_J\)</span></li>
+</ul></li>
+<li>Para cada tempo <span class="math inline">\(t_j\)</span>, <span class="math inline">\(j=1, ...,J\)</span> definimos:
+<ul>
+<li><span class="math inline">\(d_k(t_j)\)</span>: número de <strong>eventos observados</strong> no grupo <span class="math inline">\(k\)</span>, com <span class="math inline">\(k=1,...,K\)</span>.</li>
+<li><span class="math inline">\(n_k(t_j)\)</span>: número de indivíduos <strong>em risco</strong> no grupo <span class="math inline">\(k\)</span>, com <span class="math inline">\(k=1,...,K\)</span>.</li>
+</ul></li>
+<li>Quantidades totais:
+<ul>
+<li><span class="math inline">\(d(t_j) = \sum_{k=1}^K d_k(t_j)\)</span> = número de eventos no tempo <span class="math inline">\(t_j\)</span>.</li>
+<li><span class="math inline">\(n(t_j) = \sum_{k=1}^K n_k(t_j)\)</span> = número de pessoas sob risco no tempo <span class="math inline">\(t_j\)</span>.</li>
+</ul></li>
+<li>Ideia central:
+<ul>
+<li>Comparar <span class="math inline">\(d_k(t_j)\)</span> com o que seria esperado sob <span class="math inline">\(H_0\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="valor-esperado-sob-h_0" class="slide level2">
+<h2><strong>VALOR ESPERADO SOB <span class="math inline">\(H_0\)</span></strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Sob <span class="math inline">\(H_0\)</span> (<strong>mesma sobrevivência/confiabilidade entre grupos</strong>):</p></li>
+<li><p>A probabilidade de um <strong>evento</strong> ocorrer no grupo <span class="math inline">\(k\)</span> em <span class="math inline">\(t_j\)</span> é:</p>
+<ul>
+<li><strong>proporcional</strong> ao número de indivíduos em risco</li>
+</ul></li>
+<li><p>Assim, o valor <strong>esperado</strong> é:</p></li>
+</ul>
+<p><span class="math display">\[
+E_k(t_j) = d(t_j)\frac{n_k(t_j)}{n(t_j)}
+\]</span></p>
+<ul>
+<li><strong>Interpretação</strong>:
+<ul>
+<li>Distribuímos os eventos observados <strong>proporcionalmente</strong> ao risco</li>
+</ul></li>
+<li><strong>Propriedade</strong> importante:
+<ul>
+<li><span class="math inline">\(E(t_j)\)</span> = <span class="math inline">\(\sum_{k=1}^K E_k(t_j) = d(t_j)\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="acumulação-ao-longo-do-tempo" class="slide level2">
+<h2><strong>ACUMULAÇÃO AO LONGO DO TEMPO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O teste log-rank utiliza <strong>toda a informação temporal</strong></p></li>
+<li><p>Para cada grupo <span class="math inline">\(k\)</span>, definimos:</p></li>
+<li><p>Observado total:</p>
+<ul>
+<li><span class="math inline">\(O_k = \sum_{j=1}^J d_k(t_j)\)</span></li>
+</ul></li>
+<li><p>Esperado total:</p>
+<ul>
+<li><span class="math inline">\(E_k = \sum_{j=1}^J E_k(t_j)\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="dados-de-hepatite" class="slide level2">
+<h2><strong>DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<style>
+.table-small {
+  font-size: 90%;
+}
+
+.table-small th,
+.table-small td {
+  text-align: center;
+  vertical-align: middle;
+}
+</style>
+<table class="table-small">
+<thead>
+<tr>
+<th rowspan="2">
+<span class="math inline">\(t_j\)</span>
+</th>
+<th colspan="3">
+Eventos observados
+</th>
+<th colspan="3">
+Elementos sob risco
+</th>
+<th colspan="3">
+Valores esperados
+</th>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(d_1(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(d_2(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(d(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(n_1(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(n_2(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(n(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(E_1(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(E_2(t_j)\)</span>
+</th>
+<th>
+<span class="math inline">\(E(t_j)\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+15
+</td>
+<td>
+14
+</td>
+<td>
+29
+</td>
+<td>
+0.00
+</td>
+<td>
+0.00
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td>
+15
+</td>
+<td>
+14
+</td>
+<td>
+29
+</td>
+<td>
+1.55
+</td>
+<td>
+1.45
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+13
+</td>
+<td>
+10
+</td>
+<td>
+23
+</td>
+<td>
+1.13
+</td>
+<td>
+0.87
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+10
+</td>
+<td>
+9
+</td>
+<td>
+19
+</td>
+<td>
+0.53
+</td>
+<td>
+0.47
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+8
+</td>
+<td>
+8
+</td>
+<td>
+16
+</td>
+<td>
+0.50
+</td>
+<td>
+0.50
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+8
+</td>
+<td>
+7
+</td>
+<td>
+15
+</td>
+<td>
+0.53
+</td>
+<td>
+0.47
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+10
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+8
+</td>
+<td>
+6
+</td>
+<td>
+14
+</td>
+<td>
+0.57
+</td>
+<td>
+0.43
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+<b>Total</b>
+</td>
+<th>
+<span class="math inline">\(O_1=2\)</span>
+</th>
+<th>
+<span class="math inline">\(O_2=7\)</span>
+</th>
+<td>
+<b>9</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<th>
+<span class="math inline">\(E_1=4.81\)</span>
+</th>
+<th>
+<span class="math inline">\(E_2=4.19\)</span>
+</th>
+<td>
+<b>9</b>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Por exemplo</strong>:</li>
+</ul>
+<p><span class="math display">\[
+E_1(1) = d(1)\frac{n_1(1)}{n(1)}=3 \cdot \frac{15}{29} = 1{,}55
+\]</span></p>
+</div>
+</section>
+<section id="quantidade-chave" class="slide level2">
+<h2><strong>QUANTIDADE CHAVE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para cada grupo k, existe a quantidade chave: <span class="math inline">\(O_k - E_k\)</span></p>
+<ul>
+<li>Mede o <strong>desvio acumulado</strong> entre observado e esperado</li>
+</ul></li>
+<li><p>Quanto maior o desvio, maior o indício de curvas diferentes.</p></li>
+<li><p>No exemplo dos dados de hepatite:</p>
+<ul>
+<li><span class="math inline">\(O_1 - E_1\)</span> = 2 - 4,81 = -2,81</li>
+<li><span class="math inline">\(O_2 - E_2\)</span> = 7 - 4,19 = 2,81</li>
+</ul></li>
+<li><p>Logo, no caso de <span class="math inline">\(K=2\)</span> grupos, basta saber o desvio de um único grupo que o outro é obtido automaticamente (1 grau de liberdade).</p></li>
+</ul>
+</div>
+</section>
+<section id="caso-de-dois-grupos" class="slide level2">
+<h2><strong>CASO DE DOIS GRUPOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Quando <span class="math inline">\(K=2\)</span>, a estatística de teste é: <span class="math display">\[
+T = \frac{(O_1 - E_1)^2}{\mathrm{Var}(O_1 - E_1)}
+\]</span></p></li>
+<li><p>Basta usar um grupo (o outro é redundante), pois <span class="math inline">\((O_1 - E_1) = -(O_2 - E_2)\)</span></p></li>
+<li><p>Sob <span class="math inline">\(H_0\)</span>, pode-se provar que <span class="math inline">\(T \sim \chi^2_1\)</span> (qui-quadrado com 1 grau de liberdade).</p></li>
+<li><p>Comparamos:</p>
+<ul>
+<li>o que <strong>aconteceu</strong> (<span class="math inline">\(O_1\)</span>)</li>
+<li>com o que <strong>esperaríamos ao acaso</strong> (<span class="math inline">\(E_1\)</span>)</li>
+<li>Padronizando pela <strong>variabilidade natural desse processo</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="variância-ideia" class="slide level2">
+<h2><strong>VARIÂNCIA (IDEIA)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>A variância é obtida somando contribuições ao longo do tempo:</li>
+</ul>
+<p><span class="math display">\[
+\mathrm{Var}(O_k - E_k) = \sum_{j=1}^J \mathrm{Var}_j
+\]</span></p>
+<ul>
+<li><p>Cada termo depende de:</p>
+<ul>
+<li><span class="math inline">\(d(t_j)\)</span></li>
+<li><span class="math inline">\(n_k(t_j)\)</span></li>
+<li><span class="math inline">\(n(t_j)\)</span></li>
+</ul></li>
+<li><p><strong>Intuição central</strong>:</p>
+<ul>
+<li>Em cada tempo <span class="math inline">\(t_j\)</span>, temos:
+<ul>
+<li><span class="math inline">\(d(t_j)\)</span> eventos ocorrendo</li>
+<li>que são “distribuídos” entre os grupos</li>
+</ul></li>
+<li>Sob <span class="math inline">\(H_0\)</span>:
+<ul>
+<li>essa distribuição é <strong>aleatória</strong>, proporcional aos riscos</li>
+</ul></li>
+</ul></li>
+<li><p>💡 <strong>Ideia-chave</strong>:</p>
+<ul>
+<li>Pense nos <span class="math inline">\(d(t_j)\)</span> eventos como sendo sorteados:
+<ul>
+<li>entre os indivíduos em risco</li>
+<li>como em uma <strong>urna sem reposição</strong></li>
+</ul></li>
+<li>Então:
+<ul>
+<li><span class="math inline">\(O_k(t_j)\)</span> é aleatório</li>
+<li>com variabilidade do tipo <strong>hipergeométrica</strong></li>
+</ul></li>
+</ul></li>
+<li><p>🔥 <strong>Conclusão intuitiva</strong>:</p>
+<blockquote>
+<p>A variância mede o quanto o número de eventos em um grupo pode variar <strong>apenas pelo acaso</strong></p>
+</blockquote></li>
+</ul>
+</div>
+</section>
+<section id="conexão-com-o-qui-quadrado-de-independência" class="slide level2">
+<h2><strong>CONEXÃO COM O QUI-QUADRADO DE INDEPENDÊNCIA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>No teste qui-quadrado clássico (tabela <span class="math inline">\(2 \\times 2\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\\chi^2 = \\sum \\frac{(O - E)^2}{E}
+\]</span></p>
+<ul>
+<li><p>Interpretação:</p>
+<ul>
+<li>Compara observado vs esperado</li>
+<li>Assume independência entre células</li>
+</ul></li>
+<li><p>🔁 <strong>No log-rank, fazemos algo análogo ao longo do tempo</strong>:</p>
+<ul>
+<li>Em cada tempo <span class="math inline">\(t_j\)</span>, temos uma “mini tabela”:</li>
+</ul></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Grupo 1</th>
+<th>Grupo 2</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Evento</td>
+<td><span class="math inline">\(d_1\)</span></td>
+<td><span class="math inline">\(d_2\)</span></td>
+<td><span class="math inline">\(d\)</span></td>
+</tr>
+<tr class="even">
+<td>Em risco</td>
+<td><span class="math inline">\(n_1\)</span></td>
+<td><span class="math inline">\(n_2\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>💡 <strong>Semelhança essencial</strong>:</li>
+</ul>
+<p><span class="math display">\[
+E_1(t_j) = d(t_j)\\frac{n_1(t_j)}{n(t_j)}
+\]</span></p>
+<ul>
+<li><p>⚠️ <strong>Diferença crucial</strong>:</p>
+<ul>
+<li><p>Qui-quadrado: <span class="math display">\[
+\\frac{(O - E)^2}{E}
+\]</span></p></li>
+<li><p>Log-rank: <span class="math display">\[
+\\frac{(O - E)^2}{V}
+\]</span></p></li>
+</ul></li>
+<li><p>🔥 <strong>Por quê?</strong></p>
+<ul>
+<li>Porque:
+<ul>
+<li>os mesmos indivíduos aparecem ao longo do tempo</li>
+<li>há censura</li>
+<li>as “tabelas” não são independentes</li>
+</ul></li>
+</ul></li>
+<li><p>🎯 <strong>Resumo poderoso</strong>:</p>
+<ul>
+<li><p>Qui-quadrado: &gt; Uma única tabela</p></li>
+<li><p>Log-rank: &gt; Soma de discrepâncias ao longo do tempo com variância correta</p></li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+T = \\frac{\\left(\\sum_j (O_{1j} - E_{1j})\\right)^2}{\\sum_j \\mathrm{Var}_j}
+\]</span></p>
+<ul>
+<li><p>✔️ Interpretação final:</p>
+<blockquote>
+<p>O teste verifica se o desvio acumulado ao longo do tempo é grande demais para ser explicado pelo acaso</p>
+</blockquote></li>
+</ul>
+</div>
+</section>
+<section id="estatística-de-teste-caso-geral" class="slide level2">
+<h2><strong>ESTATÍSTICA DE TESTE (CASO GERAL)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O teste log-rank é baseado no vetor:</li>
+</ul>
+<p><span class="math display">\[
+\mathbf{O} - \mathbf{E} = (O_1 - E_1, \ldots, O_K - E_K)
+\]</span></p>
+<ul>
+<li>A estatística de teste é:</li>
+</ul>
+<p><span class="math display">\[
+T = (\mathbf{O} - \mathbf{E})^\top \Sigma^{-1} (\mathbf{O} - \mathbf{E})
+\]</span></p>
+<ul>
+<li>Em que:
+<ul>
+<li><span class="math inline">\(\Sigma\)</span> é a <strong>matriz de variâncias e covariâncias</strong></li>
+</ul></li>
+<li>Sob <span class="math inline">\(H_0\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+T \sim \chi^2_{K-1}
+\]</span></p>
+<ul>
+<li>Resultado:
+<ul>
+<li>Teste global para comparar os <span class="math inline">\(k\)</span> grupos</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O <code>R</code> fornece a seguinte saída pra o teste Log-Rank aos dados de hepatite:</li>
+</ul>
+<div style="font-size: 250%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survdiff(formula = Surv(tempos, cens) ~ grupos, data = Dados1)
+
+                  N Observed Expected (O-E)^2/E (O-E)^2/V
+grupos=Controle  15        2     4.81      1.64      3.67
+grupos=Esteroide 14        7     4.19      1.89      3.67
+
+ Chisq= 3.7  on 1 degrees of freedom, p= 0.06 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tabela-tradução-das-colunas" class="slide level2">
+<h2><strong>TABELA: TRADUÇÃO DAS COLUNAS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para cada grupo, temos:</p>
+<ul>
+<li><strong>N</strong>:
+<ul>
+<li>Número de indivíduos</li>
+</ul></li>
+<li><strong>Observed (O)</strong>:
+<ul>
+<li>Número de eventos observados</li>
+</ul></li>
+<li><strong>Expected (E)</strong>:
+<ul>
+<li>Número de eventos esperados sob <span class="math inline">\(H_0\)</span></li>
+</ul></li>
+<li><strong>(O − E)<span class="math inline">\(^2\)</span>/E</strong>:
+<ul>
+<li>Medida descritiva de discrepância (tipo qui-quadrado)</li>
+</ul></li>
+<li><strong>(O − E)<span class="math inline">\(^2\)</span>/V</strong>:
+<ul>
+<li>Contribuição para a estatística do teste log-rank</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-dos-resultados" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DOS RESULTADOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Grupo Controle</strong>:
+<ul>
+<li>Observado: <span class="math inline">\(O_1 = 2\)</span></li>
+<li>Esperado: <span class="math inline">\(E_1 = 4{,}81\)</span></li>
+</ul>
+👉 Teve <strong>menos eventos do que o esperado</strong></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Grupo Esteroide</strong>:
+<ul>
+<li>Observado: <span class="math inline">\(O_2 = 7\)</span></li>
+<li>Esperado: <span class="math inline">\(E_2 = 4{,}19\)</span></li>
+</ul>
+👉 Teve <strong>mais eventos do que o esperado</strong></li>
+</ul>
+<hr>
+<ul>
+<li><p>💡 <strong>Interpretação geral</strong>:</p>
+<ul>
+<li>O grupo Esteroide apresenta maior ocorrência de eventos<br>
+</li>
+<li>Indício de <strong>pior sobrevivência</strong> nesse grupo</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="estatística-do-teste" class="slide level2">
+<h2><strong>ESTATÍSTICA DO TESTE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Estatística do teste:<span class="math inline">\(\chi^2 = 3.7\)</span>.</p></li>
+<li><p>Graus de liberdade:<span class="math inline">\(gl = 1\)</span>.</p></li>
+<li><p>Valor-p: <span class="math inline">\(p = 0.06\)</span>.</p></li>
+<li><p>Ao nível de significância de 5% <span class="math inline">\(p = 0.06 &gt; 0.05\)</span> e <strong>não rejeitamos <span class="math inline">\(H_0\)</span></strong>.</p></li>
+<li><p><strong>Interpretação prática</strong>:</p>
+<ul>
+<li>Não há evidência estatística suficiente<br>
+</li>
+<li>para afirmar que as curvas de sobrevivência diferem</li>
+</ul></li>
+<li><p>⚠️ <strong>Mas atenção</strong>:</p>
+<ul>
+<li>O resultado está <strong>próximo da significância</strong></li>
+<li>Existe um <strong>sinal de diferença</strong>:
+<ul>
+<li>Mais eventos no grupo Esteroide</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><p>🎯 <strong>Conclusão final</strong>:</p>
+<blockquote>
+<p>Há indícios de pior sobrevivência no grupo Esteroide,<br>
+mas a evidência não é suficiente ao nível de 5%</p>
+</blockquote></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="testes-ponderados" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>TESTES PONDERADOS</strong></h1>
+
+</section>
+<section id="introdução-2" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Observe novamente as curvas de sobrevivência estimadas segundo Kaplan-Meier para os dados de hepatite:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula5_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="motivação-1" class="slide level2">
+<h2><strong>MOTIVAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O teste <strong>Logrank</strong> atribui o <strong>mesmo peso</strong> a <strong>todos os tempos distintos</strong> de ocorrência do evento no cálculo da estatística de teste.
+<ul>
+<li>Ou seja, <strong>cada tempo de falha contribui igualmente</strong>, independentemente de ocorrer no início ou no final do estudo.</li>
+</ul></li>
+<li>Em muitas situações, pode ser desejável <strong>dar importâncias diferentes</strong> aos tempos de ocorrência do evento.
+<ul>
+<li>Isso motiva a construção de testes que <strong>generalizam o Logrank</strong>, incorporando uma <strong>função de peso</strong>.</li>
+</ul></li>
+<li>A ideia central é simples:<br>
+<strong>cada tempo de ocorrência do evento passa a contribuir com um peso específico</strong> na estatística de teste.</li>
+</ul>
+</div>
+</section>
+<section id="ideia-geral-dos-testes-ponderados" class="slide level2">
+<h2><strong>IDEIA GERAL DOS TESTES PONDERADOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Em vez de somar apenas diferenças entre observado e esperado, passamos a considerar:</li>
+</ul>
+<p><span class="math display">\[
+\sum_{t} w(t)\,[O_k(t) - E_k(t)]
+\]</span></p>
+<ul>
+<li><p>Onde <span class="math inline">\(w(t)\)</span> é o <strong>peso associado ao tempo (t)</strong></p></li>
+<li><p>Assim, esses testes passam a ser uma <strong>versão ponderada do Logrank</strong>, que considera <span class="math inline">\(w(t)\)</span>=1 para todo <span class="math inline">\(t\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-dos-pesos" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DOS PESOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A escolha dos pesos permite <strong>enfatizar diferentes regiões do tempo</strong>:</p></li>
+<li><p>Podemos dar:</p>
+<ul>
+<li><strong>Mais peso no início do estudo</strong></li>
+<li><strong>Mais peso no final do estudo</strong></li>
+</ul></li>
+<li><p>Isso altera a <strong>sensibilidade do teste</strong> para detectar diferenças entre as curvas.</p></li>
+</ul>
+</div>
+</section>
+<section id="por-que-dar-mais-peso-no-início" class="slide level2">
+<h2><strong>POR QUE DAR MAIS PESO NO INÍCIO?</strong></h2>
+<div class="box-blue">
+<ul>
+<li>No início do estudo, há geralmente:
+<ul>
+<li><strong>Mais indivíduos sob risco</strong></li>
+<li><strong>Menor variabilidade nas estimativas</strong></li>
+</ul></li>
+<li>Consequentemente:
+<ul>
+<li>As comparações tendem a ser <strong>mais precisas</strong></li>
+</ul></li>
+<li>Por isso, pode ser interessante <strong>privilegiar os tempos iniciais</strong> na estatística de teste.</li>
+</ul>
+</div>
+</section>
+<section id="teste-de-gehan-breslow-wilcoxon-generalizado" class="slide level2">
+<h2><strong>TESTE DE GEHAN-BRESLOW (WILCOXON GENERALIZADO)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Neste teste, o peso é dado por:</li>
+</ul>
+<p><span class="math display">\[
+w(t) = n(t)
+\]</span></p>
+<ul>
+<li><p>Onde $ n(t) $ é o número de indivíduos <strong>sob risco no tempo <span class="math inline">\(t\)</span></strong>.</p></li>
+<li><p>Interpretação:</p>
+<ul>
+<li>Tempos iniciais recebem <strong>maiores pesos</strong>, pois há mais indivíduos sob risco.</li>
+<li>Tempos finais recebem <strong>menores pesos</strong>.</li>
+</ul></li>
+<li><p>Comparação com o Logrank:</p>
+<ul>
+<li>O Logrank usa ( w(t)=1 ) (pesos iguais).</li>
+<li>O Gehan-Breslow dá <strong>mais importância ao início do estudo</strong>.</li>
+</ul></li>
+<li><p>Consequência:</p>
+<ul>
+<li>Mais sensível a diferenças <strong>precoces</strong> entre curvas de sobrevivência.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-1" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O <code>R</code> fornece a seguinte saída pra o teste Gehan-Breslow aos dados de hepatite:</li>
+</ul>
+<div style="font-size: 250%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Asymptotic Two-Sample Gehan-Breslow Test
+
+data:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)
+Z = 1.7897, p-value = 0.07349
+alternative hypothesis: true theta is not equal to 1</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li>( p = 0.0735 ), sendo <strong>menos significativo</strong> que o teste Log-Rank</li>
+<li>Como dá mais peso ao início:
+<ul>
+<li>Sugere que <strong>as diferenças iniciais não são tão fortes</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="teste-de-tarone-ware" class="slide level2">
+<h2><strong>TESTE DE TARONE-WARE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Neste teste, o peso é dado por:</li>
+</ul>
+<p><span class="math display">\[
+w(t) = \sqrt{n(t)}
+\]</span></p>
+<ul>
+<li><p>Onde $ n(t)$ é o número de indivíduos sob risco.</p></li>
+<li><p>Interpretação:</p>
+<ul>
+<li>Também dá <strong>mais peso aos tempos iniciais</strong>, mas de forma <strong>menos intensa</strong> que o Gehan-Breslow.</li>
+</ul></li>
+<li><p>Comparação:</p>
+<ul>
+<li>Logrank: $ w(t)=1 $ → pesos iguais<br>
+</li>
+<li>Gehan-Breslow: $ w(t)=n(t) ) → forte peso no início<br>
+</li>
+<li>Tarone-Ware: ( w(t)= ) → <strong>compromisso intermediário</strong></li>
+</ul></li>
+<li><p>Consequência:</p>
+<ul>
+<li>Equilibra sensibilidade entre:
+<ul>
+<li>diferenças no início<br>
+</li>
+<li>e ao longo de todo o tempo</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-2" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O <code>R</code> fornece a seguinte saída pra o teste Tarone-Ware aos dados de hepatite:</li>
+</ul>
+<div style="font-size: 250%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Asymptotic Two-Sample Tarone-Ware Test
+
+data:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)
+Z = 1.859, p-value = 0.06303
+alternative hypothesis: true theta is not equal to 1</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li>( p = 0.0630 ), valor <strong>intermediário</strong>
+<ul>
+<li>Indica <strong>evidência moderada contra (H_0)</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="teste-de-peto-peto" class="slide level2">
+<h2><strong>TESTE DE PETO-PETO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Neste teste, o peso é baseado na sobrevivência estimada:</li>
+</ul>
+<p>[ w(t) = (t) ]</p>
+<ul>
+<li><p>Onde ( (t) ) é a <strong>função de sobrevivência estimada</strong> até o tempo (t).</p></li>
+<li><p>Interpretação:</p>
+<ul>
+<li>Como ( (t) ) é maior no início:
+<ul>
+<li>tempos iniciais recebem <strong>mais peso</strong></li>
+</ul></li>
+<li>E diminui ao longo do tempo:
+<ul>
+<li>tempos finais recebem <strong>menos peso</strong></li>
+</ul></li>
+</ul></li>
+<li><p>Comparação:</p>
+<ul>
+<li>Assim como os anteriores, difere do Logrank ao usar pesos variáveis</li>
+<li>Em relação aos demais:
+<ul>
+<li>Produz um comportamento <strong>mais suave e estável</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-3" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O <code>R</code> fornece a seguinte saída pra o teste Tarone-Ware aos dados de hepatite:</li>
+</ul>
+<div style="font-size: 250%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Asymptotic Two-Sample Peto-Peto Test
+
+data:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)
+Z = 1.8571, p-value = 0.06329
+alternative hypothesis: true theta is not equal to 1</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li>( p = 0.0633 )
+<ul>
+<li>Resultado <strong>muito semelhante ao Tarone-Ware</strong></li>
+<li>Sugere <strong>evidência moderada</strong>, com comportamento mais <strong>suave e robusto</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="qual-teste-utilizar" class="slide level2">
+<h2><strong>QUAL TESTE UTILIZAR?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A escolha do teste depende de <strong>onde as curvas diferem ao longo do tempo</strong>.</p></li>
+<li><p>Pergunta central:</p>
+<ul>
+<li>As diferenças ocorrem <strong>no início</strong>, <strong>no final</strong> ou <strong>ao longo de todo o estudo</strong>?</li>
+</ul></li>
+<li><p>Diretrizes gerais:</p>
+<ul>
+<li><strong>Logrank</strong>:
+<ul>
+<li>Melhor quando o efeito é <strong>proporcional ao longo do tempo</strong></li>
+</ul></li>
+<li><strong>Testes ponderados</strong>:
+<ul>
+<li>Úteis quando há <strong>diferenças localizadas no tempo</strong></li>
+</ul></li>
+</ul></li>
+<li><p>Exemplos:</p>
+<ul>
+<li>Diferenças <strong>precoces</strong> → preferir testes que <strong>pesam mais o início</strong></li>
+</ul></li>
+<li><p>Importante:</p>
+<ul>
+<li>Não existe teste “melhor” universalmente<br>
+</li>
+<li>Existe o teste <strong>mais adequado ao contexto dos dados</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-4" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Todos os testes apresentam <strong>valores-p próximos</strong> (entre 0.05 e 0.07)
+<ul>
+<li>Indicam <strong>evidência marginal contra (H_0)</strong></li>
+</ul></li>
+<li>O <strong>Logrank</strong> foi o mais próximo da significância:
+<ul>
+<li>Sugere diferenças <strong>distribuídas ao longo do tempo</strong></li>
+</ul></li>
+<li>O <strong>Gehan-Breslow</strong> apresentou o maior valor-p:
+<ul>
+<li>Indica ausência de diferenças <strong>fortes no início</strong></li>
+</ul></li>
+<li><strong>Tarone-Ware</strong> e <strong>Peto-Peto</strong>:
+<ul>
+<li>Resultados <strong>intermediários e semelhantes</strong></li>
+<li>Sugerem diferenças <strong>moderadas ao longo do tempo</strong></li>
+</ul></li>
+<li><strong>Conclusão geral</strong>:
+<ul>
+<li>Há <strong>indícios de diferença</strong> entre os grupos (Controle vs Esteroide)</li>
+<li>Ao nível de 5%, <strong>não rejeitamos (H_0)</strong></li>
+<li>Evidência sugere:
+<ul>
+<li><strong>efeito fraco</strong> ou</li>
+<li><strong>baixa potência amostral</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="vantagens-limitações-e-aplicação-prática" class="slide level2">
+<h2><strong>VANTAGENS, LIMITAÇÕES E APLICAÇÃO PRÁTICA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Vantagens dos testes ponderados</strong>:</p>
+<ul>
+<li>Maior <strong>sensibilidade</strong> para detectar diferenças específicas no tempo</li>
+<li>Permitem incorporar <strong>informação estrutural do estudo</strong></li>
+</ul></li>
+<li><p><strong>Desvantagens</strong>:</p>
+<ul>
+<li>Podem perder poder se o padrão real <strong>não coincide com o peso escolhido</strong></li>
+<li>Exigem <strong>maior interpretação</strong> e justificativa</li>
+</ul></li>
+<li><p><strong>Como decidir na prática?</strong></p></li>
+<li><ol type="1">
+<li><strong>Análise exploratória</strong>:</li>
+</ol>
+<ul>
+<li>Observar as curvas de sobrevivência (Kaplan-Meier)</li>
+<li>Identificar onde elas se separam</li>
+</ul></li>
+<li><ol start="2" type="1">
+<li><strong>Conhecimento do problema</strong>:</li>
+</ol>
+<ul>
+<li>Conversar com o especialista (ex: médico)</li>
+<li>Perguntar:
+<ul>
+<li>O efeito esperado é <strong>imediato ou tardio</strong>?</li>
+<li>Existe um mecanismo clínico por trás disso?</li>
+</ul></li>
+</ul></li>
+<li><ol start="3" type="1">
+<li><strong>Estratégia recomendada</strong>:</li>
+</ol>
+<ul>
+<li>Usar o <strong>Logrank como referência</strong></li>
+<li>Complementar com <strong>testes ponderados</strong>, se necessário</li>
+</ul></li>
+<li><p>Ideia-chave:</p>
+<ul>
+<li>A escolha do teste é uma combinação de:
+<ul>
+<li><strong>dados</strong></li>
+<li><strong>teoria</strong></li>
+<li><strong>conhecimento aplicado</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="comparações-múltiplas" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>COMPARAÇÕES MÚLTIPLAS</strong></h1>
+
+</section>
+<section id="dados-de-malária" class="slide level2">
+<h2><strong>DADOS DE MALÁRIA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para ilustrar este tópico, considere um estudo <strong>clínico aleatorizado</strong> conduzido pela Fiocruz-MG</p></li>
+<li><p>Realizado com <strong>44 camundongos</strong> para avaliar a <strong>eficácia da imunização contra malária</strong></p></li>
+<li><p>Os animais foram acompanhados por <strong>44 dias</strong></p></li>
+<li><p>Divisão em <strong>três grupos</strong>, todos infectados por malária:</p>
+<ul>
+<li><strong>Grupo 1</strong>:
+<ul>
+<li>Imunizados <strong>30 dias antes da infecção por malária</strong></li>
+<li>Também infectados por <strong>esquistossomose</strong></li>
+</ul></li>
+<li><strong>Grupo 2</strong>:
+<ul>
+<li>Apenas infectados por malária</li>
+<li><strong>Sem vacinação</strong></li>
+</ul></li>
+<li><strong>Grupo 3</strong>:
+<ul>
+<li>Infectados por malária e esquistossomose</li>
+<li><strong>Sem vacinação</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="dados-de-malária-1" class="slide level2">
+<h2><strong>DADOS DE MALÁRIA</strong></h2>
+<div class="box-blue">
+<p>os <strong>tempos de observados (em dias)</strong> são</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grupos</th>
+<th>Tempos de Sobrevivência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>7, 8, 8, 8, 8, 12, 12, 17, 18, 22, 30+, 30+, 30+, 30+, 30+, 30+</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>8, 8, 9, 10, 10, 14, 15, 15, 18, 19, 21, 22, 22, 23, 25</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>8, 8, 8, 8, 8, 8, 9, 10, 10, 10, 11, 17, 19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dados-de-malária-2" class="slide level2">
+<h2>**DADOS DE MALÁRIA*</h2>
+<div class="box-blue">
+<ul>
+<li>As curvas de sobrevivência estimadas segundo o método de Kaplan-Meier para os três grupos são:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Aula5_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dados-de-malária-3" class="slide level2">
+<h2><strong>DADOS DE MALÁRIA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Neste gráfico, observa-se que:
+<ul>
+<li>O grupo 1 (imunizados + esquistossomose) ainda perde uma parte significativa de sobrevivência ao longo do tempo — a curva cai bastante antes de estabilizar, então o efeito protetor existe, mas não é absoluto.</li>
+<li>O grupo 2 (apenas malária) tem desempenho intermediário.</li>
+<li>O grupo 3 (malária + esquistossomose, sem vacina) é claramente o pior, chegando a 0% mais cedo.</li>
+</ul></li>
+<li>Isso sugere que a vacina confere algum benefício, mas não impede totalmente a infecção ou seus efeitos.</li>
+<li>Provavelmente a proteção é parcial, especialmente considerando que todos os animais foram desafiados com malária e alguns com esquistossomose.</li>
+</ul>
+</div>
+</section>
+<section id="aplicando-o-teste-log-rank" class="slide level2">
+<h2><strong>APLICANDO O TESTE LOG-RANK</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Os testes que vimos anteriormente <strong>podem ser facilmente adaptados</strong> para casos com mais de <strong>k = 2 estratos</strong>.</li>
+<li>Sem perda de generalidade, <strong>utilizaremos o teste de Logrank</strong> com os dados de Malária.</li>
+<li>As hipóteses para este teste serão:
+<ul>
+<li><strong>Hipótese nula (<span class="math inline">\(H_0\)</span>):</strong> As três curvas de sobrevivência são <strong>iguais</strong>: <span class="math inline">\(S_1(t) = S_2(t) = S_3(t) \quad \text{para todo } t\)</span></li>
+<li><strong>Hipótese alternativa (<span class="math inline">\(H_1\)</span>):</strong> Pelo menos <strong>uma das curvas de sobrevivência difere</strong> das demais.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="aplicando-o-teste-log-rank-1" class="slide level2">
+<h2><strong>APLICANDO O TESTE LOG-RANK</strong></h2>
+<div class="box-blue">
+<div style="font-size: 250%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survdiff(formula = Surv(tempos, cens) ~ grupos, data = Dados2, 
+    rho = 0)
+
+                N Observed Expected (O-E)^2/E (O-E)^2/V
+grupos=Grupo 1 16       10    17.00    2.8816    6.4111
+grupos=Grupo 2 15       15    14.51    0.0167    0.0317
+grupos=Grupo 3 13       13     6.49    6.5190   10.4447
+
+ Chisq= 12.6  on 2 degrees of freedom, p= 0.002 </code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Comparação entre os grupos:</strong> Grupo 1, Grupo 2 e Grupo 3.<br>
+</li>
+<li><strong>Estatística de teste:</strong> (^2 = 12.6) com <span class="math inline">\(K-1\)</span>=3-1=2 graus de liberdade.<br>
+</li>
+<li><strong>Valor-p:</strong> (p = 0.002), menor que 0,05.</li>
+</ul>
+</div>
+</section>
+<section id="aplicando-o-teste-log-rank-2" class="slide level2">
+<h2><strong>APLICANDO O TESTE LOG-RANK</strong></h2>
+<div class="box-blue">
+<p><strong>Comentário:</strong><br>
+- Rejeitamos a hipótese nula (H_0), indicando que <strong>há diferenças significativas nas curvas de sobrevivência entre os grupos</strong>.<br>
+- Observando os desvios (O-E), o <strong>Grupo 1 apresenta menos eventos do que o esperado</strong>, enquanto o <strong>Grupo 3 apresenta mais eventos do que o esperado</strong>.<br>
+- O <strong>Grupo 2 está próximo do esperado</strong>, sugerindo que seu comportamento de sobrevivência é intermediário.</p>
+</div>
+</section>
+<section id="motivação-2" class="slide level2">
+<h2><strong>MOTIVAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Quando o <strong>teste global rejeita a hipótese nula</strong> (como no exemplo anterior), sabemos que <strong>pelo menos uma das curvas de sobrevivência difere</strong>, mas não sabemos <strong>quais pares de grupos</strong>.<br>
+</li>
+<li>Para identificar <strong>as diferenças específicas</strong>, realizamos <strong>subtestes entre pares de grupos</strong>:
+<ul>
+<li>Grupo 1 × Grupo 2<br>
+</li>
+<li>Grupo 1 × Grupo 3<br>
+</li>
+<li>Grupo 2 × Grupo 3</li>
+</ul></li>
+<li>Para não <strong>inflar o erro tipo I</strong> ao realizar múltiplos testes, <strong>precisamos ajustar o nível de significância</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="método-de-bonferroni" class="slide level2">
+<h2><strong>MÉTODO DE BONFERRONI</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O método de Bonferroni é <strong>simples e conservador</strong>.<br>
+</li>
+<li>Divide o nível de significância global <span class="math inline">\(\alpha\)</span> pelo número de comparações <span class="math inline">\(m\)</span>:<br>
+<span class="math display">\[
+\alpha^* = \frac{\alpha}{m}
+\]</span><br>
+</li>
+<li>Exemplo: para 3 pares de grupos e <span class="math inline">\(\alpha = 0,05\)</span>:<br>
+<span class="math display">\[
+\alpha^* = \frac{0,05}{3} \approx 0,017
+\]</span><br>
+</li>
+<li>Assim, cada subteste utiliza <strong>um nível de significância mais restrito</strong>, garantindo que o <strong>erro tipo I global</strong> não ultrapasse <span class="math inline">\(\alpha\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="correção-de-holm-bonferroni" class="slide level2">
+<h2><strong>CORREÇÃO DE HOLM-BONFERRONI</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O método de <strong>Holm</strong> é uma versão <strong>menos conservadora</strong> e mais poderosa que Bonferroni.<br>
+</li>
+<li>Procedimento:
+<ol type="1">
+<li>Ordenar os p-valores dos subtestes do menor para o maior.<br>
+</li>
+<li>Comparar cada p-valor <span class="math inline">\(p_i\)</span> com <span class="math inline">\(\alpha/(c-i+1)\)</span>, onde <span class="math inline">\(i\)</span> é a posição do p-valor ordenado.<br>
+</li>
+<li>Rejeitar as hipóteses nulas passo a passo até encontrar um p-valor que não seja significativo.</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-5" class="slide level2 scrollable">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Grupo 1 x Grupo 2:</li>
+</ul>
+<div style="font-size: 200%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survdiff(formula = Surv(tempos, cens) ~ grupos, data = subset(Dados2, 
+    grupos != "Grupo 3"))
+
+                N Observed Expected (O-E)^2/E (O-E)^2/V
+grupos=Grupo 1 16       10     13.7      1.01      2.53
+grupos=Grupo 2 15       15     11.3      1.23      2.53
+
+ Chisq= 2.5  on 1 degrees of freedom, p= 0.1 </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="box-blue">
+<ul>
+<li>Grupo 1 x Grupo 3:</li>
+</ul>
+<div style="font-size: 200%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survdiff(formula = Surv(tempos, cens) ~ grupos, data = subset(Dados2, 
+    grupos != "Grupo 2"))
+
+                N Observed Expected (O-E)^2/E (O-E)^2/V
+grupos=Grupo 1 16       10    15.34      1.86      7.86
+grupos=Grupo 3 13       13     7.66      3.72      7.86
+
+ Chisq= 7.9  on 1 degrees of freedom, p= 0.005 </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="box-blue">
+<ul>
+<li>Grupo 2 x Grupo 3:</li>
+</ul>
+<div style="font-size: 200%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survdiff(formula = Surv(tempos, cens) ~ grupos, data = subset(Dados2, 
+    grupos != "Grupo 1"))
+
+                N Observed Expected (O-E)^2/E (O-E)^2/V
+grupos=Grupo 2 15       15    20.53      1.49      7.98
+grupos=Grupo 3 13       13     7.47      4.08      7.98
+
+ Chisq= 8  on 1 degrees of freedom, p= 0.005 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-6" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Nível de significância ajustado:</strong> <span class="math inline">\(\\alpha^* = 0,017\)</span></p></li>
+<li><p><strong>Grupo 1 × Grupo 2:</strong></p>
+<ul>
+<li><span class="math inline">\(\\chi^2 = 2.5\)</span>, <span class="math inline">\(p = 0.1\)</span><br>
+</li>
+<li><span class="math inline">\(p &gt; \\alpha^*\)</span> → <strong>não rejeita H₀</strong><br>
+</li>
+<li>Conclusão: <strong>as curvas de sobrevivência são semelhantes</strong></li>
+</ul></li>
+<li><p><strong>Grupo 1 × Grupo 3:</strong></p>
+<ul>
+<li><span class="math inline">\(\\chi^2 = 7.9\)</span>, <span class="math inline">\(p = 0.005\)</span><br>
+</li>
+<li><span class="math inline">\(p &lt; \\alpha^*\)</span> → <strong>rejeita H₀</strong><br>
+</li>
+<li>Conclusão: <strong>há diferença significativa entre as curvas</strong></li>
+</ul></li>
+<li><p><strong>Grupo 2 × Grupo 3:</strong></p>
+<ul>
+<li><span class="math inline">\(\\chi^2 = 7.9\)</span>, <span class="math inline">\(p = 0.005\)</span><br>
+</li>
+<li><span class="math inline">\(p &lt; \\alpha^*\)</span> → <strong>rejeita H₀</strong><br>
+</li>
+<li>Conclusão: <strong>há diferença significativa entre as curvas</strong></li>
+</ul></li>
+</ul>
+<p><strong>Resumo geral:</strong><br>
+- O <strong>Grupo 3 se diferencia</strong> dos Grupos 1 e 2<br>
+- Grupos 1 e 2 <strong>não apresentam diferenças significativas</strong> entre si</p>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-7" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Passo 1: organizar os p-valores dos subtestes</strong>
+<ul>
+<li>Grupo 1 × Grupo 2: <span class="math inline">\(p = 0.1\)</span><br>
+</li>
+<li>Grupo 1 × Grupo 3: <span class="math inline">\(p = 0.005\)</span><br>
+</li>
+<li>Grupo 2 × Grupo 3: <span class="math inline">\(p = 0.005\)</span></li>
+</ul></li>
+<li><strong>Passo 2: ordenar do menor para o maior</strong>
+<ol type="1">
+<li><span class="math inline">\(p_1 = 0.005\)</span> (Grupo 1 × 3)<br>
+</li>
+<li><span class="math inline">\(p_2 = 0.005\)</span> (Grupo 2 × 3)<br>
+</li>
+<li><span class="math inline">\(p_3 = 0.1\)</span> (Grupo 1 × 2)</li>
+</ol></li>
+<li><strong>Passo 3: aplicar Holm-Bonferroni</strong>
+<ul>
+<li>Comparar <span class="math inline">\(p_1\)</span> com <span class="math inline">\(\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\)</span> → <span class="math inline">\(0.005 &lt; 0.017\)</span> → <strong>rejeita H₀</strong><br>
+</li>
+<li>Comparar <span class="math inline">\(p_2\)</span> com <span class="math inline">\(0.05 / (3 - 2 + 1) = 0.025\)</span> → <span class="math inline">\(0.005 &lt; 0.025\)</span> → <strong>rejeita H₀</strong><br>
+</li>
+<li>Comparar <span class="math inline">\(p_3\)</span> com <span class="math inline">\(0.05 / (3 - 3 + 1) = 0.05\)</span> → <span class="math inline">\(0.1 &gt; 0.05\)</span> → <strong>não rejeita H₀</strong></li>
+</ul></li>
+<li>✅ <strong>Resultado:</strong> mesma conclusão prática do Bonferroni, mas <strong>Holm é menos conservador</strong> e ajusta de forma incremental</li>
+</ul>
+</div>
+</section>
+<section id="exemplo-dados-de-hepatite-8" class="slide level2">
+<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Teste global de Logrank:</strong>
+<ul>
+<li>Houve <strong>diferença significativa entre as curvas de sobrevivência dos grupos</strong> (<span class="math inline">\(p = 0.002\)</span>)<br>
+</li>
+<li>Indica que <strong>algum grupo apresenta maior ou menor sobrevivência</strong>.</li>
+</ul></li>
+<li><strong>Comparações múltiplas (Bonferroni e Holm):</strong>
+<ul>
+<li><strong>Grupo 3</strong> se diferencia dos Grupos 1 e 2<br>
+</li>
+<li><strong>Grupos 1 e 2</strong> não diferem significativamente entre si<br>
+</li>
+<li>A escolha da correção influencia o <strong>nível de significância utilizado</strong>, mas a conclusão prática foi a mesma.</li>
+</ul></li>
+<li><strong>Interpretação do efeito da vacina:</strong>
+<ul>
+<li>A vacina <strong>não mostrou efeito relevante</strong> nos Grupos 1 e 2<br>
+</li>
+<li><strong>Diferenças estão concentradas no Grupo 3</strong>, que pode corresponder a <strong>outros fatores, como risco maior ou perfil específico da população</strong><br>
+</li>
+<li>Sugere necessidade de <strong>investigar os fatores que explicam a diferença do Grupo 3</strong>.</li>
+</ul></li>
+<li><strong>Mensagem principal:</strong>
+<ul>
+<li>Estudos de sobrevivência com múltiplos grupos exigem <strong>testes globais e comparações múltiplas</strong><br>
+</li>
+<li>Correções de Bonferroni ou Holm-Bonferroni <strong>protegem contra falsos positivos</strong><br>
+</li>
+<li>É essencial interpretar <strong>resultados no contexto clínico e biológico</strong> do estudo.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="qual-correção-escolher" class="slide level2">
+<h2><strong>QUAL CORREÇÃO ESCOLHER</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Bonferroni:</strong> simples, conservador, ideal para poucos grupos.<br>
+</li>
+<li><strong>Holm-Bonferroni:</strong> mais poderoso, preferido quando se quer <strong>detectar diferenças reais</strong> sem aumentar o erro tipo I.<br>
+</li>
+<li><strong>Quando há muitos grupos:</strong> considere <strong>Holm</strong> ou métodos de FDR (Benjamini-Hochberg) se você aceita algum falso positivo.<br>
+</li>
+<li>Sempre <strong>defina o nível global <span class="math inline">\(\\alpha\)</span></strong> antes do teste e ajuste os subtestes de acordo.</li>
+</ul>
+</div>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 7.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
