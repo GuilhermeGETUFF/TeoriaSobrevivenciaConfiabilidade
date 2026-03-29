@@ -200,7 +200,7 @@
     "href": "Aula5.html#estatística-do-teste",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTATÍSTICA DO TESTE",
-    "text": "ESTATÍSTICA DO TESTE\n\n\nEstatística do teste:\\(\\chi^2 = 3.7\\).\nGraus de liberdade:\\(gl = 1\\).\nValor-p: \\(p = 0.06\\).\nAo nível de significância de 5% \\(p = 0.06 &gt; 0.05\\) e não rejeitamos \\(H_0\\).\nInterpretação prática:\n\nNão há evidência estatística suficiente\n\npara afirmar que as curvas de sobrevivência diferem"
+    "text": "ESTATÍSTICA DO TESTE\n\n\nEstatística do teste:\\(\\chi^2 = 3.7\\).\nGraus de liberdade:\\(gl = 1\\).\nValor-p: \\(p = 0.06\\).\nAo nível de significância de 5% \\(p = 0.06 &gt; 0.05\\) e não rejeitamos \\(H_0\\).\nInterpretação prática:\n\nNão há evidência estatística suficiente para afirmar que as curvas de sobrevivência diferem"
   },
   {
     "objectID": "Aula5.html#introdução-2",
