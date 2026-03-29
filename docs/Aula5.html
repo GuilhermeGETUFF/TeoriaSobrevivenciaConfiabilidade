@@ -1089,14 +1089,13 @@ grupos=Esteroide 14        7     4.19      1.89      3.67
 <ul>
 <li>O teste <strong>Logrank</strong> atribui o <strong>mesmo peso</strong> a <strong>todos os tempos distintos</strong> de ocorrência do evento no cálculo da estatística de teste.
 <ul>
-<li>Ou seja, <strong>cada tempo de falha contribui igualmente</strong>, independentemente de ocorrer no início ou no final do estudo.</li>
+<li>Ou seja, <strong>cada tempo de de ocorrência contribui igualmente</strong>, independentemente de ocorrer no início ou no final do estudo.</li>
 </ul></li>
 <li>Em muitas situações, pode ser desejável <strong>dar importâncias diferentes</strong> aos tempos de ocorrência do evento.
 <ul>
 <li>Isso motiva a construção de testes que <strong>generalizam o Logrank</strong>, incorporando uma <strong>função de peso</strong>.</li>
 </ul></li>
-<li>A ideia central é simples:<br>
-<strong>cada tempo de ocorrência do evento passa a contribuir com um peso específico</strong> na estatística de teste.</li>
+<li>A ideia central é simples: <strong>cada tempo de ocorrência do evento passa a contribuir com um peso específico</strong> na estatística de teste.</li>
 </ul>
 </div>
 </section>
@@ -1104,18 +1103,12 @@ grupos=Esteroide 14        7     4.19      1.89      3.67
 <h2><strong>IDEIA GERAL DOS TESTES PONDERADOS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>No teste Log-Rank, somamos apenas diferenças entre observado e esperado, por exemplo:</li>
-</ul>
-<p><span class="math display">\[
+<li><p>No teste Log-Rank, somamos apenas diferenças entre observado e esperado, por exemplo: <span class="math display">\[
 (O_1-E_1) = \sum_{j=1}^Jd_1(t_j) - \sum_{j=1}^JE_1(t_j) = \sum_{j=1}^J \left(d_1(t_j)-E_1(t_j)\right)
-\]</span></p>
-<ul>
-<li>Agora, passamos a considerar:</li>
-</ul>
-<p><span class="math display">\[
+\]</span></p></li>
+<li><p>Agora, passamos a considerar: <span class="math display">\[
 (O_1-E_1) = \sum_{j=1}^Jw(t_j) \left(d_1(t_j)-E_1(t_j)\right)
-\]</span></p>
-<ul>
+\]</span></p></li>
 <li><p>Onde <span class="math inline">\(w(t)\)</span> é o <strong>peso associado ao tempo (t)</strong></p></li>
 <li><p>Assim, esses testes passam a ser uma <strong>versão ponderada do Logrank</strong>, que considera <span class="math inline">\(w(t)\)</span>=1 para todo <span class="math inline">\(t\)</span>.</p></li>
 </ul>
@@ -1149,7 +1142,7 @@ grupos=Esteroide 14        7     4.19      1.89      3.67
 <li>As comparações tendem a ser <strong>mais precisas</strong></li>
 </ul></li>
 <li><p>Por isso, pode ser interessante <strong>privilegiar os tempos iniciais</strong> na estatística de teste.</p></li>
-<li><p>Como os pesos são adicionados tanto no cálculo das diferenças e também na variância, a distribuição da estatística dos testes ponderamos é a mesma do teste Log-Rank.</p></li>
+<li><p>Como os pesos são adicionados tanto no cálculo das diferenças e também na variância, a distribuição da estatística dos testes ponderados é a mesma do teste Log-Rank.</p></li>
 </ul>
 </div>
 </section>
@@ -1491,8 +1484,8 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 <h2><strong>APLICANDO O TESTE LOG-RANK</strong></h2>
 <div class="box-blue">
 <p><strong>Comentário:</strong><br>
-- Rejeitamos a hipótese nula (H_0), indicando que <strong>há diferenças significativas nas curvas de sobrevivência entre os grupos</strong>.<br>
-- Observando os desvios (O-E), o <strong>Grupo 1 apresenta menos eventos do que o esperado</strong>, enquanto o <strong>Grupo 3 apresenta mais eventos do que o esperado</strong>.<br>
+- Rejeitamos a hipótese nula <span class="math inline">\(H_0\)</span>, indicando que <strong>há diferenças significativas nas curvas de sobrevivência entre os grupos</strong>.<br>
+- Observando os desvios <span class="math inline">\(O-E\)</span>, o <strong>Grupo 1 apresenta menos eventos do que o esperado</strong>, enquanto o <strong>Grupo 3 apresenta mais eventos do que o esperado</strong>.<br>
 - O <strong>Grupo 2 está próximo do esperado</strong>, sugerindo que seu comportamento de sobrevivência é intermediário.</p>
 </div>
 </section>
@@ -1538,7 +1531,7 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 <h2><strong>CORREÇÃO DE HOLM-BONFERRONI</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O método de <strong>Holm</strong> é uma versão <strong>menos conservadora</strong> e mais poderosa que Bonferroni.<br>
+<li>O método de <strong>Holm</strong> é uma versão <strong>menos conservadora</strong> que Bonferroni.<br>
 </li>
 <li>Procedimento:
 <ol type="1">
@@ -1546,7 +1539,7 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 </li>
 <li>Comparar cada p-valor <span class="math inline">\(p_i\)</span> com <span class="math inline">\(\alpha/(c-i+1)\)</span>, onde <span class="math inline">\(i\)</span> é a posição do p-valor ordenado.<br>
 </li>
-<li>Rejeitar as hipóteses nulas passo a passo até encontrar um p-valor que não seja significativo.</li>
+<li>Rejeitar as hipóteses nulas de acordo com as comparações realizadas.</li>
 </ol></li>
 </ul>
 </div>
@@ -1718,17 +1711,14 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 </ul>
 </div>
 </section>
-<section id="qual-correção-escolher" class="slide level2 scrollable">
+<section id="qual-correção-escolher" class="slide level2">
 <h2><strong>QUAL CORREÇÃO ESCOLHER</strong></h2>
 <div class="box-blue">
 <ul>
-<li><strong>Bonferroni:</strong> simples, conservador, ideal para poucos grupos.<br>
-</li>
-<li><strong>Holm-Bonferroni:</strong> mais poderoso, preferido quando se quer <strong>detectar diferenças reais</strong> sem aumentar o erro tipo I.<br>
-</li>
-<li><strong>Quando há muitos grupos:</strong> considere <strong>Holm</strong> ou métodos de FDR (Benjamini-Hochberg) se você aceita algum falso positivo.<br>
-</li>
-<li>Sempre <strong>defina o nível global <span class="math inline">\(\\alpha\)</span></strong> antes do teste e ajuste os subtestes de acordo.</li>
+<li><p><strong>Bonferroni:</strong> é simples e conservador.<br>
+</p></li>
+<li><p><strong>Holm-Bonferroni:</strong> mais poderoso, preferido quando se quer <strong>detectar diferenças reais</strong> sem aumentar o erro tipo I.</p></li>
+<li><p>Sempre <strong>defina o nível global <span class="math inline">\(\alpha\)</span></strong> antes do teste e ajuste os subtestes de acordo.</p></li>
 </ul>
 </div>
 

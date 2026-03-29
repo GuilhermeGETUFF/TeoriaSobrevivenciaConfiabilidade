@@ -214,14 +214,14 @@
     "href": "Aula5.html#motivação-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MOTIVAÇÃO",
-    "text": "MOTIVAÇÃO\n\n\nO teste Logrank atribui o mesmo peso a todos os tempos distintos de ocorrência do evento no cálculo da estatística de teste.\n\nOu seja, cada tempo de falha contribui igualmente, independentemente de ocorrer no início ou no final do estudo.\n\nEm muitas situações, pode ser desejável dar importâncias diferentes aos tempos de ocorrência do evento.\n\nIsso motiva a construção de testes que generalizam o Logrank, incorporando uma função de peso.\n\nA ideia central é simples:\ncada tempo de ocorrência do evento passa a contribuir com um peso específico na estatística de teste."
+    "text": "MOTIVAÇÃO\n\n\nO teste Logrank atribui o mesmo peso a todos os tempos distintos de ocorrência do evento no cálculo da estatística de teste.\n\nOu seja, cada tempo de de ocorrência contribui igualmente, independentemente de ocorrer no início ou no final do estudo.\n\nEm muitas situações, pode ser desejável dar importâncias diferentes aos tempos de ocorrência do evento.\n\nIsso motiva a construção de testes que generalizam o Logrank, incorporando uma função de peso.\n\nA ideia central é simples: cada tempo de ocorrência do evento passa a contribuir com um peso específico na estatística de teste."
   },
   {
     "objectID": "Aula5.html#ideia-geral-dos-testes-ponderados",
     "href": "Aula5.html#ideia-geral-dos-testes-ponderados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "IDEIA GERAL DOS TESTES PONDERADOS",
-    "text": "IDEIA GERAL DOS TESTES PONDERADOS\n\n\nNo teste Log-Rank, somamos apenas diferenças entre observado e esperado, por exemplo:\n\n\\[\n(O_1-E_1) = \\sum_{j=1}^Jd_1(t_j) - \\sum_{j=1}^JE_1(t_j) = \\sum_{j=1}^J \\left(d_1(t_j)-E_1(t_j)\\right)\n\\]\n\nAgora, passamos a considerar:\n\n\\[\n(O_1-E_1) = \\sum_{j=1}^Jw(t_j) \\left(d_1(t_j)-E_1(t_j)\\right)\n\\]\n\nOnde \\(w(t)\\) é o peso associado ao tempo (t)\nAssim, esses testes passam a ser uma versão ponderada do Logrank, que considera \\(w(t)\\)=1 para todo \\(t\\)."
+    "text": "IDEIA GERAL DOS TESTES PONDERADOS\n\n\nNo teste Log-Rank, somamos apenas diferenças entre observado e esperado, por exemplo: \\[\n(O_1-E_1) = \\sum_{j=1}^Jd_1(t_j) - \\sum_{j=1}^JE_1(t_j) = \\sum_{j=1}^J \\left(d_1(t_j)-E_1(t_j)\\right)\n\\]\nAgora, passamos a considerar: \\[\n(O_1-E_1) = \\sum_{j=1}^Jw(t_j) \\left(d_1(t_j)-E_1(t_j)\\right)\n\\]\nOnde \\(w(t)\\) é o peso associado ao tempo (t)\nAssim, esses testes passam a ser uma versão ponderada do Logrank, que considera \\(w(t)\\)=1 para todo \\(t\\)."
   },
   {
     "objectID": "Aula5.html#interpretação-dos-pesos",
@@ -235,7 +235,7 @@
     "href": "Aula5.html#por-que-dar-mais-peso-no-início",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE DAR MAIS PESO NO INÍCIO?",
-    "text": "POR QUE DAR MAIS PESO NO INÍCIO?\n\n\nNo início do estudo, há geralmente:\n\nMais indivíduos sob risco\nMenor variabilidade nas estimativas\n\nConsequentemente:\n\nAs comparações tendem a ser mais precisas\n\nPor isso, pode ser interessante privilegiar os tempos iniciais na estatística de teste.\nComo os pesos são adicionados tanto no cálculo das diferenças e também na variância, a distribuição da estatística dos testes ponderamos é a mesma do teste Log-Rank."
+    "text": "POR QUE DAR MAIS PESO NO INÍCIO?\n\n\nNo início do estudo, há geralmente:\n\nMais indivíduos sob risco\nMenor variabilidade nas estimativas\n\nConsequentemente:\n\nAs comparações tendem a ser mais precisas\n\nPor isso, pode ser interessante privilegiar os tempos iniciais na estatística de teste.\nComo os pesos são adicionados tanto no cálculo das diferenças e também na variância, a distribuição da estatística dos testes ponderados é a mesma do teste Log-Rank."
   },
   {
     "objectID": "Aula5.html#teste-de-gehan-breslow",
@@ -340,7 +340,7 @@
     "href": "Aula5.html#aplicando-o-teste-log-rank-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "APLICANDO O TESTE LOG-RANK",
-    "text": "APLICANDO O TESTE LOG-RANK\n\nComentário:\n- Rejeitamos a hipótese nula (H_0), indicando que há diferenças significativas nas curvas de sobrevivência entre os grupos.\n- Observando os desvios (O-E), o Grupo 1 apresenta menos eventos do que o esperado, enquanto o Grupo 3 apresenta mais eventos do que o esperado.\n- O Grupo 2 está próximo do esperado, sugerindo que seu comportamento de sobrevivência é intermediário."
+    "text": "APLICANDO O TESTE LOG-RANK\n\nComentário:\n- Rejeitamos a hipótese nula \\(H_0\\), indicando que há diferenças significativas nas curvas de sobrevivência entre os grupos.\n- Observando os desvios \\(O-E\\), o Grupo 1 apresenta menos eventos do que o esperado, enquanto o Grupo 3 apresenta mais eventos do que o esperado.\n- O Grupo 2 está próximo do esperado, sugerindo que seu comportamento de sobrevivência é intermediário."
   },
   {
     "objectID": "Aula5.html#motivação-2",
@@ -361,7 +361,7 @@
     "href": "Aula5.html#correção-de-holm-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CORREÇÃO DE HOLM-BONFERRONI",
-    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora e mais poderosa que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(c-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas passo a passo até encontrar um p-valor que não seja significativo."
+    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(c-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas de acordo com as comparações realizadas."
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-4",
@@ -396,7 +396,7 @@
     "href": "Aula5.html#qual-correção-escolher",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "QUAL CORREÇÃO ESCOLHER",
-    "text": "QUAL CORREÇÃO ESCOLHER\n\n\nBonferroni: simples, conservador, ideal para poucos grupos.\n\nHolm-Bonferroni: mais poderoso, preferido quando se quer detectar diferenças reais sem aumentar o erro tipo I.\n\nQuando há muitos grupos: considere Holm ou métodos de FDR (Benjamini-Hochberg) se você aceita algum falso positivo.\n\nSempre defina o nível global \\(\\\\alpha\\) antes do teste e ajuste os subtestes de acordo."
+    "text": "QUAL CORREÇÃO ESCOLHER\n\n\nBonferroni: é simples e conservador.\n\nHolm-Bonferroni: mais poderoso, preferido quando se quer detectar diferenças reais sem aumentar o erro tipo I.\nSempre defina o nível global \\(\\alpha\\) antes do teste e ajuste os subtestes de acordo."
   },
   {
     "objectID": "Aula3.html#introdução-1",
