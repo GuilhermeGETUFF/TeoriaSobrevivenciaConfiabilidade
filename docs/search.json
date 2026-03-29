@@ -130,6 +130,13 @@
     "href": "Aula5.html#dados-de-hepatite",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DADOS DE HEPATITE",
+    "text": "DADOS DE HEPATITE\n\n\nAs hipóteses para este teste serão:\n\nHipótese nula (\\(H_0\\)): As duas curvas de sobrevivência são iguais: \\(S_1(t) = S_2(t) \\quad \\text{para todo } t\\)\nHipótese alternativa (\\(H_1\\)): As duas curvas de sobrevivência são diferentes em algum tempo \\(t\\)."
+  },
+  {
+    "objectID": "Aula5.html#dados-de-hepatite-1",
+    "href": "Aula5.html#dados-de-hepatite-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DADOS DE HEPATITE",
     "text": "DADOS DE HEPATITE\n\n\n\n\n\n\n\\(t_j\\)\n\n\nEventos observados\n\n\nElementos sob risco\n\n\nValores esperados\n\n\n\n\n\\(d_1(t_j)\\)\n\n\n\\(d_2(t_j)\\)\n\n\n\\(d(t_j)\\)\n\n\n\\(n_1(t_j)\\)\n\n\n\\(n_2(t_j)\\)\n\n\n\\(n(t_j)\\)\n\n\n\\(E_1(t_j)\\)\n\n\n\\(E_2(t_j)\\)\n\n\n\\(E(t_j)\\)\n\n\n\n\n\n\n0\n\n\n0\n\n\n0\n\n\n0\n\n\n15\n\n\n14\n\n\n29\n\n\n0.00\n\n\n0.00\n\n\n0\n\n\n\n\n1\n\n\n0\n\n\n3\n\n\n3\n\n\n15\n\n\n14\n\n\n29\n\n\n1.55\n\n\n1.45\n\n\n3\n\n\n\n\n3\n\n\n2\n\n\n0\n\n\n2\n\n\n13\n\n\n10\n\n\n23\n\n\n1.13\n\n\n0.87\n\n\n2\n\n\n\n\n5\n\n\n0\n\n\n1\n\n\n1\n\n\n10\n\n\n9\n\n\n19\n\n\n0.53\n\n\n0.47\n\n\n1\n\n\n\n\n7\n\n\n0\n\n\n1\n\n\n1\n\n\n8\n\n\n8\n\n\n16\n\n\n0.50\n\n\n0.50\n\n\n1\n\n\n\n\n8\n\n\n0\n\n\n1\n\n\n1\n\n\n8\n\n\n7\n\n\n15\n\n\n0.53\n\n\n0.47\n\n\n1\n\n\n\n\n10\n\n\n0\n\n\n1\n\n\n1\n\n\n8\n\n\n6\n\n\n14\n\n\n0.57\n\n\n0.43\n\n\n1\n\n\n\n\nTotal\n\n\n\\(O_1=2\\)\n\n\n\\(O_2=7\\)\n\n\n9\n\n\n\n\n\n\n\n\n\\(E_1=4.81\\)\n\n\n\\(E_2=4.19\\)\n\n\n9\n\n\n\n\n\nPor exemplo:\n\n\\[\nE_1(1) = d(1)\\frac{n_1(1)}{n(1)}=3 \\cdot \\frac{15}{29} = 1{,}55\n\\]"
   },
   {
@@ -137,7 +144,7 @@
     "href": "Aula5.html#quantidade-chave",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "QUANTIDADE CHAVE",
-    "text": "QUANTIDADE CHAVE\n\n\nPara cada grupo k, existe a quantidade chave: \\(O_k - E_k\\)\n\nMede o desvio acumulado entre observado e esperado\n\nQuanto maior o desvio, maior o indício de curvas diferentes.\nNo exemplo dos dados de hepatite:\n\n\\(O_1 - E_1\\) = 2 - 4,81 = -2,81\n\\(O_2 - E_2\\) = 7 - 4,19 = 2,81\n\nLogo, no caso de \\(K=2\\) grupos, basta saber o desvio de um único grupo que o outro é obtido automaticamente (1 grau de liberdade)."
+    "text": "QUANTIDADE CHAVE\n\n\nPara cada grupo k, existe a quantidade chave: \\(O_k - E_k\\)\n\nMede o desvio acumulado entre observado e esperado\n\nQuanto maior o desvio, maior o indício de curvas diferentes.\nNo exemplo dos dados de hepatite:\n\n\\(O_1 - E_1\\) = 2 - 4,81 = -2,81\n\\(O_2 - E_2\\) = 7 - 4,19 = 2,81\n\nLogo, no caso de \\(K=2\\) grupos, basta saber o desvio de um único grupo que o outro é obtido automaticamente."
   },
   {
     "objectID": "Aula5.html#caso-de-dois-grupos",
@@ -147,25 +154,25 @@
     "text": "CASO DE DOIS GRUPOS\n\n\nQuando \\(K=2\\), a estatística de teste é: \\[\nT = \\frac{(O_1 - E_1)^2}{\\mathrm{Var}(O_1 - E_1)}\n\\]\nBasta usar um grupo (o outro é redundante), pois \\((O_1 - E_1) = -(O_2 - E_2)\\)\nSob \\(H_0\\), pode-se provar que \\(T \\sim \\chi^2_1\\) (qui-quadrado com 1 grau de liberdade).\nComparamos:\n\no que aconteceu (\\(O_1\\))\ncom o que esperaríamos ao acaso (\\(E_1\\))\nPadronizando pela variabilidade natural desse processo"
   },
   {
-    "objectID": "Aula5.html#variância-ideia",
-    "href": "Aula5.html#variância-ideia",
+    "objectID": "Aula5.html#ideia-central-da-variância",
+    "href": "Aula5.html#ideia-central-da-variância",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "VARIÂNCIA (IDEIA)",
-    "text": "VARIÂNCIA (IDEIA)\n\n\nA variância é obtida somando contribuições ao longo do tempo:\n\n\\[\n\\mathrm{Var}(O_k - E_k) = \\sum_{j=1}^J \\mathrm{Var}_j\n\\]\n\nCada termo depende de:\n\n\\(d(t_j)\\)\n\\(n_k(t_j)\\)\n\\(n(t_j)\\)\n\nIntuição central:\n\nEm cada tempo \\(t_j\\), temos:\n\n\\(d(t_j)\\) eventos ocorrendo\nque são “distribuídos” entre os grupos\n\nSob \\(H_0\\):\n\nessa distribuição é aleatória, proporcional aos riscos\n\n\n💡 Ideia-chave:\n\nPense nos \\(d(t_j)\\) eventos como sendo sorteados:\n\nentre os indivíduos em risco\ncomo em uma urna sem reposição\n\nEntão:\n\n\\(O_k(t_j)\\) é aleatório\ncom variabilidade do tipo hipergeométrica\n\n\n🔥 Conclusão intuitiva:\n\nA variância mede o quanto o número de eventos em um grupo pode variar apenas pelo acaso"
+    "section": "IDEIA CENTRAL DA VARIÂNCIA",
+    "text": "IDEIA CENTRAL DA VARIÂNCIA\n\n\nEm cada tempo \\(t_j\\), há:\n\n\\(n(t_j)\\) em risco\n\n\\(n_1(t_j)\\) no grupo 1\n\n\\(d(t_j)\\) eventos\n\nSob \\(H_0\\), os \\(d(t_j)\\) eventos são distribuídos aleatoriamente sem reposição e\n\n\\[\nd_1(t_j) \\sim \\text{Hipergeométrica}\n\\]"
   },
   {
-    "objectID": "Aula5.html#conexão-com-o-qui-quadrado-de-independência",
-    "href": "Aula5.html#conexão-com-o-qui-quadrado-de-independência",
+    "objectID": "Aula5.html#ideia-central-da-variância-1",
+    "href": "Aula5.html#ideia-central-da-variância-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "CONEXÃO COM O QUI-QUADRADO DE INDEPENDÊNCIA",
-    "text": "CONEXÃO COM O QUI-QUADRADO DE INDEPENDÊNCIA\n\n\nNo teste qui-quadrado clássico (tabela \\(2 \\\\times 2\\)):\n\n\\[\n\\\\chi^2 = \\\\sum \\\\frac{(O - E)^2}{E}\n\\]\n\nInterpretação:\n\nCompara observado vs esperado\nAssume independência entre células\n\n🔁 No log-rank, fazemos algo análogo ao longo do tempo:\n\nEm cada tempo \\(t_j\\), temos uma “mini tabela”:\n\n\n\n\n\n\nGrupo 1\nGrupo 2\nTotal\n\n\n\n\nEvento\n\\(d_1\\)\n\\(d_2\\)\n\\(d\\)\n\n\nEm risco\n\\(n_1\\)\n\\(n_2\\)\n\\(n\\)\n\n\n\n\n💡 Semelhança essencial:\n\n\\[\nE_1(t_j) = d(t_j)\\\\frac{n_1(t_j)}{n(t_j)}\n\\]\n\n⚠️ Diferença crucial:\n\nQui-quadrado: \\[\n\\\\frac{(O - E)^2}{E}\n\\]\nLog-rank: \\[\n\\\\frac{(O - E)^2}{V}\n\\]\n\n🔥 Por quê?\n\nPorque:\n\nos mesmos indivíduos aparecem ao longo do tempo\nhá censura\nas “tabelas” não são independentes\n\n\n🎯 Resumo poderoso:\n\nQui-quadrado: &gt; Uma única tabela\nLog-rank: &gt; Soma de discrepâncias ao longo do tempo com variância correta\n\n\n\\[\nT = \\\\frac{\\\\left(\\\\sum_j (O_{1j} - E_{1j})\\\\right)^2}{\\\\sum_j \\\\mathrm{Var}_j}\n\\]\n\n✔️ Interpretação final:\n\nO teste verifica se o desvio acumulado ao longo do tempo é grande demais para ser explicado pelo acaso"
+    "section": "IDEIA CENTRAL DA VARIÂNCIA",
+    "text": "IDEIA CENTRAL DA VARIÂNCIA\n\nPortanto,\n\\[\n\\mathrm{Var}(O_1 - E_1) = \\sum_{j}^J \\mathrm{Var}(d_1(t_j))\n\\]\n\nCada tempo é um “quase experimento independente”, baseado no conjunto de risco naquele instante\nO teste de Log-Rank soma pequenas variações aleatórias (hipergeométricas) ao longo do tempo"
   },
   {
     "objectID": "Aula5.html#estatística-de-teste-caso-geral",
     "href": "Aula5.html#estatística-de-teste-caso-geral",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTATÍSTICA DE TESTE (CASO GERAL)",
-    "text": "ESTATÍSTICA DE TESTE (CASO GERAL)\n\n\nO teste log-rank é baseado no vetor:\n\n\\[\n\\mathbf{O} - \\mathbf{E} = (O_1 - E_1, \\ldots, O_K - E_K)\n\\]\n\nA estatística de teste é:\n\n\\[\nT = (\\mathbf{O} - \\mathbf{E})^\\top \\Sigma^{-1} (\\mathbf{O} - \\mathbf{E})\n\\]\n\nEm que:\n\n\\(\\Sigma\\) é a matriz de variâncias e covariâncias\n\nSob \\(H_0\\):\n\n\\[\nT \\sim \\chi^2_{K-1}\n\\]\n\nResultado:\n\nTeste global para comparar os \\(k\\) grupos"
+    "text": "ESTATÍSTICA DE TESTE (CASO GERAL)\n\n\nDe forma mais geral, com \\(K&gt;2\\) grupos, o teste Log-Rank é baseado no vetor:\n\n\\[\n\\mathbf{O} - \\mathbf{E} = (O_1 - E_1, \\ldots, O_K - E_K)\n\\]\n\nA estatística de teste é:\n\n\\[\nT = (\\mathbf{O} - \\mathbf{E})^\\top \\Sigma^{-1} (\\mathbf{O} - \\mathbf{E})\n\\]\n\nEm que:\n\n\\(\\Sigma\\) é a matriz de variâncias e covariâncias\n\nSob \\(H_0\\): \\(T \\sim \\chi^2_{K-1}\\) (Qui-Quadrado com \\(K-1\\) graus de liberdade)"
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite",
@@ -186,14 +193,14 @@
     "href": "Aula5.html#interpretação-dos-resultados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERPRETAÇÃO DOS RESULTADOS",
-    "text": "INTERPRETAÇÃO DOS RESULTADOS\n\n\nGrupo Controle:\n\nObservado: \\(O_1 = 2\\)\nEsperado: \\(E_1 = 4{,}81\\)\n\n👉 Teve menos eventos do que o esperado\n\n\n\nGrupo Esteroide:\n\nObservado: \\(O_2 = 7\\)\nEsperado: \\(E_2 = 4{,}19\\)\n\n👉 Teve mais eventos do que o esperado\n\n\n\n💡 Interpretação geral:\n\nO grupo Esteroide apresenta maior ocorrência de eventos\n\nIndício de pior sobrevivência nesse grupo"
+    "text": "INTERPRETAÇÃO DOS RESULTADOS\n\n\nGrupo Controle:\n\nObservado: \\(O_1 = 2\\)\nEsperado: \\(E_1 = 4{,}81\\)\n\n👉 Teve menos eventos do que o esperado\n\n\n\nGrupo Esteroide:\n\nObservado: \\(O_2 = 7\\)\nEsperado: \\(E_2 = 4{,}19\\)\n\n👉 Teve mais eventos do que o esperado"
   },
   {
     "objectID": "Aula5.html#estatística-do-teste",
     "href": "Aula5.html#estatística-do-teste",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTATÍSTICA DO TESTE",
-    "text": "ESTATÍSTICA DO TESTE\n\n\nEstatística do teste:\\(\\chi^2 = 3.7\\).\nGraus de liberdade:\\(gl = 1\\).\nValor-p: \\(p = 0.06\\).\nAo nível de significância de 5% \\(p = 0.06 &gt; 0.05\\) e não rejeitamos \\(H_0\\).\nInterpretação prática:\n\nNão há evidência estatística suficiente\n\npara afirmar que as curvas de sobrevivência diferem\n\n⚠️ Mas atenção:\n\nO resultado está próximo da significância\nExiste um sinal de diferença:\n\nMais eventos no grupo Esteroide\n\n\n\n\n\n🎯 Conclusão final:\n\nHá indícios de pior sobrevivência no grupo Esteroide,\nmas a evidência não é suficiente ao nível de 5%"
+    "text": "ESTATÍSTICA DO TESTE\n\n\nEstatística do teste:\\(\\chi^2 = 3.7\\).\nGraus de liberdade:\\(gl = 1\\).\nValor-p: \\(p = 0.06\\).\nAo nível de significância de 5% \\(p = 0.06 &gt; 0.05\\) e não rejeitamos \\(H_0\\).\nInterpretação prática:\n\nNão há evidência estatística suficiente\n\npara afirmar que as curvas de sobrevivência diferem"
   },
   {
     "objectID": "Aula5.html#introdução-2",
@@ -214,7 +221,7 @@
     "href": "Aula5.html#ideia-geral-dos-testes-ponderados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "IDEIA GERAL DOS TESTES PONDERADOS",
-    "text": "IDEIA GERAL DOS TESTES PONDERADOS\n\n\nEm vez de somar apenas diferenças entre observado e esperado, passamos a considerar:\n\n\\[\n\\sum_{t} w(t)\\,[O_k(t) - E_k(t)]\n\\]\n\nOnde \\(w(t)\\) é o peso associado ao tempo (t)\nAssim, esses testes passam a ser uma versão ponderada do Logrank, que considera \\(w(t)\\)=1 para todo \\(t\\)."
+    "text": "IDEIA GERAL DOS TESTES PONDERADOS\n\n\nNo teste Log-Rank, somamos apenas diferenças entre observado e esperado, por exemplo:\n\n\\[\n(O_1-E_1) = \\sum_{j=1}^Jd_1(t_j) - \\sum_{j=1}^JE_1(t_j) = \\sum_{j=1}^J \\left(d_1(t_j)-E_1(t_j)\\right)\n\\]\n\nAgora, passamos a considerar:\n\n\\[\n(O_1-E_1) = \\sum_{j=1}^Jw(t_j) \\left(d_1(t_j)-E_1(t_j)\\right)\n\\]\n\nOnde \\(w(t)\\) é o peso associado ao tempo (t)\nAssim, esses testes passam a ser uma versão ponderada do Logrank, que considera \\(w(t)\\)=1 para todo \\(t\\)."
   },
   {
     "objectID": "Aula5.html#interpretação-dos-pesos",
@@ -228,112 +235,105 @@
     "href": "Aula5.html#por-que-dar-mais-peso-no-início",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE DAR MAIS PESO NO INÍCIO?",
-    "text": "POR QUE DAR MAIS PESO NO INÍCIO?\n\n\nNo início do estudo, há geralmente:\n\nMais indivíduos sob risco\nMenor variabilidade nas estimativas\n\nConsequentemente:\n\nAs comparações tendem a ser mais precisas\n\nPor isso, pode ser interessante privilegiar os tempos iniciais na estatística de teste."
+    "text": "POR QUE DAR MAIS PESO NO INÍCIO?\n\n\nNo início do estudo, há geralmente:\n\nMais indivíduos sob risco\nMenor variabilidade nas estimativas\n\nConsequentemente:\n\nAs comparações tendem a ser mais precisas\n\nPor isso, pode ser interessante privilegiar os tempos iniciais na estatística de teste.\nComo os pesos são adicionados tanto no cálculo das diferenças e também na variância, a distribuição da estatística dos testes ponderamos é a mesma do teste Log-Rank."
   },
   {
-    "objectID": "Aula5.html#teste-de-gehan-breslow-wilcoxon-generalizado",
-    "href": "Aula5.html#teste-de-gehan-breslow-wilcoxon-generalizado",
+    "objectID": "Aula5.html#teste-de-gehan-breslow",
+    "href": "Aula5.html#teste-de-gehan-breslow",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TESTE DE GEHAN-BRESLOW (WILCOXON GENERALIZADO)",
-    "text": "TESTE DE GEHAN-BRESLOW (WILCOXON GENERALIZADO)\n\n\nNeste teste, o peso é dado por:\n\n\\[\nw(t) = n(t)\n\\]\n\nOnde $ n(t) $ é o número de indivíduos sob risco no tempo \\(t\\).\nInterpretação:\n\nTempos iniciais recebem maiores pesos, pois há mais indivíduos sob risco.\nTempos finais recebem menores pesos.\n\nComparação com o Logrank:\n\nO Logrank usa ( w(t)=1 ) (pesos iguais).\nO Gehan-Breslow dá mais importância ao início do estudo.\n\nConsequência:\n\nMais sensível a diferenças precoces entre curvas de sobrevivência."
+    "section": "TESTE DE GEHAN-BRESLOW",
+    "text": "TESTE DE GEHAN-BRESLOW\n\n\nNeste teste, o peso é dado por:\n\n\\[\nw(t) = n(t)\n\\]\n\nOnde \\(n(t)\\) é o número de indivíduos sob risco no tempo \\(t\\).\nInterpretação:\n\nTempos iniciais recebem maiores pesos, pois há mais indivíduos sob risco.\nTempos finais recebem menores pesos.\n\nMais sensível a diferenças precoces entre curvas de sobrevivência."
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-1",
     "href": "Aula5.html#exemplo-dados-de-hepatite-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nO R fornece a seguinte saída pra o teste Gehan-Breslow aos dados de hepatite:\n\n\n\n\n\n    Asymptotic Two-Sample Gehan-Breslow Test\n\ndata:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)\nZ = 1.7897, p-value = 0.07349\nalternative hypothesis: true theta is not equal to 1\n\n\n\n\n( p = 0.0735 ), sendo menos significativo que o teste Log-Rank\nComo dá mais peso ao início:\n\nSugere que as diferenças iniciais não são tão fortes"
+    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nO R fornece a seguinte saída pra o teste Gehan-Breslow aos dados de hepatite:\n\n\n\n\n\n    Asymptotic Two-Sample Gehan-Breslow Test\n\ndata:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)\nZ = 1.7897, p-value = 0.07349\nalternative hypothesis: true theta is not equal to 1\n\n\n\n\n\\(p\\text{-valor} = 0.0735\\), sendo menos significativo que o teste Log-Rank\nComo dá mais peso ao início:\n\nSugere que as diferenças iniciais não são tão fortes"
   },
   {
     "objectID": "Aula5.html#teste-de-tarone-ware",
     "href": "Aula5.html#teste-de-tarone-ware",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TESTE DE TARONE-WARE",
-    "text": "TESTE DE TARONE-WARE\n\n\nNeste teste, o peso é dado por:\n\n\\[\nw(t) = \\sqrt{n(t)}\n\\]\n\nOnde $ n(t)$ é o número de indivíduos sob risco.\nInterpretação:\n\nTambém dá mais peso aos tempos iniciais, mas de forma menos intensa que o Gehan-Breslow.\n\nComparação:\n\nLogrank: $ w(t)=1 $ → pesos iguais\n\nGehan-Breslow: $ w(t)=n(t) ) → forte peso no início\n\nTarone-Ware: ( w(t)= ) → compromisso intermediário\n\nConsequência:\n\nEquilibra sensibilidade entre:\n\ndiferenças no início\n\ne ao longo de todo o tempo"
+    "text": "TESTE DE TARONE-WARE\n\n\nNeste teste, o peso é dado por:\n\n\\[\nw(t) = \\sqrt{n(t)}\n\\]\n\nOnde \\(n(t)\\) é o número de indivíduos sob risco.\nInterpretação:\n\nTambém dá mais peso aos tempos iniciais, mas de forma menos intensa que o Gehan-Breslow.\n\nEquilibra sensibilidade entre:\n\ndiferenças no início\n\ne ao longo de todo o tempo"
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-2",
     "href": "Aula5.html#exemplo-dados-de-hepatite-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nO R fornece a seguinte saída pra o teste Tarone-Ware aos dados de hepatite:\n\n\n\n\n\n    Asymptotic Two-Sample Tarone-Ware Test\n\ndata:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)\nZ = 1.859, p-value = 0.06303\nalternative hypothesis: true theta is not equal to 1\n\n\n\n\n( p = 0.0630 ), valor intermediário\n\nIndica evidência moderada contra (H_0)"
+    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nO R fornece a seguinte saída pra o teste Tarone-Ware aos dados de hepatite:\n\n\n\n\n\n    Asymptotic Two-Sample Tarone-Ware Test\n\ndata:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)\nZ = 1.859, p-value = 0.06303\nalternative hypothesis: true theta is not equal to 1\n\n\n\n\n\\(p\\text{-valor} = 0.0630\\), valor intermediário\n\nIndica evidência moderada contra (H_0)"
   },
   {
     "objectID": "Aula5.html#teste-de-peto-peto",
     "href": "Aula5.html#teste-de-peto-peto",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TESTE DE PETO-PETO",
-    "text": "TESTE DE PETO-PETO\n\n\nNeste teste, o peso é baseado na sobrevivência estimada:\n\n[ w(t) = (t) ]\n\nOnde ( (t) ) é a função de sobrevivência estimada até o tempo (t).\nInterpretação:\n\nComo ( (t) ) é maior no início:\n\ntempos iniciais recebem mais peso\n\nE diminui ao longo do tempo:\n\ntempos finais recebem menos peso\n\n\nComparação:\n\nAssim como os anteriores, difere do Logrank ao usar pesos variáveis\nEm relação aos demais:\n\nProduz um comportamento mais suave e estável"
+    "text": "TESTE DE PETO-PETO\n\n\nNeste teste, o peso é baseado na sobrevivência estimada:\n\n\\[\nw(t) = \\hat{S}(t)\n\\]\n\nOnde \\(\\hat{S}(t)\\) é a função de sobrevivência estimada até o tempo \\(t\\).\nInterpretação:\n\nComo \\(\\hat{S}(t)\\) é maior no início:\n\ntempos iniciais recebem mais peso\n\nE diminui ao longo do tempo:\n\ntempos finais recebem menos peso\n\n\nEm relação aos demais:\n\nProduz um comportamento mais suave e estável"
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-3",
     "href": "Aula5.html#exemplo-dados-de-hepatite-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nO R fornece a seguinte saída pra o teste Tarone-Ware aos dados de hepatite:\n\n\n\n\n\n    Asymptotic Two-Sample Peto-Peto Test\n\ndata:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)\nZ = 1.8571, p-value = 0.06329\nalternative hypothesis: true theta is not equal to 1\n\n\n\n\n( p = 0.0633 )\n\nResultado muito semelhante ao Tarone-Ware\nSugere evidência moderada, com comportamento mais suave e robusto"
+    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nO R fornece a seguinte saída pra o teste Peto-Peto aos dados de hepatite:\n\n\n\n\n\n    Asymptotic Two-Sample Peto-Peto Test\n\ndata:  Surv(tempos, cens) by factor(grupos) (Controle, Esteroide)\nZ = 1.8571, p-value = 0.06329\nalternative hypothesis: true theta is not equal to 1\n\n\n\n\n\\(p\\text{-valor} = 0.0633\\)\n\nResultado muito semelhante ao Tarone-Ware\nSugere evidência moderada, com comportamento mais suave e robusto"
   },
   {
     "objectID": "Aula5.html#qual-teste-utilizar",
     "href": "Aula5.html#qual-teste-utilizar",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "QUAL TESTE UTILIZAR?",
-    "text": "QUAL TESTE UTILIZAR?\n\n\nA escolha do teste depende de onde as curvas diferem ao longo do tempo.\nPergunta central:\n\nAs diferenças ocorrem no início, no final ou ao longo de todo o estudo?\n\nDiretrizes gerais:\n\nLogrank:\n\nMelhor quando o efeito é proporcional ao longo do tempo\n\nTestes ponderados:\n\nÚteis quando há diferenças localizadas no tempo\n\n\nExemplos:\n\nDiferenças precoces → preferir testes que pesam mais o início\n\nImportante:\n\nNão existe teste “melhor” universalmente\n\nExiste o teste mais adequado ao contexto dos dados"
-  },
-  {
-    "objectID": "Aula5.html#exemplo-dados-de-hepatite-4",
-    "href": "Aula5.html#exemplo-dados-de-hepatite-4",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nTodos os testes apresentam valores-p próximos (entre 0.05 e 0.07)\n\nIndicam evidência marginal contra (H_0)\n\nO Logrank foi o mais próximo da significância:\n\nSugere diferenças distribuídas ao longo do tempo\n\nO Gehan-Breslow apresentou o maior valor-p:\n\nIndica ausência de diferenças fortes no início\n\nTarone-Ware e Peto-Peto:\n\nResultados intermediários e semelhantes\nSugerem diferenças moderadas ao longo do tempo\n\nConclusão geral:\n\nHá indícios de diferença entre os grupos (Controle vs Esteroide)\nAo nível de 5%, não rejeitamos (H_0)\nEvidência sugere:\n\nefeito fraco ou\nbaixa potência amostral"
+    "text": "QUAL TESTE UTILIZAR?\n\n\nA escolha do teste depende de onde as curvas diferem ao longo do tempo.\nPergunta central:\n\nAs diferenças ocorrem no início, no final ou ao longo de todo o estudo?\n\nDiretrizes gerais:\n\nLogrank: melhor quando o efeito é proporcional ao longo do tempo\nTestes ponderados: úteis quando há diferenças localizadas no tempo\n\nDiferenças precoces → preferir testes que pesam mais o início\nNão existe teste “melhor” universalmente\n\nExiste o teste mais adequado ao contexto dos dados"
   },
   {
     "objectID": "Aula5.html#vantagens-limitações-e-aplicação-prática",
     "href": "Aula5.html#vantagens-limitações-e-aplicação-prática",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "VANTAGENS, LIMITAÇÕES E APLICAÇÃO PRÁTICA",
-    "text": "VANTAGENS, LIMITAÇÕES E APLICAÇÃO PRÁTICA\n\n\nVantagens dos testes ponderados:\n\nMaior sensibilidade para detectar diferenças específicas no tempo\nPermitem incorporar informação estrutural do estudo\n\nDesvantagens:\n\nPodem perder poder se o padrão real não coincide com o peso escolhido\nExigem maior interpretação e justificativa\n\nComo decidir na prática?\n\nAnálise exploratória:\n\n\nObservar as curvas de sobrevivência (Kaplan-Meier)\nIdentificar onde elas se separam\n\n\nConhecimento do problema:\n\n\nConversar com o especialista (ex: médico)\nPerguntar:\n\nO efeito esperado é imediato ou tardio?\nExiste um mecanismo clínico por trás disso?\n\n\n\nEstratégia recomendada:\n\n\nUsar o Logrank como referência\nComplementar com testes ponderados, se necessário\n\nIdeia-chave:\n\nA escolha do teste é uma combinação de:\n\ndados\nteoria\nconhecimento aplicado"
+    "text": "VANTAGENS, LIMITAÇÕES E APLICAÇÃO PRÁTICA\n\n\nComo decidir na prática?\n\nAnálise exploratória:\n\n\nObservar as curvas de sobrevivência (Kaplan-Meier)\nIdentificar onde elas se separam\n\n\nConhecimento do problema:\n\n\nConversar com o especialista (ex: médico)\nPerguntar:\n\nO efeito esperado é imediato ou tardio?\nExiste um mecanismo clínico por trás disso?\n\n\n\nEstratégia recomendada:\n\n\nUsar o Logrank como referência\nComplementar com testes ponderados, se necessário"
   },
   {
     "objectID": "Aula5.html#dados-de-malária",
     "href": "Aula5.html#dados-de-malária",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DADOS DE MALÁRIA",
-    "text": "DADOS DE MALÁRIA\n\n\nPara ilustrar este tópico, considere um estudo clínico aleatorizado conduzido pela Fiocruz-MG\nRealizado com 44 camundongos para avaliar a eficácia da imunização contra malária\nOs animais foram acompanhados por 44 dias\nDivisão em três grupos, todos infectados por malária:\n\nGrupo 1:\n\nImunizados 30 dias antes da infecção por malária\nTambém infectados por esquistossomose\n\nGrupo 2:\n\nApenas infectados por malária\nSem vacinação\n\nGrupo 3:\n\nInfectados por malária e esquistossomose\nSem vacinação"
+    "text": "DADOS DE MALÁRIA\n\n\nPara ilustrar este tópico, considere um estudo clínico aleatorizado conduzido pela Fiocruz-MG\nRealizado com 44 camundongos para avaliar a eficácia da imunização contra malária\nOs animais foram acompanhados por 44 dias\nDivisão em três grupos, todos infectados por malária:\n\nGrupo 1: imunizados 30 dias antes da infecção por malária e também infectados por esquistossomose\nGrupo 2: apenas infectados por malária e Sem vacinação\nGrupo 3: infectados por malária e esquistossomose e sem vacinação"
   },
   {
     "objectID": "Aula5.html#dados-de-malária-1",
     "href": "Aula5.html#dados-de-malária-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DADOS DE MALÁRIA",
-    "text": "DADOS DE MALÁRIA\n\nos tempos de observados (em dias) são\n\n\n\n\n\n\n\nGrupos\nTempos de Sobrevivência\n\n\n\n\n1\n7, 8, 8, 8, 8, 12, 12, 17, 18, 22, 30+, 30+, 30+, 30+, 30+, 30+\n\n\n2\n8, 8, 9, 10, 10, 14, 15, 15, 18, 19, 21, 22, 22, 23, 25\n\n\n3\n8, 8, 8, 8, 8, 8, 9, 10, 10, 10, 11, 17, 19"
+    "text": "DADOS DE MALÁRIA\n\nOs tempos de observados (em dias) são\n\n\n\n\n\n\n\nGrupos\nTempos de Sobrevivência\n\n\n\n\n1\n7, 8, 8, 8, 8, 12, 12, 17, 18, 22, 30+, 30+, 30+, 30+, 30+, 30+\n\n\n2\n8, 8, 9, 10, 10, 14, 15, 15, 18, 19, 21, 22, 22, 23, 25\n\n\n3\n8, 8, 8, 8, 8, 8, 9, 10, 10, 10, 11, 17, 19"
   },
   {
     "objectID": "Aula5.html#dados-de-malária-2",
     "href": "Aula5.html#dados-de-malária-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "**DADOS DE MALÁRIA*",
-    "text": "**DADOS DE MALÁRIA*\n\n\nAs curvas de sobrevivência estimadas segundo o método de Kaplan-Meier para os três grupos são:"
+    "section": "DADOS DE MALÁRIA",
+    "text": "DADOS DE MALÁRIA\n\n\nAs curvas de sobrevivência estimadas segundo o método de Kaplan-Meier para os três grupos são:"
   },
   {
     "objectID": "Aula5.html#dados-de-malária-3",
     "href": "Aula5.html#dados-de-malária-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DADOS DE MALÁRIA",
-    "text": "DADOS DE MALÁRIA\n\n\nNeste gráfico, observa-se que:\n\nO grupo 1 (imunizados + esquistossomose) ainda perde uma parte significativa de sobrevivência ao longo do tempo — a curva cai bastante antes de estabilizar, então o efeito protetor existe, mas não é absoluto.\nO grupo 2 (apenas malária) tem desempenho intermediário.\nO grupo 3 (malária + esquistossomose, sem vacina) é claramente o pior, chegando a 0% mais cedo.\n\nIsso sugere que a vacina confere algum benefício, mas não impede totalmente a infecção ou seus efeitos.\nProvavelmente a proteção é parcial, especialmente considerando que todos os animais foram desafiados com malária e alguns com esquistossomose."
+    "text": "DADOS DE MALÁRIA\n\n\nNeste gráfico, observa-se que:\n\nO grupo 1 (imunizados + esquistossomose) perde uma parte significativa de sobrevivência ao longo do tempo — a curva cai bastante antes de estabilizar, então o efeito protetor existe, mas não é absoluto.\nO grupo 2 (apenas malária) tem desempenho intermediário.\nO grupo 3 (malária + esquistossomose, sem vacina) é claramente o pior, chegando a 0% mais cedo.\n\nIsso sugere que a vacina confere algum benefício, mas não impede totalmente a infecção ou seus efeitos.\nProvavelmente a proteção é parcial, especialmente considerando que todos os animais foram desafiados com malária e alguns com esquistossomose."
   },
   {
     "objectID": "Aula5.html#aplicando-o-teste-log-rank",
     "href": "Aula5.html#aplicando-o-teste-log-rank",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "APLICANDO O TESTE LOG-RANK",
-    "text": "APLICANDO O TESTE LOG-RANK\n\n\nOs testes que vimos anteriormente podem ser facilmente adaptados para casos com mais de k = 2 estratos.\nSem perda de generalidade, utilizaremos o teste de Logrank com os dados de Malária.\nAs hipóteses para este teste serão:\n\nHipótese nula (\\(H_0\\)): As três curvas de sobrevivência são iguais: \\(S_1(t) = S_2(t) = S_3(t) \\quad \\text{para todo } t\\)\nHipótese alternativa (\\(H_1\\)): Pelo menos uma das curvas de sobrevivência difere das demais."
+    "text": "APLICANDO O TESTE LOG-RANK\n\n\nOs testes que vimos anteriormente podem ser facilmente adaptados para casos com mais de k = 2 estratos.\nSem perda de generalidade, utilizaremos o teste de Logrank com os dados de Malária.\nAs hipóteses para este teste serão:\n\nHipótese nula (\\(H_0\\)): As três curvas de sobrevivência são iguais: \\(S_1(t) = S_2(t) = S_3(t) \\quad \\text{para todo } t\\)\nHipótese alternativa (\\(H_1\\)): Pelo menos uma das curvas de sobrevivência difere das demais em algum tempo \\(t\\)."
   },
   {
     "objectID": "Aula5.html#aplicando-o-teste-log-rank-1",
     "href": "Aula5.html#aplicando-o-teste-log-rank-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "APLICANDO O TESTE LOG-RANK",
-    "text": "APLICANDO O TESTE LOG-RANK\n\n\n\n\nCall:\nsurvdiff(formula = Surv(tempos, cens) ~ grupos, data = Dados2, \n    rho = 0)\n\n                N Observed Expected (O-E)^2/E (O-E)^2/V\ngrupos=Grupo 1 16       10    17.00    2.8816    6.4111\ngrupos=Grupo 2 15       15    14.51    0.0167    0.0317\ngrupos=Grupo 3 13       13     6.49    6.5190   10.4447\n\n Chisq= 12.6  on 2 degrees of freedom, p= 0.002 \n\n\n\n\nComparação entre os grupos: Grupo 1, Grupo 2 e Grupo 3.\n\nEstatística de teste: (^2 = 12.6) com \\(K-1\\)=3-1=2 graus de liberdade.\n\nValor-p: (p = 0.002), menor que 0,05."
+    "text": "APLICANDO O TESTE LOG-RANK\n\n\n\n\nCall:\nsurvdiff(formula = Surv(tempos, cens) ~ grupos, data = Dados2, \n    rho = 0)\n\n                N Observed Expected (O-E)^2/E (O-E)^2/V\ngrupos=Grupo 1 16       10    17.00    2.8816    6.4111\ngrupos=Grupo 2 15       15    14.51    0.0167    0.0317\ngrupos=Grupo 3 13       13     6.49    6.5190   10.4447\n\n Chisq= 12.6  on 2 degrees of freedom, p= 0.002 \n\n\n\n\nComparação entre os grupos: Grupo 1, Grupo 2 e Grupo 3.\n\nEstatística de teste: \\(\\chi^2 = 12.6\\) com \\(K-1\\)=3-1=2 graus de liberdade.\n\nValor-p: \\(p = 0.002\\), menor que 0,05."
   },
   {
     "objectID": "Aula5.html#aplicando-o-teste-log-rank-2",
@@ -364,29 +364,29 @@
     "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora e mais poderosa que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(c-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas passo a passo até encontrar um p-valor que não seja significativo."
   },
   {
-    "objectID": "Aula5.html#exemplo-dados-de-hepatite-5",
-    "href": "Aula5.html#exemplo-dados-de-hepatite-5",
+    "objectID": "Aula5.html#exemplo-dados-de-hepatite-4",
+    "href": "Aula5.html#exemplo-dados-de-hepatite-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE",
     "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nGrupo 1 x Grupo 2:\n\n\n\n\nCall:\nsurvdiff(formula = Surv(tempos, cens) ~ grupos, data = subset(Dados2, \n    grupos != \"Grupo 3\"))\n\n                N Observed Expected (O-E)^2/E (O-E)^2/V\ngrupos=Grupo 1 16       10     13.7      1.01      2.53\ngrupos=Grupo 2 15       15     11.3      1.23      2.53\n\n Chisq= 2.5  on 1 degrees of freedom, p= 0.1 \n\n\n\n\n\n\nGrupo 1 x Grupo 3:\n\n\n\n\nCall:\nsurvdiff(formula = Surv(tempos, cens) ~ grupos, data = subset(Dados2, \n    grupos != \"Grupo 2\"))\n\n                N Observed Expected (O-E)^2/E (O-E)^2/V\ngrupos=Grupo 1 16       10    15.34      1.86      7.86\ngrupos=Grupo 3 13       13     7.66      3.72      7.86\n\n Chisq= 7.9  on 1 degrees of freedom, p= 0.005 \n\n\n\n\n\n\nGrupo 2 x Grupo 3:\n\n\n\n\nCall:\nsurvdiff(formula = Surv(tempos, cens) ~ grupos, data = subset(Dados2, \n    grupos != \"Grupo 1\"))\n\n                N Observed Expected (O-E)^2/E (O-E)^2/V\ngrupos=Grupo 2 15       15    20.53      1.49      7.98\ngrupos=Grupo 3 13       13     7.47      4.08      7.98\n\n Chisq= 8  on 1 degrees of freedom, p= 0.005"
   },
   {
-    "objectID": "Aula5.html#exemplo-dados-de-hepatite-6",
-    "href": "Aula5.html#exemplo-dados-de-hepatite-6",
+    "objectID": "Aula5.html#dados-de-hepatite-bonferroni",
+    "href": "Aula5.html#dados-de-hepatite-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nNível de significância ajustado: \\(\\\\alpha^* = 0,017\\)\nGrupo 1 × Grupo 2:\n\n\\(\\\\chi^2 = 2.5\\), \\(p = 0.1\\)\n\n\\(p &gt; \\\\alpha^*\\) → não rejeita H₀\n\nConclusão: as curvas de sobrevivência são semelhantes\n\nGrupo 1 × Grupo 3:\n\n\\(\\\\chi^2 = 7.9\\), \\(p = 0.005\\)\n\n\\(p &lt; \\\\alpha^*\\) → rejeita H₀\n\nConclusão: há diferença significativa entre as curvas\n\nGrupo 2 × Grupo 3:\n\n\\(\\\\chi^2 = 7.9\\), \\(p = 0.005\\)\n\n\\(p &lt; \\\\alpha^*\\) → rejeita H₀\n\nConclusão: há diferença significativa entre as curvas\n\n\nResumo geral:\n- O Grupo 3 se diferencia dos Grupos 1 e 2\n- Grupos 1 e 2 não apresentam diferenças significativas entre si"
+    "section": "DADOS DE HEPATITE (BONFERRONI)",
+    "text": "DADOS DE HEPATITE (BONFERRONI)\n\n\nNível de significância ajustado: \\(\\alpha^* = 0,017\\)\nGrupo 1 × Grupo 2:\n\n\\(\\chi^2 = 2.5\\), \\(p = 0.1\\)\n\n\\(p &gt; \\alpha^*\\) → não rejeita H₀\n\nConclusão: as curvas de sobrevivência são semelhantes\n\nGrupo 1 × Grupo 3:\n\n\\(\\chi^2 = 7.9\\), \\(p = 0.005\\)\n\n\\(p &lt; \\alpha^*\\) → rejeita H₀\n\nConclusão: há diferença significativa entre as curvas\n\nGrupo 2 × Grupo 3:\n\n\\(\\chi^2 = 7.9\\), \\(p = 0.0047\\)\n\n\\(p &lt; \\alpha^*\\) → rejeita H₀\n\nConclusão: há diferença significativa entre as curvas\n\n\nResumo geral:\n- O Grupo 3 se diferencia dos Grupos 1 e 2\n- Grupos 1 e 2 não apresentam diferenças significativas entre si"
   },
   {
-    "objectID": "Aula5.html#exemplo-dados-de-hepatite-7",
-    "href": "Aula5.html#exemplo-dados-de-hepatite-7",
+    "objectID": "Aula5.html#dados-de-hepatite-holm-bonferroni",
+    "href": "Aula5.html#dados-de-hepatite-holm-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "EXEMPLO: DADOS DE HEPATITE",
-    "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nPasso 1: organizar os p-valores dos subtestes\n\nGrupo 1 × Grupo 2: \\(p = 0.1\\)\n\nGrupo 1 × Grupo 3: \\(p = 0.005\\)\n\nGrupo 2 × Grupo 3: \\(p = 0.005\\)\n\nPasso 2: ordenar do menor para o maior\n\n\\(p_1 = 0.005\\) (Grupo 1 × 3)\n\n\\(p_2 = 0.005\\) (Grupo 2 × 3)\n\n\\(p_3 = 0.1\\) (Grupo 1 × 2)\n\nPasso 3: aplicar Holm-Bonferroni\n\nComparar \\(p_1\\) com \\(\\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\\) → \\(0.005 &lt; 0.017\\) → rejeita H₀\n\nComparar \\(p_2\\) com \\(0.05 / (3 - 2 + 1) = 0.025\\) → \\(0.005 &lt; 0.025\\) → rejeita H₀\n\nComparar \\(p_3\\) com \\(0.05 / (3 - 3 + 1) = 0.05\\) → \\(0.1 &gt; 0.05\\) → não rejeita H₀\n\n✅ Resultado: mesma conclusão prática do Bonferroni, mas Holm é menos conservador e ajusta de forma incremental"
+    "section": "DADOS DE HEPATITE (HOLM-BONFERRONI)",
+    "text": "DADOS DE HEPATITE (HOLM-BONFERRONI)\n\n\nPasso 1: organizar os p-valores dos subtestes\n\nGrupo 1 × Grupo 2: \\(p = 0.1\\)\n\nGrupo 1 × Grupo 3: \\(p = 0.005\\)\n\nGrupo 2 × Grupo 3: \\(p = 0.0047\\)\n\nPasso 2: ordenar do menor para o maior\n\n\\(p_1 = 0.0047\\) (Grupo 2 × 3)\n\n\\(p_2 = 0.005\\) (Grupo 1 × 3)\n\n\\(p_3 = 0.1\\) (Grupo 1 × 2)\n\nPasso 3: aplicar Holm-Bonferroni\n\nComparar \\(p_1\\) com \\(\\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\\) → \\(0.0047 &lt; 0.017\\) → rejeita H₀\n\nComparar \\(p_2\\) com \\(0.05 / (3 - 2 + 1) = 0.025\\) → \\(0.005 &lt; 0.025\\) → rejeita H₀\n\nComparar \\(p_3\\) com \\(0.05 / (3 - 3 + 1) = 0.05\\) → \\(0.1 &gt; 0.05\\) → não rejeita H₀\n\n✅ Resultado: mesma conclusão prática do Bonferroni, mas Holm é menos conservador e ajusta de forma incremental"
   },
   {
-    "objectID": "Aula5.html#exemplo-dados-de-hepatite-8",
-    "href": "Aula5.html#exemplo-dados-de-hepatite-8",
+    "objectID": "Aula5.html#exemplo-dados-de-hepatite-5",
+    "href": "Aula5.html#exemplo-dados-de-hepatite-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE HEPATITE",
     "text": "EXEMPLO: DADOS DE HEPATITE\n\n\nTeste global de Logrank:\n\nHouve diferença significativa entre as curvas de sobrevivência dos grupos (\\(p = 0.002\\))\n\nIndica que algum grupo apresenta maior ou menor sobrevivência.\n\nComparações múltiplas (Bonferroni e Holm):\n\nGrupo 3 se diferencia dos Grupos 1 e 2\n\nGrupos 1 e 2 não diferem significativamente entre si\n\nA escolha da correção influencia o nível de significância utilizado, mas a conclusão prática foi a mesma.\n\nInterpretação do efeito da vacina:\n\nA vacina não mostrou efeito relevante nos Grupos 1 e 2\n\nDiferenças estão concentradas no Grupo 3, que pode corresponder a outros fatores, como risco maior ou perfil específico da população\n\nSugere necessidade de investigar os fatores que explicam a diferença do Grupo 3.\n\nMensagem principal:\n\nEstudos de sobrevivência com múltiplos grupos exigem testes globais e comparações múltiplas\n\nCorreções de Bonferroni ou Holm-Bonferroni protegem contra falsos positivos\n\nÉ essencial interpretar resultados no contexto clínico e biológico do estudo."

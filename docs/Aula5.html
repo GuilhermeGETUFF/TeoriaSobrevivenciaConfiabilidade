@@ -547,6 +547,18 @@ E_k(t_j) = d(t_j)\frac{n_k(t_j)}{n(t_j)}
 <section id="dados-de-hepatite" class="slide level2">
 <h2><strong>DADOS DE HEPATITE</strong></h2>
 <div class="box-blue">
+<ul>
+<li>As hipóteses para este teste serão:
+<ul>
+<li><strong>Hipótese nula (<span class="math inline">\(H_0\)</span>):</strong> As duas curvas de sobrevivência são <strong>iguais</strong>: <span class="math inline">\(S_1(t) = S_2(t) \quad \text{para todo } t\)</span></li>
+<li><strong>Hipótese alternativa (<span class="math inline">\(H_1\)</span>):</strong> As duas curvas de sobrevivência são diferentes em algum tempo <span class="math inline">\(t\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="dados-de-hepatite-1" class="slide level2">
+<h2><strong>DADOS DE HEPATITE</strong></h2>
+<div class="box-blue">
 <style>
 .table-small {
   font-size: 90%;
@@ -882,7 +894,7 @@ E_1(1) = d(1)\frac{n_1(1)}{n(1)}=3 \cdot \frac{15}{29} = 1{,}55
 <li><span class="math inline">\(O_1 - E_1\)</span> = 2 - 4,81 = -2,81</li>
 <li><span class="math inline">\(O_2 - E_2\)</span> = 7 - 4,19 = 2,81</li>
 </ul></li>
-<li><p>Logo, no caso de <span class="math inline">\(K=2\)</span> grupos, basta saber o desvio de um único grupo que o outro é obtido automaticamente (1 grau de liberdade).</p></li>
+<li><p>Logo, no caso de <span class="math inline">\(K=2\)</span> grupos, basta saber o desvio de um único grupo que o outro é obtido automaticamente.</p></li>
 </ul>
 </div>
 </section>
@@ -904,137 +916,35 @@ T = \frac{(O_1 - E_1)^2}{\mathrm{Var}(O_1 - E_1)}
 </ul>
 </div>
 </section>
-<section id="variância-ideia" class="slide level2">
-<h2><strong>VARIÂNCIA (IDEIA)</strong></h2>
+<section id="ideia-central-da-variância" class="slide level2">
+<h2><strong>IDEIA CENTRAL DA VARIÂNCIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A variância é obtida somando contribuições ao longo do tempo:</li>
+<li>Em cada tempo <span class="math inline">\(t_j\)</span>, há:
+<ul>
+<li><span class="math inline">\(n(t_j)\)</span> em risco<br>
+</li>
+<li><span class="math inline">\(n_1(t_j)\)</span> no grupo 1<br>
+</li>
+<li><span class="math inline">\(d(t_j)\)</span> eventos</li>
+</ul></li>
+<li>Sob <span class="math inline">\(H_0\)</span>, os <span class="math inline">\(d(t_j)\)</span> eventos são distribuídos <strong>aleatoriamente sem reposição</strong> e</li>
 </ul>
 <p><span class="math display">\[
-\mathrm{Var}(O_k - E_k) = \sum_{j=1}^J \mathrm{Var}_j
+d_1(t_j) \sim \text{Hipergeométrica}
 \]</span></p>
-<ul>
-<li><p>Cada termo depende de:</p>
-<ul>
-<li><span class="math inline">\(d(t_j)\)</span></li>
-<li><span class="math inline">\(n_k(t_j)\)</span></li>
-<li><span class="math inline">\(n(t_j)\)</span></li>
-</ul></li>
-<li><p><strong>Intuição central</strong>:</p>
-<ul>
-<li>Em cada tempo <span class="math inline">\(t_j\)</span>, temos:
-<ul>
-<li><span class="math inline">\(d(t_j)\)</span> eventos ocorrendo</li>
-<li>que são “distribuídos” entre os grupos</li>
-</ul></li>
-<li>Sob <span class="math inline">\(H_0\)</span>:
-<ul>
-<li>essa distribuição é <strong>aleatória</strong>, proporcional aos riscos</li>
-</ul></li>
-</ul></li>
-<li><p>💡 <strong>Ideia-chave</strong>:</p>
-<ul>
-<li>Pense nos <span class="math inline">\(d(t_j)\)</span> eventos como sendo sorteados:
-<ul>
-<li>entre os indivíduos em risco</li>
-<li>como em uma <strong>urna sem reposição</strong></li>
-</ul></li>
-<li>Então:
-<ul>
-<li><span class="math inline">\(O_k(t_j)\)</span> é aleatório</li>
-<li>com variabilidade do tipo <strong>hipergeométrica</strong></li>
-</ul></li>
-</ul></li>
-<li><p>🔥 <strong>Conclusão intuitiva</strong>:</p>
-<blockquote>
-<p>A variância mede o quanto o número de eventos em um grupo pode variar <strong>apenas pelo acaso</strong></p>
-</blockquote></li>
-</ul>
 </div>
 </section>
-<section id="conexão-com-o-qui-quadrado-de-independência" class="slide level2">
-<h2><strong>CONEXÃO COM O QUI-QUADRADO DE INDEPENDÊNCIA</strong></h2>
+<section id="ideia-central-da-variância-1" class="slide level2">
+<h2><strong>IDEIA CENTRAL DA VARIÂNCIA</strong></h2>
 <div class="box-blue">
-<ul>
-<li>No teste qui-quadrado clássico (tabela <span class="math inline">\(2 \\times 2\)</span>):</li>
-</ul>
+<p>Portanto,</p>
 <p><span class="math display">\[
-\\chi^2 = \\sum \\frac{(O - E)^2}{E}
+\mathrm{Var}(O_1 - E_1) = \sum_{j}^J \mathrm{Var}(d_1(t_j))
 \]</span></p>
 <ul>
-<li><p>Interpretação:</p>
-<ul>
-<li>Compara observado vs esperado</li>
-<li>Assume independência entre células</li>
-</ul></li>
-<li><p>🔁 <strong>No log-rank, fazemos algo análogo ao longo do tempo</strong>:</p>
-<ul>
-<li>Em cada tempo <span class="math inline">\(t_j\)</span>, temos uma “mini tabela”:</li>
-</ul></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>Grupo 1</th>
-<th>Grupo 2</th>
-<th>Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Evento</td>
-<td><span class="math inline">\(d_1\)</span></td>
-<td><span class="math inline">\(d_2\)</span></td>
-<td><span class="math inline">\(d\)</span></td>
-</tr>
-<tr class="even">
-<td>Em risco</td>
-<td><span class="math inline">\(n_1\)</span></td>
-<td><span class="math inline">\(n_2\)</span></td>
-<td><span class="math inline">\(n\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>💡 <strong>Semelhança essencial</strong>:</li>
-</ul>
-<p><span class="math display">\[
-E_1(t_j) = d(t_j)\\frac{n_1(t_j)}{n(t_j)}
-\]</span></p>
-<ul>
-<li><p>⚠️ <strong>Diferença crucial</strong>:</p>
-<ul>
-<li><p>Qui-quadrado: <span class="math display">\[
-\\frac{(O - E)^2}{E}
-\]</span></p></li>
-<li><p>Log-rank: <span class="math display">\[
-\\frac{(O - E)^2}{V}
-\]</span></p></li>
-</ul></li>
-<li><p>🔥 <strong>Por quê?</strong></p>
-<ul>
-<li>Porque:
-<ul>
-<li>os mesmos indivíduos aparecem ao longo do tempo</li>
-<li>há censura</li>
-<li>as “tabelas” não são independentes</li>
-</ul></li>
-</ul></li>
-<li><p>🎯 <strong>Resumo poderoso</strong>:</p>
-<ul>
-<li><p>Qui-quadrado: &gt; Uma única tabela</p></li>
-<li><p>Log-rank: &gt; Soma de discrepâncias ao longo do tempo com variância correta</p></li>
-</ul></li>
-</ul>
-<p><span class="math display">\[
-T = \\frac{\\left(\\sum_j (O_{1j} - E_{1j})\\right)^2}{\\sum_j \\mathrm{Var}_j}
-\]</span></p>
-<ul>
-<li><p>✔️ Interpretação final:</p>
-<blockquote>
-<p>O teste verifica se o desvio acumulado ao longo do tempo é grande demais para ser explicado pelo acaso</p>
-</blockquote></li>
+<li>Cada tempo é um “quase experimento independente”, baseado no conjunto de risco naquele instante</li>
+<li>O teste de Log-Rank soma pequenas variações aleatórias (hipergeométricas) ao longo do tempo</li>
 </ul>
 </div>
 </section>
@@ -1042,7 +952,7 @@ T = \\frac{\\left(\\sum_j (O_{1j} - E_{1j})\\right)^2}{\\sum_j \\mathrm{Var}_j}
 <h2><strong>ESTATÍSTICA DE TESTE (CASO GERAL)</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O teste log-rank é baseado no vetor:</li>
+<li>De forma mais geral, com <span class="math inline">\(K&gt;2\)</span> grupos, o teste Log-Rank é baseado no vetor:</li>
 </ul>
 <p><span class="math display">\[
 \mathbf{O} - \mathbf{E} = (O_1 - E_1, \ldots, O_K - E_K)
@@ -1058,16 +968,7 @@ T = (\mathbf{O} - \mathbf{E})^\top \Sigma^{-1} (\mathbf{O} - \mathbf{E})
 <ul>
 <li><span class="math inline">\(\Sigma\)</span> é a <strong>matriz de variâncias e covariâncias</strong></li>
 </ul></li>
-<li>Sob <span class="math inline">\(H_0\)</span>:</li>
-</ul>
-<p><span class="math display">\[
-T \sim \chi^2_{K-1}
-\]</span></p>
-<ul>
-<li>Resultado:
-<ul>
-<li>Teste global para comparar os <span class="math inline">\(k\)</span> grupos</li>
-</ul></li>
+<li>Sob <span class="math inline">\(H_0\)</span>: <span class="math inline">\(T \sim \chi^2_{K-1}\)</span> (Qui-Quadrado com <span class="math inline">\(K-1\)</span> graus de liberdade)</li>
 </ul>
 </div>
 </section>
@@ -1075,7 +976,7 @@ T \sim \chi^2_{K-1}
 <h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O <code>R</code> fornece a seguinte saída pra o teste Log-Rank aos dados de hepatite:</li>
+<li>O <code>R</code> fornece a seguinte saída pra o <strong>teste Log-Rank aos dados de hepatite</strong>:</li>
 </ul>
 <div style="font-size: 250%;">
 <div class="cell">
@@ -1143,15 +1044,6 @@ grupos=Esteroide 14        7     4.19      1.89      3.67
 </ul>
 👉 Teve <strong>mais eventos do que o esperado</strong></li>
 </ul>
-<hr>
-<ul>
-<li><p>💡 <strong>Interpretação geral</strong>:</p>
-<ul>
-<li>O grupo Esteroide apresenta maior ocorrência de eventos<br>
-</li>
-<li>Indício de <strong>pior sobrevivência</strong> nesse grupo</li>
-</ul></li>
-</ul>
 </div>
 </section>
 <section id="estatística-do-teste" class="slide level2">
@@ -1168,22 +1060,6 @@ grupos=Esteroide 14        7     4.19      1.89      3.67
 </li>
 <li>para afirmar que as curvas de sobrevivência diferem</li>
 </ul></li>
-<li><p>⚠️ <strong>Mas atenção</strong>:</p>
-<ul>
-<li>O resultado está <strong>próximo da significância</strong></li>
-<li>Existe um <strong>sinal de diferença</strong>:
-<ul>
-<li>Mais eventos no grupo Esteroide</li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>🎯 <strong>Conclusão final</strong>:</p>
-<blockquote>
-<p>Há indícios de pior sobrevivência no grupo Esteroide,<br>
-mas a evidência não é suficiente ao nível de 5%</p>
-</blockquote></li>
 </ul>
 </div>
 </section></section>
@@ -1196,7 +1072,7 @@ mas a evidência não é suficiente ao nível de 5%</p>
 <h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Observe novamente as curvas de sobrevivência estimadas segundo Kaplan-Meier para os dados de hepatite:</li>
+<li>Observe <strong>novamente</strong> as curvas de sobrevivência estimadas segundo Kaplan-Meier para os <strong>dados de hepatite</strong>:</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1230,10 +1106,16 @@ mas a evidência não é suficiente ao nível de 5%</p>
 <h2><strong>IDEIA GERAL DOS TESTES PONDERADOS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Em vez de somar apenas diferenças entre observado e esperado, passamos a considerar:</li>
+<li>No teste Log-Rank, somamos apenas diferenças entre observado e esperado, por exemplo:</li>
 </ul>
 <p><span class="math display">\[
-\sum_{t} w(t)\,[O_k(t) - E_k(t)]
+(O_1-E_1) = \sum_{j=1}^Jd_1(t_j) - \sum_{j=1}^JE_1(t_j) = \sum_{j=1}^J \left(d_1(t_j)-E_1(t_j)\right)
+\]</span></p>
+<ul>
+<li>Agora, passamos a considerar:</li>
+</ul>
+<p><span class="math display">\[
+(O_1-E_1) = \sum_{j=1}^Jw(t_j) \left(d_1(t_j)-E_1(t_j)\right)
 \]</span></p>
 <ul>
 <li><p>Onde <span class="math inline">\(w(t)\)</span> é o <strong>peso associado ao tempo (t)</strong></p></li>
@@ -1259,21 +1141,22 @@ mas a evidência não é suficiente ao nível de 5%</p>
 <h2><strong>POR QUE DAR MAIS PESO NO INÍCIO?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>No início do estudo, há geralmente:
+<li><p>No início do estudo, há geralmente:</p>
 <ul>
 <li><strong>Mais indivíduos sob risco</strong></li>
 <li><strong>Menor variabilidade nas estimativas</strong></li>
 </ul></li>
-<li>Consequentemente:
+<li><p>Consequentemente:</p>
 <ul>
 <li>As comparações tendem a ser <strong>mais precisas</strong></li>
 </ul></li>
-<li>Por isso, pode ser interessante <strong>privilegiar os tempos iniciais</strong> na estatística de teste.</li>
+<li><p>Por isso, pode ser interessante <strong>privilegiar os tempos iniciais</strong> na estatística de teste.</p></li>
+<li><p>Como os pesos são adicionados tanto no cálculo das diferenças e também na variância, a distribuição da estatística dos testes ponderamos é a mesma do teste Log-Rank.</p></li>
 </ul>
 </div>
 </section>
-<section id="teste-de-gehan-breslow-wilcoxon-generalizado" class="slide level2">
-<h2><strong>TESTE DE GEHAN-BRESLOW (WILCOXON GENERALIZADO)</strong></h2>
+<section id="teste-de-gehan-breslow" class="slide level2">
+<h2><strong>TESTE DE GEHAN-BRESLOW</strong></h2>
 <div class="box-blue">
 <ul>
 <li>Neste teste, o peso é dado por:</li>
@@ -1282,21 +1165,13 @@ mas a evidência não é suficiente ao nível de 5%</p>
 w(t) = n(t)
 \]</span></p>
 <ul>
-<li><p>Onde $ n(t) $ é o número de indivíduos <strong>sob risco no tempo <span class="math inline">\(t\)</span></strong>.</p></li>
+<li><p>Onde <span class="math inline">\(n(t)\)</span> é o número de indivíduos <strong>sob risco no tempo <span class="math inline">\(t\)</span></strong>.</p></li>
 <li><p>Interpretação:</p>
 <ul>
 <li>Tempos iniciais recebem <strong>maiores pesos</strong>, pois há mais indivíduos sob risco.</li>
 <li>Tempos finais recebem <strong>menores pesos</strong>.</li>
 </ul></li>
-<li><p>Comparação com o Logrank:</p>
-<ul>
-<li>O Logrank usa ( w(t)=1 ) (pesos iguais).</li>
-<li>O Gehan-Breslow dá <strong>mais importância ao início do estudo</strong>.</li>
-</ul></li>
-<li><p>Consequência:</p>
-<ul>
-<li>Mais sensível a diferenças <strong>precoces</strong> entre curvas de sobrevivência.</li>
-</ul></li>
+<li><p>Mais sensível a diferenças <strong>precoces</strong> entre curvas de sobrevivência.</p></li>
 </ul>
 </div>
 </section>
@@ -1319,7 +1194,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 </div>
 </div>
 <ul>
-<li>( p = 0.0735 ), sendo <strong>menos significativo</strong> que o teste Log-Rank</li>
+<li><span class="math inline">\(p\text{-valor} = 0.0735\)</span>, sendo <strong>menos significativo</strong> que o teste Log-Rank</li>
 <li>Como dá mais peso ao início:
 <ul>
 <li>Sugere que <strong>as diferenças iniciais não são tão fortes</strong></li>
@@ -1337,27 +1212,16 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 w(t) = \sqrt{n(t)}
 \]</span></p>
 <ul>
-<li><p>Onde $ n(t)$ é o número de indivíduos sob risco.</p></li>
+<li><p>Onde <span class="math inline">\(n(t)\)</span> é o número de indivíduos sob risco.</p></li>
 <li><p>Interpretação:</p>
 <ul>
 <li>Também dá <strong>mais peso aos tempos iniciais</strong>, mas de forma <strong>menos intensa</strong> que o Gehan-Breslow.</li>
 </ul></li>
-<li><p>Comparação:</p>
-<ul>
-<li>Logrank: $ w(t)=1 $ → pesos iguais<br>
-</li>
-<li>Gehan-Breslow: $ w(t)=n(t) ) → forte peso no início<br>
-</li>
-<li>Tarone-Ware: ( w(t)= ) → <strong>compromisso intermediário</strong></li>
-</ul></li>
-<li><p>Consequência:</p>
-<ul>
-<li>Equilibra sensibilidade entre:
+<li><p>Equilibra sensibilidade entre:</p>
 <ul>
 <li>diferenças no início<br>
 </li>
 <li>e ao longo de todo o tempo</li>
-</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -1381,7 +1245,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 </div>
 </div>
 <ul>
-<li>( p = 0.0630 ), valor <strong>intermediário</strong>
+<li><span class="math inline">\(p\text{-valor} = 0.0630\)</span>, valor <strong>intermediário</strong>
 <ul>
 <li>Indica <strong>evidência moderada contra (H_0)</strong></li>
 </ul></li>
@@ -1394,12 +1258,14 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <ul>
 <li>Neste teste, o peso é baseado na sobrevivência estimada:</li>
 </ul>
-<p>[ w(t) = (t) ]</p>
+<p><span class="math display">\[
+w(t) = \hat{S}(t)
+\]</span></p>
 <ul>
-<li><p>Onde ( (t) ) é a <strong>função de sobrevivência estimada</strong> até o tempo (t).</p></li>
+<li><p>Onde <span class="math inline">\(\hat{S}(t)\)</span> é a <strong>função de sobrevivência estimada</strong> até o tempo <span class="math inline">\(t\)</span>.</p></li>
 <li><p>Interpretação:</p>
 <ul>
-<li>Como ( (t) ) é maior no início:
+<li>Como <span class="math inline">\(\hat{S}(t)\)</span> é maior no início:
 <ul>
 <li>tempos iniciais recebem <strong>mais peso</strong></li>
 </ul></li>
@@ -1408,13 +1274,9 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <li>tempos finais recebem <strong>menos peso</strong></li>
 </ul></li>
 </ul></li>
-<li><p>Comparação:</p>
-<ul>
-<li>Assim como os anteriores, difere do Logrank ao usar pesos variáveis</li>
-<li>Em relação aos demais:
+<li><p>Em relação aos demais:</p>
 <ul>
 <li>Produz um comportamento <strong>mais suave e estável</strong></li>
-</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -1423,7 +1285,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O <code>R</code> fornece a seguinte saída pra o teste Tarone-Ware aos dados de hepatite:</li>
+<li>O <code>R</code> fornece a seguinte saída pra o teste Peto-Peto aos dados de hepatite:</li>
 </ul>
 <div style="font-size: 250%;">
 <div class="cell">
@@ -1438,7 +1300,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 </div>
 </div>
 <ul>
-<li>( p = 0.0633 )
+<li><span class="math inline">\(p\text{-valor} = 0.0633\)</span>
 <ul>
 <li>Resultado <strong>muito semelhante ao Tarone-Ware</strong></li>
 <li>Sugere <strong>evidência moderada</strong>, com comportamento mais <strong>suave e robusto</strong></li>
@@ -1457,76 +1319,20 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 </ul></li>
 <li><p>Diretrizes gerais:</p>
 <ul>
-<li><strong>Logrank</strong>:
-<ul>
-<li>Melhor quando o efeito é <strong>proporcional ao longo do tempo</strong></li>
+<li><strong>Logrank</strong>: melhor quando o efeito é <strong>proporcional ao longo do tempo</strong></li>
+<li><strong>Testes ponderados</strong>: úteis quando há <strong>diferenças localizadas no tempo</strong></li>
 </ul></li>
-<li><strong>Testes ponderados</strong>:
-<ul>
-<li>Úteis quando há <strong>diferenças localizadas no tempo</strong></li>
-</ul></li>
-</ul></li>
-<li><p>Exemplos:</p>
-<ul>
-<li>Diferenças <strong>precoces</strong> → preferir testes que <strong>pesam mais o início</strong></li>
-</ul></li>
-<li><p>Importante:</p>
-<ul>
-<li>Não existe teste “melhor” universalmente<br>
-</li>
-<li>Existe o teste <strong>mais adequado ao contexto dos dados</strong></li>
-</ul></li>
+<li><p>Diferenças <strong>precoces</strong> → preferir testes que <strong>pesam mais o início</strong></p></li>
+<li><p>Não existe teste “melhor” universalmente<br>
+</p></li>
+<li><p>Existe o teste <strong>mais adequado ao contexto dos dados</strong></p></li>
 </ul>
 </div>
 </section>
-<section id="exemplo-dados-de-hepatite-4" class="slide level2">
-<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
-<div class="box-blue">
-<ul>
-<li>Todos os testes apresentam <strong>valores-p próximos</strong> (entre 0.05 e 0.07)
-<ul>
-<li>Indicam <strong>evidência marginal contra (H_0)</strong></li>
-</ul></li>
-<li>O <strong>Logrank</strong> foi o mais próximo da significância:
-<ul>
-<li>Sugere diferenças <strong>distribuídas ao longo do tempo</strong></li>
-</ul></li>
-<li>O <strong>Gehan-Breslow</strong> apresentou o maior valor-p:
-<ul>
-<li>Indica ausência de diferenças <strong>fortes no início</strong></li>
-</ul></li>
-<li><strong>Tarone-Ware</strong> e <strong>Peto-Peto</strong>:
-<ul>
-<li>Resultados <strong>intermediários e semelhantes</strong></li>
-<li>Sugerem diferenças <strong>moderadas ao longo do tempo</strong></li>
-</ul></li>
-<li><strong>Conclusão geral</strong>:
-<ul>
-<li>Há <strong>indícios de diferença</strong> entre os grupos (Controle vs Esteroide)</li>
-<li>Ao nível de 5%, <strong>não rejeitamos (H_0)</strong></li>
-<li>Evidência sugere:
-<ul>
-<li><strong>efeito fraco</strong> ou</li>
-<li><strong>baixa potência amostral</strong></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="vantagens-limitações-e-aplicação-prática" class="slide level2">
+<section id="vantagens-limitações-e-aplicação-prática" class="slide level2 scrollable">
 <h2><strong>VANTAGENS, LIMITAÇÕES E APLICAÇÃO PRÁTICA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p><strong>Vantagens dos testes ponderados</strong>:</p>
-<ul>
-<li>Maior <strong>sensibilidade</strong> para detectar diferenças específicas no tempo</li>
-<li>Permitem incorporar <strong>informação estrutural do estudo</strong></li>
-</ul></li>
-<li><p><strong>Desvantagens</strong>:</p>
-<ul>
-<li>Podem perder poder se o padrão real <strong>não coincide com o peso escolhido</strong></li>
-<li>Exigem <strong>maior interpretação</strong> e justificativa</li>
-</ul></li>
 <li><p><strong>Como decidir na prática?</strong></p></li>
 <li><ol type="1">
 <li><strong>Análise exploratória</strong>:</li>
@@ -1553,15 +1359,6 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <li>Usar o <strong>Logrank como referência</strong></li>
 <li>Complementar com <strong>testes ponderados</strong>, se necessário</li>
 </ul></li>
-<li><p>Ideia-chave:</p>
-<ul>
-<li>A escolha do teste é uma combinação de:
-<ul>
-<li><strong>dados</strong></li>
-<li><strong>teoria</strong></li>
-<li><strong>conhecimento aplicado</strong></li>
-</ul></li>
-</ul></li>
 </ul>
 </div>
 </section></section>
@@ -1579,21 +1376,9 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <li><p>Os animais foram acompanhados por <strong>44 dias</strong></p></li>
 <li><p>Divisão em <strong>três grupos</strong>, todos infectados por malária:</p>
 <ul>
-<li><strong>Grupo 1</strong>:
-<ul>
-<li>Imunizados <strong>30 dias antes da infecção por malária</strong></li>
-<li>Também infectados por <strong>esquistossomose</strong></li>
-</ul></li>
-<li><strong>Grupo 2</strong>:
-<ul>
-<li>Apenas infectados por malária</li>
-<li><strong>Sem vacinação</strong></li>
-</ul></li>
-<li><strong>Grupo 3</strong>:
-<ul>
-<li>Infectados por malária e esquistossomose</li>
-<li><strong>Sem vacinação</strong></li>
-</ul></li>
+<li><p><strong>Grupo 1</strong>: imunizados <strong>30 dias antes da infecção por malária</strong> e também infectados por <strong>esquistossomose</strong></p></li>
+<li><p><strong>Grupo 2</strong>: apenas infectados por malária e <strong>Sem vacinação</strong></p></li>
+<li><p><strong>Grupo 3</strong>: infectados por malária e esquistossomose e <strong>sem vacinação</strong></p></li>
 </ul></li>
 </ul>
 </div>
@@ -1601,7 +1386,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <section id="dados-de-malária-1" class="slide level2">
 <h2><strong>DADOS DE MALÁRIA</strong></h2>
 <div class="box-blue">
-<p>os <strong>tempos de observados (em dias)</strong> são</p>
+<p>Os <strong>tempos de observados (em dias)</strong> são</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 9%">
@@ -1631,10 +1416,10 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 </div>
 </section>
 <section id="dados-de-malária-2" class="slide level2">
-<h2>**DADOS DE MALÁRIA*</h2>
+<h2><strong>DADOS DE MALÁRIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>As curvas de sobrevivência estimadas segundo o método de Kaplan-Meier para os três grupos são:</li>
+<li>As <strong>curvas de sobrevivência</strong> estimadas segundo o método de Kaplan-Meier para os três grupos são:</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1653,7 +1438,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <ul>
 <li>Neste gráfico, observa-se que:
 <ul>
-<li>O grupo 1 (imunizados + esquistossomose) ainda perde uma parte significativa de sobrevivência ao longo do tempo — a curva cai bastante antes de estabilizar, então o efeito protetor existe, mas não é absoluto.</li>
+<li>O grupo 1 (imunizados + esquistossomose) perde uma parte significativa de sobrevivência ao longo do tempo — a curva cai bastante antes de estabilizar, então o efeito protetor existe, mas não é absoluto.</li>
 <li>O grupo 2 (apenas malária) tem desempenho intermediário.</li>
 <li>O grupo 3 (malária + esquistossomose, sem vacina) é claramente o pior, chegando a 0% mais cedo.</li>
 </ul></li>
@@ -1671,7 +1456,7 @@ alternative hypothesis: true theta is not equal to 1</code></pre>
 <li>As hipóteses para este teste serão:
 <ul>
 <li><strong>Hipótese nula (<span class="math inline">\(H_0\)</span>):</strong> As três curvas de sobrevivência são <strong>iguais</strong>: <span class="math inline">\(S_1(t) = S_2(t) = S_3(t) \quad \text{para todo } t\)</span></li>
-<li><strong>Hipótese alternativa (<span class="math inline">\(H_1\)</span>):</strong> Pelo menos <strong>uma das curvas de sobrevivência difere</strong> das demais.</li>
+<li><strong>Hipótese alternativa (<span class="math inline">\(H_1\)</span>):</strong> Pelo menos <strong>uma das curvas de sobrevivência difere</strong> das demais em algum tempo <span class="math inline">\(t\)</span>.</li>
 </ul></li>
 </ul>
 </div>
@@ -1698,9 +1483,9 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 <ul>
 <li><strong>Comparação entre os grupos:</strong> Grupo 1, Grupo 2 e Grupo 3.<br>
 </li>
-<li><strong>Estatística de teste:</strong> (^2 = 12.6) com <span class="math inline">\(K-1\)</span>=3-1=2 graus de liberdade.<br>
+<li><strong>Estatística de teste:</strong> <span class="math inline">\(\chi^2 = 12.6\)</span> com <span class="math inline">\(K-1\)</span>=3-1=2 graus de liberdade.<br>
 </li>
-<li><strong>Valor-p:</strong> (p = 0.002), menor que 0,05.</li>
+<li><strong>Valor-p:</strong> <span class="math inline">\(p = 0.002\)</span>, menor que 0,05.</li>
 </ul>
 </div>
 </section>
@@ -1768,7 +1553,7 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 </ul>
 </div>
 </section>
-<section id="exemplo-dados-de-hepatite-5" class="slide level2 scrollable">
+<section id="exemplo-dados-de-hepatite-4" class="slide level2 scrollable">
 <h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1831,32 +1616,32 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 </div>
 </div>
 </section>
-<section id="exemplo-dados-de-hepatite-6" class="slide level2">
-<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<section id="dados-de-hepatite-bonferroni" class="slide level2 scrollable">
+<h2><strong>DADOS DE HEPATITE (BONFERRONI)</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p><strong>Nível de significância ajustado:</strong> <span class="math inline">\(\\alpha^* = 0,017\)</span></p></li>
+<li><p><strong>Nível de significância ajustado:</strong> <span class="math inline">\(\alpha^* = 0,017\)</span></p></li>
 <li><p><strong>Grupo 1 × Grupo 2:</strong></p>
 <ul>
-<li><span class="math inline">\(\\chi^2 = 2.5\)</span>, <span class="math inline">\(p = 0.1\)</span><br>
+<li><span class="math inline">\(\chi^2 = 2.5\)</span>, <span class="math inline">\(p = 0.1\)</span><br>
 </li>
-<li><span class="math inline">\(p &gt; \\alpha^*\)</span> → <strong>não rejeita H₀</strong><br>
+<li><span class="math inline">\(p &gt; \alpha^*\)</span> → <strong>não rejeita H₀</strong><br>
 </li>
 <li>Conclusão: <strong>as curvas de sobrevivência são semelhantes</strong></li>
 </ul></li>
 <li><p><strong>Grupo 1 × Grupo 3:</strong></p>
 <ul>
-<li><span class="math inline">\(\\chi^2 = 7.9\)</span>, <span class="math inline">\(p = 0.005\)</span><br>
+<li><span class="math inline">\(\chi^2 = 7.9\)</span>, <span class="math inline">\(p = 0.005\)</span><br>
 </li>
-<li><span class="math inline">\(p &lt; \\alpha^*\)</span> → <strong>rejeita H₀</strong><br>
+<li><span class="math inline">\(p &lt; \alpha^*\)</span> → <strong>rejeita H₀</strong><br>
 </li>
 <li>Conclusão: <strong>há diferença significativa entre as curvas</strong></li>
 </ul></li>
 <li><p><strong>Grupo 2 × Grupo 3:</strong></p>
 <ul>
-<li><span class="math inline">\(\\chi^2 = 7.9\)</span>, <span class="math inline">\(p = 0.005\)</span><br>
+<li><span class="math inline">\(\chi^2 = 7.9\)</span>, <span class="math inline">\(p = 0.0047\)</span><br>
 </li>
-<li><span class="math inline">\(p &lt; \\alpha^*\)</span> → <strong>rejeita H₀</strong><br>
+<li><span class="math inline">\(p &lt; \alpha^*\)</span> → <strong>rejeita H₀</strong><br>
 </li>
 <li>Conclusão: <strong>há diferença significativa entre as curvas</strong></li>
 </ul></li>
@@ -1866,8 +1651,8 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 - Grupos 1 e 2 <strong>não apresentam diferenças significativas</strong> entre si</p>
 </div>
 </section>
-<section id="exemplo-dados-de-hepatite-7" class="slide level2">
-<h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
+<section id="dados-de-hepatite-holm-bonferroni" class="slide level2 scrollable">
+<h2><strong>DADOS DE HEPATITE (HOLM-BONFERRONI)</strong></h2>
 <div class="box-blue">
 <ul>
 <li><strong>Passo 1: organizar os p-valores dos subtestes</strong>
@@ -1876,19 +1661,19 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 </li>
 <li>Grupo 1 × Grupo 3: <span class="math inline">\(p = 0.005\)</span><br>
 </li>
-<li>Grupo 2 × Grupo 3: <span class="math inline">\(p = 0.005\)</span></li>
+<li>Grupo 2 × Grupo 3: <span class="math inline">\(p = 0.0047\)</span></li>
 </ul></li>
 <li><strong>Passo 2: ordenar do menor para o maior</strong>
 <ol type="1">
-<li><span class="math inline">\(p_1 = 0.005\)</span> (Grupo 1 × 3)<br>
+<li><span class="math inline">\(p_1 = 0.0047\)</span> (Grupo 2 × 3)<br>
 </li>
-<li><span class="math inline">\(p_2 = 0.005\)</span> (Grupo 2 × 3)<br>
+<li><span class="math inline">\(p_2 = 0.005\)</span> (Grupo 1 × 3)<br>
 </li>
 <li><span class="math inline">\(p_3 = 0.1\)</span> (Grupo 1 × 2)</li>
 </ol></li>
 <li><strong>Passo 3: aplicar Holm-Bonferroni</strong>
 <ul>
-<li>Comparar <span class="math inline">\(p_1\)</span> com <span class="math inline">\(\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\)</span> → <span class="math inline">\(0.005 &lt; 0.017\)</span> → <strong>rejeita H₀</strong><br>
+<li>Comparar <span class="math inline">\(p_1\)</span> com <span class="math inline">\(\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\)</span> → <span class="math inline">\(0.0047 &lt; 0.017\)</span> → <strong>rejeita H₀</strong><br>
 </li>
 <li>Comparar <span class="math inline">\(p_2\)</span> com <span class="math inline">\(0.05 / (3 - 2 + 1) = 0.025\)</span> → <span class="math inline">\(0.005 &lt; 0.025\)</span> → <strong>rejeita H₀</strong><br>
 </li>
@@ -1898,7 +1683,7 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 </ul>
 </div>
 </section>
-<section id="exemplo-dados-de-hepatite-8" class="slide level2">
+<section id="exemplo-dados-de-hepatite-5" class="slide level2 scrollable">
 <h2><strong>EXEMPLO: DADOS DE HEPATITE</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1935,7 +1720,7 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 </ul>
 </div>
 </section>
-<section id="qual-correção-escolher" class="slide level2">
+<section id="qual-correção-escolher" class="slide level2 scrollable">
 <h2><strong>QUAL CORREÇÃO ESCOLHER</strong></h2>
 <div class="box-blue">
 <ul>
