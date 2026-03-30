@@ -361,7 +361,7 @@
     "href": "Aula5.html#correção-de-holm-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CORREÇÃO DE HOLM-BONFERRONI",
-    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(c-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas de acordo com as comparações realizadas."
+    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(m-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas de acordo com as comparações realizadas."
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-4",
