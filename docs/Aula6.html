@@ -239,8 +239,8 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li>O <strong>tempo até o evento de interesse</strong></li>
 </ul></li>
-<li><p>Características de <span class="math inline">\(T\)</span>: <strong>Contínua</strong> e <strong>Não negativa</strong></p></li>
-<li><p>Portanto, distribuições como a Normal e Binomial <strong>Não são adequadas</strong> aqui.</p></li>
+<li><p>Características de <span class="math inline">\(T\)</span>: <strong>contínua</strong> e <strong>não negativa</strong></p></li>
+<li><p>Portanto, distribuições como a Normal e Binomial <strong>não são adequadas</strong> aqui.</p></li>
 <li><p>Na prática, os dados apresentam:</p>
 <ul>
 <li><strong>Assimetria à direita</strong></li>
@@ -284,12 +284,12 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li><strong>Análise de Sobrevivência</strong></li>
 <li><strong>Confiabilidade</strong></li>
 </ul></li>
-<li>Na área <strong>industrial</strong>:
+<li>Particularmente, são <strong>mais adequados</strong> em confiabilidade, onde:
 <ul>
 <li>Experimentos podem ser <strong>planejados</strong></li>
 <li>Variabilidade pode ser <strong>controlada</strong></li>
 </ul></li>
-<li>Isso permite:
+<li>Consequentemente:
 <ul>
 <li>Melhor <strong>escolha</strong> de modelos</li>
 <li>Inferências mais <strong>precisas</strong></li>
@@ -398,9 +398,9 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul></li>
 <li>Possibilidades:
 <ul>
-<li>Risco constante?</li>
-<li>Risco crescente?</li>
-<li>Risco decrescente?</li>
+<li>Risco <strong>constante</strong>?</li>
+<li>Risco <strong>crescente</strong>?</li>
+<li>Risco <strong>decrescente</strong>?</li>
 </ul></li>
 </ul>
 </div>
@@ -438,10 +438,11 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li>Um dos modelos mais <strong>utilizados</strong> em análise de sobrevivência e confiabilidade</li>
 </ul></li>
-<li>Surgiu com força a partir dos anos <strong>1940</strong> em confiabilidade:
+<li>Surgiu a partir dos anos <strong>1940</strong> e, em confiabilidade foi aplicada em:
 <ul>
-<li>Estudos de <strong>falha de sistemas eletrônicos</strong></li>
-<li>Componentes sujeitos a <strong>falhas aleatórias ao longo do tempo</strong></li>
+<li>Estudos de <strong>falha de sistemas eletrônicos</strong>.</li>
+<li>Falha de <strong>motores de aeronaves</strong>.</li>
+<li>Componentes sujeitos a <strong>falhas aleatórias ao longo do tempo</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -452,9 +453,9 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li>Aplicações em <strong>saúde</strong>:
 <ul>
-<li>Tempo até <strong>recaída de doenças</strong></li>
-<li>Tempo até <strong>remissão ou progressão clínica</strong></li>
-<li>Estudos clássicos, como a modelagem do tempo de sobrevivência em <strong>pacientes com leucemia</strong> (Cox e Snell, 1981)</li>
+<li>Tempo até <strong>recaída de doenças</strong>.</li>
+<li>Tempo até <strong>remissão ou progressão clínica</strong>.</li>
+<li>Tempo de sobrevivência em <strong>pacientes com leucemia</strong>.</li>
 </ul></li>
 <li>Por que ela <strong>foi</strong> tão utilizada?
 <ul>
@@ -478,7 +479,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li>Possui somente um <strong>parâmetro</strong>.</li>
 </ul></li>
 <li><p>Consideramos <span class="math inline">\(T \sim \text{Exponencial}(\alpha)\)</span></p></li>
-<li><p>A função densidade é: <span class="math display">\[f(t) = \alpha e^{-\alpha t}\]</span></p></li>
+<li><p>A função densidade de probabilidade é: <span class="math display">\[f(t) = \alpha e^{-\alpha t}\]</span></p></li>
 <li><p>Onde:</p>
 <ul>
 <li><span class="math inline">\(\alpha &gt; 0\)</span> é o <strong>parâmetro de taxa</strong> e <span class="math inline">\(t \geq 0\)</span></li>
@@ -680,7 +681,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado" class="slide level2">
+<section id="função-de-risco-acumulado" class="slide level2 scrollable">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -745,8 +746,8 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul>
 </div>
 </section>
-<section id="percentil-da-distribuição-exponencial" class="slide level2">
-<h2><strong>PERCENTIL DA DISTRIBUIÇÃO EXPONENCIAL</strong></h2>
+<section id="percentil" class="slide level2">
+<h2><strong>PERCENTIL</strong></h2>
 <div class="box-blue">
 <ul>
 <li><p>O percentil de ordem <span class="math inline">\(p\)</span> é o valor <span class="math inline">\(t_p\)</span> tal que <span class="math inline">\(P(T \le t_p) = p\)</span></p></li>
@@ -830,8 +831,8 @@ E(T) = \frac{1}{\alpha}
 <h2><strong>TEMPO MÉDIO RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O tempo médio residual é <span class="math inline">\(E(T - t \mid T &gt; t)\)</span></p></li>
-<li><p>Para a distribuição exponencial: <span class="math inline">\(E(T - t \mid T &gt; t) = \frac{1}{\alpha}\)</span></p></li>
+<li><p>O tempo médio residual é <span class="math inline">\(\text{vmr}(t)=\frac{\int_t^\infty S(u)\,du}{S(t)}\)</span></p></li>
+<li><p>Para a distribuição exponencial: <span class="math inline">\(\text{vmr}(t) = \frac{1}{\alpha}\)</span></p></li>
 <li><p><strong>Comparando diferentes valores de <span class="math inline">\(\alpha\)</span>:</strong></p></li>
 </ul>
 <table class="caption-top">
@@ -922,19 +923,15 @@ E(T) = \frac{1}{\alpha}
 → permitindo modelar situações mais <strong>realistas em sobrevivência e confiabilidade</strong>.</p></li>
 <li><p>Popularizada por <strong>Waloddi Weibull (1951)</strong> em estudos de confiabilidade:</p>
 <ul>
-<li><strong>Falhas de materiais</strong> e componentes <strong>mecânicos</strong>.</li>
-<li>Sistemas sujeitos a <strong>desgaste ao longo do tempo</strong>.</li>
+<li>Falhas em <strong>motores de aeronaves</strong>.</li>
+<li>Falhas em <strong>compressores de gás natural</strong>.<br>
+</li>
+<li>Falhas de <strong>componentes críticos em sistemas hidráulicos</strong>.</li>
 </ul></li>
 <li><p>Diferentemente da <strong>distribuição exponencial</strong>:</p>
 <ul>
 <li>Permite que o <strong>risco varie com o tempo</strong><br>
 </li>
-<li>Captura <strong>padrões</strong> como:
-<ul>
-<li>risco <strong>crescente</strong> (envelhecimento)</li>
-<li>risco <strong>decrescente</strong> (falhas iniciais)</li>
-<li>risco <strong>constante</strong> (caso exponencial)</li>
-</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -947,9 +944,9 @@ E(T) = \frac{1}{\alpha}
 <ul>
 <li>Tempo até <strong>recorrência de câncer</strong> (ex: câncer de bexiga)<br>
 </li>
-<li>Tempo até <strong>progressão da doença</strong><br>
+<li>Tempo até morte por <strong>câncer urológico</strong><br>
 </li>
-<li>Tempo até <strong>óbito ou falha de tratamento</strong></li>
+<li>Tempo até <strong>óbito em pacientes com câncer de colo de útero</strong></li>
 </ul></li>
 <li>Por que ela é <strong>tão utilizada</strong>?
 <ul>
@@ -977,8 +974,8 @@ f(t) = \frac{\gamma}{\kappa} \left(\frac{t}{\kappa}\right)^{\gamma - 1} e^{-(t/\
 <li><p>Onde:</p>
 <ul>
 <li><span class="math inline">\(\kappa &gt; 0\)</span> é o <strong>parâmetro de escala</strong></li>
-<li><span class="math inline">\(\gamma &gt; 0\)</span> é o <strong>parâmetro de forma</strong></li>
-<li><span class="math inline">\(t \geq 0\)</span></li>
+<li><span class="math inline">\(\gamma &gt; 0\)</span> é o <strong>parâmetro de forma</strong> (<span class="math inline">\(\gamma=1\rightarrow Exp\left(\frac{1}{\kappa}\right)\)</span>)</li>
+<li><span class="math inline">\(t &gt; 0\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -1040,7 +1037,7 @@ f(t) = \frac{\gamma}{\kappa} \left(\frac{t}{\kappa}\right)^{\gamma - 1} e^{-(t/\
 </thead>
 <tbody>
 <tr class="odd">
-<td>(1, 0.9)</td>
+<td>(1, 0.7)</td>
 <td>Alta densidade no início → <strong>falhas precoces</strong></td>
 </tr>
 <tr class="even">
@@ -1048,11 +1045,11 @@ f(t) = \frac{\gamma}{\kappa} \left(\frac{t}{\kappa}\right)^{\gamma - 1} e^{-(t/\
 <td>Decaimento exponencial → <strong>risco constante</strong></td>
 </tr>
 <tr class="odd">
-<td>(2, 2)</td>
+<td>(1.5, 2)</td>
 <td>Pico intermediário → eventos após certo tempo</td>
 </tr>
 <tr class="even">
-<td>(2, 3)</td>
+<td>(2, 2)</td>
 <td>Pico mais tardio e concentrado → <strong>eventos mais previsíveis</strong></td>
 </tr>
 </tbody>
@@ -1075,7 +1072,7 @@ f(t) = \frac{\gamma}{\kappa} \left(\frac{t}{\kappa}\right)^{\gamma - 1} e^{-(t/\
 <li>A partir da densidade <span class="math inline">\(f(t)\)</span>, obtemos:</li>
 </ul>
 <p><span class="math display">\[
-S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
+S(t) = P(T \geq t) = \int_0^{\infty}f(t)dt= e^{-(t/\kappa)^\gamma}
 \]</span></p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1102,7 +1099,7 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 <li><span class="math inline">\(\gamma\)</span> (<strong>forma</strong>):
 <ul>
 <li>Controla a <strong>velocidade de queda da sobrevivência</strong></li>
-<li><span class="math inline">\(\gamma &lt; 1\)</span> → queda <strong>mais lenta no início</strong><br>
+<li><span class="math inline">\(\gamma &lt; 1\)</span> → queda <strong>mais rapida no início</strong><br>
 </li>
 <li><span class="math inline">\(\gamma = 1\)</span> → caso exponencial<br>
 </li>
@@ -1135,11 +1132,11 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 <td>Queda exponencial (referência)</td>
 </tr>
 <tr class="odd">
-<td>(2, 2)</td>
+<td>(1.5, 2)</td>
 <td>Queda mais acentuada após algum tempo</td>
 </tr>
 <tr class="even">
-<td>(2, 3)</td>
+<td>(2, 2)</td>
 <td>Sobrevivência alta no início e queda <strong>abrupta depois</strong></td>
 </tr>
 </tbody>
@@ -1192,15 +1189,8 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 <li><p>Um indivíduo que <strong>sobreviveu</strong> até <span class="math inline">\(t\)</span>:</p>
 <ul>
 <li>Pode ter <strong>mais ou menos risco futuro</strong></li>
-<li>Dependendo do comportamento da função de risco</li>
-</ul></li>
-<li><p>Portanto:</p>
-<ul>
-<li>A propriedade de <strong>falta de memória NÃO vale</strong> para Weibull</li>
-</ul></li>
-<li><p>Ou seja:</p>
-<ul>
-<li>O passado <strong>influencia</strong> o futuro</li>
+<li>Dependendo do comportamento da função de risco<br>
+</li>
 </ul></li>
 </ul>
 </div>
@@ -1240,7 +1230,7 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 </thead>
 <tbody>
 <tr class="odd">
-<td>(1, 0.9)</td>
+<td>(1, 0.7)</td>
 <td>Risco <strong>decrescente</strong> ao longo do tempo</td>
 </tr>
 <tr class="even">
@@ -1248,11 +1238,11 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 <td>Risco <strong>constante</strong> (exponencial)</td>
 </tr>
 <tr class="odd">
-<td>(2, 2)</td>
+<td>(1.5, 2)</td>
 <td>Risco <strong>crescente</strong> com o tempo</td>
 </tr>
 <tr class="even">
-<td>(2, 3)</td>
+<td>(2, 2)</td>
 <td>Risco cresce rapidamente → <strong>envelhecimento acentuado</strong></td>
 </tr>
 </tbody>
@@ -1268,14 +1258,14 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado-weibull" class="slide level2 scrollable">
-<h2><strong>FUNÇÃO DE RISCO ACUMULADO (WEIBULL)</strong></h2>
+<section id="função-de-risco-acumulado-2" class="slide level2 scrollable">
+<h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
 <li>Para a distribuição <strong>Weibull</strong>, a função de risco acumulado é:</li>
 </ul>
 <p><span class="math display">\[
-\Lambda(t) = (\gamma t)^{\kappa}
+\Lambda(t) = \int_0^t \lambda(u) \, du = \int_0^t \alpha \, du = (\gamma t)^{\kappa}
 \]</span></p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1288,7 +1278,7 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 </div>
 </div>
 </section>
-<section id="função-de-risco-acumulado-2" class="slide level2">
+<section id="função-de-risco-acumulado-3" class="slide level2">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1314,7 +1304,7 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado-3" class="slide level2">
+<section id="função-de-risco-acumulado-4" class="slide level2">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1341,7 +1331,7 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 </tr>
 <tr class="odd">
 <td>1.5</td>
-<td>1.5</td>
+<td>2</td>
 <td>Crescimento acelerado</td>
 </tr>
 <tr class="even">
@@ -1360,161 +1350,71 @@ S(t) = P(T \geq t) = \exp\left\{-(t/\kappa)^\gamma\right\}
 </ul>
 </div>
 </section>
-<section id="percentil-da-distribuição-weibull" class="slide level2">
-<h2><strong>PERCENTIL DA DISTRIBUIÇÃO WEIBULL</strong></h2>
+<section id="percentil-1" class="slide level2">
+<h2><strong>PERCENTIL</strong></h2>
 <div class="box-blue">
 <ul>
 <li><p>O percentil de ordem <span class="math inline">\(p\)</span> é o valor <span class="math inline">\(t_p\)</span> tal que <span class="math inline">\(P(T \le t_p) = p\)</span></p></li>
 <li><p>Para a distribuição <strong>Weibull</strong>: <span class="math display">\[
 t_p = \frac{\left[-\log(1-p)\right]^{1/\kappa}}{\gamma}
 \]</span></p></li>
-<li><p><strong>Exemplo: Mediana (<span class="math inline">\(p = 0.5\)</span>):</strong></p></li>
-</ul>
-<p><span class="math display">\[
-t_{0.5} = \frac{(\log 2)^{1/\kappa}}{\gamma}
-\]</span></p>
-<hr>
+<li><p><strong>Exemplo: Mediana (<span class="math inline">\(p = 0.5\)</span>):</strong><span class="math inline">\(t_{0.5} = \frac{(\log 2)^{1/\kappa}}{\gamma}\)</span></p></li>
+<li><p><strong>Interpretação:</strong></p>
 <ul>
-<li><strong>Comparando os parâmetros:</strong></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\kappa\)</span></th>
-<th><span class="math inline">\(\gamma\)</span></th>
-<th>Mediana</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>0.7</td>
-<td><span class="math inline">\(\frac{\log(2)}{0.7} \approx 0.99\)</span></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td><span class="math inline">\(\log(2) \approx 0.693\)</span></td>
-</tr>
-<tr class="odd">
-<td>1.5</td>
-<td>1.5</td>
-<td><span class="math inline">\(\frac{(\log 2)^{2/3}}{1.5} \approx 0.52\)</span></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>2</td>
-<td><span class="math inline">\(\frac{\sqrt{\log 2}}{2} \approx 0.42\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li><strong>Interpretação:</strong>
-<ul>
-<li><span class="math inline">\(\gamma\)</span> maior → percentis <strong>menores</strong> (eventos mais rápidos)</li>
-<li><span class="math inline">\(\kappa\)</span> altera a <strong>forma</strong> da distribuição</li>
-<li>Pode acelerar ou desacelerar a ocorrência dos eventos</li>
+<li><span class="math inline">\(\gamma\)</span> maior → percentis <strong>menores</strong> (eventos mais rápidos).</li>
+<li><span class="math inline">\(\kappa\)</span> pode acelerar ou desacelerar a ocorrência dos eventos.</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="tempo-médio-1" class="slide level2">
-<h2><strong>TEMPO MÉDIO</strong></h2>
+<section id="tempos-médio-e-médio-residual" class="slide level2">
+<h2><strong>TEMPOS MÉDIO E MÉDIO RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O tempo médio até o evento é: <span class="math display">\[
+<li>Na distribuição Weibull, o tempo médio até o evento é: <span class="math display">\[
 E(T) = \frac{1}{\gamma} \, \Gamma\left(1 + \frac{1}{\kappa}\right)
 \]</span></li>
+<li>Na distribuição Weibull, o tempo médio residual é dado por:</li>
 </ul>
-<hr>
+<p><span class="math display">\[
+vmr(t) = \kappa \, \Gamma\left(1 + \frac{1}{\gamma}, \left(\frac{t}{\kappa}\right)^{\gamma} \right) \, \exp\left( \left(\frac{t}{\kappa}\right)^{\gamma} \right) - t
+\]</span></p>
 <ul>
-<li><strong>Comparando os parâmetros:</strong></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\kappa\)</span></th>
-<th><span class="math inline">\(\gamma\)</span></th>
-<th>Tempo médio <span class="math inline">\(E(T)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>0.7</td>
-<td><span class="math inline">\(\approx 1.43\)</span></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td><span class="math inline">\(1\)</span></td>
-</tr>
-<tr class="odd">
-<td>1.5</td>
-<td>1.5</td>
-<td><span class="math inline">\(\approx 0.60\)</span></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>2</td>
-<td><span class="math inline">\(\approx 0.44\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li><strong>Resumo:</strong>
-<ul>
-<li><span class="math inline">\(\gamma\)</span> maior → eventos ocorrem <strong>mais rapidamente</strong></li>
-<li><span class="math inline">\(\kappa\)</span> influencia a <strong>dispersão e forma</strong></li>
-<li>Tempo médio não é mais simplesmente <span class="math inline">\(1/\gamma\)</span></li>
-</ul></li>
+<li>A função gama, denotada por <span class="math inline">\(\Gamma(a)\)</span>, é uma extensão do fatorial para números reais positivos, definida por <span class="math display">\[
+\Gamma(a) = \int_0^{\infty} x^{a-1} e^{-x} \, dx, \quad a &gt; 0.
+\]</span></li>
 </ul>
 </div>
 </section>
-<section id="tempo-médio-residual-1" class="slide level2">
-<h2><strong>TEMPO MÉDIO RESIDUAL</strong></h2>
+<section id="aplicabilidade-3" class="slide level2">
+<h2><strong>APLICABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O tempo médio residual é: <span class="math display">\[
-E(T - t \mid T &gt; t)
-\]</span></p></li>
-<li><p>Para a distribuição <strong>Weibull</strong>, <strong>não é constante</strong>:</p></li>
-<li><p>Depende do tempo já vivido <span class="math inline">\(t\)</span></p></li>
+<li><p>O <strong>modelo de Weibull</strong> é uma generalização do modelo exponencial, permitindo maior flexibilidade</p></li>
+<li><p>Ele possui <strong>dois parâmetros</strong>, o que possibilita modelar diferentes comportamentos do risco ao longo do tempo</p></li>
+<li><p>No caso dos dados de <strong>câncer de bexiga</strong>, essa suposição implica que:<br>
+→ o risco de recorrência ou óbito <strong>pode aumentar ou diminuir com o tempo</strong></p></li>
+<li><p>Ou seja:<br>
+→ o indivíduo pode ter <strong>maior risco logo após o tratamento</strong><br>
+→ ou um risco que <strong>cresce com o avanço da doença</strong></p></li>
+<li><p>Essa flexibilidade permite representar situações mais realistas em estudos clínicos<br>
+</p></li>
 </ul>
-<hr>
+</div>
+</section>
+<section id="aplicabilidade-4" class="slide level2">
+<h2><strong>APLICABILIDADE</strong></h2>
+<div class="box-blue">
 <ul>
-<li><p><strong>Interpretação:</strong></p></li>
-<li><p>Diferente da exponencial:</p>
-<ul>
-<li>Não há propriedade de <strong>falta de memória</strong></li>
-</ul></li>
-<li><p>O tempo restante esperado:</p>
-<ul>
-<li><strong>Depende do passado</strong></li>
-<li>Muda conforme o indivíduo sobrevive mais tempo</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p><strong>Intuição:</strong></p></li>
-<li><p><span class="math inline">\(\kappa &gt; 1\)</span> (risco crescente):</p>
-<ul>
-<li>Quanto mais tempo passou → <strong>menos tempo restante esperado</strong></li>
-</ul></li>
-<li><p><span class="math inline">\(\kappa &lt; 1\)</span> (risco decrescente):</p>
-<ul>
-<li>Quanto mais tempo passou → <strong>mais tempo restante esperado</strong></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><strong>Resumo:</strong>
-<ul>
-<li>A Weibull é mais <strong>flexível</strong></li>
-<li>Permite modelar memória no processo</li>
-</ul></li>
+<li><p>Diferente do modelo exponencial, o Weibull permite uma <strong>função de risco não constante</strong></p></li>
+<li><p>Em particular:<br>
+→ risco <strong>decrescente</strong> ao longo do tempo (ex.: recuperação após tratamento)<br>
+→ risco <strong>crescente</strong> ao longo do tempo (ex.: progressão da doença, envelhecimento)</p></li>
+<li><p>Portanto, o modelo de Weibull tende a ser <strong>mais adequado para dados reais</strong></p></li>
+<li><p>Ainda assim, ele mantém:<br>
+→ <strong>interpretação relativamente simples</strong><br>
+→ e boa relação entre <strong>flexibilidade e parcimônia</strong><br>
+</p></li>
 </ul>
 </div>
 </section></section>
@@ -1552,29 +1452,15 @@ E(T - t \mid T &gt; t)
 <ul>
 <li>Aplicações em <strong>saúde</strong>:
 <ul>
-<li>Tempo até <strong>recorrência de doenças</strong></li>
-<li>Tempo até <strong>diagnóstico após exposição</strong></li>
+<li>Tempo até óbito por <strong>mesotelioma pleural maligno</strong>.</li>
+<li>Tempo até óbito por <strong>câncer de mama</strong>.</li>
 <li>Tempo até <strong>progressão de condições crônicas</strong></li>
 </ul></li>
-<li>Aplicações em <strong>outras áreas</strong>:
+<li>Aplicações em <strong>confiabilidade</strong>:
 <ul>
-<li>Tempo de <strong>vida útil de componentes eletrônicos</strong></li>
-<li>Duração de <strong>processos biológicos ou sociais</strong></li>
-<li>Tempo até ocorrência de eventos raros</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>Por que ela é <strong>tão utilizada</strong>?</p></li>
-<li><p>Modela bem dados com:</p>
-<ul>
-<li><strong>Grande variabilidade</strong></li>
-<li><strong>Cauda longa à direita</strong></li>
-</ul></li>
-<li><p>Permite:</p>
-<ul>
-<li>Maior <strong>realismo em fenômenos naturais</strong></li>
-<li>Interpretação via escala logarítmica</li>
+<li>Falhas dos <strong>sistemas de ar condicionado</strong> de aeronaves Boeing 720.</li>
+<li>Falhas em <strong>componentes de turbinas a gás</strong> da Marinha dos EUA.</li>
+<li>Degradação por envelhecimento de <strong>LEDs</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -1649,24 +1535,23 @@ f(t) = \frac{1}{t \, \sigma \sqrt{2\pi}} \exp\left(-\frac{(\log t - \mu)^2}{2\si
 </thead>
 <tbody>
 <tr class="odd">
-<td>(0, 0.3)</td>
+<td>(0, 0.5)</td>
 <td>Pico alto e concentrado → eventos <strong>bem previsíveis</strong></td>
 </tr>
 <tr class="even">
-<td>(0, 0.7)</td>
+<td>(0, 1)</td>
 <td>Mais dispersão → maior variabilidade</td>
 </tr>
 <tr class="odd">
-<td>(0.5, 1)</td>
+<td>(0, 1.5)</td>
 <td>Cauda longa → eventos podem ocorrer <strong>bem mais tarde</strong></td>
 </tr>
 <tr class="even">
-<td>(1, 0.5)</td>
+<td>(1, 1.5)</td>
 <td>Deslocamento à direita → eventos mais tardios</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <ul>
 <li><strong>Resumo visual:</strong>
 <ul>
@@ -1675,11 +1560,6 @@ f(t) = \frac{1}{t \, \sigma \sqrt{2\pi}} \exp\left(-\frac{(\log t - \mu)^2}{2\si
 <li><span class="math inline">\(\sigma\)</span> controla a <strong>assimetria e dispersão</strong><br>
 </li>
 <li>Distribuição sempre <strong>assimétrica à direita</strong></li>
-</ul></li>
-<li>A lognormal é ideal para:
-<ul>
-<li>Dados com <strong>grande variabilidade</strong></li>
-<li>Processos multiplicativos ao longo do tempo</li>
 </ul></li>
 </ul>
 </div>
@@ -1691,7 +1571,7 @@ f(t) = \frac{1}{t \, \sigma \sqrt{2\pi}} \exp\left(-\frac{(\log t - \mu)^2}{2\si
 <li>A partir da densidade <span class="math inline">\(f(t)\)</span>, obtemos:</li>
 </ul>
 <p><span class="math display">\[
-S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
+S(t) = P(T \geq t) = \int_0^{\infty}f(t)dt=1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 \]</span></p>
 <ul>
 <li>Onde <span class="math inline">\(\Phi(\cdot)\)</span> é a função de distribuição da normal padrão</li>
@@ -1741,19 +1621,19 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 </thead>
 <tbody>
 <tr class="odd">
-<td>(0, 0.3)</td>
+<td>(0, 0.5)</td>
 <td>Queda rápida e concentrada → eventos mais previsíveis</td>
 </tr>
 <tr class="even">
-<td>(0, 0.7)</td>
+<td>(0, 1)</td>
 <td>Queda mais gradual → maior variabilidade</td>
 </tr>
 <tr class="odd">
-<td>(0.5, 1)</td>
+<td>(0, 1.5)</td>
 <td>Sobrevivência prolongada com cauda longa</td>
 </tr>
 <tr class="even">
-<td>(1, 0.5)</td>
+<td>(1, 1.5)</td>
 <td>Deslocamento à direita → eventos mais tardios</td>
 </tr>
 </tbody>
@@ -1767,11 +1647,6 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 <li><span class="math inline">\(\sigma\)</span> controla a <strong>dispersão e suavidade da queda</strong><br>
 </li>
 <li>Curva sempre <strong>suave e não exponencial</strong></li>
-</ul></li>
-<li>A lognormal permite:
-<ul>
-<li>Modelar <strong>alta variabilidade</strong></li>
-<li>Capturar <strong>caudas longas de sobrevivência</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -1809,21 +1684,9 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 <li>Atinge um <strong>pico</strong></li>
 <li>Depois <strong>diminui</strong></li>
 </ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>Consequência:</p></li>
-<li><p>Um indivíduo que <strong>sobreviveu</strong> até <span class="math inline">\(t\)</span>:</p>
+<li><p>Consequência: um indivíduo que <strong>sobreviveu</strong> até <span class="math inline">\(t\)</span>:</p>
 <ul>
 <li>Pode ter <strong>menor risco futuro</strong> após certo ponto</li>
-</ul></li>
-<li><p>Portanto:</p>
-<ul>
-<li>A propriedade de <strong>falta de memória NÃO vale</strong></li>
-</ul></li>
-<li><p>Ou seja:</p>
-<ul>
-<li>O passado <strong>influencia fortemente</strong> o futuro</li>
 </ul></li>
 </ul>
 </div>
@@ -1862,19 +1725,19 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 </thead>
 <tbody>
 <tr class="odd">
-<td>(0, 0.3)</td>
+<td>(0, 0.5)</td>
 <td>Pico alto e estreito → risco concentrado</td>
 </tr>
 <tr class="even">
-<td>(0, 0.7)</td>
+<td>(0, 1)</td>
 <td>Pico mais suave → risco mais distribuído</td>
 </tr>
 <tr class="odd">
-<td>(0.5, 1)</td>
+<td>(0, 1.5)</td>
 <td>Pico tardio e largo → eventos ao longo do tempo</td>
 </tr>
 <tr class="even">
-<td>(1, 0.5)</td>
+<td>(1, 1.5)</td>
 <td>Pico deslocado para a direita</td>
 </tr>
 </tbody>
@@ -1887,18 +1750,14 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 </li>
 <li><span class="math inline">\(\mu\)</span> desloca o pico<br>
 </li>
-<li><span class="math inline">\(\sigma\)</span> controla a largura</li>
-</ul></li>
-<li>A lognormal é ideal quando:
-<ul>
-<li>O risco <strong>aumenta e depois diminui</strong></li>
-<li>Há um <strong>tempo típico de maior risco</strong></li>
+<li><span class="math inline">\(\sigma\)</span> controla a largura<br>
+</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado-lognormal" class="slide level2 scrollable">
-<h2><strong>FUNÇÃO DE RISCO ACUMULADO (LOGNORMAL)</strong></h2>
+<section id="função-de-risco-acumulado-5" class="slide level2 scrollable">
+<h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
 <li>Para a distribuição <strong>lognormal</strong>, a função de risco acumulado é:</li>
@@ -1917,7 +1776,7 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 </div>
 </div>
 </section>
-<section id="função-de-risco-acumulado-4" class="slide level2">
+<section id="função-de-risco-acumulado-6" class="slide level2">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1945,7 +1804,7 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado-5" class="slide level2">
+<section id="função-de-risco-acumulado-7" class="slide level2">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -1962,22 +1821,22 @@ S(t) = P(T \geq t) = 1 - \Phi\left(\frac{\log t - \mu}{\sigma}\right)
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td>0.3</td>
+<td>0.5</td>
 <td>Crescimento rápido e concentrado</td>
 </tr>
 <tr class="even">
 <td>0</td>
-<td>0.7</td>
+<td>1</td>
 <td>Crescimento mais gradual</td>
 </tr>
 <tr class="odd">
-<td>0.5</td>
 <td>1</td>
+<td>1.5</td>
 <td>Crescimento lento com cauda longa</td>
 </tr>
 <tr class="even">
 <td>1</td>
-<td>0.5</td>
+<td>1.5</td>
 <td>Crescimento deslocado no tempo</td>
 </tr>
 </tbody>
@@ -2003,51 +1862,9 @@ t_p = \exp\left(\mu + \sigma \, z_p\right)
 \]</span></p></li>
 </ul>
 <p>onde <span class="math inline">\(z_p = \Phi^{-1}(p)\)</span> é o quantil da normal padrão</p>
-<hr>
 <ul>
-<li><strong>Exemplo: Mediana (<span class="math inline">\(p = 0.5\)</span>):</strong></li>
-</ul>
-<p><span class="math display">\[
-t_{0.5} = \exp(\mu)
-\]</span></p>
-<hr>
-<ul>
-<li><strong>Comparando os parâmetros:</strong></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\mu\)</span></th>
-<th><span class="math inline">\(\sigma\)</span></th>
-<th>Mediana</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0.3</td>
-<td><span class="math inline">\(1\)</span></td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>0.7</td>
-<td><span class="math inline">\(1\)</span></td>
-</tr>
-<tr class="odd">
-<td>0.5</td>
-<td>1</td>
-<td><span class="math inline">\(\approx 1.65\)</span></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.5</td>
-<td><span class="math inline">\(\approx 2.72\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li><strong>Interpretação:</strong>
+<li><p><strong>Exemplo: Mediana (<span class="math inline">\(p = 0.5\)</span>):</strong> <span class="math inline">\(t_{0.5} = \exp(\mu)\)</span></p></li>
+<li><p><strong>Interpretação:</strong></p>
 <ul>
 <li><span class="math inline">\(\mu\)</span> controla a <strong>escala temporal (posição)</strong></li>
 <li><span class="math inline">\(\sigma\)</span> controla a <strong>dispersão</strong></li>
@@ -2056,102 +1873,52 @@ t_{0.5} = \exp(\mu)
 </ul>
 </div>
 </section>
-<section id="tempo-médio-2" class="slide level2">
-<h2><strong>TEMPO MÉDIO</strong></h2>
+<section id="tempos-médio-e-médio-residual-1" class="slide level2">
+<h2><strong>TEMPOS MÉDIO E MÉDIO RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O tempo médio até o evento é: <span class="math display">\[
+<li><p>Na distribuição lognormal, o tempo médio até o evento é: <span class="math display">\[
 E(T) = \exp\left(\mu + \frac{\sigma^2}{2}\right)
-\]</span></li>
-</ul>
-<hr>
-<ul>
-<li><strong>Comparando os parâmetros:</strong></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\mu\)</span></th>
-<th><span class="math inline">\(\sigma\)</span></th>
-<th>Tempo médio <span class="math inline">\(E(T)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0.3</td>
-<td><span class="math inline">\(\approx 1.05\)</span></td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>0.7</td>
-<td><span class="math inline">\(\approx 1.28\)</span></td>
-</tr>
-<tr class="odd">
-<td>0.5</td>
-<td>1</td>
-<td><span class="math inline">\(\approx 2.72\)</span></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.5</td>
-<td><span class="math inline">\(\approx 3.08\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li><strong>Resumo:</strong>
-<ul>
-<li><span class="math inline">\(\mu\)</span> maior → eventos mais <strong>tardios</strong></li>
-<li><span class="math inline">\(\sigma\)</span> maior → média aumenta (cauda longa)</li>
-<li>Média é maior que a mediana (assimetria à direita)</li>
-</ul></li>
+\]</span></p></li>
+<li><p>Na distribuição lognormal, o tempo médio residual é: <span class="math display">\[
+vmr(t)=\frac{e^{\mu+\frac{\sigma^2}{2}}
+\left[1-\Phi\left(\frac{\ln t-\mu-\sigma^2}{\sigma}\right)\right]}
+{1-\Phi\left(\frac{\ln t-\mu}{\sigma}\right)}-t
+\]</span></p></li>
 </ul>
 </div>
 </section>
-<section id="tempo-médio-residual-2" class="slide level2">
-<h2><strong>TEMPO MÉDIO RESIDUAL</strong></h2>
+<section id="aplicabilidade-5" class="slide level2">
+<h2><strong>APLICABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O tempo médio residual é: <span class="math display">\[
-E(T - t \mid T &gt; t)
-\]</span></p></li>
-<li><p>Para a distribuição <strong>lognormal</strong>, <strong>não é constante</strong></p></li>
-<li><p>Depende do tempo já vivido <span class="math inline">\(t\)</span></p></li>
+<li><p>O <strong>modelo lognormal</strong> assume que o logaritmo do tempo até o evento segue uma distribuição normal</p></li>
+<li><p>Isso permite modelar situações em que o tempo até o evento é <strong>assimétrico à direita</strong>, comum em dados de sobrevivência</p></li>
+<li><p>No caso dos dados de <strong>câncer de bexiga</strong>, essa suposição implica que:<br>
+→ o risco de recorrência ou óbito <strong>varia ao longo do tempo de forma não monotônica</strong></p></li>
+<li><p>Ou seja:<br>
+→ o risco pode <strong>aumentar inicialmente</strong>, atingir um pico<br>
+→ e depois <strong>diminuir com o tempo</strong></p></li>
+<li><p>Esse comportamento é compatível com muitos processos biológicos reais<br>
+</p></li>
 </ul>
-<hr>
+</div>
+</section>
+<section id="aplicabilidade-6" class="slide level2">
+<h2><strong>APLICABILIDADE</strong></h2>
+<div class="box-blue">
 <ul>
-<li><p><strong>Interpretação:</strong></p></li>
-<li><p>Não possui propriedade de <strong>falta de memória</strong></p></li>
-<li><p>O tempo restante esperado:</p>
-<ul>
-<li><strong>Depende do passado</strong></li>
-<li>Pode aumentar ou diminuir dependendo da região da distribuição</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p><strong>Intuição:</strong></p></li>
-<li><p>A lognormal possui:</p>
-<ul>
-<li>Risco que <strong>aumenta e depois diminui</strong> (não monótono)</li>
-</ul></li>
-<li><p>Assim:</p>
-<ul>
-<li>Para tempos pequenos → pode haver aumento do tempo esperado restante<br>
-</li>
-<li>Para tempos grandes → tende a diminuir</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><strong>Resumo:</strong>
-<ul>
-<li>Distribuição bastante <strong>flexível</strong></li>
-<li>Captura fenômenos com <strong>heterogeneidade e cauda longa</strong></li>
-<li>Muito usada quando há <strong>efeitos multiplicativos no tempo</strong></li>
-</ul></li>
+<li><p>Diferente dos modelos exponencial e Weibull, o lognormal permite uma <strong>função de risco em formato de pico (unimodal)</strong></p></li>
+<li><p>Em particular:<br>
+→ risco <strong>baixo no início</strong>, aumentando com o tempo<br>
+→ atingindo um <strong>máximo</strong><br>
+→ e depois <strong>decrescendo</strong></p></li>
+<li><p>Portanto, o modelo lognormal pode ser mais adequado quando há um <strong>período crítico de maior risco</strong></p></li>
+<li><p>Ainda assim, ele possui:<br>
+→ <strong>interpretação menos direta</strong> dos parâmetros<br>
+→ e maior complexidade em comparação aos modelos anteriores</p></li>
+<li><p>É especialmente útil quando o processo envolve <strong>acúmulo de efeitos ao longo do tempo</strong><br>
+</p></li>
 </ul>
 </div>
 </section></section>
@@ -2164,30 +1931,16 @@ E(T - t \mid T &gt; t)
 <h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A <strong>distribuição Gama</strong> é uma generalização da exponencial<br>
-→ surge como soma de tempos de espera independentes</p></li>
+<li><p>A <strong>distribuição Gama</strong> também é uma generalização da exponencial</p></li>
 <li><p>Consideramos <span class="math inline">\(T \sim \text{Gama}(\alpha, \beta)\)</span>, onde:</p>
 <ul>
 <li><span class="math inline">\(\alpha\)</span> = <strong>parâmetro de forma</strong></li>
 <li><span class="math inline">\(\beta\)</span> = <strong>taxa</strong></li>
 </ul></li>
-</ul>
-<hr>
-<ul>
-<li>Muito utilizada para modelar tempos que:
+<li><p>Muito utilizada para modelar tempos que:</p>
 <ul>
 <li>São <strong>positivos</strong></li>
 <li>Podem ter diferentes níveis de <strong>assimetria</strong></li>
-<li>Representam <strong>acúmulo de eventos ao longo do tempo</strong></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li>Diferentemente da <strong>distribuição exponencial</strong>:
-<ul>
-<li>Permite risco <strong>não constante</strong></li>
-<li>Não possui a propriedade de <strong>falta de memória</strong></li>
-<li>É mais <strong>flexível</strong> para modelar diferentes padrões</li>
 </ul></li>
 </ul>
 </div>
@@ -2196,33 +1949,22 @@ E(T - t \mid T &gt; t)
 <h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Aplicações em <strong>saúde</strong>:
+<li><p>Aplicações em <strong>saúde</strong>:</p>
 <ul>
-<li>Tempo até ocorrência de múltiplos eventos (ex: infecções sucessivas)</li>
-<li>Tempo até progressão de doenças</li>
-<li>Tempo até falha após acúmulo de danos</li>
+<li>Tempo até ocorrência de múltiplos eventos (ex: infecções sucessivas).</li>
+<li>Sobrevida de pacientes com câncer.</li>
 </ul></li>
-</ul>
-<hr>
+<li><p>Aplicações em confiabilidade:</p>
 <ul>
-<li>Aplicações em <strong>outras áreas</strong>:
-<ul>
-<li>Tempo até falha de sistemas com múltiplos componentes</li>
-<li>Modelagem de processos de espera</li>
+<li>Resistência de fibras de poliéster</li>
+<li>Trincas por fadiga</li>
 <li>Confiabilidade de sistemas</li>
 </ul></li>
-</ul>
-<hr>
-<ul>
 <li><p>Por que ela é <strong>tão utilizada</strong>?</p></li>
 <li><p>Permite:</p>
 <ul>
 <li>Modelar diferentes formatos de risco</li>
 <li>Representar <strong>processos acumulativos</strong></li>
-</ul></li>
-<li><p>Inclui a exponencial como caso particular:</p>
-<ul>
-<li><span class="math inline">\(\alpha = 1\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -2235,32 +1977,11 @@ E(T - t \mid T &gt; t)
 <li><p>A função densidade é: <span class="math display">\[
 f(t) = \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha - 1} e^{-\beta t}
 \]</span></p></li>
-</ul>
-<hr>
+<li><p>Onde:</p>
 <ul>
-<li>Onde:
-<ul>
-<li><span class="math inline">\(\alpha &gt; 0\)</span> → controla a <strong>forma</strong></li>
+<li><span class="math inline">\(\alpha &gt; 0\)</span> → controla a <strong>forma</strong> (<span class="math inline">\(\alpha=1 \rightarrow exp(\beta)\)</span>)</li>
 <li><span class="math inline">\(\beta &gt; 0\)</span> → controla a <strong>taxa</strong></li>
 <li><span class="math inline">\(t &gt; 0\)</span></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li>Interpretação dos parâmetros:
-<ul>
-<li><span class="math inline">\(\alpha\)</span>:
-<ul>
-<li>Define o <strong>formato da curva</strong></li>
-<li><span class="math inline">\(\alpha &lt; 1\)</span> → decrescente</li>
-<li><span class="math inline">\(\alpha = 1\)</span> → exponencial</li>
-<li><span class="math inline">\(\alpha &gt; 1\)</span> → formato unimodal</li>
-</ul></li>
-<li><span class="math inline">\(\beta\)</span>:
-<ul>
-<li>Controla a <strong>escala temporal</strong></li>
-<li><span class="math inline">\(\beta\)</span> maior → eventos mais <strong>rápidos</strong></li>
-</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -2278,10 +1999,9 @@ f(t) = \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha - 1} e^{-\beta t}
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="função-densidade-de-probabilidade-13" class="title-slide slide level1 center">
-<h1><strong>FUNÇÃO DENSIDADE DE PROBABILIDADE</strong></h1>
+</section>
+<section id="função-densidade-de-probabilidade-13" class="slide level2">
+<h2><strong>FUNÇÃO DENSIDADE DE PROBABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
 <li><p><strong>Interpretação dos parâmetros:</strong></p></li>
@@ -2333,7 +2053,7 @@ f(t) = \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha - 1} e^{-\beta t}
 <td>Pico moderado → eventos mais concentrados</td>
 </tr>
 <tr class="even">
-<td>(3, 2)</td>
+<td>(2, 2)</td>
 <td>Pico mais acentuado e deslocado → eventos mais <strong>rápidos e concentrados</strong></td>
 </tr>
 </tbody>
@@ -2348,15 +2068,10 @@ f(t) = \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha - 1} e^{-\beta t}
 </li>
 <li>Distribuição pode ser <strong>assimétrica à direita</strong></li>
 </ul></li>
-<li>A Gama é ideal para:
-<ul>
-<li>Modelar <strong>tempos de espera acumulados</strong></li>
-<li>Processos com <strong>múltiplas etapas até o evento</strong></li>
-</ul></li>
 </ul>
 </div>
 </section>
-<section id="função-de-sobrevivênciaconfiabilidade-8" class="slide level2 scrollable">
+<section id="função-de-sobrevivênciaconfiabilidade-8" class="slide level2">
 <h2><strong>FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2369,12 +2084,13 @@ S(t) = P(T \geq t) = 1 - F(t)
 <li><p>Para a distribuição Gama: <span class="math display">\[
 S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 \]</span></p></li>
-<li><p>Onde:</p>
-<ul>
-<li><span class="math inline">\(\gamma(\cdot,\cdot)\)</span> é a <strong>função gama incompleta inferior</strong></li>
-<li><span class="math inline">\(\Gamma(\alpha)\)</span> é a função gama</li>
-</ul></li>
+<li><p>Onde <span class="math inline">\(\gamma(\cdot,\cdot)\)</span> é a <strong>função gama incompleta inferior</strong></p></li>
 </ul>
+</div>
+</section>
+<section id="função-de-sobrevivênciaconfiabilidade-9" class="slide level2">
+<h2><strong>FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE</strong></h2>
+<div class="box-blue">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -2386,7 +2102,7 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 </div>
 </div>
 </section>
-<section id="função-de-sobrevivênciaconfiabilidade-9" class="slide level2">
+<section id="função-de-sobrevivênciaconfiabilidade-10" class="slide level2">
 <h2><strong>FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2408,7 +2124,7 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 </ul>
 </div>
 </section>
-<section id="função-de-sobrevivênciaconfiabilidade-10" class="slide level2">
+<section id="função-de-sobrevivênciaconfiabilidade-11" class="slide level2">
 <h2><strong>FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2435,7 +2151,7 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 <td>Sobrevivência mais alta no início</td>
 </tr>
 <tr class="even">
-<td>(3, 2)</td>
+<td>(2, 2)</td>
 <td>Queda mais acentuada após algum tempo</td>
 </tr>
 </tbody>
@@ -2449,11 +2165,6 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 <li><span class="math inline">\(\beta\)</span> desloca a curva no tempo<br>
 </li>
 <li>Curva pode assumir diferentes padrões (não apenas exponencial)</li>
-</ul></li>
-<li>A Gama permite:
-<ul>
-<li>Modelar diferentes <strong>dinâmicas de risco</strong></li>
-<li>Capturar processos com <strong>acúmulo de eventos</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -2469,9 +2180,6 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 \frac{\frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha - 1} e^{-\beta t}}
 {1 - F(t)}
 \]</span></p>
-<ul>
-<li>Onde <span class="math inline">\(F(t)\)</span> é a função de distribuição acumulada da Gama</li>
-</ul>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -2496,21 +2204,14 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 </li>
 <li><span class="math inline">\(\alpha &gt; 1\)</span> → risco <strong>crescente ao longo do tempo</strong></li>
 </ul></li>
-</ul>
-<hr>
+<li><p><strong>Propriedade importante:</strong></p></li>
+<li><p>Quando <span class="math inline">\(t \to \infty\)</span>:</p>
 <ul>
-<li><p>Consequência:</p></li>
-<li><p>Um indivíduo que <strong>sobreviveu</strong> até <span class="math inline">\(t\)</span>:</p>
-<ul>
-<li>Pode ter risco <strong>maior ou menor</strong>, dependendo do caso</li>
-</ul></li>
-<li><p>Portanto:</p>
-<ul>
-<li>A propriedade de <strong>falta de memória NÃO vale</strong></li>
+<li><span class="math inline">\(\lambda(t) \longrightarrow \beta\)</span></li>
 </ul></li>
 <li><p>Ou seja:</p>
 <ul>
-<li>O passado <strong>influencia o risco futuro</strong></li>
+<li>No longo prazo, o risco tende ao parâmetro de <strong>taxa</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -2527,9 +2228,9 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 </ul></li>
 <li><p><span class="math inline">\(\beta\)</span> (<strong>taxa</strong>):</p>
 <ul>
-<li>Escala o risco ao longo do tempo<br>
-</li>
-<li><span class="math inline">\(\beta\)</span> maior → risco <strong>mais intenso (eventos mais rápidos)</strong></li>
+<li>Define o <strong>limite da função de risco</strong></li>
+<li><span class="math inline">\(\lambda(t) \to \beta\)</span> quando <span class="math inline">\(t \to \infty\)</span></li>
+<li><span class="math inline">\(\beta\)</span> maior → risco <strong>mais intenso no longo prazo</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -2550,7 +2251,7 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 <tbody>
 <tr class="odd">
 <td>(0.7, 0.5)</td>
-<td>Risco alto no início e depois decrescente</td>
+<td>Risco alto no início, decrescente → tende a 0.5</td>
 </tr>
 <tr class="even">
 <td>(1, 1)</td>
@@ -2558,34 +2259,28 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 </tr>
 <tr class="odd">
 <td>(2, 1)</td>
-<td>Risco crescente ao longo do tempo</td>
+<td>Risco crescente → tende a 1</td>
 </tr>
 <tr class="even">
-<td>(3, 2)</td>
-<td>Risco cresce mais rapidamente</td>
+<td>(2, 2)</td>
+<td>Risco cresce mais rapidamente → tende a 2</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <ul>
 <li><strong>Resumo visual:</strong>
 <ul>
 <li><span class="math inline">\(\alpha\)</span> define o <strong>formato do risco</strong><br>
 </li>
-<li><span class="math inline">\(\beta\)</span> controla a <strong>intensidade temporal</strong><br>
+<li><span class="math inline">\(\beta\)</span> define o <strong>nível de longo prazo</strong><br>
 </li>
-<li>Não há formato único (pode ser crescente ou decrescente)</li>
-</ul></li>
-<li>A Gama é ideal quando:
-<ul>
-<li>O risco muda <strong>ao longo do tempo</strong></li>
-<li>Há efeitos de <strong>acúmulo ou desgaste</strong></li>
+<li>Todas as curvas convergem para <span class="math inline">\(\beta\)</span></li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado-gama" class="slide level2 scrollable">
-<h2><strong>FUNÇÃO DE RISCO ACUMULADO (GAMA)</strong></h2>
+<section id="função-de-risco-acumulado-8" class="slide level2 scrollable">
+<h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
 <li>Para a distribuição <strong>Gama</strong>, a função de risco acumulado é:</li>
@@ -2593,11 +2288,6 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 <p><span class="math display">\[
 \Lambda(t) = -\log\left[S(t)\right]
 \]</span></p>
-<ul>
-<li>Onde: <span class="math display">\[
-S(t) = 1 - F(t)
-\]</span></li>
-</ul>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -2609,7 +2299,7 @@ S(t) = 1 - F(t)
 </div>
 </div>
 </section>
-<section id="função-de-risco-acumulado-6" class="slide level2">
+<section id="função-de-risco-acumulado-9" class="slide level2">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2638,7 +2328,7 @@ S(t) = 1 - F(t)
 </ul>
 </div>
 </section>
-<section id="função-de-risco-acumulado-7" class="slide level2">
+<section id="função-de-risco-acumulado-10" class="slide level2">
 <h2><strong>FUNÇÃO DE RISCO ACUMULADO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2669,7 +2359,7 @@ S(t) = 1 - F(t)
 <td>Crescimento mais lento no início</td>
 </tr>
 <tr class="even">
-<td>3</td>
+<td>2</td>
 <td>2</td>
 <td>Crescimento mais acelerado ao longo do tempo</td>
 </tr>
@@ -2697,155 +2387,58 @@ t_p = F^{-1}(p)
 <li><p>Não possui forma fechada simples<br>
 → obtido numericamente</p></li>
 </ul>
-<hr>
-<ul>
-<li><strong>Exemplo: Mediana (<span class="math inline">\(p = 0.5\)</span>):</strong></li>
-</ul>
-<p><span class="math display">\[
-t_{0.5} = F^{-1}(0.5)
-\]</span></p>
-<hr>
-<ul>
-<li><strong>Comparando os parâmetros:</strong></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\alpha\)</span></th>
-<th><span class="math inline">\(\beta\)</span></th>
-<th>Mediana (aprox.)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0.7</td>
-<td>0.5</td>
-<td><span class="math inline">\(\approx 0.80\)</span></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td><span class="math inline">\(\approx 0.69\)</span></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>1</td>
-<td><span class="math inline">\(\approx 1.68\)</span></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>2</td>
-<td><span class="math inline">\(\approx 1.34\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li><strong>Interpretação:</strong>
-<ul>
-<li><span class="math inline">\(\beta\)</span> maior → percentis <strong>menores</strong> (eventos mais rápidos)</li>
-<li><span class="math inline">\(\alpha\)</span> altera a <strong>forma e assimetria</strong></li>
-<li>Percentis refletem o comportamento acumulativo do processo</li>
-</ul></li>
-</ul>
 </div>
 </section>
-<section id="tempo-médio-3" class="slide level2">
-<h2><strong>TEMPO MÉDIO</strong></h2>
+<section id="tempos-médio-e-médio-residual-2" class="slide level2">
+<h2><strong>TEMPOS MÉDIO E MÉDIO RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O tempo médio até o evento é: <span class="math display">\[
+<li><p>Na distribuição Gama, o tempo médio até o evento é: <span class="math display">\[
 E(T) = \frac{\alpha}{\beta}
-\]</span></li>
-</ul>
-<hr>
-<ul>
-<li><strong>Comparando os parâmetros:</strong></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\alpha\)</span></th>
-<th><span class="math inline">\(\beta\)</span></th>
-<th>Tempo médio <span class="math inline">\(E(T)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0.7</td>
-<td>0.5</td>
-<td><span class="math inline">\(1.4\)</span></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td><span class="math inline">\(1\)</span></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>1</td>
-<td><span class="math inline">\(2\)</span></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>2</td>
-<td><span class="math inline">\(1.5\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li><strong>Resumo:</strong>
+\]</span></p></li>
+<li><p><strong>Resumo:</strong></p>
 <ul>
 <li><span class="math inline">\(\beta\)</span> maior → eventos mais <strong>rápidos</strong></li>
 <li><span class="math inline">\(\alpha\)</span> maior → maior <strong>tempo médio</strong></li>
 <li>Interpretação simples e direta</li>
 </ul></li>
+<li><p>Para a distribuição Gama, o tempo médio residual <span class="math inline">\(vmr(t)\)</span> também é obtido numericamente.</p></li>
 </ul>
 </div>
 </section>
-<section id="tempo-médio-residual-3" class="slide level2">
-<h2><strong>TEMPO MÉDIO RESIDUAL</strong></h2>
+<section id="aplicabilidade-7" class="slide level2">
+<h2><strong>APLICABILIDADE</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O tempo médio residual é: <span class="math display">\[
-E(T - t \mid T &gt; t)
-\]</span></p></li>
-<li><p>Para a distribuição <strong>Gama</strong>, <strong>não é constante</strong></p></li>
-<li><p>Depende do tempo já vivido <span class="math inline">\(t\)</span></p></li>
+<li><p>O <strong>modelo Gama</strong> é uma generalização do modelo exponencial, permitindo maior flexibilidade na forma do risco</p></li>
+<li><p>Ele possui <strong>dois parâmetros</strong>, possibilitando representar diferentes comportamentos ao longo do tempo</p></li>
+<li><p>No caso dos dados de <strong>câncer de bexiga</strong>, essa suposição implica que:<br>
+→ o risco de recorrência ou óbito <strong>pode variar ao longo do tempo</strong></p></li>
+<li><p>Ou seja:<br>
+→ o indivíduo pode apresentar <strong>risco alto no início</strong> e depois diminuir<br>
+→ ou ainda um risco que <strong>cresce ao longo do tempo</strong></p></li>
+<li><p>Independentemente do comportamento inicial:<br>
+→ o risco tende a se <strong>estabilizar em um nível constante (platô)</strong> ao longo do tempo<br>
+</p></li>
 </ul>
-<hr>
+</div>
+</section>
+<section id="aplicabilidade-8" class="slide level2">
+<h2><strong>APLICABILIDADE</strong></h2>
+<div class="box-blue">
 <ul>
-<li><p><strong>Interpretação:</strong></p></li>
-<li><p>Não possui propriedade de <strong>falta de memória</strong></p>
-<ul>
-<li>(exceto no caso exponencial, <span class="math inline">\(\alpha = 1\)</span>)</li>
-</ul></li>
-<li><p>O tempo restante esperado:</p>
-<ul>
-<li><strong>Depende do passado</strong></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p><strong>Intuição:</strong></p></li>
-<li><p><span class="math inline">\(\alpha &gt; 1\)</span> (risco crescente):</p>
-<ul>
-<li>Quanto mais tempo passou → <strong>menos tempo restante esperado</strong></li>
-</ul></li>
-<li><p><span class="math inline">\(\alpha &lt; 1\)</span> (risco decrescente):</p>
-<ul>
-<li>Quanto mais tempo passou → <strong>mais tempo restante esperado</strong></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><strong>Resumo:</strong>
-<ul>
-<li>A Gama é bastante <strong>flexível</strong></li>
-<li>Permite modelar diferentes padrões de memória</li>
-<li>Inclui a exponencial como caso particular</li>
-</ul></li>
+<li><p>Diferente do modelo exponencial, o Gama permite uma <strong>função de risco não constante</strong></p></li>
+<li><p>Em particular:<br>
+→ risco <strong>decrescente</strong> (ex.: recuperação após tratamento)<br>
+→ risco <strong>crescente</strong> (ex.: progressão da doença)</p></li>
+<li><p>Contudo, uma característica importante é que:<br>
+→ o risco <strong>converge para um valor constante ao longo do tempo</strong></p></li>
+<li><p>Portanto, o modelo Gama é útil quando:<br>
+→ há variação inicial no risco, mas com <strong>estabilização no longo prazo</strong></p></li>
+<li><p>Ele mantém:<br>
+→ boa <strong>flexibilidade inicial</strong><br>
+→ com comportamento assintótico semelhante ao modelo exponencial<br>
+</p></li>
 </ul>
 </div>
 </section></section>
@@ -2854,29 +2447,21 @@ E(T - t \mid T &gt; t)
 <h1><strong>DISTRIBUIÇÃO GAMA GENERALIZADA</strong></h1>
 
 </section>
-<section id="distribuição-gama-generalizada-stacy-flexsurv" class="slide level2">
-<h2><strong>DISTRIBUIÇÃO GAMA GENERALIZADA (Stacy / flexsurv)</strong></h2>
+<section id="distribuição-gama-generalizada-1" class="slide level2">
+<h2><strong>DISTRIBUIÇÃO GAMA GENERALIZADA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Seja <span class="math inline">\(X &gt; 0\)</span>, com parâmetros:</p>
+<li><p>Seja <span class="math inline">\(T &gt; 0\)</span>, com parâmetros:</p>
 <ul>
 <li><span class="math inline">\(a &gt; 0\)</span> → <strong>escala</strong></li>
 <li><span class="math inline">\(b &gt; 0\)</span> → <strong>forma</strong></li>
 <li><span class="math inline">\(k &gt; 0\)</span> → <strong>parâmetro adicional de forma</strong></li>
 </ul></li>
-</ul>
-<hr>
-<ul>
-<li>A densidade é dada por:</li>
+<li><p>A densidade é dada por:</p></li>
 </ul>
 <p><span class="math display">\[
-f(x \mid a,b,k) = \frac{b}{\Gamma(k)\, a^{bk}} \, x^{bk - 1} \exp\left[-\left(\frac{x}{a}\right)^b\right]
-\]</span></p>
-<hr>
-<ul>
-<li><p>Ideia central:</p></li>
-<li><p>Um modelo com <strong>três parâmetros</strong> que amplia a flexibilidade das distribuições usuais</p></li>
-</ul>
+f(t \mid a,b,k) = \frac{b}{\Gamma(k)\, a^{bk}} \, t^{bk - 1} \exp\left[-\left(\frac{t}{a}\right)^b\right]
+\]</span> - Um modelo com <strong>três parâmetros</strong> que amplia a flexibilidade das distribuições usuais</p>
 </div>
 </section>
 <section id="interpretação-dos-parâmetros" class="slide level2">
@@ -2888,28 +2473,15 @@ f(x \mid a,b,k) = \frac{b}{\Gamma(k)\, a^{bk}} \, x^{bk - 1} \exp\left[-\left(\f
 <li>Controla o <strong>tempo até o evento</strong></li>
 <li><span class="math inline">\(a\)</span> maior → eventos mais <strong>tardios</strong></li>
 </ul></li>
-</ul>
-<hr>
-<ul>
 <li><span class="math inline">\(b\)</span> (<strong>forma</strong>):
 <ul>
 <li>Controla o <strong>comportamento do risco</strong></li>
 <li>Atua de forma semelhante ao parâmetro da <strong>Weibull</strong></li>
 </ul></li>
-</ul>
-<hr>
-<ul>
 <li><span class="math inline">\(k\)</span> (<strong>forma adicional</strong>):
 <ul>
 <li>Introduz <strong>flexibilidade extra</strong></li>
 <li>Permite capturar padrões não possíveis com Weibull simples</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li>Em conjunto:
-<ul>
-<li>Permitem modelar diferentes formatos de <strong>função de risco</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -2918,37 +2490,23 @@ f(x \mid a,b,k) = \frac{b}{\Gamma(k)\, a^{bk}} \, x^{bk - 1} \exp\left[-\left(\f
 <h2><strong>RELAÇÃO COM DISTRIBUIÇÕES CONHECIDAS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A Gama Generalizada inclui como casos particulares:</li>
-</ul>
-<hr>
-<ul>
-<li><strong>Weibull</strong>:
-<ul>
-<li>Quando <span class="math inline">\(k = 1\)</span></li>
-</ul></li>
+<li><p>A Gama Generalizada inclui como casos particulares:</p></li>
+<li><p><strong>Weibull</strong>: quando <span class="math inline">\(k = 1\)</span></p></li>
 </ul>
 <p><span class="math display">\[
-f(x) = \frac{b}{a^b} x^{b-1} \exp\left[-\left(\frac{x}{a}\right)^b\right]
+f(t) = \frac{b}{a^b} t^{b-1} \exp\left[-\left(\frac{t}{a}\right)^b\right]
 \]</span></p>
-<hr>
 <ul>
-<li><strong>Exponencial</strong>:
-<ul>
-<li>Quando <span class="math inline">\(k = 1\)</span> e <span class="math inline">\(b = 1\)</span></li>
-</ul></li>
+<li><strong>Exponencial</strong>: quando <span class="math inline">\(k = 1\)</span> e <span class="math inline">\(b = 1\)</span></li>
 </ul>
 <p><span class="math display">\[
-f(x) = \frac{1}{a} \exp(-x/a)
+f(t) = \frac{1}{a} \exp(-t/a)
 \]</span></p>
-<hr>
 <ul>
-<li><strong>Gama</strong>:
-<ul>
-<li>Quando <span class="math inline">\(b = 1\)</span></li>
-</ul></li>
+<li><strong>Gama</strong>: quando <span class="math inline">\(b = 1\)</span></li>
 </ul>
 <p><span class="math display">\[
-f(x) = \frac{1}{\Gamma(k)\, a^k} x^{k-1} e^{-x/a}
+f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 \]</span></p>
 </div>
 </section>
@@ -2956,28 +2514,10 @@ f(x) = \frac{1}{\Gamma(k)\, a^k} x^{k-1} e^{-x/a}
 <h2><strong>RELAÇÃO COM A LOGNORMAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A <strong>lognormal</strong> não é um caso direto, mas:</p></li>
+<li><p>A distribuição <strong>lognormal</strong> não é um caso direto, mas:</p></li>
 <li><p>Pode ser obtida como um <strong>caso limite</strong> da Gama Generalizada</p></li>
-</ul>
-<hr>
-<ul>
-<li><p>Ideia:</p></li>
 <li><p>Quando <span class="math inline">\(b \to 0\)</span> (com reparametrização adequada), a GG tende à lognormal</p></li>
-</ul>
-<hr>
-<ul>
-<li><p>Interpretação:</p></li>
-<li><p>A GG conecta:</p>
-<ul>
-<li>Modelos baseados em potência (Weibull/Gama)<br>
-</li>
-<li>Modelos baseados em log (Lognormal)</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>Resultado:</p></li>
-<li><p>Grande capacidade de adaptação a diferentes padrões de dados</p></li>
+<li><p>Assim, tem-se uma grande capacidade de adaptação a diferentes padrões de dados</p></li>
 </ul>
 </div>
 </section>
@@ -2987,29 +2527,22 @@ f(x) = \frac{1}{\Gamma(k)\, a^k} x^{k-1} e^{-x/a}
 <ul>
 <li><p>Na prática, não sabemos qual modelo é o correto:</p>
 <ul>
+<li>Exponencial?</li>
 <li>Weibull?</li>
 <li>Gama?</li>
 <li>Lognormal?</li>
 </ul></li>
-</ul>
-<hr>
+<li><p>Estratégia moderna: ajustar um modelo mais geral → <strong>Gama Generalizada</strong></p></li>
+<li><p>Depois verificar:</p>
 <ul>
-<li><p>Estratégia moderna:</p></li>
-<li><p>Ajustar um modelo mais geral → <strong>Gama Generalizada</strong></p></li>
-</ul>
-<hr>
-<ul>
-<li><p>Depois verificar:</p></li>
-<li><p><span class="math inline">\(k = 1\)</span> → Weibull<br>
-</p></li>
-<li><p><span class="math inline">\(b = 1\)</span> → Gama<br>
-</p></li>
-<li><p><span class="math inline">\(k = 1\)</span> e <span class="math inline">\(b = 1\)</span> → Exponencial</p></li>
-</ul>
-<hr>
-<ul>
-<li><p>Ou seja:</p></li>
-<li><p>Ela permite que os <strong>dados indiquem o modelo mais adequado</strong></p></li>
+<li><span class="math inline">\(k = 1\)</span> → Weibull<br>
+</li>
+<li><span class="math inline">\(b = 1\)</span> → Gama<br>
+</li>
+<li><span class="math inline">\(k = 1\)</span> e <span class="math inline">\(b = 1\)</span> → Exponencial<br>
+</li>
+<li><span class="math inline">\(b \rightarrow 0\)</span> → Lognormal</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -3017,59 +2550,18 @@ f(x) = \frac{1}{\Gamma(k)\, a^k} x^{k-1} e^{-x/a}
 <h2><strong>INTERPRETAÇÃO PRÁTICA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A GG permite modelar:</p></li>
+<li><p>A distribuição Gama Generalizada permite modelar:</p></li>
 <li><p>✔ Risco crescente<br>
 </p></li>
 <li><p>✔ Risco decrescente<br>
 </p></li>
-<li><p>✔ Risco não monótono</p></li>
-</ul>
-<hr>
-<ul>
-<li><p>Isso é essencial em:</p>
-<ul>
-<li>Análise de sobrevivência<br>
-</li>
-<li>Confiabilidade<br>
-</li>
-<li>Estudos biomédicos</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>Comparação:</p></li>
-<li><p>Weibull → flexível, mas limitada<br>
+<li><p>✔ Risco não monótono<br>
 </p></li>
-<li><p>GG → muito mais <strong>abrangente</strong></p></li>
-</ul>
-</div>
-</section>
-<section id="resumo-final" class="slide level2">
-<h2><strong>RESUMO FINAL</strong></h2>
-<div class="box-blue">
+<li><p>✔ Risco constante</p></li>
+<li><p>Principal vantagem: serve como ferramenta de <strong>seleção de modelo</strong></p>
 <ul>
-<li><p>A Gama Generalizada:</p></li>
-<li><p>✔ Possui três parâmetros: <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(k\)</span></p></li>
-<li><p>✔ Inclui:</p>
-<ul>
-<li>Exponencial<br>
-</li>
-<li>Weibull<br>
-</li>
-<li>Gama<br>
-</li>
-<li>Lognormal (limite)</li>
+<li>Em vez de escolher um modelo específico, podemos começar com a Gama Generalizada e deixar os dados guiarem a escolha.</li>
 </ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>✔ Principal vantagem:</p></li>
-<li><p>Serve como ferramenta de <strong>seleção de modelo</strong></p></li>
-</ul>
-<hr>
-<ul>
-<li><p><strong>Mensagem-chave para os alunos:</strong></p></li>
-<li><p>Em vez de escolher um modelo específico, podemos começar com a GG e deixar os dados guiarem a escolha</p></li>
 </ul>
 </div>
 </section></section>

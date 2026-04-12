@@ -32,7 +32,7 @@
     "href": "Aula6.html#modelos-probabilísticos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MODELOS PROBABILÍSTICOS",
-    "text": "MODELOS PROBABILÍSTICOS\n\n\nA variável \\(T\\) representa:\n\nO tempo até o evento de interesse\n\nCaracterísticas de \\(T\\): Contínua e Não negativa\nPortanto, distribuições como a Normal e Binomial Não são adequadas aqui.\nNa prática, os dados apresentam:\n\nAssimetria à direita\n\nOu seja:\n\nMuitos eventos ocorrem cedo\nPoucos indivíduos sobrevivem por longos períodos"
+    "text": "MODELOS PROBABILÍSTICOS\n\n\nA variável \\(T\\) representa:\n\nO tempo até o evento de interesse\n\nCaracterísticas de \\(T\\): contínua e não negativa\nPortanto, distribuições como a Normal e Binomial não são adequadas aqui.\nNa prática, os dados apresentam:\n\nAssimetria à direita\n\nOu seja:\n\nMuitos eventos ocorrem cedo\nPoucos indivíduos sobrevivem por longos períodos"
   },
   {
     "objectID": "Aula6.html#interpretação-via-função-risco",
@@ -46,7 +46,7 @@
     "href": "Aula6.html#contexto-de-aplicação",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CONTEXTO DE APLICAÇÃO",
-    "text": "CONTEXTO DE APLICAÇÃO\n\n\nModelos paramétricos são usados em:\n\nAnálise de Sobrevivência\nConfiabilidade\n\nNa área industrial:\n\nExperimentos podem ser planejados\nVariabilidade pode ser controlada\n\nIsso permite:\n\nMelhor escolha de modelos\nInferências mais precisas"
+    "text": "CONTEXTO DE APLICAÇÃO\n\n\nModelos paramétricos são usados em:\n\nAnálise de Sobrevivência\nConfiabilidade\n\nParticularmente, são mais adequados em confiabilidade, onde:\n\nExperimentos podem ser planejados\nVariabilidade pode ser controlada\n\nConsequentemente:\n\nMelhor escolha de modelos\nInferências mais precisas"
   },
   {
     "objectID": "Aula6.html#modelos-probabilísticos-1",
@@ -95,21 +95,21 @@
     "href": "Aula6.html#introdução-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nA distribuição exponencial foi, historicamente:\n\nUm dos modelos mais utilizados em análise de sobrevivência e confiabilidade\n\nSurgiu com força a partir dos anos 1940 em confiabilidade:\n\nEstudos de falha de sistemas eletrônicos\nComponentes sujeitos a falhas aleatórias ao longo do tempo"
+    "text": "INTRODUÇÃO\n\n\nA distribuição exponencial foi, historicamente:\n\nUm dos modelos mais utilizados em análise de sobrevivência e confiabilidade\n\nSurgiu a partir dos anos 1940 e, em confiabilidade foi aplicada em:\n\nEstudos de falha de sistemas eletrônicos.\nFalha de motores de aeronaves.\nComponentes sujeitos a falhas aleatórias ao longo do tempo."
   },
   {
     "objectID": "Aula6.html#introdução-2",
     "href": "Aula6.html#introdução-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até recaída de doenças\nTempo até remissão ou progressão clínica\nEstudos clássicos, como a modelagem do tempo de sobrevivência em pacientes com leucemia (Cox e Snell, 1981)\n\nPor que ela foi tão utilizada?\n\nSimplicidade matemática\nInterpretação direta do risco constante ao longo do tempo\n\nIdeia central:\n\nO evento ocorre de forma aleatória, sem “memória” do passado"
+    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até recaída de doenças.\nTempo até remissão ou progressão clínica.\nTempo de sobrevivência em pacientes com leucemia.\n\nPor que ela foi tão utilizada?\n\nSimplicidade matemática\nInterpretação direta do risco constante ao longo do tempo\n\nIdeia central:\n\nO evento ocorre de forma aleatória, sem “memória” do passado"
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade",
     "href": "Aula6.html#função-densidade-de-probabilidade",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
-    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nEm termos matemáticos:\n\nA distribuição exponencial é o modelo mais simples\nPossui somente um parâmetro.\n\nConsideramos \\(T \\sim \\text{Exponencial}(\\alpha)\\)\nA função densidade é: \\[f(t) = \\alpha e^{-\\alpha t}\\]\nOnde:\n\n\\(\\alpha &gt; 0\\) é o parâmetro de taxa e \\(t \\geq 0\\)"
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nEm termos matemáticos:\n\nA distribuição exponencial é o modelo mais simples\nPossui somente um parâmetro.\n\nConsideramos \\(T \\sim \\text{Exponencial}(\\alpha)\\)\nA função densidade de probabilidade é: \\[f(t) = \\alpha e^{-\\alpha t}\\]\nOnde:\n\n\\(\\alpha &gt; 0\\) é o parâmetro de taxa e \\(t \\geq 0\\)"
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-1",
@@ -175,11 +175,11 @@
     "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação do parâmetro \\(\\alpha\\):\n\nControla a inclinação da função de risco acumulado\nQuanto maior \\(\\alpha\\), mais rápido a função \\(\\Lambda(t)\\) cresce → maior risco acumulado ao longo do tempo\n\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nComportamento da função \\(\\Lambda(t)\\)\n\n\n\n\n0.5\nCrescimento lento e linear, risco acumulado baixo\n\n\n1\nCrescimento moderado e linear, risco acumulado médio\n\n\n1.5\nCrescimento rápido e linear, risco acumulado alto\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) pequeno → reta mais inclinada suavemente\n\n\\(\\alpha\\) grande → reta mais inclinada, risco acumulado cresce rapidamente\n\nFunção de risco acumulado é sempre linear no tempo para a exponencial"
   },
   {
-    "objectID": "Aula6.html#percentil-da-distribuição-exponencial",
-    "href": "Aula6.html#percentil-da-distribuição-exponencial",
+    "objectID": "Aula6.html#percentil",
+    "href": "Aula6.html#percentil",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "PERCENTIL DA DISTRIBUIÇÃO EXPONENCIAL",
-    "text": "PERCENTIL DA DISTRIBUIÇÃO EXPONENCIAL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição exponencial: \\[\nt_p = -\\frac{\\log(1-p)}{\\alpha}\n\\]\nExemplo: Mediana (\\(p = 0.5\\)): \\(t_{0.5} =\\frac{\\log(2)}{\\alpha}\\)\n\n\n\n\n\\(\\alpha\\)\nMediana\n\n\n\n\n0.5\n\\(\\frac{\\log(2)}{0.5} \\approx 1.386\\)\n\n\n1\n\\(\\log(2) \\approx 0.693\\)\n\n\n1.5\n\\(\\frac{\\log(2)}{1.5} \\approx 0.462\\)\n\n\n\n\nInterpretação:\n\nQuanto maior \\(\\alpha\\), menor o percentil, já que os eventos ocorrem mais cedo"
+    "section": "PERCENTIL",
+    "text": "PERCENTIL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição exponencial: \\[\nt_p = -\\frac{\\log(1-p)}{\\alpha}\n\\]\nExemplo: Mediana (\\(p = 0.5\\)): \\(t_{0.5} =\\frac{\\log(2)}{\\alpha}\\)\n\n\n\n\n\\(\\alpha\\)\nMediana\n\n\n\n\n0.5\n\\(\\frac{\\log(2)}{0.5} \\approx 1.386\\)\n\n\n1\n\\(\\log(2) \\approx 0.693\\)\n\n\n1.5\n\\(\\frac{\\log(2)}{1.5} \\approx 0.462\\)\n\n\n\n\nInterpretação:\n\nQuanto maior \\(\\alpha\\), menor o percentil, já que os eventos ocorrem mais cedo"
   },
   {
     "objectID": "Aula6.html#tempo-médio",
@@ -193,7 +193,7 @@
     "href": "Aula6.html#tempo-médio-residual",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPO MÉDIO RESIDUAL",
-    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é \\(E(T - t \\mid T &gt; t)\\)\nPara a distribuição exponencial: \\(E(T - t \\mid T &gt; t) = \\frac{1}{\\alpha}\\)\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nTempo médio residual\n\n\n\n\n0.5\n2\n\n\n1\n1\n\n\n1.5\n\\(\\approx 0.667\\)\n\n\n\n\nInterpretação:\n\nIndepende do tempo já vivido \\(t\\) (propriedade de falta de memória)\nO “tempo esperado restante” é sempre o mesmo\nNão importa quanto tempo já passou"
+    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é \\(\\text{vmr}(t)=\\frac{\\int_t^\\infty S(u)\\,du}{S(t)}\\)\nPara a distribuição exponencial: \\(\\text{vmr}(t) = \\frac{1}{\\alpha}\\)\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nTempo médio residual\n\n\n\n\n0.5\n2\n\n\n1\n1\n\n\n1.5\n\\(\\approx 0.667\\)\n\n\n\n\nInterpretação:\n\nIndepende do tempo já vivido \\(t\\) (propriedade de falta de memória)\nO “tempo esperado restante” é sempre o mesmo\nNão importa quanto tempo já passou"
   },
   {
     "objectID": "Aula6.html#aplicabilidade",
@@ -221,21 +221,21 @@
     "href": "Aula6.html#introdução-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nA distribuição Weibull surgiu como uma generalização natural da exponencial\n→ permitindo modelar situações mais realistas em sobrevivência e confiabilidade.\nPopularizada por Waloddi Weibull (1951) em estudos de confiabilidade:\n\nFalhas de materiais e componentes mecânicos.\nSistemas sujeitos a desgaste ao longo do tempo.\n\nDiferentemente da distribuição exponencial:\n\nPermite que o risco varie com o tempo\n\nCaptura padrões como:\n\nrisco crescente (envelhecimento)\nrisco decrescente (falhas iniciais)\nrisco constante (caso exponencial)"
+    "text": "INTRODUÇÃO\n\n\nA distribuição Weibull surgiu como uma generalização natural da exponencial\n→ permitindo modelar situações mais realistas em sobrevivência e confiabilidade.\nPopularizada por Waloddi Weibull (1951) em estudos de confiabilidade:\n\nFalhas em motores de aeronaves.\nFalhas em compressores de gás natural.\n\nFalhas de componentes críticos em sistemas hidráulicos.\n\nDiferentemente da distribuição exponencial:\n\nPermite que o risco varie com o tempo"
   },
   {
     "objectID": "Aula6.html#introdução-4",
     "href": "Aula6.html#introdução-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até recorrência de câncer (ex: câncer de bexiga)\n\nTempo até progressão da doença\n\nTempo até óbito ou falha de tratamento\n\nPor que ela é tão utilizada?\n\nMaior flexibilidade em relação à distribuição exponencial\nPermite modelar diferentes padrões de risco ao longo do tempo\n\nMantém uma estrutura ainda interpretável"
+    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até recorrência de câncer (ex: câncer de bexiga)\n\nTempo até morte por câncer urológico\n\nTempo até óbito em pacientes com câncer de colo de útero\n\nPor que ela é tão utilizada?\n\nMaior flexibilidade em relação à distribuição exponencial\nPermite modelar diferentes padrões de risco ao longo do tempo\n\nMantém uma estrutura ainda interpretável"
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-3",
     "href": "Aula6.html#função-densidade-de-probabilidade-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
-    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nA distribuição Weibull generaliza a exponencial:\n\nPossui dois parâmetros, permitindo maior flexibilidade\n\nConsideramos \\(T \\sim \\text{Weibull}(\\kappa, \\gamma)\\)\nA função densidade é: \\[\nf(t) = \\frac{\\gamma}{\\kappa} \\left(\\frac{t}{\\kappa}\\right)^{\\gamma - 1} e^{-(t/\\kappa)^\\gamma}\n\\]\nOnde:\n\n\\(\\kappa &gt; 0\\) é o parâmetro de escala\n\\(\\gamma &gt; 0\\) é o parâmetro de forma\n\\(t \\geq 0\\)"
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nA distribuição Weibull generaliza a exponencial:\n\nPossui dois parâmetros, permitindo maior flexibilidade\n\nConsideramos \\(T \\sim \\text{Weibull}(\\kappa, \\gamma)\\)\nA função densidade é: \\[\nf(t) = \\frac{\\gamma}{\\kappa} \\left(\\frac{t}{\\kappa}\\right)^{\\gamma - 1} e^{-(t/\\kappa)^\\gamma}\n\\]\nOnde:\n\n\\(\\kappa &gt; 0\\) é o parâmetro de escala\n\\(\\gamma &gt; 0\\) é o parâmetro de forma (\\(\\gamma=1\\rightarrow Exp\\left(\\frac{1}{\\kappa}\\right)\\))\n\\(t &gt; 0\\)"
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-4",
@@ -256,28 +256,28 @@
     "href": "Aula6.html#função-densidade-de-probabilidade-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
-    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nComparando os cenários do gráfico:\n\n\n\n\n\n\n\n\n\\(\\kappa, \\gamma\\)\nComportamento\n\n\n\n\n(1, 0.9)\nAlta densidade no início → falhas precoces\n\n\n(1, 1)\nDecaimento exponencial → risco constante\n\n\n(2, 2)\nPico intermediário → eventos após certo tempo\n\n\n(2, 3)\nPico mais tardio e concentrado → eventos mais previsíveis\n\n\n\n\nResumo visual:\n\n\\(\\gamma\\) controla o formato\n\\(\\kappa\\) desloca a curva no tempo\n\nWeibull permite modelar diferentes padrões reais de ocorrência"
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nComparando os cenários do gráfico:\n\n\n\n\n\n\n\n\n\\(\\kappa, \\gamma\\)\nComportamento\n\n\n\n\n(1, 0.7)\nAlta densidade no início → falhas precoces\n\n\n(1, 1)\nDecaimento exponencial → risco constante\n\n\n(1.5, 2)\nPico intermediário → eventos após certo tempo\n\n\n(2, 2)\nPico mais tardio e concentrado → eventos mais previsíveis\n\n\n\n\nResumo visual:\n\n\\(\\gamma\\) controla o formato\n\\(\\kappa\\) desloca a curva no tempo\n\nWeibull permite modelar diferentes padrões reais de ocorrência"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-2",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nA partir da densidade \\(f(t)\\), obtemos:\n\n\\[\nS(t) = P(T \\geq t) = \\exp\\left\\{-(t/\\kappa)^\\gamma\\right\\}\n\\]"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nA partir da densidade \\(f(t)\\), obtemos:\n\n\\[\nS(t) = P(T \\geq t) = \\int_0^{\\infty}f(t)dt= e^{-(t/\\kappa)^\\gamma}\n\\]"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-3",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nInterpretação dos parâmetros:\n\n\\(\\kappa\\) (escala):\n\nControla o tempo até o evento\n\\(\\kappa\\) maior → sobrevivência mais prolongada\n\n\\(\\gamma\\) (forma):\n\nControla a velocidade de queda da sobrevivência\n\\(\\gamma &lt; 1\\) → queda mais lenta no início\n\n\\(\\gamma = 1\\) → caso exponencial\n\n\\(\\gamma &gt; 1\\) → queda mais rápida após certo tempo"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nInterpretação dos parâmetros:\n\n\\(\\kappa\\) (escala):\n\nControla o tempo até o evento\n\\(\\kappa\\) maior → sobrevivência mais prolongada\n\n\\(\\gamma\\) (forma):\n\nControla a velocidade de queda da sobrevivência\n\\(\\gamma &lt; 1\\) → queda mais rapida no início\n\n\\(\\gamma = 1\\) → caso exponencial\n\n\\(\\gamma &gt; 1\\) → queda mais rápida após certo tempo"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-4",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nComparando os cenários:\n\n\n\n\n\\(\\kappa, \\gamma\\)\nComportamento da função \\(S(t)\\)\n\n\n\n\n(1, 0.7)\nSobrevivência mais lenta no início\n\n\n(1, 1)\nQueda exponencial (referência)\n\n\n(2, 2)\nQueda mais acentuada após algum tempo\n\n\n(2, 3)\nSobrevivência alta no início e queda abrupta depois\n\n\n\n\nResumo visual:\n\n\\(\\gamma\\) controla o formato da curva\n\\(\\kappa\\) desloca a curva no tempo\n\nWeibull permite diferentes padrões de sobrevivência"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nComparando os cenários:\n\n\n\n\n\\(\\kappa, \\gamma\\)\nComportamento da função \\(S(t)\\)\n\n\n\n\n(1, 0.7)\nSobrevivência mais lenta no início\n\n\n(1, 1)\nQueda exponencial (referência)\n\n\n(1.5, 2)\nQueda mais acentuada após algum tempo\n\n\n(2, 2)\nSobrevivência alta no início e queda abrupta depois\n\n\n\n\nResumo visual:\n\n\\(\\gamma\\) controla o formato da curva\n\\(\\kappa\\) desloca a curva no tempo\n\nWeibull permite diferentes padrões de sobrevivência"
   },
   {
     "objectID": "Aula6.html#função-de-risco-3",
@@ -291,7 +291,7 @@
     "href": "Aula6.html#função-de-risco-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nResultado fundamental: o risco não é constante ao longo do tempo\nO comportamento do risco depende de \\(\\gamma\\):\n\n\\(\\gamma &lt; 1\\) → risco decrescente\n\n\\(\\gamma = 1\\) → risco constante (caso exponencial)\n\n\\(\\gamma &gt; 1\\) → risco crescente\n\nConsequência:\nUm indivíduo que sobreviveu até \\(t\\):\n\nPode ter mais ou menos risco futuro\nDependendo do comportamento da função de risco\n\nPortanto:\n\nA propriedade de falta de memória NÃO vale para Weibull\n\nOu seja:\n\nO passado influencia o futuro"
+    "text": "FUNÇÃO DE RISCO\n\n\nResultado fundamental: o risco não é constante ao longo do tempo\nO comportamento do risco depende de \\(\\gamma\\):\n\n\\(\\gamma &lt; 1\\) → risco decrescente\n\n\\(\\gamma = 1\\) → risco constante (caso exponencial)\n\n\\(\\gamma &gt; 1\\) → risco crescente\n\nConsequência:\nUm indivíduo que sobreviveu até \\(t\\):\n\nPode ter mais ou menos risco futuro\nDependendo do comportamento da função de risco"
   },
   {
     "objectID": "Aula6.html#função-de-risco-5",
@@ -305,49 +305,56 @@
     "href": "Aula6.html#função-de-risco-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\kappa, \\gamma\\)\nComportamento da função \\(\\lambda(t)\\)\n\n\n\n\n(1, 0.9)\nRisco decrescente ao longo do tempo\n\n\n(1, 1)\nRisco constante (exponencial)\n\n\n(2, 2)\nRisco crescente com o tempo\n\n\n(2, 3)\nRisco cresce rapidamente → envelhecimento acentuado\n\n\n\n\nResumo visual:\n\n\\(\\gamma\\) controla o formato do risco\n\\(\\kappa\\) ajusta a escala do tempo\n\nWeibull permite modelar cenários realistas de risco"
-  },
-  {
-    "objectID": "Aula6.html#função-de-risco-acumulado-weibull",
-    "href": "Aula6.html#função-de-risco-acumulado-weibull",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "FUNÇÃO DE RISCO ACUMULADO (WEIBULL)",
-    "text": "FUNÇÃO DE RISCO ACUMULADO (WEIBULL)\n\n\nPara a distribuição Weibull, a função de risco acumulado é:\n\n\\[\n\\Lambda(t) = (\\gamma t)^{\\kappa}\n\\]"
+    "text": "FUNÇÃO DE RISCO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\kappa, \\gamma\\)\nComportamento da função \\(\\lambda(t)\\)\n\n\n\n\n(1, 0.7)\nRisco decrescente ao longo do tempo\n\n\n(1, 1)\nRisco constante (exponencial)\n\n\n(1.5, 2)\nRisco crescente com o tempo\n\n\n(2, 2)\nRisco cresce rapidamente → envelhecimento acentuado\n\n\n\n\nResumo visual:\n\n\\(\\gamma\\) controla o formato do risco\n\\(\\kappa\\) ajusta a escala do tempo\n\nWeibull permite modelar cenários realistas de risco"
   },
   {
     "objectID": "Aula6.html#função-de-risco-acumulado-2",
     "href": "Aula6.html#função-de-risco-acumulado-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\kappa\\) (forma):\n\n\\(\\kappa = 1\\) → crescimento linear (caso exponencial)\n\\(\\kappa &gt; 1\\) → crescimento acelerado (curva convexa)\n\n\\(\\gamma\\) (escala):\n\nControla a velocidade do crescimento\nValores maiores → risco acumulado cresce mais rápido\n\nResumo visual:\n\n\\(\\kappa = 1\\) → reta (exponencial)\n\n\\(\\kappa &gt; 1\\) → curva cada vez mais inclinada\n\n\\(\\gamma\\) aumenta a inclinação da curva"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nPara a distribuição Weibull, a função de risco acumulado é:\n\n\\[\n\\Lambda(t) = \\int_0^t \\lambda(u) \\, du = \\int_0^t \\alpha \\, du = (\\gamma t)^{\\kappa}\n\\]"
   },
   {
     "objectID": "Aula6.html#função-de-risco-acumulado-3",
     "href": "Aula6.html#função-de-risco-acumulado-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\kappa\\)\n\\(\\gamma\\)\nComportamento\n\n\n\n\n1\n0.7\nCrescimento linear mais lento\n\n\n1\n1\nCrescimento linear padrão\n\n\n1.5\n1.5\nCrescimento acelerado\n\n\n2\n2\nCrescimento muito acelerado\n\n\n\n\nA função \\(\\Lambda(t)\\):\n\nÉ sempre crescente\nPode ser linear ou não linear"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\kappa\\) (forma):\n\n\\(\\kappa = 1\\) → crescimento linear (caso exponencial)\n\\(\\kappa &gt; 1\\) → crescimento acelerado (curva convexa)\n\n\\(\\gamma\\) (escala):\n\nControla a velocidade do crescimento\nValores maiores → risco acumulado cresce mais rápido\n\nResumo visual:\n\n\\(\\kappa = 1\\) → reta (exponencial)\n\n\\(\\kappa &gt; 1\\) → curva cada vez mais inclinada\n\n\\(\\gamma\\) aumenta a inclinação da curva"
   },
   {
-    "objectID": "Aula6.html#percentil-da-distribuição-weibull",
-    "href": "Aula6.html#percentil-da-distribuição-weibull",
+    "objectID": "Aula6.html#função-de-risco-acumulado-4",
+    "href": "Aula6.html#função-de-risco-acumulado-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "PERCENTIL DA DISTRIBUIÇÃO WEIBULL",
-    "text": "PERCENTIL DA DISTRIBUIÇÃO WEIBULL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição Weibull: \\[\nt_p = \\frac{\\left[-\\log(1-p)\\right]^{1/\\kappa}}{\\gamma}\n\\]\nExemplo: Mediana (\\(p = 0.5\\)):\n\n\\[\nt_{0.5} = \\frac{(\\log 2)^{1/\\kappa}}{\\gamma}\n\\]\n\n\nComparando os parâmetros:\n\n\n\n\n\\(\\kappa\\)\n\\(\\gamma\\)\nMediana\n\n\n\n\n1\n0.7\n\\(\\frac{\\log(2)}{0.7} \\approx 0.99\\)\n\n\n1\n1\n\\(\\log(2) \\approx 0.693\\)\n\n\n1.5\n1.5\n\\(\\frac{(\\log 2)^{2/3}}{1.5} \\approx 0.52\\)\n\n\n2\n2\n\\(\\frac{\\sqrt{\\log 2}}{2} \\approx 0.42\\)\n\n\n\n\n\nInterpretação:\n\n\\(\\gamma\\) maior → percentis menores (eventos mais rápidos)\n\\(\\kappa\\) altera a forma da distribuição\nPode acelerar ou desacelerar a ocorrência dos eventos"
+    "section": "FUNÇÃO DE RISCO ACUMULADO",
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\kappa\\)\n\\(\\gamma\\)\nComportamento\n\n\n\n\n1\n0.7\nCrescimento linear mais lento\n\n\n1\n1\nCrescimento linear padrão\n\n\n1.5\n2\nCrescimento acelerado\n\n\n2\n2\nCrescimento muito acelerado\n\n\n\n\nA função \\(\\Lambda(t)\\):\n\nÉ sempre crescente\nPode ser linear ou não linear"
   },
   {
-    "objectID": "Aula6.html#tempo-médio-1",
-    "href": "Aula6.html#tempo-médio-1",
+    "objectID": "Aula6.html#percentil-1",
+    "href": "Aula6.html#percentil-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO MÉDIO",
-    "text": "TEMPO MÉDIO\n\n\nO tempo médio até o evento é: \\[\nE(T) = \\frac{1}{\\gamma} \\, \\Gamma\\left(1 + \\frac{1}{\\kappa}\\right)\n\\]\n\n\n\nComparando os parâmetros:\n\n\n\n\n\\(\\kappa\\)\n\\(\\gamma\\)\nTempo médio \\(E(T)\\)\n\n\n\n\n1\n0.7\n\\(\\approx 1.43\\)\n\n\n1\n1\n\\(1\\)\n\n\n1.5\n1.5\n\\(\\approx 0.60\\)\n\n\n2\n2\n\\(\\approx 0.44\\)\n\n\n\n\n\nResumo:\n\n\\(\\gamma\\) maior → eventos ocorrem mais rapidamente\n\\(\\kappa\\) influencia a dispersão e forma\nTempo médio não é mais simplesmente \\(1/\\gamma\\)"
+    "section": "PERCENTIL",
+    "text": "PERCENTIL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição Weibull: \\[\nt_p = \\frac{\\left[-\\log(1-p)\\right]^{1/\\kappa}}{\\gamma}\n\\]\nExemplo: Mediana (\\(p = 0.5\\)):\\(t_{0.5} = \\frac{(\\log 2)^{1/\\kappa}}{\\gamma}\\)\nInterpretação:\n\n\\(\\gamma\\) maior → percentis menores (eventos mais rápidos).\n\\(\\kappa\\) pode acelerar ou desacelerar a ocorrência dos eventos."
   },
   {
-    "objectID": "Aula6.html#tempo-médio-residual-1",
-    "href": "Aula6.html#tempo-médio-residual-1",
+    "objectID": "Aula6.html#tempos-médio-e-médio-residual",
+    "href": "Aula6.html#tempos-médio-e-médio-residual",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO MÉDIO RESIDUAL",
-    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é: \\[\nE(T - t \\mid T &gt; t)\n\\]\nPara a distribuição Weibull, não é constante:\nDepende do tempo já vivido \\(t\\)\n\n\n\nInterpretação:\nDiferente da exponencial:\n\nNão há propriedade de falta de memória\n\nO tempo restante esperado:\n\nDepende do passado\nMuda conforme o indivíduo sobrevive mais tempo\n\n\n\n\nIntuição:\n\\(\\kappa &gt; 1\\) (risco crescente):\n\nQuanto mais tempo passou → menos tempo restante esperado\n\n\\(\\kappa &lt; 1\\) (risco decrescente):\n\nQuanto mais tempo passou → mais tempo restante esperado\n\n\n\n\nResumo:\n\nA Weibull é mais flexível\nPermite modelar memória no processo"
+    "section": "TEMPOS MÉDIO E MÉDIO RESIDUAL",
+    "text": "TEMPOS MÉDIO E MÉDIO RESIDUAL\n\n\nNa distribuição Weibull, o tempo médio até o evento é: \\[\nE(T) = \\frac{1}{\\gamma} \\, \\Gamma\\left(1 + \\frac{1}{\\kappa}\\right)\n\\]\nNa distribuição Weibull, o tempo médio residual é dado por:\n\n\\[\nvmr(t) = \\kappa \\, \\Gamma\\left(1 + \\frac{1}{\\gamma}, \\left(\\frac{t}{\\kappa}\\right)^{\\gamma} \\right) \\, \\exp\\left( \\left(\\frac{t}{\\kappa}\\right)^{\\gamma} \\right) - t\n\\]\n\nA função gama, denotada por \\(\\Gamma(a)\\), é uma extensão do fatorial para números reais positivos, definida por \\[\n\\Gamma(a) = \\int_0^{\\infty} x^{a-1} e^{-x} \\, dx, \\quad a &gt; 0.\n\\]"
+  },
+  {
+    "objectID": "Aula6.html#aplicabilidade-3",
+    "href": "Aula6.html#aplicabilidade-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "APLICABILIDADE",
+    "text": "APLICABILIDADE\n\n\nO modelo de Weibull é uma generalização do modelo exponencial, permitindo maior flexibilidade\nEle possui dois parâmetros, o que possibilita modelar diferentes comportamentos do risco ao longo do tempo\nNo caso dos dados de câncer de bexiga, essa suposição implica que:\n→ o risco de recorrência ou óbito pode aumentar ou diminuir com o tempo\nOu seja:\n→ o indivíduo pode ter maior risco logo após o tratamento\n→ ou um risco que cresce com o avanço da doença\nEssa flexibilidade permite representar situações mais realistas em estudos clínicos"
+  },
+  {
+    "objectID": "Aula6.html#aplicabilidade-4",
+    "href": "Aula6.html#aplicabilidade-4",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "APLICABILIDADE",
+    "text": "APLICABILIDADE\n\n\nDiferente do modelo exponencial, o Weibull permite uma função de risco não constante\nEm particular:\n→ risco decrescente ao longo do tempo (ex.: recuperação após tratamento)\n→ risco crescente ao longo do tempo (ex.: progressão da doença, envelhecimento)\nPortanto, o modelo de Weibull tende a ser mais adequado para dados reais\nAinda assim, ele mantém:\n→ interpretação relativamente simples\n→ e boa relação entre flexibilidade e parcimônia"
   },
   {
     "objectID": "Aula6.html#introdução-5",
@@ -361,7 +368,7 @@
     "href": "Aula6.html#introdução-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até recorrência de doenças\nTempo até diagnóstico após exposição\nTempo até progressão de condições crônicas\n\nAplicações em outras áreas:\n\nTempo de vida útil de componentes eletrônicos\nDuração de processos biológicos ou sociais\nTempo até ocorrência de eventos raros\n\n\n\n\nPor que ela é tão utilizada?\nModela bem dados com:\n\nGrande variabilidade\nCauda longa à direita\n\nPermite:\n\nMaior realismo em fenômenos naturais\nInterpretação via escala logarítmica"
+    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até óbito por mesotelioma pleural maligno.\nTempo até óbito por câncer de mama.\nTempo até progressão de condições crônicas\n\nAplicações em confiabilidade:\n\nFalhas dos sistemas de ar condicionado de aeronaves Boeing 720.\nFalhas em componentes de turbinas a gás da Marinha dos EUA.\nDegradação por envelhecimento de LEDs."
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-7",
@@ -389,14 +396,14 @@
     "href": "Aula6.html#função-densidade-de-probabilidade-10",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
-    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nComparando os cenários do gráfico:\n\n\n\n\n\\(\\mu, \\sigma\\)\nComportamento\n\n\n\n\n(0, 0.3)\nPico alto e concentrado → eventos bem previsíveis\n\n\n(0, 0.7)\nMais dispersão → maior variabilidade\n\n\n(0.5, 1)\nCauda longa → eventos podem ocorrer bem mais tarde\n\n\n(1, 0.5)\nDeslocamento à direita → eventos mais tardios\n\n\n\n\n\nResumo visual:\n\n\\(\\mu\\) desloca a curva no tempo\n\n\\(\\sigma\\) controla a assimetria e dispersão\n\nDistribuição sempre assimétrica à direita\n\nA lognormal é ideal para:\n\nDados com grande variabilidade\nProcessos multiplicativos ao longo do tempo"
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nComparando os cenários do gráfico:\n\n\n\n\n\\(\\mu, \\sigma\\)\nComportamento\n\n\n\n\n(0, 0.5)\nPico alto e concentrado → eventos bem previsíveis\n\n\n(0, 1)\nMais dispersão → maior variabilidade\n\n\n(0, 1.5)\nCauda longa → eventos podem ocorrer bem mais tarde\n\n\n(1, 1.5)\nDeslocamento à direita → eventos mais tardios\n\n\n\n\nResumo visual:\n\n\\(\\mu\\) desloca a curva no tempo\n\n\\(\\sigma\\) controla a assimetria e dispersão\n\nDistribuição sempre assimétrica à direita"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-5",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nA partir da densidade \\(f(t)\\), obtemos:\n\n\\[\nS(t) = P(T \\geq t) = 1 - \\Phi\\left(\\frac{\\log t - \\mu}{\\sigma}\\right)\n\\]\n\nOnde \\(\\Phi(\\cdot)\\) é a função de distribuição da normal padrão"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nA partir da densidade \\(f(t)\\), obtemos:\n\n\\[\nS(t) = P(T \\geq t) = \\int_0^{\\infty}f(t)dt=1 - \\Phi\\left(\\frac{\\log t - \\mu}{\\sigma}\\right)\n\\]\n\nOnde \\(\\Phi(\\cdot)\\) é a função de distribuição da normal padrão"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-6",
@@ -410,7 +417,7 @@
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-7",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nComparando os cenários:\n\n\n\n\n\\(\\mu, \\sigma\\)\nComportamento da função \\(S(t)\\)\n\n\n\n\n(0, 0.3)\nQueda rápida e concentrada → eventos mais previsíveis\n\n\n(0, 0.7)\nQueda mais gradual → maior variabilidade\n\n\n(0.5, 1)\nSobrevivência prolongada com cauda longa\n\n\n(1, 0.5)\nDeslocamento à direita → eventos mais tardios\n\n\n\n\n\nResumo visual:\n\n\\(\\mu\\) desloca a curva no tempo\n\n\\(\\sigma\\) controla a dispersão e suavidade da queda\n\nCurva sempre suave e não exponencial\n\nA lognormal permite:\n\nModelar alta variabilidade\nCapturar caudas longas de sobrevivência"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nComparando os cenários:\n\n\n\n\n\\(\\mu, \\sigma\\)\nComportamento da função \\(S(t)\\)\n\n\n\n\n(0, 0.5)\nQueda rápida e concentrada → eventos mais previsíveis\n\n\n(0, 1)\nQueda mais gradual → maior variabilidade\n\n\n(0, 1.5)\nSobrevivência prolongada com cauda longa\n\n\n(1, 1.5)\nDeslocamento à direita → eventos mais tardios\n\n\n\n\n\nResumo visual:\n\n\\(\\mu\\) desloca a curva no tempo\n\n\\(\\sigma\\) controla a dispersão e suavidade da queda\n\nCurva sempre suave e não exponencial"
   },
   {
     "objectID": "Aula6.html#função-de-risco-7",
@@ -424,7 +431,7 @@
     "href": "Aula6.html#função-de-risco-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nResultado fundamental: o risco tem formato não monótono\nTipicamente:\n\nO risco aumenta no início\nAtinge um pico\nDepois diminui\n\n\n\n\nConsequência:\nUm indivíduo que sobreviveu até \\(t\\):\n\nPode ter menor risco futuro após certo ponto\n\nPortanto:\n\nA propriedade de falta de memória NÃO vale\n\nOu seja:\n\nO passado influencia fortemente o futuro"
+    "text": "FUNÇÃO DE RISCO\n\n\nResultado fundamental: o risco tem formato não monótono\nTipicamente:\n\nO risco aumenta no início\nAtinge um pico\nDepois diminui\n\nConsequência: um indivíduo que sobreviveu até \\(t\\):\n\nPode ter menor risco futuro após certo ponto"
   },
   {
     "objectID": "Aula6.html#função-de-risco-9",
@@ -438,70 +445,77 @@
     "href": "Aula6.html#função-de-risco-10",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\mu, \\sigma\\)\nComportamento da função \\(\\lambda(t)\\)\n\n\n\n\n(0, 0.3)\nPico alto e estreito → risco concentrado\n\n\n(0, 0.7)\nPico mais suave → risco mais distribuído\n\n\n(0.5, 1)\nPico tardio e largo → eventos ao longo do tempo\n\n\n(1, 0.5)\nPico deslocado para a direita\n\n\n\n\n\nResumo visual:\n\nFunção tem formato de “montanha” (unimodal)\n\n\\(\\mu\\) desloca o pico\n\n\\(\\sigma\\) controla a largura\n\nA lognormal é ideal quando:\n\nO risco aumenta e depois diminui\nHá um tempo típico de maior risco"
-  },
-  {
-    "objectID": "Aula6.html#função-de-risco-acumulado-lognormal",
-    "href": "Aula6.html#função-de-risco-acumulado-lognormal",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "FUNÇÃO DE RISCO ACUMULADO (LOGNORMAL)",
-    "text": "FUNÇÃO DE RISCO ACUMULADO (LOGNORMAL)\n\n\nPara a distribuição lognormal, a função de risco acumulado é:\n\n\\[\n\\Lambda(t) = -\\log\\left[S(t)\\right] = -\\log\\left(1 - \\Phi\\left(\\frac{\\log t - \\mu}{\\sigma}\\right)\\right)\n\\]"
-  },
-  {
-    "objectID": "Aula6.html#função-de-risco-acumulado-4",
-    "href": "Aula6.html#função-de-risco-acumulado-4",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\mu\\) (posição):\n\nDesloca a curva ao longo do tempo\n\n\\(\\mu\\) maior → crescimento mais tardio\n\n\\(\\sigma\\) (dispersão):\n\nControla a velocidade de crescimento\n\\(\\sigma\\) maior → crescimento mais gradual\n\n\n\n\nResumo visual:\n\nFunção é sempre crescente\nCrescimento não linear\nPode apresentar regiões de crescimento mais rápido e mais lento"
+    "text": "FUNÇÃO DE RISCO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\mu, \\sigma\\)\nComportamento da função \\(\\lambda(t)\\)\n\n\n\n\n(0, 0.5)\nPico alto e estreito → risco concentrado\n\n\n(0, 1)\nPico mais suave → risco mais distribuído\n\n\n(0, 1.5)\nPico tardio e largo → eventos ao longo do tempo\n\n\n(1, 1.5)\nPico deslocado para a direita\n\n\n\n\n\nResumo visual:\n\nFunção tem formato de “montanha” (unimodal)\n\n\\(\\mu\\) desloca o pico\n\n\\(\\sigma\\) controla a largura"
   },
   {
     "objectID": "Aula6.html#função-de-risco-acumulado-5",
     "href": "Aula6.html#função-de-risco-acumulado-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\mu\\)\n\\(\\sigma\\)\nComportamento\n\n\n\n\n0\n0.3\nCrescimento rápido e concentrado\n\n\n0\n0.7\nCrescimento mais gradual\n\n\n0.5\n1\nCrescimento lento com cauda longa\n\n\n1\n0.5\nCrescimento deslocado no tempo\n\n\n\n\n\nA função \\(\\Lambda(t)\\):\n\nÉ sempre crescente\nReflete o acúmulo do risco ao longo do tempo\nNão possui forma simples como na Weibull"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nPara a distribuição lognormal, a função de risco acumulado é:\n\n\\[\n\\Lambda(t) = -\\log\\left[S(t)\\right] = -\\log\\left(1 - \\Phi\\left(\\frac{\\log t - \\mu}{\\sigma}\\right)\\right)\n\\]"
+  },
+  {
+    "objectID": "Aula6.html#função-de-risco-acumulado-6",
+    "href": "Aula6.html#função-de-risco-acumulado-6",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÃO DE RISCO ACUMULADO",
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\mu\\) (posição):\n\nDesloca a curva ao longo do tempo\n\n\\(\\mu\\) maior → crescimento mais tardio\n\n\\(\\sigma\\) (dispersão):\n\nControla a velocidade de crescimento\n\\(\\sigma\\) maior → crescimento mais gradual\n\n\n\n\nResumo visual:\n\nFunção é sempre crescente\nCrescimento não linear\nPode apresentar regiões de crescimento mais rápido e mais lento"
+  },
+  {
+    "objectID": "Aula6.html#função-de-risco-acumulado-7",
+    "href": "Aula6.html#função-de-risco-acumulado-7",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÃO DE RISCO ACUMULADO",
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\mu\\)\n\\(\\sigma\\)\nComportamento\n\n\n\n\n0\n0.5\nCrescimento rápido e concentrado\n\n\n0\n1\nCrescimento mais gradual\n\n\n1\n1.5\nCrescimento lento com cauda longa\n\n\n1\n1.5\nCrescimento deslocado no tempo\n\n\n\n\n\nA função \\(\\Lambda(t)\\):\n\nÉ sempre crescente\nReflete o acúmulo do risco ao longo do tempo\nNão possui forma simples como na Weibull"
   },
   {
     "objectID": "Aula6.html#percentil-da-distribuição-lognormal",
     "href": "Aula6.html#percentil-da-distribuição-lognormal",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "PERCENTIL DA DISTRIBUIÇÃO LOGNORMAL",
-    "text": "PERCENTIL DA DISTRIBUIÇÃO LOGNORMAL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição lognormal: \\[\nt_p = \\exp\\left(\\mu + \\sigma \\, z_p\\right)\n\\]\n\nonde \\(z_p = \\Phi^{-1}(p)\\) é o quantil da normal padrão\n\n\nExemplo: Mediana (\\(p = 0.5\\)):\n\n\\[\nt_{0.5} = \\exp(\\mu)\n\\]\n\n\nComparando os parâmetros:\n\n\n\n\n\\(\\mu\\)\n\\(\\sigma\\)\nMediana\n\n\n\n\n0\n0.3\n\\(1\\)\n\n\n0\n0.7\n\\(1\\)\n\n\n0.5\n1\n\\(\\approx 1.65\\)\n\n\n1\n0.5\n\\(\\approx 2.72\\)\n\n\n\n\n\nInterpretação:\n\n\\(\\mu\\) controla a escala temporal (posição)\n\\(\\sigma\\) controla a dispersão\nPercentis crescem exponencialmente com \\(\\mu\\)"
+    "text": "PERCENTIL DA DISTRIBUIÇÃO LOGNORMAL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição lognormal: \\[\nt_p = \\exp\\left(\\mu + \\sigma \\, z_p\\right)\n\\]\n\nonde \\(z_p = \\Phi^{-1}(p)\\) é o quantil da normal padrão\n\nExemplo: Mediana (\\(p = 0.5\\)): \\(t_{0.5} = \\exp(\\mu)\\)\nInterpretação:\n\n\\(\\mu\\) controla a escala temporal (posição)\n\\(\\sigma\\) controla a dispersão\nPercentis crescem exponencialmente com \\(\\mu\\)"
   },
   {
-    "objectID": "Aula6.html#tempo-médio-2",
-    "href": "Aula6.html#tempo-médio-2",
+    "objectID": "Aula6.html#tempos-médio-e-médio-residual-1",
+    "href": "Aula6.html#tempos-médio-e-médio-residual-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO MÉDIO",
-    "text": "TEMPO MÉDIO\n\n\nO tempo médio até o evento é: \\[\nE(T) = \\exp\\left(\\mu + \\frac{\\sigma^2}{2}\\right)\n\\]\n\n\n\nComparando os parâmetros:\n\n\n\n\n\\(\\mu\\)\n\\(\\sigma\\)\nTempo médio \\(E(T)\\)\n\n\n\n\n0\n0.3\n\\(\\approx 1.05\\)\n\n\n0\n0.7\n\\(\\approx 1.28\\)\n\n\n0.5\n1\n\\(\\approx 2.72\\)\n\n\n1\n0.5\n\\(\\approx 3.08\\)\n\n\n\n\n\nResumo:\n\n\\(\\mu\\) maior → eventos mais tardios\n\\(\\sigma\\) maior → média aumenta (cauda longa)\nMédia é maior que a mediana (assimetria à direita)"
+    "section": "TEMPOS MÉDIO E MÉDIO RESIDUAL",
+    "text": "TEMPOS MÉDIO E MÉDIO RESIDUAL\n\n\nNa distribuição lognormal, o tempo médio até o evento é: \\[\nE(T) = \\exp\\left(\\mu + \\frac{\\sigma^2}{2}\\right)\n\\]\nNa distribuição lognormal, o tempo médio residual é: \\[\nvmr(t)=\\frac{e^{\\mu+\\frac{\\sigma^2}{2}}\n\\left[1-\\Phi\\left(\\frac{\\ln t-\\mu-\\sigma^2}{\\sigma}\\right)\\right]}\n{1-\\Phi\\left(\\frac{\\ln t-\\mu}{\\sigma}\\right)}-t\n\\]"
   },
   {
-    "objectID": "Aula6.html#tempo-médio-residual-2",
-    "href": "Aula6.html#tempo-médio-residual-2",
+    "objectID": "Aula6.html#aplicabilidade-5",
+    "href": "Aula6.html#aplicabilidade-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO MÉDIO RESIDUAL",
-    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é: \\[\nE(T - t \\mid T &gt; t)\n\\]\nPara a distribuição lognormal, não é constante\nDepende do tempo já vivido \\(t\\)\n\n\n\nInterpretação:\nNão possui propriedade de falta de memória\nO tempo restante esperado:\n\nDepende do passado\nPode aumentar ou diminuir dependendo da região da distribuição\n\n\n\n\nIntuição:\nA lognormal possui:\n\nRisco que aumenta e depois diminui (não monótono)\n\nAssim:\n\nPara tempos pequenos → pode haver aumento do tempo esperado restante\n\nPara tempos grandes → tende a diminuir\n\n\n\n\nResumo:\n\nDistribuição bastante flexível\nCaptura fenômenos com heterogeneidade e cauda longa\nMuito usada quando há efeitos multiplicativos no tempo"
+    "section": "APLICABILIDADE",
+    "text": "APLICABILIDADE\n\n\nO modelo lognormal assume que o logaritmo do tempo até o evento segue uma distribuição normal\nIsso permite modelar situações em que o tempo até o evento é assimétrico à direita, comum em dados de sobrevivência\nNo caso dos dados de câncer de bexiga, essa suposição implica que:\n→ o risco de recorrência ou óbito varia ao longo do tempo de forma não monotônica\nOu seja:\n→ o risco pode aumentar inicialmente, atingir um pico\n→ e depois diminuir com o tempo\nEsse comportamento é compatível com muitos processos biológicos reais"
+  },
+  {
+    "objectID": "Aula6.html#aplicabilidade-6",
+    "href": "Aula6.html#aplicabilidade-6",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "APLICABILIDADE",
+    "text": "APLICABILIDADE\n\n\nDiferente dos modelos exponencial e Weibull, o lognormal permite uma função de risco em formato de pico (unimodal)\nEm particular:\n→ risco baixo no início, aumentando com o tempo\n→ atingindo um máximo\n→ e depois decrescendo\nPortanto, o modelo lognormal pode ser mais adequado quando há um período crítico de maior risco\nAinda assim, ele possui:\n→ interpretação menos direta dos parâmetros\n→ e maior complexidade em comparação aos modelos anteriores\nÉ especialmente útil quando o processo envolve acúmulo de efeitos ao longo do tempo"
   },
   {
     "objectID": "Aula6.html#introdução-7",
     "href": "Aula6.html#introdução-7",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nA distribuição Gama é uma generalização da exponencial\n→ surge como soma de tempos de espera independentes\nConsideramos \\(T \\sim \\text{Gama}(\\alpha, \\beta)\\), onde:\n\n\\(\\alpha\\) = parâmetro de forma\n\\(\\beta\\) = taxa\n\n\n\n\nMuito utilizada para modelar tempos que:\n\nSão positivos\nPodem ter diferentes níveis de assimetria\nRepresentam acúmulo de eventos ao longo do tempo\n\n\n\n\nDiferentemente da distribuição exponencial:\n\nPermite risco não constante\nNão possui a propriedade de falta de memória\nÉ mais flexível para modelar diferentes padrões"
+    "text": "INTRODUÇÃO\n\n\nA distribuição Gama também é uma generalização da exponencial\nConsideramos \\(T \\sim \\text{Gama}(\\alpha, \\beta)\\), onde:\n\n\\(\\alpha\\) = parâmetro de forma\n\\(\\beta\\) = taxa\n\nMuito utilizada para modelar tempos que:\n\nSão positivos\nPodem ter diferentes níveis de assimetria"
   },
   {
     "objectID": "Aula6.html#introdução-8",
     "href": "Aula6.html#introdução-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até ocorrência de múltiplos eventos (ex: infecções sucessivas)\nTempo até progressão de doenças\nTempo até falha após acúmulo de danos\n\n\n\n\nAplicações em outras áreas:\n\nTempo até falha de sistemas com múltiplos componentes\nModelagem de processos de espera\nConfiabilidade de sistemas\n\n\n\n\nPor que ela é tão utilizada?\nPermite:\n\nModelar diferentes formatos de risco\nRepresentar processos acumulativos\n\nInclui a exponencial como caso particular:\n\n\\(\\alpha = 1\\)"
+    "text": "INTRODUÇÃO\n\n\nAplicações em saúde:\n\nTempo até ocorrência de múltiplos eventos (ex: infecções sucessivas).\nSobrevida de pacientes com câncer.\n\nAplicações em confiabilidade:\n\nResistência de fibras de poliéster\nTrincas por fadiga\nConfiabilidade de sistemas\n\nPor que ela é tão utilizada?\nPermite:\n\nModelar diferentes formatos de risco\nRepresentar processos acumulativos"
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-11",
     "href": "Aula6.html#função-densidade-de-probabilidade-11",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
-    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nSeja \\(T \\sim \\text{Gama}(\\alpha, \\beta)\\)\nA função densidade é: \\[\nf(t) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} t^{\\alpha - 1} e^{-\\beta t}\n\\]\n\n\n\nOnde:\n\n\\(\\alpha &gt; 0\\) → controla a forma\n\\(\\beta &gt; 0\\) → controla a taxa\n\\(t &gt; 0\\)\n\n\n\n\nInterpretação dos parâmetros:\n\n\\(\\alpha\\):\n\nDefine o formato da curva\n\\(\\alpha &lt; 1\\) → decrescente\n\\(\\alpha = 1\\) → exponencial\n\\(\\alpha &gt; 1\\) → formato unimodal\n\n\\(\\beta\\):\n\nControla a escala temporal\n\\(\\beta\\) maior → eventos mais rápidos"
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nSeja \\(T \\sim \\text{Gama}(\\alpha, \\beta)\\)\nA função densidade é: \\[\nf(t) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} t^{\\alpha - 1} e^{-\\beta t}\n\\]\nOnde:\n\n\\(\\alpha &gt; 0\\) → controla a forma (\\(\\alpha=1 \\rightarrow exp(\\beta)\\))\n\\(\\beta &gt; 0\\) → controla a taxa\n\\(t &gt; 0\\)"
   },
   {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-12",
@@ -511,151 +525,165 @@
     "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE"
   },
   {
+    "objectID": "Aula6.html#função-densidade-de-probabilidade-13",
+    "href": "Aula6.html#função-densidade-de-probabilidade-13",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nControla o formato da distribuição\n\\(\\alpha &lt; 1\\) → densidade decrescente\n\\(\\alpha = 1\\) → caso exponencial\n\n\\(\\alpha &gt; 1\\) → distribuição com pico (unimodal)\n\n\\(\\beta\\) (taxa):\n\nControla a velocidade dos eventos\n\\(\\beta\\) maior → eventos ocorrem mais rapidamente\n\\(\\beta\\) menor → eventos mais espalhados no tempo"
+  },
+  {
     "objectID": "Aula6.html#função-densidade-de-probabilidade-14",
     "href": "Aula6.html#função-densidade-de-probabilidade-14",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DENSIDADE DE PROBABILIDADE",
-    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nComparando os cenários do gráfico:\n\n\n\n\n\n\n\n\n\\(\\alpha, \\beta\\)\nComportamento\n\n\n\n\n(0.7, 0.5)\nAlta no início → muitos eventos precoces\n\n\n(1, 1)\nCaso exponencial → risco constante\n\n\n(2, 1)\nPico moderado → eventos mais concentrados\n\n\n(3, 2)\nPico mais acentuado e deslocado → eventos mais rápidos e concentrados\n\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) controla o formato da curva\n\n\\(\\beta\\) comprime ou expande no tempo\n\nDistribuição pode ser assimétrica à direita\n\nA Gama é ideal para:\n\nModelar tempos de espera acumulados\nProcessos com múltiplas etapas até o evento"
+    "text": "FUNÇÃO DENSIDADE DE PROBABILIDADE\n\n\nComparando os cenários do gráfico:\n\n\n\n\n\n\n\n\n\\(\\alpha, \\beta\\)\nComportamento\n\n\n\n\n(0.7, 0.5)\nAlta no início → muitos eventos precoces\n\n\n(1, 1)\nCaso exponencial → risco constante\n\n\n(2, 1)\nPico moderado → eventos mais concentrados\n\n\n(2, 2)\nPico mais acentuado e deslocado → eventos mais rápidos e concentrados\n\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) controla o formato da curva\n\n\\(\\beta\\) comprime ou expande no tempo\n\nDistribuição pode ser assimétrica à direita"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-8",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nA partir da densidade \\(f(t)\\), obtemos:\n\n\\[\nS(t) = P(T \\geq t) = 1 - F(t)\n\\]\n\nPara a distribuição Gama: \\[\nS(t) = 1 - \\frac{\\gamma(\\alpha, \\beta t)}{\\Gamma(\\alpha)}\n\\]\nOnde:\n\n\\(\\gamma(\\cdot,\\cdot)\\) é a função gama incompleta inferior\n\\(\\Gamma(\\alpha)\\) é a função gama"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nA partir da densidade \\(f(t)\\), obtemos:\n\n\\[\nS(t) = P(T \\geq t) = 1 - F(t)\n\\]\n\nPara a distribuição Gama: \\[\nS(t) = 1 - \\frac{\\gamma(\\alpha, \\beta t)}{\\Gamma(\\alpha)}\n\\]\nOnde \\(\\gamma(\\cdot,\\cdot)\\) é a função gama incompleta inferior"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-9",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-9",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nControla o formato da curva de sobrevivência\n\\(\\alpha &lt; 1\\) → queda mais rápida no início\n\\(\\alpha = 1\\) → caso exponencial\n\n\\(\\alpha &gt; 1\\) → queda mais lenta no início e mais acentuada depois\n\n\\(\\beta\\) (taxa):\n\nControla o tempo até o evento\n\\(\\beta\\) maior → sobrevivência mais curta\n\\(\\beta\\) menor → sobrevivência mais prolongada"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE"
   },
   {
     "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-10",
     "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-10",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
-    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nComparando os cenários:\n\n\n\n\n\\(\\alpha, \\beta\\)\nComportamento da função \\(S(t)\\)\n\n\n\n\n(0.7, 0.5)\nQueda rápida no início → muitos eventos precoces\n\n\n(1, 1)\nQueda exponencial (referência)\n\n\n(2, 1)\nSobrevivência mais alta no início\n\n\n(3, 2)\nQueda mais acentuada após algum tempo\n\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) controla o formato da curva\n\n\\(\\beta\\) desloca a curva no tempo\n\nCurva pode assumir diferentes padrões (não apenas exponencial)\n\nA Gama permite:\n\nModelar diferentes dinâmicas de risco\nCapturar processos com acúmulo de eventos"
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nControla o formato da curva de sobrevivência\n\\(\\alpha &lt; 1\\) → queda mais rápida no início\n\\(\\alpha = 1\\) → caso exponencial\n\n\\(\\alpha &gt; 1\\) → queda mais lenta no início e mais acentuada depois\n\n\\(\\beta\\) (taxa):\n\nControla o tempo até o evento\n\\(\\beta\\) maior → sobrevivência mais curta\n\\(\\beta\\) menor → sobrevivência mais prolongada"
+  },
+  {
+    "objectID": "Aula6.html#função-de-sobrevivênciaconfiabilidade-11",
+    "href": "Aula6.html#função-de-sobrevivênciaconfiabilidade-11",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE",
+    "text": "FUNÇÃO DE SOBREVIVÊNCIA/CONFIABILIDADE\n\n\nComparando os cenários:\n\n\n\n\n\\(\\alpha, \\beta\\)\nComportamento da função \\(S(t)\\)\n\n\n\n\n(0.7, 0.5)\nQueda rápida no início → muitos eventos precoces\n\n\n(1, 1)\nQueda exponencial (referência)\n\n\n(2, 1)\nSobrevivência mais alta no início\n\n\n(2, 2)\nQueda mais acentuada após algum tempo\n\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) controla o formato da curva\n\n\\(\\beta\\) desloca a curva no tempo\n\nCurva pode assumir diferentes padrões (não apenas exponencial)"
   },
   {
     "objectID": "Aula6.html#função-de-risco-11",
     "href": "Aula6.html#função-de-risco-11",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nPara a distribuição Gama, a função de risco é:\n\n\\[\n\\lambda(t) = \\frac{f(t)}{S(t)} =\n\\frac{\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} t^{\\alpha - 1} e^{-\\beta t}}\n{1 - F(t)}\n\\]\n\nOnde \\(F(t)\\) é a função de distribuição acumulada da Gama"
+    "text": "FUNÇÃO DE RISCO\n\n\nPara a distribuição Gama, a função de risco é:\n\n\\[\n\\lambda(t) = \\frac{f(t)}{S(t)} =\n\\frac{\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} t^{\\alpha - 1} e^{-\\beta t}}\n{1 - F(t)}\n\\]"
   },
   {
     "objectID": "Aula6.html#função-de-risco-12",
     "href": "Aula6.html#função-de-risco-12",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nResultado fundamental: o risco pode ser monótono ou não, dependendo de \\(\\alpha\\)\nTipicamente:\n\n\\(\\alpha &lt; 1\\) → risco decrescente\n\n\\(\\alpha = 1\\) → risco constante (exponencial)\n\n\\(\\alpha &gt; 1\\) → risco crescente ao longo do tempo\n\n\n\n\nConsequência:\nUm indivíduo que sobreviveu até \\(t\\):\n\nPode ter risco maior ou menor, dependendo do caso\n\nPortanto:\n\nA propriedade de falta de memória NÃO vale\n\nOu seja:\n\nO passado influencia o risco futuro"
+    "text": "FUNÇÃO DE RISCO\n\n\nResultado fundamental: o risco pode ser monótono ou não, dependendo de \\(\\alpha\\)\nTipicamente:\n\n\\(\\alpha &lt; 1\\) → risco decrescente\n\n\\(\\alpha = 1\\) → risco constante (exponencial)\n\n\\(\\alpha &gt; 1\\) → risco crescente ao longo do tempo\n\nPropriedade importante:\nQuando \\(t \\to \\infty\\):\n\n\\(\\lambda(t) \\longrightarrow \\beta\\)\n\nOu seja:\n\nNo longo prazo, o risco tende ao parâmetro de taxa"
   },
   {
     "objectID": "Aula6.html#função-de-risco-13",
     "href": "Aula6.html#função-de-risco-13",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nDefine o comportamento do risco\nControla se o risco cresce, decresce ou é constante\n\n\\(\\beta\\) (taxa):\n\nEscala o risco ao longo do tempo\n\n\\(\\beta\\) maior → risco mais intenso (eventos mais rápidos)"
+    "text": "FUNÇÃO DE RISCO\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nDefine o comportamento do risco\nControla se o risco cresce, decresce ou é constante\n\n\\(\\beta\\) (taxa):\n\nDefine o limite da função de risco\n\\(\\lambda(t) \\to \\beta\\) quando \\(t \\to \\infty\\)\n\\(\\beta\\) maior → risco mais intenso no longo prazo"
   },
   {
     "objectID": "Aula6.html#função-de-risco-14",
     "href": "Aula6.html#função-de-risco-14",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO",
-    "text": "FUNÇÃO DE RISCO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\alpha, \\beta\\)\nComportamento da função \\(\\lambda(t)\\)\n\n\n\n\n(0.7, 0.5)\nRisco alto no início e depois decrescente\n\n\n(1, 1)\nRisco constante (exponencial)\n\n\n(2, 1)\nRisco crescente ao longo do tempo\n\n\n(3, 2)\nRisco cresce mais rapidamente\n\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) define o formato do risco\n\n\\(\\beta\\) controla a intensidade temporal\n\nNão há formato único (pode ser crescente ou decrescente)\n\nA Gama é ideal quando:\n\nO risco muda ao longo do tempo\nHá efeitos de acúmulo ou desgaste"
+    "text": "FUNÇÃO DE RISCO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\alpha, \\beta\\)\nComportamento da função \\(\\lambda(t)\\)\n\n\n\n\n(0.7, 0.5)\nRisco alto no início, decrescente → tende a 0.5\n\n\n(1, 1)\nRisco constante (exponencial)\n\n\n(2, 1)\nRisco crescente → tende a 1\n\n\n(2, 2)\nRisco cresce mais rapidamente → tende a 2\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) define o formato do risco\n\n\\(\\beta\\) define o nível de longo prazo\n\nTodas as curvas convergem para \\(\\beta\\)"
   },
   {
-    "objectID": "Aula6.html#função-de-risco-acumulado-gama",
-    "href": "Aula6.html#função-de-risco-acumulado-gama",
+    "objectID": "Aula6.html#função-de-risco-acumulado-8",
+    "href": "Aula6.html#função-de-risco-acumulado-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "FUNÇÃO DE RISCO ACUMULADO (GAMA)",
-    "text": "FUNÇÃO DE RISCO ACUMULADO (GAMA)\n\n\nPara a distribuição Gama, a função de risco acumulado é:\n\n\\[\n\\Lambda(t) = -\\log\\left[S(t)\\right]\n\\]\n\nOnde: \\[\nS(t) = 1 - F(t)\n\\]"
+    "section": "FUNÇÃO DE RISCO ACUMULADO",
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nPara a distribuição Gama, a função de risco acumulado é:\n\n\\[\n\\Lambda(t) = -\\log\\left[S(t)\\right]\n\\]"
   },
   {
-    "objectID": "Aula6.html#função-de-risco-acumulado-6",
-    "href": "Aula6.html#função-de-risco-acumulado-6",
+    "objectID": "Aula6.html#função-de-risco-acumulado-9",
+    "href": "Aula6.html#função-de-risco-acumulado-9",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
     "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nInfluencia o formato do crescimento\n\\(\\alpha &lt; 1\\) → crescimento mais rápido no início\n\\(\\alpha &gt; 1\\) → crescimento mais lento no início e mais acelerado depois\n\n\\(\\beta\\) (taxa):\n\nControla a escala temporal\n\\(\\beta\\) maior → crescimento mais rápido\n\\(\\beta\\) menor → crescimento mais lento\n\n\n\n\nResumo visual:\n\nFunção é sempre crescente\nCrescimento não linear\nPode variar conforme o comportamento do risco"
   },
   {
-    "objectID": "Aula6.html#função-de-risco-acumulado-7",
-    "href": "Aula6.html#função-de-risco-acumulado-7",
+    "objectID": "Aula6.html#função-de-risco-acumulado-10",
+    "href": "Aula6.html#função-de-risco-acumulado-10",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\nComportamento\n\n\n\n\n0.7\n0.5\nCrescimento rápido no início\n\n\n1\n1\nCrescimento linear (exponencial)\n\n\n2\n1\nCrescimento mais lento no início\n\n\n3\n2\nCrescimento mais acelerado ao longo do tempo\n\n\n\n\n\nA função \\(\\Lambda(t)\\):\n\nÉ sempre crescente\nRepresenta o acúmulo do risco ao longo do tempo\nPode assumir diferentes formatos (não único como na exponencial)"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nComparando os cenários:\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\nComportamento\n\n\n\n\n0.7\n0.5\nCrescimento rápido no início\n\n\n1\n1\nCrescimento linear (exponencial)\n\n\n2\n1\nCrescimento mais lento no início\n\n\n2\n2\nCrescimento mais acelerado ao longo do tempo\n\n\n\n\n\nA função \\(\\Lambda(t)\\):\n\nÉ sempre crescente\nRepresenta o acúmulo do risco ao longo do tempo\nPode assumir diferentes formatos (não único como na exponencial)"
   },
   {
     "objectID": "Aula6.html#percentil-da-distribuição-gama",
     "href": "Aula6.html#percentil-da-distribuição-gama",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "PERCENTIL DA DISTRIBUIÇÃO GAMA",
-    "text": "PERCENTIL DA DISTRIBUIÇÃO GAMA\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição Gama: \\[\nt_p = F^{-1}(p)\n\\]\nNão possui forma fechada simples\n→ obtido numericamente\n\n\n\nExemplo: Mediana (\\(p = 0.5\\)):\n\n\\[\nt_{0.5} = F^{-1}(0.5)\n\\]\n\n\nComparando os parâmetros:\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\nMediana (aprox.)\n\n\n\n\n0.7\n0.5\n\\(\\approx 0.80\\)\n\n\n1\n1\n\\(\\approx 0.69\\)\n\n\n2\n1\n\\(\\approx 1.68\\)\n\n\n3\n2\n\\(\\approx 1.34\\)\n\n\n\n\n\nInterpretação:\n\n\\(\\beta\\) maior → percentis menores (eventos mais rápidos)\n\\(\\alpha\\) altera a forma e assimetria\nPercentis refletem o comportamento acumulativo do processo"
+    "text": "PERCENTIL DA DISTRIBUIÇÃO GAMA\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição Gama: \\[\nt_p = F^{-1}(p)\n\\]\nNão possui forma fechada simples\n→ obtido numericamente"
   },
   {
-    "objectID": "Aula6.html#tempo-médio-3",
-    "href": "Aula6.html#tempo-médio-3",
+    "objectID": "Aula6.html#tempos-médio-e-médio-residual-2",
+    "href": "Aula6.html#tempos-médio-e-médio-residual-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO MÉDIO",
-    "text": "TEMPO MÉDIO\n\n\nO tempo médio até o evento é: \\[\nE(T) = \\frac{\\alpha}{\\beta}\n\\]\n\n\n\nComparando os parâmetros:\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\nTempo médio \\(E(T)\\)\n\n\n\n\n0.7\n0.5\n\\(1.4\\)\n\n\n1\n1\n\\(1\\)\n\n\n2\n1\n\\(2\\)\n\n\n3\n2\n\\(1.5\\)\n\n\n\n\n\nResumo:\n\n\\(\\beta\\) maior → eventos mais rápidos\n\\(\\alpha\\) maior → maior tempo médio\nInterpretação simples e direta"
+    "section": "TEMPOS MÉDIO E MÉDIO RESIDUAL",
+    "text": "TEMPOS MÉDIO E MÉDIO RESIDUAL\n\n\nNa distribuição Gama, o tempo médio até o evento é: \\[\nE(T) = \\frac{\\alpha}{\\beta}\n\\]\nResumo:\n\n\\(\\beta\\) maior → eventos mais rápidos\n\\(\\alpha\\) maior → maior tempo médio\nInterpretação simples e direta\n\nPara a distribuição Gama, o tempo médio residual \\(vmr(t)\\) também é obtido numericamente."
   },
   {
-    "objectID": "Aula6.html#tempo-médio-residual-3",
-    "href": "Aula6.html#tempo-médio-residual-3",
+    "objectID": "Aula6.html#aplicabilidade-7",
+    "href": "Aula6.html#aplicabilidade-7",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPO MÉDIO RESIDUAL",
-    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é: \\[\nE(T - t \\mid T &gt; t)\n\\]\nPara a distribuição Gama, não é constante\nDepende do tempo já vivido \\(t\\)\n\n\n\nInterpretação:\nNão possui propriedade de falta de memória\n\n(exceto no caso exponencial, \\(\\alpha = 1\\))\n\nO tempo restante esperado:\n\nDepende do passado\n\n\n\n\nIntuição:\n\\(\\alpha &gt; 1\\) (risco crescente):\n\nQuanto mais tempo passou → menos tempo restante esperado\n\n\\(\\alpha &lt; 1\\) (risco decrescente):\n\nQuanto mais tempo passou → mais tempo restante esperado\n\n\n\n\nResumo:\n\nA Gama é bastante flexível\nPermite modelar diferentes padrões de memória\nInclui a exponencial como caso particular"
+    "section": "APLICABILIDADE",
+    "text": "APLICABILIDADE\n\n\nO modelo Gama é uma generalização do modelo exponencial, permitindo maior flexibilidade na forma do risco\nEle possui dois parâmetros, possibilitando representar diferentes comportamentos ao longo do tempo\nNo caso dos dados de câncer de bexiga, essa suposição implica que:\n→ o risco de recorrência ou óbito pode variar ao longo do tempo\nOu seja:\n→ o indivíduo pode apresentar risco alto no início e depois diminuir\n→ ou ainda um risco que cresce ao longo do tempo\nIndependentemente do comportamento inicial:\n→ o risco tende a se estabilizar em um nível constante (platô) ao longo do tempo"
   },
   {
-    "objectID": "Aula6.html#distribuição-gama-generalizada-stacy-flexsurv",
-    "href": "Aula6.html#distribuição-gama-generalizada-stacy-flexsurv",
+    "objectID": "Aula6.html#aplicabilidade-8",
+    "href": "Aula6.html#aplicabilidade-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "DISTRIBUIÇÃO GAMA GENERALIZADA (Stacy / flexsurv)",
-    "text": "DISTRIBUIÇÃO GAMA GENERALIZADA (Stacy / flexsurv)\n\n\nSeja \\(X &gt; 0\\), com parâmetros:\n\n\\(a &gt; 0\\) → escala\n\\(b &gt; 0\\) → forma\n\\(k &gt; 0\\) → parâmetro adicional de forma\n\n\n\n\nA densidade é dada por:\n\n\\[\nf(x \\mid a,b,k) = \\frac{b}{\\Gamma(k)\\, a^{bk}} \\, x^{bk - 1} \\exp\\left[-\\left(\\frac{x}{a}\\right)^b\\right]\n\\]\n\n\nIdeia central:\nUm modelo com três parâmetros que amplia a flexibilidade das distribuições usuais"
+    "section": "APLICABILIDADE",
+    "text": "APLICABILIDADE\n\n\nDiferente do modelo exponencial, o Gama permite uma função de risco não constante\nEm particular:\n→ risco decrescente (ex.: recuperação após tratamento)\n→ risco crescente (ex.: progressão da doença)\nContudo, uma característica importante é que:\n→ o risco converge para um valor constante ao longo do tempo\nPortanto, o modelo Gama é útil quando:\n→ há variação inicial no risco, mas com estabilização no longo prazo\nEle mantém:\n→ boa flexibilidade inicial\n→ com comportamento assintótico semelhante ao modelo exponencial"
+  },
+  {
+    "objectID": "Aula6.html#distribuição-gama-generalizada-1",
+    "href": "Aula6.html#distribuição-gama-generalizada-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "DISTRIBUIÇÃO GAMA GENERALIZADA",
+    "text": "DISTRIBUIÇÃO GAMA GENERALIZADA\n\n\nSeja \\(T &gt; 0\\), com parâmetros:\n\n\\(a &gt; 0\\) → escala\n\\(b &gt; 0\\) → forma\n\\(k &gt; 0\\) → parâmetro adicional de forma\n\nA densidade é dada por:\n\n\\[\nf(t \\mid a,b,k) = \\frac{b}{\\Gamma(k)\\, a^{bk}} \\, t^{bk - 1} \\exp\\left[-\\left(\\frac{t}{a}\\right)^b\\right]\n\\] - Um modelo com três parâmetros que amplia a flexibilidade das distribuições usuais"
   },
   {
     "objectID": "Aula6.html#interpretação-dos-parâmetros",
     "href": "Aula6.html#interpretação-dos-parâmetros",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERPRETAÇÃO DOS PARÂMETROS",
-    "text": "INTERPRETAÇÃO DOS PARÂMETROS\n\n\n\\(a\\) (escala):\n\nControla o tempo até o evento\n\\(a\\) maior → eventos mais tardios\n\n\n\n\n\\(b\\) (forma):\n\nControla o comportamento do risco\nAtua de forma semelhante ao parâmetro da Weibull\n\n\n\n\n\\(k\\) (forma adicional):\n\nIntroduz flexibilidade extra\nPermite capturar padrões não possíveis com Weibull simples\n\n\n\n\nEm conjunto:\n\nPermitem modelar diferentes formatos de função de risco"
+    "text": "INTERPRETAÇÃO DOS PARÂMETROS\n\n\n\\(a\\) (escala):\n\nControla o tempo até o evento\n\\(a\\) maior → eventos mais tardios\n\n\\(b\\) (forma):\n\nControla o comportamento do risco\nAtua de forma semelhante ao parâmetro da Weibull\n\n\\(k\\) (forma adicional):\n\nIntroduz flexibilidade extra\nPermite capturar padrões não possíveis com Weibull simples"
   },
   {
     "objectID": "Aula6.html#relação-com-distribuições-conhecidas",
     "href": "Aula6.html#relação-com-distribuições-conhecidas",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RELAÇÃO COM DISTRIBUIÇÕES CONHECIDAS",
-    "text": "RELAÇÃO COM DISTRIBUIÇÕES CONHECIDAS\n\n\nA Gama Generalizada inclui como casos particulares:\n\n\n\nWeibull:\n\nQuando \\(k = 1\\)\n\n\n\\[\nf(x) = \\frac{b}{a^b} x^{b-1} \\exp\\left[-\\left(\\frac{x}{a}\\right)^b\\right]\n\\]\n\n\nExponencial:\n\nQuando \\(k = 1\\) e \\(b = 1\\)\n\n\n\\[\nf(x) = \\frac{1}{a} \\exp(-x/a)\n\\]\n\n\nGama:\n\nQuando \\(b = 1\\)\n\n\n\\[\nf(x) = \\frac{1}{\\Gamma(k)\\, a^k} x^{k-1} e^{-x/a}\n\\]"
+    "text": "RELAÇÃO COM DISTRIBUIÇÕES CONHECIDAS\n\n\nA Gama Generalizada inclui como casos particulares:\nWeibull: quando \\(k = 1\\)\n\n\\[\nf(t) = \\frac{b}{a^b} t^{b-1} \\exp\\left[-\\left(\\frac{t}{a}\\right)^b\\right]\n\\]\n\nExponencial: quando \\(k = 1\\) e \\(b = 1\\)\n\n\\[\nf(t) = \\frac{1}{a} \\exp(-t/a)\n\\]\n\nGama: quando \\(b = 1\\)\n\n\\[\nf(t) = \\frac{1}{\\Gamma(k)\\, a^k} t^{k-1} e^{-t/a}\n\\]"
   },
   {
     "objectID": "Aula6.html#relação-com-a-lognormal",
     "href": "Aula6.html#relação-com-a-lognormal",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RELAÇÃO COM A LOGNORMAL",
-    "text": "RELAÇÃO COM A LOGNORMAL\n\n\nA lognormal não é um caso direto, mas:\nPode ser obtida como um caso limite da Gama Generalizada\n\n\n\nIdeia:\nQuando \\(b \\to 0\\) (com reparametrização adequada), a GG tende à lognormal\n\n\n\nInterpretação:\nA GG conecta:\n\nModelos baseados em potência (Weibull/Gama)\n\nModelos baseados em log (Lognormal)\n\n\n\n\nResultado:\nGrande capacidade de adaptação a diferentes padrões de dados"
+    "text": "RELAÇÃO COM A LOGNORMAL\n\n\nA distribuição lognormal não é um caso direto, mas:\nPode ser obtida como um caso limite da Gama Generalizada\nQuando \\(b \\to 0\\) (com reparametrização adequada), a GG tende à lognormal\nAssim, tem-se uma grande capacidade de adaptação a diferentes padrões de dados"
   },
   {
     "objectID": "Aula6.html#por-que-usar-a-gama-generalizada",
     "href": "Aula6.html#por-que-usar-a-gama-generalizada",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE USAR A GAMA GENERALIZADA?",
-    "text": "POR QUE USAR A GAMA GENERALIZADA?\n\n\nNa prática, não sabemos qual modelo é o correto:\n\nWeibull?\nGama?\nLognormal?\n\n\n\n\nEstratégia moderna:\nAjustar um modelo mais geral → Gama Generalizada\n\n\n\nDepois verificar:\n\\(k = 1\\) → Weibull\n\n\\(b = 1\\) → Gama\n\n\\(k = 1\\) e \\(b = 1\\) → Exponencial\n\n\n\nOu seja:\nEla permite que os dados indiquem o modelo mais adequado"
+    "text": "POR QUE USAR A GAMA GENERALIZADA?\n\n\nNa prática, não sabemos qual modelo é o correto:\n\nExponencial?\nWeibull?\nGama?\nLognormal?\n\nEstratégia moderna: ajustar um modelo mais geral → Gama Generalizada\nDepois verificar:\n\n\\(k = 1\\) → Weibull\n\n\\(b = 1\\) → Gama\n\n\\(k = 1\\) e \\(b = 1\\) → Exponencial\n\n\\(b \\rightarrow 0\\) → Lognormal"
   },
   {
     "objectID": "Aula6.html#interpretação-prática",
     "href": "Aula6.html#interpretação-prática",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERPRETAÇÃO PRÁTICA",
-    "text": "INTERPRETAÇÃO PRÁTICA\n\n\nA GG permite modelar:\n✔ Risco crescente\n\n✔ Risco decrescente\n\n✔ Risco não monótono\n\n\n\nIsso é essencial em:\n\nAnálise de sobrevivência\n\nConfiabilidade\n\nEstudos biomédicos\n\n\n\n\nComparação:\nWeibull → flexível, mas limitada\n\nGG → muito mais abrangente"
-  },
-  {
-    "objectID": "Aula6.html#resumo-final",
-    "href": "Aula6.html#resumo-final",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "RESUMO FINAL",
-    "text": "RESUMO FINAL\n\n\nA Gama Generalizada:\n✔ Possui três parâmetros: \\(a\\), \\(b\\), \\(k\\)\n✔ Inclui:\n\nExponencial\n\nWeibull\n\nGama\n\nLognormal (limite)\n\n\n\n\n✔ Principal vantagem:\nServe como ferramenta de seleção de modelo\n\n\n\nMensagem-chave para os alunos:\nEm vez de escolher um modelo específico, podemos começar com a GG e deixar os dados guiarem a escolha"
+    "text": "INTERPRETAÇÃO PRÁTICA\n\n\nA distribuição Gama Generalizada permite modelar:\n✔ Risco crescente\n\n✔ Risco decrescente\n\n✔ Risco não monótono\n\n✔ Risco constante\nPrincipal vantagem: serve como ferramenta de seleção de modelo\n\nEm vez de escolher um modelo específico, podemos começar com a Gama Generalizada e deixar os dados guiarem a escolha."
   },
   {
     "objectID": "Aula6.html#outros-modelos-paramétricos-importantes",
