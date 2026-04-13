@@ -383,44 +383,20 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>O QUE OS DADOS SUGEREM?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Observando os tempos, percebemos que:
+<li><p>Observando os tempos, percebemos que:</p>
 <ul>
 <li>Muitos eventos ocorrem nos <strong>primeiros meses</strong></li>
 <li>Mas alguns pacientes permanecem longos períodos <strong>sem reincidência</strong></li>
 </ul></li>
-<li>Isso sugere:
+<li><p>Isso sugere:</p>
 <ul>
 <li>Uma distribuição <strong>assimétrica à direita</strong></li>
 </ul></li>
-<li>Pergunta central:
+<li><p>Pergunta central:</p>
 <ul>
 <li>Como o <strong>risco de reincidência</strong> evolui ao longo do tempo?</li>
 </ul></li>
-<li>Possibilidades:
-<ul>
-<li>Risco <strong>constante</strong>?</li>
-<li>Risco <strong>crescente</strong>?</li>
-<li>Risco <strong>decrescente</strong>?</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="conexão-com-modelos-probabilísticos" class="slide level2">
-<h2><strong>CONEXÃO COM MODELOS PROBABILÍSTICOS</strong></h2>
-<div class="box-blue">
-<ul>
-<li><p>Diferentes respostas para o comportamento do risco levam a:</p>
-<ul>
-<li><strong>Diferentes distribuições de probabilidade</strong></li>
-</ul></li>
-<li><p>Por exemplo:</p>
-<ul>
-<li><strong>Exponencial</strong> → risco constante</li>
-<li><strong>Weibull</strong> → risco crescente ou decrescente</li>
-<li><strong>Log-normal / Log-logística</strong> → risco não monotônico</li>
-</ul></li>
-<li><p>Portanto, escolher um modelo é escolher como o <strong>risco se comporta</strong></p></li>
-<li><p>Nosso objetivo: encontrar uma distribuição que <strong>represente bem os dados</strong></p></li>
+<li><p>Possibilidades: Risco <strong>constante</strong>, <strong>crescente</strong> e <strong>decrescente</strong>?</p></li>
 <li><p><strong>Próximo passo</strong>: estudar essas distribuições e suas interpretações</p></li>
 </ul>
 </div>
@@ -438,7 +414,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li>Um dos modelos mais <strong>utilizados</strong> em análise de sobrevivência e confiabilidade</li>
 </ul></li>
-<li>Surgiu a partir dos anos <strong>1940</strong> e, em confiabilidade foi aplicada em:
+<li>Surgiu a partir dos anos <strong>1940</strong> e, em confiabilidade, foi aplicada em:
 <ul>
 <li>Estudos de <strong>falha de sistemas eletrônicos</strong>.</li>
 <li>Falha de <strong>motores de aeronaves</strong>.</li>
@@ -708,7 +684,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li><strong>Interpretação do parâmetro <span class="math inline">\(\alpha\)</span>:</strong>
 <ul>
 <li>Controla a <strong>inclinação da função de risco acumulado</strong></li>
-<li>Quanto maior <span class="math inline">\(\alpha\)</span>, mais rápido a função <span class="math inline">\(\Lambda(t)\)</span> cresce → <strong>maior risco acumulado ao longo do tempo</strong></li>
+<li>Quanto maior <span class="math inline">\(\alpha\)</span>, mais rápido a função <span class="math inline">\(\Lambda(t)\)</span> cresce.</li>
 </ul></li>
 <li><strong>Comparando diferentes valores de <span class="math inline">\(\alpha\)</span>:</strong></li>
 </ul>
@@ -741,7 +717,6 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </li>
 <li><span class="math inline">\(\alpha\)</span> grande → reta <strong>mais inclinada</strong>, risco acumulado cresce rapidamente<br>
 </li>
-<li>Função de risco acumulado é sempre <strong>linear no tempo</strong> para a exponencial</li>
 </ul></li>
 </ul>
 </div>
@@ -751,9 +726,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <div class="box-blue">
 <ul>
 <li><p>O percentil de ordem <span class="math inline">\(p\)</span> é o valor <span class="math inline">\(t_p\)</span> tal que <span class="math inline">\(P(T \le t_p) = p\)</span></p></li>
-<li><p>Para a distribuição exponencial: <span class="math display">\[
-t_p = -\frac{\log(1-p)}{\alpha}
-\]</span></p></li>
+<li><p>Para a distribuição exponencial: <span class="math inline">\(t_p = -\frac{\log(1-p)}{\alpha}\)</span></p></li>
 <li><p><strong>Exemplo: Mediana (<span class="math inline">\(p = 0.5\)</span>):</strong> <span class="math inline">\(t_{0.5} =\frac{\log(2)}{\alpha}\)</span></p></li>
 </ul>
 <table class="caption-top">
@@ -790,9 +763,7 @@ t_p = -\frac{\log(1-p)}{\alpha}
 <h2><strong>TEMPO MÉDIO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O tempo médio até o evento é: <span class="math display">\[
-E(T) = \frac{1}{\alpha}
-\]</span></p></li>
+<li><p>O tempo médio até o evento é: <span class="math inline">\(E(T) = \frac{1}{\alpha}\)</span></p></li>
 <li><p><strong>Comparando diferentes valores de <span class="math inline">\(\alpha\)</span>:</strong></p></li>
 </ul>
 <table class="caption-top">
@@ -861,8 +832,7 @@ E(T) = \frac{1}{\alpha}
 <li><strong>Interpretação:</strong>
 <ul>
 <li>Independe do tempo já vivido <span class="math inline">\(t\)</span> (propriedade de <strong>falta de memória</strong>)</li>
-<li>O “tempo esperado restante” é sempre o mesmo</li>
-<li>Não importa quanto tempo já passou</li>
+<li>O “tempo esperado restante” é sempre o mesmo e igual ao tempo médio.</li>
 </ul></li>
 </ul>
 </div>
@@ -1793,15 +1763,6 @@ S(t) = P(T \geq t) = \int_0^{\infty}f(t)dt=1 - \Phi\left(\frac{\log t - \mu}{\si
 <li><span class="math inline">\(\sigma\)</span> maior → crescimento mais <strong>gradual</strong></li>
 </ul></li>
 </ul>
-<hr>
-<ul>
-<li><strong>Resumo visual:</strong>
-<ul>
-<li>Função é sempre <strong>crescente</strong></li>
-<li>Crescimento <strong>não linear</strong></li>
-<li>Pode apresentar regiões de crescimento mais rápido e mais lento</li>
-</ul></li>
-</ul>
 </div>
 </section>
 <section id="função-de-risco-acumulado-7" class="slide level2">
@@ -1917,8 +1878,6 @@ vmr(t)=\frac{e^{\mu+\frac{\sigma^2}{2}}
 <li><p>Ainda assim, ele possui:<br>
 → <strong>interpretação menos direta</strong> dos parâmetros<br>
 → e maior complexidade em comparação aos modelos anteriores</p></li>
-<li><p>É especialmente útil quando o processo envolve <strong>acúmulo de efeitos ao longo do tempo</strong><br>
-</p></li>
 </ul>
 </div>
 </section></section>
@@ -2317,15 +2276,6 @@ S(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}
 <li><span class="math inline">\(\beta\)</span> menor → crescimento mais <strong>lento</strong></li>
 </ul></li>
 </ul>
-<hr>
-<ul>
-<li><strong>Resumo visual:</strong>
-<ul>
-<li>Função é sempre <strong>crescente</strong></li>
-<li>Crescimento <strong>não linear</strong></li>
-<li>Pode variar conforme o comportamento do risco</li>
-</ul></li>
-</ul>
 </div>
 </section>
 <section id="função-de-risco-acumulado-10" class="slide level2">
@@ -2486,7 +2436,7 @@ f(t \mid a,b,k) = \frac{b}{\Gamma(k)\, a^{bk}} \, t^{bk - 1} \exp\left[-\left(\f
 </ul>
 </div>
 </section>
-<section id="relação-com-distribuições-conhecidas" class="slide level2">
+<section id="relação-com-distribuições-conhecidas" class="slide level2 scrollable">
 <h2><strong>RELAÇÃO COM DISTRIBUIÇÕES CONHECIDAS</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2516,7 +2466,7 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 <ul>
 <li><p>A distribuição <strong>lognormal</strong> não é um caso direto, mas:</p></li>
 <li><p>Pode ser obtida como um <strong>caso limite</strong> da Gama Generalizada</p></li>
-<li><p>Quando <span class="math inline">\(b \to 0\)</span> (com reparametrização adequada), a GG tende à lognormal</p></li>
+<li><p>Quando <span class="math inline">\(b \to 0\)</span> (com reparametrização adequada), a Gama Generalizada tende à lognormal</p></li>
 <li><p>Assim, tem-se uma grande capacidade de adaptação a diferentes padrões de dados</p></li>
 </ul>
 </div>
@@ -2539,8 +2489,7 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 </li>
 <li><span class="math inline">\(b = 1\)</span> → Gama<br>
 </li>
-<li><span class="math inline">\(k = 1\)</span> e <span class="math inline">\(b = 1\)</span> → Exponencial<br>
-</li>
+<li><span class="math inline">\(k = 1\)</span> e <span class="math inline">\(b = 1\)</span> → Exponencial</li>
 <li><span class="math inline">\(b \rightarrow 0\)</span> → Lognormal</li>
 </ul></li>
 </ul>
@@ -2550,15 +2499,17 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 <h2><strong>INTERPRETAÇÃO PRÁTICA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A distribuição Gama Generalizada permite modelar:</p></li>
-<li><p>✔ Risco crescente<br>
-</p></li>
-<li><p>✔ Risco decrescente<br>
-</p></li>
-<li><p>✔ Risco não monótono<br>
-</p></li>
-<li><p>✔ Risco constante</p></li>
-<li><p>Principal vantagem: serve como ferramenta de <strong>seleção de modelo</strong></p>
+<li>A distribuição Gama Generalizada permite modelar:
+<ul>
+<li>✔ Risco crescente<br>
+</li>
+<li>✔ Risco decrescente<br>
+</li>
+<li>✔ Risco não monótono<br>
+</li>
+<li>✔ Risco constante</li>
+</ul></li>
+<li>Principal vantagem: serve como ferramenta de <strong>seleção de modelo</strong>
 <ul>
 <li>Em vez de escolher um modelo específico, podemos começar com a Gama Generalizada e deixar os dados guiarem a escolha.</li>
 </ul></li>
@@ -2574,21 +2525,19 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 <h2><strong>OUTROS MODELOS PARAMÉTRICOS IMPORTANTES</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Além de Exponencial, Weibull, Lognormal e Gama Generalizada, existem outros modelos relevantes:</li>
-</ul>
-<hr>
+<li><p>Além das distribuições Exponencial, Weibull, Lognormal, Gama e Gama Generalizada, existem outros modelos relevantes:</p>
 <ul>
 <li><strong>Gompertz</strong></li>
 <li><strong>Log-logística</strong></li>
 <li><strong>Modelos de mistura</strong></li>
 <li><strong>Modelo com risco em forma de banheira</strong></li>
-</ul>
-<hr>
+</ul></li>
+<li><p>Motivação:</p>
 <ul>
-<li><p>Motivação:</p></li>
-<li><p>Nem sempre o risco segue um padrão simples<br>
-</p></li>
-<li><p>Precisamos de modelos que capturem <strong>dinâmicas mais complexas</strong></p></li>
+<li>Nem sempre o risco segue um padrão simples<br>
+</li>
+<li>Precisamos de modelos que capturem <strong>dinâmicas mais complexas</strong></li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -2689,46 +2638,6 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 <li>desgaste</li>
 </ul></li>
 </ul></li>
-</ul>
-</div>
-</section>
-<section id="quando-usar-esses-modelos" class="slide level2">
-<h2><strong>QUANDO USAR ESSES MODELOS?</strong></h2>
-<div class="box-blue">
-<ul>
-<li><p>Use modelos mais simples quando:</p></li>
-<li><p>✔ O risco é monotônico<br>
-(ex: Weibull)</p></li>
-</ul>
-<hr>
-<ul>
-<li><p>Use modelos mais flexíveis quando:</p></li>
-<li><p>✔ Há evidência de:</p>
-<ul>
-<li>Pico de risco (log-logística)<br>
-</li>
-<li>Crescimento acelerado (Gompertz)<br>
-</li>
-<li>Heterogeneidade (misturas)<br>
-</li>
-<li>Formato em U (banheira)</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li>Estratégia recomendada:</li>
-</ul>
-<ol type="1">
-<li>Comece com modelos clássicos<br>
-</li>
-<li>Avalie ajuste (AIC, gráficos)<br>
-</li>
-<li>Evolua para modelos mais flexíveis</li>
-</ol>
-<hr>
-<ul>
-<li><p><strong>Mensagem final:</strong></p></li>
-<li><p>O modelo deve refletir o <strong>mecanismo gerador dos dados</strong>, não apenas o ajuste estatístico</p></li>
 </ul>
 </div>
 

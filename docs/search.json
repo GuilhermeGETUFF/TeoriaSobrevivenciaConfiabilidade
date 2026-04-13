@@ -81,21 +81,14 @@
     "href": "Aula6.html#o-que-os-dados-sugerem",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "O QUE OS DADOS SUGEREM?",
-    "text": "O QUE OS DADOS SUGEREM?\n\n\nObservando os tempos, percebemos que:\n\nMuitos eventos ocorrem nos primeiros meses\nMas alguns pacientes permanecem longos períodos sem reincidência\n\nIsso sugere:\n\nUma distribuição assimétrica à direita\n\nPergunta central:\n\nComo o risco de reincidência evolui ao longo do tempo?\n\nPossibilidades:\n\nRisco constante?\nRisco crescente?\nRisco decrescente?"
-  },
-  {
-    "objectID": "Aula6.html#conexão-com-modelos-probabilísticos",
-    "href": "Aula6.html#conexão-com-modelos-probabilísticos",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "CONEXÃO COM MODELOS PROBABILÍSTICOS",
-    "text": "CONEXÃO COM MODELOS PROBABILÍSTICOS\n\n\nDiferentes respostas para o comportamento do risco levam a:\n\nDiferentes distribuições de probabilidade\n\nPor exemplo:\n\nExponencial → risco constante\nWeibull → risco crescente ou decrescente\nLog-normal / Log-logística → risco não monotônico\n\nPortanto, escolher um modelo é escolher como o risco se comporta\nNosso objetivo: encontrar uma distribuição que represente bem os dados\nPróximo passo: estudar essas distribuições e suas interpretações"
+    "text": "O QUE OS DADOS SUGEREM?\n\n\nObservando os tempos, percebemos que:\n\nMuitos eventos ocorrem nos primeiros meses\nMas alguns pacientes permanecem longos períodos sem reincidência\n\nIsso sugere:\n\nUma distribuição assimétrica à direita\n\nPergunta central:\n\nComo o risco de reincidência evolui ao longo do tempo?\n\nPossibilidades: Risco constante, crescente e decrescente?\nPróximo passo: estudar essas distribuições e suas interpretações"
   },
   {
     "objectID": "Aula6.html#introdução-1",
     "href": "Aula6.html#introdução-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nA distribuição exponencial foi, historicamente:\n\nUm dos modelos mais utilizados em análise de sobrevivência e confiabilidade\n\nSurgiu a partir dos anos 1940 e, em confiabilidade foi aplicada em:\n\nEstudos de falha de sistemas eletrônicos.\nFalha de motores de aeronaves.\nComponentes sujeitos a falhas aleatórias ao longo do tempo."
+    "text": "INTRODUÇÃO\n\n\nA distribuição exponencial foi, historicamente:\n\nUm dos modelos mais utilizados em análise de sobrevivência e confiabilidade\n\nSurgiu a partir dos anos 1940 e, em confiabilidade, foi aplicada em:\n\nEstudos de falha de sistemas eletrônicos.\nFalha de motores de aeronaves.\nComponentes sujeitos a falhas aleatórias ao longo do tempo."
   },
   {
     "objectID": "Aula6.html#introdução-2",
@@ -172,28 +165,28 @@
     "href": "Aula6.html#função-de-risco-acumulado-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação do parâmetro \\(\\alpha\\):\n\nControla a inclinação da função de risco acumulado\nQuanto maior \\(\\alpha\\), mais rápido a função \\(\\Lambda(t)\\) cresce → maior risco acumulado ao longo do tempo\n\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nComportamento da função \\(\\Lambda(t)\\)\n\n\n\n\n0.5\nCrescimento lento e linear, risco acumulado baixo\n\n\n1\nCrescimento moderado e linear, risco acumulado médio\n\n\n1.5\nCrescimento rápido e linear, risco acumulado alto\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) pequeno → reta mais inclinada suavemente\n\n\\(\\alpha\\) grande → reta mais inclinada, risco acumulado cresce rapidamente\n\nFunção de risco acumulado é sempre linear no tempo para a exponencial"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação do parâmetro \\(\\alpha\\):\n\nControla a inclinação da função de risco acumulado\nQuanto maior \\(\\alpha\\), mais rápido a função \\(\\Lambda(t)\\) cresce.\n\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nComportamento da função \\(\\Lambda(t)\\)\n\n\n\n\n0.5\nCrescimento lento e linear, risco acumulado baixo\n\n\n1\nCrescimento moderado e linear, risco acumulado médio\n\n\n1.5\nCrescimento rápido e linear, risco acumulado alto\n\n\n\n\nResumo visual:\n\n\\(\\alpha\\) pequeno → reta mais inclinada suavemente\n\n\\(\\alpha\\) grande → reta mais inclinada, risco acumulado cresce rapidamente"
   },
   {
     "objectID": "Aula6.html#percentil",
     "href": "Aula6.html#percentil",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "PERCENTIL",
-    "text": "PERCENTIL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição exponencial: \\[\nt_p = -\\frac{\\log(1-p)}{\\alpha}\n\\]\nExemplo: Mediana (\\(p = 0.5\\)): \\(t_{0.5} =\\frac{\\log(2)}{\\alpha}\\)\n\n\n\n\n\\(\\alpha\\)\nMediana\n\n\n\n\n0.5\n\\(\\frac{\\log(2)}{0.5} \\approx 1.386\\)\n\n\n1\n\\(\\log(2) \\approx 0.693\\)\n\n\n1.5\n\\(\\frac{\\log(2)}{1.5} \\approx 0.462\\)\n\n\n\n\nInterpretação:\n\nQuanto maior \\(\\alpha\\), menor o percentil, já que os eventos ocorrem mais cedo"
+    "text": "PERCENTIL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição exponencial: \\(t_p = -\\frac{\\log(1-p)}{\\alpha}\\)\nExemplo: Mediana (\\(p = 0.5\\)): \\(t_{0.5} =\\frac{\\log(2)}{\\alpha}\\)\n\n\n\n\n\\(\\alpha\\)\nMediana\n\n\n\n\n0.5\n\\(\\frac{\\log(2)}{0.5} \\approx 1.386\\)\n\n\n1\n\\(\\log(2) \\approx 0.693\\)\n\n\n1.5\n\\(\\frac{\\log(2)}{1.5} \\approx 0.462\\)\n\n\n\n\nInterpretação:\n\nQuanto maior \\(\\alpha\\), menor o percentil, já que os eventos ocorrem mais cedo"
   },
   {
     "objectID": "Aula6.html#tempo-médio",
     "href": "Aula6.html#tempo-médio",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPO MÉDIO",
-    "text": "TEMPO MÉDIO\n\n\nO tempo médio até o evento é: \\[\nE(T) = \\frac{1}{\\alpha}\n\\]\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nTempo médio \\(E(T)\\)\n\n\n\n\n0.5\n2\n\n\n1\n1\n\n\n1.5\n\\(\\approx 0.667\\)\n\n\n\n\nResumo:\n\n\\(\\alpha\\) pequeno → eventos demoram mais\n\\(\\alpha\\) grande → eventos ocorrem rapidamente\nQuanto maior \\(\\alpha\\), menor o tempo médio"
+    "text": "TEMPO MÉDIO\n\n\nO tempo médio até o evento é: \\(E(T) = \\frac{1}{\\alpha}\\)\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nTempo médio \\(E(T)\\)\n\n\n\n\n0.5\n2\n\n\n1\n1\n\n\n1.5\n\\(\\approx 0.667\\)\n\n\n\n\nResumo:\n\n\\(\\alpha\\) pequeno → eventos demoram mais\n\\(\\alpha\\) grande → eventos ocorrem rapidamente\nQuanto maior \\(\\alpha\\), menor o tempo médio"
   },
   {
     "objectID": "Aula6.html#tempo-médio-residual",
     "href": "Aula6.html#tempo-médio-residual",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPO MÉDIO RESIDUAL",
-    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é \\(\\text{vmr}(t)=\\frac{\\int_t^\\infty S(u)\\,du}{S(t)}\\)\nPara a distribuição exponencial: \\(\\text{vmr}(t) = \\frac{1}{\\alpha}\\)\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nTempo médio residual\n\n\n\n\n0.5\n2\n\n\n1\n1\n\n\n1.5\n\\(\\approx 0.667\\)\n\n\n\n\nInterpretação:\n\nIndepende do tempo já vivido \\(t\\) (propriedade de falta de memória)\nO “tempo esperado restante” é sempre o mesmo\nNão importa quanto tempo já passou"
+    "text": "TEMPO MÉDIO RESIDUAL\n\n\nO tempo médio residual é \\(\\text{vmr}(t)=\\frac{\\int_t^\\infty S(u)\\,du}{S(t)}\\)\nPara a distribuição exponencial: \\(\\text{vmr}(t) = \\frac{1}{\\alpha}\\)\nComparando diferentes valores de \\(\\alpha\\):\n\n\n\n\n\\(\\alpha\\)\nTempo médio residual\n\n\n\n\n0.5\n2\n\n\n1\n1\n\n\n1.5\n\\(\\approx 0.667\\)\n\n\n\n\nInterpretação:\n\nIndepende do tempo já vivido \\(t\\) (propriedade de falta de memória)\nO “tempo esperado restante” é sempre o mesmo e igual ao tempo médio."
   },
   {
     "objectID": "Aula6.html#aplicabilidade",
@@ -459,7 +452,7 @@
     "href": "Aula6.html#função-de-risco-acumulado-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\mu\\) (posição):\n\nDesloca a curva ao longo do tempo\n\n\\(\\mu\\) maior → crescimento mais tardio\n\n\\(\\sigma\\) (dispersão):\n\nControla a velocidade de crescimento\n\\(\\sigma\\) maior → crescimento mais gradual\n\n\n\n\nResumo visual:\n\nFunção é sempre crescente\nCrescimento não linear\nPode apresentar regiões de crescimento mais rápido e mais lento"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\mu\\) (posição):\n\nDesloca a curva ao longo do tempo\n\n\\(\\mu\\) maior → crescimento mais tardio\n\n\\(\\sigma\\) (dispersão):\n\nControla a velocidade de crescimento\n\\(\\sigma\\) maior → crescimento mais gradual"
   },
   {
     "objectID": "Aula6.html#função-de-risco-acumulado-7",
@@ -494,7 +487,7 @@
     "href": "Aula6.html#aplicabilidade-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "APLICABILIDADE",
-    "text": "APLICABILIDADE\n\n\nDiferente dos modelos exponencial e Weibull, o lognormal permite uma função de risco em formato de pico (unimodal)\nEm particular:\n→ risco baixo no início, aumentando com o tempo\n→ atingindo um máximo\n→ e depois decrescendo\nPortanto, o modelo lognormal pode ser mais adequado quando há um período crítico de maior risco\nAinda assim, ele possui:\n→ interpretação menos direta dos parâmetros\n→ e maior complexidade em comparação aos modelos anteriores\nÉ especialmente útil quando o processo envolve acúmulo de efeitos ao longo do tempo"
+    "text": "APLICABILIDADE\n\n\nDiferente dos modelos exponencial e Weibull, o lognormal permite uma função de risco em formato de pico (unimodal)\nEm particular:\n→ risco baixo no início, aumentando com o tempo\n→ atingindo um máximo\n→ e depois decrescendo\nPortanto, o modelo lognormal pode ser mais adequado quando há um período crítico de maior risco\nAinda assim, ele possui:\n→ interpretação menos direta dos parâmetros\n→ e maior complexidade em comparação aos modelos anteriores"
   },
   {
     "objectID": "Aula6.html#introdução-7",
@@ -606,7 +599,7 @@
     "href": "Aula6.html#função-de-risco-acumulado-9",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE RISCO ACUMULADO",
-    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nInfluencia o formato do crescimento\n\\(\\alpha &lt; 1\\) → crescimento mais rápido no início\n\\(\\alpha &gt; 1\\) → crescimento mais lento no início e mais acelerado depois\n\n\\(\\beta\\) (taxa):\n\nControla a escala temporal\n\\(\\beta\\) maior → crescimento mais rápido\n\\(\\beta\\) menor → crescimento mais lento\n\n\n\n\nResumo visual:\n\nFunção é sempre crescente\nCrescimento não linear\nPode variar conforme o comportamento do risco"
+    "text": "FUNÇÃO DE RISCO ACUMULADO\n\n\nInterpretação dos parâmetros:\n\\(\\alpha\\) (forma):\n\nInfluencia o formato do crescimento\n\\(\\alpha &lt; 1\\) → crescimento mais rápido no início\n\\(\\alpha &gt; 1\\) → crescimento mais lento no início e mais acelerado depois\n\n\\(\\beta\\) (taxa):\n\nControla a escala temporal\n\\(\\beta\\) maior → crescimento mais rápido\n\\(\\beta\\) menor → crescimento mais lento"
   },
   {
     "objectID": "Aula6.html#função-de-risco-acumulado-10",
@@ -669,28 +662,28 @@
     "href": "Aula6.html#relação-com-a-lognormal",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RELAÇÃO COM A LOGNORMAL",
-    "text": "RELAÇÃO COM A LOGNORMAL\n\n\nA distribuição lognormal não é um caso direto, mas:\nPode ser obtida como um caso limite da Gama Generalizada\nQuando \\(b \\to 0\\) (com reparametrização adequada), a GG tende à lognormal\nAssim, tem-se uma grande capacidade de adaptação a diferentes padrões de dados"
+    "text": "RELAÇÃO COM A LOGNORMAL\n\n\nA distribuição lognormal não é um caso direto, mas:\nPode ser obtida como um caso limite da Gama Generalizada\nQuando \\(b \\to 0\\) (com reparametrização adequada), a Gama Generalizada tende à lognormal\nAssim, tem-se uma grande capacidade de adaptação a diferentes padrões de dados"
   },
   {
     "objectID": "Aula6.html#por-que-usar-a-gama-generalizada",
     "href": "Aula6.html#por-que-usar-a-gama-generalizada",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE USAR A GAMA GENERALIZADA?",
-    "text": "POR QUE USAR A GAMA GENERALIZADA?\n\n\nNa prática, não sabemos qual modelo é o correto:\n\nExponencial?\nWeibull?\nGama?\nLognormal?\n\nEstratégia moderna: ajustar um modelo mais geral → Gama Generalizada\nDepois verificar:\n\n\\(k = 1\\) → Weibull\n\n\\(b = 1\\) → Gama\n\n\\(k = 1\\) e \\(b = 1\\) → Exponencial\n\n\\(b \\rightarrow 0\\) → Lognormal"
+    "text": "POR QUE USAR A GAMA GENERALIZADA?\n\n\nNa prática, não sabemos qual modelo é o correto:\n\nExponencial?\nWeibull?\nGama?\nLognormal?\n\nEstratégia moderna: ajustar um modelo mais geral → Gama Generalizada\nDepois verificar:\n\n\\(k = 1\\) → Weibull\n\n\\(b = 1\\) → Gama\n\n\\(k = 1\\) e \\(b = 1\\) → Exponencial\n\\(b \\rightarrow 0\\) → Lognormal"
   },
   {
     "objectID": "Aula6.html#interpretação-prática",
     "href": "Aula6.html#interpretação-prática",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERPRETAÇÃO PRÁTICA",
-    "text": "INTERPRETAÇÃO PRÁTICA\n\n\nA distribuição Gama Generalizada permite modelar:\n✔ Risco crescente\n\n✔ Risco decrescente\n\n✔ Risco não monótono\n\n✔ Risco constante\nPrincipal vantagem: serve como ferramenta de seleção de modelo\n\nEm vez de escolher um modelo específico, podemos começar com a Gama Generalizada e deixar os dados guiarem a escolha."
+    "text": "INTERPRETAÇÃO PRÁTICA\n\n\nA distribuição Gama Generalizada permite modelar:\n\n✔ Risco crescente\n\n✔ Risco decrescente\n\n✔ Risco não monótono\n\n✔ Risco constante\n\nPrincipal vantagem: serve como ferramenta de seleção de modelo\n\nEm vez de escolher um modelo específico, podemos começar com a Gama Generalizada e deixar os dados guiarem a escolha."
   },
   {
     "objectID": "Aula6.html#outros-modelos-paramétricos-importantes",
     "href": "Aula6.html#outros-modelos-paramétricos-importantes",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "OUTROS MODELOS PARAMÉTRICOS IMPORTANTES",
-    "text": "OUTROS MODELOS PARAMÉTRICOS IMPORTANTES\n\n\nAlém de Exponencial, Weibull, Lognormal e Gama Generalizada, existem outros modelos relevantes:\n\n\n\nGompertz\nLog-logística\nModelos de mistura\nModelo com risco em forma de banheira\n\n\n\nMotivação:\nNem sempre o risco segue um padrão simples\n\nPrecisamos de modelos que capturem dinâmicas mais complexas"
+    "text": "OUTROS MODELOS PARAMÉTRICOS IMPORTANTES\n\n\nAlém das distribuições Exponencial, Weibull, Lognormal, Gama e Gama Generalizada, existem outros modelos relevantes:\n\nGompertz\nLog-logística\nModelos de mistura\nModelo com risco em forma de banheira\n\nMotivação:\n\nNem sempre o risco segue um padrão simples\n\nPrecisamos de modelos que capturem dinâmicas mais complexas"
   },
   {
     "objectID": "Aula6.html#modelos-clássicos-adicionais",
@@ -705,13 +698,6 @@
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MODELOS MAIS FLEXÍVEIS",
     "text": "MODELOS MAIS FLEXÍVEIS\n\n\nModelos de mistura (mixture models)\nIdeia:\nA população é composta por subgrupos não observados\n\n\n\nExemplo:\nParte dos indivíduos:\n\nAlto risco\n\n\nOutra parte:\n\nBaixo risco\n\n\n\n\nConsequência:\nA função de sobrevivência pode ter caudas longas\n\n\n\nModelo com risco em forma de banheira\nRisco:\n\nAlto no início\n\nDiminui\n\nVolta a crescer\n\n\n\n\nMuito comum em:\n\nConfiabilidade (engenharia)\nFases:\n\n“mortalidade infantil”\n\nperíodo estável\n\ndesgaste"
-  },
-  {
-    "objectID": "Aula6.html#quando-usar-esses-modelos",
-    "href": "Aula6.html#quando-usar-esses-modelos",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "QUANDO USAR ESSES MODELOS?",
-    "text": "QUANDO USAR ESSES MODELOS?\n\n\nUse modelos mais simples quando:\n✔ O risco é monotônico\n(ex: Weibull)\n\n\n\nUse modelos mais flexíveis quando:\n✔ Há evidência de:\n\nPico de risco (log-logística)\n\nCrescimento acelerado (Gompertz)\n\nHeterogeneidade (misturas)\n\nFormato em U (banheira)\n\n\n\n\nEstratégia recomendada:\n\n\nComece com modelos clássicos\n\nAvalie ajuste (AIC, gráficos)\n\nEvolua para modelos mais flexíveis\n\n\n\nMensagem final:\nO modelo deve refletir o mecanismo gerador dos dados, não apenas o ajuste estatístico"
   },
   {
     "objectID": "Aula4.html#revisão-alguns-conceitos-básicos",
