@@ -2546,43 +2546,24 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 <div class="box-blue">
 <ul>
 <li><p><strong>Gompertz</strong></p></li>
-<li><p>Função de risco:</p>
-<ul>
-<li>Cresce <strong>exponencialmente</strong> ao longo do tempo</li>
-</ul></li>
-<li><p>Muito usado em:</p>
-<ul>
-<li>Demografia<br>
-</li>
-<li>Modelagem de mortalidade</li>
-</ul></li>
+<li><p>Por que usar? → Modela situações em que o risco <strong>cresce rapidamente com o tempo</strong></p></li>
+<li><p>Ideia central: → risco que aumenta <strong>exponencialmente</strong></p></li>
+<li><p>Muito útil em: → <strong>mortalidade humana</strong><br>
+→ processos de <strong>envelhecimento</strong></p></li>
 </ul>
-<hr>
+</div>
+</section>
+<section id="modelos-clássicos-adicionais-1" class="slide level2">
+<h2><strong>MODELOS CLÁSSICOS ADICIONAIS</strong></h2>
+<div class="box-blue">
 <ul>
 <li><p><strong>Log-logística</strong></p></li>
-<li><p>Característica principal:</p>
-<ul>
-<li>Permite risco <strong>não monótono</strong></li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>Interpretação:</p></li>
-<li><p>Risco:</p>
-<ul>
-<li>Sobe no início<br>
-</li>
-<li>Atinge um pico<br>
-</li>
-<li>Depois diminui</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li>Aplicações:
-<ul>
-<li>Tempo até falha com <strong>cura parcial</strong> ou adaptação</li>
-</ul></li>
+<li><p>Por que usar? → Permite risco <strong>não monótono</strong> (mais realista em muitos contextos)</p></li>
+<li><p>Comportamento do risco: → <strong>sobe no início</strong><br>
+→ atinge um <strong>pico</strong><br>
+→ depois <strong>diminui</strong></p></li>
+<li><p>Aplicações típicas: → processos com <strong>período crítico de risco</strong><br>
+→ sistemas com <strong>adaptação ou recuperação</strong></p></li>
 </ul>
 </div>
 </section>
@@ -2591,53 +2572,23 @@ f(t) = \frac{1}{\Gamma(k)\, a^k} t^{k-1} e^{-t/a}
 <div class="box-blue">
 <ul>
 <li><p><strong>Modelos de mistura (mixture models)</strong></p></li>
-<li><p>Ideia:</p></li>
-<li><p>A população é composta por <strong>subgrupos não observados</strong></p></li>
+<li><p>Por que usar? → Capturam <strong>heterogeneidade não observada</strong></p></li>
+<li><p>Ideia: → a população é formada por <strong>subgrupos com riscos diferentes</strong></p></li>
+<li><p>Consequência prática: → curvas com <strong>cauda longa</strong><br>
+→ presença de indivíduos com <strong>alta sobrevivência</strong></p></li>
 </ul>
-<hr>
-<ul>
-<li><p>Exemplo:</p></li>
-<li><p>Parte dos indivíduos:</p>
-<ul>
-<li>Alto risco<br>
-</li>
-</ul></li>
-<li><p>Outra parte:</p>
-<ul>
-<li>Baixo risco</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li><p>Consequência:</p></li>
-<li><p>A função de sobrevivência pode ter <strong>caudas longas</strong></p></li>
-</ul>
-<hr>
+</div>
+</section>
+<section id="modelos-mais-flexíveis-1" class="slide level2">
+<h2><strong>MODELOS MAIS FLEXÍVEIS</strong></h2>
+<div class="box-blue">
 <ul>
 <li><p><strong>Modelo com risco em forma de banheira</strong></p></li>
-<li><p>Risco:</p>
-<ul>
-<li>Alto no início<br>
-</li>
-<li>Diminui<br>
-</li>
-<li>Volta a crescer</li>
-</ul></li>
-</ul>
-<hr>
-<ul>
-<li>Muito comum em:
-<ul>
-<li><p>Confiabilidade (engenharia)</p></li>
-<li><p>Fases:</p>
-<ul>
-<li>“mortalidade infantil”<br>
-</li>
-<li>período estável<br>
-</li>
-<li>desgaste</li>
-</ul></li>
-</ul></li>
+<li><p>Por que usar? → Representa o <strong>ciclo completo de vida</strong> de sistemas</p></li>
+<li><p>Comportamento do risco: → <strong>alto no início</strong> (falhas precoces)<br>
+→ <strong>baixo e estável</strong><br>
+→ <strong>crescente no final</strong> (desgaste)</p></li>
+<li><p>Muito comum em: → <strong>engenharia de confiabilidade</strong> → análise de <strong>vida útil de produtos</strong></p></li>
 </ul>
 </div>
 
