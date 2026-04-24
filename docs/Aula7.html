@@ -161,7 +161,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul></li>
 <li><p>Esses parâmetros são responsáveis por dar a <strong>forma geral da distribuição</strong></p>
 <ul>
-<li>Controlam o comportamento do tempo de sobrevivência e do risco ao longo do tempo</li>
+<li>Controlam o comportamento do <strong>tempo de sobrevivência/confiabilidade</strong> e do <strong>risco</strong> ao longo do tempo</li>
 </ul></li>
 </ul>
 </div>
@@ -188,15 +188,10 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <div class="box-blue">
 <ul>
 <li><p>Nesta aula, vamos entrar na <strong>etapa central da inferência paramétrica em sobrevivência e confiabilidade</strong></p></li>
-<li><p>Vamos estudar <strong>três pilares fundamentais</strong> envolvendo os parâmetros de interesse em cada <strong>modelo paramétrico</strong>:</p>
+<li><p>Vamos estudar <strong>dois pilares fundamentais</strong> envolvendo os parâmetros de interesse em cada <strong>modelo paramétrico</strong>:</p>
 <ul>
 <li><strong>Estimação pontual</strong></li>
 <li><strong>Estimação intervalar</strong></li>
-<li><strong>Testes de hipóteses</strong></li>
-</ul></li>
-<li><p>Ao final, avançaremos <strong>para uma etapa essencial na prática</strong>:</p>
-<ul>
-<li><strong>Escolha do modelo paramétrico mais adequado aos dados</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -214,11 +209,11 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li><p>Um dos mais conhecidos é o <strong>método dos mínimos quadrados</strong></p>
 <ul>
 <li>Muito utilizado em <strong>regressão linear</strong></li>
-<li>Baseado em minimizar erros entre valores observados e ajustados</li>
+<li>Baseado em <strong>minimizar erros</strong> entre valores <strong>observados</strong> e <strong>ajustados</strong></li>
 </ul></li>
-<li><p>Porém, esse método não é adequado para dados de sobrevivência</p>
+<li><p>Porém, esse método <strong>não é adequado</strong> para dados de sobrevivência/confiabilidade</p>
 <ul>
-<li>pois não foi construído para lidar com <strong>tempos até um evento</strong> envolvendo dados censurados.</li>
+<li>Não foi construído para lidar com <strong>tempos até um evento</strong> envolvendo dados censurados.</li>
 </ul></li>
 </ul>
 </div>
@@ -253,7 +248,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul></li>
 <li>Esse <strong>método</strong> deve responder:
 <ul>
-<li>“quão plausível é um <strong>conjunto de parâmetros</strong> condicionado aos dados observados?”</li>
+<li>“Quão plausível é um <strong>conjunto de parâmetros</strong> condicionado aos dados observados (incluindo censuras)?”</li>
 </ul></li>
 </ul>
 </div>
@@ -262,14 +257,14 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>MÁXIMA VEROSSIMILHANÇA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O método de <strong>máxima verossimilhança (MV)</strong> é o principal procedimento usado em modelos de sobrevivência</p></li>
+<li><p>O método de <strong>máxima verossimilhança (MV)</strong> é o <strong>principal</strong> procedimento usado em modelos de sobrevivência/confiabilidade.</p></li>
 <li><p>A ideia central é:</p>
 <ul>
-<li>encontrar os parâmetros que tornam a amostra observada <strong>mais provável possível</strong></li>
+<li>Encontrar os <strong>parâmetros</strong> que tornam a amostra observada <strong>mais provável possível</strong></li>
 </ul></li>
 <li><p>Em outras palavras:</p>
 <ul>
-<li>dado o modelo, buscamos os parâmetros que “melhor explicam” os dados observados</li>
+<li>Dado o modelo, buscamos os parâmetros que “<strong>melhor explicam</strong>” os dados observados</li>
 </ul></li>
 </ul>
 </div>
@@ -278,20 +273,41 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>INTUIÇÃO DO MÉTODO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Suponha, por exemplo, que o tempo de ocorrência até o evento de interesse segue uma distribuição Weibull</p></li>
+<li><p>Suponha, por exemplo, que <strong>o tempo de ocorrência até o evento de interesse segue uma distribuição Weibull</strong></p></li>
 <li><p>Para <strong>cada</strong> escolha de <strong>parâmetros</strong>:</p>
 <ul>
-<li><span class="math inline">\((\gamma, \alpha)\)</span> → obtemos uma Weibull diferente</li>
+<li><span class="math inline">\((\kappa, \gamma)\)</span> → obtemos uma Weibull diferente</li>
 </ul></li>
 <li><p>O método de <strong>máxima verossimilhança</strong> escolhe:</p>
 <ul>
-<li>o par <span class="math inline">\((\gamma, \alpha)\)</span> que maximiza a probabilidade de observar os dados da amostra</li>
+<li>o par <span class="math inline">\((\kappa, \gamma)\)</span> que maximiza a probabilidade de observar os dados da amostra</li>
 </ul></li>
 <li><p>Ou seja:</p>
 <ul>
-<li>não <strong>escolhemos</strong> “a curva mais bonita”</li>
-<li>escolhemos a <strong>mais compatível com os dados</strong></li>
-<li>posteriormente, avaliamos a qualidade do ajuste</li>
+<li>não <strong>escolhemos</strong> “a curva mais bonita”.</li>
+<li>escolhemos a <strong>mais compatível com os dados</strong>.</li>
+<li>posteriormente, <strong>avaliamos a qualidade do ajuste</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="frase-famosa" class="slide level2">
+<h2><strong>FRASE FAMOSA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Lembrem-se da famosa frase do estatístico britânico George Box:</li>
+</ul>
+<blockquote>
+<p><strong>“All models are wrong, but some are useful.”</strong><br>
+<strong>“Todos os modelos estão errados, mas alguns são úteis.”</strong></p>
+</blockquote>
+<ul>
+<li><p>A ideia por trás dessa frase é bem profunda (e muito alinhada com o que vamos trabalhar):</p>
+<ul>
+<li><p>Nenhum modelo consegue representar perfeitamente a <strong>realidade</strong> — sempre há <strong>simplificações</strong>, <strong>suposições</strong> e <strong>omissões</strong>.</p></li>
+<li><p>Mesmo assim, um modelo pode ser extremamente <strong>valioso</strong> se capturar bem os <strong>aspectos relevantes</strong> do fenômeno.</p></li>
+<li><p>O foco não deve ser: <strong>“o modelo é verdadeiro?”</strong><br>
+mas sim: <strong>“o modelo é útil para o meu objetivo?”</strong> (<em>prever</em>, <em>explicar</em>, <em>inferir</em>, etc.).</p></li>
 </ul></li>
 </ul>
 </div>
@@ -301,7 +317,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <div class="box-blue">
 <ul>
 <li><p>O método de <strong>máxima verossimilhança</strong> possui várias vantagens:</p></li>
-<li><p>Ele:</p>
+<li><p>Vantagens principais:</p>
 <ul>
 <li><strong>incorpora censura</strong> de forma natural</li>
 <li>é <strong>aplicável a diferentes distribuições paramétricas</strong></li>
@@ -350,7 +366,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li>o <strong>tempo até a reincidência do câncer de bexiga</strong> após a cirurgia a laser.</li>
 </ul></li>
-<li><p>Assumimos, inicialmente, que:</p>
+<li><p>Assumimos, <strong>inicialmente</strong>, que:</p>
 <ul>
 <li><span class="math inline">\(T \sim \text{Exponencial}(\alpha)\)</span></li>
 </ul></li>
@@ -362,7 +378,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <div class="box-blue">
 <ul>
 <li><p>A distribuição <strong>exponencial</strong> será usada como modelo base por duas <strong>razões principais</strong>:</p></li>
-<li><p>Ela é:</p>
+<li><p>Essa distribuição é:</p>
 <ul>
 <li><strong>totalmente analítica</strong>
 <ul>
@@ -371,7 +387,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul></li>
 <li><strong>simples e interpretável</strong>
 <ul>
-<li>serve como ponto de partida natural em sobrevivência</li>
+<li>serve como ponto de partida natural em sobrevivência/confiabilidade.</li>
 </ul></li>
 </ul></li>
 <li><p>A partir dela:</p>
@@ -390,7 +406,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li><strong>1. Sem censura</strong>
 <ul>
-<li>suposição de que todos os tempos do exemplo são completamente observados</li>
+<li>suposição de que todos os tempos do exemplo são <strong>completamente observados</strong></li>
 </ul></li>
 <li><strong>2. Com censura</strong>
 <ul>
@@ -416,7 +432,7 @@ f(t) = \alpha e^{-\alpha t}, \quad t \geq 0
 \]</span></p>
 <ul>
 <li><p>Vamos obter um estimador para <span class="math inline">\(\alpha\)</span>, denotado por <span class="math inline">\(\hat{\alpha}\)</span>, a partir do <strong>método da máxima verossimilhança</strong></p></li>
-<li><p>A contribuição de cada um dos <span class="math inline">\(n\)</span> tempos de ocorrência observados <span class="math inline">\(t_1, t_2, \ldots, t_n\)</span> para a <strong>função de verossimilhança</strong> é dada pela densidade:</p></li>
+<li><p>A contribuição de cada um dos <span class="math inline">\(n\)</span> tempos de ocorrência observados <span class="math inline">\(t_1, t_2, \ldots, t_n\)</span> para a <strong>função de verossimilhança</strong> <span class="math inline">\(L(\alpha)\)</span> é dada pela expressão:</p></li>
 </ul>
 <p><span class="math display">\[
 L(\alpha) = \prod_{i=1}^{n} f(t_i)
@@ -429,15 +445,15 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 <h2><strong>VEROSSIMILHANÇA E ESTIMAÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A função de log-verossimilhança <span class="math inline">\(\ell(\alpha)\)</span> é dada por: <span class="math display">\[
+<li><p>A <strong>função de log-verossimilhança</strong> <span class="math inline">\(\ell(\alpha)\)</span> é dada por: <span class="math display">\[
 \ell(\alpha) = \ln L(\alpha)
 = n \ln(\alpha) - \alpha \sum_{i=1}^{n} t_i
 \]</span></p></li>
-<li><p>Derivando em relação a <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
+<li><p><strong>Derivando</strong> em relação a <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
 \frac{\partial \ell(\alpha)}{\partial \alpha}
 = \frac{n}{\alpha} - \sum_{i=1}^{n} t_i
 \]</span></p></li>
-<li><p>Igualando a zero, obtemos o estimador de máxima verossimilhança: <span class="math display">\[
+<li><p><strong>Igualando a zero</strong>, obtemos o estimador de <strong>máxima verossimilhança</strong>: <span class="math display">\[
 \frac{n}{\hat{\alpha}} - \sum_{i=1}^{n} t_i = 0
 \quad \Rightarrow \quad
 \hat{\alpha} = \frac{n}{\sum_{i=1}^{n} t_i}
@@ -449,10 +465,10 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 <h2><strong>RESULTADOS NO EXEMPLO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Para os dados de câncer de bexiga, assumindo que todos os tempos são completos (sem censura) e que: <span class="math inline">\(T_i \sim \text{Exponencial}(\alpha)\)</span></p></li>
-<li><p>Temos <span class="math inline">\(n = 20\)</span> observações completas: 3, 5, 6, 7, 8, 9, 10, 10, 12, 15, 15, 18, 19, 20, 22, 25, 28, 30, 40, 45</p></li>
-<li><p>Soma dos tempos: <span class="math inline">\(\sum_{i=1}^{20} t_i = 347\)</span></p></li>
-<li><p>Estimador de máxima verossimilhança de <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
+<li><p>Para os dados de <strong>câncer de bexiga</strong>, assumimos que <strong>todos os tempos são completos (sem censura)</strong> e que: <span class="math inline">\(T_i \sim \text{Exponencial}(\alpha)\)</span></p></li>
+<li><p>Temos <span class="math inline">\(n = 20\)</span> <strong>observações completas</strong>: 3, 5, 6, 7, 8, 9, 10, 10, 12, 15, 15, 18, 19, 20, 22, 25, 28, 30, 40, 45</p></li>
+<li><p><strong>Soma dos tempos</strong>: <span class="math inline">\(\sum_{i=1}^{20} t_i = 347\)</span></p></li>
+<li><p>Estimador de <strong>máxima verossimilhança</strong> de <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
 \hat{\alpha} = \frac{n}{\sum t_i}
 = \frac{20}{347}
 = 0{,}0576
@@ -463,12 +479,12 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 <section id="funções-do-modelo-ajustado" class="slide level2">
 <h2><strong>FUNÇÕES DO MODELO AJUSTADO</strong></h2>
 <div class="box-blue">
-<p>Com o parâmetro <span class="math inline">\(\alpha\)</span> estimado em <span class="math inline">\(\hat{\alpha}=0,0576\)</span>, podemos estimar todas as funções básicas de interesse:</p>
+<p>Com o parâmetro <span class="math inline">\(\alpha\)</span> estimado em <span class="math inline">\(\hat{\alpha}=0,0576\)</span>, podemos <strong>estimar todas as funções básicas de interesse</strong>:</p>
 <ul>
-<li><p>Densidade: <span class="math inline">\(\hat{f}(t) = 0{,}0576 e^{-0{,}0576 t}\)</span></p></li>
-<li><p>Função de sobrevivência: <span class="math inline">\(\hat{S}(t) = e^{-0{,}0576 t}\)</span></p></li>
-<li><p>Função de risco: <span class="math inline">\(\hat{\lambda}(t) = 0{,}0576\)</span></p></li>
-<li><p>Função de risco acumulado: <span class="math inline">\(\hat{\Lambda}(t) = 0{,}0576\, t\)</span></p></li>
+<li><p><strong>Densidade</strong>: <span class="math inline">\(\hat{f}(t) = 0{,}0576 e^{-0{,}0576 t}\)</span></p></li>
+<li><p><strong>Função de sobrevivência</strong>: <span class="math inline">\(\hat{S}(t) = e^{-0{,}0576 t}\)</span></p></li>
+<li><p><strong>Função de risco</strong>: <span class="math inline">\(\hat{\lambda}(t) = 0{,}0576\)</span></p></li>
+<li><p><strong>Função de risco acumulado</strong>: <span class="math inline">\(\hat{\Lambda}(t) = 0{,}0576\, t\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -491,15 +507,15 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 <div class="box-blue">
 <ul>
 <li><p><strong>Tempo médio</strong> até a ocorrência do câncer de bexiga: <span class="math display">\[
-\hat{t}_m = \frac{1}{0{,}0576} = 17{,}36 \text{ meses}
+\hat{t}_m = \frac{1}{\hat{\alpha}}=\frac{1}{0{,}0576} = 17{,}36 \text{ meses}
 \]</span></p></li>
 <li><p><strong>Tempo mediano</strong> de reincidência do câncer de bexiga: <span class="math display">\[
-\hat{t}_{0{,}5} = \frac{\ln(2)}{0{,}0576} = 12{,}04 \text{ meses}
+\hat{t}_{0{,}5} = \frac{\ln(2)}{\hat{\alpha}} = \frac{\ln(2)}{0{,}0576} = 12{,}04 \text{ meses}
 \]</span></p></li>
 <li><p><strong>Tempo médio</strong> residual de reincidência do câncer de bexiga:</p></li>
 </ul>
 <p><span class="math display">\[
-\hat{vmr(t)} = \frac{1}{0{,}0576} = 17{,}36 \text{ meses}
+\hat{vmr(t)} = \frac{1}{\hat{\alpha}} = \frac{1}{0{,}0576} = 17{,}36 \text{ meses}
 \]</span></p>
 </div>
 </section>
@@ -512,7 +528,7 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 <li><p>O vetor <span class="math inline">\(\boldsymbol{\theta}\)</span> pode ser:</p>
 <ul>
 <li>escalar: <span class="math inline">\(\alpha\)</span> (exponencial)</li>
-<li>ou vetorial: <span class="math inline">\((\alpha, \gamma)\)</span> (Weibull, por exemplo)</li>
+<li>ou vetorial: <span class="math inline">\((\kappa, \gamma)\)</span> (Weibull, por exemplo)</li>
 </ul></li>
 <li><p>Já sabemos que:</p>
 <ul>
@@ -520,7 +536,7 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 </ul></li>
 <li><p>Mas surge a <strong>pergunta central</strong>:</p>
 <ul>
-<li>qual é a <strong>contribuição de uma observação censurada</strong>?</li>
+<li>Qual é a <strong>contribuição de uma observação censurada</strong>?</li>
 </ul></li>
 </ul>
 </div>
@@ -552,13 +568,10 @@ T &gt; t_i
 <h2><strong>POR QUE A CENSURA CONTRIBUI COM <span class="math inline">\(S(t)\)</span>?</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A função de sobrevivência é definida como: <span class="math display">\[
+<li><p>A função de sobrevivência/confiabilidade é definida como: <span class="math display">\[
 S(t) = P(T &gt; t)
 \]</span></p></li>
-<li><p>Para uma observação censurada em <span class="math inline">\(t_i\)</span>, sabemos exatamente que:</p>
-<ul>
-<li>o evento <strong>não ocorreu até <span class="math inline">\(t_i\)</span></strong></li>
-</ul></li>
+<li><p>Para uma observação censurada em <span class="math inline">\(t_i\)</span>, sabemos exatamente que o evento <strong>não ocorreu até <span class="math inline">\(t_i\)</span></strong></p></li>
 <li><p>Logo, a contribuição correta é: <span class="math display">\[
 S(t_i) = P(T &gt; t_i)
 \]</span></p></li>
@@ -566,7 +579,7 @@ S(t_i) = P(T &gt; t_i)
 <ul>
 <li>censura não informa “<strong>quando ocorreu</strong>”</li>
 <li>informa apenas “que <strong>ainda não ocorreu</strong>”</li>
-<li>por isso entra via <strong>probabilidade de sobrevivência</strong> após o tempo <span class="math inline">\(t_i\)</span></li>
+<li>por isso entra via <strong>probabilidade de sobrevivência/confiabilidade</strong> após o tempo <span class="math inline">\(t_i\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -575,9 +588,9 @@ S(t_i) = P(T &gt; t_i)
 <h2><strong>FUNÇÃO DE VEROSSIMILHANÇA COM CENSURA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Dividimos a amostra em dois grupos:</p>
+<li><p>Para construir, formalmente, a função de verossimilhança, dividimos a amostra em dois grupos:</p>
 <ul>
-<li><span class="math inline">\(r\)</span> observações <strong>não censuradas</strong></li>
+<li><span class="math inline">\(r\)</span> observações <strong>não censuradas</strong> (completas)</li>
 <li><span class="math inline">\(n-r\)</span> observações <strong>censuradas</strong></li>
 </ul></li>
 <li><p>Assim, a <strong>função de verossimilhança</strong> é: <span class="math display">\[
@@ -589,7 +602,7 @@ L(\boldsymbol{\theta})
 <li><p>Cada parte da amostra <strong>contribui de forma distinta</strong>:</p>
 <ul>
 <li><strong>ocorrências do evento de interesse</strong> → densidade</li>
-<li><strong>censuras</strong> → sobrevivência</li>
+<li><strong>censuras</strong> → sobrevivência/confiabilidade</li>
 </ul></li>
 </ul>
 </div>
@@ -601,11 +614,11 @@ L(\boldsymbol{\theta})
 <li><p>Podemos escrever tudo de <strong>forma compacta usando a variável indicadora</strong>: <span class="math display">\[
 \delta_i =
 \begin{cases}
-1, &amp; \text{se há ocorrência do evento de interesse}\\
-0, &amp; \text{se há censura}
+1, &amp; \text{se o evento de interesse ocorreu}\\
+0, &amp; \text{se houve censura}
 \end{cases}
 \]</span></p></li>
-<li><p>A <strong>verossimilhança</strong> fica: <span class="math display">\[
+<li><p>A função de <strong>verossimilhança</strong> fica, portanto: <span class="math display">\[
 L(\boldsymbol{\theta})
 =
 \prod_{i=1}^{n}
@@ -651,14 +664,14 @@ U(\boldsymbol{\theta}) =
 f(t) = \alpha e^{-\alpha t}, \quad t \geq 0
 \]</span></p></li>
 <li><p>Vamos obter um estimador para <span class="math inline">\(\alpha\)</span>, denotado por <span class="math inline">\(\hat{\alpha}\)</span>, via <strong>máxima verossimilhança</strong></p></li>
-<li><p>Agora consideramos uma amostra com censura:</p>
+<li><p>Agora consideramos uma <strong>amostra com censura</strong>:</p>
 <ul>
 <li><span class="math inline">\(\delta_i = 1\)</span> → observação é <strong>completa (evento ocorreu)</strong></li>
 <li><span class="math inline">\(\delta_i = 0\)</span> → observação é <strong>censurada à direita</strong></li>
 </ul></li>
-<li><p>A contribuição de cada observação depende do seu tipo:</p>
+<li><p>A <strong>contribuição</strong> de cada observação depende do seu tipo:</p>
 <ul>
-<li>ocorrências → densidade <span class="math inline">\(f(t_i)\)</span> e censuras → sobrevivência <span class="math inline">\(S(t_i)\)</span></li>
+<li>ocorrências → densidade <span class="math inline">\(f(t_i)\)</span> e censuras → sobrevivência/confiabilidade <span class="math inline">\(S(t_i)\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -667,19 +680,19 @@ f(t) = \alpha e^{-\alpha t}, \quad t \geq 0
 <h2><strong>VEROSSIMILHANÇA COM CENSURA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A função de verossimilhança é dada por: <span class="math display">\[
+<li><p>A <strong>função de verossimilhança</strong> é dada por: <span class="math display">\[
 L(\boldsymbol{\alpha})
 =
 \prod_{i=1}^{n}
 \left[f(t_i)\right]^{\delta_i}
 \left[S(t_i)\right]^{1-\delta_i}
 \]</span></p></li>
-<li><p>Para a distribuição exponencial: <span class="math display">\[
+<li><p>Para a <strong>distribuição exponencial</strong>: <span class="math display">\[
 f(t) = \alpha e^{-\alpha t},
 \quad
 S(t) = e^{-\alpha t}
 \]</span></p></li>
-<li><p>Substituindo: <span class="math display">\[
+<li><p><strong>Substituindo</strong>: <span class="math display">\[
 L(\alpha)
 =
 \prod_{i=1}^{n}
@@ -693,7 +706,7 @@ L(\alpha)
 <h2><strong>VEROSSIMILHANÇA COM CENSURA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Reorganizando:</li>
+<li><strong>Reorganizando</strong>:</li>
 </ul>
 <p><span class="math display">\[
 L(\alpha)
@@ -702,9 +715,9 @@ L(\alpha)
 \exp\left\{-\alpha \sum_{i=1}^{n} t_i \right\}
 \]</span></p>
 <ul>
-<li>Definindo:
+<li><strong>Definindo</strong>:
 <ul>
-<li><span class="math inline">\(r = \sum_{i=1}^{n} \delta_i\)</span> (número de ocorrências do evento)</li>
+<li><span class="math inline">\(r = \sum_{i=1}^{n} \delta_i\)</span> (<strong>número de ocorrências do evento</strong>)</li>
 </ul></li>
 </ul>
 </div>
@@ -713,13 +726,18 @@ L(\alpha)
 <h2><strong>VEROSSIMILHANÇA E ESTIMAÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A função de log-verossimilhança <span class="math inline">\(\ell(\alpha)\)</span> é: $$ () = r ()</p></li>
-<li><p>_{i=1}^{n} t_i $$</p></li>
-<li><p>Derivando em relação a <span class="math inline">\(\alpha\)</span>: $$ = </p></li>
-<li><p>_{i=1}^{n} t_i $$</p></li>
-<li><p>Igualando a zero, obtemos o estimador de máxima verossimilhança: $$ </p></li>
-<li><p>_{i=1}^{n} t_i = 0 = $$</p></li>
-<li><p>Observe que, <strong>se todas as observações não fossem censuradas, retornaríamos ao estimador de <span class="math inline">\(\alpha\)</span> visto anteriormente para este contexto</strong>.</p></li>
+<li><p>A função de log-verossimilhança <span class="math inline">\(\ell(\alpha)\)</span> é: <span class="math display">\[
+\ell(\alpha)=r \ln(\alpha)-\alpha \sum_{i=1}^{n} t_i
+\]</span></p></li>
+<li><p>Derivando em relação a <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
+\frac{\partial \ell(\alpha)}{\partial \alpha}=
+\frac{r}{\alpha}-\sum_{i=1}^{n} t_i
+\]</span></p></li>
+<li><p>Igualando a zero, obtemos o estimador de máxima verossimilhança: <span class="math display">\[
+\frac{r}{\hat{\alpha}}-\sum_{i=1}^{n} t_i= 0
+\quad \Rightarrow \quad \hat{\alpha}=\frac{r}{\sum_{i=1}^{n} t_i}
+\]</span></p></li>
+<li><p>Observe que, <strong>se todas as observações não fossem censuradas, retornaríamos ao estimador de <span class="math inline">\(\alpha\)</span> visto anteriormente (dados completos)</strong>.</p></li>
 </ul>
 </div>
 </section>
@@ -976,8 +994,8 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 </div>
 </section></section>
 <section>
-<section id="estimação-pontual-1" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
-<h1><strong>ESTIMAÇÃO PONTUAL</strong></h1>
+<section id="estimação-intervalar" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ESTIMAÇÃO INTERVALAR</strong></h1>
 
 </section>
 <section id="introdução-2" class="slide level2">

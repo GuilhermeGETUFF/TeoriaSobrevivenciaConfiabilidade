@@ -2818,7 +2818,7 @@
     "href": "Aula7.html#parâmetros-populacionais",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "PARÂMETROS POPULACIONAIS",
-    "text": "PARÂMETROS POPULACIONAIS\n\n\nOs modelos probabilísticos vistos na aula anterior são caracterizados por quantidades desconhecidas, chamadas de parâmetros\nCada modelo possui uma estrutura própria:\n\nO modelo gama generalizado possui três parâmetros\nOs modelos Weibull, log-normal e gama possuem dois parâmetros\nO modelo exponencial é o mais simples, com apenas um parâmetro\n\nEsses parâmetros são responsáveis por dar a forma geral da distribuição\n\nControlam o comportamento do tempo de sobrevivência e do risco ao longo do tempo"
+    "text": "PARÂMETROS POPULACIONAIS\n\n\nOs modelos probabilísticos vistos na aula anterior são caracterizados por quantidades desconhecidas, chamadas de parâmetros\nCada modelo possui uma estrutura própria:\n\nO modelo gama generalizado possui três parâmetros\nOs modelos Weibull, log-normal e gama possuem dois parâmetros\nO modelo exponencial é o mais simples, com apenas um parâmetro\n\nEsses parâmetros são responsáveis por dar a forma geral da distribuição\n\nControlam o comportamento do tempo de sobrevivência/confiabilidade e do risco ao longo do tempo"
   },
   {
     "objectID": "Aula7.html#da-teoria-à-aplicação",
@@ -2832,14 +2832,14 @@
     "href": "Aula7.html#o-que-veremos-hoje",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "O QUE VEREMOS HOJE",
-    "text": "O QUE VEREMOS HOJE\n\n\nNesta aula, vamos entrar na etapa central da inferência paramétrica em sobrevivência e confiabilidade\nVamos estudar três pilares fundamentais envolvendo os parâmetros de interesse em cada modelo paramétrico:\n\nEstimação pontual\nEstimação intervalar\nTestes de hipóteses\n\nAo final, avançaremos para uma etapa essencial na prática:\n\nEscolha do modelo paramétrico mais adequado aos dados"
+    "text": "O QUE VEREMOS HOJE\n\n\nNesta aula, vamos entrar na etapa central da inferência paramétrica em sobrevivência e confiabilidade\nVamos estudar dois pilares fundamentais envolvendo os parâmetros de interesse em cada modelo paramétrico:\n\nEstimação pontual\nEstimação intervalar"
   },
   {
     "objectID": "Aula7.html#introdução-1",
     "href": "Aula7.html#introdução-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nEm estatística, existem diferentes métodos de estimação pontual\nUm dos mais conhecidos é o método dos mínimos quadrados\n\nMuito utilizado em regressão linear\nBaseado em minimizar erros entre valores observados e ajustados\n\nPorém, esse método não é adequado para dados de sobrevivência\n\npois não foi construído para lidar com tempos até um evento envolvendo dados censurados."
+    "text": "INTRODUÇÃO\n\n\nEm estatística, existem diferentes métodos de estimação pontual\nUm dos mais conhecidos é o método dos mínimos quadrados\n\nMuito utilizado em regressão linear\nBaseado em minimizar erros entre valores observados e ajustados\n\nPorém, esse método não é adequado para dados de sobrevivência/confiabilidade\n\nNão foi construído para lidar com tempos até um evento envolvendo dados censurados."
   },
   {
     "objectID": "Aula7.html#limitação-dos-mínimos-quadrados",
@@ -2853,28 +2853,35 @@
     "href": "Aula7.html#por-que-precisamos-de-outro-método",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE PRECISAMOS DE OUTRO MÉTODO?",
-    "text": "POR QUE PRECISAMOS DE OUTRO MÉTODO?\n\n\nPrecisamos de um método que:\n\nutilize toda a informação disponível\nincorpore corretamente observações censuradas\nseja coerente com modelos probabilísticos\n\nEsse método deve responder:\n\n“quão plausível é um conjunto de parâmetros condicionado aos dados observados?”"
+    "text": "POR QUE PRECISAMOS DE OUTRO MÉTODO?\n\n\nPrecisamos de um método que:\n\nutilize toda a informação disponível\nincorpore corretamente observações censuradas\nseja coerente com modelos probabilísticos\n\nEsse método deve responder:\n\n“Quão plausível é um conjunto de parâmetros condicionado aos dados observados (incluindo censuras)?”"
   },
   {
     "objectID": "Aula7.html#máxima-verossimilhança",
     "href": "Aula7.html#máxima-verossimilhança",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÁXIMA VEROSSIMILHANÇA",
-    "text": "MÁXIMA VEROSSIMILHANÇA\n\n\nO método de máxima verossimilhança (MV) é o principal procedimento usado em modelos de sobrevivência\nA ideia central é:\n\nencontrar os parâmetros que tornam a amostra observada mais provável possível\n\nEm outras palavras:\n\ndado o modelo, buscamos os parâmetros que “melhor explicam” os dados observados"
+    "text": "MÁXIMA VEROSSIMILHANÇA\n\n\nO método de máxima verossimilhança (MV) é o principal procedimento usado em modelos de sobrevivência/confiabilidade.\nA ideia central é:\n\nEncontrar os parâmetros que tornam a amostra observada mais provável possível\n\nEm outras palavras:\n\nDado o modelo, buscamos os parâmetros que “melhor explicam” os dados observados"
   },
   {
     "objectID": "Aula7.html#intuição-do-método",
     "href": "Aula7.html#intuição-do-método",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTUIÇÃO DO MÉTODO",
-    "text": "INTUIÇÃO DO MÉTODO\n\n\nSuponha, por exemplo, que o tempo de ocorrência até o evento de interesse segue uma distribuição Weibull\nPara cada escolha de parâmetros:\n\n\\((\\gamma, \\alpha)\\) → obtemos uma Weibull diferente\n\nO método de máxima verossimilhança escolhe:\n\no par \\((\\gamma, \\alpha)\\) que maximiza a probabilidade de observar os dados da amostra\n\nOu seja:\n\nnão escolhemos “a curva mais bonita”\nescolhemos a mais compatível com os dados\nposteriormente, avaliamos a qualidade do ajuste"
+    "text": "INTUIÇÃO DO MÉTODO\n\n\nSuponha, por exemplo, que o tempo de ocorrência até o evento de interesse segue uma distribuição Weibull\nPara cada escolha de parâmetros:\n\n\\((\\kappa, \\gamma)\\) → obtemos uma Weibull diferente\n\nO método de máxima verossimilhança escolhe:\n\no par \\((\\kappa, \\gamma)\\) que maximiza a probabilidade de observar os dados da amostra\n\nOu seja:\n\nnão escolhemos “a curva mais bonita”.\nescolhemos a mais compatível com os dados.\nposteriormente, avaliamos a qualidade do ajuste."
+  },
+  {
+    "objectID": "Aula7.html#frase-famosa",
+    "href": "Aula7.html#frase-famosa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FRASE FAMOSA",
+    "text": "FRASE FAMOSA\n\n\nLembrem-se da famosa frase do estatístico britânico George Box:\n\n\n“All models are wrong, but some are useful.”\n“Todos os modelos estão errados, mas alguns são úteis.”\n\n\nA ideia por trás dessa frase é bem profunda (e muito alinhada com o que vamos trabalhar):\n\nNenhum modelo consegue representar perfeitamente a realidade — sempre há simplificações, suposições e omissões.\nMesmo assim, um modelo pode ser extremamente valioso se capturar bem os aspectos relevantes do fenômeno.\nO foco não deve ser: “o modelo é verdadeiro?”\nmas sim: “o modelo é útil para o meu objetivo?” (prever, explicar, inferir, etc.)."
   },
   {
     "objectID": "Aula7.html#por-que-o-método-mv-é-tão-usado",
     "href": "Aula7.html#por-que-o-método-mv-é-tão-usado",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE O MÉTODO MV É TÃO USADO?",
-    "text": "POR QUE O MÉTODO MV É TÃO USADO?\n\n\nO método de máxima verossimilhança possui várias vantagens:\nEle:\n\nincorpora censura de forma natural\né aplicável a diferentes distribuições paramétricas\npossui boas propriedades assintóticas (grandes amostras)\n\nconsistência\nnormalidade assintótica\neficiência\n\n\nPor isso, é o método padrão em análise de sobrevivência e confiabilidade"
+    "text": "POR QUE O MÉTODO MV É TÃO USADO?\n\n\nO método de máxima verossimilhança possui várias vantagens:\nVantagens principais:\n\nincorpora censura de forma natural\né aplicável a diferentes distribuições paramétricas\npossui boas propriedades assintóticas (grandes amostras)\n\nconsistência\nnormalidade assintótica\neficiência\n\n\nPor isso, é o método padrão em análise de sobrevivência e confiabilidade"
   },
   {
     "objectID": "Aula7.html#motivação-prática-câncer-de-bexiga",
@@ -2895,7 +2902,7 @@
     "href": "Aula7.html#por-que-a-distribuição-exponencial",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE A DISTRIBUIÇÃO EXPONENCIAL?",
-    "text": "POR QUE A DISTRIBUIÇÃO EXPONENCIAL?\n\n\nA distribuição exponencial será usada como modelo base por duas razões principais:\nEla é:\n\ntotalmente analítica\n\nfacilita derivação da verossimilhança\npermite obter estimadores em forma fechada.\n\nsimples e interpretável\n\nserve como ponto de partida natural em sobrevivência\n\n\nA partir dela:\n\nvamos entender claramente os procedimentos de inferência\ne depois generalizar para Weibull, gama, log-normal e gama generalizada"
+    "text": "POR QUE A DISTRIBUIÇÃO EXPONENCIAL?\n\n\nA distribuição exponencial será usada como modelo base por duas razões principais:\nEssa distribuição é:\n\ntotalmente analítica\n\nfacilita derivação da verossimilhança\npermite obter estimadores em forma fechada.\n\nsimples e interpretável\n\nserve como ponto de partida natural em sobrevivência/confiabilidade.\n\n\nA partir dela:\n\nvamos entender claramente os procedimentos de inferência\ne depois generalizar para Weibull, gama, log-normal e gama generalizada"
   },
   {
     "objectID": "Aula7.html#roteiro",
@@ -2909,7 +2916,7 @@
     "href": "Aula7.html#exemplo-câncer-de-bexiga-sem-censuras",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: CÂNCER DE BEXIGA (SEM CENSURAS)",
-    "text": "EXEMPLO: CÂNCER DE BEXIGA (SEM CENSURAS)\n\n\nSe \\(T\\) possui uma distribuição exponencial com parâmetro \\(\\alpha\\), sua função densidade de probabilidade é dada por:\n\n\\[\nf(t) = \\alpha e^{-\\alpha t}, \\quad t \\geq 0\n\\]\n\nVamos obter um estimador para \\(\\alpha\\), denotado por \\(\\hat{\\alpha}\\), a partir do método da máxima verossimilhança\nA contribuição de cada um dos \\(n\\) tempos de ocorrência observados \\(t_1, t_2, \\ldots, t_n\\) para a função de verossimilhança é dada pela densidade:\n\n\\[\nL(\\alpha) = \\prod_{i=1}^{n} f(t_i)\n= \\prod_{i=1}^{n} \\alpha e^{-\\alpha t_i}\n= \\alpha^{n} e^{-\\alpha \\sum_{i=1}^{n} t_i }\n\\]"
+    "text": "EXEMPLO: CÂNCER DE BEXIGA (SEM CENSURAS)\n\n\nSe \\(T\\) possui uma distribuição exponencial com parâmetro \\(\\alpha\\), sua função densidade de probabilidade é dada por:\n\n\\[\nf(t) = \\alpha e^{-\\alpha t}, \\quad t \\geq 0\n\\]\n\nVamos obter um estimador para \\(\\alpha\\), denotado por \\(\\hat{\\alpha}\\), a partir do método da máxima verossimilhança\nA contribuição de cada um dos \\(n\\) tempos de ocorrência observados \\(t_1, t_2, \\ldots, t_n\\) para a função de verossimilhança \\(L(\\alpha)\\) é dada pela expressão:\n\n\\[\nL(\\alpha) = \\prod_{i=1}^{n} f(t_i)\n= \\prod_{i=1}^{n} \\alpha e^{-\\alpha t_i}\n= \\alpha^{n} e^{-\\alpha \\sum_{i=1}^{n} t_i }\n\\]"
   },
   {
     "objectID": "Aula7.html#verossimilhança-e-estimação",
@@ -2923,7 +2930,7 @@
     "href": "Aula7.html#resultados-no-exemplo",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RESULTADOS NO EXEMPLO",
-    "text": "RESULTADOS NO EXEMPLO\n\n\nPara os dados de câncer de bexiga, assumindo que todos os tempos são completos (sem censura) e que: \\(T_i \\sim \\text{Exponencial}(\\alpha)\\)\nTemos \\(n = 20\\) observações completas: 3, 5, 6, 7, 8, 9, 10, 10, 12, 15, 15, 18, 19, 20, 22, 25, 28, 30, 40, 45\nSoma dos tempos: \\(\\sum_{i=1}^{20} t_i = 347\\)\nEstimador de máxima verossimilhança de \\(\\alpha\\): \\[\n\\hat{\\alpha} = \\frac{n}{\\sum t_i}\n= \\frac{20}{347}\n= 0{,}0576\n\\]"
+    "text": "RESULTADOS NO EXEMPLO\n\n\nPara os dados de câncer de bexiga, assumimos que todos os tempos são completos (sem censura) e que: \\(T_i \\sim \\text{Exponencial}(\\alpha)\\)\nTemos \\(n = 20\\) observações completas: 3, 5, 6, 7, 8, 9, 10, 10, 12, 15, 15, 18, 19, 20, 22, 25, 28, 30, 40, 45\nSoma dos tempos: \\(\\sum_{i=1}^{20} t_i = 347\\)\nEstimador de máxima verossimilhança de \\(\\alpha\\): \\[\n\\hat{\\alpha} = \\frac{n}{\\sum t_i}\n= \\frac{20}{347}\n= 0{,}0576\n\\]"
   },
   {
     "objectID": "Aula7.html#funções-do-modelo-ajustado",
@@ -2944,14 +2951,14 @@
     "href": "Aula7.html#medidas-resumo",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MEDIDAS-RESUMO",
-    "text": "MEDIDAS-RESUMO\n\n\nTempo médio até a ocorrência do câncer de bexiga: \\[\n\\hat{t}_m = \\frac{1}{0{,}0576} = 17{,}36 \\text{ meses}\n\\]\nTempo mediano de reincidência do câncer de bexiga: \\[\n\\hat{t}_{0{,}5} = \\frac{\\ln(2)}{0{,}0576} = 12{,}04 \\text{ meses}\n\\]\nTempo médio residual de reincidência do câncer de bexiga:\n\n\\[\n\\hat{vmr(t)} = \\frac{1}{0{,}0576} = 17{,}36 \\text{ meses}\n\\]"
+    "text": "MEDIDAS-RESUMO\n\n\nTempo médio até a ocorrência do câncer de bexiga: \\[\n\\hat{t}_m = \\frac{1}{\\hat{\\alpha}}=\\frac{1}{0{,}0576} = 17{,}36 \\text{ meses}\n\\]\nTempo mediano de reincidência do câncer de bexiga: \\[\n\\hat{t}_{0{,}5} = \\frac{\\ln(2)}{\\hat{\\alpha}} = \\frac{\\ln(2)}{0{,}0576} = 12{,}04 \\text{ meses}\n\\]\nTempo médio residual de reincidência do câncer de bexiga:\n\n\\[\n\\hat{vmr(t)} = \\frac{1}{\\hat{\\alpha}} = \\frac{1}{0{,}0576} = 17{,}36 \\text{ meses}\n\\]"
   },
   {
     "objectID": "Aula7.html#máxima-verossimilhança-com-dados-censurados",
     "href": "Aula7.html#máxima-verossimilhança-com-dados-censurados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÁXIMA VEROSSIMILHANÇA COM DADOS CENSURADOS",
-    "text": "MÁXIMA VEROSSIMILHANÇA COM DADOS CENSURADOS\n\n\nPara obter os estimadores de máxima verossimilhança, precisamos primeiro entender como a censura entra na verossimilhança\nDenotamos por \\(L(\\boldsymbol{\\theta})\\) a função de verossimilhança associada ao vetor de parâmetros \\(\\boldsymbol{\\theta}\\)\nO vetor \\(\\boldsymbol{\\theta}\\) pode ser:\n\nescalar: \\(\\alpha\\) (exponencial)\nou vetorial: \\((\\alpha, \\gamma)\\) (Weibull, por exemplo)\n\nJá sabemos que:\n\nobservações completas contribuem com a densidade \\(f(t)\\)\n\nMas surge a pergunta central:\n\nqual é a contribuição de uma observação censurada?"
+    "text": "MÁXIMA VEROSSIMILHANÇA COM DADOS CENSURADOS\n\n\nPara obter os estimadores de máxima verossimilhança, precisamos primeiro entender como a censura entra na verossimilhança\nDenotamos por \\(L(\\boldsymbol{\\theta})\\) a função de verossimilhança associada ao vetor de parâmetros \\(\\boldsymbol{\\theta}\\)\nO vetor \\(\\boldsymbol{\\theta}\\) pode ser:\n\nescalar: \\(\\alpha\\) (exponencial)\nou vetorial: \\((\\kappa, \\gamma)\\) (Weibull, por exemplo)\n\nJá sabemos que:\n\nobservações completas contribuem com a densidade \\(f(t)\\)\n\nMas surge a pergunta central:\n\nQual é a contribuição de uma observação censurada?"
   },
   {
     "objectID": "Aula7.html#intuição-da-censura",
@@ -2965,21 +2972,21 @@
     "href": "Aula7.html#por-que-a-censura-contribui-com-st",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE A CENSURA CONTRIBUI COM \\(S(t)\\)?",
-    "text": "POR QUE A CENSURA CONTRIBUI COM \\(S(t)\\)?\n\n\nA função de sobrevivência é definida como: \\[\nS(t) = P(T &gt; t)\n\\]\nPara uma observação censurada em \\(t_i\\), sabemos exatamente que:\n\no evento não ocorreu até \\(t_i\\)\n\nLogo, a contribuição correta é: \\[\nS(t_i) = P(T &gt; t_i)\n\\]\nIntuição importante:\n\ncensura não informa “quando ocorreu”\ninforma apenas “que ainda não ocorreu”\npor isso entra via probabilidade de sobrevivência após o tempo \\(t_i\\)"
+    "text": "POR QUE A CENSURA CONTRIBUI COM \\(S(t)\\)?\n\n\nA função de sobrevivência/confiabilidade é definida como: \\[\nS(t) = P(T &gt; t)\n\\]\nPara uma observação censurada em \\(t_i\\), sabemos exatamente que o evento não ocorreu até \\(t_i\\)\nLogo, a contribuição correta é: \\[\nS(t_i) = P(T &gt; t_i)\n\\]\nIntuição importante:\n\ncensura não informa “quando ocorreu”\ninforma apenas “que ainda não ocorreu”\npor isso entra via probabilidade de sobrevivência/confiabilidade após o tempo \\(t_i\\)"
   },
   {
     "objectID": "Aula7.html#função-de-verossimilhança-com-censura",
     "href": "Aula7.html#função-de-verossimilhança-com-censura",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÃO DE VEROSSIMILHANÇA COM CENSURA",
-    "text": "FUNÇÃO DE VEROSSIMILHANÇA COM CENSURA\n\n\nDividimos a amostra em dois grupos:\n\n\\(r\\) observações não censuradas\n\\(n-r\\) observações censuradas\n\nAssim, a função de verossimilhança é: \\[\nL(\\boldsymbol{\\theta})\n=\n\\prod_{i=1}^{r} f(t_i)\n\\prod_{i=r+1}^{n} S(t_i)\n\\]\nCada parte da amostra contribui de forma distinta:\n\nocorrências do evento de interesse → densidade\ncensuras → sobrevivência"
+    "text": "FUNÇÃO DE VEROSSIMILHANÇA COM CENSURA\n\n\nPara construir, formalmente, a função de verossimilhança, dividimos a amostra em dois grupos:\n\n\\(r\\) observações não censuradas (completas)\n\\(n-r\\) observações censuradas\n\nAssim, a função de verossimilhança é: \\[\nL(\\boldsymbol{\\theta})\n=\n\\prod_{i=1}^{r} f(t_i)\n\\prod_{i=r+1}^{n} S(t_i)\n\\]\nCada parte da amostra contribui de forma distinta:\n\nocorrências do evento de interesse → densidade\ncensuras → sobrevivência/confiabilidade"
   },
   {
     "objectID": "Aula7.html#forma-unificada-da-verossimilhança",
     "href": "Aula7.html#forma-unificada-da-verossimilhança",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FORMA UNIFICADA DA VEROSSIMILHANÇA",
-    "text": "FORMA UNIFICADA DA VEROSSIMILHANÇA\n\n\nPodemos escrever tudo de forma compacta usando a variável indicadora: \\[\n\\delta_i =\n\\begin{cases}\n1, & \\text{se há ocorrência do evento de interesse}\\\\\n0, & \\text{se há censura}\n\\end{cases}\n\\]\nA verossimilhança fica: \\[\nL(\\boldsymbol{\\theta})\n=\n\\prod_{i=1}^{n}\n\\left[f(t_i)\\right]^{\\delta_i}\n\\left[S(t_i)\\right]^{1-\\delta_i}\n\\]\nOu ainda, usando a função de risco \\(\\lambda(t)\\) = \\(\\frac{f(t)}{S(t)}\\): \\[\nL(\\boldsymbol{\\theta})\n=\n\\prod_{i=1}^{n}\n\\left[\\lambda(t_i)\\right]^{\\delta_i}\nS(t_i)\n\\]"
+    "text": "FORMA UNIFICADA DA VEROSSIMILHANÇA\n\n\nPodemos escrever tudo de forma compacta usando a variável indicadora: \\[\n\\delta_i =\n\\begin{cases}\n1, & \\text{se o evento de interesse ocorreu}\\\\\n0, & \\text{se houve censura}\n\\end{cases}\n\\]\nA função de verossimilhança fica, portanto: \\[\nL(\\boldsymbol{\\theta})\n=\n\\prod_{i=1}^{n}\n\\left[f(t_i)\\right]^{\\delta_i}\n\\left[S(t_i)\\right]^{1-\\delta_i}\n\\]\nOu ainda, usando a função de risco \\(\\lambda(t)\\) = \\(\\frac{f(t)}{S(t)}\\): \\[\nL(\\boldsymbol{\\theta})\n=\n\\prod_{i=1}^{n}\n\\left[\\lambda(t_i)\\right]^{\\delta_i}\nS(t_i)\n\\]"
   },
   {
     "objectID": "Aula7.html#estimação-via-verossimilhança",
@@ -2993,7 +3000,7 @@
     "href": "Aula7.html#exemplo-câncer-de-bexiga-com-censuras",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: CÂNCER DE BEXIGA (COM CENSURAS)",
-    "text": "EXEMPLO: CÂNCER DE BEXIGA (COM CENSURAS)\n\n\nSe \\(T\\) possui uma distribuição exponencial com parâmetro \\(\\alpha\\), sua função densidade de probabilidade é dada por: \\[\nf(t) = \\alpha e^{-\\alpha t}, \\quad t \\geq 0\n\\]\nVamos obter um estimador para \\(\\alpha\\), denotado por \\(\\hat{\\alpha}\\), via máxima verossimilhança\nAgora consideramos uma amostra com censura:\n\n\\(\\delta_i = 1\\) → observação é completa (evento ocorreu)\n\\(\\delta_i = 0\\) → observação é censurada à direita\n\nA contribuição de cada observação depende do seu tipo:\n\nocorrências → densidade \\(f(t_i)\\) e censuras → sobrevivência \\(S(t_i)\\)"
+    "text": "EXEMPLO: CÂNCER DE BEXIGA (COM CENSURAS)\n\n\nSe \\(T\\) possui uma distribuição exponencial com parâmetro \\(\\alpha\\), sua função densidade de probabilidade é dada por: \\[\nf(t) = \\alpha e^{-\\alpha t}, \\quad t \\geq 0\n\\]\nVamos obter um estimador para \\(\\alpha\\), denotado por \\(\\hat{\\alpha}\\), via máxima verossimilhança\nAgora consideramos uma amostra com censura:\n\n\\(\\delta_i = 1\\) → observação é completa (evento ocorreu)\n\\(\\delta_i = 0\\) → observação é censurada à direita\n\nA contribuição de cada observação depende do seu tipo:\n\nocorrências → densidade \\(f(t_i)\\) e censuras → sobrevivência/confiabilidade \\(S(t_i)\\)"
   },
   {
     "objectID": "Aula7.html#verossimilhança-com-censura",
@@ -3014,7 +3021,7 @@
     "href": "Aula7.html#verossimilhança-e-estimação-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "VEROSSIMILHANÇA E ESTIMAÇÃO",
-    "text": "VEROSSIMILHANÇA E ESTIMAÇÃO\n\n\nA função de log-verossimilhança \\(\\ell(\\alpha)\\) é: $$ () = r ()\n_{i=1}^{n} t_i $$\nDerivando em relação a \\(\\alpha\\): $$ = \n_{i=1}^{n} t_i $$\nIgualando a zero, obtemos o estimador de máxima verossimilhança: $$ \n_{i=1}^{n} t_i = 0 = $$\nObserve que, se todas as observações não fossem censuradas, retornaríamos ao estimador de \\(\\alpha\\) visto anteriormente para este contexto."
+    "text": "VEROSSIMILHANÇA E ESTIMAÇÃO\n\n\nA função de log-verossimilhança \\(\\ell(\\alpha)\\) é: \\[\n\\ell(\\alpha)=r \\ln(\\alpha)-\\alpha \\sum_{i=1}^{n} t_i\n\\]\nDerivando em relação a \\(\\alpha\\): \\[\n\\frac{\\partial \\ell(\\alpha)}{\\partial \\alpha}=\n\\frac{r}{\\alpha}-\\sum_{i=1}^{n} t_i\n\\]\nIgualando a zero, obtemos o estimador de máxima verossimilhança: \\[\n\\frac{r}{\\hat{\\alpha}}-\\sum_{i=1}^{n} t_i= 0\n\\quad \\Rightarrow \\quad \\hat{\\alpha}=\\frac{r}{\\sum_{i=1}^{n} t_i}\n\\]\nObserve que, se todas as observações não fossem censuradas, retornaríamos ao estimador de \\(\\alpha\\) visto anteriormente (dados completos)."
   },
   {
     "objectID": "Aula7.html#resultados-no-exemplo-com-censura",
