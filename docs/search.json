@@ -2874,7 +2874,7 @@
     "href": "Aula7.html#frase-famosa",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FRASE FAMOSA",
-    "text": "FRASE FAMOSA\n\n\nLembrem-se da famosa frase do estatístico britânico George Box:\n\n\n“All models are wrong, but some are useful.”\n“Todos os modelos estão errados, mas alguns são úteis.”\n\n\nA ideia por trás dessa frase é bem profunda (e muito alinhada com o que vamos trabalhar):\n\nNenhum modelo consegue representar perfeitamente a realidade — sempre há simplificações, suposições e omissões.\nMesmo assim, um modelo pode ser extremamente valioso se capturar bem os aspectos relevantes do fenômeno.\nO foco não deve ser: “o modelo é verdadeiro?”\nmas sim: “o modelo é útil para o meu objetivo?” (prever, explicar, inferir, etc.)."
+    "text": "FRASE FAMOSA\n\n\nLembrem-se da famosa frase do estatístico britânico George Box:\n\n\n“All models are wrong, but some are useful.”\n“Todos os modelos estão errados, mas alguns são úteis.”\n\n\nA ideia por trás dessa frase é bem profunda:\n\nNenhum modelo consegue representar perfeitamente a realidade — sempre há simplificações, suposições e omissões.\nMesmo assim, um modelo pode ser extremamente valioso se capturar bem os aspectos relevantes do fenômeno.\nO foco não deve ser: “o modelo é verdadeiro?”\nmas sim: “o modelo é útil para o meu objetivo?” (prever, explicar, inferir, etc.)."
   },
   {
     "objectID": "Aula7.html#por-que-o-método-mv-é-tão-usado",
@@ -2895,7 +2895,7 @@
     "href": "Aula7.html#estratégia-didática",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTRATÉGIA DIDÁTICA",
-    "text": "ESTRATÉGIA DIDÁTICA\n\n\nPara ilustrar os métodos de inferência em modelos paramétricos de sobrevivência e condiabilidade, vamos trabalhar nesses dados inicialmente com a distribuição exponencial\nSeja \\(T\\) a variável aleatória que representa:\n\no tempo até a reincidência do câncer de bexiga após a cirurgia a laser.\n\nAssumimos, inicialmente, que:\n\n\\(T \\sim \\text{Exponencial}(\\alpha)\\)"
+    "text": "ESTRATÉGIA DIDÁTICA\n\n\nPara ilustrar os métodos de inferência em modelos paramétricos de sobrevivência e confiabilidade, vamos trabalhar nesses dados inicialmente com a distribuição exponencial\nSeja \\(T\\) a variável aleatória que representa:\n\no tempo até a reincidência do câncer de bexiga após a cirurgia a laser.\n\nAssumimos, inicialmente, que:\n\n\\(T \\sim \\text{Exponencial}(\\alpha)\\)"
   },
   {
     "objectID": "Aula7.html#por-que-a-distribuição-exponencial",
