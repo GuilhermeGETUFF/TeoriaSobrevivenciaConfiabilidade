@@ -481,10 +481,10 @@ L(\alpha) = \prod_{i=1}^{n} f(t_i)
 <div class="box-blue">
 <p>Com o parâmetro <span class="math inline">\(\alpha\)</span> estimado em <span class="math inline">\(\hat{\alpha}=0,0576\)</span>, podemos <strong>estimar todas as funções básicas de interesse</strong>:</p>
 <ul>
-<li><p><strong>Densidade</strong>: <span class="math inline">\(\hat{f}(t) = 0{,}0576 e^{-0{,}0576 t}\)</span></p></li>
-<li><p><strong>Função de sobrevivência</strong>: <span class="math inline">\(\hat{S}(t) = e^{-0{,}0576 t}\)</span></p></li>
-<li><p><strong>Função de risco</strong>: <span class="math inline">\(\hat{\lambda}(t) = 0{,}0576\)</span></p></li>
-<li><p><strong>Função de risco acumulado</strong>: <span class="math inline">\(\hat{\Lambda}(t) = 0{,}0576\, t\)</span></p></li>
+<li><p><strong>Densidade</strong>: <span class="math inline">\(\hat{f}(t) = \hat{\alpha} e^{-\hat{\alpha} t} = 0{,}0576 e^{-0{,}0576 t}\)</span></p></li>
+<li><p><strong>Função de sobrevivência</strong>: <span class="math inline">\(\hat{S}(t) = e^{-\hat{\alpha} t} = e^{-0{,}0576 t}\)</span></p></li>
+<li><p><strong>Função de risco</strong>: <span class="math inline">\(\hat{\lambda}(t) = \hat{\alpha} = 0{,}0576\)</span></p></li>
+<li><p><strong>Função de risco acumulado</strong>: <span class="math inline">\(\hat{\Lambda}(t) = \hat{\alpha}\, t = 0{,}0576\, t\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -726,13 +726,8 @@ L(\alpha)
 <h2><strong>VEROSSIMILHANÇA E ESTIMAÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A função de log-verossimilhança <span class="math inline">\(\ell(\alpha)\)</span> é: <span class="math display">\[
-\ell(\alpha)=r \ln(\alpha)-\alpha \sum_{i=1}^{n} t_i
-\]</span></p></li>
-<li><p>Derivando em relação a <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
-\frac{\partial \ell(\alpha)}{\partial \alpha}=
-\frac{r}{\alpha}-\sum_{i=1}^{n} t_i
-\]</span></p></li>
+<li><p>A função de log-verossimilhança <span class="math inline">\(\ell(\alpha)\)</span> é: <span class="math inline">\(\ell(\alpha)=r \ln(\alpha)-\alpha \sum_{i=1}^{n} t_i\)</span></p></li>
+<li><p>Derivando em relação a <span class="math inline">\(\alpha\)</span>: <span class="math inline">\(\frac{\partial \ell(\alpha)}{\partial \alpha}=\frac{r}{\alpha}-\sum_{i=1}^{n} t_i\)</span></p></li>
 <li><p>Igualando a zero, obtemos o estimador de máxima verossimilhança: <span class="math display">\[
 \frac{r}{\hat{\alpha}}-\sum_{i=1}^{n} t_i= 0
 \quad \Rightarrow \quad \hat{\alpha}=\frac{r}{\sum_{i=1}^{n} t_i}
@@ -747,7 +742,7 @@ L(\alpha)
 <ul>
 <li>Para os dados de câncer de bexiga, agora considerando <strong>censura à direita</strong>, assumimos:
 <ul>
-<li><span class="math inline">\(T_i \sim \text{Exponencial}(\alpha)\)</span></li>
+<li><span class="math inline">\(T \sim \text{Exponencial}(\alpha)\)</span></li>
 </ul></li>
 <li>Os tempos <strong>observados</strong> são:
 <ul>
@@ -755,8 +750,8 @@ L(\alpha)
 </ul></li>
 <li>Definimos:
 <ul>
-<li><span class="math inline">\(\delta_i = 1\)</span> se o tempo é de ocorrência</li>
-<li><span class="math inline">\(\delta_i = 0\)</span> se o tempo é censurado</li>
+<li><span class="math inline">\(\delta_i = 1\)</span> se ocorreu reincidência do câncer</li>
+<li><span class="math inline">\(\delta_i = 0\)</span> se houve censura</li>
 </ul></li>
 </ul>
 </div>
@@ -765,13 +760,13 @@ L(\alpha)
 <h2><strong>RESULTADOS NO EXEMPLO (COM CENSURA)</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Número de ocorrências observadas: <span class="math display">\[
+<li><p>Número de <strong>reincidências</strong> observadas: <span class="math display">\[
 r = \sum_{i=1}^{n} \delta_i = 17
 \]</span></p></li>
-<li><p>Soma dos tempos observados (ocorrências + censuras): <span class="math display">\[
+<li><p><strong>Soma dos tempos observados</strong> (ocorrências + censuras): <span class="math display">\[
 \sum_{i=1}^{n} t_i = 347
 \]</span></p></li>
-<li><p>Estimador de máxima verossimilhança: <span class="math display">\[
+<li><p>Estimador de <strong>máxima verossimilhança</strong>: <span class="math display">\[
 \hat{\alpha}
 =
 \frac{r}{\sum_{i=1}^{n} t_i}
@@ -788,18 +783,10 @@ r = \sum_{i=1}^{n} \delta_i = 17
 <div class="box-blue">
 <p>Com <span class="math inline">\(\hat{\alpha} = 0{,}049\)</span>, temos:</p>
 <ul>
-<li><p>Densidade: <span class="math display">\[
-\hat{f}(t) = 0{,}049 e^{-0{,}049 t}
-\]</span></p></li>
-<li><p>Função de sobrevivência: <span class="math display">\[
-\hat{S}(t) = e^{-0{,}049 t}
-\]</span></p></li>
-<li><p>Função de risco: <span class="math display">\[
-\hat{\lambda}(t) = 0{,}049
-\]</span></p></li>
-<li><p>Função de risco acumulado: <span class="math display">\[
-\hat{\Lambda}(t) = 0{,}049\, t
-\]</span></p></li>
+<li><p><strong>Densidade</strong>: <span class="math inline">\(\hat{f}(t) = \hat{\alpha} e^{\hat{\alpha} t} = 0{,}049 e^{-0{,}049 t}\)</span></p></li>
+<li><p><strong>Função de sobrevivência</strong>: <span class="math inline">\(\hat{S}(t) = e^{-\hat{\alpha} t} = e^{-0{,}049 t}\)</span></p></li>
+<li><p><strong>Função de risco</strong>: <span class="math inline">\(\hat{\lambda}(t) = \hat{\alpha} = 0{,}049\)</span></p></li>
+<li><p><strong>Função de risco acumulado</strong>: <span class="math inline">\(\hat{\Lambda}(t) = \hat{\alpha}\, t = 0{,}049\, t\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -822,15 +809,15 @@ r = \sum_{i=1}^{n} \delta_i = 17
 <div class="box-blue">
 <ul>
 <li><p><strong>Tempo médio</strong> até a ocorrência do câncer de bexiga: <span class="math display">\[
-\hat{t}_m = \frac{1}{0{,}049} = 20{,}41 \text{ meses}
+\hat{t}_m = \frac{1}{\hat{\alpha}} = \frac{1}{0{,}049} = 20{,}41 \text{ meses}
 \]</span></p></li>
 <li><p><strong>Tempo mediano</strong> de reincidência do câncer de bexiga: <span class="math display">\[
-\hat{t}_{0{,}5} = \frac{\ln(2)}{0{,}049} = 14{,}15 \text{ meses}
+\hat{t}_{0{,}5} = \frac{\ln(2)}{\hat{\alpha}} = \frac{\ln(2)}{0{,}049} = 14{,}15 \text{ meses}
 \]</span></p></li>
 <li><p><strong>Tempo médio</strong> residual de reincidência do câncer de bexiga:</p></li>
 </ul>
 <p><span class="math display">\[
-\hat{vmr(t)} = \frac{1}{0{,}049} = 20{,}41 \text{ meses}
+\hat{vmr(t)} = \frac{1}{\hat{\alpha}} = \frac{1}{0{,}049} = 20{,}41 \text{ meses}
 \]</span></p>
 </div>
 </section>
@@ -852,13 +839,13 @@ r = \sum_{i=1}^{n} \delta_i = 17
 <h2><strong>IMPACTO DA CENSURA NAS ESTIMATIVAS</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>No modelo exponencial, a presença de censura à direita altera diretamente a quantidade de informação disponível na amostra.</p></li>
-<li><p>Como consequência, as estimativas tendem a refletir uma maior persistência do processo ao longo do tempo.</p></li>
-<li><p>Esse efeito se propaga para todas as funções do modelo:</p>
+<li><p>No <strong>modelo exponencial</strong>, a presença de <strong>censura à direita</strong> altera diretamente a quantidade de <strong>informação disponível</strong> na amostra.</p></li>
+<li><p>Como consequência, as <strong>estimativas tendem a refletir uma maior persistência</strong> do processo ao longo do <strong>tempo</strong>.</p></li>
+<li><p>Esse <strong>efeito</strong> se propaga para todas as <strong>funções do modelo</strong>:</p>
 <ul>
-<li>a curva de sobrevivência tende a ser mais lenta,</li>
-<li>o tempo esperado até o evento aumenta,</li>
-<li>e as medidas resumo passam a indicar um cenário de maior duração do processo.</li>
+<li>a <strong>curva de sobrevivência</strong> tende a ser mais <strong>lenta</strong>,</li>
+<li>o <strong>tempo esperado</strong> até o evento aumenta,</li>
+<li>e as <strong>medidas-resumo</strong> passam a indicar um cenário de <strong>maior duração do processo</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -868,20 +855,7 @@ r = \sum_{i=1}^{n} \delta_i = 17
 <div class="box-blue">
 <ul>
 <li>O procedimento de <strong>estimação dos parmâmetros via máxima verossimilhança</strong> com dados <strong>censurados</strong> pode ser estendido para outras <strong>distribuições</strong>.</li>
-<li>No caso da <strong>distribuição Weibull</strong> vista na última aula, por exemplo, a função de verossimilhança é dada por:</li>
-</ul>
-<p><span class="math display">\[
-L(\gamma,\kappa)
-=
-\prod_{i=1}^{n}
-\left[
-\frac{\gamma}{\kappa}
-\left(\frac{t_i}{\kappa}\right)^{\gamma - 1}
-\right]^{\delta_i}
-e^{-(t_i/\kappa)^\gamma}
-\]</span></p>
-<ul>
-<li>Reorganizando:</li>
+<li>No caso da <strong>distribuição Weibull</strong> vista na última aula, por exemplo, a <strong>função de verossimilhança é dada por</strong>:</li>
 </ul>
 <p><span class="math display">\[
 L(\gamma,\kappa)
@@ -899,15 +873,28 @@ e^{-\sum_{i=1}^{n}(t_i/\kappa)^\gamma}
 <h2><strong>VEROSSIMILHANÇA E DIFICULDADE ANALÍTICA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Ao tomar o logaritmo da verossimilhança, obtém-se uma expressão dependente de <span class="math inline">\(\gamma\)</span> e <span class="math inline">\(\kappa\)</span> com forte não linearidade</p></li>
-<li><p>O sistema de equações resultante:</p>
+<li>Ao tomar o logaritmo da verossimilhança, obtém-se uma expressão dependente de <span class="math inline">\(\gamma\)</span> e <span class="math inline">\(\kappa\)</span> com forte não linearidade:</li>
+</ul>
+<p><span class="math display">\[
+\ell(\gamma,\kappa)
+=
+r \log \gamma
++
+(\gamma - 1)\sum_{i=1}^{n} \delta_i \log t_i
+-
+\gamma r \log \kappa
+-
+\sum_{i=1}^{n}\left(\frac{t_i}{\kappa}\right)^\gamma
+\]</span></p>
 <ul>
-<li>não possui solução analítica fechada</li>
-<li>envolve termos não lineares em ambos os parâmetros</li>
+<li>Para a <strong>aplicação da estimação MV</strong>, o sistema de equações resultante:
+<ul>
+<li><strong>não possui solução analítica fechada</strong></li>
+<li>envolve <strong>termos não lineares em ambos os parâmetros</strong></li>
 </ul></li>
-<li><p>Isso implica que:</p>
+<li>Isso implica que:
 <ul>
-<li>não conseguimos isolar os estimadores explicitamente</li>
+<li><strong>não conseguimos isolar</strong> os estimadores explicitamente</li>
 </ul></li>
 </ul>
 </div>
@@ -916,18 +903,18 @@ e^{-\sum_{i=1}^{n}(t_i/\kappa)^\gamma}
 <h2><strong>CONSEQUÊNCIA IMPORTANTE</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>A ausência de solução analítica não é um caso isolado</p></li>
-<li><p>Ela ocorre em praticamente todos os modelos vistos anteriormente:</p>
+<li><p>A <strong>ausência de solução analítica</strong> não é um caso isolado</p></li>
+<li><p>Ela <strong>ocorre em praticamente todos os modelos vistos</strong> anteriormente:</p>
 <ul>
 <li>Weibull</li>
 <li>Gama</li>
 <li>Log-normal</li>
 <li>Gama generalizada</li>
 </ul></li>
-<li><p>A exceção é o modelo exponencial, que possui solução fechada</p></li>
-<li><p>Portanto, a inferência nesses modelos exige:</p>
+<li><p>A <strong>exceção</strong> é o modelo <strong>exponencial</strong>, que possui <strong>solução fechada</strong></p></li>
+<li><p>Portanto, a <strong>inferência nesses modelos</strong> exige:</p>
 <ul>
-<li>métodos numéricos de otimização</li>
+<li><strong>métodos numéricos</strong> de otimização</li>
 </ul></li>
 </ul>
 </div>
@@ -936,38 +923,56 @@ e^{-\sum_{i=1}^{n}(t_i/\kappa)^\gamma}
 <h2><strong>MÉTODOS NUMÉRICOS: NEWTON-RAPHSON</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>O método de Newton-Raphson é uma das principais ferramentas para estimação em modelos não lineares</p></li>
-<li><p>Trata-se de um algoritmo iterativo baseado em:</p>
+<li><p>O <strong>método de Newton-Raphson</strong> é uma das <strong>principais ferramentas</strong> para estimação em <strong>modelos</strong></p></li>
+<li><p>Trata-se de um <strong>algoritmo iterativo baseado</strong> em:</p>
 <ul>
-<li>derivadas de primeira ordem</li>
-<li>e informações de curvatura (segunda ordem)</li>
+<li><strong>derivadas de primeira ordem</strong></li>
+<li>e <strong>informações de curvatura</strong> (segunda ordem)</li>
 </ul></li>
 <li><p>A ideia central é:</p>
 <ul>
-<li>aproximar sucessivamente a solução do sistema de verossimilhança</li>
+<li><strong>aproximar sucessivamente a solução do sistema de verossimilhança</strong></li>
 </ul></li>
 <li><p>Na prática:</p>
 <ul>
-<li>converge rapidamente em poucos passos</li>
-<li>e é amplamente utilizado em estatística moderna</li>
+<li>converge <strong>rapidamente</strong> em poucos passos</li>
+<li>e é <strong>amplamente utilizado</strong> em estatística moderna</li>
 </ul></li>
 </ul>
+</div>
+</section>
+<section id="como-o-newthon-raphson-funciona" class="slide level2">
+<h2><strong>COMO O NEWTHON RAPHSON FUNCIONA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para o caso de uma <strong>função que possui apenas um parâmetro</strong>, o procedimento é descrito conforme a seguinte <code>gif</code>:</li>
+</ul>
+<p><img data-src="images/newton.gif"></p>
+</div>
+</section>
+<section id="como-o-newthon-raphson-funciona-1" class="slide level2">
+<h2><strong>COMO O NEWTHON RAPHSON FUNCIONA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para o caso de uma <strong>função que possui apenas um parâmetro</strong>, o procedimento seria conforme a <strong>seguinte</strong> <code>gif</code>:</li>
+</ul>
+<p><img data-src="images/newton.gif"></p>
 </div>
 </section>
 <section id="funções-dos-parâmetros-princípio-da-invariância" class="slide level2">
 <h2><strong>FUNÇÕES DOS PARÂMETROS (PRINCÍPIO DA INVARIÂNCIA)</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Em muitos casos, o interesse não está diretamente no parâmetro <span class="math inline">\(\boldsymbol{\theta}\)</span>.</p></li>
-<li><p>Por exemplo, no caso da Weibull, existem dois parâmetros <span class="math inline">\(\gamma\)</span> e <span class="math inline">\(\kappa\)</span>.</p>
+<li><p>Em <strong>muitos casos</strong>, o interesse não está diretamente no <strong>parâmetro</strong> <span class="math inline">\(\boldsymbol{\theta}\)</span>.</p></li>
+<li><p>Por exemplo, <strong>no caso da Weibull</strong>, existem <strong>dois parâmetros</strong> <span class="math inline">\(\gamma\)</span> e <span class="math inline">\(\kappa\)</span>.</p>
 <ul>
-<li>Muitas vezes o interesse não está diretamente nesses parâmetros</li>
+<li>Muitas vezes o <strong>interesse não está diretamente nesses parâmetros</strong></li>
 </ul></li>
-<li><p>Em muitas situações, queremos estimar funções desses parâmetros:</p>
+<li><p>Em <strong>muitas situações</strong>, queremos estimar funções desses parâmetros:</p>
 <ul>
 <li><span class="math inline">\(\phi = g(\gamma, \kappa)\)</span></li>
 </ul></li>
-<li><p>Exemplo: mediana da Weibull</p></li>
+<li><p>Exemplo: <strong>mediana da Weibull</strong></p></li>
 </ul>
 <p><span class="math display">\[
 t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
@@ -978,18 +983,21 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <h2><strong>FUNÇÕES DOS PARÂMETROS (PRINCÍPIO DA INVARIÂNCIA)</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O estimador de máxima verossimilhança de <span class="math inline">\(\phi\)</span> é:</li>
+<li>O <strong>estimador de máxima</strong> verossimilhança de <span class="math inline">\(\phi\)</span> é:</li>
 </ul>
 <p><span class="math display">\[
 \hat{\phi} = g(\hat{\gamma}, \hat{\kappa})
 \]</span></p>
 <ul>
-<li><p>Ou seja, basta substituir os estimadores dos parâmetros na função desejada</p>
+<li><p>Ou seja, <strong>basta substituir</strong> os estimadores dos <strong>parâmetros</strong> na função desejada</p>
 <ul>
 <li>Assim, <span class="math inline">\(\hat{t_{0,5}} = \hat{\kappa} \left[-\ln(1 - 0{,}5)\right]^{1/\hat{\gamma}}\)</span></li>
 </ul></li>
 <li><p>Isso é conhecido como <strong>princípio da invariância</strong></p></li>
-<li><p>Assim, todas as <strong>medidas-resumo</strong> que são expressas como <strong>funções dos parâmetros</strong> podem ter suas <strong>estimativas pontuais</strong> obtidas a partir desse <strong>princípio</strong>.</p></li>
+<li><p>Assim, todas as <strong>funções básicas e medidas-resumo</strong> que são expressas como <strong>funções dos parâmetros</strong> podem ter suas <strong>estimativas pontuais</strong> obtidas a partir desse <strong>princípio</strong>.</p>
+<ul>
+<li>Esse princípio foi <strong>utilizado pra calcular as estimativas das funções básicas</strong> e <strong>medidas-resumo</strong> para o caso da <strong>distribuição exponencial</strong> considerando os dados de <strong>câncer de bexiga</strong>.</li>
+</ul></li>
 </ul>
 </div>
 </section></section>
@@ -1009,7 +1017,7 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <li>Quantidades de interesse (<span class="math inline">\(\phi = g(\boldsymbol{\theta})\)</span>)</li>
 </ul></li>
 <li><p>Baseamos essa construção nas <strong>propriedades assintóticas</strong> dos estimadores de máxima verossimilhança.</p></li>
-<li><p>As <strong>justificativas matemáticas</strong> são complexas e muitas delas já vistas no decorrer do curso — apresentaremos apenas os <strong>resultados essenciais</strong> que são suficientes para os objetivos propostos</p></li>
+<li><p>As <strong>justificativas matemáticas</strong> são complexas e muitas delas já vistas no decorrer do curso — apresentaremos apenas os <strong>resultados essenciais</strong> que são suficientes para os objetivos propostos dessa disciplina.</p></li>
 </ul>
 </div>
 </section>
@@ -1046,7 +1054,7 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <h2><strong>ESTIMANDO A MATRIZ DE VARIÂNCIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><strong>Na prática:</strong> quando a esperança <span class="math inline">\(E(F(\boldsymbol{\theta}))\)</span> é impossível ou difícil de calcular, usamos diretamente:</li>
+<li><strong>Na prática,</strong> quando a esperança <span class="math inline">\(E(F(\boldsymbol{\theta}))\)</span> é impossível ou difícil de calcular, usamos diretamente:</li>
 </ul>
 <p><span class="math display">\[\widehat{Var}(\hat{\boldsymbol{\theta}}) = \left[-F(\hat{\boldsymbol{\theta}})\right]^{-1}\]</span></p>
 <ul>
@@ -1064,13 +1072,17 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <h2><strong>INTERVALOS DE CONFIANÇA - CASO UNIPARAMÉTRICO</strong></h2>
 <div class="box-green">
 <ul>
-<li><strong>Para um parâmetro escalar <span class="math inline">\(\theta\)</span>,</strong> um intervalo de confiança aproximado de <span class="math inline">\((1-\alpha)100\%\)</span> é dado por:</li>
-</ul>
-<p><span class="math display">\[
+<li><strong>Para um parâmetro escalar <span class="math inline">\(\theta\)</span>,</strong> um intervalo de confiança aproximado de <span class="math inline">\((1-\alpha)100\%\)</span> é dado por: <span class="math display">\[
 \hat{\theta} \pm z_{\alpha/2} \cdot \sqrt{\widehat{Var}(\hat{\theta})}
-\]</span> - <span class="math inline">\(\hat{\theta}\)</span> é o EMV - <span class="math inline">\(z_{\alpha/2}\)</span> é o quantil <span class="math inline">\((1-\alpha/2)\)</span> da distribuição normal padrão - <span class="math inline">\(\sqrt{\widehat{Var}(\hat{\theta})}\)</span> é o <strong>erro padrão estimado</strong></p>
+\]</span>
+<ul>
+<li><span class="math inline">\(\hat{\theta}\)</span> é o EMV</li>
+<li><span class="math inline">\(z_{\alpha/2}\)</span> é o quantil <span class="math inline">\((1-\alpha/2)\)</span> da distribuição normal padrão</li>
+<li><span class="math inline">\(\sqrt{\widehat{Var}(\hat{\theta})}\)</span> é o <strong>erro padrão estimado</strong></li>
+</ul></li>
+</ul>
 <blockquote>
-<p><strong>Exemplo:</strong> Para <span class="math inline">\(\alpha = 0,05\)</span> (nível de confiança 95%), <span class="math inline">\(z_{0,025} = 1,96\)</span></p>
+<p>Para <span class="math inline">\(\alpha = 0,05\)</span> (nível de confiança 95%), <span class="math inline">\(z_{0,025} = 1,96\)</span></p>
 </blockquote>
 </div>
 </section>
@@ -1080,8 +1092,16 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <ul>
 <li>No caso do <strong>modelo exponencial</strong> (apenas um parâmetro: <span class="math inline">\(\alpha\)</span>) com censura, a estimativa de <span class="math inline">\(Var(\hat{\alpha})\)</span> é:</li>
 </ul>
-<p><span class="math display">\[\widehat{Var}(\hat{\alpha}) \approx -\left[E(F(\alpha))\right]^{-1} = -\left[E\left(\frac{\partial^2 \ell(\alpha)}{\partial \alpha^2}\right)\right]^{-1} = \frac{\hat{\alpha}^2}{r}\]</span></p>
-<p>onde <span class="math inline">\(r\)</span> é o número de ocorrências do evento observadas</p>
+<p><span class="math display">\[
+\begin{align*}
+\widehat{Var}(\hat{\alpha})
+&amp;= \left[-F(\hat{\alpha})\right]^{-1}
+= \left[-\frac{\partial^2 \ell(\hat{\alpha})}{\partial \alpha^2}\right]^{-1} \\
+&amp;= \left[\frac{r}{\hat{\alpha}^2}\right]^{-1}
+= \frac{\hat{\alpha}^2}{r}
+\end{align*}
+\]</span></p>
+<p>onde <span class="math inline">\(r\)</span> é o número de <strong>ocorrências do evento observadas</strong></p>
 <ul>
 <li><strong>Intervalo de 95% de confiança para o parâmetro <span class="math inline">\(\alpha\)</span> do modelo exponencial:</strong></li>
 </ul>
@@ -1092,11 +1112,11 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <h2><strong>EXEMPLO: DADOS DE CÂNCER DE BEXIGA</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>No exemplo com os dados censurados de câncer de bexiga, <span class="math inline">\(\hat{\alpha}=0,049\)</span></p></li>
+<li><p>No <strong>exemplo</strong> com os dados censurados de <strong>câncer de bexiga</strong>, <span class="math inline">\(\hat{\alpha}=0,049\)</span></p></li>
 <li><p>Inicialmente, tem-se que a estimativa de <span class="math inline">\(Var(\hat{\alpha})\)</span> é ; <span class="math display">\[
-\widehat{Var}(\hat{\alpha}) \approx \frac{\hat{\alpha}^2}{r} = 0,01188
+\widehat{Var}(\hat{\alpha}) = \frac{\hat{\alpha}^2}{r} = 0,01188
 \]</span></p></li>
-<li><p>Assim, um intervalo de com 95% de confiança para <span class="math inline">\(\alpha\)</span> pode ser obtido fazendo:</p></li>
+<li><p>Assim, <strong>um intervalo</strong> de com 95% de confiança para <span class="math inline">\(\alpha\)</span> pode ser <strong>obtido da seguinte forma</strong>:</p></li>
 </ul>
 <p><span class="math display">\[\hat{\alpha} \pm 1,96 \cdot \sqrt{\frac{\hat{\alpha}^2}{r}} = 0,049 \pm 1,96*0,01188 = (0,0257;0,0723)\]</span></p>
 </div>
@@ -1133,57 +1153,57 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <h2><strong>MÉTODO DELTA - CASO UNIPARAMÉTRICO</strong></h2>
 <div class="box-blue">
 <p><strong>Teorema (Método Delta):</strong></p>
-<p>Se <span class="math inline">\(\sqrt{n}(\hat{\theta} - \theta) \xrightarrow{d} N(0, \sigma^2)\)</span>, então para uma função <span class="math inline">\(g\)</span> diferenciável:</p>
-<p><span class="math display">\[\sqrt{n}\left(g(\hat{\theta}) - g(\theta)\right) \xrightarrow{d} N\left(0, \sigma^2 \left[\frac{\partial g(\theta)}{\partial \theta}\right]^2\right)\]</span></p>
+<p>Se <span class="math inline">\(\sqrt{n}(\hat{\theta} - \theta) \xrightarrow{d} N(0, Var(\hat{\theta}))\)</span>, então para uma função <span class="math inline">\(g\)</span> diferenciável:</p>
+<p><span class="math display">\[\sqrt{n}\left(g(\hat{\theta}) - g(\theta)\right) \xrightarrow{d} N\left(0, Var(\hat{\theta}) \left[\frac{\partial g(\theta)}{\partial \theta}\right]^2\right)\]</span></p>
 <p><strong>Consequência prática:</strong></p>
 <p><span class="math display">\[Var(g(\hat{\theta})) \approx Var(\hat{\theta}) \cdot \left[\frac{\partial g}{\partial \theta}\bigg|_{\theta=\hat{\theta}}\right]^2\]</span></p>
 <p>Assim, o intervalo de confiança para <span class="math inline">\(g(\theta)\)</span> é:</p>
 <p><span class="math display">\[g(\hat{\theta}) \pm z_{\alpha/2} \cdot \sqrt{\widehat{Var}(\hat{\theta})} \cdot \left|\frac{\partial g}{\partial \theta}\bigg|_{\hat{\theta}}\right|\]</span></p>
 </div>
 </section>
+<section id="exemplo-intervalo-para-a-média-da-exponencial" class="slide level2">
+<h2><strong>EXEMPLO: INTERVALO PARA A MÉDIA DA EXPONENCIAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para o caso exponencial, considere <span class="math inline">\(g(\alpha) = \frac{1}{\alpha}\)</span></p></li>
+<li><p>A derivada é: <span class="math inline">\(\frac{\partial g}{\partial \alpha} = -\frac{1}{\alpha^2}\)</span></p></li>
+<li><p>Pelo Método Delta:</p></li>
+</ul>
+<p><span class="math display">\[
+\widehat{Var}\big(g(\hat{\alpha})\big)
+\approx \widehat{Var}(\hat{\alpha}) \cdot \left(\frac{1}{\hat{\alpha}^2}\right)^2
+= \frac{\hat{\alpha}^2}{r} \cdot \frac{1}{\hat{\alpha}^4}
+= \frac{1}{r \hat{\alpha}^2}
+\]</span></p>
+<p>Logo, o intervalo de confiança para a média <span class="math inline">\(\frac{1}{\alpha}\)</span> é:</p>
+<p><span class="math display">\[
+\frac{1}{\hat{\alpha}} \pm z_{\alpha/2} \cdot \sqrt{\frac{1}{r \hat{\alpha}^2}}
+\]</span></p>
+</div>
+</section>
+<section id="exemplo-dados-câncer-de-bexiga" class="slide level2">
+<h2><strong>EXEMPLO: DADOS CÂNCER DE BEXIGA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para o caso exponencial aplicado aos dados de câncer de bexiga (com censura), considere <span class="math inline">\(\hat{\alpha} = 0{,}049\)</span></p></li>
+<li><p>Já vimos que a estimativa pontual da média é: <span class="math inline">\(g(\hat{\alpha}) = \frac{1}{0{,}049} = 20{,}41\)</span></p></li>
+<li><p>A variância estimada pelo Método Delta é: <span class="math inline">\(\widehat{Var} = \frac{\hat{\alpha}^2}{r} = \frac{(0{,}049)^2}{17}\)</span></p></li>
+<li><p>O erro padrão da média é: <span class="math inline">\(EP \approx \frac{20{,}41}{\sqrt{17}}\)</span></p></li>
+<li><p>Assim, o intervalo de confiança de 95%:</p></li>
+</ul>
+<p><span class="math display">\[
+20{,}41 \pm 1{,}96 \cdot \frac{20{,}41}{\sqrt{r}}
+\]</span></p>
+<p>ou:</p>
+<p><span class="math display">\[
+20{,}41 \left(1 \pm \frac{1{,}96}{\sqrt{r}}\right)
+\]</span></p>
+</div>
+</section>
 <section id="método-delta---caso-multiparamétrico" class="slide level2">
 <h2><strong>MÉTODO DELTA - CASO MULTIPARAMÉTRICO</strong></h2>
 <div class="box-blue">
-<p><strong>Extensão para o caso multiparamétrico:</strong></p>
-<p>Para <span class="math inline">\(\phi = g(\boldsymbol{\theta})\)</span> com <span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^k\)</span>, o método delta estabelece que:</p>
-<p><span class="math display">\[\sqrt{n}\left(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})\right) \xrightarrow{d} N\left(0, \nabla g(\boldsymbol{\theta})^\top \boldsymbol{\Sigma} \, \nabla g(\boldsymbol{\theta})\right)\]</span></p>
-<p>onde: - <span class="math inline">\(\nabla g(\boldsymbol{\theta})\)</span> é o <strong>vetor gradiente</strong>: <span class="math display">\[\nabla g(\boldsymbol{\theta}) = \left(\frac{\partial g}{\partial \theta_1}, \frac{\partial g}{\partial \theta_2}, \ldots, \frac{\partial g}{\partial \theta_k}\right)^\top\]</span> - <span class="math inline">\(\boldsymbol{\Sigma}\)</span> é a matriz de variância-covariância assintótica de <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span></p>
-<p><strong>Variância aproximada:</strong> <span class="math display">\[\widehat{Var}(g(\hat{\boldsymbol{\theta}})) = \nabla g(\hat{\boldsymbol{\theta}})^\top \, \widehat{Var}(\hat{\boldsymbol{\theta}}) \, \nabla g(\hat{\boldsymbol{\theta}})\]</span></p>
-</div>
-</section>
-<section id="exemplo-mediana-da-weibull" class="slide level2">
-<h2><strong>EXEMPLO: MEDIANA DA WEIBULL</strong></h2>
-<div class="box-green">
-<p><strong>Objetivo:</strong> Intervalo de confiança para <span class="math inline">\(t_{0,5} = \kappa \cdot [-\ln(0,5)]^{1/\gamma}\)</span></p>
-<p><strong>Passos:</strong></p>
-<ol type="1">
-<li><p><strong>EMV:</strong> <span class="math inline">\(\hat{\kappa}, \hat{\gamma}\)</span> obtidos numericamente</p></li>
-<li><p><strong>Matriz de variância-covariância estimada:</strong> <span class="math display">\[\widehat{Var}(\hat{\gamma}, \hat{\kappa}) = \begin{bmatrix} \widehat{Var}(\hat{\gamma}) &amp; \widehat{Cov}(\hat{\gamma},\hat{\kappa}) \\ \widehat{Cov}(\hat{\kappa},\hat{\gamma}) &amp; \widehat{Var}(\hat{\kappa}) \end{bmatrix}\]</span></p></li>
-<li><p><strong>Gradiente de <span class="math inline">\(t_{0,5}\)</span>:</strong></p>
-<ul>
-<li><span class="math inline">\(\frac{\partial t_{0,5}}{\partial \kappa} = [-\ln(0,5)]^{1/\gamma}\)</span></li>
-<li><span class="math inline">\(\frac{\partial t_{0,5}}{\partial \gamma} = \kappa [-\ln(0,5)]^{1/\gamma} \cdot \left(-\frac{\ln(-\ln(0,5))}{\gamma^2}\right)\)</span></li>
-</ul></li>
-<li><p><strong>Erro padrão da mediana:</strong> <span class="math display">\[\widehat{EP}(\hat{t}_{0,5}) = \sqrt{ \widehat{Var}(\hat{\kappa}) \cdot a^2 + 2\widehat{Cov}(\hat{\gamma},\hat{\kappa}) \cdot a \cdot b + \widehat{Var}(\hat{\gamma}) \cdot b^2 }\]</span> onde <span class="math inline">\(a = \frac{\partial t_{0,5}}{\partial \kappa}\big|_{\hat{\gamma}}\)</span>, <span class="math inline">\(b = \frac{\partial t_{0,5}}{\partial \gamma}\big|_{\hat{\kappa},\hat{\gamma}}\)</span></p></li>
-<li><p><strong>IC 95%:</strong> <span class="math inline">\(\hat{t}_{0,5} \pm 1,96 \cdot \widehat{EP}(\hat{t}_{0,5})\)</span></p></li>
-</ol>
-</div>
-</section>
-<section id="resumo-do-procedimento-prático" class="slide level2">
-<h2><strong>RESUMO DO PROCEDIMENTO PRÁTICO</strong></h2>
-<div class="box-blue">
-<p><strong>Passos para estimação intervalar baseada no EMV:</strong></p>
-<ol type="1">
-<li><p><strong>Obter os EMV</strong> <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span> maximizando a função de log-verossimilhança <span class="math inline">\(\ell(\boldsymbol{\theta})\)</span></p></li>
-<li><p><strong>Estimar a matriz de variância-covariância:</strong> <span class="math display">\[\widehat{Var}(\hat{\boldsymbol{\theta}}) = \left[-F(\hat{\boldsymbol{\theta}})\right]^{-1}\]</span> onde <span class="math inline">\(F(\hat{\boldsymbol{\theta}})\)</span> é a matriz Hessiana avaliada no EMV</p></li>
-<li><p><strong>Para parâmetros originais:</strong> <span class="math display">\[\hat{\theta}_j \pm z_{\alpha/2} \cdot \sqrt{[\widehat{Var}(\hat{\boldsymbol{\theta}})]_{jj}}\]</span></p></li>
-<li><p><strong>Para funções dos parâmetros <span class="math inline">\(\phi = g(\boldsymbol{\theta})\)</span>:</strong></p>
-<ul>
-<li>Calcular o gradiente <span class="math inline">\(\nabla g(\hat{\boldsymbol{\theta}})\)</span></li>
-<li><span class="math inline">\(\widehat{Var}(\hat{\phi}) = \nabla g(\hat{\boldsymbol{\theta}})^\top \, \widehat{Var}(\hat{\boldsymbol{\theta}}) \, \nabla g(\hat{\boldsymbol{\theta}})\)</span></li>
-<li><span class="math inline">\(\hat{\phi} \pm z_{\alpha/2} \cdot \sqrt{\widehat{Var}(\hat{\phi})}\)</span></li>
-</ul></li>
-</ol>
+
 </div>
 
 

@@ -2937,7 +2937,7 @@
     "href": "Aula7.html#funções-do-modelo-ajustado",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÕES DO MODELO AJUSTADO",
-    "text": "FUNÇÕES DO MODELO AJUSTADO\n\nCom o parâmetro \\(\\alpha\\) estimado em \\(\\hat{\\alpha}=0,0576\\), podemos estimar todas as funções básicas de interesse:\n\nDensidade: \\(\\hat{f}(t) = 0{,}0576 e^{-0{,}0576 t}\\)\nFunção de sobrevivência: \\(\\hat{S}(t) = e^{-0{,}0576 t}\\)\nFunção de risco: \\(\\hat{\\lambda}(t) = 0{,}0576\\)\nFunção de risco acumulado: \\(\\hat{\\Lambda}(t) = 0{,}0576\\, t\\)"
+    "text": "FUNÇÕES DO MODELO AJUSTADO\n\nCom o parâmetro \\(\\alpha\\) estimado em \\(\\hat{\\alpha}=0,0576\\), podemos estimar todas as funções básicas de interesse:\n\nDensidade: \\(\\hat{f}(t) = \\hat{\\alpha} e^{-\\hat{\\alpha} t} = 0{,}0576 e^{-0{,}0576 t}\\)\nFunção de sobrevivência: \\(\\hat{S}(t) = e^{-\\hat{\\alpha} t} = e^{-0{,}0576 t}\\)\nFunção de risco: \\(\\hat{\\lambda}(t) = \\hat{\\alpha} = 0{,}0576\\)\nFunção de risco acumulado: \\(\\hat{\\Lambda}(t) = \\hat{\\alpha}\\, t = 0{,}0576\\, t\\)"
   },
   {
     "objectID": "Aula7.html#funções-do-modelo-ajustado-1",
@@ -3021,28 +3021,28 @@
     "href": "Aula7.html#verossimilhança-e-estimação-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "VEROSSIMILHANÇA E ESTIMAÇÃO",
-    "text": "VEROSSIMILHANÇA E ESTIMAÇÃO\n\n\nA função de log-verossimilhança \\(\\ell(\\alpha)\\) é: \\[\n\\ell(\\alpha)=r \\ln(\\alpha)-\\alpha \\sum_{i=1}^{n} t_i\n\\]\nDerivando em relação a \\(\\alpha\\): \\[\n\\frac{\\partial \\ell(\\alpha)}{\\partial \\alpha}=\n\\frac{r}{\\alpha}-\\sum_{i=1}^{n} t_i\n\\]\nIgualando a zero, obtemos o estimador de máxima verossimilhança: \\[\n\\frac{r}{\\hat{\\alpha}}-\\sum_{i=1}^{n} t_i= 0\n\\quad \\Rightarrow \\quad \\hat{\\alpha}=\\frac{r}{\\sum_{i=1}^{n} t_i}\n\\]\nObserve que, se todas as observações não fossem censuradas, retornaríamos ao estimador de \\(\\alpha\\) visto anteriormente (dados completos)."
+    "text": "VEROSSIMILHANÇA E ESTIMAÇÃO\n\n\nA função de log-verossimilhança \\(\\ell(\\alpha)\\) é: \\(\\ell(\\alpha)=r \\ln(\\alpha)-\\alpha \\sum_{i=1}^{n} t_i\\)\nDerivando em relação a \\(\\alpha\\): \\(\\frac{\\partial \\ell(\\alpha)}{\\partial \\alpha}=\\frac{r}{\\alpha}-\\sum_{i=1}^{n} t_i\\)\nIgualando a zero, obtemos o estimador de máxima verossimilhança: \\[\n\\frac{r}{\\hat{\\alpha}}-\\sum_{i=1}^{n} t_i= 0\n\\quad \\Rightarrow \\quad \\hat{\\alpha}=\\frac{r}{\\sum_{i=1}^{n} t_i}\n\\]\nObserve que, se todas as observações não fossem censuradas, retornaríamos ao estimador de \\(\\alpha\\) visto anteriormente (dados completos)."
   },
   {
     "objectID": "Aula7.html#resultados-no-exemplo-com-censura",
     "href": "Aula7.html#resultados-no-exemplo-com-censura",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RESULTADOS NO EXEMPLO (COM CENSURA)",
-    "text": "RESULTADOS NO EXEMPLO (COM CENSURA)\n\n\nPara os dados de câncer de bexiga, agora considerando censura à direita, assumimos:\n\n\\(T_i \\sim \\text{Exponencial}(\\alpha)\\)\n\nOs tempos observados são:\n\n3, 5, 6, 7, 8, 9, 10, 10+, 12, 15, 15+, 18, 19, 20, 22, 25, 28, 30, 40, 45+\n\nDefinimos:\n\n\\(\\delta_i = 1\\) se o tempo é de ocorrência\n\\(\\delta_i = 0\\) se o tempo é censurado"
+    "text": "RESULTADOS NO EXEMPLO (COM CENSURA)\n\n\nPara os dados de câncer de bexiga, agora considerando censura à direita, assumimos:\n\n\\(T \\sim \\text{Exponencial}(\\alpha)\\)\n\nOs tempos observados são:\n\n3, 5, 6, 7, 8, 9, 10, 10+, 12, 15, 15+, 18, 19, 20, 22, 25, 28, 30, 40, 45+\n\nDefinimos:\n\n\\(\\delta_i = 1\\) se ocorreu reincidência do câncer\n\\(\\delta_i = 0\\) se houve censura"
   },
   {
     "objectID": "Aula7.html#resultados-no-exemplo-com-censura-1",
     "href": "Aula7.html#resultados-no-exemplo-com-censura-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RESULTADOS NO EXEMPLO (COM CENSURA)",
-    "text": "RESULTADOS NO EXEMPLO (COM CENSURA)\n\n\nNúmero de ocorrências observadas: \\[\nr = \\sum_{i=1}^{n} \\delta_i = 17\n\\]\nSoma dos tempos observados (ocorrências + censuras): \\[\n\\sum_{i=1}^{n} t_i = 347\n\\]\nEstimador de máxima verossimilhança: \\[\n\\hat{\\alpha}\n=\n\\frac{r}{\\sum_{i=1}^{n} t_i}\n=\n\\frac{17}{347}\n=\n0{,}049\n\\]"
+    "text": "RESULTADOS NO EXEMPLO (COM CENSURA)\n\n\nNúmero de reincidências observadas: \\[\nr = \\sum_{i=1}^{n} \\delta_i = 17\n\\]\nSoma dos tempos observados (ocorrências + censuras): \\[\n\\sum_{i=1}^{n} t_i = 347\n\\]\nEstimador de máxima verossimilhança: \\[\n\\hat{\\alpha}\n=\n\\frac{r}{\\sum_{i=1}^{n} t_i}\n=\n\\frac{17}{347}\n=\n0{,}049\n\\]"
   },
   {
     "objectID": "Aula7.html#funções-do-modelo-ajustado-2",
     "href": "Aula7.html#funções-do-modelo-ajustado-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÕES DO MODELO AJUSTADO",
-    "text": "FUNÇÕES DO MODELO AJUSTADO\n\nCom \\(\\hat{\\alpha} = 0{,}049\\), temos:\n\nDensidade: \\[\n\\hat{f}(t) = 0{,}049 e^{-0{,}049 t}\n\\]\nFunção de sobrevivência: \\[\n\\hat{S}(t) = e^{-0{,}049 t}\n\\]\nFunção de risco: \\[\n\\hat{\\lambda}(t) = 0{,}049\n\\]\nFunção de risco acumulado: \\[\n\\hat{\\Lambda}(t) = 0{,}049\\, t\n\\]"
+    "text": "FUNÇÕES DO MODELO AJUSTADO\n\nCom \\(\\hat{\\alpha} = 0{,}049\\), temos:\n\nDensidade: \\(\\hat{f}(t) = \\hat{\\alpha} e^{\\hat{\\alpha} t} = 0{,}049 e^{-0{,}049 t}\\)\nFunção de sobrevivência: \\(\\hat{S}(t) = e^{-\\hat{\\alpha} t} = e^{-0{,}049 t}\\)\nFunção de risco: \\(\\hat{\\lambda}(t) = \\hat{\\alpha} = 0{,}049\\)\nFunção de risco acumulado: \\(\\hat{\\Lambda}(t) = \\hat{\\alpha}\\, t = 0{,}049\\, t\\)"
   },
   {
     "objectID": "Aula7.html#funções-do-modelo-ajustado-visualização",
@@ -3056,7 +3056,7 @@
     "href": "Aula7.html#medidas-resumo-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MEDIDAS-RESUMO",
-    "text": "MEDIDAS-RESUMO\n\n\nTempo médio até a ocorrência do câncer de bexiga: \\[\n\\hat{t}_m = \\frac{1}{0{,}049} = 20{,}41 \\text{ meses}\n\\]\nTempo mediano de reincidência do câncer de bexiga: \\[\n\\hat{t}_{0{,}5} = \\frac{\\ln(2)}{0{,}049} = 14{,}15 \\text{ meses}\n\\]\nTempo médio residual de reincidência do câncer de bexiga:\n\n\\[\n\\hat{vmr(t)} = \\frac{1}{0{,}049} = 20{,}41 \\text{ meses}\n\\]"
+    "text": "MEDIDAS-RESUMO\n\n\nTempo médio até a ocorrência do câncer de bexiga: \\[\n\\hat{t}_m = \\frac{1}{\\hat{\\alpha}} = \\frac{1}{0{,}049} = 20{,}41 \\text{ meses}\n\\]\nTempo mediano de reincidência do câncer de bexiga: \\[\n\\hat{t}_{0{,}5} = \\frac{\\ln(2)}{\\hat{\\alpha}} = \\frac{\\ln(2)}{0{,}049} = 14{,}15 \\text{ meses}\n\\]\nTempo médio residual de reincidência do câncer de bexiga:\n\n\\[\n\\hat{vmr(t)} = \\frac{1}{\\hat{\\alpha}} = \\frac{1}{0{,}049} = 20{,}41 \\text{ meses}\n\\]"
   },
   {
     "objectID": "Aula7.html#comparação-sem-censura-x-com-censura",
@@ -3070,21 +3070,21 @@
     "href": "Aula7.html#impacto-da-censura-nas-estimativas",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "IMPACTO DA CENSURA NAS ESTIMATIVAS",
-    "text": "IMPACTO DA CENSURA NAS ESTIMATIVAS\n\n\nNo modelo exponencial, a presença de censura à direita altera diretamente a quantidade de informação disponível na amostra.\nComo consequência, as estimativas tendem a refletir uma maior persistência do processo ao longo do tempo.\nEsse efeito se propaga para todas as funções do modelo:\n\na curva de sobrevivência tende a ser mais lenta,\no tempo esperado até o evento aumenta,\ne as medidas resumo passam a indicar um cenário de maior duração do processo."
+    "text": "IMPACTO DA CENSURA NAS ESTIMATIVAS\n\n\nNo modelo exponencial, a presença de censura à direita altera diretamente a quantidade de informação disponível na amostra.\nComo consequência, as estimativas tendem a refletir uma maior persistência do processo ao longo do tempo.\nEsse efeito se propaga para todas as funções do modelo:\n\na curva de sobrevivência tende a ser mais lenta,\no tempo esperado até o evento aumenta,\ne as medidas-resumo passam a indicar um cenário de maior duração do processo."
   },
   {
     "objectID": "Aula7.html#generalização-do-procedimento",
     "href": "Aula7.html#generalização-do-procedimento",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "GENERALIZAÇÃO DO PROCEDIMENTO",
-    "text": "GENERALIZAÇÃO DO PROCEDIMENTO\n\n\nO procedimento de estimação dos parmâmetros via máxima verossimilhança com dados censurados pode ser estendido para outras distribuições.\nNo caso da distribuição Weibull vista na última aula, por exemplo, a função de verossimilhança é dada por:\n\n\\[\nL(\\gamma,\\kappa)\n=\n\\prod_{i=1}^{n}\n\\left[\n\\frac{\\gamma}{\\kappa}\n\\left(\\frac{t_i}{\\kappa}\\right)^{\\gamma - 1}\n\\right]^{\\delta_i}\ne^{-(t_i/\\kappa)^\\gamma}\n\\]\n\nReorganizando:\n\n\\[\nL(\\gamma,\\kappa)\n=\n\\prod_{i=1}^{n}\n\\left[\n\\frac{\\gamma}{\\kappa}\n\\left(\\frac{t_i}{\\kappa}\\right)^{\\gamma - 1}\n\\right]^{\\delta_i}\ne^{-\\sum_{i=1}^{n}(t_i/\\kappa)^\\gamma}\n\\]"
+    "text": "GENERALIZAÇÃO DO PROCEDIMENTO\n\n\nO procedimento de estimação dos parmâmetros via máxima verossimilhança com dados censurados pode ser estendido para outras distribuições.\nNo caso da distribuição Weibull vista na última aula, por exemplo, a função de verossimilhança é dada por:\n\n\\[\nL(\\gamma,\\kappa)\n=\n\\prod_{i=1}^{n}\n\\left[\n\\frac{\\gamma}{\\kappa}\n\\left(\\frac{t_i}{\\kappa}\\right)^{\\gamma - 1}\n\\right]^{\\delta_i}\ne^{-\\sum_{i=1}^{n}(t_i/\\kappa)^\\gamma}\n\\]"
   },
   {
     "objectID": "Aula7.html#verossimilhança-e-dificuldade-analítica",
     "href": "Aula7.html#verossimilhança-e-dificuldade-analítica",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "VEROSSIMILHANÇA E DIFICULDADE ANALÍTICA",
-    "text": "VEROSSIMILHANÇA E DIFICULDADE ANALÍTICA\n\n\nAo tomar o logaritmo da verossimilhança, obtém-se uma expressão dependente de \\(\\gamma\\) e \\(\\kappa\\) com forte não linearidade\nO sistema de equações resultante:\n\nnão possui solução analítica fechada\nenvolve termos não lineares em ambos os parâmetros\n\nIsso implica que:\n\nnão conseguimos isolar os estimadores explicitamente"
+    "text": "VEROSSIMILHANÇA E DIFICULDADE ANALÍTICA\n\n\nAo tomar o logaritmo da verossimilhança, obtém-se uma expressão dependente de \\(\\gamma\\) e \\(\\kappa\\) com forte não linearidade:\n\n\\[\n\\ell(\\gamma,\\kappa)\n=\nr \\log \\gamma\n+\n(\\gamma - 1)\\sum_{i=1}^{n} \\delta_i \\log t_i\n-\n\\gamma r \\log \\kappa\n-\n\\sum_{i=1}^{n}\\left(\\frac{t_i}{\\kappa}\\right)^\\gamma\n\\]\n\nPara a aplicação da estimação MV, o sistema de equações resultante:\n\nnão possui solução analítica fechada\nenvolve termos não lineares em ambos os parâmetros\n\nIsso implica que:\n\nnão conseguimos isolar os estimadores explicitamente"
   },
   {
     "objectID": "Aula7.html#consequência-importante",
@@ -3098,7 +3098,21 @@
     "href": "Aula7.html#métodos-numéricos-newton-raphson",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÉTODOS NUMÉRICOS: NEWTON-RAPHSON",
-    "text": "MÉTODOS NUMÉRICOS: NEWTON-RAPHSON\n\n\nO método de Newton-Raphson é uma das principais ferramentas para estimação em modelos não lineares\nTrata-se de um algoritmo iterativo baseado em:\n\nderivadas de primeira ordem\ne informações de curvatura (segunda ordem)\n\nA ideia central é:\n\naproximar sucessivamente a solução do sistema de verossimilhança\n\nNa prática:\n\nconverge rapidamente em poucos passos\ne é amplamente utilizado em estatística moderna"
+    "text": "MÉTODOS NUMÉRICOS: NEWTON-RAPHSON\n\n\nO método de Newton-Raphson é uma das principais ferramentas para estimação em modelos\nTrata-se de um algoritmo iterativo baseado em:\n\nderivadas de primeira ordem\ne informações de curvatura (segunda ordem)\n\nA ideia central é:\n\naproximar sucessivamente a solução do sistema de verossimilhança\n\nNa prática:\n\nconverge rapidamente em poucos passos\ne é amplamente utilizado em estatística moderna"
+  },
+  {
+    "objectID": "Aula7.html#como-o-newthon-raphson-funciona",
+    "href": "Aula7.html#como-o-newthon-raphson-funciona",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO O NEWTHON RAPHSON FUNCIONA",
+    "text": "COMO O NEWTHON RAPHSON FUNCIONA\n\n\nPara o caso de uma função que possui apenas um parâmetro, o procedimento é descrito conforme a seguinte gif:"
+  },
+  {
+    "objectID": "Aula7.html#como-o-newthon-raphson-funciona-1",
+    "href": "Aula7.html#como-o-newthon-raphson-funciona-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO O NEWTHON RAPHSON FUNCIONA",
+    "text": "COMO O NEWTHON RAPHSON FUNCIONA\n\n\nPara o caso de uma função que possui apenas um parâmetro, o procedimento seria conforme a seguinte gif:"
   },
   {
     "objectID": "Aula7.html#funções-dos-parâmetros-princípio-da-invariância",
@@ -3112,14 +3126,14 @@
     "href": "Aula7.html#funções-dos-parâmetros-princípio-da-invariância-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "FUNÇÕES DOS PARÂMETROS (PRINCÍPIO DA INVARIÂNCIA)",
-    "text": "FUNÇÕES DOS PARÂMETROS (PRINCÍPIO DA INVARIÂNCIA)\n\n\nO estimador de máxima verossimilhança de \\(\\phi\\) é:\n\n\\[\n\\hat{\\phi} = g(\\hat{\\gamma}, \\hat{\\kappa})\n\\]\n\nOu seja, basta substituir os estimadores dos parâmetros na função desejada\n\nAssim, \\(\\hat{t_{0,5}} = \\hat{\\kappa} \\left[-\\ln(1 - 0{,}5)\\right]^{1/\\hat{\\gamma}}\\)\n\nIsso é conhecido como princípio da invariância\nAssim, todas as medidas-resumo que são expressas como funções dos parâmetros podem ter suas estimativas pontuais obtidas a partir desse princípio."
+    "text": "FUNÇÕES DOS PARÂMETROS (PRINCÍPIO DA INVARIÂNCIA)\n\n\nO estimador de máxima verossimilhança de \\(\\phi\\) é:\n\n\\[\n\\hat{\\phi} = g(\\hat{\\gamma}, \\hat{\\kappa})\n\\]\n\nOu seja, basta substituir os estimadores dos parâmetros na função desejada\n\nAssim, \\(\\hat{t_{0,5}} = \\hat{\\kappa} \\left[-\\ln(1 - 0{,}5)\\right]^{1/\\hat{\\gamma}}\\)\n\nIsso é conhecido como princípio da invariância\nAssim, todas as funções básicas e medidas-resumo que são expressas como funções dos parâmetros podem ter suas estimativas pontuais obtidas a partir desse princípio.\n\nEsse princípio foi utilizado pra calcular as estimativas das funções básicas e medidas-resumo para o caso da distribuição exponencial considerando os dados de câncer de bexiga."
   },
   {
     "objectID": "Aula7.html#introdução-2",
     "href": "Aula7.html#introdução-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nAnteriormente, utilizamos o método de máxima verossimilhança para obter estimadores pontuais dos parâmetros do modelo e também para funções desses parâmetros.\nAgora, estendemos o método para construir intervalos de confiança para:\n\nParâmetros do modelo (\\(\\boldsymbol{\\theta}\\))\nQuantidades de interesse (\\(\\phi = g(\\boldsymbol{\\theta})\\))\n\nBaseamos essa construção nas propriedades assintóticas dos estimadores de máxima verossimilhança.\nAs justificativas matemáticas são complexas e muitas delas já vistas no decorrer do curso — apresentaremos apenas os resultados essenciais que são suficientes para os objetivos propostos"
+    "text": "INTRODUÇÃO\n\n\nAnteriormente, utilizamos o método de máxima verossimilhança para obter estimadores pontuais dos parâmetros do modelo e também para funções desses parâmetros.\nAgora, estendemos o método para construir intervalos de confiança para:\n\nParâmetros do modelo (\\(\\boldsymbol{\\theta}\\))\nQuantidades de interesse (\\(\\phi = g(\\boldsymbol{\\theta})\\))\n\nBaseamos essa construção nas propriedades assintóticas dos estimadores de máxima verossimilhança.\nAs justificativas matemáticas são complexas e muitas delas já vistas no decorrer do curso — apresentaremos apenas os resultados essenciais que são suficientes para os objetivos propostos dessa disciplina."
   },
   {
     "objectID": "Aula7.html#distribuição-assintótica-do-emv",
@@ -3140,28 +3154,28 @@
     "href": "Aula7.html#estimando-a-matriz-de-variância",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ESTIMANDO A MATRIZ DE VARIÂNCIA",
-    "text": "ESTIMANDO A MATRIZ DE VARIÂNCIA\n\n\nNa prática: quando a esperança \\(E(F(\\boldsymbol{\\theta}))\\) é impossível ou difícil de calcular, usamos diretamente:\n\n\\[\\widehat{Var}(\\hat{\\boldsymbol{\\theta}}) = \\left[-F(\\hat{\\boldsymbol{\\theta}})\\right]^{-1}\\]\n\nEsta matriz estocástica é um estimador consistente da verdadeira matriz de variância-covariância\nElementos da matriz:\n\nDiagonal principal: variâncias dos estimadores\nFora da diagonal: covariâncias entre estimadores\n\nComo \\(Var(\\boldsymbol{\\theta})\\) depende de \\(\\boldsymbol{\\theta}\\), substituímos \\(\\boldsymbol{\\theta}\\) por \\(\\hat{\\boldsymbol{\\theta}}\\) para obter uma estimativa"
+    "text": "ESTIMANDO A MATRIZ DE VARIÂNCIA\n\n\nNa prática, quando a esperança \\(E(F(\\boldsymbol{\\theta}))\\) é impossível ou difícil de calcular, usamos diretamente:\n\n\\[\\widehat{Var}(\\hat{\\boldsymbol{\\theta}}) = \\left[-F(\\hat{\\boldsymbol{\\theta}})\\right]^{-1}\\]\n\nEsta matriz estocástica é um estimador consistente da verdadeira matriz de variância-covariância\nElementos da matriz:\n\nDiagonal principal: variâncias dos estimadores\nFora da diagonal: covariâncias entre estimadores\n\nComo \\(Var(\\boldsymbol{\\theta})\\) depende de \\(\\boldsymbol{\\theta}\\), substituímos \\(\\boldsymbol{\\theta}\\) por \\(\\hat{\\boldsymbol{\\theta}}\\) para obter uma estimativa"
   },
   {
     "objectID": "Aula7.html#intervalos-de-confiança---caso-uniparamétrico",
     "href": "Aula7.html#intervalos-de-confiança---caso-uniparamétrico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALOS DE CONFIANÇA - CASO UNIPARAMÉTRICO",
-    "text": "INTERVALOS DE CONFIANÇA - CASO UNIPARAMÉTRICO\n\n\nPara um parâmetro escalar \\(\\theta\\), um intervalo de confiança aproximado de \\((1-\\alpha)100\\%\\) é dado por:\n\n\\[\n\\hat{\\theta} \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{Var}(\\hat{\\theta})}\n\\] - \\(\\hat{\\theta}\\) é o EMV - \\(z_{\\alpha/2}\\) é o quantil \\((1-\\alpha/2)\\) da distribuição normal padrão - \\(\\sqrt{\\widehat{Var}(\\hat{\\theta})}\\) é o erro padrão estimado\n\nExemplo: Para \\(\\alpha = 0,05\\) (nível de confiança 95%), \\(z_{0,025} = 1,96\\)"
+    "text": "INTERVALOS DE CONFIANÇA - CASO UNIPARAMÉTRICO\n\n\nPara um parâmetro escalar \\(\\theta\\), um intervalo de confiança aproximado de \\((1-\\alpha)100\\%\\) é dado por: \\[\n\\hat{\\theta} \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{Var}(\\hat{\\theta})}\n\\]\n\n\\(\\hat{\\theta}\\) é o EMV\n\\(z_{\\alpha/2}\\) é o quantil \\((1-\\alpha/2)\\) da distribuição normal padrão\n\\(\\sqrt{\\widehat{Var}(\\hat{\\theta})}\\) é o erro padrão estimado\n\n\n\nPara \\(\\alpha = 0,05\\) (nível de confiança 95%), \\(z_{0,025} = 1,96\\)"
   },
   {
     "objectID": "Aula7.html#exemplo-distribuição-exponencial",
     "href": "Aula7.html#exemplo-distribuição-exponencial",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DISTRIBUIÇÃO EXPONENCIAL",
-    "text": "EXEMPLO: DISTRIBUIÇÃO EXPONENCIAL\n\n\nNo caso do modelo exponencial (apenas um parâmetro: \\(\\alpha\\)) com censura, a estimativa de \\(Var(\\hat{\\alpha})\\) é:\n\n\\[\\widehat{Var}(\\hat{\\alpha}) \\approx -\\left[E(F(\\alpha))\\right]^{-1} = -\\left[E\\left(\\frac{\\partial^2 \\ell(\\alpha)}{\\partial \\alpha^2}\\right)\\right]^{-1} = \\frac{\\hat{\\alpha}^2}{r}\\]\nonde \\(r\\) é o número de ocorrências do evento observadas\n\nIntervalo de 95% de confiança para o parâmetro \\(\\alpha\\) do modelo exponencial:\n\n\\[\\hat{\\alpha} \\pm 1,96 \\cdot \\sqrt{\\frac{\\hat{\\alpha}^2}{r}}\\]"
+    "text": "EXEMPLO: DISTRIBUIÇÃO EXPONENCIAL\n\n\nNo caso do modelo exponencial (apenas um parâmetro: \\(\\alpha\\)) com censura, a estimativa de \\(Var(\\hat{\\alpha})\\) é:\n\n\\[\n\\begin{align*}\n\\widehat{Var}(\\hat{\\alpha})\n&= \\left[-F(\\hat{\\alpha})\\right]^{-1}\n= \\left[-\\frac{\\partial^2 \\ell(\\hat{\\alpha})}{\\partial \\alpha^2}\\right]^{-1} \\\\\n&= \\left[\\frac{r}{\\hat{\\alpha}^2}\\right]^{-1}\n= \\frac{\\hat{\\alpha}^2}{r}\n\\end{align*}\n\\]\nonde \\(r\\) é o número de ocorrências do evento observadas\n\nIntervalo de 95% de confiança para o parâmetro \\(\\alpha\\) do modelo exponencial:\n\n\\[\\hat{\\alpha} \\pm 1,96 \\cdot \\sqrt{\\frac{\\hat{\\alpha}^2}{r}}\\]"
   },
   {
     "objectID": "Aula7.html#exemplo-dados-de-câncer-de-bexiga",
     "href": "Aula7.html#exemplo-dados-de-câncer-de-bexiga",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS DE CÂNCER DE BEXIGA",
-    "text": "EXEMPLO: DADOS DE CÂNCER DE BEXIGA\n\n\nNo exemplo com os dados censurados de câncer de bexiga, \\(\\hat{\\alpha}=0,049\\)\nInicialmente, tem-se que a estimativa de \\(Var(\\hat{\\alpha})\\) é ; \\[\n\\widehat{Var}(\\hat{\\alpha}) \\approx \\frac{\\hat{\\alpha}^2}{r} = 0,01188\n\\]\nAssim, um intervalo de com 95% de confiança para \\(\\alpha\\) pode ser obtido fazendo:\n\n\\[\\hat{\\alpha} \\pm 1,96 \\cdot \\sqrt{\\frac{\\hat{\\alpha}^2}{r}} = 0,049 \\pm 1,96*0,01188 = (0,0257;0,0723)\\]"
+    "text": "EXEMPLO: DADOS DE CÂNCER DE BEXIGA\n\n\nNo exemplo com os dados censurados de câncer de bexiga, \\(\\hat{\\alpha}=0,049\\)\nInicialmente, tem-se que a estimativa de \\(Var(\\hat{\\alpha})\\) é ; \\[\n\\widehat{Var}(\\hat{\\alpha}) = \\frac{\\hat{\\alpha}^2}{r} = 0,01188\n\\]\nAssim, um intervalo de com 95% de confiança para \\(\\alpha\\) pode ser obtido da seguinte forma:\n\n\\[\\hat{\\alpha} \\pm 1,96 \\cdot \\sqrt{\\frac{\\hat{\\alpha}^2}{r}} = 0,049 \\pm 1,96*0,01188 = (0,0257;0,0723)\\]"
   },
   {
     "objectID": "Aula7.html#intervalos-de-confiança---caso-multiparamétrico",
@@ -3182,27 +3196,27 @@
     "href": "Aula7.html#método-delta---caso-uniparamétrico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÉTODO DELTA - CASO UNIPARAMÉTRICO",
-    "text": "MÉTODO DELTA - CASO UNIPARAMÉTRICO\n\nTeorema (Método Delta):\nSe \\(\\sqrt{n}(\\hat{\\theta} - \\theta) \\xrightarrow{d} N(0, \\sigma^2)\\), então para uma função \\(g\\) diferenciável:\n\\[\\sqrt{n}\\left(g(\\hat{\\theta}) - g(\\theta)\\right) \\xrightarrow{d} N\\left(0, \\sigma^2 \\left[\\frac{\\partial g(\\theta)}{\\partial \\theta}\\right]^2\\right)\\]\nConsequência prática:\n\\[Var(g(\\hat{\\theta})) \\approx Var(\\hat{\\theta}) \\cdot \\left[\\frac{\\partial g}{\\partial \\theta}\\bigg|_{\\theta=\\hat{\\theta}}\\right]^2\\]\nAssim, o intervalo de confiança para \\(g(\\theta)\\) é:\n\\[g(\\hat{\\theta}) \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{Var}(\\hat{\\theta})} \\cdot \\left|\\frac{\\partial g}{\\partial \\theta}\\bigg|_{\\hat{\\theta}}\\right|\\]"
+    "text": "MÉTODO DELTA - CASO UNIPARAMÉTRICO\n\nTeorema (Método Delta):\nSe \\(\\sqrt{n}(\\hat{\\theta} - \\theta) \\xrightarrow{d} N(0, Var(\\hat{\\theta}))\\), então para uma função \\(g\\) diferenciável:\n\\[\\sqrt{n}\\left(g(\\hat{\\theta}) - g(\\theta)\\right) \\xrightarrow{d} N\\left(0, Var(\\hat{\\theta}) \\left[\\frac{\\partial g(\\theta)}{\\partial \\theta}\\right]^2\\right)\\]\nConsequência prática:\n\\[Var(g(\\hat{\\theta})) \\approx Var(\\hat{\\theta}) \\cdot \\left[\\frac{\\partial g}{\\partial \\theta}\\bigg|_{\\theta=\\hat{\\theta}}\\right]^2\\]\nAssim, o intervalo de confiança para \\(g(\\theta)\\) é:\n\\[g(\\hat{\\theta}) \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{Var}(\\hat{\\theta})} \\cdot \\left|\\frac{\\partial g}{\\partial \\theta}\\bigg|_{\\hat{\\theta}}\\right|\\]"
+  },
+  {
+    "objectID": "Aula7.html#exemplo-intervalo-para-a-média-da-exponencial",
+    "href": "Aula7.html#exemplo-intervalo-para-a-média-da-exponencial",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: INTERVALO PARA A MÉDIA DA EXPONENCIAL",
+    "text": "EXEMPLO: INTERVALO PARA A MÉDIA DA EXPONENCIAL\n\n\nPara o caso exponencial, considere \\(g(\\alpha) = \\frac{1}{\\alpha}\\)\nA derivada é: \\(\\frac{\\partial g}{\\partial \\alpha} = -\\frac{1}{\\alpha^2}\\)\nPelo Método Delta:\n\n\\[\n\\widehat{Var}\\big(g(\\hat{\\alpha})\\big)\n\\approx \\widehat{Var}(\\hat{\\alpha}) \\cdot \\left(\\frac{1}{\\hat{\\alpha}^2}\\right)^2\n= \\frac{\\hat{\\alpha}^2}{r} \\cdot \\frac{1}{\\hat{\\alpha}^4}\n= \\frac{1}{r \\hat{\\alpha}^2}\n\\]\nLogo, o intervalo de confiança para a média \\(\\frac{1}{\\alpha}\\) é:\n\\[\n\\frac{1}{\\hat{\\alpha}} \\pm z_{\\alpha/2} \\cdot \\sqrt{\\frac{1}{r \\hat{\\alpha}^2}}\n\\]"
+  },
+  {
+    "objectID": "Aula7.html#exemplo-dados-câncer-de-bexiga",
+    "href": "Aula7.html#exemplo-dados-câncer-de-bexiga",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: DADOS CÂNCER DE BEXIGA",
+    "text": "EXEMPLO: DADOS CÂNCER DE BEXIGA\n\n\nPara o caso exponencial aplicado aos dados de câncer de bexiga (com censura), considere \\(\\hat{\\alpha} = 0{,}049\\)\nJá vimos que a estimativa pontual da média é: \\(g(\\hat{\\alpha}) = \\frac{1}{0{,}049} = 20{,}41\\)\nA variância estimada pelo Método Delta é: \\(\\widehat{Var} = \\frac{\\hat{\\alpha}^2}{r} = \\frac{(0{,}049)^2}{17}\\)\nO erro padrão da média é: \\(EP \\approx \\frac{20{,}41}{\\sqrt{17}}\\)\nAssim, o intervalo de confiança de 95%:\n\n\\[\n20{,}41 \\pm 1{,}96 \\cdot \\frac{20{,}41}{\\sqrt{r}}\n\\]\nou:\n\\[\n20{,}41 \\left(1 \\pm \\frac{1{,}96}{\\sqrt{r}}\\right)\n\\]"
   },
   {
     "objectID": "Aula7.html#método-delta---caso-multiparamétrico",
     "href": "Aula7.html#método-delta---caso-multiparamétrico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÉTODO DELTA - CASO MULTIPARAMÉTRICO",
-    "text": "MÉTODO DELTA - CASO MULTIPARAMÉTRICO\n\nExtensão para o caso multiparamétrico:\nPara \\(\\phi = g(\\boldsymbol{\\theta})\\) com \\(\\boldsymbol{\\theta} \\in \\mathbb{R}^k\\), o método delta estabelece que:\n\\[\\sqrt{n}\\left(g(\\hat{\\boldsymbol{\\theta}}) - g(\\boldsymbol{\\theta})\\right) \\xrightarrow{d} N\\left(0, \\nabla g(\\boldsymbol{\\theta})^\\top \\boldsymbol{\\Sigma} \\, \\nabla g(\\boldsymbol{\\theta})\\right)\\]\nonde: - \\(\\nabla g(\\boldsymbol{\\theta})\\) é o vetor gradiente: \\[\\nabla g(\\boldsymbol{\\theta}) = \\left(\\frac{\\partial g}{\\partial \\theta_1}, \\frac{\\partial g}{\\partial \\theta_2}, \\ldots, \\frac{\\partial g}{\\partial \\theta_k}\\right)^\\top\\] - \\(\\boldsymbol{\\Sigma}\\) é a matriz de variância-covariância assintótica de \\(\\hat{\\boldsymbol{\\theta}}\\)\nVariância aproximada: \\[\\widehat{Var}(g(\\hat{\\boldsymbol{\\theta}})) = \\nabla g(\\hat{\\boldsymbol{\\theta}})^\\top \\, \\widehat{Var}(\\hat{\\boldsymbol{\\theta}}) \\, \\nabla g(\\hat{\\boldsymbol{\\theta}})\\]"
-  },
-  {
-    "objectID": "Aula7.html#exemplo-mediana-da-weibull",
-    "href": "Aula7.html#exemplo-mediana-da-weibull",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "EXEMPLO: MEDIANA DA WEIBULL",
-    "text": "EXEMPLO: MEDIANA DA WEIBULL\n\nObjetivo: Intervalo de confiança para \\(t_{0,5} = \\kappa \\cdot [-\\ln(0,5)]^{1/\\gamma}\\)\nPassos:\n\nEMV: \\(\\hat{\\kappa}, \\hat{\\gamma}\\) obtidos numericamente\nMatriz de variância-covariância estimada: \\[\\widehat{Var}(\\hat{\\gamma}, \\hat{\\kappa}) = \\begin{bmatrix} \\widehat{Var}(\\hat{\\gamma}) & \\widehat{Cov}(\\hat{\\gamma},\\hat{\\kappa}) \\\\ \\widehat{Cov}(\\hat{\\kappa},\\hat{\\gamma}) & \\widehat{Var}(\\hat{\\kappa}) \\end{bmatrix}\\]\nGradiente de \\(t_{0,5}\\):\n\n\\(\\frac{\\partial t_{0,5}}{\\partial \\kappa} = [-\\ln(0,5)]^{1/\\gamma}\\)\n\\(\\frac{\\partial t_{0,5}}{\\partial \\gamma} = \\kappa [-\\ln(0,5)]^{1/\\gamma} \\cdot \\left(-\\frac{\\ln(-\\ln(0,5))}{\\gamma^2}\\right)\\)\n\nErro padrão da mediana: \\[\\widehat{EP}(\\hat{t}_{0,5}) = \\sqrt{ \\widehat{Var}(\\hat{\\kappa}) \\cdot a^2 + 2\\widehat{Cov}(\\hat{\\gamma},\\hat{\\kappa}) \\cdot a \\cdot b + \\widehat{Var}(\\hat{\\gamma}) \\cdot b^2 }\\] onde \\(a = \\frac{\\partial t_{0,5}}{\\partial \\kappa}\\big|_{\\hat{\\gamma}}\\), \\(b = \\frac{\\partial t_{0,5}}{\\partial \\gamma}\\big|_{\\hat{\\kappa},\\hat{\\gamma}}\\)\nIC 95%: \\(\\hat{t}_{0,5} \\pm 1,96 \\cdot \\widehat{EP}(\\hat{t}_{0,5})\\)"
-  },
-  {
-    "objectID": "Aula7.html#resumo-do-procedimento-prático",
-    "href": "Aula7.html#resumo-do-procedimento-prático",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "RESUMO DO PROCEDIMENTO PRÁTICO",
-    "text": "RESUMO DO PROCEDIMENTO PRÁTICO\n\nPassos para estimação intervalar baseada no EMV:\n\nObter os EMV \\(\\hat{\\boldsymbol{\\theta}}\\) maximizando a função de log-verossimilhança \\(\\ell(\\boldsymbol{\\theta})\\)\nEstimar a matriz de variância-covariância: \\[\\widehat{Var}(\\hat{\\boldsymbol{\\theta}}) = \\left[-F(\\hat{\\boldsymbol{\\theta}})\\right]^{-1}\\] onde \\(F(\\hat{\\boldsymbol{\\theta}})\\) é a matriz Hessiana avaliada no EMV\nPara parâmetros originais: \\[\\hat{\\theta}_j \\pm z_{\\alpha/2} \\cdot \\sqrt{[\\widehat{Var}(\\hat{\\boldsymbol{\\theta}})]_{jj}}\\]\nPara funções dos parâmetros \\(\\phi = g(\\boldsymbol{\\theta})\\):\n\nCalcular o gradiente \\(\\nabla g(\\hat{\\boldsymbol{\\theta}})\\)\n\\(\\widehat{Var}(\\hat{\\phi}) = \\nabla g(\\hat{\\boldsymbol{\\theta}})^\\top \\, \\widehat{Var}(\\hat{\\boldsymbol{\\theta}}) \\, \\nabla g(\\hat{\\boldsymbol{\\theta}})\\)\n\\(\\hat{\\phi} \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{Var}(\\hat{\\phi})}\\)"
+    "text": "MÉTODO DELTA - CASO MULTIPARAMÉTRICO"
   }
 ]
