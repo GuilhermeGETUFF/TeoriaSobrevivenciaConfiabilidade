@@ -945,9 +945,8 @@ r \log \gamma
 <h2><strong>COMO O NEWTHON RAPHSON FUNCIONA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Para o caso de uma <strong>função que possui apenas um parâmetro</strong>, o procedimento é descrito conforme a seguinte <code>gif</code>:</li>
+<li>Para o caso de uma <strong>função que possui apenas um parâmetro</strong>, o procedimento é descrito conforme a seguinte <a href="https://commons.wikimedia.org/wiki/File:NewtonIteration_Ani.gif">gif</a>.</li>
 </ul>
-<p><img data-src="images/newton.gif"></p>
 </div>
 </section>
 <section id="funções-dos-parâmetros-princípio-da-invariância" class="slide level2">
@@ -1177,24 +1176,23 @@ t_{0,5} = \kappa \left[-\ln(1 - 0{,}5)\right]^{1/\gamma}
 <div class="box-blue">
 <ul>
 <li><p>Para o caso exponencial aplicado aos dados de câncer de bexiga (com censura), considere <span class="math inline">\(\hat{\alpha} = 0{,}049\)</span></p></li>
-<li><p>Já vimos que a estimativa pontual da média é: <span class="math inline">\(g(\hat{\alpha}) = \frac{1}{0{,}049} = 20{,}41\)</span></p></li>
-<li><p>A variância estimada pelo Método Delta é: <span class="math inline">\(\widehat{Var} = \frac{\hat{\alpha}^2}{r} = \frac{(0{,}049)^2}{17}\)</span></p></li>
-<li><p>O erro padrão da média é: <span class="math inline">\(EP \approx \frac{20{,}41}{\sqrt{17}}\)</span></p></li>
-<li><p>Assim, o intervalo de confiança de 95%:</p></li>
+<li><p>Já vimos que a estimativa pontual da média é: <span class="math inline">\(g(\hat{\alpha}) = \frac{1}{0{,}049} = 20{,}41\)</span> meses</p></li>
+<li><p>A variância estimada pelo Método Delta é: <span class="math inline">\(\widehat{Var}\big(g(\hat{\alpha})\big) = \frac{1}{r \hat{\alpha}^2} = \frac{1}{17*0,049^2}\)</span> = 24,49</p></li>
+<li><p>Assim, o intervalo com 95% de confiança pra a média do tempo de reincidência de cancer de bexiga é</p></li>
 </ul>
 <p><span class="math display">\[
-20{,}41 \pm 1{,}96 \cdot \frac{20{,}41}{\sqrt{r}}
-\]</span></p>
-<p>ou:</p>
-<p><span class="math display">\[
-20{,}41 \left(1 \pm \frac{1{,}96}{\sqrt{r}}\right)
+20{,}41 \pm 1{,}96 \cdot \sqrt{24,49} = (10,7 ; 30,1)
 \]</span></p>
 </div>
 </section>
 <section id="método-delta---caso-multiparamétrico" class="slide level2">
-<h2><strong>MÉTODO DELTA - CASO MULTIPARAMÉTRICO</strong></h2>
+<h2>MÉTODO DELTA - CASO MULTIPARAMÉTRICO</h2>
 <div class="box-blue">
-
+<ul>
+<li><p>O <strong>método delta</strong> pode ser naturalmente estendido para o caso <strong>multiparamétrico</strong>, quando o parâmetro de interesse é uma função de vários parâmetros, isto é, <span class="math inline">\(g(\boldsymbol{\theta})\)</span>, com <span class="math inline">\(\boldsymbol{\theta} = (\theta_1, \theta_2, \dots, \theta_p)\)</span>.</p></li>
+<li><p>Nessa situação, a aproximação assintótica envolve o <strong>gradiente</strong> de <span class="math inline">\(g\)</span> e a <strong>matriz de covariâncias</strong> dos estimadores, tornando a expressão da variância aproximada mais geral — e também mais trabalhosa do ponto de vista analítico e computacional.</p></li>
+<li><p>Devido a essa <strong>maior complexidade matemática e operacional</strong>, não abordaremos o caso multiparamétrico neste momento, focando apenas na versão uniparamétrica, que já contempla as ideias centrais do método.</p></li>
+</ul>
 </div>
 
 

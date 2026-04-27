@@ -3105,7 +3105,7 @@
     "href": "Aula7.html#como-o-newthon-raphson-funciona",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "COMO O NEWTHON RAPHSON FUNCIONA",
-    "text": "COMO O NEWTHON RAPHSON FUNCIONA\n\n\nPara o caso de uma função que possui apenas um parâmetro, o procedimento é descrito conforme a seguinte gif:"
+    "text": "COMO O NEWTHON RAPHSON FUNCIONA\n\n\nPara o caso de uma função que possui apenas um parâmetro, o procedimento é descrito conforme a seguinte gif."
   },
   {
     "objectID": "Aula7.html#funções-dos-parâmetros-princípio-da-invariância",
@@ -3203,13 +3203,13 @@
     "href": "Aula7.html#exemplo-dados-câncer-de-bexiga",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "EXEMPLO: DADOS CÂNCER DE BEXIGA",
-    "text": "EXEMPLO: DADOS CÂNCER DE BEXIGA\n\n\nPara o caso exponencial aplicado aos dados de câncer de bexiga (com censura), considere \\(\\hat{\\alpha} = 0{,}049\\)\nJá vimos que a estimativa pontual da média é: \\(g(\\hat{\\alpha}) = \\frac{1}{0{,}049} = 20{,}41\\)\nA variância estimada pelo Método Delta é: \\(\\widehat{Var} = \\frac{\\hat{\\alpha}^2}{r} = \\frac{(0{,}049)^2}{17}\\)\nO erro padrão da média é: \\(EP \\approx \\frac{20{,}41}{\\sqrt{17}}\\)\nAssim, o intervalo de confiança de 95%:\n\n\\[\n20{,}41 \\pm 1{,}96 \\cdot \\frac{20{,}41}{\\sqrt{r}}\n\\]\nou:\n\\[\n20{,}41 \\left(1 \\pm \\frac{1{,}96}{\\sqrt{r}}\\right)\n\\]"
+    "text": "EXEMPLO: DADOS CÂNCER DE BEXIGA\n\n\nPara o caso exponencial aplicado aos dados de câncer de bexiga (com censura), considere \\(\\hat{\\alpha} = 0{,}049\\)\nJá vimos que a estimativa pontual da média é: \\(g(\\hat{\\alpha}) = \\frac{1}{0{,}049} = 20{,}41\\) meses\nA variância estimada pelo Método Delta é: \\(\\widehat{Var}\\big(g(\\hat{\\alpha})\\big) = \\frac{1}{r \\hat{\\alpha}^2} = \\frac{1}{17*0,049^2}\\) = 24,49\nAssim, o intervalo com 95% de confiança pra a média do tempo de reincidência de cancer de bexiga é\n\n\\[\n20{,}41 \\pm 1{,}96 \\cdot \\sqrt{24,49} = (10,7 ; 30,1)\n\\]"
   },
   {
     "objectID": "Aula7.html#método-delta---caso-multiparamétrico",
     "href": "Aula7.html#método-delta---caso-multiparamétrico",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "MÉTODO DELTA - CASO MULTIPARAMÉTRICO",
-    "text": "MÉTODO DELTA - CASO MULTIPARAMÉTRICO"
+    "text": "MÉTODO DELTA - CASO MULTIPARAMÉTRICO\n\n\nO método delta pode ser naturalmente estendido para o caso multiparamétrico, quando o parâmetro de interesse é uma função de vários parâmetros, isto é, \\(g(\\boldsymbol{\\theta})\\), com \\(\\boldsymbol{\\theta} = (\\theta_1, \\theta_2, \\dots, \\theta_p)\\).\nNessa situação, a aproximação assintótica envolve o gradiente de \\(g\\) e a matriz de covariâncias dos estimadores, tornando a expressão da variância aproximada mais geral — e também mais trabalhosa do ponto de vista analítico e computacional.\nDevido a essa maior complexidade matemática e operacional, não abordaremos o caso multiparamétrico neste momento, focando apenas na versão uniparamétrica, que já contempla as ideias centrais do método."
   }
 ]
