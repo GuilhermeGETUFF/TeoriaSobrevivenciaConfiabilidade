@@ -143,11 +143,558 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </div>
 
 </section>
+<section>
 <section id="introdução" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
 <h1><strong>INTRODUÇÃO</strong></h1>
 
+</section>
+<section id="onde-estamos" class="slide level2">
+<h2><strong>ONDE ESTAMOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Na última aula, aprendemos a modelar tempos de sobrevivência/confiabilidade com <strong>modelos paramétricos</strong>:</p>
+<ul>
+<li>Exponencial, Weibull, Log‑normal, Gama e Gama generalizado.</li>
+<li>Vimos a <strong>estimação pontual</strong> e <strong>intervalar</strong> dos parâmetros desses modelos e <strong>funções associadas</strong>.</li>
+</ul></li>
+<li><p>Todos esses <strong>modelos</strong> são <strong>candidatos</strong> possíveis para um mesmo <strong>conjunto de dados</strong>.</p></li>
+<li><p>Toda a inferência a partir do <strong>método de máxima verossimilhança</strong> para as quantidades de interesse <strong>só poderá ser devidamente interpretada após ter sido definido um modelo probabilístico adequado para os dados</strong>.</p></li>
+<li><p><strong>Mas surge uma pergunta natural:</strong> Qual modelo escolher?</p></li>
+</ul>
+</div>
+</section>
+<section id="qual-modelo-escolher" class="slide level2">
+<h2><strong>QUAL MODELO ESCOLHER?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Cada modelo tem uma forma diferente de representar:</p>
+<ul>
+<li>O comportamento do <strong>tempo de ocorrência do evento</strong></li>
+<li>A evolução da <strong>taxa de risco</strong> ao longo do tempo</li>
+</ul></li>
+<li><p>Com os dados em mãos, precisamos decidir <strong>qual deles se ajusta melhor</strong></p></li>
+<li><p>Essa escolha não é <strong>óbvia</strong> — diferentes <strong>modelos</strong> podem dar respostas diferentes</p></li>
+</ul>
+</div>
+</section>
+<section id="por-que-não-dá-para-saber-antes" class="slide level2">
+<h2><strong>POR QUE NÃO DÁ PARA SABER ANTES?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Não sabemos, <em>a priori</em>, qual é a verdadeira forma da distribuição dos tempos</p></li>
+<li><p>Por exemplo, somente <strong>após definir que o modelo log-normal</strong> se ajusta bem aos dados é que podemos fazer as devidas <strong>interpretações das quantidades de interesse</strong> estimadas pelo método de máxima verossimilhança</p></li>
+<li><p>Entretanto, se o modelo log-normal for usado <strong>inadequadamente</strong> para um certo conjunto de dados:</p>
+<ul>
+<li>Toda a análise estatística <strong>fica comprometida</strong></li>
+<li>As respostas às perguntas de interesse <strong>ficam distorcidas</strong></li>
+</ul></li>
+<li><p>Chegamos a um problema clássico de <strong>seleção de modelos</strong> em estatística</p></li>
+</ul>
+</div>
+</section>
+<section id="como-vamos-proceder" class="slide level2">
+<h2><strong>COMO VAMOS PROCEDER?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Nessa aula, veremos <strong>seis métodos</strong> que, <strong>conjuntamente</strong>, contribuem para comparar e escolher o melhor modelo paramétrico:</p>
+<ol type="1">
+<li>Método gráfico baseado na curva de <strong>Kaplan‑Meier</strong>.</li>
+<li>Método gráfico da <strong>linearização</strong> da função de sobrevivência.</li>
+<li>Critérios de informação: <strong>AIC</strong> e <strong>BIC</strong>.</li>
+<li><strong>Teste da razão de verossimilhança</strong> (para modelos aninhados).</li>
+<li>Teste de <strong>Kolmogorov Smirnov</strong> para dados censurados.</li>
+<li>Conversa com <strong>especialista</strong>.</li>
+</ol></li>
+<li><p>Ao final, você terá um <strong>conjunto de ferramentas</strong> para fazer uma escolha fundamentada</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="método-gráfico-kaplan-meier" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MÉTODO GRÁFICO: KAPLAN-MEIER</strong></h1>
 
 </section>
+<section id="introdução-1" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O método gráfico mais utilizado consiste na <strong>comparação da função de sobrevivência (confiabilidade) do modelo proposto com o estimador de Kaplan-Meier</strong></p></li>
+<li><p>Neste procedimento, <strong>ajustam-se os modelos paramétricos propostos</strong> ao conjunto de dados e, a partir das estimativas dos parâmetros de cada modelo, estimam-se suas respectivas funções de sobrevivência</p></li>
+<li><p>Para o conjunto de dados, obtém-se também a <strong>estimativa de Kaplan-Meier</strong> para a função de sobrevivência</p></li>
+</ul>
+</div>
+</section>
+<section id="procedimento" class="slide level2">
+<h2><strong>PROCEDIMENTO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Finalmente, <strong>comparam-se graficamente</strong> as funções de sobrevivência estimadas para cada <strong>modelo</strong> proposto com a função de sobrevivência estimada pelo método de Kaplan-Meier</p></li>
+<li><p>O(s) <strong>modelo(s) adequado(s)</strong> é(são) aquele(s) em que sua curva de sobrevivência <strong>mais se aproximar</strong> daquela do estimador de Kaplan-Meier</p></li>
+<li><p>Em outras palavras, o(s) melhor(es) modelo(s) será(ão) aquele(s) cujos pontos no gráfico estiverem <strong>mais próximos da reta y = x</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="exemplo" class="slide level2">
+<h2><strong>EXEMPLO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>A figura abaixo traz um exemplo da utilização desse método gráfico considerando o <strong>ajuste dos modelos Exponencial, Weibull e Log-normal</strong> para um conjunto de dados.</li>
+</ul>
+</div>
+
+<img data-src="images/Linear.png" class="r-stretch"><div class="box-blue">
+<ul>
+<li>Percebe-se que <strong>o modelo Exponencial possui os seus pontos mais distantes da reta y = x</strong>, o que indicaria um <strong>ajuste ruim</strong> para estes dados.</li>
+</ul>
+</div>
+</section>
+<section id="gráfico-alternativo" class="slide level2">
+<h2><strong>GRÁFICO ALTERNATIVO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Uma <strong>outra forma de comparar as funções</strong> é colocar, em um <strong>mesmo gráfico</strong>, todas as curvas de sobrevivência estimadas <strong>versus o tempo t</strong></p></li>
+<li><p>Alguns autores, como Nelson (1990), sugerem a <strong>comparação da função de risco acumulada</strong> estimada de forma não paramétrica com a função de risco acumulada estimada pelos modelos probabilísticos</p>
+<ul>
+<li>Entretanto, <strong>na prática</strong>, essa abordagem é menos comum.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="vantagens-e-desvantagens" class="slide level2">
+<h2><strong>VANTAGENS E DESVANTAGENS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Como um método gráfico, ele representa apenas <strong>um primeiro filtro</strong> para o ajuste dos modelos probabilísticos</p></li>
+<li><p>Ele é capaz de <strong>detectar facilmente</strong> os modelos que não se ajustam bem aos dados</p></li>
+<li><p>Caso <strong>nenhum modelo se adeque bem</strong> aos dados nessa abordagem, pode ser sugerida uma análise estatística toda baseada em <strong>técnicas não paramétricas</strong></p></li>
+<li><p>A <strong>grande desvantagem</strong> dessa abordagem é que as conclusões dela <strong>podem diferir para diferentes analistas</strong></p>
+<ul>
+<li>Isto é, existe uma <strong>componente subjetiva</strong> na sua interpretação</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="método-gráfico-linearização" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MÉTODO GRÁFICO: LINEARIZAÇÃO</strong></h1>
+
+</section>
+<section id="introdução-2" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Este método consiste na <strong>linearização da função de sobrevivência</strong> obtida por Kaplan-Meier</p></li>
+<li><p>Ideia básica: construir gráficos que sejam <strong>aproximadamente lineares</strong> caso o modelo proposto seja apropriado</p></li>
+<li><p><strong>Violações da linearidade</strong> podem ser rapidamente verificadas visualmente</p></li>
+<li><p>O gráfico utilizado é de uma <strong>transformação que lineariza</strong> a função de sobrevivência do modelo proposto</p></li>
+<li><p>Resultado final: <strong>uma reta</strong> se o modelo proposto for adequado</p></li>
+</ul>
+</div>
+</section>
+<section id="atenção-não-funciona-para-todos" class="slide level2">
+<h2><strong>ATENÇÃO: NÃO FUNCIONA PARA TODOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Este método funciona para <strong>modelos específicos</strong>: Exponencial, Weibull e Log-normal</p></li>
+<li><p><strong>Distribuições como Gama e Gama Generalizada</strong> não possuem linearização simples</p></li>
+<li><p>Para esses casos, outros critérios (AIC, BIC, TRV) serão necessários</p></li>
+<li><p>O método da linearização é um <strong>diagnóstico visual</strong>, não um teste formal</p></li>
+</ul>
+</div>
+</section>
+<section id="linearização---modelo-exponencial" class="slide level2">
+<h2><strong>LINEARIZAÇÃO - MODELO EXPONENCIAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para o modelo exponencial, a função de sobrevivência é:</li>
+</ul>
+<p><span class="math display">\[S(t) = e^{-\alpha t}\]</span></p>
+<p>Assim:</p>
+<p><span class="math display">\[-\log[S(t)] = \alpha t\]</span></p>
+<ul>
+<li><p>Consequentemente, <strong><span class="math inline">\(-\log[\hat{S}(t)]\)</span></strong> é uma função <strong>linear de <span class="math inline">\(t\)</span></strong> (passando pela origem)</p></li>
+<li><p><strong>Gráfico a ser feito</strong>: <span class="math inline">\(-\log[\hat{S}(t)]\)</span> versus <span class="math inline">\(t\)</span> (<span class="math inline">\(\hat{S}(t)\)</span> é o estimador de Kaplan-Meier).</p></li>
+<li><p>Deve ser <strong>aproximadamente linear</strong> se o modelo exponencial for apropriado</p></li>
+</ul>
+</div>
+</section>
+<section id="linearização---modelo-weibull" class="slide level2">
+<h2><strong>LINEARIZAÇÃO - MODELO WEIBULL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Para o modelo Weibull com parâmetros <span class="math inline">\((\kappa, \gamma)\)</span>:</li>
+</ul>
+<p><span class="math display">\[S(t) = e^{-\left(\frac{t}{\kappa}\right)^\gamma}\]</span></p>
+<p>Transformação:</p>
+<p><span class="math display">\[\log\{-\log[S(t)]\} = -\gamma\log(\kappa) + \gamma\log(t)\]</span></p>
+<ul>
+<li><p><strong><span class="math inline">\(\log\{-\log[\hat{S}(t)]\}\)</span></strong> é função <strong>linear de <span class="math inline">\(\log(t)\)</span></strong></p></li>
+<li><p><strong>Gráfico a ser feito</strong>: <span class="math inline">\(\log\{-\log[\hat{S}(t)]\}\)</span> versus <span class="math inline">\(\log(t)\)</span> (<span class="math inline">\(\hat{S}\)</span> é o estimador de Kaplan-Meier).</p></li>
+<li><p>Deve ser aproximadamente linear se o modelo Weibull for apropriado</p></li>
+</ul>
+</div>
+</section>
+<section id="linearização---modelo-log-normal" class="slide level2">
+<h2><strong>LINEARIZAÇÃO - MODELO LOG-NORMAL</strong></h2>
+<div class="box-blue">
+<p>Para o modelo log-normal com parâmetros <span class="math inline">\((\mu, \sigma)\)</span>:</p>
+<p><span class="math display">\[S(t) = \Phi\left(-\frac{\log(t) + \mu}{\sigma}\right)\]</span></p>
+<p>Transformação:</p>
+<p><span class="math display">\[\Phi^{-1}[S(t)] = -\frac{\log(t) + \mu}{\sigma} = -\frac{\mu}{\sigma} - \frac{1}{\sigma}\log(t)\]</span></p>
+<ul>
+<li><p><strong><span class="math inline">\(\Phi^{-1}[\hat{S}(t)]\)</span></strong> é função <strong>linear de <span class="math inline">\(\log(t)\)</span></strong> (<span class="math inline">\(\hat{S}\)</span> é o estimador de Kaplan-Meier).</p></li>
+<li><p><span class="math inline">\(\Phi^{-1}(\cdot)\)</span> são os percentis da distribuição Normal padrão</p></li>
+<li><p><strong>Gráfico a ser feito</strong>: <span class="math inline">\(\Phi^{-1}[\hat{S}(t)]\)</span> versus <span class="math inline">\(\log(t)\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-1" class="slide level2">
+<h2><strong>EXEMPLO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>A figura abaixo traz um exemplo da utilização desse método gráfico considerando o <strong>ajuste dos modelos Exponencial, Weibull e Log-normal</strong>, respectivamente, para um conjunto de dados:</li>
+</ul>
+</div>
+
+<img data-src="images/Linear2.png" class="r-stretch"><div class="box-blue">
+<ul>
+<li>Percebe-se que o modelo exponencial apresenta maiores desvios da linearidade que os demais modelos.</li>
+</ul>
+</div>
+</section>
+<section id="vantagens-e-desvantagens-1" class="slide level2">
+<h2><strong>VANTAGENS E DESVANTAGENS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Como um método gráfico, ele representa apenas <strong>um primeiro filtro</strong> para o ajuste dos modelos probabilísticos</p></li>
+<li><p>Ele é capaz de <strong>detectar facilmente</strong> os modelos que não se ajustam bem aos dados</p></li>
+<li><p>Caso <strong>nenhum modelo se adeque bem</strong> aos dados nessa abordagem, pode ser sugerida uma análise estatística toda baseada em <strong>técnicas não paramétricas</strong></p></li>
+<li><p>A <strong>grande desvantagem</strong> dessa abordagem é que as conclusões dela <strong>podem diferir para diferentes analistas</strong></p>
+<ul>
+<li>Isto é, existe uma <strong>componente subjetiva</strong> na sua interpretação</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="critérios-de-informação-aic-e-bic" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>CRITÉRIOS DE INFORMAÇÃO AIC E BIC</strong></h1>
+
+</section>
+<section id="critério-de-informação-de-akaike-aic" class="slide level2">
+<h2><strong>CRITÉRIO DE INFORMAÇÃO DE AKAIKE (AIC)</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>AIC</strong> (Critério de Informação Akaike) é geralmente considerado como um dos <strong>primeiros critérios de seleção de modelo</strong></p></li>
+<li><p><strong>Hoje</strong>, o AIC <strong>continua a ser a mais amplamente conhecida e usada ferramenta de seleção de modelos</strong> entre os profissionais</p></li>
+<li><p>Foi <strong>introduzido por Hirotugu Akaike em 1973</strong></p></li>
+<li><p>É uma métrica que mensura a <strong>qualidade de um modelo estatístico</strong> visando também a sua <strong>simplicidade (parcimônia)</strong></p></li>
+<li><p>O AIC leva em consideração e <strong>penaliza a complexidade</strong> dos modelos, favorecendo modelos mais simples</p></li>
+</ul>
+</div>
+</section>
+<section id="critério-de-informação-de-akaike-aic-1" class="slide level2">
+<h2><strong>CRITÉRIO DE INFORMAÇÃO DE AKAIKE (AIC)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere:
+<ul>
+<li>Um determinado modelo estatístico ajustado aos dados</li>
+<li><span class="math inline">\(k\)</span> = número de parâmetros do modelo</li>
+<li><span class="math inline">\(\hat{L}\)</span> = valor máximo da função de verossimilhança</li>
+</ul></li>
+<li>O <strong>valor do AIC</strong> é dado por:</li>
+</ul>
+<p><span class="math display">\[AIC = 2k - 2\ln(\hat{L})\]</span></p>
+<ul>
+<li><p><strong>Regra de escolha</strong>: Dada uma coleção de modelos candidatos, o <strong>modelo com menor AIC é o escolhido</strong> de acordo com este critério</p></li>
+<li><p>O AIC <strong>bonifica a qualidade de ajuste</strong> (altos valores da verossimilhança) e <strong>penaliza a quantidade de parâmetros</strong> do modelo</p></li>
+<li><p>Fornece uma <strong>métrica para comparação e seleção</strong> de modelos: menores valores de AIC representam <strong>maior qualidade e simplicidade</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="critério-de-informação-bayesiano-bic" class="slide level2">
+<h2><strong>CRITÉRIO DE INFORMAÇÃO BAYESIANO (BIC)</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Conhecido como <strong>Critério de Informação Bayesiano</strong> (BIC)</p></li>
+<li><p>É uma métrica estatística para <strong>selecionar o melhor modelo</strong> em uma análise de dados</p></li>
+<li><p><strong>Baseado na teoria da probabilidade bayesiana</strong></p></li>
+<li><p>Amplamente utilizado em áreas como <strong>machine learning, deep learning e inteligência artificial</strong></p></li>
+<li><p>Busca <strong>equilibrar a complexidade do modelo e a qualidade do ajuste</strong>, penalizando modelos mais complexos para <strong>evitar overfitting</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="critério-de-informação-bayesiano-bic-1" class="slide level2">
+<h2><strong>CRITÉRIO DE INFORMAÇÃO BAYESIANO (BIC)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere:
+<ul>
+<li>Modelo estatístico ajustado a <span class="math inline">\(n\)</span> dados observados</li>
+<li><span class="math inline">\(k\)</span> = número de parâmetros do modelo</li>
+<li><span class="math inline">\(\hat{L}\)</span> = valor máximo da função de verossimilhança</li>
+</ul></li>
+<li>O <strong>valor do BIC</strong> é dado por:</li>
+</ul>
+<p><span class="math display">\[BIC = k \cdot \log(n) - 2\ln(\hat{L})\]</span></p>
+<ul>
+<li><strong>Regra de escolha</strong>: Dada uma coleção de modelos candidatos, o <strong>modelo com menor BIC é o escolhido</strong> de acordo com este critério</li>
+</ul>
+</div>
+</section>
+<section id="comparação-entre-aic-e-bic" class="slide level2">
+<h2><strong>COMPARAÇÃO ENTRE AIC E BIC</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Diferença fundamental</strong>:</p>
+<ul>
+<li>AIC penaliza com <strong><span class="math inline">\(2k\)</span></strong> (constante)</li>
+<li>BIC penaliza com <strong><span class="math inline">\(k \cdot \log(n)\)</span></strong> (cresce com <span class="math inline">\(n\)</span>)</li>
+</ul></li>
+<li><p><strong>Consequência</strong>:</p>
+<ul>
+<li>Para <span class="math inline">\(n &gt; 7\)</span>, <span class="math inline">\(\log(n) &gt; 2\)</span> → BIC penaliza <strong>mais</strong> que o AIC</li>
+<li>Quanto maior <span class="math inline">\(n\)</span>, maior a penalidade do BIC em relação ao AIC</li>
+</ul></li>
+<li><p>Tanto o AIC como o BIC <strong>não fornecem uma medida de qualidade do modelo global</strong>, apenas <strong>relativa</strong> à comparação entre modelos candidatos</p></li>
+<li><p>Se <strong>todos os modelos propostos se ajustam mal aos dados</strong>, o AIC e BIC <strong>não explicitam tal fato</strong></p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="teste-razão-de-verossimilhança" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>TESTE RAZÃO DE VEROSSIMILHANÇA</strong></h1>
+
+</section>
+<section id="introdução-3" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O <strong>Teste da Razão de Verossimilhança (TRV)</strong> é um método formal para comparar <strong>modelos aninhados</strong> (encaixados)</p></li>
+<li><p>Um modelo é <strong>aninhado</strong> dentro de outro quando é um <strong>caso particular</strong> deste</p></li>
+<li><p><strong>Estrutura de modelos aninhados</strong> que vimos:</p>
+<ul>
+<li>(Exponencial, Weibull, Gama e Lognormal) ⊂ Gama Generalizado</li>
+</ul></li>
+<li><p>O modelo <strong>Gama Generalizado</strong> é o <strong>mais flexível</strong> (3 parâmetros) e <strong>generaliza os demais</strong></p></li>
+<li><p><strong>Implicação prática</strong>:</p>
+<ul>
+<li>O Gama Generalizado pode ser usado como <strong>modelo de partida</strong></li>
+<li>Testamos <strong>hipóteses sobre os parâmetros</strong> para decidir se um modelo mais simples é suficiente</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="teste-trv---formulação-geral" class="slide level2">
+<h2><strong>TESTE TRV - FORMULAÇÃO GERAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere:
+<ul>
+<li><strong>Modelo complexo</strong> (Gama Generalizado): <span class="math inline">\(p\)</span> parâmetros</li>
+<li><strong>Modelo simples</strong> (aninhado): <span class="math inline">\(q\)</span> parâmetros, com <span class="math inline">\(q &lt; p\)</span></li>
+</ul></li>
+<li><strong>Hipóteses</strong>:
+<ul>
+<li><span class="math inline">\(H_0\)</span>: o modelo simples é mais adequado.</li>
+<li><span class="math inline">\(H_1\)</span>: o modelo complexo é mais adequado.</li>
+</ul></li>
+</ul>
+<p><strong>Estatística do teste</strong>: <span class="math display">\[\Lambda = 2[\ln L(\text{complexo}) - \ln L(\text{simples})]\]</span></p>
+<p><strong>Distribuição sob <span class="math inline">\(H_0\)</span></strong>: <span class="math display">\[\Lambda \sim \chi^2_{df} \quad \text{com} \quad df = p - q\]</span></p>
+</div>
+</section>
+<section id="teste-trv---regra-de-decisão" class="slide level2">
+<h2><strong>TESTE TRV - REGRA DE DECISÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Procedimento</strong>:
+<ol type="1">
+<li>Ajustar o <strong>modelo complexo</strong> (Gama Generalizado) → obtenha <span class="math inline">\(\log L_{\text{complexo}}\)</span></li>
+<li>Ajustar o <strong>modelo simples</strong> (Exponencial, Weibull, Gama ou Log-normal) → obtenha <span class="math inline">\(\log L_{\text{simples}}\)</span></li>
+<li>Calcular: <span class="math inline">\(\Lambda = 2(\log L_{\text{complexo}} - \log L_{\text{simples}})\)</span></li>
+<li>Comparar com o quantil da <span class="math inline">\(\chi^2\)</span> com <span class="math inline">\(df = p - q\)</span></li>
+</ol></li>
+<li><strong>Regra de decisão</strong>:
+<ul>
+<li>Se <span class="math inline">\(\Lambda &gt; \chi^2_{df, 1-\alpha}\)</span> → <strong>rejeita <span class="math inline">\(H_0\)</span></strong> → prefere o modelo complexo</li>
+<li>Se <span class="math inline">\(\Lambda \leq \chi^2_{df, 1-\alpha}\)</span> → <strong>não rejeita <span class="math inline">\(H_0\)</span></strong> → modelo simples é suficiente</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="teste-trv---cuidados-e-limitações" class="slide level2">
+<h2><strong>TESTE TRV - CUIDADOS E LIMITAÇÕES</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Atenção</strong>:
+<ul>
+<li>O TRV só é válido para <strong>modelos aninhados</strong> (um é caso particular do outro)</li>
+<li><strong>Não pode ser usado</strong> para comparar, por exemplo, Weibull vs Log-normal (não são aninhados)</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="teste-de-kolmogorov-smirnov" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>TESTE DE KOLMOGOROV SMIRNOV</strong></h1>
+
+</section>
+<section id="teste-de-kolmogorov-smirnov-para-dados-censurados" class="slide level2">
+<h2><strong>TESTE DE KOLMOGOROV-SMIRNOV PARA DADOS CENSURADOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O <strong>teste de Kolmogorov-Smirnov (KS)</strong> é um clássico <strong>teste de aderência</strong> (goodness-of-fit) que compara:</p>
+<ul>
+<li>A distribuição empírica observada</li>
+<li>Versus uma distribuição teórica especificada</li>
+</ul></li>
+<li><p><strong>Problema</strong>: A versão tradicional do teste KS <strong>não funciona</strong> na presença de censura</p></li>
+<li><p><strong>Solução</strong>: Foram propostas <strong>adaptações</strong> para dados censurados à direita, como a versão de <strong>Fleming, O’Fallon e O’Brien (1980)</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="teste-ks-para-dados-censurados" class="slide level2">
+<h2><strong>TESTE KS PARA DADOS CENSURADOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Implementação no R</strong>: pacote <strong><code>GofCens</code></strong> com a função <strong><code>KScens()</code></strong></p></li>
+<li><p><strong>Distribuições suportadas</strong>: Exponencial, Weibull, Log-normal, Log-logística, Gumbel, Normal, Logística e Beta</p></li>
+</ul>
+<p><strong>Por que não ensinaremos este teste neste curso?</strong></p>
+<ul>
+<li><p>Depende de conhecimentos ainda <strong>não vistos</strong>: <strong>bootstrap</strong> e <strong>inferência não paramétrica</strong> avançada</p></li>
+<li><p>O cálculo dos p-valores geralmente requer <strong>reamostragem (bootstrap)</strong></p></li>
+<li><p>Por razões <strong>didáticas</strong>, focaremos nos métodos anteriores (gráficos, AIC/BIC e TRV)</p></li>
+<li><p>Fica como <strong>tópico complementar</strong> para estudos futuros</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conversa-com-especialista" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>CONVERSA COM ESPECIALISTA</strong></h1>
+
+</section>
+<section id="a-conversa-com-o-especialista" class="slide level2">
+<h2><strong>A CONVERSA COM O ESPECIALISTA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Nem toda escolha de modelo vem apenas de <strong>critérios estatísticos</strong></p></li>
+<li><p>O <strong>conhecimento prático</strong> de quem conhece o fenômeno estudado é <strong>fundamental</strong></p></li>
+<li><p>O especialista pode trazer informações que os dados, sozinhos, <strong>não revelam</strong></p></li>
+<li><p>Combinar <strong>estatística + conhecimento de domínio</strong> → decisões mais robustas</p></li>
+</ul>
+</div>
+</section>
+<section id="o-que-o-especialista-pode-dizer" class="slide level2">
+<h2><strong>O QUE O ESPECIALISTA PODE DIZER?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Sobre o processo de ocorrência do evento</strong>:
+<ul>
+<li>A taxa de risco é <strong>constante ao longo do tempo</strong>? (Exponencial)</li>
+<li>A taxa de risco <strong>aumenta</strong> com o tempo? (Weibull com <span class="math inline">\(\gamma &gt; 1\)</span>)</li>
+<li>A taxa de risco <strong>diminui</strong> com o tempo? (Weibull com <span class="math inline">\(\gamma &lt; 1\)</span>)</li>
+<li>O risco é <strong>não monotônico</strong> (cresce e depois cai)? (Log-normal ou Gama Generalizado)</li>
+</ul></li>
+<li><strong>Sobre o fenômeno</strong>:
+<ul>
+<li>Existe um <strong>período de amadurecimento</strong> inicial?</li>
+<li>Componentes <strong>envelhecem</strong> ou <strong>melhoram</strong> com o tempo?</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="como-extrair-informações" class="slide level2">
+<h2><strong>COMO EXTRAIR INFORMAÇÕES?</strong></h2>
+<div class="box-blue">
+<p><strong>Mesmo sem acesso direto a um especialista, vocês podem:</strong></p>
+<ul>
+<li><p><strong>Ler a literatura técnica</strong> da área de aplicação (engenharia, medicina, biologia, etc.)</p></li>
+<li><p><strong>Buscar artigos científicos</strong> que estudaram fenômenos semelhantes</p></li>
+<li><p><strong>Conversar com profissionais</strong> da área (supervisores de estágio, professores de outras disciplinas, profissionais do setor)</p></li>
+<li><p><strong>Observar o comportamento empírico</strong> dos dados (via Kaplan Meier, gráficos de risco, etc.)</p></li>
+<li><p><strong>Consultar relatórios técnicos</strong> e manuais de equipamentos</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="resumo" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>RESUMO</strong></h1>
+
+</section>
+<section id="métodos-de-escolha---síntese-final" class="slide level2">
+<h2><strong>MÉTODOS DE ESCOLHA - SÍNTESE FINAL</strong></h2>
+<div class="box-blue">
+<table class="caption-top">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 22%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Tipo</th>
+<th>Quando usar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gráfico (KM vs paramétrico)</td>
+<td>Visual</td>
+<td>Diagnóstico inicial</td>
+</tr>
+<tr class="even">
+<td>Linearização</td>
+<td>Visual</td>
+<td>Testar Exponencial, Weibull, Log-normal</td>
+</tr>
+<tr class="odd">
+<td>AIC/BIC</td>
+<td>Numérico</td>
+<td>Comparação objetiva entre modelos</td>
+</tr>
+<tr class="even">
+<td>Teste da razão de verossimilhança</td>
+<td>Teste formal</td>
+<td>Modelos aninhados</td>
+</tr>
+<tr class="odd">
+<td>Teste KS</td>
+<td>Teste formal</td>
+<td>Testar Exponencial, Weibull, Lognormal</td>
+</tr>
+<tr class="even">
+<td>Conversa com especialista</td>
+<td>Qualitativo</td>
+<td>Validar plausibilidade do modelo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recomendação</strong>: Use <strong>múltiplos métodos</strong> e busque <strong>concordância</strong> entre eles</p>
+</div>
+</section>
+<section id="fim-da-seção" class="slide level2">
+<h2><strong>FIM DA SEÇÃO</strong></h2>
+<div class="box-blue">
+<p><strong>Resumo</strong>:</p>
+<ul>
+<li><p>Escolher o melhor modelo não é uma tarefa trivial</p></li>
+<li><p>Cada método tem suas vantagens e limitações</p></li>
+<li><p>A decisão final deve combinar:</p>
+<ul>
+<li>Evidências estatísticas (AIC/BIC, TRV, gráficos)</li>
+<li>Conhecimento prático (especialista)</li>
+<li>Simplicidade (parcimônia)</li>
+</ul></li>
+<li><p><strong>Não existe método perfeito</strong> → use todos como ferramentas complementares</p></li>
+</ul>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

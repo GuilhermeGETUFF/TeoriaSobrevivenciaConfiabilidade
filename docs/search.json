@@ -1,5 +1,229 @@
 [
   {
+    "objectID": "Aula8.html#onde-estamos",
+    "href": "Aula8.html#onde-estamos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ONDE ESTAMOS",
+    "text": "ONDE ESTAMOS\n\n\nNa última aula, aprendemos a modelar tempos de sobrevivência/confiabilidade com modelos paramétricos:\n\nExponencial, Weibull, Log‑normal, Gama e Gama generalizado.\nVimos a estimação pontual e intervalar dos parâmetros desses modelos e funções associadas.\n\nTodos esses modelos são candidatos possíveis para um mesmo conjunto de dados.\nToda a inferência a partir do método de máxima verossimilhança para as quantidades de interesse só poderá ser devidamente interpretada após ter sido definido um modelo probabilístico adequado para os dados.\nMas surge uma pergunta natural: Qual modelo escolher?"
+  },
+  {
+    "objectID": "Aula8.html#qual-modelo-escolher",
+    "href": "Aula8.html#qual-modelo-escolher",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "QUAL MODELO ESCOLHER?",
+    "text": "QUAL MODELO ESCOLHER?\n\n\nCada modelo tem uma forma diferente de representar:\n\nO comportamento do tempo de ocorrência do evento\nA evolução da taxa de risco ao longo do tempo\n\nCom os dados em mãos, precisamos decidir qual deles se ajusta melhor\nEssa escolha não é óbvia — diferentes modelos podem dar respostas diferentes"
+  },
+  {
+    "objectID": "Aula8.html#por-que-não-dá-para-saber-antes",
+    "href": "Aula8.html#por-que-não-dá-para-saber-antes",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE NÃO DÁ PARA SABER ANTES?",
+    "text": "POR QUE NÃO DÁ PARA SABER ANTES?\n\n\nNão sabemos, a priori, qual é a verdadeira forma da distribuição dos tempos\nPor exemplo, somente após definir que o modelo log-normal se ajusta bem aos dados é que podemos fazer as devidas interpretações das quantidades de interesse estimadas pelo método de máxima verossimilhança\nEntretanto, se o modelo log-normal for usado inadequadamente para um certo conjunto de dados:\n\nToda a análise estatística fica comprometida\nAs respostas às perguntas de interesse ficam distorcidas\n\nChegamos a um problema clássico de seleção de modelos em estatística"
+  },
+  {
+    "objectID": "Aula8.html#como-vamos-proceder",
+    "href": "Aula8.html#como-vamos-proceder",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO VAMOS PROCEDER?",
+    "text": "COMO VAMOS PROCEDER?\n\n\nNessa aula, veremos seis métodos que, conjuntamente, contribuem para comparar e escolher o melhor modelo paramétrico:\n\nMétodo gráfico baseado na curva de Kaplan‑Meier.\nMétodo gráfico da linearização da função de sobrevivência.\nCritérios de informação: AIC e BIC.\nTeste da razão de verossimilhança (para modelos aninhados).\nTeste de Kolmogorov Smirnov para dados censurados.\nConversa com especialista.\n\nAo final, você terá um conjunto de ferramentas para fazer uma escolha fundamentada"
+  },
+  {
+    "objectID": "Aula8.html#introdução-1",
+    "href": "Aula8.html#introdução-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nO método gráfico mais utilizado consiste na comparação da função de sobrevivência (confiabilidade) do modelo proposto com o estimador de Kaplan-Meier\nNeste procedimento, ajustam-se os modelos paramétricos propostos ao conjunto de dados e, a partir das estimativas dos parâmetros de cada modelo, estimam-se suas respectivas funções de sobrevivência\nPara o conjunto de dados, obtém-se também a estimativa de Kaplan-Meier para a função de sobrevivência"
+  },
+  {
+    "objectID": "Aula8.html#procedimento",
+    "href": "Aula8.html#procedimento",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PROCEDIMENTO",
+    "text": "PROCEDIMENTO\n\n\nFinalmente, comparam-se graficamente as funções de sobrevivência estimadas para cada modelo proposto com a função de sobrevivência estimada pelo método de Kaplan-Meier\nO(s) modelo(s) adequado(s) é(são) aquele(s) em que sua curva de sobrevivência mais se aproximar daquela do estimador de Kaplan-Meier\nEm outras palavras, o(s) melhor(es) modelo(s) será(ão) aquele(s) cujos pontos no gráfico estiverem mais próximos da reta y = x"
+  },
+  {
+    "objectID": "Aula8.html#exemplo",
+    "href": "Aula8.html#exemplo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO",
+    "text": "EXEMPLO\n\n\nA figura abaixo traz um exemplo da utilização desse método gráfico considerando o ajuste dos modelos Exponencial, Weibull e Log-normal para um conjunto de dados.\n\n\n\n\n\nPercebe-se que o modelo Exponencial possui os seus pontos mais distantes da reta y = x, o que indicaria um ajuste ruim para estes dados."
+  },
+  {
+    "objectID": "Aula8.html#gráfico-alternativo",
+    "href": "Aula8.html#gráfico-alternativo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "GRÁFICO ALTERNATIVO",
+    "text": "GRÁFICO ALTERNATIVO\n\n\nUma outra forma de comparar as funções é colocar, em um mesmo gráfico, todas as curvas de sobrevivência estimadas versus o tempo t\nAlguns autores, como Nelson (1990), sugerem a comparação da função de risco acumulada estimada de forma não paramétrica com a função de risco acumulada estimada pelos modelos probabilísticos\n\nEntretanto, na prática, essa abordagem é menos comum."
+  },
+  {
+    "objectID": "Aula8.html#vantagens-e-desvantagens",
+    "href": "Aula8.html#vantagens-e-desvantagens",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VANTAGENS E DESVANTAGENS",
+    "text": "VANTAGENS E DESVANTAGENS\n\n\nComo um método gráfico, ele representa apenas um primeiro filtro para o ajuste dos modelos probabilísticos\nEle é capaz de detectar facilmente os modelos que não se ajustam bem aos dados\nCaso nenhum modelo se adeque bem aos dados nessa abordagem, pode ser sugerida uma análise estatística toda baseada em técnicas não paramétricas\nA grande desvantagem dessa abordagem é que as conclusões dela podem diferir para diferentes analistas\n\nIsto é, existe uma componente subjetiva na sua interpretação"
+  },
+  {
+    "objectID": "Aula8.html#introdução-2",
+    "href": "Aula8.html#introdução-2",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nEste método consiste na linearização da função de sobrevivência obtida por Kaplan-Meier\nIdeia básica: construir gráficos que sejam aproximadamente lineares caso o modelo proposto seja apropriado\nViolações da linearidade podem ser rapidamente verificadas visualmente\nO gráfico utilizado é de uma transformação que lineariza a função de sobrevivência do modelo proposto\nResultado final: uma reta se o modelo proposto for adequado"
+  },
+  {
+    "objectID": "Aula8.html#atenção-não-funciona-para-todos",
+    "href": "Aula8.html#atenção-não-funciona-para-todos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ATENÇÃO: NÃO FUNCIONA PARA TODOS",
+    "text": "ATENÇÃO: NÃO FUNCIONA PARA TODOS\n\n\nEste método funciona para modelos específicos: Exponencial, Weibull e Log-normal\nDistribuições como Gama e Gama Generalizada não possuem linearização simples\nPara esses casos, outros critérios (AIC, BIC, TRV) serão necessários\nO método da linearização é um diagnóstico visual, não um teste formal"
+  },
+  {
+    "objectID": "Aula8.html#linearização---modelo-exponencial",
+    "href": "Aula8.html#linearização---modelo-exponencial",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "LINEARIZAÇÃO - MODELO EXPONENCIAL",
+    "text": "LINEARIZAÇÃO - MODELO EXPONENCIAL\n\n\nPara o modelo exponencial, a função de sobrevivência é:\n\n\\[S(t) = e^{-\\alpha t}\\]\nAssim:\n\\[-\\log[S(t)] = \\alpha t\\]\n\nConsequentemente, \\(-\\log[\\hat{S}(t)]\\) é uma função linear de \\(t\\) (passando pela origem)\nGráfico a ser feito: \\(-\\log[\\hat{S}(t)]\\) versus \\(t\\) (\\(\\hat{S}(t)\\) é o estimador de Kaplan-Meier).\nDeve ser aproximadamente linear se o modelo exponencial for apropriado"
+  },
+  {
+    "objectID": "Aula8.html#linearização---modelo-weibull",
+    "href": "Aula8.html#linearização---modelo-weibull",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "LINEARIZAÇÃO - MODELO WEIBULL",
+    "text": "LINEARIZAÇÃO - MODELO WEIBULL\n\n\nPara o modelo Weibull com parâmetros \\((\\kappa, \\gamma)\\):\n\n\\[S(t) = e^{-\\left(\\frac{t}{\\kappa}\\right)^\\gamma}\\]\nTransformação:\n\\[\\log\\{-\\log[S(t)]\\} = -\\gamma\\log(\\kappa) + \\gamma\\log(t)\\]\n\n\\(\\log\\{-\\log[\\hat{S}(t)]\\}\\) é função linear de \\(\\log(t)\\)\nGráfico a ser feito: \\(\\log\\{-\\log[\\hat{S}(t)]\\}\\) versus \\(\\log(t)\\) (\\(\\hat{S}\\) é o estimador de Kaplan-Meier).\nDeve ser aproximadamente linear se o modelo Weibull for apropriado"
+  },
+  {
+    "objectID": "Aula8.html#linearização---modelo-log-normal",
+    "href": "Aula8.html#linearização---modelo-log-normal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "LINEARIZAÇÃO - MODELO LOG-NORMAL",
+    "text": "LINEARIZAÇÃO - MODELO LOG-NORMAL\n\nPara o modelo log-normal com parâmetros \\((\\mu, \\sigma)\\):\n\\[S(t) = \\Phi\\left(-\\frac{\\log(t) + \\mu}{\\sigma}\\right)\\]\nTransformação:\n\\[\\Phi^{-1}[S(t)] = -\\frac{\\log(t) + \\mu}{\\sigma} = -\\frac{\\mu}{\\sigma} - \\frac{1}{\\sigma}\\log(t)\\]\n\n\\(\\Phi^{-1}[\\hat{S}(t)]\\) é função linear de \\(\\log(t)\\) (\\(\\hat{S}\\) é o estimador de Kaplan-Meier).\n\\(\\Phi^{-1}(\\cdot)\\) são os percentis da distribuição Normal padrão\nGráfico a ser feito: \\(\\Phi^{-1}[\\hat{S}(t)]\\) versus \\(\\log(t)\\)"
+  },
+  {
+    "objectID": "Aula8.html#exemplo-1",
+    "href": "Aula8.html#exemplo-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO",
+    "text": "EXEMPLO\n\n\nA figura abaixo traz um exemplo da utilização desse método gráfico considerando o ajuste dos modelos Exponencial, Weibull e Log-normal, respectivamente, para um conjunto de dados:\n\n\n\n\n\nPercebe-se que o modelo exponencial apresenta maiores desvios da linearidade que os demais modelos."
+  },
+  {
+    "objectID": "Aula8.html#vantagens-e-desvantagens-1",
+    "href": "Aula8.html#vantagens-e-desvantagens-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VANTAGENS E DESVANTAGENS",
+    "text": "VANTAGENS E DESVANTAGENS\n\n\nComo um método gráfico, ele representa apenas um primeiro filtro para o ajuste dos modelos probabilísticos\nEle é capaz de detectar facilmente os modelos que não se ajustam bem aos dados\nCaso nenhum modelo se adeque bem aos dados nessa abordagem, pode ser sugerida uma análise estatística toda baseada em técnicas não paramétricas\nA grande desvantagem dessa abordagem é que as conclusões dela podem diferir para diferentes analistas\n\nIsto é, existe uma componente subjetiva na sua interpretação"
+  },
+  {
+    "objectID": "Aula8.html#critério-de-informação-de-akaike-aic",
+    "href": "Aula8.html#critério-de-informação-de-akaike-aic",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CRITÉRIO DE INFORMAÇÃO DE AKAIKE (AIC)",
+    "text": "CRITÉRIO DE INFORMAÇÃO DE AKAIKE (AIC)\n\n\nAIC (Critério de Informação Akaike) é geralmente considerado como um dos primeiros critérios de seleção de modelo\nHoje, o AIC continua a ser a mais amplamente conhecida e usada ferramenta de seleção de modelos entre os profissionais\nFoi introduzido por Hirotugu Akaike em 1973\nÉ uma métrica que mensura a qualidade de um modelo estatístico visando também a sua simplicidade (parcimônia)\nO AIC leva em consideração e penaliza a complexidade dos modelos, favorecendo modelos mais simples"
+  },
+  {
+    "objectID": "Aula8.html#critério-de-informação-de-akaike-aic-1",
+    "href": "Aula8.html#critério-de-informação-de-akaike-aic-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CRITÉRIO DE INFORMAÇÃO DE AKAIKE (AIC)",
+    "text": "CRITÉRIO DE INFORMAÇÃO DE AKAIKE (AIC)\n\n\nConsidere:\n\nUm determinado modelo estatístico ajustado aos dados\n\\(k\\) = número de parâmetros do modelo\n\\(\\hat{L}\\) = valor máximo da função de verossimilhança\n\nO valor do AIC é dado por:\n\n\\[AIC = 2k - 2\\ln(\\hat{L})\\]\n\nRegra de escolha: Dada uma coleção de modelos candidatos, o modelo com menor AIC é o escolhido de acordo com este critério\nO AIC bonifica a qualidade de ajuste (altos valores da verossimilhança) e penaliza a quantidade de parâmetros do modelo\nFornece uma métrica para comparação e seleção de modelos: menores valores de AIC representam maior qualidade e simplicidade"
+  },
+  {
+    "objectID": "Aula8.html#critério-de-informação-bayesiano-bic",
+    "href": "Aula8.html#critério-de-informação-bayesiano-bic",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CRITÉRIO DE INFORMAÇÃO BAYESIANO (BIC)",
+    "text": "CRITÉRIO DE INFORMAÇÃO BAYESIANO (BIC)\n\n\nConhecido como Critério de Informação Bayesiano (BIC)\nÉ uma métrica estatística para selecionar o melhor modelo em uma análise de dados\nBaseado na teoria da probabilidade bayesiana\nAmplamente utilizado em áreas como machine learning, deep learning e inteligência artificial\nBusca equilibrar a complexidade do modelo e a qualidade do ajuste, penalizando modelos mais complexos para evitar overfitting"
+  },
+  {
+    "objectID": "Aula8.html#critério-de-informação-bayesiano-bic-1",
+    "href": "Aula8.html#critério-de-informação-bayesiano-bic-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CRITÉRIO DE INFORMAÇÃO BAYESIANO (BIC)",
+    "text": "CRITÉRIO DE INFORMAÇÃO BAYESIANO (BIC)\n\n\nConsidere:\n\nModelo estatístico ajustado a \\(n\\) dados observados\n\\(k\\) = número de parâmetros do modelo\n\\(\\hat{L}\\) = valor máximo da função de verossimilhança\n\nO valor do BIC é dado por:\n\n\\[BIC = k \\cdot \\log(n) - 2\\ln(\\hat{L})\\]\n\nRegra de escolha: Dada uma coleção de modelos candidatos, o modelo com menor BIC é o escolhido de acordo com este critério"
+  },
+  {
+    "objectID": "Aula8.html#comparação-entre-aic-e-bic",
+    "href": "Aula8.html#comparação-entre-aic-e-bic",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARAÇÃO ENTRE AIC E BIC",
+    "text": "COMPARAÇÃO ENTRE AIC E BIC\n\n\nDiferença fundamental:\n\nAIC penaliza com \\(2k\\) (constante)\nBIC penaliza com \\(k \\cdot \\log(n)\\) (cresce com \\(n\\))\n\nConsequência:\n\nPara \\(n &gt; 7\\), \\(\\log(n) &gt; 2\\) → BIC penaliza mais que o AIC\nQuanto maior \\(n\\), maior a penalidade do BIC em relação ao AIC\n\nTanto o AIC como o BIC não fornecem uma medida de qualidade do modelo global, apenas relativa à comparação entre modelos candidatos\nSe todos os modelos propostos se ajustam mal aos dados, o AIC e BIC não explicitam tal fato"
+  },
+  {
+    "objectID": "Aula8.html#introdução-3",
+    "href": "Aula8.html#introdução-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nO Teste da Razão de Verossimilhança (TRV) é um método formal para comparar modelos aninhados (encaixados)\nUm modelo é aninhado dentro de outro quando é um caso particular deste\nEstrutura de modelos aninhados que vimos:\n\n(Exponencial, Weibull, Gama e Lognormal) ⊂ Gama Generalizado\n\nO modelo Gama Generalizado é o mais flexível (3 parâmetros) e generaliza os demais\nImplicação prática:\n\nO Gama Generalizado pode ser usado como modelo de partida\nTestamos hipóteses sobre os parâmetros para decidir se um modelo mais simples é suficiente"
+  },
+  {
+    "objectID": "Aula8.html#teste-trv---formulação-geral",
+    "href": "Aula8.html#teste-trv---formulação-geral",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TESTE TRV - FORMULAÇÃO GERAL",
+    "text": "TESTE TRV - FORMULAÇÃO GERAL\n\n\nConsidere:\n\nModelo complexo (Gama Generalizado): \\(p\\) parâmetros\nModelo simples (aninhado): \\(q\\) parâmetros, com \\(q &lt; p\\)\n\nHipóteses:\n\n\\(H_0\\): o modelo simples é mais adequado.\n\\(H_1\\): o modelo complexo é mais adequado.\n\n\nEstatística do teste: \\[\\Lambda = 2[\\ln L(\\text{complexo}) - \\ln L(\\text{simples})]\\]\nDistribuição sob \\(H_0\\): \\[\\Lambda \\sim \\chi^2_{df} \\quad \\text{com} \\quad df = p - q\\]"
+  },
+  {
+    "objectID": "Aula8.html#teste-trv---regra-de-decisão",
+    "href": "Aula8.html#teste-trv---regra-de-decisão",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TESTE TRV - REGRA DE DECISÃO",
+    "text": "TESTE TRV - REGRA DE DECISÃO\n\n\nProcedimento:\n\nAjustar o modelo complexo (Gama Generalizado) → obtenha \\(\\log L_{\\text{complexo}}\\)\nAjustar o modelo simples (Exponencial, Weibull, Gama ou Log-normal) → obtenha \\(\\log L_{\\text{simples}}\\)\nCalcular: \\(\\Lambda = 2(\\log L_{\\text{complexo}} - \\log L_{\\text{simples}})\\)\nComparar com o quantil da \\(\\chi^2\\) com \\(df = p - q\\)\n\nRegra de decisão:\n\nSe \\(\\Lambda &gt; \\chi^2_{df, 1-\\alpha}\\) → rejeita \\(H_0\\) → prefere o modelo complexo\nSe \\(\\Lambda \\leq \\chi^2_{df, 1-\\alpha}\\) → não rejeita \\(H_0\\) → modelo simples é suficiente"
+  },
+  {
+    "objectID": "Aula8.html#teste-trv---cuidados-e-limitações",
+    "href": "Aula8.html#teste-trv---cuidados-e-limitações",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TESTE TRV - CUIDADOS E LIMITAÇÕES",
+    "text": "TESTE TRV - CUIDADOS E LIMITAÇÕES\n\n\nAtenção:\n\nO TRV só é válido para modelos aninhados (um é caso particular do outro)\nNão pode ser usado para comparar, por exemplo, Weibull vs Log-normal (não são aninhados)"
+  },
+  {
+    "objectID": "Aula8.html#teste-de-kolmogorov-smirnov-para-dados-censurados",
+    "href": "Aula8.html#teste-de-kolmogorov-smirnov-para-dados-censurados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TESTE DE KOLMOGOROV-SMIRNOV PARA DADOS CENSURADOS",
+    "text": "TESTE DE KOLMOGOROV-SMIRNOV PARA DADOS CENSURADOS\n\n\nO teste de Kolmogorov-Smirnov (KS) é um clássico teste de aderência (goodness-of-fit) que compara:\n\nA distribuição empírica observada\nVersus uma distribuição teórica especificada\n\nProblema: A versão tradicional do teste KS não funciona na presença de censura\nSolução: Foram propostas adaptações para dados censurados à direita, como a versão de Fleming, O’Fallon e O’Brien (1980)"
+  },
+  {
+    "objectID": "Aula8.html#teste-ks-para-dados-censurados",
+    "href": "Aula8.html#teste-ks-para-dados-censurados",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TESTE KS PARA DADOS CENSURADOS",
+    "text": "TESTE KS PARA DADOS CENSURADOS\n\n\nImplementação no R: pacote GofCens com a função KScens()\nDistribuições suportadas: Exponencial, Weibull, Log-normal, Log-logística, Gumbel, Normal, Logística e Beta\n\nPor que não ensinaremos este teste neste curso?\n\nDepende de conhecimentos ainda não vistos: bootstrap e inferência não paramétrica avançada\nO cálculo dos p-valores geralmente requer reamostragem (bootstrap)\nPor razões didáticas, focaremos nos métodos anteriores (gráficos, AIC/BIC e TRV)\nFica como tópico complementar para estudos futuros"
+  },
+  {
+    "objectID": "Aula8.html#a-conversa-com-o-especialista",
+    "href": "Aula8.html#a-conversa-com-o-especialista",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A CONVERSA COM O ESPECIALISTA",
+    "text": "A CONVERSA COM O ESPECIALISTA\n\n\nNem toda escolha de modelo vem apenas de critérios estatísticos\nO conhecimento prático de quem conhece o fenômeno estudado é fundamental\nO especialista pode trazer informações que os dados, sozinhos, não revelam\nCombinar estatística + conhecimento de domínio → decisões mais robustas"
+  },
+  {
+    "objectID": "Aula8.html#o-que-o-especialista-pode-dizer",
+    "href": "Aula8.html#o-que-o-especialista-pode-dizer",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE O ESPECIALISTA PODE DIZER?",
+    "text": "O QUE O ESPECIALISTA PODE DIZER?\n\n\nSobre o processo de ocorrência do evento:\n\nA taxa de risco é constante ao longo do tempo? (Exponencial)\nA taxa de risco aumenta com o tempo? (Weibull com \\(\\gamma &gt; 1\\))\nA taxa de risco diminui com o tempo? (Weibull com \\(\\gamma &lt; 1\\))\nO risco é não monotônico (cresce e depois cai)? (Log-normal ou Gama Generalizado)\n\nSobre o fenômeno:\n\nExiste um período de amadurecimento inicial?\nComponentes envelhecem ou melhoram com o tempo?"
+  },
+  {
+    "objectID": "Aula8.html#como-extrair-informações",
+    "href": "Aula8.html#como-extrair-informações",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO EXTRAIR INFORMAÇÕES?",
+    "text": "COMO EXTRAIR INFORMAÇÕES?\n\nMesmo sem acesso direto a um especialista, vocês podem:\n\nLer a literatura técnica da área de aplicação (engenharia, medicina, biologia, etc.)\nBuscar artigos científicos que estudaram fenômenos semelhantes\nConversar com profissionais da área (supervisores de estágio, professores de outras disciplinas, profissionais do setor)\nObservar o comportamento empírico dos dados (via Kaplan Meier, gráficos de risco, etc.)\nConsultar relatórios técnicos e manuais de equipamentos"
+  },
+  {
+    "objectID": "Aula8.html#métodos-de-escolha---síntese-final",
+    "href": "Aula8.html#métodos-de-escolha---síntese-final",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MÉTODOS DE ESCOLHA - SÍNTESE FINAL",
+    "text": "MÉTODOS DE ESCOLHA - SÍNTESE FINAL\n\n\n\n\n\n\n\n\n\nMétodo\nTipo\nQuando usar\n\n\n\n\nGráfico (KM vs paramétrico)\nVisual\nDiagnóstico inicial\n\n\nLinearização\nVisual\nTestar Exponencial, Weibull, Log-normal\n\n\nAIC/BIC\nNumérico\nComparação objetiva entre modelos\n\n\nTeste da razão de verossimilhança\nTeste formal\nModelos aninhados\n\n\nTeste KS\nTeste formal\nTestar Exponencial, Weibull, Lognormal\n\n\nConversa com especialista\nQualitativo\nValidar plausibilidade do modelo\n\n\n\nRecomendação: Use múltiplos métodos e busque concordância entre eles"
+  },
+  {
+    "objectID": "Aula8.html#fim-da-seção",
+    "href": "Aula8.html#fim-da-seção",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FIM DA SEÇÃO",
+    "text": "FIM DA SEÇÃO\n\nResumo:\n\nEscolher o melhor modelo não é uma tarefa trivial\nCada método tem suas vantagens e limitações\nA decisão final deve combinar:\n\nEvidências estatísticas (AIC/BIC, TRV, gráficos)\nConhecimento prático (especialista)\nSimplicidade (parcimônia)\n\nNão existe método perfeito → use todos como ferramentas complementares"
+  },
+  {
     "objectID": "Aula6.html#narrativa",
     "href": "Aula6.html#narrativa",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
