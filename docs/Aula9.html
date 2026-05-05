@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
+
+  <meta name="author" content="Prof.&nbsp;Guilherme Veloso (guilhermev@id.uff.br)">
+  <title>ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="Capa.png" data-background-opacity="number" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title"><strong>ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE</strong></h1>
+  <p class="subtitle"><strong>MODELOS DE REGRESSÃO PARAMÉTRICOS</strong></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email">guilhermev@id.uff.br</a>) 
+</div>
+        <p class="quarto-title-affiliation">
+            Universidade Federal Fluminense
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="introdução" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>INTRODUÇÃO</strong></h1>
+
+</section>
+<section id="onde-estamos" class="slide level2">
+<h2><strong>ONDE ESTAMOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Até agora, <strong>modelamos</strong> o tempo de sobrevivência/confiabilidade <strong>sem considerar covariáveis</strong>.</li>
+<li>Aprendemos <strong>modelos paramétricos</strong> (Exponencial, Weibull, Log‑normal, Gama e Gama Generalizada) e suas <strong>funções associadas</strong>.</li>
+<li>Vimos <strong>estimação pontual e intervalar</strong> via máxima verossimilhança.</li>
+<li>Aprendemos <strong>alguns critérios</strong> de escolha do modelo paramétrico.</li>
+<li><strong>Próximo passo natural:</strong> Incorporar <strong>informações adicionais</strong> (covariáveis) para explicar as diferenças nos tempos observados.</li>
+</ul>
+</div>
+</section>
+<section id="perguntas-que-motivam-a-inclusão-de-covariáveis" class="slide level2">
+<h2><strong>PERGUNTAS QUE MOTIVAM A INCLUSÃO DE COVARIÁVEIS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Por exemplo, existem diferenças no tempo de sobrevivência</strong> conforme a <strong>doença de base</strong> causadora da insuficiência renal?</li>
+<li>É possível <strong>estimar o efeito da idade</strong> na sobrevivência de pacientes com determinada doença?</li>
+<li>Na <strong>AIDS</strong>, por exemplo, as contagens de <strong>CD4 e CD8</strong> no diagnóstico têm sido <strong>importantes fatores de prognóstico</strong>.</li>
+<li>Em <strong>confiabilidade</strong>: como <strong>temperatura, pressão, voltagem</strong> afetam o tempo de falha de um dispositivo?</li>
+</ul>
+</div>
+</section>
+<section id="limitação-das-técnicas-nãoparamétricas" class="slide level2">
+<h2><strong>LIMITAÇÃO DAS TÉCNICAS NÃO‑PARAMÉTRICAS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Não permitem a inclusão direta de covariáveis</strong> na análise.</li>
+<li>Foram úteis para <strong>descrever os dados</strong> pela simplicidade e facilidade de aplicação.</li>
+<li><strong>Mas:</strong> sem estrutura paramétrica, <strong>não conseguimos fazer análises mais elaboradas</strong> incluindo covariáveis.</li>
+</ul>
+</div>
+</section>
+<section id="uma-tentativa-simples-estratificação" class="slide level2">
+<h2><strong>UMA TENTATIVA SIMPLES: ESTRATIFICAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Dividir os dados em estratos</strong> conforme as covariáveis e usar técnicas não‑paramétricas.</li>
+<li><strong>Vantagens:</strong> Simplicidade e fácil entendimento.</li>
+<li><strong>Sérias limitações:</strong>
+<ul>
+<li>Muitas covariáveis <span class="math inline">\(\rightarrow\)</span> número grande de estratos <span class="math inline">\(\rightarrow\)</span> poucas (ou nenhuma) observações por estrato.</li>
+<li>Comparações ficam <strong>impossíveis</strong>.
+<ul>
+<li>O efeito das covariáveis é mais individualizado.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="solução-mais-eficiente" class="slide level2">
+<h2><strong>SOLUÇÃO MAIS EFICIENTE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Acomodar o efeito das covariáveis</strong> usando um <strong>modelo de regressão apropriado para dados censurados</strong>.</li>
+<li><strong>Agora</strong> vamos estender os <strong>modelos paramétricos</strong> que já conhecemos para incluir covariáveis.</li>
+<li><strong>Duas classes principais na literatura:</strong>
+<ol type="1">
+<li><strong>Modelos paramétricos</strong> (mais eficientes, menos flexíveis)</li>
+<li><strong>Modelos semiparamétricos</strong> (mais flexíveis, incluem o modelo de Cox)</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="o-caminho-que-vamos-seguir" class="slide level2">
+<h2><strong>O CAMINHO QUE VAMOS SEGUIR</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Hoje:</strong> Modelos de regressão <strong>paramétricos</strong>.
+<ul>
+<li>Adicionamos covariáveis à estrutura que já aprendemos.</li>
+<li>Mantemos a <strong>eficiência</strong> da abordagem paramétrica.</li>
+</ul></li>
+<li><strong>Parte final da disciplina:</strong> Modelos de regressão <strong>semiparamétricos</strong> (Cox).
+<ul>
+<li>Mais flexibilidade.</li>
+<li>Permitem incorporar <strong>covariáveis dependentes do tempo</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="modelos-de-regressão-paramétricos" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MODELOS DE REGRESSÃO PARAMÉTRICOS</strong></h1>
+
+</section>
+<section id="introdução-1" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Objetivo:</strong> Estimar o efeito de covariáveis sobre o tempo de sobrevivência (confiabilidade).</p></li>
+<li><p><strong>Estrutura do modelo tem dois componentes:</strong></p>
+<ul>
+<li><p><strong>Componente aleatório:</strong> descreve probabilisticamente o comportamento do tempo até o evento.</p></li>
+<li><p><strong>Componente sistemático (estrutural):</strong> descreve a relação entre os <strong>parâmetros da distribuição</strong> e as <strong>covariáveis</strong>.</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="relembrando-modelo-de-regressão-linear" class="slide level2">
+<h2><strong>RELEMBRANDO: MODELO DE REGRESSÃO LINEAR</strong></h2>
+<div class="box-blue">
+<ul>
+<li>A <strong>superfície de regressão</strong> é o <strong>componente determinístico</strong>.</li>
+<li>A <strong>variação em torno dessa superfície</strong> é o <strong>componente estocástico</strong>.</li>
+<li>No modelo linear clássico: componente estocástico tem <strong>distribuição normal</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="relembrando-representação-matricial" class="slide level2">
+<h2><strong>RELEMBRANDO: REPRESENTAÇÃO MATRICIAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Modelo de regressão linear múltiplo:</strong></li>
+</ul>
+<p><img data-src="images/REGRESS.png" style="width:60.0%"></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{Y}\)</span>: vetor <span class="math inline">\(n \times 1\)</span> com as respostas</li>
+<li><span class="math inline">\(\boldsymbol{X}\)</span>: matriz <span class="math inline">\(n \times (k+1)\)</span> com <span class="math inline">\(k\)</span> covariáveis (primeira coluna de 1’s)</li>
+<li><span class="math inline">\(\boldsymbol{\beta}\)</span>: vetor <span class="math inline">\((k+1) \times 1\)</span> de parâmetros</li>
+<li><span class="math inline">\(\boldsymbol{\epsilon}\)</span>: vetor de erros aleatórios</li>
+</ul>
+</div>
+</section>
+<section id="relembrando-função-de-verossimilhança" class="slide level2">
+<h2><strong>RELEMBRANDO: FUNÇÃO DE VEROSSIMILHANÇA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Supondo</strong> <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>: <span class="math display">\[Y_i \sim N(\boldsymbol{X_i}\boldsymbol{\beta}, \sigma^2)\]</span></p>
+<ul>
+<li><strong>Note</strong> como a estrutura determinística <span class="math inline">\(X_i\beta\)</span> substitui a média <span class="math inline">\(\mu_i\)</span> de cada observação</li>
+</ul></li>
+<li><p>Assim, a função de verossimilhança é dada por:</p>
+<p><span class="math display">\[L(\boldsymbol{\beta},\sigma^2)=\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{(y_i-\boldsymbol{X_i}\boldsymbol{\beta})^2}{2\sigma^2}\right\}\]</span></p>
+<ul>
+<li><strong>Estimação:</strong> Máxima Verossimilhança ou Mínimos Quadrados (coincidem neste caso).</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="por-que-não-usar-o-modelo-linear-diretamente" class="slide level2">
+<h2><strong>POR QUE NÃO USAR O MODELO LINEAR DIRETAMENTE?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Problemas com dados de sobrevivência:</strong></p>
+<ul>
+<li><strong>Censura:</strong> nem todos os tempos são observados completamente.</li>
+<li><strong>Assimetria:</strong> distribuição dos tempos é geralmente <strong>assimétrica</strong> (cauda à direita).</li>
+<li><strong>Normalidade inadequada:</strong> a distribuição normal não é apropriada para tempos positivos e assimétricos.</li>
+</ul></li>
+<li><p><strong>Conclusão:</strong> O modelo linear tradicional <strong>não pode ser aplicado diretamente</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="solução-para-dados-censurados" class="slide level2">
+<h2><strong>SOLUÇÃO PARA DADOS CENSURADOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Duas adaptações necessárias:</strong></p>
+<ol type="1">
+<li><strong>Componente determinístico não-linear nos parâmetros:</strong><span class="math inline">\(e^{\boldsymbol{X}\boldsymbol{\beta}}\)</span>
+<ul>
+<li>Garante tempos positivos</li>
+</ul></li>
+<li><strong>Distribuição assimétrica</strong> para o tempo de ocorrência do evento:
+<ul>
+<li>Weibull, Log‑normal, Exponencial , Gama, Gama Generalizada, etc.</li>
+</ul></li>
+</ol></li>
+<li><p><strong>Resultado:</strong> Modelos de regressão paramétricos para dados de sobrevivência.</p></li>
+</ul>
+</div>
+</section>
+<section id="visão-geral-da-abordagem" class="slide level2">
+<h2><strong>VISÃO GERAL DA ABORDAGEM</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><strong>Modelos paramétricos com covariáveis:</strong> a distribuição do tempo <span class="math inline">\(T\)</span> depende de <span class="math inline">\(\boldsymbol{X}\)</span> através de seus parâmetros.</p></li>
+<li><p><strong>Exemplo (modelo Weibull):</strong></p>
+<ul>
+<li>Função de risco: <span class="math inline">\(h(t|\boldsymbol{X}) = \lambda(\boldsymbol{X}) \, \gamma \, t^{\gamma-1}\)</span></li>
+<li>Frequentemente: <span class="math inline">\(\lambda(\boldsymbol{X}) = \exp(\boldsymbol{X}\boldsymbol{\beta})\)</span></li>
+</ul></li>
+<li><p><strong>Interpretação:</strong> as covariáveis <strong>aceleram ou desaceleram</strong> o tempo até o evento.</p></li>
+</ul>
+</div>
+</section>
+<section id="próximos-passos" class="slide level2">
+<h2><strong>PRÓXIMOS PASSOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Veremos <strong>casos particulares</strong> de modelos paramétricos com covariáveis.</li>
+<li>Aprenderemos a <strong>estimar</strong> e <strong>interpretar</strong> os coeficientes.</li>
+<li>Faremos <strong>inferência</strong> (testes de hipóteses e intervalos de confiança).</li>
+<li>Exemplos práticos com <strong>R</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="notação" class="slide level2">
+<h2><strong>NOTAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para os <strong>dados de sobrevivência/confiabilidade</strong>, considere <span class="math inline">\(T_i\)</span> a <strong>variável aleatória</strong> que representa o <strong>tempo até a ocorrência do evento de interesse</strong> do elemento <span class="math inline">\(i\)</span>.</p></li>
+<li><p>A essa <strong>variável aleatória</strong>, estão associadas as seguintes funções <strong>condicionais às covariáveis</strong>:</p>
+<ol type="1">
+<li><strong>Função densidade:</strong> <span class="math inline">\(f_i(t|\boldsymbol{x_i})\)</span></li>
+<li><strong>Função de sobrevivência (confiabilidade):</strong> <span class="math inline">\(S_i(t|\boldsymbol{x_i})\)</span></li>
+<li><strong>Função de risco:</strong> <span class="math inline">\(\lambda_i(t|\boldsymbol{x_i})\)</span></li>
+</ol></li>
+<li><p>O subscrito <span class="math inline">\(i\)</span> é <strong>justificado pelo fato</strong> de que <strong>cada elemento agora tem seu próprio vetor de covariáveis</strong> <span class="math inline">\(\boldsymbol{x_i}\)</span>, para <span class="math inline">\(i=1,2,\ldots,n\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="notação-1" class="slide level2">
+<h2><strong>NOTAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A <strong>função de verossimilhança</strong> (considerando censura) é dada por:</p>
+<p><span class="math display">\[L(\boldsymbol{\theta}) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}\]</span></p>
+<ul>
+<li><span class="math inline">\(\delta_i = 1\)</span> se o evento foi observado (ocorrência)</li>
+<li><span class="math inline">\(\delta_i = 0\)</span> se o tempo foi censurado</li>
+</ul></li>
+<li><p>Por simplificação, no contexto com covariáveis, serão vistos apenas os seguintes modelos de regressão:</p>
+<ul>
+<li>Modelo de regressão exponencial</li>
+<li>Modelo de regressão Weibull</li>
+<li>Modelo de regressão LogNormal</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="modelo-de-regressão-exponencial" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MODELO DE REGRESSÃO EXPONENCIAL</strong></h1>
+
+</section>
+<section id="introdução-2" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<p><strong>Relembrando o modelo probabilístico exponencial (sem covariáveis):</strong></p>
+<ul>
+<li><p><span class="math inline">\(T \sim \text{Exponencial}(\alpha)\)</span></p></li>
+<li><p><strong>Função densidade de probabilidade:</strong> <span class="math inline">\(f(t) = \alpha e^{-\alpha t}\)</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong> <span class="math inline">\(S(t) = e^{-\alpha t}\)</span></p></li>
+<li><p><strong>Função de risco:</strong> <span class="math inline">\(\lambda(t) = \alpha\)</span> (constante)</p></li>
+</ul>
+</div>
+</section>
+<section id="definição" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
+<p><span class="math display">\[T_i \sim \text{Exponencial}(\alpha_i), \quad i=1,2,\ldots,n\]</span></p>
+<p>onde <span class="math inline">\(\alpha_i\)</span> <strong>varia conforme os valores das covariáveis</strong> observadas para o elemento <span class="math inline">\(i\)</span>.</p></li>
+<li><p><strong>Restrição:</strong> o parâmetro <span class="math inline">\(\alpha_i\)</span> deve ser <strong>sempre positivo</strong> (<span class="math inline">\(\alpha_i &gt; 0\)</span>).</p></li>
+<li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>exponencialmente</strong>:</p>
+<p><span class="math display">\[\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="definição-1" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
+<p>Com <span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>, temos:</p>
+<ul>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f_i(t|\boldsymbol{x_i}) = e^{\boldsymbol{X_i}\boldsymbol{\beta}} \cdot e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} \cdot t}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S_i(t|\boldsymbol{x_i}) = e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} \cdot t}\]</span></p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\]</span></p>
+<p>(continua constante no tempo, mas agora <strong>varia entre indivíduos</strong>)</p></li>
+</ul>
+</div>
+</section>
+<section id="função-de-verossimilhança" class="slide level2">
+<h2><strong>FUNÇÃO DE VEROSSIMILHANÇA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta}) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>Substituindo as expressões:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta}) = \prod_{i=1}^n \left[e^{\boldsymbol{X_i}\boldsymbol{\beta}} \cdot e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} t_i}\right]^{\delta_i} \left[e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} t_i}\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>A <strong>estimação dos parâmetros</strong> <span class="math inline">\(\boldsymbol{\beta}\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong> (não existe solução fechada).</p></li>
+</ul>
+</div>
+</section>
+<section id="interpretação" class="slide level2 scrollable">
+<h2><strong>INTERPRETAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>No modelo exponencial com covariáveis, vimos que: <span class="math inline">\(\lambda_i(t|\boldsymbol{x_i}) = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p></li>
+<li><p><strong>Para uma covariável contínua <span class="math inline">\(x_j\)</span>:</strong></p>
+<ul>
+<li><span class="math inline">\(e^{\beta_j}\)</span> é o <strong>fator multiplicativo</strong> no risco para cada aumento de 1 unidade em <span class="math inline">\(x_j\)</span> (mantendo as demais fixas).</li>
+<li><strong>Exemplo:</strong> Se <span class="math inline">\(\beta_j = 0,5\)</span>, então <span class="math inline">\(e^{0,5} \approx 1,65\)</span> — risco aumenta 65% para cada unidade adicional.</li>
+</ul></li>
+<li><p>No modelo exponencial, o tempo médio é: <span class="math inline">\(\mathbb{E}[T_i|\boldsymbol{x_i}] = 1/\lambda_i = e^{-\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p>
+<ul>
+<li><strong>Consequência:</strong> <span class="math inline">\(\beta_j\)</span> positivo <span class="math inline">\(\rightarrow\)</span> maior risco <span class="math inline">\(\rightarrow\)</span> menor tempo médio de vida.</li>
+</ul></li>
+<li><p>Comparando dois indivíduos <span class="math inline">\(i\)</span> e <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[\frac{\lambda_i(t|\boldsymbol{x_i})}{\lambda_k(t|\boldsymbol{x_k})} = e^{(\boldsymbol{X_i} - \boldsymbol{X_k})\boldsymbol{\beta}}\]</span></p></li>
+<li><p><strong>Interpretação:</strong> A razão de riscos é <strong>constante no tempo</strong> (propriedade do modelo exponencial).</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="modelo-de-regressão-weibull" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MODELO DE REGRESSÃO WEIBULL</strong></h1>
+
+</section>
+<section id="introdução-3" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<p><strong>Relembrando o modelo probabilístico Weibull (sem covariáveis):</strong></p>
+<ul>
+<li><p><span class="math inline">\(T \sim \text{Weibull}(\kappa, \gamma)\)</span></p></li>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f(t) = \frac{\gamma t^{\gamma-1}}{\kappa^\gamma} e^{-\left(\frac{t}{\kappa}\right)^\gamma}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S(t) = e^{-\left(\frac{t}{\kappa}\right)^\gamma}\]</span></p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda(t) = \frac{\gamma t^{\gamma-1}}{\kappa^\gamma}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="definição-2" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
+<p><span class="math display">\[T_i \sim \text{Weibull}(\kappa_i, \gamma), \quad i=1,2,\ldots,n\]</span></p>
+<p>onde <span class="math inline">\(\kappa_i\)</span> <strong>varia conforme os valores das covariáveis</strong> observadas para o elemento <span class="math inline">\(i\)</span>.</p></li>
+<li><p><strong>Restrição:</strong> o parâmetro <span class="math inline">\(\kappa_i\)</span> deve ser <strong>sempre positivo</strong> (<span class="math inline">\(\kappa_i &gt; 0\)</span>).</p></li>
+<li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>exponencialmente</strong>:</p>
+<p><span class="math display">\[\kappa_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="importante" class="slide level2">
+<h2><strong>IMPORTANTE</strong></h2>
+<div class="box-blue">
+<ul>
+<li>As <strong>covariáveis geralmente afetam a escala</strong> do tempo de vida, não a forma básica do risco.
+<ul>
+<li><strong><span class="math inline">\(\alpha\)</span> (parâmetro de escala):</strong> alonga ou comprime o eixo do tempo.</li>
+<li><strong><span class="math inline">\(\gamma\)</span> (parâmetro de forma):</strong> determina o comportamento da função de risco (crescente, decrescente ou constante).</li>
+</ul></li>
+<li>Exemplo: Um tratamento pode <strong>acelerar ou desacelerar</strong> o tempo até a ocorrência (efeito de escala).
+<ul>
+<li>Mas a <strong>natureza do risco</strong> (se aumenta ou diminui com o tempo) tende a ser uma <strong>característica intrínseca do fenômeno</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="definição-3" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
+<p>Com <span class="math inline">\(\kappa_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>, temos:</p>
+<ul>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f_i(t|\boldsymbol{x_i}) = \frac{\gamma t^{\gamma-1}}{e^{\gamma \boldsymbol{X_i}\boldsymbol{\beta}}} e^{-\left(\frac{t}{e^{\boldsymbol{X_i}\boldsymbol{\beta}}}\right)^\gamma}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S_i(t|\boldsymbol{x_i}) = e^{-\left(\frac{t}{e^{\boldsymbol{X_i}\boldsymbol{\beta}}}\right)^\gamma}\]</span></p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = \frac{\gamma t^{\gamma-1}}{e^{\gamma \boldsymbol{X_i}\boldsymbol{\beta}}}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="função-de-verossimilhança-1" class="slide level2">
+<h2><strong>FUNÇÃO DE VEROSSIMILHANÇA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta},\gamma) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>Substituindo as expressões:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta},\gamma) = \prod_{i=1}^n \left[\frac{\gamma t_i^{\gamma-1}}{e^{\gamma \boldsymbol{X_i}\boldsymbol{\beta}}} e^{-\left(\frac{t_i}{e^{\boldsymbol{X_i}\boldsymbol{\beta}}}\right)^\gamma}\right]^{\delta_i} \left[e^{-\left(\frac{t_i}{e^{\boldsymbol{X_i}\boldsymbol{\beta}}}\right)^\gamma}\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>A <strong>estimação dos parâmetros</strong> <span class="math inline">\(\boldsymbol{\beta}\)</span> e <span class="math inline">\(\gamma\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-1" class="slide level2">
+<h2><strong>INTERPRETAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>No modelo Weibull: <span class="math inline">\(\lambda_i(t|\boldsymbol{x_i}) = \frac{\gamma t^{\gamma-1}}{e^{\gamma \boldsymbol{X_i}\boldsymbol{\beta}}} = \gamma t^{\gamma-1} \cdot e^{-\gamma \boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p></li>
+<li><p><strong>Para uma covariável contínua <span class="math inline">\(x_j\)</span>:</strong></p>
+<ul>
+<li><span class="math inline">\(e^{-\gamma \beta_j}\)</span> é o <strong>fator multiplicativo</strong> no risco <strong>para um dado tempo</strong> <span class="math inline">\(t\)</span>.</li>
+<li><strong>Cuidado:</strong> o efeito é o mesmo para todo <span class="math inline">\(t\)</span>? <strong>Sim!</strong> O Weibull preserva a <strong>proporcionalidade dos riscos</strong>.</li>
+</ul></li>
+<li><p>Comparando dois indivíduos <span class="math inline">\(i\)</span> e <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[\frac{\lambda_i(t|\boldsymbol{x_i})}{\lambda_k(t|\boldsymbol{x_k})} = e^{-\gamma (\boldsymbol{X_i} - \boldsymbol{X_k})\boldsymbol{\beta}}\]</span></p></li>
+<li><p>A razão de riscos é <strong>constante no tempo</strong> (propriedade do modelo Weibull).</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="modelo-de-regressão-lognormal" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MODELO DE REGRESSÃO LOGNORMAL</strong></h1>
+
+</section>
+<section id="introdução-4" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<p><strong>Relembrando o modelo probabilístico Log-normal (sem covariáveis)</strong></p>
+<ul>
+<li><p><span class="math inline">\(T \sim \text{Log-Normal}(\mu, \sigma)\)</span></p></li>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f(t) = \frac{1}{\sqrt{2\pi} \, t \, \sigma} e^{-\frac{1}{2}\left(\frac{\log(t) - \mu}{\sigma}\right)^2}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S(t) = \Phi\left(\frac{-\log(t) + \mu}{\sigma}\right)\]</span></p>
+<p>onde <span class="math inline">\(\Phi(\cdot)\)</span> é a função de distribuição acumulada da Normal padrão.</p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda(t) = \frac{f(t)}{S(t)}\]</span></p>
+<p>(não tem forma fechada simples)</p></li>
+</ul>
+</div>
+</section>
+<section id="definição-4" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
+<p><span class="math display">\[T_i \sim \text{Log-Normal}(\mu_i, \sigma), \quad i=1,2,\ldots,n\]</span></p>
+<p>onde <span class="math inline">\(\mu_i\)</span> <strong>varia conforme os valores das covariáveis</strong> observadas para o elemento <span class="math inline">\(i\)</span>.</p></li>
+<li><p><strong>Diferente do Weibull:</strong> o parâmetro <span class="math inline">\(\mu_i \in \mathbb{R}\)</span> (pode assumir qualquer valor real).</p></li>
+<li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>linearmente</strong> (não precisa da exponencial, pois <span class="math inline">\(\mu_i\)</span> já pode ser negativo):</p>
+<p><span class="math display">\[\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="importante-1" class="slide level2">
+<h2><strong>IMPORTANTE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>No modelo Log-normal, modelamos <strong><span class="math inline">\(\mu_i = \mathbb{E}[\log(T_i)|\boldsymbol{x_i}]\)</span></strong></p>
+<ul>
+<li><span class="math inline">\(\log(T_i)\)</span> tem distribuição <strong>Normal</strong>.</li>
+<li>A média da Normal (<span class="math inline">\(\mu_i\)</span>) pode ser <strong>qualquer número real</strong>.</li>
+<li><strong>Não há restrição de positividade!</strong></li>
+</ul></li>
+<li><p><strong>Comparação com modelos anteriores:</strong></p></li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 43%">
+<col style="width: 25%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Parâmetro modelado</th>
+<th>Restrição</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exponencial</td>
+<td><span class="math inline">\(\alpha_i\)</span> (taxa)</td>
+<td><span class="math inline">\(\alpha_i &gt; 0\)</span></td>
+<td><span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></td>
+</tr>
+<tr class="even">
+<td>Weibull</td>
+<td><span class="math inline">\(\alpha_i\)</span> (escala)</td>
+<td><span class="math inline">\(\alpha_i &gt; 0\)</span></td>
+<td><span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Log-normal</strong></td>
+<td><span class="math inline">\(\mu_i\)</span> (média do log)</td>
+<td><span class="math inline">\(\mu_i \in \mathbb{R}\)</span></td>
+<td><span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span> (linear)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Vantagem:</strong> interpretação mais direta dos coeficientes.</li>
+</ul>
+</div>
+</section>
+<section id="definição-5" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
+<p>Com <span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span> e parâmetro de escala <span class="math inline">\(\sigma\)</span> (comum), temos:</p>
+<ul>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f_i(t|\boldsymbol{x_i}) = \frac{1}{\sqrt{2\pi} \, t \, \sigma} e^{-\frac{1}{2}\left(\frac{\log(t) - \boldsymbol{X_i}\boldsymbol{\beta}}{\sigma}\right)^2}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S_i(t|\boldsymbol{x_i}) = \Phi\left(\frac{-\log(t) + \boldsymbol{X_i}\boldsymbol{\beta}}{\sigma}\right)\]</span></p>
+<p>onde <span class="math inline">\(\Phi(\cdot)\)</span> é a função de distribuição acumulada da Normal padrão.</p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = \frac{f_i(t|\boldsymbol{x_i})}{S_i(t|\boldsymbol{x_i})}\]</span></p>
+<p>(não tem forma fechada simples, mas pode ser calculada numericamente)</p></li>
+</ul>
+</div>
+</section>
+<section id="função-de-verossimilhança-2" class="slide level2">
+<h2><strong>FUNÇÃO DE VEROSSIMILHANÇA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta},\sigma) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>Substituindo as expressões:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \, \sigma} e^{-\frac{1}{2}\left(\frac{\log(t_i) - \boldsymbol{X_i}\boldsymbol{\beta}}{\sigma}\right)^2}\right]^{\delta_i} \times \left[\Phi\left(\frac{-\log(t_i) + \boldsymbol{X_i}\boldsymbol{\beta}}{\sigma}\right)\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>A <strong>estimação</strong> dos parâmetros <span class="math inline">\(\boldsymbol{\beta}\)</span> e <span class="math inline">\(\sigma\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-2" class="slide level2">
+<h2><strong>INTERPRETAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p><span class="math inline">\(\beta_j\)</span> mede o <strong>efeito no log-tempo médio</strong>:</p>
+<p><span class="math display">\[\mathbb{E}[\log(T_i)|\boldsymbol{x_i}] = \boldsymbol{X_i}\boldsymbol{\beta}\]</span></p></li>
+<li><p><strong>Para uma covariável contínua <span class="math inline">\(x_j\)</span>:</strong></p>
+<ul>
+<li><p><span class="math inline">\(\beta_j\)</span> é a <strong>variação esperada</strong> em <span class="math inline">\(\log(T)\)</span> para cada aumento de 1 unidade em <span class="math inline">\(x_j\)</span>.</p></li>
+<li><p><strong>Exemplo:</strong> Se <span class="math inline">\(\beta_j = 0,5\)</span>, aumentar <span class="math inline">\(x_j\)</span> em 1 unidade aumenta <span class="math inline">\(\log(T)\)</span> em 0,5 <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(T\)</span> é multiplicado por <span class="math inline">\(e^{0,5} \approx 1,65\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Diferente do Weibull:</strong> o Log-normal <strong>não</strong> tem riscos proporcionais.</p></li>
+<li><p>A razão de riscos <strong>varia com o tempo</strong>:</p>
+<ul>
+<li>Pode ser <span class="math inline">\(&gt;1\)</span> para alguns <span class="math inline">\(t\)</span> e <span class="math inline">\(&lt;1\)</span> para outros.</li>
+<li>As curvas de sobrevivência <strong>podem se cruzar</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="modelo-de-regressão-gama" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MODELO DE REGRESSÃO GAMA</strong></h1>
+
+</section>
+<section id="modelo-de-regressão-gama-1" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
+<section id="relembrando-o-modelo-probabilístico-gama-sem-covariáveis" class="box-blue">
+<h3><strong>Relembrando o modelo probabilístico Gama (sem covariáveis)</strong></h3>
+<ul>
+<li><p><span class="math inline">\(T \sim \text{Gama}(\alpha, \beta)\)</span>, com <span class="math inline">\(\alpha &gt; 0\)</span> (forma) e <span class="math inline">\(\beta &gt; 0\)</span> (taxa)</p></li>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f(t) = \frac{\beta^\alpha}{\Gamma(\alpha)} t^{\alpha-1} e^{-\beta t}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S(t) = 1 - F(t) = 1 - \frac{\gamma(\alpha, \beta t)}{\Gamma(\alpha)}\]</span></p>
+<p>onde <span class="math inline">\(\gamma(\alpha, \beta t)\)</span> é a função gama incompleta.</p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda(t) = \frac{f(t)}{S(t)}\]</span></p>
+<p>(não tem forma fechada simples)</p></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-2" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
+<section id="definição-com-covariáveis" class="box-blue">
+<h3><strong>Definição com covariáveis</strong></h3>
+<ul>
+<li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
+<p><span class="math display">\[T_i \sim \text{Gama}(\alpha, \beta_i), \quad i=1,2,\ldots,n\]</span></p>
+<p>onde <span class="math inline">\(\beta_i\)</span> <strong>varia conforme os valores das covariáveis</strong> observadas para o elemento <span class="math inline">\(i\)</span>.</p></li>
+<li><p><strong>Parâmetro de forma <span class="math inline">\(\alpha\)</span> é comum</strong> a todos os indivíduos.</p></li>
+<li><p><strong>Restrição:</strong> <span class="math inline">\(\beta_i &gt; 0\)</span> (parâmetro de taxa).</p></li>
+<li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>exponencialmente</strong>:</p>
+<p><span class="math display">\[\beta_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-3" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
+<section id="por-que-modelar-beta-e-não-alpha" class="box-blue">
+<h3><strong>Por que modelar <span class="math inline">\(\beta\)</span> e não <span class="math inline">\(\alpha\)</span>?</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 24%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parâmetro</th>
+<th>Papel</th>
+<th>Modelagem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\beta\)</span> (taxa)</td>
+<td>Escala do tempo</td>
+<td>Afeta o <strong>tempo médio</strong>: <span class="math inline">\(\mathbb{E}[T] = \alpha/\beta\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span> (forma)</td>
+<td>Comportamento do risco</td>
+<td>Determina se o risco é <strong>decrescente</strong> (<span class="math inline">\(\alpha&lt;1\)</span>), <strong>constante</strong> (<span class="math inline">\(\alpha=1\)</span>) ou <strong>crescente</strong> (<span class="math inline">\(\alpha&gt;1\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Mesma lógica do Weibull:</strong> covariáveis afetam a <strong>escala</strong> (tempo de vida), não a <strong>forma</strong> do risco.</p></li>
+<li><p>Modelagem alternativa (menos comum): <span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span> mantendo <span class="math inline">\(\beta\)</span> comum.</p></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-4" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
+<section id="funções-para-t_i-boldsymbolx_i" class="box-blue">
+<h3><strong>Funções para <span class="math inline">\(T_i\)</span> | <span class="math inline">\(\boldsymbol{x_i}\)</span></strong></h3>
+<p>Com <span class="math inline">\(\beta_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span> e <span class="math inline">\(\alpha\)</span> comum, temos:</p>
+<ul>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f_i(t|\boldsymbol{x_i}) = \frac{e^{\alpha \boldsymbol{X_i}\boldsymbol{\beta}}}{\Gamma(\alpha)} t^{\alpha-1} e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} t}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S_i(t|\boldsymbol{x_i}) = 1 - \frac{\gamma(\alpha, e^{\boldsymbol{X_i}\boldsymbol{\beta}} t)}{\Gamma(\alpha)}\]</span></p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = \frac{f_i(t|\boldsymbol{x_i})}{S_i(t|\boldsymbol{x_i})} = \frac{e^{\alpha \boldsymbol{X_i}\boldsymbol{\beta}} t^{\alpha-1} e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} t}}{\Gamma(\alpha) - \gamma(\alpha, e^{\boldsymbol{X_i}\boldsymbol{\beta}} t)}\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-5" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
+<section id="função-de-verossimilhança-3" class="box-blue">
+<h3><strong>Função de Verossimilhança</strong></h3>
+<ul>
+<li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta},\alpha) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>Substituindo as expressões:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta},\alpha) = \prod_{i=1}^n \left[\frac{e^{\alpha \boldsymbol{X_i}\boldsymbol{\beta}}}{\Gamma(\alpha)} t_i^{\alpha-1} e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} t_i}\right]^{\delta_i} \left[1 - \frac{\gamma(\alpha, e^{\boldsymbol{X_i}\boldsymbol{\beta}} t_i)}{\Gamma(\alpha)}\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>A <strong>estimação</strong> dos parâmetros <span class="math inline">\(\boldsymbol{\beta}\)</span> e <span class="math inline">\(\alpha\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong>.</p></li>
+</ul>
+</section>
+</section>
+<section id="interpretação-das-covariáveis-no-modelo-gama" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA</strong></h2>
+<div class="box-blue">
+<h3 id="efeito-no-tempo-médio"><strong>Efeito no tempo médio</strong></h3>
+<ul>
+<li><p>Para a Gama: <span class="math inline">\(\mathbb{E}[T_i|\boldsymbol{x_i}] = \frac{\alpha}{\beta_i} = \alpha e^{-\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p></li>
+<li><p><strong>Interpretação:</strong> <span class="math inline">\(e^{-\beta_j}\)</span> é o <strong>fator multiplicativo</strong> no tempo médio para cada aumento de 1 unidade em <span class="math inline">\(x_j\)</span>.</p></li>
+</ul>
+<h3 id="efeito-no-risco-hazard"><strong>Efeito no risco (hazard)</strong></h3>
+<ul>
+<li><p><strong>Diferente do Weibull:</strong> a Gama <strong>não</strong> tem riscos proporcionais (exceto quando <span class="math inline">\(\alpha=1\)</span>, que é o caso exponencial).</p></li>
+<li><p>A razão de riscos <strong>varia com o tempo</strong>.</p></li>
+<li><p><strong>Comportamento do risco depende de <span class="math inline">\(\alpha\)</span>:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\alpha &lt; 1\)</span></th>
+<th><span class="math inline">\(\alpha = 1\)</span></th>
+<th><span class="math inline">\(\alpha &gt; 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Risco decrescente</td>
+<td>Risco constante</td>
+<td>Risco crescente</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h3 id="relação-com-outros-modelos"><strong>Relação com outros modelos</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caso especial</th>
+<th>Parâmetros</th>
+<th>Modelo resultante</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\alpha = 1\)</span></td>
+<td>Gama(1, <span class="math inline">\(\beta\)</span>)</td>
+<td><strong>Exponencial</strong></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span> inteiro</td>
+<td>Gama(<span class="math inline">\(k\)</span>, <span class="math inline">\(\beta\)</span>)</td>
+<td><strong>Erlang</strong> (soma de exponenciais)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\alpha \to \infty\)</span></td>
+<td>Gama(<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta=\alpha/\mu\)</span>)</td>
+<td>Aproxima <strong>Normal</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="resumo-da-interpretação"><strong>Resumo da interpretação</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 13%">
+<col style="width: 20%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Gama</th>
+<th>Weibull</th>
+<th>Log-normal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Riscos proporcionais</td>
+<td><strong>Não</strong> (exceto <span class="math inline">\(\alpha=1\)</span>)</td>
+<td><strong>Sim</strong></td>
+<td><strong>Não</strong></td>
+</tr>
+<tr class="even">
+<td>Curvas podem cruzar</td>
+<td><strong>Sim</strong></td>
+<td><strong>Não</strong></td>
+<td><strong>Sim</strong></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(e^{\beta_j}\)</span> interpreta</td>
+<td>Fator no tempo médio</td>
+<td>Fator no percentil</td>
+<td>Fator na mediana</td>
+</tr>
+<tr class="even">
+<td>Parâmetro de forma</td>
+<td><span class="math inline">\(\alpha\)</span> (risco monótono)</td>
+<td><span class="math inline">\(\gamma\)</span> (risco monótono)</td>
+<td><span class="math inline">\(\sigma\)</span> (simetria no log)</td>
+</tr>
+<tr class="odd">
+<td>Caso especial</td>
+<td>Exponencial (<span class="math inline">\(\alpha=1\)</span>)</td>
+<td>Exponencial (<span class="math inline">\(\gamma=1\)</span>)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quando-usar-gama"><strong>Quando usar Gama?</strong></h3>
+<ul>
+<li>Curvas de Kaplan-Meier <strong>se cruzam</strong>.</li>
+<li>O risco é <strong>monótono</strong> (crescente ou decrescente) mas <strong>não proporcional</strong>.</li>
+<li>Deseja-se um modelo mais flexível que o Weibull (forma do risco pode ser mais geral).</li>
+<li>Os dados sugerem <strong>cauda mais pesada</strong> que a Log-normal.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="modelo-de-regressão-gama-generalizado" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h1>
+
+</section>
+<section id="modelo-de-regressão-gama-generalizado-1" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
+<section id="relembrando-o-modelo-probabilístico-gama-generalizado-sem-covariáveis" class="box-blue">
+<h3><strong>Relembrando o modelo probabilístico Gama Generalizado (sem covariáveis)</strong></h3>
+<ul>
+<li><p><span class="math inline">\(T \sim \text{GG}(\alpha, \beta, \kappa)\)</span></p></li>
+<li><p><strong>Características:</strong></p>
+<ul>
+<li>Modelo de <strong>3 parâmetros</strong> (forma, escala, e um parâmetro adicional de forma)</li>
+<li><strong>Flexibilidade maior</strong> que os modelos anteriores</li>
+<li>Inclui como casos especiais: <strong>Exponencial, Weibull, Gama e Log-normal</strong></li>
+</ul></li>
+<li><p><strong>Função densidade de probabilidade (parametrização comum):</strong></p>
+<p><span class="math display">\[f(t) = \frac{\beta e^{\kappa \alpha} (\beta t)^{\alpha \kappa - 1} e^{-(\beta t)^\alpha}}{\Gamma(\kappa)}\]</span></p>
+<p>ou na forma logarítmica (mais comum em regressão):</p>
+<p><span class="math display">\[f(t) = \frac{|\alpha|}{\sigma t \Gamma(\theta)} \left(\frac{t}{e^{\mu}}\right)^{\alpha \theta} e^{-\left(\frac{t}{e^{\mu}}\right)^\alpha}\]</span></p></li>
+<li><p><strong>Casos especiais (dependendo dos parâmetros):</strong></p></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Condição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exponencial</td>
+<td><span class="math inline">\(\alpha = 1\)</span>, <span class="math inline">\(\kappa = 1\)</span></td>
+</tr>
+<tr class="even">
+<td>Weibull</td>
+<td><span class="math inline">\(\kappa = 1\)</span></td>
+</tr>
+<tr class="odd">
+<td>Gama</td>
+<td><span class="math inline">\(\alpha = 1\)</span></td>
+</tr>
+<tr class="even">
+<td>Log-normal</td>
+<td><span class="math inline">\(\alpha \to 0\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-generalizado-2" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
+<section id="definição-com-covariáveis-1" class="box-blue">
+<h3><strong>Definição com covariáveis</strong></h3>
+<ul>
+<li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
+<p><span class="math display">\[T_i \sim \text{GG}(\mu_i, \sigma, \lambda), \quad i=1,2,\ldots,n\]</span></p>
+<p>(parametrização em termos de <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\lambda\)</span> - mais comum em regressão)</p></li>
+<li><p><strong>Parâmetros:</strong></p>
+<ul>
+<li><span class="math inline">\(\mu_i\)</span> (posição) → modelado em função das covariáveis</li>
+<li><span class="math inline">\(\sigma\)</span> (escala parâmetro) → comum a todos</li>
+<li><span class="math inline">\(\lambda\)</span> (forma parâmetro) → comum a todos</li>
+</ul></li>
+<li><p><strong>Solução natural:</strong> <span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span> (link linear, pois <span class="math inline">\(\mu_i \in \mathbb{R}\)</span>)</p></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-generalizado-3" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
+<section id="por-que-usar-o-gama-generalizado" class="box-blue">
+<h3><strong>Por que usar o Gama Generalizado?</strong></h3>
+<ul>
+<li><strong>Vantagens:</strong>
+<ul>
+<li>Modelo mais <strong>flexível</strong> da família paramétrica</li>
+<li><strong>Teste de hipóteses</strong> para escolher modelos aninhados:
+<ul>
+<li><span class="math inline">\(H_0: \lambda = 1\)</span> → modelo Gama</li>
+<li><span class="math inline">\(H_0: \lambda = 1\)</span> e <span class="math inline">\(\sigma = 1\)</span> (dependendo da parametrização) → Weibull</li>
+<li><span class="math inline">\(H_0: \lambda \to 0\)</span> → Log-normal</li>
+</ul></li>
+</ul></li>
+<li><strong>Desvantagens:</strong>
+<ul>
+<li>Mais <strong>complexo</strong> (3 parâmetros)</li>
+<li><strong>Convergência numérica</strong> pode ser problemática</li>
+<li>Amostras <strong>pequenas</strong> podem trazer instabilidade</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-generalizado-4" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
+<section id="funções-para-t_i-boldsymbolx_i-parametrização-logarítmica" class="box-blue">
+<h3><strong>Funções para <span class="math inline">\(T_i\)</span> | <span class="math inline">\(\boldsymbol{x_i}\)</span> (parametrização logarítmica)</strong></h3>
+<p>Com <span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span>, <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\lambda\)</span> comuns:</p>
+<ul>
+<li><p><strong>Função densidade de probabilidade:</strong></p>
+<p><span class="math display">\[f_i(t|\boldsymbol{x_i}) = \frac{|\lambda|}{\sigma t \,\Gamma(\lambda^{-2})} \left(\frac{\lambda^2 t}{e^{\mu_i}}\right)^{\lambda^{-2}} e^{-\lambda^{-2} \left(\frac{t}{e^{\mu_i}}\right)^\lambda}\]</span></p></li>
+<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
+<p><span class="math display">\[S_i(t|\boldsymbol{x_i}) = 1 - F_i(t|\boldsymbol{x_i})\]</span></p>
+<p>(expressa em termos da função gama incompleta)</p></li>
+<li><p><strong>Função de risco:</strong></p>
+<p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = \frac{f_i(t|\boldsymbol{x_i})}{S_i(t|\boldsymbol{x_i})}\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="modelo-de-regressão-gama-generalizado-5" class="slide level2">
+<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
+<section id="função-de-verossimilhança-4" class="box-blue">
+<h3><strong>Função de Verossimilhança</strong></h3>
+<ul>
+<li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
+<p><span class="math display">\[
+L(\boldsymbol{\beta}, \sigma, \lambda) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}
+\]</span></p></li>
+<li><p>A <strong>estimação</strong> dos parâmetros <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\lambda\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong>.</p></li>
+<li><p><strong>Atenção:</strong> A verossimilhança do Gama Generalizado pode ser <strong>instável</strong> para certos valores de <span class="math inline">\(\lambda\)</span>, exigindo <strong>valores iniciais adequados</strong>.</p></li>
+</ul>
+</section>
+</section>
+<section id="interpretação-das-covariáveis-no-modelo-gama-generalizado" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA GENERALIZADO</strong></h2>
+<div class="box-blue">
+<h3 id="efeito-no-tempo-de-vida"><strong>Efeito no tempo de vida</strong></h3>
+<ul>
+<li><p><span class="math inline">\(\beta_j\)</span> mede o <strong>efeito no log-tempo</strong> (similar ao Log-normal):</p>
+<p><span class="math display">\[\mu_i = \boldsymbol{X_i}\boldsymbol{\beta} = \mathbb{E}[\log(T_i)|\boldsymbol{x_i}]\]</span></p></li>
+<li><p><strong>Interpretação direta:</strong> <span class="math inline">\(e^{\beta_j}\)</span> é o <strong>fator multiplicativo</strong> no percentil da distribuição.</p></li>
+</ul>
+<h3 id="efeito-no-risco-hazard-1"><strong>Efeito no risco (hazard)</strong></h3>
+<ul>
+<li><p><strong>Depende dos parâmetros de forma</strong> (<span class="math inline">\(\lambda\)</span> e <span class="math inline">\(\sigma\)</span>):</p>
+<ul>
+<li><span class="math inline">\(\lambda &gt; 0\)</span>: risco pode ser crescente, decrescente ou em forma de U</li>
+<li><span class="math inline">\(\lambda &lt; 0\)</span>: risco pode ser decrescente ou em forma de sino invertido</li>
+<li><span class="math inline">\(\lambda \to 0\)</span>: aproxima o Log-normal (risco não monótono)</li>
+</ul></li>
+</ul>
+<h3 id="comparação-entre-modelos"><strong>Comparação entre modelos</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 19%">
+<col style="width: 34%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Parâmetros</th>
+<th>Riscos proporcionais?</th>
+<th>Curvas podem cruzar?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gama Generalizado</td>
+<td><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\lambda\)</span></td>
+<td><strong>Não</strong> (geralmente)</td>
+<td><strong>Sim</strong></td>
+</tr>
+<tr class="even">
+<td>Weibull</td>
+<td><span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\gamma\)</span></td>
+<td><strong>Sim</strong></td>
+<td><strong>Não</strong></td>
+</tr>
+<tr class="odd">
+<td>Log-normal</td>
+<td><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span></td>
+<td><strong>Não</strong></td>
+<td><strong>Sim</strong></td>
+</tr>
+<tr class="even">
+<td>Gama</td>
+<td><span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span></td>
+<td><strong>Não</strong></td>
+<td><strong>Sim</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="quando-usar-gama-generalizado"><strong>Quando usar Gama Generalizado?</strong></h3>
+<ul>
+<li>Você <strong>não tem certeza</strong> qual modelo paramétrico é o mais adequado.</li>
+<li>Deseja <strong>testar formalmente</strong> entre modelos aninhados (Weibull, Gama, Log-normal).</li>
+<li>Amostra <strong>suficientemente grande</strong> (estabiliza a estimação dos 3 parâmetros).</li>
+<li>Os dados apresentam <strong>comportamento complexo</strong> do risco (ex: risco crescente e depois decrescente).</li>
+</ul>
+<h3 id="resumo-da-interpretação-1"><strong>Resumo da interpretação</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Gama Generalizado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(e^{\beta_j}\)</span> interpreta</td>
+<td>Fator multiplicativo no percentil</td>
+</tr>
+<tr class="even">
+<td>Riscos proporcionais?</td>
+<td><strong>Não</strong> (em geral)</td>
+</tr>
+<tr class="odd">
+<td>Flexibilidade</td>
+<td><strong>Máxima</strong> entre os paramétricos</td>
+</tr>
+<tr class="even">
+<td>Complexidade</td>
+<td><strong>Alta</strong> (3 parâmetros)</td>
+</tr>
+<tr class="odd">
+<td>Uso recomendado</td>
+<td>Amostras <strong>grandes</strong> e <strong>comparação</strong> entre modelos</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="escolha-do-modelo-visão-geral" class="slide level2">
+<h2><strong>ESCOLHA DO MODELO: VISÃO GERAL</strong></h2>
+<div class="box-blue">
+<h3 id="hierarquia-dos-modelos-paramétricos"><strong>Hierarquia dos modelos paramétricos</strong></h3>
+<p><span class="math display">\[
+\text{Exponencial} \subset \text{Weibull} \subset \text{Gama Generalizado}
+\]</span> <span class="math display">\[
+\text{Exponencial} \subset \text{Gama} \subset \text{Gama Generalizado}
+\]</span> <span class="math display">\[
+\text{Log-normal} \subset \text{Gama Generalizado} \ (\text{quando } \lambda \to 0)
+\]</span></p>
+<h3 id="critérios-para-escolha"><strong>Critérios para escolha</strong></h3>
+<ol type="1">
+<li><strong>AIC / BIC</strong> (menor valor → melhor ajuste)</li>
+<li><strong>Teste de razão de verossimilhanças</strong> (para modelos aninhados)</li>
+<li><strong>Análise gráfica de resíduos</strong> (Cox-Snell, martingale, deviance)</li>
+<li><strong>Contexto do problema</strong> (interpretabilidade do modelo)</li>
+</ol>
+<h3 id="recomendação-prática"><strong>Recomendação prática</strong></h3>
+<ul>
+<li>Comece com <strong>Weibull</strong> (risco proporcional, interpretação direta)</li>
+<li>Se cruzar curvas → <strong>Log-normal</strong> ou <strong>Gama</strong></li>
+<li>Se amostra grande e incerteza → <strong>Gama Generalizado</strong> (teste os casos especiais)</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="intervalos-de-confiança-e-testes-de-hipótese" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>INTERVALOS DE CONFIANÇA E TESTES DE HIPÓTESE</strong></h1>
+
+</section>
+<section id="intervalos-de-confiança" class="slide level2">
+<h2><strong>INTERVALOS DE CONFIANÇA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O <strong>mesmo raciocínio</strong> visto para a construção de <strong>intervalos de confiança</strong> para os parâmetros do <strong>modelo sem covariável</strong> se <strong>estende</strong> aos <strong>modelos com covariáveis</strong>.</p></li>
+<li><p>Um <strong>intervalo de confiança</strong> para cada parâmetro <span class="math inline">\(\beta_j\)</span> (nível de confiança <span class="math inline">\(1-\alpha\)</span>) é dado por:</p>
+<p><span class="math display">\[\hat{\beta_j} \pm z_{\alpha/2} \cdot \sqrt{\widehat{\text{Var}}(\hat{\beta_j})}\]</span></p>
+<p>onde:</p>
+<ul>
+<li><span class="math inline">\(\hat{\beta_j}\)</span> é a estimativa pontual (máxima verossimilhança)</li>
+<li><span class="math inline">\(z_{\alpha/2}\)</span> é o quantil da distribuição Normal padrão</li>
+<li><span class="math inline">\(\sqrt{\widehat{\text{Var}}(\hat{\beta_j})}\)</span> é o <strong>erro padrão</strong> da estimativa (extraído da matriz de variâncias-covariâncias)</li>
+</ul></li>
+<li><p><strong>Interpretação:</strong> Com <span class="math inline">\(1-\alpha\)</span> de confiança, o verdadeiro valor de <span class="math inline">\(\beta_j\)</span> está dentro do intervalo.</p></li>
+<li><p><strong>Na prática:</strong> Extraímos os erros padrão da <strong>matriz Hessiana</strong> (inverso da matriz de informações observada).</p></li>
+</ul>
+</div>
+</section>
+<section id="testes-de-hipóteses" class="slide level2">
+<h2><strong>TESTES DE HIPÓTESES</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Para conduzir o <strong>teste de hipótese</strong> para cada parâmetro <span class="math inline">\(\beta_j\)</span>:</p>
+<p><span class="math display">\[H_0: \beta_j = b_0 \quad \text{vs} \quad H_1: \beta_j \neq b_0\]</span></p></li>
+<li><p>A <strong>estatística do teste de Wald</strong> é:</p>
+<p><span class="math display">\[W = \frac{(\hat{\beta_j} - b_0)^2}{\text{Var}(\hat{\beta_j})}\]</span></p></li>
+<li><p><strong>Distribuição sob <span class="math inline">\(H_0\)</span>:</strong> Qui-quadrado com <strong>1 grau de liberdade</strong>:</p>
+<p><span class="math display">\[W \sim \chi^2_{(1)}\]</span></p></li>
+<li><p><strong>Decisão:</strong> Rejeitamos <span class="math inline">\(H_0\)</span> se <span class="math inline">\(W &gt; \chi^2_{1;1-\alpha}\)</span> (valor crítico) ou se <strong>p-valor</strong> <span class="math inline">\(&lt; \alpha\)</span>.</p></li>
+<li><p>A <strong>raiz quadrada</strong> da estatística de Wald:</p>
+<p><span class="math display">\[Z = \sqrt{W} = \frac{\hat{\beta_j} - b_0}{\sqrt{\text{Var}(\hat{\beta_j})}}\]</span></p></li>
+<li><p><strong>Possui distribuição Normal padrão</strong> sob <span class="math inline">\(H_0\)</span>:</p>
+<p><span class="math display">\[Z \sim N(0,1)\]</span></p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="interpretação-dos-coeficientes" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h1>
+
+</section>
+<section id="interpretação-dos-coeficientes-1" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h2>
+<div class="box-blue">
+<h3 id="variável-qualitativa-binária"><strong>Variável Qualitativa (Binária)</strong></h3>
+<ul>
+<li><p>Uma <strong>proposta razoável de interpretação</strong> é fazer uso da <strong>razão de tempos medianos</strong> (Hosmer e Lemeshow, 1999).</p></li>
+<li><p>Para uma <strong>covariável binária</strong> <span class="math inline">\(x_j\)</span> (0 = ausência, 1 = presença), a <strong>razão de tempos medianos</strong> é:</p>
+<p><span class="math display">\[\frac{t_{0,5}(x=1,\hat{\boldsymbol{\beta}})}{t_{0,5}(x=0,\hat{\boldsymbol{\beta}})} = e^{\hat{\beta_j}}\]</span></p></li>
+<li><p><strong>Interpretação:</strong> <span class="math inline">\(e^{\hat{\beta_j}}\)</span> é o <strong>fator multiplicativo</strong> na mediana do tempo de sobrevivência quando a característica está presente (comparado à sua ausência).</p></li>
+</ul>
+<h3 id="exemplo-variável-qualitativa"><strong>Exemplo (Variável Qualitativa)</strong></h3>
+<ul>
+<li><p><strong>Contexto:</strong> Estudo de sobrevivência de pacientes com câncer.</p></li>
+<li><p><strong>Covariável:</strong> Tratamento (0 = Placebo, 1 = Novo medicamento)</p></li>
+<li><p><strong>Resultado do ajuste:</strong> <span class="math inline">\(\hat{\beta} = 0,5\)</span></p>
+<p><span class="math display">\[e^{0,5} \approx 1,65\]</span></p></li>
+<li><p><strong>Interpretação:</strong> Pacientes que receberam o <strong>novo medicamento</strong> têm <strong>mediana de sobrevivência 65% maior</strong> do que pacientes do grupo placebo.</p></li>
+<li><p><strong>Atenção:</strong> Essa interpretação se <strong>estende</strong> a <strong>variáveis qualitativas com mais de duas categorias</strong> (usando categorias de referência).</p></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-dos-coeficientes-2" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h2>
+<div class="box-blue">
+<h3 id="variável-quantitativa-contínua"><strong>Variável Quantitativa (Contínua)</strong></h3>
+<ul>
+<li><p>Para uma <strong>variável contínua</strong> <span class="math inline">\(x_j\)</span>, a <strong>razão de tempos medianos</strong> é:</p>
+<p><span class="math display">\[\frac{t_{0,5}(x = c+1,\hat{\boldsymbol{\beta}})}{t_{0,5}(x = c,\hat{\boldsymbol{\beta}})} = e^{\hat{\beta_j}}\]</span></p></li>
+<li><p><strong>Interpretação:</strong> <span class="math inline">\(e^{\hat{\beta_j}}\)</span> é o <strong>fator multiplicativo</strong> na mediana do tempo de sobrevivência para cada <strong>aumento de 1 unidade</strong> na variável contínua.</p></li>
+</ul>
+<h3 id="exemplo-1-variável-quantitativa---idade"><strong>Exemplo 1 (Variável Quantitativa - Idade)</strong></h3>
+<ul>
+<li><p><strong>Contexto:</strong> Estudo de sobrevivência de pacientes com insuficiência cardíaca.</p></li>
+<li><p><strong>Covariável:</strong> Idade (em anos)</p></li>
+<li><p><strong>Resultado do ajuste:</strong> <span class="math inline">\(\hat{\beta} = -0,03\)</span></p>
+<p><span class="math display">\[e^{-0,03} \approx 0,97\]</span></p></li>
+<li><p><strong>Interpretação:</strong> A cada <strong>aumento de 1 ano na idade</strong>, a mediana do tempo de sobrevivência é <strong>multiplicada por 0,97</strong> (ou seja, <strong>reduz em 3%</strong>).</p></li>
+</ul>
+<h3 id="exemplo-2-variável-quantitativa---dosagem"><strong>Exemplo 2 (Variável Quantitativa - Dosagem)</strong></h3>
+<ul>
+<li><p><strong>Contexto:</strong> Estudo de confiabilidade de componentes eletrônicos.</p></li>
+<li><p><strong>Covariável:</strong> Temperatura de operação (em °C)</p></li>
+<li><p><strong>Resultado do ajuste:</strong> <span class="math inline">\(\hat{\beta} = 0,02\)</span></p>
+<p><span class="math display">\[e^{0,02} \approx 1,02\]</span></p></li>
+<li><p><strong>Interpretação:</strong> A cada <strong>aumento de 1°C na temperatura</strong>, a mediana do tempo até a falha é <strong>multiplicada por 1,02</strong> (aumento de 2%).</p></li>
+</ul>
+<h3 id="resumo-da-interpretação-para-qualquer-modelo-paramétrico"><strong>Resumo da interpretação (para qualquer modelo paramétrico)</strong></h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 25%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo de variável</th>
+<th>Expressão</th>
+<th>Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binária</td>
+<td><span class="math inline">\(e^{\beta_j}\)</span></td>
+<td>Fator multiplicativo na mediana (presença vs ausência)</td>
+</tr>
+<tr class="even">
+<td>Contínua</td>
+<td><span class="math inline">\(e^{\beta_j}\)</span></td>
+<td>Fator multiplicativo na mediana (aumento de 1 unidade)</td>
+</tr>
+<tr class="odd">
+<td>Qualitativa (&gt;2 categorias)</td>
+<td><span class="math inline">\(e^{\beta_j}\)</span></td>
+<td>Fator multiplicativo na mediana (categoria vs referência)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cuidados-importantes"><strong>Cuidados importantes</strong></h3>
+<ol type="1">
+<li><p><strong>A interpretação via razão de medianas</strong> é válida quando o modelo paramétrico tem <strong>efeito multiplicativo</strong> no tempo (Weibull, Log-normal, Gama, Gama Generalizado).</p></li>
+<li><p><strong>Para o modelo Exponencial:</strong> A razão de <strong>medianas</strong> também funciona, mas cuidado pois a mediana é <span class="math inline">\((\log 2)/\alpha\)</span>.</p></li>
+<li><p><strong>Sinal do coeficiente:</strong></p>
+<ul>
+<li><span class="math inline">\(\beta_j &gt; 0\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(e^{\beta_j} &gt; 1\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>aumenta</strong> a mediana</li>
+<li><span class="math inline">\(\beta_j &lt; 0\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(e^{\beta_j} &lt; 1\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>diminui</strong> a mediana</li>
+</ul></li>
+</ol>
+</div>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 7.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
