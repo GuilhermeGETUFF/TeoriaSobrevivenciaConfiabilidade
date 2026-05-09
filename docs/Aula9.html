@@ -155,7 +155,10 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li>Até agora, <strong>modelamos</strong> o tempo de sobrevivência/confiabilidade <strong>sem considerar covariáveis</strong>.</li>
 <li>Aprendemos <strong>modelos paramétricos</strong> (Exponencial, Weibull, Log‑normal, Gama e Gama Generalizada) e suas <strong>funções associadas</strong>.</li>
 <li>Vimos <strong>estimação pontual e intervalar</strong> via máxima verossimilhança.</li>
-<li>Aprendemos <strong>alguns critérios</strong> de escolha do modelo paramétrico.</li>
+<li>Aprendemos <strong>alguns critérios</strong> de escolha do modelo paramétrico.
+<ul>
+<li>Tudo em um contexto <strong>sem covariáveis</strong>.</li>
+</ul></li>
 <li><strong>Próximo passo natural:</strong> Incorporar <strong>informações adicionais</strong> (covariáveis) para explicar as diferenças nos tempos observados.</li>
 </ul>
 </div>
@@ -175,8 +178,9 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>LIMITAÇÃO DAS TÉCNICAS NÃO‑PARAMÉTRICAS</strong></h2>
 <div class="box-blue">
 <ul>
-<li><strong>Não permitem a inclusão direta de covariáveis</strong> na análise.</li>
-<li>Foram úteis para <strong>descrever os dados</strong> pela simplicidade e facilidade de aplicação.</li>
+<li>Uma primeira metodologia seria considerar a <strong>abordagem não-paramétrica</strong> para <strong>incorporar covariáveis</strong>.</li>
+<li><strong>Entretanto, essa metodologia não permite a inclusão direta de covariáveis</strong> na análise.</li>
+<li>Os métodos vistos no contexto não paramétrico foram úteis para <strong>descrever os dados</strong> pela simplicidade e facilidade de aplicação.</li>
 <li><strong>Mas:</strong> sem estrutura paramétrica, <strong>não conseguimos fazer análises mais elaboradas</strong> incluindo covariáveis.</li>
 </ul>
 </div>
@@ -186,7 +190,10 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <div class="box-blue">
 <ul>
 <li><strong>Dividir os dados em estratos</strong> conforme as covariáveis e usar técnicas não‑paramétricas.</li>
-<li><strong>Vantagens:</strong> Simplicidade e fácil entendimento.</li>
+<li><strong>Vantagens:</strong>
+<ul>
+<li>Simplicidade e fácil entendimento.</li>
+</ul></li>
 <li><strong>Sérias limitações:</strong>
 <ul>
 <li>Muitas covariáveis <span class="math inline">\(\rightarrow\)</span> número grande de estratos <span class="math inline">\(\rightarrow\)</span> poucas (ou nenhuma) observações por estrato.</li>
@@ -204,7 +211,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li><strong>Acomodar o efeito das covariáveis</strong> usando um <strong>modelo de regressão apropriado para dados censurados</strong>.</li>
 <li><strong>Agora</strong> vamos estender os <strong>modelos paramétricos</strong> que já conhecemos para incluir covariáveis.</li>
-<li><strong>Duas classes principais na literatura:</strong>
+<li><strong>Duas classes principais na literatura em análise de sobrevivência/confiabilidade:</strong>
 <ol type="1">
 <li><strong>Modelos paramétricos</strong> (mais eficientes, menos flexíveis)</li>
 <li><strong>Modelos semiparamétricos</strong> (mais flexíveis, incluem o modelo de Cox)</li>
@@ -238,7 +245,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p><strong>Objetivo:</strong> Estimar o efeito de covariáveis sobre o tempo de sobrevivência (confiabilidade).</p></li>
+<li><p><strong>Objetivo:</strong> Estimar o efeito de covariáveis sobre o tempo de sobrevivência/confiabilidade</p></li>
 <li><p><strong>Estrutura do modelo tem dois componentes:</strong></p>
 <ul>
 <li><p><strong>Componente aleatório:</strong> descreve probabilisticamente o comportamento do tempo até o evento.</p></li>
@@ -251,9 +258,10 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>RELEMBRANDO: MODELO DE REGRESSÃO LINEAR</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A <strong>superfície de regressão</strong> é o <strong>componente determinístico</strong>.</li>
+<li>Na disciplina de <strong>Modelos Lineares I</strong>, vocês viram todos os detalhes metodológicos sobre o <strong>modelo de regressão linear múltipla</strong>.</li>
+<li>A <strong>superfície de regressão</strong> nesse modelo é o <strong>componente determinístico</strong>.</li>
 <li>A <strong>variação em torno dessa superfície</strong> é o <strong>componente estocástico</strong>.</li>
-<li>No modelo linear clássico: componente estocástico tem <strong>distribuição normal</strong>.</li>
+<li>O componente estocástico tem <strong>distribuição normal</strong>.</li>
 </ul>
 </div>
 </section>
@@ -284,6 +292,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <p><span class="math display">\[L(\boldsymbol{\beta},\sigma^2)=\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{(y_i-\boldsymbol{X_i}\boldsymbol{\beta})^2}{2\sigma^2}\right\}\]</span></p>
 <ul>
 <li><strong>Estimação:</strong> Máxima Verossimilhança ou Mínimos Quadrados (coincidem neste caso).</li>
+<li><strong>Valores positivos de <span class="math inline">\(\beta\)</span></strong> aumentam a média da resposta e <strong>valores negativos de <span class="math inline">\(\beta\)</span></strong> diminuem a média da resposta.</li>
 </ul></li>
 </ul>
 </div>
@@ -298,7 +307,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li><strong>Assimetria:</strong> distribuição dos tempos é geralmente <strong>assimétrica</strong> (cauda à direita).</li>
 <li><strong>Normalidade inadequada:</strong> a distribuição normal não é apropriada para tempos positivos e assimétricos.</li>
 </ul></li>
-<li><p><strong>Conclusão:</strong> O modelo linear tradicional <strong>não pode ser aplicado diretamente</strong>.</p></li>
+<li><p><strong>Conclusão:</strong> O modelo de regressão linear múltipla <strong>não pode ser aplicado diretamente</strong>.</p></li>
 </ul>
 </div>
 </section>
@@ -308,7 +317,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li><p><strong>Duas adaptações necessárias:</strong></p>
 <ol type="1">
-<li><strong>Componente determinístico não-linear nos parâmetros:</strong><span class="math inline">\(e^{\boldsymbol{X}\boldsymbol{\beta}}\)</span>
+<li><strong>Componente determinístico não-linear nos parâmetros:</strong> <span class="math inline">\(e^{\boldsymbol{X}\boldsymbol{\beta}}\)</span>
 <ul>
 <li>Garante tempos positivos</li>
 </ul></li>
@@ -318,31 +327,6 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 </ul></li>
 </ol></li>
 <li><p><strong>Resultado:</strong> Modelos de regressão paramétricos para dados de sobrevivência.</p></li>
-</ul>
-</div>
-</section>
-<section id="visão-geral-da-abordagem" class="slide level2">
-<h2><strong>VISÃO GERAL DA ABORDAGEM</strong></h2>
-<div class="box-blue">
-<ul>
-<li><p><strong>Modelos paramétricos com covariáveis:</strong> a distribuição do tempo <span class="math inline">\(T\)</span> depende de <span class="math inline">\(\boldsymbol{X}\)</span> através de seus parâmetros.</p></li>
-<li><p><strong>Exemplo (modelo Weibull):</strong></p>
-<ul>
-<li>Função de risco: <span class="math inline">\(h(t|\boldsymbol{X}) = \lambda(\boldsymbol{X}) \, \gamma \, t^{\gamma-1}\)</span></li>
-<li>Frequentemente: <span class="math inline">\(\lambda(\boldsymbol{X}) = \exp(\boldsymbol{X}\boldsymbol{\beta})\)</span></li>
-</ul></li>
-<li><p><strong>Interpretação:</strong> as covariáveis <strong>aceleram ou desaceleram</strong> o tempo até o evento.</p></li>
-</ul>
-</div>
-</section>
-<section id="próximos-passos" class="slide level2">
-<h2><strong>PRÓXIMOS PASSOS</strong></h2>
-<div class="box-blue">
-<ul>
-<li>Veremos <strong>casos particulares</strong> de modelos paramétricos com covariáveis.</li>
-<li>Aprenderemos a <strong>estimar</strong> e <strong>interpretar</strong> os coeficientes.</li>
-<li>Faremos <strong>inferência</strong> (testes de hipóteses e intervalos de confiança).</li>
-<li>Exemplos práticos com <strong>R</strong>.</li>
 </ul>
 </div>
 </section>
@@ -371,11 +355,20 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li><span class="math inline">\(\delta_i = 1\)</span> se o evento foi observado (ocorrência)</li>
 <li><span class="math inline">\(\delta_i = 0\)</span> se o tempo foi censurado</li>
 </ul></li>
-<li><p>Por simplificação, no contexto com covariáveis, serão vistos apenas os seguintes modelos de regressão:</p>
+</ul>
+</div>
+</section>
+<section id="modelos-de-regressão-paramétricos-vistos-na-disciplina" class="slide level2">
+<h2><strong>MODELOS DE REGRESSÃO PARAMÉTRICOS VISTOS NA DISCIPLINA</strong></h2>
+<div class="box-blue">
 <ul>
-<li>Modelo de regressão exponencial</li>
-<li>Modelo de regressão Weibull</li>
-<li>Modelo de regressão LogNormal</li>
+<li>Veremos, portanto, os seguintes <strong>modelos</strong>:
+<ul>
+<li>Modelo de regressão <strong>Exponencial</strong></li>
+<li>Modelo de regressão <strong>Weibull</strong></li>
+<li>Modelo de regressão <strong>LogNormal</strong></li>
+<li>Modelo de regressão <strong>Gama</strong></li>
+<li>Modelo de regressão <strong>Gama Generalizado</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -441,23 +434,52 @@ L(\boldsymbol{\beta}) = \prod_{i=1}^n \left[e^{\boldsymbol{X_i}\boldsymbol{\beta
 </ul>
 </div>
 </section>
-<section id="interpretação" class="slide level2 scrollable">
-<h2><strong>INTERPRETAÇÃO</strong></h2>
+<section id="interpretação-de-beta" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &gt; 0\)</span>:</p>
+<ul>
+<li><strong>aumentam</strong> o valor de <span class="math inline">\(e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>;</li>
+<li><strong>aumentam</strong> a taxa <span class="math inline">\(\alpha_i\)</span>;</li>
+<li><strong>aumentam</strong> o risco de ocorrência do evento;</li>
+<li>fazem a sobrevivência <strong>decair</strong> mais rapidamente;</li>
+<li><strong>reduzem</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &lt; 0\)</span>:</p>
+<ul>
+<li><strong>diminuem</strong> o valor de <span class="math inline">\(e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>;</li>
+<li><strong>diminuem</strong> a taxa <span class="math inline">\(\alpha_i\)</span>;</li>
+<li><strong>reduzem </strong>o risco de ocorrência do evento;</li>
+<li>fazem a sobrevivência <strong>decair</strong> mais lentamente;</li>
+<li><strong>aumentam</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="interpretação-de-beta-1" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>No modelo exponencial com covariáveis, vimos que: <span class="math inline">\(\lambda_i(t|\boldsymbol{x_i}) = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p></li>
-<li><p><strong>Para uma covariável contínua <span class="math inline">\(x_j\)</span>:</strong></p>
+<li>No modelo exponencial, <strong>as covariáveis entram diretamente no parâmetro de taxa</strong>:</li>
+</ul>
+<p><span class="math display">\[
+\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}
+\]</span></p>
 <ul>
-<li><span class="math inline">\(e^{\beta_j}\)</span> é o <strong>fator multiplicativo</strong> no risco para cada aumento de 1 unidade em <span class="math inline">\(x_j\)</span> (mantendo as demais fixas).</li>
-<li><strong>Exemplo:</strong> Se <span class="math inline">\(\beta_j = 0,5\)</span>, então <span class="math inline">\(e^{0,5} \approx 1,65\)</span> — risco aumenta 65% para cada unidade adicional.</li>
-</ul></li>
-<li><p>No modelo exponencial, o tempo médio é: <span class="math inline">\(\mathbb{E}[T_i|\boldsymbol{x_i}] = 1/\lambda_i = e^{-\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p>
+<li>Como a <strong>média da distribuição exponencial é dada</strong> por:</li>
+</ul>
+<p><span class="math display">\[
+E(T_i)=\frac{1}{\alpha_i}
+\]</span></p>
+<p>temos que:</p>
 <ul>
-<li><strong>Consequência:</strong> <span class="math inline">\(\beta_j\)</span> positivo <span class="math inline">\(\rightarrow\)</span> maior risco <span class="math inline">\(\rightarrow\)</span> menor tempo médio de vida.</li>
-</ul></li>
-<li><p>Comparando dois indivíduos <span class="math inline">\(i\)</span> e <span class="math inline">\(k\)</span>:</p>
-<p><span class="math display">\[\frac{\lambda_i(t|\boldsymbol{x_i})}{\lambda_k(t|\boldsymbol{x_k})} = e^{(\boldsymbol{X_i} - \boldsymbol{X_k})\boldsymbol{\beta}}\]</span></p></li>
-<li><p><strong>Interpretação:</strong> A razão de riscos é <strong>constante no tempo</strong> (propriedade do modelo exponencial).</p></li>
+<li><strong>taxas maiores</strong> implicam <strong>tempos médios menores</strong>;</li>
+<li><strong>taxas menores</strong> implicam <strong>tempos médios maiores</strong>.</li>
 </ul>
 </div>
 </section></section>
@@ -540,19 +562,55 @@ L(\boldsymbol{\beta},\gamma) = \prod_{i=1}^n \left[\frac{\gamma t_i^{\gamma-1}}{
 </ul>
 </div>
 </section>
-<section id="interpretação-1" class="slide level2">
-<h2><strong>INTERPRETAÇÃO</strong></h2>
+<section id="interpretação-de-beta-2" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &gt; 0\)</span>:</p>
+<ul>
+<li><strong>aumentam</strong> o valor de <span class="math inline">\(e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>;</li>
+<li><strong>aumentam</strong> o parâmetro de escala <span class="math inline">\(\kappa_i\)</span>;</li>
+<li>deslocam a distribuição para tempos <strong>maiores</strong>;</li>
+<li>fazem a sobrevivência <strong>decair mais lentamente</strong>;</li>
+<li><strong>aumentam</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &lt; 0\)</span>:</p>
+<ul>
+<li><strong>diminuem</strong> o valor de <span class="math inline">\(e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>;</li>
+<li><strong>diminuem</strong> o parâmetro de escala <span class="math inline">\(\kappa_i\)</span>;</li>
+<li>deslocam a distribuição para tempos <strong>menores</strong>;</li>
+<li>fazem a sobrevivência decair mais <strong>rapidamente</strong>;</li>
+<li><strong>reduzem</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="interpretação-de-beta-3" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>No modelo Weibull: <span class="math inline">\(\lambda_i(t|\boldsymbol{x_i}) = \frac{\gamma t^{\gamma-1}}{e^{\gamma \boldsymbol{X_i}\boldsymbol{\beta}}} = \gamma t^{\gamma-1} \cdot e^{-\gamma \boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p></li>
-<li><p><strong>Para uma covariável contínua <span class="math inline">\(x_j\)</span>:</strong></p>
+<li>No modelo Weibull, as covariáveis entram <strong>diretamente no parâmetro de escala</strong>:</li>
+</ul>
+<p><span class="math display">\[
+\kappa_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}
+\]</span></p>
 <ul>
-<li><span class="math inline">\(e^{-\gamma \beta_j}\)</span> é o <strong>fator multiplicativo</strong> no risco <strong>para um dado tempo</strong> <span class="math inline">\(t\)</span>.</li>
-<li><strong>Cuidado:</strong> o efeito é o mesmo para todo <span class="math inline">\(t\)</span>? <strong>Sim!</strong> O Weibull preserva a <strong>proporcionalidade dos riscos</strong>.</li>
+<li>A <strong>média</strong> da distribuição Weibull é dada por:</li>
+</ul>
+<p><span class="math display">\[
+E(T_i)=\kappa_i\Gamma\left(1+\frac{1}{\gamma}\right)
+\]</span></p>
+<p>onde <span class="math inline">\(\Gamma(\cdot)\)</span> representa a função gama.</p>
+<ul>
+<li>Como <span class="math inline">\(\Gamma\left(1+\frac{1}{\gamma}\right)\)</span> é <strong>constante</strong> em relação às covariáveis, temos que:
+<ul>
+<li>valores <strong>maiores</strong> de <span class="math inline">\(\kappa_i\)</span> implicam tempos médios <strong>maiores</strong>;</li>
+<li>valores <strong>menores</strong> de <span class="math inline">\(\kappa_i\)</span> implicam tempos médios <strong>menores</strong>.</li>
 </ul></li>
-<li><p>Comparando dois indivíduos <span class="math inline">\(i\)</span> e <span class="math inline">\(k\)</span>:</p>
-<p><span class="math display">\[\frac{\lambda_i(t|\boldsymbol{x_i})}{\lambda_k(t|\boldsymbol{x_k})} = e^{-\gamma (\boldsymbol{X_i} - \boldsymbol{X_k})\boldsymbol{\beta}}\]</span></p></li>
-<li><p>A razão de riscos é <strong>constante no tempo</strong> (propriedade do modelo Weibull).</p></li>
 </ul>
 </div>
 </section></section>
@@ -561,7 +619,7 @@ L(\boldsymbol{\beta},\gamma) = \prod_{i=1}^n \left[\frac{\gamma t_i^{\gamma-1}}{
 <h1><strong>MODELO DE REGRESSÃO LOGNORMAL</strong></h1>
 
 </section>
-<section id="introdução-4" class="slide level2">
+<section id="introdução-4" class="slide level2 scrollable">
 <h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
 <p><strong>Relembrando o modelo probabilístico Log-normal (sem covariáveis)</strong></p>
@@ -578,7 +636,7 @@ L(\boldsymbol{\beta},\gamma) = \prod_{i=1}^n \left[\frac{\gamma t_i^{\gamma-1}}{
 </ul>
 </div>
 </section>
-<section id="definição-4" class="slide level2">
+<section id="definição-4" class="slide level2 scrollable">
 <h2><strong>DEFINIÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
@@ -586,61 +644,8 @@ L(\boldsymbol{\beta},\gamma) = \prod_{i=1}^n \left[\frac{\gamma t_i^{\gamma-1}}{
 <p><span class="math display">\[T_i \sim \text{Log-Normal}(\mu_i, \sigma), \quad i=1,2,\ldots,n\]</span></p>
 <p>onde <span class="math inline">\(\mu_i\)</span> <strong>varia conforme os valores das covariáveis</strong> observadas para o elemento <span class="math inline">\(i\)</span>.</p></li>
 <li><p><strong>Diferente do Weibull:</strong> o parâmetro <span class="math inline">\(\mu_i \in \mathbb{R}\)</span> (pode assumir qualquer valor real).</p></li>
-<li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>linearmente</strong> (não precisa da exponencial, pois <span class="math inline">\(\mu_i\)</span> já pode ser negativo):</p>
+<li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>linearmente</strong> (não precisa da exponencial, pois <span class="math inline">\(\mu_i\)</span> pode ser negativo):</p>
 <p><span class="math display">\[\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\]</span></p></li>
-</ul>
-</div>
-</section>
-<section id="importante-1" class="slide level2">
-<h2><strong>IMPORTANTE</strong></h2>
-<div class="box-blue">
-<ul>
-<li><p>No modelo Log-normal, modelamos <strong><span class="math inline">\(\mu_i = \mathbb{E}[\log(T_i)|\boldsymbol{x_i}]\)</span></strong></p>
-<ul>
-<li><span class="math inline">\(\log(T_i)\)</span> tem distribuição <strong>Normal</strong>.</li>
-<li>A média da Normal (<span class="math inline">\(\mu_i\)</span>) pode ser <strong>qualquer número real</strong>.</li>
-<li><strong>Não há restrição de positividade!</strong></li>
-</ul></li>
-<li><p><strong>Comparação com modelos anteriores:</strong></p></li>
-</ul>
-<table class="caption-top">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 43%">
-<col style="width: 25%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Modelo</th>
-<th>Parâmetro modelado</th>
-<th>Restrição</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Exponencial</td>
-<td><span class="math inline">\(\alpha_i\)</span> (taxa)</td>
-<td><span class="math inline">\(\alpha_i &gt; 0\)</span></td>
-<td><span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></td>
-</tr>
-<tr class="even">
-<td>Weibull</td>
-<td><span class="math inline">\(\alpha_i\)</span> (escala)</td>
-<td><span class="math inline">\(\alpha_i &gt; 0\)</span></td>
-<td><span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Log-normal</strong></td>
-<td><span class="math inline">\(\mu_i\)</span> (média do log)</td>
-<td><span class="math inline">\(\mu_i \in \mathbb{R}\)</span></td>
-<td><span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span> (linear)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Vantagem:</strong> interpretação mais direta dos coeficientes.</li>
 </ul>
 </div>
 </section>
@@ -676,22 +681,56 @@ L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \
 </ul>
 </div>
 </section>
-<section id="interpretação-2" class="slide level2">
-<h2><strong>INTERPRETAÇÃO</strong></h2>
+<section id="interpretação-de-beta-4" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &gt; 0\)</span>:</p>
+<ul>
+<li><strong>aumentam</strong> o valor de <span class="math inline">\(\boldsymbol{X_i}\boldsymbol{\beta}\)</span>;</li>
+<li><strong>aumentam</strong> o parâmetro <span class="math inline">\(\mu_i\)</span>;</li>
+<li><strong>aumentam</strong> o valor esperado de <span class="math inline">\(\log(T_i)\)</span>;</li>
+<li><strong>deslocam</strong> a distribuição para tempos maiores;</li>
+<li><strong>fazem</strong> a sobrevivência decair mais lentamente;</li>
+<li><strong>aumentam</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &lt; 0\)</span>:</p>
+<ul>
+<li><strong>diminuem</strong> o valor de <span class="math inline">\(\boldsymbol{X_i}\boldsymbol{\beta}\)</span>;</li>
+<li><strong>diminuem</strong> o parâmetro <span class="math inline">\(\mu_i\)</span>;</li>
+<li><strong>diminuem</strong> o valor esperado de <span class="math inline">\(\log(T_i)\)</span>;</li>
+<li><strong>deslocam</strong> a distribuição para tempos menores;</li>
+<li><strong>fazem</strong> a sobrevivência decair mais rapidamente;</li>
+<li><strong>reduzem</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="interpretação-de-beta-5" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li><p><span class="math inline">\(\beta_j\)</span> mede o <strong>efeito no log-tempo médio</strong>:</p>
-<p><span class="math display">\[\mathbb{E}[\log(T_i)|\boldsymbol{x_i}] = \boldsymbol{X_i}\boldsymbol{\beta}\]</span></p></li>
-<li><p><strong>Para uma covariável contínua <span class="math inline">\(x_j\)</span>:</strong></p>
+<li>No modelo Log-Normal, <strong>as covariáveis entram diretamente no parâmetro de localização</strong>:</li>
+</ul>
+<p><span class="math display">\[
+\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}
+\]</span></p>
 <ul>
-<li><p><span class="math inline">\(\beta_j\)</span> é a <strong>variação esperada</strong> em <span class="math inline">\(\log(T)\)</span> para cada aumento de 1 unidade em <span class="math inline">\(x_j\)</span>.</p></li>
-<li><p><strong>Exemplo:</strong> Se <span class="math inline">\(\beta_j = 0,5\)</span>, aumentar <span class="math inline">\(x_j\)</span> em 1 unidade aumenta <span class="math inline">\(\log(T)\)</span> em 0,5 <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(T\)</span> é multiplicado por <span class="math inline">\(e^{0,5} \approx 1,65\)</span>.</p></li>
-</ul></li>
-<li><p><strong>Diferente do Weibull:</strong> o Log-normal <strong>não</strong> tem riscos proporcionais.</p></li>
-<li><p>A razão de riscos <strong>varia com o tempo</strong>:</p>
+<li><p>Como <span class="math inline">\(\log(T_i)\sim N(\mu_i,\sigma^2)\)</span>, temos que <span class="math inline">\(\mu_i\)</span> representa o valor esperado de <span class="math inline">\(\log(T_i)\)</span>.</p></li>
+<li><p>Além disso, a <strong>média da distribuição Log-Normal</strong> é dada por:</p></li>
+</ul>
+<p><span class="math display">\[
+E(T_i)=e^{\mu_i+\frac{\sigma^2}{2}}
+\]</span></p>
 <ul>
-<li>Pode ser <span class="math inline">\(&gt;1\)</span> para alguns <span class="math inline">\(t\)</span> e <span class="math inline">\(&lt;1\)</span> para outros.</li>
-<li>As curvas de sobrevivência <strong>podem se cruzar</strong>.</li>
+<li>Assim:
+<ul>
+<li>valores <strong>maiores</strong> de <span class="math inline">\(\mu_i\)</span> implicam tempos <strong>médios maiores</strong>;</li>
+<li>valores <strong>menores</strong> de <span class="math inline">\(\mu_i\)</span> implicam tempos <strong>médios menores</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -701,10 +740,10 @@ L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \
 <h1><strong>MODELO DE REGRESSÃO GAMA</strong></h1>
 
 </section>
-<section id="modelo-de-regressão-gama-1" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
-<section id="relembrando-o-modelo-probabilístico-gama-sem-covariáveis" class="box-blue">
-<h3><strong>Relembrando o modelo probabilístico Gama (sem covariáveis)</strong></h3>
+<section id="introdução-5" class="slide level2 scrollable">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<p><strong>Relembrando o modelo probabilístico Gama (sem covariáveis):</strong></p>
 <ul>
 <li><p><span class="math inline">\(T \sim \text{Gama}(\alpha, \beta)\)</span>, com <span class="math inline">\(\alpha &gt; 0\)</span> (forma) e <span class="math inline">\(\beta &gt; 0\)</span> (taxa)</p></li>
 <li><p><strong>Função densidade de probabilidade:</strong></p>
@@ -716,12 +755,11 @@ L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \
 <p><span class="math display">\[\lambda(t) = \frac{f(t)}{S(t)}\]</span></p>
 <p>(não tem forma fechada simples)</p></li>
 </ul>
+</div>
 </section>
-</section>
-<section id="modelo-de-regressão-gama-2" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
-<section id="definição-com-covariáveis" class="box-blue">
-<h3><strong>Definição com covariáveis</strong></h3>
+<section id="definição-6" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
 <ul>
 <li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
 <p><span class="math display">\[T_i \sim \text{Gama}(\alpha, \beta_i), \quad i=1,2,\ldots,n\]</span></p>
@@ -731,12 +769,12 @@ L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \
 <li><p><strong>Solução natural:</strong> permitir que as covariáveis entrem no modelo <strong>exponencialmente</strong>:</p>
 <p><span class="math display">\[\beta_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\]</span></p></li>
 </ul>
+</div>
 </section>
-</section>
-<section id="modelo-de-regressão-gama-3" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
-<section id="por-que-modelar-beta-e-não-alpha" class="box-blue">
-<h3><strong>Por que modelar <span class="math inline">\(\beta\)</span> e não <span class="math inline">\(\alpha\)</span>?</strong></h3>
+<section id="importante-1" class="slide level2">
+<h2><strong>IMPORTANTE</strong></h2>
+<div class="box-blue">
+<p><strong>Por que modelar <span class="math inline">\(\beta\)</span> e não <span class="math inline">\(\alpha\)</span>?</strong></p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 37%">
@@ -764,15 +802,13 @@ L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \
 </tbody>
 </table>
 <ul>
-<li><p><strong>Mesma lógica do Weibull:</strong> covariáveis afetam a <strong>escala</strong> (tempo de vida), não a <strong>forma</strong> do risco.</p></li>
-<li><p>Modelagem alternativa (menos comum): <span class="math inline">\(\alpha_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span> mantendo <span class="math inline">\(\beta\)</span> comum.</p></li>
+<li><strong>Mesma lógica do Weibull:</strong> covariáveis afetam a <strong>escala</strong> (tempo de vida), não a <strong>forma</strong> do risco.</li>
 </ul>
+</div>
 </section>
-</section>
-<section id="modelo-de-regressão-gama-4" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
-<section id="funções-para-t_i-boldsymbolx_i" class="box-blue">
-<h3><strong>Funções para <span class="math inline">\(T_i\)</span> | <span class="math inline">\(\boldsymbol{x_i}\)</span></strong></h3>
+<section id="definição-7" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
+<div class="box-blue">
 <p>Com <span class="math inline">\(\beta_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span> e <span class="math inline">\(\alpha\)</span> comum, temos:</p>
 <ul>
 <li><p><strong>Função densidade de probabilidade:</strong></p>
@@ -782,12 +818,11 @@ L(\boldsymbol{\beta},\sigma) = \prod_{i=1}^n \left[\frac{1}{\sqrt{2\pi} \, t_i \
 <li><p><strong>Função de risco:</strong></p>
 <p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = \frac{f_i(t|\boldsymbol{x_i})}{S_i(t|\boldsymbol{x_i})} = \frac{e^{\alpha \boldsymbol{X_i}\boldsymbol{\beta}} t^{\alpha-1} e^{-e^{\boldsymbol{X_i}\boldsymbol{\beta}} t}}{\Gamma(\alpha) - \gamma(\alpha, e^{\boldsymbol{X_i}\boldsymbol{\beta}} t)}\]</span></p></li>
 </ul>
+</div>
 </section>
-</section>
-<section id="modelo-de-regressão-gama-5" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA</strong></h2>
-<section id="função-de-verossimilhança-3" class="box-blue">
-<h3><strong>Função de Verossimilhança</strong></h3>
+<section id="função-de-verossimilhança-3" class="slide level2">
+<h2><strong>FUNÇÃO DE VEROSSIMILHANÇA</strong></h2>
+<div class="box-blue">
 <ul>
 <li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
 <p><span class="math display">\[
@@ -799,125 +834,57 @@ L(\boldsymbol{\beta},\alpha) = \prod_{i=1}^n \left[\frac{e^{\alpha \boldsymbol{X
 \]</span></p></li>
 <li><p>A <strong>estimação</strong> dos parâmetros <span class="math inline">\(\boldsymbol{\beta}\)</span> e <span class="math inline">\(\alpha\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong>.</p></li>
 </ul>
+</div>
 </section>
-</section>
-<section id="interpretação-das-covariáveis-no-modelo-gama" class="slide level2">
-<h2><strong>INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA</strong></h2>
+<section id="interpretação-de-beta-6" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="box-blue">
-<h3 id="efeito-no-tempo-médio"><strong>Efeito no tempo médio</strong></h3>
+<p><span class="math inline">\(\beta &gt; 0\)</span>:</p>
 <ul>
-<li><p>Para a Gama: <span class="math inline">\(\mathbb{E}[T_i|\boldsymbol{x_i}] = \frac{\alpha}{\beta_i} = \alpha e^{-\boldsymbol{X_i}\boldsymbol{\beta}}\)</span></p></li>
-<li><p><strong>Interpretação:</strong> <span class="math inline">\(e^{-\beta_j}\)</span> é o <strong>fator multiplicativo</strong> no tempo médio para cada aumento de 1 unidade em <span class="math inline">\(x_j\)</span>.</p></li>
+<li><strong>aumentam</strong> o valor de <span class="math inline">\(e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>;</li>
+<li><strong>aumentam</strong> a taxa <span class="math inline">\(\beta_i\)</span>;</li>
+<li><strong>aceleram</strong> a ocorrência do evento;</li>
+<li><strong>fazem</strong> a sobrevivência decair mais rapidamente;</li>
+<li><strong>reduzem</strong> o tempo esperado até o evento de interesse.</li>
 </ul>
-<h3 id="efeito-no-risco-hazard"><strong>Efeito no risco (hazard)</strong></h3>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &lt; 0\)</span>:</p>
 <ul>
-<li><p><strong>Diferente do Weibull:</strong> a Gama <strong>não</strong> tem riscos proporcionais (exceto quando <span class="math inline">\(\alpha=1\)</span>, que é o caso exponencial).</p></li>
-<li><p>A razão de riscos <strong>varia com o tempo</strong>.</p></li>
-<li><p><strong>Comportamento do risco depende de <span class="math inline">\(\alpha\)</span>:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><span class="math inline">\(\alpha &lt; 1\)</span></th>
-<th><span class="math inline">\(\alpha = 1\)</span></th>
-<th><span class="math inline">\(\alpha &gt; 1\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Risco decrescente</td>
-<td>Risco constante</td>
-<td>Risco crescente</td>
-</tr>
-</tbody>
-</table></li>
+<li><strong>diminuem</strong> o valor de <span class="math inline">\(e^{\boldsymbol{X_i}\boldsymbol{\beta}}\)</span>;</li>
+<li><strong>diminuem</strong> a taxa <span class="math inline">\(\beta_i\)</span>;</li>
+<li><strong>desaceleram</strong> a ocorrência do evento;</li>
+<li><strong>fazem</strong> a sobrevivência decair mais lentamente;</li>
+<li><strong>aumentam</strong> o tempo esperado até o evento de interesse.</li>
 </ul>
-<h3 id="relação-com-outros-modelos"><strong>Relação com outros modelos</strong></h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 32%">
-<col style="width: 26%">
-<col style="width: 41%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Caso especial</th>
-<th>Parâmetros</th>
-<th>Modelo resultante</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\alpha = 1\)</span></td>
-<td>Gama(1, <span class="math inline">\(\beta\)</span>)</td>
-<td><strong>Exponencial</strong></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\alpha\)</span> inteiro</td>
-<td>Gama(<span class="math inline">\(k\)</span>, <span class="math inline">\(\beta\)</span>)</td>
-<td><strong>Erlang</strong> (soma de exponenciais)</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\alpha \to \infty\)</span></td>
-<td>Gama(<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta=\alpha/\mu\)</span>)</td>
-<td>Aproxima <strong>Normal</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="resumo-da-interpretação"><strong>Resumo da interpretação</strong></h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 37%">
-<col style="width: 13%">
-<col style="width: 20%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Característica</th>
-<th>Gama</th>
-<th>Weibull</th>
-<th>Log-normal</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Riscos proporcionais</td>
-<td><strong>Não</strong> (exceto <span class="math inline">\(\alpha=1\)</span>)</td>
-<td><strong>Sim</strong></td>
-<td><strong>Não</strong></td>
-</tr>
-<tr class="even">
-<td>Curvas podem cruzar</td>
-<td><strong>Sim</strong></td>
-<td><strong>Não</strong></td>
-<td><strong>Sim</strong></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(e^{\beta_j}\)</span> interpreta</td>
-<td>Fator no tempo médio</td>
-<td>Fator no percentil</td>
-<td>Fator na mediana</td>
-</tr>
-<tr class="even">
-<td>Parâmetro de forma</td>
-<td><span class="math inline">\(\alpha\)</span> (risco monótono)</td>
-<td><span class="math inline">\(\gamma\)</span> (risco monótono)</td>
-<td><span class="math inline">\(\sigma\)</span> (simetria no log)</td>
-</tr>
-<tr class="odd">
-<td>Caso especial</td>
-<td>Exponencial (<span class="math inline">\(\alpha=1\)</span>)</td>
-<td>Exponencial (<span class="math inline">\(\gamma=1\)</span>)</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="quando-usar-gama"><strong>Quando usar Gama?</strong></h3>
+</div>
+</div></div>
+</section>
+<section id="interpretação-de-beta-7" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
+<div class="box-blue">
 <ul>
-<li>Curvas de Kaplan-Meier <strong>se cruzam</strong>.</li>
-<li>O risco é <strong>monótono</strong> (crescente ou decrescente) mas <strong>não proporcional</strong>.</li>
-<li>Deseja-se um modelo mais flexível que o Weibull (forma do risco pode ser mais geral).</li>
-<li>Os dados sugerem <strong>cauda mais pesada</strong> que a Log-normal.</li>
+<li>No modelo Gama, as <strong>covariáveis entram diretamente no parâmetro de taxa</strong>:</li>
+</ul>
+<p><span class="math display">\[
+\beta_i = e^{\boldsymbol{X_i}\boldsymbol{\beta}}
+\]</span></p>
+<ul>
+<li>A <strong>média</strong> da distribuição Gama é dada por:</li>
+</ul>
+<p><span class="math display">\[
+E(T_i)=\frac{\alpha}{\beta_i}
+\]</span></p>
+<p>onde <span class="math inline">\(\alpha\)</span> representa o parâmetro de forma.</p>
+<ul>
+<li>Como <span class="math inline">\(\alpha\)</span> é <strong>constante</strong> em relação às covariáveis, temos que:
+<ul>
+<li>taxas <strong>maiores</strong> implicam tempos médios <strong>menores</strong>;</li>
+<li>taxas <strong>menores</strong> implicam tempos médios <strong>maiores</strong>.</li>
+</ul></li>
 </ul>
 </div>
 </section></section>
@@ -926,252 +893,215 @@ L(\boldsymbol{\beta},\alpha) = \prod_{i=1}^n \left[\frac{e^{\alpha \boldsymbol{X
 <h1><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h1>
 
 </section>
-<section id="modelo-de-regressão-gama-generalizado-1" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
-<section id="relembrando-o-modelo-probabilístico-gama-generalizado-sem-covariáveis" class="box-blue">
-<h3><strong>Relembrando o modelo probabilístico Gama Generalizado (sem covariáveis)</strong></h3>
-<ul>
-<li><p><span class="math inline">\(T \sim \text{GG}(\alpha, \beta, \kappa)\)</span></p></li>
-<li><p><strong>Características:</strong></p>
-<ul>
-<li>Modelo de <strong>3 parâmetros</strong> (forma, escala, e um parâmetro adicional de forma)</li>
-<li><strong>Flexibilidade maior</strong> que os modelos anteriores</li>
-<li>Inclui como casos especiais: <strong>Exponencial, Weibull, Gama e Log-normal</strong></li>
-</ul></li>
-<li><p><strong>Função densidade de probabilidade (parametrização comum):</strong></p>
-<p><span class="math display">\[f(t) = \frac{\beta e^{\kappa \alpha} (\beta t)^{\alpha \kappa - 1} e^{-(\beta t)^\alpha}}{\Gamma(\kappa)}\]</span></p>
-<p>ou na forma logarítmica (mais comum em regressão):</p>
-<p><span class="math display">\[f(t) = \frac{|\alpha|}{\sigma t \Gamma(\theta)} \left(\frac{t}{e^{\mu}}\right)^{\alpha \theta} e^{-\left(\frac{t}{e^{\mu}}\right)^\alpha}\]</span></p></li>
-<li><p><strong>Casos especiais (dependendo dos parâmetros):</strong></p></li>
-</ul>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Modelo</th>
-<th>Condição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Exponencial</td>
-<td><span class="math inline">\(\alpha = 1\)</span>, <span class="math inline">\(\kappa = 1\)</span></td>
-</tr>
-<tr class="even">
-<td>Weibull</td>
-<td><span class="math inline">\(\kappa = 1\)</span></td>
-</tr>
-<tr class="odd">
-<td>Gama</td>
-<td><span class="math inline">\(\alpha = 1\)</span></td>
-</tr>
-<tr class="even">
-<td>Log-normal</td>
-<td><span class="math inline">\(\alpha \to 0\)</span></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="modelo-de-regressão-gama-generalizado-2" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
-<section id="definição-com-covariáveis-1" class="box-blue">
-<h3><strong>Definição com covariáveis</strong></h3>
-<ul>
-<li><p>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</p>
-<p><span class="math display">\[T_i \sim \text{GG}(\mu_i, \sigma, \lambda), \quad i=1,2,\ldots,n\]</span></p>
-<p>(parametrização em termos de <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\lambda\)</span> - mais comum em regressão)</p></li>
-<li><p><strong>Parâmetros:</strong></p>
-<ul>
-<li><span class="math inline">\(\mu_i\)</span> (posição) → modelado em função das covariáveis</li>
-<li><span class="math inline">\(\sigma\)</span> (escala parâmetro) → comum a todos</li>
-<li><span class="math inline">\(\lambda\)</span> (forma parâmetro) → comum a todos</li>
-</ul></li>
-<li><p><strong>Solução natural:</strong> <span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span> (link linear, pois <span class="math inline">\(\mu_i \in \mathbb{R}\)</span>)</p></li>
-</ul>
-</section>
-</section>
-<section id="modelo-de-regressão-gama-generalizado-3" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
-<section id="por-que-usar-o-gama-generalizado" class="box-blue">
-<h3><strong>Por que usar o Gama Generalizado?</strong></h3>
-<ul>
-<li><strong>Vantagens:</strong>
-<ul>
-<li>Modelo mais <strong>flexível</strong> da família paramétrica</li>
-<li><strong>Teste de hipóteses</strong> para escolher modelos aninhados:
-<ul>
-<li><span class="math inline">\(H_0: \lambda = 1\)</span> → modelo Gama</li>
-<li><span class="math inline">\(H_0: \lambda = 1\)</span> e <span class="math inline">\(\sigma = 1\)</span> (dependendo da parametrização) → Weibull</li>
-<li><span class="math inline">\(H_0: \lambda \to 0\)</span> → Log-normal</li>
-</ul></li>
-</ul></li>
-<li><strong>Desvantagens:</strong>
-<ul>
-<li>Mais <strong>complexo</strong> (3 parâmetros)</li>
-<li><strong>Convergência numérica</strong> pode ser problemática</li>
-<li>Amostras <strong>pequenas</strong> podem trazer instabilidade</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="modelo-de-regressão-gama-generalizado-4" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
-<section id="funções-para-t_i-boldsymbolx_i-parametrização-logarítmica" class="box-blue">
-<h3><strong>Funções para <span class="math inline">\(T_i\)</span> | <span class="math inline">\(\boldsymbol{x_i}\)</span> (parametrização logarítmica)</strong></h3>
-<p>Com <span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span>, <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\lambda\)</span> comuns:</p>
-<ul>
-<li><p><strong>Função densidade de probabilidade:</strong></p>
-<p><span class="math display">\[f_i(t|\boldsymbol{x_i}) = \frac{|\lambda|}{\sigma t \,\Gamma(\lambda^{-2})} \left(\frac{\lambda^2 t}{e^{\mu_i}}\right)^{\lambda^{-2}} e^{-\lambda^{-2} \left(\frac{t}{e^{\mu_i}}\right)^\lambda}\]</span></p></li>
-<li><p><strong>Função de sobrevivência (confiabilidade):</strong></p>
-<p><span class="math display">\[S_i(t|\boldsymbol{x_i}) = 1 - F_i(t|\boldsymbol{x_i})\]</span></p>
-<p>(expressa em termos da função gama incompleta)</p></li>
-<li><p><strong>Função de risco:</strong></p>
-<p><span class="math display">\[\lambda_i(t|\boldsymbol{x_i}) = \frac{f_i(t|\boldsymbol{x_i})}{S_i(t|\boldsymbol{x_i})}\]</span></p></li>
-</ul>
-</section>
-</section>
-<section id="modelo-de-regressão-gama-generalizado-5" class="slide level2">
-<h2><strong>MODELO DE REGRESSÃO GAMA GENERALIZADO</strong></h2>
-<section id="função-de-verossimilhança-4" class="box-blue">
-<h3><strong>Função de Verossimilhança</strong></h3>
-<ul>
-<li><p>A <strong>função de verossimilhança</strong> é dada por:</p>
-<p><span class="math display">\[
-L(\boldsymbol{\beta}, \sigma, \lambda) \propto \prod_{i=1}^n \left[f_i(t_i|\boldsymbol{x_i})\right]^{\delta_i} \left[S_i(t_i|\boldsymbol{x_i})\right]^{1-\delta_i}
-\]</span></p></li>
-<li><p>A <strong>estimação</strong> dos parâmetros <span class="math inline">\(\boldsymbol{\beta}\)</span>, <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(\lambda\)</span> é feita <strong>maximizando esta função</strong> por meio de <strong>métodos numéricos</strong>.</p></li>
-<li><p><strong>Atenção:</strong> A verossimilhança do Gama Generalizado pode ser <strong>instável</strong> para certos valores de <span class="math inline">\(\lambda\)</span>, exigindo <strong>valores iniciais adequados</strong>.</p></li>
-</ul>
-</section>
-</section>
-<section id="interpretação-das-covariáveis-no-modelo-gama-generalizado" class="slide level2">
-<h2><strong>INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA GENERALIZADO</strong></h2>
+<section id="introdução-6" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
-<h3 id="efeito-no-tempo-de-vida"><strong>Efeito no tempo de vida</strong></h3>
 <ul>
-<li><p><span class="math inline">\(\beta_j\)</span> mede o <strong>efeito no log-tempo</strong> (similar ao Log-normal):</p>
-<p><span class="math display">\[\mu_i = \boldsymbol{X_i}\boldsymbol{\beta} = \mathbb{E}[\log(T_i)|\boldsymbol{x_i}]\]</span></p></li>
-<li><p><strong>Interpretação direta:</strong> <span class="math inline">\(e^{\beta_j}\)</span> é o <strong>fator multiplicativo</strong> no percentil da distribuição.</p></li>
+<li>Seja <span class="math inline">\(T \sim GG(\mu,\sigma,Q)\)</span> com função densidade:</li>
 </ul>
-<h3 id="efeito-no-risco-hazard-1"><strong>Efeito no risco (hazard)</strong></h3>
+<p><span class="math display">\[
+f(t \mid \mu,\sigma,Q)
+=
+\frac{|Q|(Q^{-2})^{Q^{-2}}}
+{\sigma t \Gamma(Q^{-2})}
+\exp\left[
+Q^{-2}
+\left(
+Qw - e^{Qw}
+\right)
+\right],
+\quad t&gt;0
+\]</span></p>
+<p>onde</p>
+<p><span class="math display">\[
+w
+=
+\frac{\log(t)-\mu}{\sigma}.
+\]</span></p>
 <ul>
-<li><p><strong>Depende dos parâmetros de forma</strong> (<span class="math inline">\(\lambda\)</span> e <span class="math inline">\(\sigma\)</span>):</p>
+<li>Os parâmetros são:
 <ul>
-<li><span class="math inline">\(\lambda &gt; 0\)</span>: risco pode ser crescente, decrescente ou em forma de U</li>
-<li><span class="math inline">\(\lambda &lt; 0\)</span>: risco pode ser decrescente ou em forma de sino invertido</li>
-<li><span class="math inline">\(\lambda \to 0\)</span>: aproxima o Log-normal (risco não monótono)</li>
+<li><span class="math inline">\(\mu \in \mathbb{R}\)</span>: parâmetro de localização;</li>
+<li><span class="math inline">\(\sigma &gt; 0\)</span>: parâmetro de escala;</li>
+<li><span class="math inline">\(Q \in \mathbb{R}\)</span>: parâmetro de forma.</li>
 </ul></li>
 </ul>
-<h3 id="comparação-entre-modelos"><strong>Comparação entre modelos</strong></h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 19%">
-<col style="width: 34%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Modelo</th>
-<th>Parâmetros</th>
-<th>Riscos proporcionais?</th>
-<th>Curvas podem cruzar?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Gama Generalizado</td>
-<td><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\lambda\)</span></td>
-<td><strong>Não</strong> (geralmente)</td>
-<td><strong>Sim</strong></td>
-</tr>
-<tr class="even">
-<td>Weibull</td>
-<td><span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\gamma\)</span></td>
-<td><strong>Sim</strong></td>
-<td><strong>Não</strong></td>
-</tr>
-<tr class="odd">
-<td>Log-normal</td>
-<td><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span></td>
-<td><strong>Não</strong></td>
-<td><strong>Sim</strong></td>
-</tr>
-<tr class="even">
-<td>Gama</td>
-<td><span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span></td>
-<td><strong>Não</strong></td>
-<td><strong>Sim</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="quando-usar-gama-generalizado"><strong>Quando usar Gama Generalizado?</strong></h3>
+</div>
+</section>
+<section id="casos-particulares" class="slide level2">
+<h2><strong>CASOS PARTICULARES</strong></h2>
+<div class="box-blue">
 <ul>
-<li>Você <strong>não tem certeza</strong> qual modelo paramétrico é o mais adequado.</li>
-<li>Deseja <strong>testar formalmente</strong> entre modelos aninhados (Weibull, Gama, Log-normal).</li>
-<li>Amostra <strong>suficientemente grande</strong> (estabiliza a estimação dos 3 parâmetros).</li>
-<li>Os dados apresentam <strong>comportamento complexo</strong> do risco (ex: risco crescente e depois decrescente).</li>
+<li>A distribuição <strong>gama generalizada engloba</strong>:</li>
 </ul>
-<h3 id="resumo-da-interpretação-1"><strong>Resumo da interpretação</strong></h3>
 <table class="caption-top">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 54%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Característica</th>
-<th>Gama Generalizado</th>
+<th>Valor dos parâmetros</th>
+<th>Distribuição obtida</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(e^{\beta_j}\)</span> interpreta</td>
-<td>Fator multiplicativo no percentil</td>
+<td><span class="math inline">\(Q \rightarrow 0\)</span></td>
+<td>Log-normal</td>
 </tr>
 <tr class="even">
-<td>Riscos proporcionais?</td>
-<td><strong>Não</strong> (em geral)</td>
+<td><span class="math inline">\(Q = 1\)</span></td>
+<td>Weibull</td>
 </tr>
 <tr class="odd">
-<td>Flexibilidade</td>
-<td><strong>Máxima</strong> entre os paramétricos</td>
+<td><span class="math inline">\(\sigma = Q\)</span></td>
+<td>Gamma</td>
 </tr>
 <tr class="even">
-<td>Complexidade</td>
-<td><strong>Alta</strong> (3 parâmetros)</td>
-</tr>
-<tr class="odd">
-<td>Uso recomendado</td>
-<td>Amostras <strong>grandes</strong> e <strong>comparação</strong> entre modelos</td>
+<td><span class="math inline">\(Q = 1\)</span> e <span class="math inline">\(\sigma = 1\)</span></td>
+<td>Exponencial</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="escolha-do-modelo-visão-geral" class="slide level2">
-<h2><strong>ESCOLHA DO MODELO: VISÃO GERAL</strong></h2>
+<section id="definição-8" class="slide level2">
+<h2><strong>DEFINIÇÃO</strong></h2>
 <div class="box-blue">
-<h3 id="hierarquia-dos-modelos-paramétricos"><strong>Hierarquia dos modelos paramétricos</strong></h3>
-<p><span class="math display">\[
-\text{Exponencial} \subset \text{Weibull} \subset \text{Gama Generalizado}
-\]</span> <span class="math display">\[
-\text{Exponencial} \subset \text{Gama} \subset \text{Gama Generalizado}
-\]</span> <span class="math display">\[
-\text{Log-normal} \subset \text{Gama Generalizado} \ (\text{quando } \lambda \to 0)
-\]</span></p>
-<h3 id="critérios-para-escolha"><strong>Critérios para escolha</strong></h3>
-<ol type="1">
-<li><strong>AIC / BIC</strong> (menor valor → melhor ajuste)</li>
-<li><strong>Teste de razão de verossimilhanças</strong> (para modelos aninhados)</li>
-<li><strong>Análise gráfica de resíduos</strong> (Cox-Snell, martingale, deviance)</li>
-<li><strong>Contexto do problema</strong> (interpretabilidade do modelo)</li>
-</ol>
-<h3 id="recomendação-prática"><strong>Recomendação prática</strong></h3>
 <ul>
-<li>Comece com <strong>Weibull</strong> (risco proporcional, interpretação direta)</li>
-<li>Se cruzar curvas → <strong>Log-normal</strong> ou <strong>Gama</strong></li>
-<li>Se amostra grande e incerteza → <strong>Gama Generalizado</strong> (teste os casos especiais)</li>
+<li>No <strong>contexto com covariáveis</strong>, a variável <span class="math inline">\(T_i\)</span> segue:</li>
+</ul>
+<p><span class="math display">\[
+T_i \sim GG(\mu_i,\sigma,Q),
+\quad i=1,2,\ldots,n
+\]</span></p>
+<p>onde o parâmetro <span class="math inline">\(\mu_i\)</span> <strong>varia conforme os valores das covariáveis</strong> observadas para o indivíduo <span class="math inline">\(i\)</span>.</p>
+<ul>
+<li><p>Os parâmetros <span class="math inline">\(\sigma\)</span> e <span class="math inline">\(Q\)</span> são <strong>comuns</strong> a todos os indivíduos.</p></li>
+<li><p>Assim, <span class="math inline">\(\mu_i=\boldsymbol{X_i}\boldsymbol{\beta}\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-de-beta-8" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &gt; 0\)</span>:</p>
+<ul>
+<li><strong>aumentam</strong> o valor de <span class="math inline">\(\boldsymbol{X_i}\boldsymbol{\beta}\)</span>;</li>
+<li><strong>aumentam</strong> o parâmetro <span class="math inline">\(\mu_i\)</span>;</li>
+<li>deslocam a distribuição para tempos <strong>maiores</strong>;</li>
+<li>fazem a sobrevivência <strong>decair mais lentamente</strong>;</li>
+<li><strong>aumentam</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="box-blue">
+<p><span class="math inline">\(\beta &lt; 0\)</span>:</p>
+<ul>
+<li><strong>diminuem</strong> o valor de <span class="math inline">\(\boldsymbol{X_i}\boldsymbol{\beta}\)</span>;</li>
+<li><strong>diminuem</strong> o parâmetro <span class="math inline">\(\mu_i\)</span>;</li>
+<li>deslocam a distribuição para tempos <strong>menores</strong>;</li>
+<li>fazem a sobrevivência decair mais <strong>rapidamente</strong>;</li>
+<li><strong>reduzem</strong> o tempo esperado até a ocorrência do evento.</li>
+</ul>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="interpretação-geral-dos-coeficientes" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>INTERPRETAÇÃO GERAL DOS COEFICIENTES</strong></h1>
+
+</section>
+<section id="razão-de-tempos-medianos" class="slide level2">
+<h2><strong>RAZÃO DE TEMPOS MEDIANOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>A <strong>razão de tempos medianos</strong> compara a mediana do tempo de sobrevivência entre <strong>dois indivíduos com diferentes valores das covariáveis</strong>.</p></li>
+<li><p>De forma <strong>geral</strong>: <span class="math display">\[
+\text{RTM}
+=
+\frac{\text{Mediana}(T \mid X=x+1)}
+{\text{Mediana}(T \mid X=x)}
+\]</span></p>
+<ul>
+<li>valores <strong>maiores que 1 indicam aumento no tempo até o evento</strong>;</li>
+<li>valores <strong>menores que 1 indicam redução no tempo até o evento</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="primeiro-caso" class="slide level2">
+<h2><strong>PRIMEIRO CASO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considerando as nossas parametrizações utilizadas, para as distribuições <strong>Weibull, LogNormal e Gama Generalizada</strong>, as covariáveis atuam <strong>diretamente acelerando ou desacelerando o tempo até a ocorrência do evento de interesse</strong>.
+<ul>
+<li>Quanto <strong>maior</strong> o <span class="math inline">\(\beta\)</span> <strong>maior o tempo de ocorrência do evento de interesse</strong>.</li>
+<li>Quanto <strong>menor</strong> o <span class="math inline">\(\beta\)</span> <strong>menor o tempo de ocorrência do evento de interesse</strong>.</li>
+</ul></li>
+<li>Nesse caso, pode-se <strong>provar</strong> que:</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\text{RTM}=e^\beta}
+\]</span></p>
+</div>
+</section>
+<section id="segundo-caso" class="slide level2">
+<h2><strong>SEGUNDO CASO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considerando as nossas parametrizações utilizadas, para as distribuições <strong>Exponencial e Gama</strong>, as covariáveis atuam <strong>indiretamente acelerando ou desacelerando o tempo até a ocorrência do evento de interesse</strong>.
+<ul>
+<li>Quanto <strong>maior</strong> o <span class="math inline">\(\beta\)</span> <strong>menor o tempo de ocorrência do evento de interesse</strong>.</li>
+<li>Quanto <strong>menor</strong> o <span class="math inline">\(\beta\)</span> <strong>maior o tempo de ocorrência do evento de interesse</strong>.</li>
+</ul></li>
+<li>Nesse caso, pode-se <strong>provar</strong> que:</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\text{RTM}=e^{-\beta}}
+\]</span></p>
+</div>
+</section>
+<section id="interpretação-para-variável-quantitativa" class="slide level2">
+<h2><strong>INTERPRETAÇÃO PARA VARIÁVEL QUANTITATIVA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Considere a <strong>covariável</strong> <span class="math inline">\(X=\text{idade}\)</span></p></li>
+<li><p>Suponha, no modelo <strong>LogNormal</strong>: <span class="math inline">\(\beta=-0.04\)</span></p></li>
+<li><p>Então:</p></li>
+</ul>
+<p><span class="math display">\[
+\text{RTM}=e^{-0.04}\approx0.961
+\]</span></p>
+<ul>
+<li>Interpretação:
+<ul>
+<li>cada <strong>aumento de 1 ano na idade multiplica a mediana do tempo de sobrevivência por aproximadamente 0.961</strong>;</li>
+<li>isso <strong>representa uma redução de aproximadamente 3.9% na mediana do tempo até o evento</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="interpretação-para-variável-qualitativa" class="slide level2">
+<h2><strong>INTERPRETAÇÃO PARA VARIÁVEL QUALITATIVA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere a <strong>covariável indicadora</strong>:</li>
+</ul>
+<p><span class="math display">\[
+X=
+\begin{cases}
+1,&amp; \text{fumante}\\
+0,&amp; \text{não fumante}
+\end{cases}
+\]</span></p>
+<ul>
+<li><p>Suponha, no modelo <strong>exponencial</strong>: $ $</p></li>
+<li><p>Então: <span class="math inline">\(\text{RTM}=e^{-0.7}\approx0.50\)</span></p></li>
+<li><p>Interpretação:</p>
+<ul>
+<li>a <strong>mediana do tempo até o evento para fumantes é aproximadamente metade da observada para não fumantes</strong>;</li>
+<li>portanto, <strong>fumantes apresentam ocorrência mais rápida do evento</strong>.</li>
+</ul></li>
 </ul>
 </div>
 </section></section>
@@ -1193,8 +1123,6 @@ L(\boldsymbol{\beta}, \sigma, \lambda) \propto \prod_{i=1}^n \left[f_i(t_i|\bold
 <li><span class="math inline">\(z_{\alpha/2}\)</span> é o quantil da distribuição Normal padrão</li>
 <li><span class="math inline">\(\sqrt{\widehat{\text{Var}}(\hat{\beta_j})}\)</span> é o <strong>erro padrão</strong> da estimativa (extraído da matriz de variâncias-covariâncias)</li>
 </ul></li>
-<li><p><strong>Interpretação:</strong> Com <span class="math inline">\(1-\alpha\)</span> de confiança, o verdadeiro valor de <span class="math inline">\(\beta_j\)</span> está dentro do intervalo.</p></li>
-<li><p><strong>Na prática:</strong> Extraímos os erros padrão da <strong>matriz Hessiana</strong> (inverso da matriz de informações observada).</p></li>
 </ul>
 </div>
 </section>
@@ -1206,9 +1134,15 @@ L(\boldsymbol{\beta}, \sigma, \lambda) \propto \prod_{i=1}^n \left[f_i(t_i|\bold
 <p><span class="math display">\[H_0: \beta_j = b_0 \quad \text{vs} \quad H_1: \beta_j \neq b_0\]</span></p></li>
 <li><p>A <strong>estatística do teste de Wald</strong> é:</p>
 <p><span class="math display">\[W = \frac{(\hat{\beta_j} - b_0)^2}{\text{Var}(\hat{\beta_j})}\]</span></p></li>
-<li><p><strong>Distribuição sob <span class="math inline">\(H_0\)</span>:</strong> Qui-quadrado com <strong>1 grau de liberdade</strong>:</p>
-<p><span class="math display">\[W \sim \chi^2_{(1)}\]</span></p></li>
+<li><p><strong>Distribuição sob <span class="math inline">\(H_0\)</span>:</strong> Qui-quadrado com <strong>1 grau de liberdade</strong>: <span class="math inline">\(W \sim \chi^2_{(1)}\)</span></p></li>
 <li><p><strong>Decisão:</strong> Rejeitamos <span class="math inline">\(H_0\)</span> se <span class="math inline">\(W &gt; \chi^2_{1;1-\alpha}\)</span> (valor crítico) ou se <strong>p-valor</strong> <span class="math inline">\(&lt; \alpha\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="testes-de-hipóteses-1" class="slide level2">
+<h2><strong>TESTES DE HIPÓTESES</strong></h2>
+<div class="box-blue">
+<ul>
 <li><p>A <strong>raiz quadrada</strong> da estatística de Wald:</p>
 <p><span class="math display">\[Z = \sqrt{W} = \frac{\hat{\beta_j} - b_0}{\sqrt{\text{Var}(\hat{\beta_j})}}\]</span></p></li>
 <li><p><strong>Possui distribuição Normal padrão</strong> sob <span class="math inline">\(H_0\)</span>:</p>
@@ -1217,98 +1151,256 @@ L(\boldsymbol{\beta}, \sigma, \lambda) \propto \prod_{i=1}^n \left[f_i(t_i|\bold
 </div>
 </section></section>
 <section>
-<section id="interpretação-dos-coeficientes" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
-<h1><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h1>
+<section id="estratégia-de-modelagem" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ESTRATÉGIA DE MODELAGEM</strong></h1>
 
 </section>
-<section id="interpretação-dos-coeficientes-1" class="slide level2">
-<h2><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h2>
+<section id="introdução-7" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
 <div class="box-blue">
-<h3 id="variável-qualitativa-binária"><strong>Variável Qualitativa (Binária)</strong></h3>
 <ul>
-<li><p>Uma <strong>proposta razoável de interpretação</strong> é fazer uso da <strong>razão de tempos medianos</strong> (Hosmer e Lemeshow, 1999).</p></li>
-<li><p>Para uma <strong>covariável binária</strong> <span class="math inline">\(x_j\)</span> (0 = ausência, 1 = presença), a <strong>razão de tempos medianos</strong> é:</p>
-<p><span class="math display">\[\frac{t_{0,5}(x=1,\hat{\boldsymbol{\beta}})}{t_{0,5}(x=0,\hat{\boldsymbol{\beta}})} = e^{\hat{\beta_j}}\]</span></p></li>
-<li><p><strong>Interpretação:</strong> <span class="math inline">\(e^{\hat{\beta_j}}\)</span> é o <strong>fator multiplicativo</strong> na mediana do tempo de sobrevivência quando a característica está presente (comparado à sua ausência).</p></li>
-</ul>
-<h3 id="exemplo-variável-qualitativa"><strong>Exemplo (Variável Qualitativa)</strong></h3>
-<ul>
-<li><p><strong>Contexto:</strong> Estudo de sobrevivência de pacientes com câncer.</p></li>
-<li><p><strong>Covariável:</strong> Tratamento (0 = Placebo, 1 = Novo medicamento)</p></li>
-<li><p><strong>Resultado do ajuste:</strong> <span class="math inline">\(\hat{\beta} = 0,5\)</span></p>
-<p><span class="math display">\[e^{0,5} \approx 1,65\]</span></p></li>
-<li><p><strong>Interpretação:</strong> Pacientes que receberam o <strong>novo medicamento</strong> têm <strong>mediana de sobrevivência 65% maior</strong> do que pacientes do grupo placebo.</p></li>
-<li><p><strong>Atenção:</strong> Essa interpretação se <strong>estende</strong> a <strong>variáveis qualitativas com mais de duas categorias</strong> (usando categorias de referência).</p></li>
+<li>Em <strong>modelos paramétricos de sobrevivência</strong>, precisamos tomar duas <strong>decisões principais</strong>:
+<ol type="1">
+<li>selecionar as <strong>covariáveis</strong> relevantes;</li>
+<li>escolher a <strong>distribuição mais adequada para os tempos de sobrevivência</strong>.</li>
+</ol></li>
+<li>Como essas duas <strong>decisões estão relacionadas</strong>, uma <strong>estratégia organizada de modelagem é fundamental</strong>.</li>
 </ul>
 </div>
 </section>
-<section id="interpretação-dos-coeficientes-2" class="slide level2">
-<h2><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h2>
+<section id="uso-dos-testes-log-rank-e-peto-peto" class="slide level2">
+<h2><strong>USO DOS TESTES LOG-RANK E PETO-PETO</strong></h2>
 <div class="box-blue">
-<h3 id="variável-quantitativa-contínua"><strong>Variável Quantitativa (Contínua)</strong></h3>
 <ul>
-<li><p>Para uma <strong>variável contínua</strong> <span class="math inline">\(x_j\)</span>, a <strong>razão de tempos medianos</strong> é:</p>
-<p><span class="math display">\[\frac{t_{0,5}(x = c+1,\hat{\boldsymbol{\beta}})}{t_{0,5}(x = c,\hat{\boldsymbol{\beta}})} = e^{\hat{\beta_j}}\]</span></p></li>
-<li><p><strong>Interpretação:</strong> <span class="math inline">\(e^{\hat{\beta_j}}\)</span> é o <strong>fator multiplicativo</strong> na mediana do tempo de sobrevivência para cada <strong>aumento de 1 unidade</strong> na variável contínua.</p></li>
-</ul>
-<h3 id="exemplo-1-variável-quantitativa---idade"><strong>Exemplo 1 (Variável Quantitativa - Idade)</strong></h3>
-<ul>
-<li><p><strong>Contexto:</strong> Estudo de sobrevivência de pacientes com insuficiência cardíaca.</p></li>
-<li><p><strong>Covariável:</strong> Idade (em anos)</p></li>
-<li><p><strong>Resultado do ajuste:</strong> <span class="math inline">\(\hat{\beta} = -0,03\)</span></p>
-<p><span class="math display">\[e^{-0,03} \approx 0,97\]</span></p></li>
-<li><p><strong>Interpretação:</strong> A cada <strong>aumento de 1 ano na idade</strong>, a mediana do tempo de sobrevivência é <strong>multiplicada por 0,97</strong> (ou seja, <strong>reduz em 3%</strong>).</p></li>
-</ul>
-<h3 id="exemplo-2-variável-quantitativa---dosagem"><strong>Exemplo 2 (Variável Quantitativa - Dosagem)</strong></h3>
-<ul>
-<li><p><strong>Contexto:</strong> Estudo de confiabilidade de componentes eletrônicos.</p></li>
-<li><p><strong>Covariável:</strong> Temperatura de operação (em °C)</p></li>
-<li><p><strong>Resultado do ajuste:</strong> <span class="math inline">\(\hat{\beta} = 0,02\)</span></p>
-<p><span class="math display">\[e^{0,02} \approx 1,02\]</span></p></li>
-<li><p><strong>Interpretação:</strong> A cada <strong>aumento de 1°C na temperatura</strong>, a mediana do tempo até a falha é <strong>multiplicada por 1,02</strong> (aumento de 2%).</p></li>
-</ul>
-<h3 id="resumo-da-interpretação-para-qualquer-modelo-paramétrico"><strong>Resumo da interpretação (para qualquer modelo paramétrico)</strong></h3>
-<table class="caption-top">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 25%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tipo de variável</th>
-<th>Expressão</th>
-<th>Interpretação</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Binária</td>
-<td><span class="math inline">\(e^{\beta_j}\)</span></td>
-<td>Fator multiplicativo na mediana (presença vs ausência)</td>
-</tr>
-<tr class="even">
-<td>Contínua</td>
-<td><span class="math inline">\(e^{\beta_j}\)</span></td>
-<td>Fator multiplicativo na mediana (aumento de 1 unidade)</td>
-</tr>
-<tr class="odd">
-<td>Qualitativa (&gt;2 categorias)</td>
-<td><span class="math inline">\(e^{\beta_j}\)</span></td>
-<td>Fator multiplicativo na mediana (categoria vs referência)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="cuidados-importantes"><strong>Cuidados importantes</strong></h3>
+<li><p><strong>Os testes de comparação de curvas de sobrevivência</strong> podem ser utilizados como uma etapa inicial de seleção de variáveis.</p></li>
+<li><p>As <strong>covariáveis categóricas são avaliadas individualmente por meio da comparação entre suas curvas de sobrevivência</strong>.</p></li>
+<li><p>Uma <strong>estratégia</strong> comum consiste em:</p>
 <ol type="1">
-<li><p><strong>A interpretação via razão de medianas</strong> é válida quando o modelo paramétrico tem <strong>efeito multiplicativo</strong> no tempo (Weibull, Log-normal, Gama, Gama Generalizado).</p></li>
-<li><p><strong>Para o modelo Exponencial:</strong> A razão de <strong>medianas</strong> também funciona, mas cuidado pois a mediana é <span class="math inline">\((\log 2)/\alpha\)</span>.</p></li>
-<li><p><strong>Sinal do coeficiente:</strong></p>
+<li><strong>ajustar curvas</strong> de Kaplan-Meier para cada covariável categórica;</li>
+<li><strong>aplicar os testes Log-rank ou Peto-Peto</strong>;</li>
+<li><strong>selecionar para a regressão variáveis com evidências de associação com a sobrevivência</strong> (p-valor &lt;0.25).</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="ideia-geral-da-estratégia" class="slide level2">
+<h2><strong>IDEIA GERAL DA ESTRATÉGIA</strong></h2>
+<div class="box-blue">
 <ul>
-<li><span class="math inline">\(\beta_j &gt; 0\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(e^{\beta_j} &gt; 1\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>aumenta</strong> a mediana</li>
-<li><span class="math inline">\(\beta_j &lt; 0\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(e^{\beta_j} &lt; 1\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>diminui</strong> a mediana</li>
+<li>Após esse filtro inicial, a <strong>estratégia</strong> adotada será:
+<ol type="1">
+<li>ajustar <strong>inicialmente</strong> o modelo mais <strong>flexível</strong>;</li>
+<li>realizar a <strong>seleção de variáveis nesse modelo</strong>;</li>
+<li>manter a <strong>mesma estrutura de covariáveis</strong>;</li>
+<li>ajustar <strong>modelos mais simples</strong>;</li>
+<li>comparar <strong>os modelos</strong>;</li>
+<li>avaliar os <strong>diagnósticos finais</strong>.</li>
+</ol></li>
+<li>Neste contexto, utilizaremos inicialmente o modelo <strong>Gama Generalizado</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="por-que-começar-pelo-gama-generalizado" class="slide level2">
+<h2><strong>POR QUE COMEÇAR PELO GAMA GENERALIZADO?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>O modelo <strong>Gama Generalizado</strong> é bastante flexível e <strong>engloba diversos modelos clássicos como casos particulares</strong>.</p></li>
+<li><p>Dependendo dos <strong>parâmetros</strong>, ele pode se aproximar de:</p>
+<ul>
+<li><strong>modelo exponencial</strong>;</li>
+<li><strong>Weibull</strong>;</li>
+<li><strong>log-normal</strong>;</li>
+<li><strong>gama</strong>.</li>
 </ul></li>
-</ol>
+<li><p>Assim, ele <strong>permite descrever diferentes formatos para a distribuição dos tempos e para a função de risco</strong>.</p></li>
+<li><p>Isso <strong>reduz o risco de selecionar variáveis com base em um modelo mais restritivo</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="seleção-de-variáveis-no-gama-generalizado" class="slide level2">
+<h2><strong>SELEÇÃO DE VARIÁVEIS NO GAMA GENERALIZADO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Após ajustar <strong>o modelo Gama Generalizado</strong>, a seleção <strong>das covariáveis pode considerar simultaneamente</strong>:
+<ul>
+<li><strong>significância estatística</strong>;</li>
+<li><strong>qualidade de ajuste</strong>;</li>
+<li><strong>plausibilidade clínica/científica</strong>.</li>
+</ul></li>
+<li>As <strong>principais ferramentas</strong> utilizadas são:
+<ul>
+<li><strong>valor-p</strong>;</li>
+<li><strong>teste da razão de verossimilhanças</strong> (TRV);</li>
+<li><strong>AIC e BIC</strong>;</li>
+<li><strong>conhecimento do especialista</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="usando-o-valor-p" class="slide level2">
+<h2><strong>USANDO O VALOR-P</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O <strong>valor-p</strong> avalia evidências contra:</li>
+</ul>
+<p><span class="math display">\[
+H_0:\beta_j=0
+\]</span></p>
+<ul>
+<li>Interpretação:
+<ul>
+<li><strong>valores pequenos indicam evidências de associação</strong>;</li>
+<li><strong>valores grandes sugerem pouca evidência de efeito da covariável</strong>.</li>
+</ul></li>
+<li>Entretanto:
+<ul>
+<li>o valor-p <strong>não mede qualidade global do modelo</strong>;</li>
+<li>variáveis importantes podem <strong>não apresentar significância em pequenas amostras</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="usando-o-teste-da-razão-de-verossimilhanças-trv" class="slide level2">
+<h2><strong>USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)</strong></h2>
+<div class="box-blue">
+<ul>
+<li>O TRV <strong>compara dois modelos aninhados</strong>:
+<ul>
+<li><strong>modelo completo</strong>;</li>
+<li><strong>modelo reduzido</strong>.</li>
+</ul></li>
+<li>A <strong>estatística</strong> é dada por:</li>
+</ul>
+<p><span class="math display">\[\Lambda = 2[\ln L(\text{complexo}) - \ln L(\text{simples})]\]</span></p>
+<p>onde: - <span class="math inline">\(ln L(\text{complexo})\)</span>: log-verossimilhança do modelo complexo - <span class="math inline">\(ln L(\text{simples})\)</span>: log-verossimilhança do modelo mais simples.</p>
+<ul>
+<li>Valores <strong>grandes</strong> do TRV indicam que <strong>a remoção da variável piora significativamente o ajuste</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="usando-o-aic-e-o-bic" class="slide level2">
+<h2><strong>USANDO O AIC E O BIC</strong></h2>
+<div class="box-blue">
+<p>O <strong>Critério de Informação de Akaike (AIC)</strong> é dado por:</p>
+<p><span class="math display">\[AIC = 2k - 2\ln(\hat{L})\]</span></p>
+<p>O <strong>Critério de Informação Bayesiano (BIC)</strong> é dado por:</p>
+<p><span class="math display">\[BIC = k \cdot \log(n) - 2\ln(\hat{L})\]</span></p>
+<p>onde:</p>
+<ul>
+<li><span class="math inline">\(\ln(\hat{L})\)</span>: log-verossimilhança;</li>
+<li><span class="math inline">\(k\)</span>: número de parâmetros;</li>
+<li><span class="math inline">\(n\)</span>: tamanho da amostra.</li>
+</ul>
+</div>
+</section>
+<section id="usando-o-aic-e-o-bic-1" class="slide level2">
+<h2><strong>USANDO O AIC E O BIC</strong></h2>
+<div class="box-blue">
+<p>Os <strong>critérios buscam equilíbrio</strong> entre:</p>
+<ul>
+<li>qualidade de ajuste;</li>
+<li>complexidade do modelo.</li>
+</ul>
+<p>Modelos com <strong>menores valores de AIC e BIC são preferidos</strong>.</p>
+<ul>
+<li><p>O BIC penaliza modelos complexos de forma mais intensa, especialmente quando <strong>n</strong> é grande.</p></li>
+<li><p>Assim:</p>
+<ul>
+<li>o AIC <strong>tende a favorecer modelos mais flexíveis</strong>;</li>
+<li>o BIC <strong>tende a favorecer modelos mais parcimoniosos</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="importância-do-especialista" class="slide level2">
+<h2><strong>IMPORTÂNCIA DO ESPECIALISTA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Nem toda decisão deve ser baseada exclusivamente em <strong>critérios automáticos</strong>.</p></li>
+<li><p>Variáveis importantes do ponto de vista:</p></li>
+<li><p>clínico;</p></li>
+<li><p>epidemiológico;</p></li>
+<li><p>biológico;</p></li>
+<li><p>operacional;</p></li>
+</ul>
+<p>podem permanecer no modelo mesmo sem forte significância estatística.</p>
+<p>A <strong>interpretação prática e o conhecimento substantivo são fundamentais</strong>.</p>
+</div>
+</section>
+<section id="fixando-a-estrutura-de-covariáveis" class="slide level2">
+<h2><strong>FIXANDO A ESTRUTURA DE COVARIÁVEIS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Após a seleção no <strong>modelo Gama Generalizado</strong>:
+<ul>
+<li><strong>mantém-se</strong> o mesmo conjunto de covariáveis;</li>
+<li><strong>ajustam-se modelos</strong> paramétricos mais simples.</li>
+</ul></li>
+<li>Isso permite comparar apenas <strong>o efeito da distribuição escolhida</strong>, sem alterar a <strong>estrutura explicativa</strong> do modelo.</li>
+</ul>
+</div>
+</section>
+<section id="ajustando-modelos-mais-simples" class="slide level2">
+<h2><strong>AJUSTANDO MODELOS MAIS SIMPLES</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Com as covariáveis já selecionadas, <strong>podem ser ajustados</strong>:</p></li>
+<li><p>modelo exponencial;</p></li>
+<li><p>Weibull;</p></li>
+<li><p>log-normal;</p></li>
+<li><p>gama;</p></li>
+<li><p>Cada <strong>distribuição impõe diferentes formas para</strong>:</p></li>
+<li><p>a <strong>função de risco</strong>;</p></li>
+<li><p>o comportamento dos <strong>tempos de ocorrência do evento de interesse</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="comparando-os-modelos" class="slide level2">
+<h2><strong>COMPARANDO OS MODELOS</strong></h2>
+<div class="box-blue">
+<p>A <strong>comparação entre distribuições pode considerar</strong>:</p>
+<ul>
+<li>AIC;</li>
+<li>BIC;</li>
+<li>TRV</li>
+</ul>
+<p>Em geral:</p>
+<ul>
+<li><strong>menores</strong> <strong>valores de AIC/BIC</strong> indicam <strong>melhor ajuste</strong>;</li>
+<li><strong>maiores valores da estatística TRV</strong> favorecem <strong>o modelo gama generalizado</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="o-melhor-modelo-é-sempre-o-mais-complexo" class="slide level2">
+<h2><strong>O MELHOR MODELO É SEMPRE O MAIS COMPLEXO?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Nem sempre.</p></li>
+<li><p>Embora <strong>o Gama Generalizado seja mais flexível</strong>, modelos <strong>mais simples podem apresentar</strong>:</p>
+<ul>
+<li><strong>ajuste semelhante</strong>;</li>
+<li><strong>interpretação mais fácil</strong>;</li>
+<li><strong>maior estabilidade</strong>;</li>
+<li><strong>menor variabilidade nas estimativas</strong>.</li>
+</ul></li>
+<li><p><strong>Assim, um modelo mais simples pode ser preferido mesmo com pequena diferença no AIC</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="função-de-risco-ajustada" class="slide level2">
+<h2><strong>FUNÇÃO DE RISCO AJUSTADA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Também é <strong>importante avaliar o comportamento</strong> da função de risco ajustada.</p></li>
+<li><p>Cada <strong>distribuição produz formatos específicos</strong>:</p>
+<ul>
+<li>exponencial → risco <strong>constante</strong>;</li>
+<li>Weibull → risco <strong>crescente ou decrescente</strong>;</li>
+<li>log-normal → risco <strong>unimodal</strong>;</li>
+<li>gama generalizado → <strong>maior flexibilidade</strong>.</li>
+</ul></li>
+<li><p>A <strong>plausibilidade do risco ajustado deve ser compatível com o fenômeno estudado</strong>.</p></li>
+</ul>
 </div>
 
 

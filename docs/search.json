@@ -4,7 +4,7 @@
     "href": "Aula9.html#onde-estamos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "ONDE ESTAMOS",
-    "text": "ONDE ESTAMOS\n\n\nAté agora, modelamos o tempo de sobrevivência/confiabilidade sem considerar covariáveis.\nAprendemos modelos paramétricos (Exponencial, Weibull, Log‑normal, Gama e Gama Generalizada) e suas funções associadas.\nVimos estimação pontual e intervalar via máxima verossimilhança.\nAprendemos alguns critérios de escolha do modelo paramétrico.\nPróximo passo natural: Incorporar informações adicionais (covariáveis) para explicar as diferenças nos tempos observados."
+    "text": "ONDE ESTAMOS\n\n\nAté agora, modelamos o tempo de sobrevivência/confiabilidade sem considerar covariáveis.\nAprendemos modelos paramétricos (Exponencial, Weibull, Log‑normal, Gama e Gama Generalizada) e suas funções associadas.\nVimos estimação pontual e intervalar via máxima verossimilhança.\nAprendemos alguns critérios de escolha do modelo paramétrico.\n\nTudo em um contexto sem covariáveis.\n\nPróximo passo natural: Incorporar informações adicionais (covariáveis) para explicar as diferenças nos tempos observados."
   },
   {
     "objectID": "Aula9.html#perguntas-que-motivam-a-inclusão-de-covariáveis",
@@ -18,21 +18,21 @@
     "href": "Aula9.html#limitação-das-técnicas-nãoparamétricas",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "LIMITAÇÃO DAS TÉCNICAS NÃO‑PARAMÉTRICAS",
-    "text": "LIMITAÇÃO DAS TÉCNICAS NÃO‑PARAMÉTRICAS\n\n\nNão permitem a inclusão direta de covariáveis na análise.\nForam úteis para descrever os dados pela simplicidade e facilidade de aplicação.\nMas: sem estrutura paramétrica, não conseguimos fazer análises mais elaboradas incluindo covariáveis."
+    "text": "LIMITAÇÃO DAS TÉCNICAS NÃO‑PARAMÉTRICAS\n\n\nUma primeira metodologia seria considerar a abordagem não-paramétrica para incorporar covariáveis.\nEntretanto, essa metodologia não permite a inclusão direta de covariáveis na análise.\nOs métodos vistos no contexto não paramétrico foram úteis para descrever os dados pela simplicidade e facilidade de aplicação.\nMas: sem estrutura paramétrica, não conseguimos fazer análises mais elaboradas incluindo covariáveis."
   },
   {
     "objectID": "Aula9.html#uma-tentativa-simples-estratificação",
     "href": "Aula9.html#uma-tentativa-simples-estratificação",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "UMA TENTATIVA SIMPLES: ESTRATIFICAÇÃO",
-    "text": "UMA TENTATIVA SIMPLES: ESTRATIFICAÇÃO\n\n\nDividir os dados em estratos conforme as covariáveis e usar técnicas não‑paramétricas.\nVantagens: Simplicidade e fácil entendimento.\nSérias limitações:\n\nMuitas covariáveis \\(\\rightarrow\\) número grande de estratos \\(\\rightarrow\\) poucas (ou nenhuma) observações por estrato.\nComparações ficam impossíveis.\n\nO efeito das covariáveis é mais individualizado."
+    "text": "UMA TENTATIVA SIMPLES: ESTRATIFICAÇÃO\n\n\nDividir os dados em estratos conforme as covariáveis e usar técnicas não‑paramétricas.\nVantagens:\n\nSimplicidade e fácil entendimento.\n\nSérias limitações:\n\nMuitas covariáveis \\(\\rightarrow\\) número grande de estratos \\(\\rightarrow\\) poucas (ou nenhuma) observações por estrato.\nComparações ficam impossíveis.\n\nO efeito das covariáveis é mais individualizado."
   },
   {
     "objectID": "Aula9.html#solução-mais-eficiente",
     "href": "Aula9.html#solução-mais-eficiente",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "SOLUÇÃO MAIS EFICIENTE",
-    "text": "SOLUÇÃO MAIS EFICIENTE\n\n\nAcomodar o efeito das covariáveis usando um modelo de regressão apropriado para dados censurados.\nAgora vamos estender os modelos paramétricos que já conhecemos para incluir covariáveis.\nDuas classes principais na literatura:\n\nModelos paramétricos (mais eficientes, menos flexíveis)\nModelos semiparamétricos (mais flexíveis, incluem o modelo de Cox)"
+    "text": "SOLUÇÃO MAIS EFICIENTE\n\n\nAcomodar o efeito das covariáveis usando um modelo de regressão apropriado para dados censurados.\nAgora vamos estender os modelos paramétricos que já conhecemos para incluir covariáveis.\nDuas classes principais na literatura em análise de sobrevivência/confiabilidade:\n\nModelos paramétricos (mais eficientes, menos flexíveis)\nModelos semiparamétricos (mais flexíveis, incluem o modelo de Cox)"
   },
   {
     "objectID": "Aula9.html#o-caminho-que-vamos-seguir",
@@ -46,14 +46,14 @@
     "href": "Aula9.html#introdução-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUÇÃO",
-    "text": "INTRODUÇÃO\n\n\nObjetivo: Estimar o efeito de covariáveis sobre o tempo de sobrevivência (confiabilidade).\nEstrutura do modelo tem dois componentes:\n\nComponente aleatório: descreve probabilisticamente o comportamento do tempo até o evento.\nComponente sistemático (estrutural): descreve a relação entre os parâmetros da distribuição e as covariáveis."
+    "text": "INTRODUÇÃO\n\n\nObjetivo: Estimar o efeito de covariáveis sobre o tempo de sobrevivência/confiabilidade\nEstrutura do modelo tem dois componentes:\n\nComponente aleatório: descreve probabilisticamente o comportamento do tempo até o evento.\nComponente sistemático (estrutural): descreve a relação entre os parâmetros da distribuição e as covariáveis."
   },
   {
     "objectID": "Aula9.html#relembrando-modelo-de-regressão-linear",
     "href": "Aula9.html#relembrando-modelo-de-regressão-linear",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RELEMBRANDO: MODELO DE REGRESSÃO LINEAR",
-    "text": "RELEMBRANDO: MODELO DE REGRESSÃO LINEAR\n\n\nA superfície de regressão é o componente determinístico.\nA variação em torno dessa superfície é o componente estocástico.\nNo modelo linear clássico: componente estocástico tem distribuição normal."
+    "text": "RELEMBRANDO: MODELO DE REGRESSÃO LINEAR\n\n\nNa disciplina de Modelos Lineares I, vocês viram todos os detalhes metodológicos sobre o modelo de regressão linear múltipla.\nA superfície de regressão nesse modelo é o componente determinístico.\nA variação em torno dessa superfície é o componente estocástico.\nO componente estocástico tem distribuição normal."
   },
   {
     "objectID": "Aula9.html#relembrando-representação-matricial",
@@ -67,35 +67,21 @@
     "href": "Aula9.html#relembrando-função-de-verossimilhança",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "RELEMBRANDO: FUNÇÃO DE VEROSSIMILHANÇA",
-    "text": "RELEMBRANDO: FUNÇÃO DE VEROSSIMILHANÇA\n\n\nSupondo \\(\\epsilon_i \\sim N(0,\\sigma^2)\\): \\[Y_i \\sim N(\\boldsymbol{X_i}\\boldsymbol{\\beta}, \\sigma^2)\\]\n\nNote como a estrutura determinística \\(X_i\\beta\\) substitui a média \\(\\mu_i\\) de cada observação\n\nAssim, a função de verossimilhança é dada por:\n\\[L(\\boldsymbol{\\beta},\\sigma^2)=\\prod_{i=1}^n\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left\\{-\\frac{(y_i-\\boldsymbol{X_i}\\boldsymbol{\\beta})^2}{2\\sigma^2}\\right\\}\\]\n\nEstimação: Máxima Verossimilhança ou Mínimos Quadrados (coincidem neste caso)."
+    "text": "RELEMBRANDO: FUNÇÃO DE VEROSSIMILHANÇA\n\n\nSupondo \\(\\epsilon_i \\sim N(0,\\sigma^2)\\): \\[Y_i \\sim N(\\boldsymbol{X_i}\\boldsymbol{\\beta}, \\sigma^2)\\]\n\nNote como a estrutura determinística \\(X_i\\beta\\) substitui a média \\(\\mu_i\\) de cada observação\n\nAssim, a função de verossimilhança é dada por:\n\\[L(\\boldsymbol{\\beta},\\sigma^2)=\\prod_{i=1}^n\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left\\{-\\frac{(y_i-\\boldsymbol{X_i}\\boldsymbol{\\beta})^2}{2\\sigma^2}\\right\\}\\]\n\nEstimação: Máxima Verossimilhança ou Mínimos Quadrados (coincidem neste caso).\nValores positivos de \\(\\beta\\) aumentam a média da resposta e valores negativos de \\(\\beta\\) diminuem a média da resposta."
   },
   {
     "objectID": "Aula9.html#por-que-não-usar-o-modelo-linear-diretamente",
     "href": "Aula9.html#por-que-não-usar-o-modelo-linear-diretamente",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "POR QUE NÃO USAR O MODELO LINEAR DIRETAMENTE?",
-    "text": "POR QUE NÃO USAR O MODELO LINEAR DIRETAMENTE?\n\n\nProblemas com dados de sobrevivência:\n\nCensura: nem todos os tempos são observados completamente.\nAssimetria: distribuição dos tempos é geralmente assimétrica (cauda à direita).\nNormalidade inadequada: a distribuição normal não é apropriada para tempos positivos e assimétricos.\n\nConclusão: O modelo linear tradicional não pode ser aplicado diretamente."
+    "text": "POR QUE NÃO USAR O MODELO LINEAR DIRETAMENTE?\n\n\nProblemas com dados de sobrevivência:\n\nCensura: nem todos os tempos são observados completamente.\nAssimetria: distribuição dos tempos é geralmente assimétrica (cauda à direita).\nNormalidade inadequada: a distribuição normal não é apropriada para tempos positivos e assimétricos.\n\nConclusão: O modelo de regressão linear múltipla não pode ser aplicado diretamente."
   },
   {
     "objectID": "Aula9.html#solução-para-dados-censurados",
     "href": "Aula9.html#solução-para-dados-censurados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "SOLUÇÃO PARA DADOS CENSURADOS",
-    "text": "SOLUÇÃO PARA DADOS CENSURADOS\n\n\nDuas adaptações necessárias:\n\nComponente determinístico não-linear nos parâmetros:\\(e^{\\boldsymbol{X}\\boldsymbol{\\beta}}\\)\n\nGarante tempos positivos\n\nDistribuição assimétrica para o tempo de ocorrência do evento:\n\nWeibull, Log‑normal, Exponencial , Gama, Gama Generalizada, etc.\n\n\nResultado: Modelos de regressão paramétricos para dados de sobrevivência."
-  },
-  {
-    "objectID": "Aula9.html#visão-geral-da-abordagem",
-    "href": "Aula9.html#visão-geral-da-abordagem",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "VISÃO GERAL DA ABORDAGEM",
-    "text": "VISÃO GERAL DA ABORDAGEM\n\n\nModelos paramétricos com covariáveis: a distribuição do tempo \\(T\\) depende de \\(\\boldsymbol{X}\\) através de seus parâmetros.\nExemplo (modelo Weibull):\n\nFunção de risco: \\(h(t|\\boldsymbol{X}) = \\lambda(\\boldsymbol{X}) \\, \\gamma \\, t^{\\gamma-1}\\)\nFrequentemente: \\(\\lambda(\\boldsymbol{X}) = \\exp(\\boldsymbol{X}\\boldsymbol{\\beta})\\)\n\nInterpretação: as covariáveis aceleram ou desaceleram o tempo até o evento."
-  },
-  {
-    "objectID": "Aula9.html#próximos-passos",
-    "href": "Aula9.html#próximos-passos",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "PRÓXIMOS PASSOS",
-    "text": "PRÓXIMOS PASSOS\n\n\nVeremos casos particulares de modelos paramétricos com covariáveis.\nAprenderemos a estimar e interpretar os coeficientes.\nFaremos inferência (testes de hipóteses e intervalos de confiança).\nExemplos práticos com R."
+    "text": "SOLUÇÃO PARA DADOS CENSURADOS\n\n\nDuas adaptações necessárias:\n\nComponente determinístico não-linear nos parâmetros: \\(e^{\\boldsymbol{X}\\boldsymbol{\\beta}}\\)\n\nGarante tempos positivos\n\nDistribuição assimétrica para o tempo de ocorrência do evento:\n\nWeibull, Log‑normal, Exponencial , Gama, Gama Generalizada, etc.\n\n\nResultado: Modelos de regressão paramétricos para dados de sobrevivência."
   },
   {
     "objectID": "Aula9.html#notação",
@@ -109,7 +95,14 @@
     "href": "Aula9.html#notação-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "NOTAÇÃO",
-    "text": "NOTAÇÃO\n\n\nA função de verossimilhança (considerando censura) é dada por:\n\\[L(\\boldsymbol{\\theta}) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\\]\n\n\\(\\delta_i = 1\\) se o evento foi observado (ocorrência)\n\\(\\delta_i = 0\\) se o tempo foi censurado\n\nPor simplificação, no contexto com covariáveis, serão vistos apenas os seguintes modelos de regressão:\n\nModelo de regressão exponencial\nModelo de regressão Weibull\nModelo de regressão LogNormal"
+    "text": "NOTAÇÃO\n\n\nA função de verossimilhança (considerando censura) é dada por:\n\\[L(\\boldsymbol{\\theta}) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\\]\n\n\\(\\delta_i = 1\\) se o evento foi observado (ocorrência)\n\\(\\delta_i = 0\\) se o tempo foi censurado"
+  },
+  {
+    "objectID": "Aula9.html#modelos-de-regressão-paramétricos-vistos-na-disciplina",
+    "href": "Aula9.html#modelos-de-regressão-paramétricos-vistos-na-disciplina",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "MODELOS DE REGRESSÃO PARAMÉTRICOS VISTOS NA DISCIPLINA",
+    "text": "MODELOS DE REGRESSÃO PARAMÉTRICOS VISTOS NA DISCIPLINA\n\n\nVeremos, portanto, os seguintes modelos:\n\nModelo de regressão Exponencial\nModelo de regressão Weibull\nModelo de regressão LogNormal\nModelo de regressão Gama\nModelo de regressão Gama Generalizado"
   },
   {
     "objectID": "Aula9.html#introdução-2",
@@ -140,11 +133,18 @@
     "text": "FUNÇÃO DE VEROSSIMILHANÇA\n\n\nA função de verossimilhança é dada por:\n\\[\nL(\\boldsymbol{\\beta}) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\n\\]\nSubstituindo as expressões:\n\\[\nL(\\boldsymbol{\\beta}) = \\prod_{i=1}^n \\left[e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} \\cdot e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t_i}\\right]^{\\delta_i} \\left[e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t_i}\\right]^{1-\\delta_i}\n\\]\nA estimação dos parâmetros \\(\\boldsymbol{\\beta}\\) é feita maximizando esta função por meio de métodos numéricos (não existe solução fechada)."
   },
   {
-    "objectID": "Aula9.html#interpretação",
-    "href": "Aula9.html#interpretação",
+    "objectID": "Aula9.html#interpretação-de-beta",
+    "href": "Aula9.html#interpretação-de-beta",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO",
-    "text": "INTERPRETAÇÃO\n\n\nNo modelo exponencial com covariáveis, vimos que: \\(\\lambda_i(t|\\boldsymbol{x_i}) = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\)\nPara uma covariável contínua \\(x_j\\):\n\n\\(e^{\\beta_j}\\) é o fator multiplicativo no risco para cada aumento de 1 unidade em \\(x_j\\) (mantendo as demais fixas).\nExemplo: Se \\(\\beta_j = 0,5\\), então \\(e^{0,5} \\approx 1,65\\) — risco aumenta 65% para cada unidade adicional.\n\nNo modelo exponencial, o tempo médio é: \\(\\mathbb{E}[T_i|\\boldsymbol{x_i}] = 1/\\lambda_i = e^{-\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\)\n\nConsequência: \\(\\beta_j\\) positivo \\(\\rightarrow\\) maior risco \\(\\rightarrow\\) menor tempo médio de vida.\n\nComparando dois indivíduos \\(i\\) e \\(k\\):\n\\[\\frac{\\lambda_i(t|\\boldsymbol{x_i})}{\\lambda_k(t|\\boldsymbol{x_k})} = e^{(\\boldsymbol{X_i} - \\boldsymbol{X_k})\\boldsymbol{\\beta}}\\]\nInterpretação: A razão de riscos é constante no tempo (propriedade do modelo exponencial)."
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\n\n\\(\\beta &gt; 0\\):\n\naumentam o valor de \\(e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\);\naumentam a taxa \\(\\alpha_i\\);\naumentam o risco de ocorrência do evento;\nfazem a sobrevivência decair mais rapidamente;\nreduzem o tempo esperado até a ocorrência do evento.\n\n\n\n\n\\(\\beta &lt; 0\\):\n\ndiminuem o valor de \\(e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\);\ndiminuem a taxa \\(\\alpha_i\\);\nreduzem o risco de ocorrência do evento;\nfazem a sobrevivência decair mais lentamente;\naumentam o tempo esperado até a ocorrência do evento."
+  },
+  {
+    "objectID": "Aula9.html#interpretação-de-beta-1",
+    "href": "Aula9.html#interpretação-de-beta-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\nNo modelo exponencial, as covariáveis entram diretamente no parâmetro de taxa:\n\n\\[\n\\alpha_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\n\\]\n\nComo a média da distribuição exponencial é dada por:\n\n\\[\nE(T_i)=\\frac{1}{\\alpha_i}\n\\]\ntemos que:\n\ntaxas maiores implicam tempos médios menores;\ntaxas menores implicam tempos médios maiores."
   },
   {
     "objectID": "Aula9.html#introdução-3",
@@ -182,11 +182,18 @@
     "text": "FUNÇÃO DE VEROSSIMILHANÇA\n\n\nA função de verossimilhança é dada por:\n\\[\nL(\\boldsymbol{\\beta},\\gamma) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\n\\]\nSubstituindo as expressões:\n\\[\nL(\\boldsymbol{\\beta},\\gamma) = \\prod_{i=1}^n \\left[\\frac{\\gamma t_i^{\\gamma-1}}{e^{\\gamma \\boldsymbol{X_i}\\boldsymbol{\\beta}}} e^{-\\left(\\frac{t_i}{e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}}\\right)^\\gamma}\\right]^{\\delta_i} \\left[e^{-\\left(\\frac{t_i}{e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}}\\right)^\\gamma}\\right]^{1-\\delta_i}\n\\]\nA estimação dos parâmetros \\(\\boldsymbol{\\beta}\\) e \\(\\gamma\\) é feita maximizando esta função por meio de métodos numéricos."
   },
   {
-    "objectID": "Aula9.html#interpretação-1",
-    "href": "Aula9.html#interpretação-1",
+    "objectID": "Aula9.html#interpretação-de-beta-2",
+    "href": "Aula9.html#interpretação-de-beta-2",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO",
-    "text": "INTERPRETAÇÃO\n\n\nNo modelo Weibull: \\(\\lambda_i(t|\\boldsymbol{x_i}) = \\frac{\\gamma t^{\\gamma-1}}{e^{\\gamma \\boldsymbol{X_i}\\boldsymbol{\\beta}}} = \\gamma t^{\\gamma-1} \\cdot e^{-\\gamma \\boldsymbol{X_i}\\boldsymbol{\\beta}}\\)\nPara uma covariável contínua \\(x_j\\):\n\n\\(e^{-\\gamma \\beta_j}\\) é o fator multiplicativo no risco para um dado tempo \\(t\\).\nCuidado: o efeito é o mesmo para todo \\(t\\)? Sim! O Weibull preserva a proporcionalidade dos riscos.\n\nComparando dois indivíduos \\(i\\) e \\(k\\):\n\\[\\frac{\\lambda_i(t|\\boldsymbol{x_i})}{\\lambda_k(t|\\boldsymbol{x_k})} = e^{-\\gamma (\\boldsymbol{X_i} - \\boldsymbol{X_k})\\boldsymbol{\\beta}}\\]\nA razão de riscos é constante no tempo (propriedade do modelo Weibull)."
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\n\n\\(\\beta &gt; 0\\):\n\naumentam o valor de \\(e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\);\naumentam o parâmetro de escala \\(\\kappa_i\\);\ndeslocam a distribuição para tempos maiores;\nfazem a sobrevivência decair mais lentamente;\naumentam o tempo esperado até a ocorrência do evento.\n\n\n\n\n\\(\\beta &lt; 0\\):\n\ndiminuem o valor de \\(e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\);\ndiminuem o parâmetro de escala \\(\\kappa_i\\);\ndeslocam a distribuição para tempos menores;\nfazem a sobrevivência decair mais rapidamente;\nreduzem o tempo esperado até a ocorrência do evento."
+  },
+  {
+    "objectID": "Aula9.html#interpretação-de-beta-3",
+    "href": "Aula9.html#interpretação-de-beta-3",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\nNo modelo Weibull, as covariáveis entram diretamente no parâmetro de escala:\n\n\\[\n\\kappa_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\n\\]\n\nA média da distribuição Weibull é dada por:\n\n\\[\nE(T_i)=\\kappa_i\\Gamma\\left(1+\\frac{1}{\\gamma}\\right)\n\\]\nonde \\(\\Gamma(\\cdot)\\) representa a função gama.\n\nComo \\(\\Gamma\\left(1+\\frac{1}{\\gamma}\\right)\\) é constante em relação às covariáveis, temos que:\n\nvalores maiores de \\(\\kappa_i\\) implicam tempos médios maiores;\nvalores menores de \\(\\kappa_i\\) implicam tempos médios menores."
   },
   {
     "objectID": "Aula9.html#introdução-4",
@@ -200,14 +207,7 @@
     "href": "Aula9.html#definição-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DEFINIÇÃO",
-    "text": "DEFINIÇÃO\n\n\nNo contexto com covariáveis, a variável \\(T_i\\) segue:\n\\[T_i \\sim \\text{Log-Normal}(\\mu_i, \\sigma), \\quad i=1,2,\\ldots,n\\]\nonde \\(\\mu_i\\) varia conforme os valores das covariáveis observadas para o elemento \\(i\\).\nDiferente do Weibull: o parâmetro \\(\\mu_i \\in \\mathbb{R}\\) (pode assumir qualquer valor real).\nSolução natural: permitir que as covariáveis entrem no modelo linearmente (não precisa da exponencial, pois \\(\\mu_i\\) já pode ser negativo):\n\\[\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta}\\]"
-  },
-  {
-    "objectID": "Aula9.html#importante-1",
-    "href": "Aula9.html#importante-1",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "IMPORTANTE",
-    "text": "IMPORTANTE\n\n\nNo modelo Log-normal, modelamos \\(\\mu_i = \\mathbb{E}[\\log(T_i)|\\boldsymbol{x_i}]\\)\n\n\\(\\log(T_i)\\) tem distribuição Normal.\nA média da Normal (\\(\\mu_i\\)) pode ser qualquer número real.\nNão há restrição de positividade!\n\nComparação com modelos anteriores:\n\n\n\n\n\n\n\n\n\n\nModelo\nParâmetro modelado\nRestrição\nLink\n\n\n\n\nExponencial\n\\(\\alpha_i\\) (taxa)\n\\(\\alpha_i &gt; 0\\)\n\\(\\alpha_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\)\n\n\nWeibull\n\\(\\alpha_i\\) (escala)\n\\(\\alpha_i &gt; 0\\)\n\\(\\alpha_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\)\n\n\nLog-normal\n\\(\\mu_i\\) (média do log)\n\\(\\mu_i \\in \\mathbb{R}\\)\n\\(\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta}\\) (linear)\n\n\n\n\nVantagem: interpretação mais direta dos coeficientes."
+    "text": "DEFINIÇÃO\n\n\nNo contexto com covariáveis, a variável \\(T_i\\) segue:\n\\[T_i \\sim \\text{Log-Normal}(\\mu_i, \\sigma), \\quad i=1,2,\\ldots,n\\]\nonde \\(\\mu_i\\) varia conforme os valores das covariáveis observadas para o elemento \\(i\\).\nDiferente do Weibull: o parâmetro \\(\\mu_i \\in \\mathbb{R}\\) (pode assumir qualquer valor real).\nSolução natural: permitir que as covariáveis entrem no modelo linearmente (não precisa da exponencial, pois \\(\\mu_i\\) pode ser negativo):\n\\[\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta}\\]"
   },
   {
     "objectID": "Aula9.html#definição-5",
@@ -224,130 +224,256 @@
     "text": "FUNÇÃO DE VEROSSIMILHANÇA\n\n\nA função de verossimilhança é dada por:\n\\[\nL(\\boldsymbol{\\beta},\\sigma) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\n\\]\nSubstituindo as expressões:\n\\[\nL(\\boldsymbol{\\beta},\\sigma) = \\prod_{i=1}^n \\left[\\frac{1}{\\sqrt{2\\pi} \\, t_i \\, \\sigma} e^{-\\frac{1}{2}\\left(\\frac{\\log(t_i) - \\boldsymbol{X_i}\\boldsymbol{\\beta}}{\\sigma}\\right)^2}\\right]^{\\delta_i} \\times \\left[\\Phi\\left(\\frac{-\\log(t_i) + \\boldsymbol{X_i}\\boldsymbol{\\beta}}{\\sigma}\\right)\\right]^{1-\\delta_i}\n\\]\nA estimação dos parâmetros \\(\\boldsymbol{\\beta}\\) e \\(\\sigma\\) é feita maximizando esta função por meio de métodos numéricos."
   },
   {
-    "objectID": "Aula9.html#interpretação-2",
-    "href": "Aula9.html#interpretação-2",
+    "objectID": "Aula9.html#interpretação-de-beta-4",
+    "href": "Aula9.html#interpretação-de-beta-4",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO",
-    "text": "INTERPRETAÇÃO\n\n\n\\(\\beta_j\\) mede o efeito no log-tempo médio:\n\\[\\mathbb{E}[\\log(T_i)|\\boldsymbol{x_i}] = \\boldsymbol{X_i}\\boldsymbol{\\beta}\\]\nPara uma covariável contínua \\(x_j\\):\n\n\\(\\beta_j\\) é a variação esperada em \\(\\log(T)\\) para cada aumento de 1 unidade em \\(x_j\\).\nExemplo: Se \\(\\beta_j = 0,5\\), aumentar \\(x_j\\) em 1 unidade aumenta \\(\\log(T)\\) em 0,5 \\(\\rightarrow\\) \\(T\\) é multiplicado por \\(e^{0,5} \\approx 1,65\\).\n\nDiferente do Weibull: o Log-normal não tem riscos proporcionais.\nA razão de riscos varia com o tempo:\n\nPode ser \\(&gt;1\\) para alguns \\(t\\) e \\(&lt;1\\) para outros.\nAs curvas de sobrevivência podem se cruzar."
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\n\n\\(\\beta &gt; 0\\):\n\naumentam o valor de \\(\\boldsymbol{X_i}\\boldsymbol{\\beta}\\);\naumentam o parâmetro \\(\\mu_i\\);\naumentam o valor esperado de \\(\\log(T_i)\\);\ndeslocam a distribuição para tempos maiores;\nfazem a sobrevivência decair mais lentamente;\naumentam o tempo esperado até a ocorrência do evento.\n\n\n\n\n\\(\\beta &lt; 0\\):\n\ndiminuem o valor de \\(\\boldsymbol{X_i}\\boldsymbol{\\beta}\\);\ndiminuem o parâmetro \\(\\mu_i\\);\ndiminuem o valor esperado de \\(\\log(T_i)\\);\ndeslocam a distribuição para tempos menores;\nfazem a sobrevivência decair mais rapidamente;\nreduzem o tempo esperado até a ocorrência do evento."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-1",
-    "href": "Aula9.html#modelo-de-regressão-gama-1",
+    "objectID": "Aula9.html#interpretação-de-beta-5",
+    "href": "Aula9.html#interpretação-de-beta-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA",
-    "text": "MODELO DE REGRESSÃO GAMA\n\nRelembrando o modelo probabilístico Gama (sem covariáveis)\n\n\\(T \\sim \\text{Gama}(\\alpha, \\beta)\\), com \\(\\alpha &gt; 0\\) (forma) e \\(\\beta &gt; 0\\) (taxa)\nFunção densidade de probabilidade:\n\\[f(t) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} t^{\\alpha-1} e^{-\\beta t}\\]\nFunção de sobrevivência (confiabilidade):\n\\[S(t) = 1 - F(t) = 1 - \\frac{\\gamma(\\alpha, \\beta t)}{\\Gamma(\\alpha)}\\]\nonde \\(\\gamma(\\alpha, \\beta t)\\) é a função gama incompleta.\nFunção de risco:\n\\[\\lambda(t) = \\frac{f(t)}{S(t)}\\]\n(não tem forma fechada simples)"
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\nNo modelo Log-Normal, as covariáveis entram diretamente no parâmetro de localização:\n\n\\[\n\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta}\n\\]\n\nComo \\(\\log(T_i)\\sim N(\\mu_i,\\sigma^2)\\), temos que \\(\\mu_i\\) representa o valor esperado de \\(\\log(T_i)\\).\nAlém disso, a média da distribuição Log-Normal é dada por:\n\n\\[\nE(T_i)=e^{\\mu_i+\\frac{\\sigma^2}{2}}\n\\]\n\nAssim:\n\nvalores maiores de \\(\\mu_i\\) implicam tempos médios maiores;\nvalores menores de \\(\\mu_i\\) implicam tempos médios menores."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-2",
-    "href": "Aula9.html#modelo-de-regressão-gama-2",
+    "objectID": "Aula9.html#introdução-5",
+    "href": "Aula9.html#introdução-5",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA",
-    "text": "MODELO DE REGRESSÃO GAMA\n\nDefinição com covariáveis\n\nNo contexto com covariáveis, a variável \\(T_i\\) segue:\n\\[T_i \\sim \\text{Gama}(\\alpha, \\beta_i), \\quad i=1,2,\\ldots,n\\]\nonde \\(\\beta_i\\) varia conforme os valores das covariáveis observadas para o elemento \\(i\\).\nParâmetro de forma \\(\\alpha\\) é comum a todos os indivíduos.\nRestrição: \\(\\beta_i &gt; 0\\) (parâmetro de taxa).\nSolução natural: permitir que as covariáveis entrem no modelo exponencialmente:\n\\[\\beta_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\]"
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\nRelembrando o modelo probabilístico Gama (sem covariáveis):\n\n\\(T \\sim \\text{Gama}(\\alpha, \\beta)\\), com \\(\\alpha &gt; 0\\) (forma) e \\(\\beta &gt; 0\\) (taxa)\nFunção densidade de probabilidade:\n\\[f(t) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} t^{\\alpha-1} e^{-\\beta t}\\]\nFunção de sobrevivência (confiabilidade):\n\\[S(t) = 1 - F(t) = 1 - \\frac{\\gamma(\\alpha, \\beta t)}{\\Gamma(\\alpha)}\\]\nonde \\(\\gamma(\\alpha, \\beta t)\\) é a função gama incompleta.\nFunção de risco:\n\\[\\lambda(t) = \\frac{f(t)}{S(t)}\\]\n(não tem forma fechada simples)"
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-3",
-    "href": "Aula9.html#modelo-de-regressão-gama-3",
+    "objectID": "Aula9.html#definição-6",
+    "href": "Aula9.html#definição-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA",
-    "text": "MODELO DE REGRESSÃO GAMA\n\nPor que modelar \\(\\beta\\) e não \\(\\alpha\\)?\n\n\n\n\n\n\n\n\nParâmetro\nPapel\nModelagem\n\n\n\n\n\\(\\beta\\) (taxa)\nEscala do tempo\nAfeta o tempo médio: \\(\\mathbb{E}[T] = \\alpha/\\beta\\)\n\n\n\\(\\alpha\\) (forma)\nComportamento do risco\nDetermina se o risco é decrescente (\\(\\alpha&lt;1\\)), constante (\\(\\alpha=1\\)) ou crescente (\\(\\alpha&gt;1\\))\n\n\n\n\nMesma lógica do Weibull: covariáveis afetam a escala (tempo de vida), não a forma do risco.\nModelagem alternativa (menos comum): \\(\\alpha_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\) mantendo \\(\\beta\\) comum."
+    "section": "DEFINIÇÃO",
+    "text": "DEFINIÇÃO\n\n\nNo contexto com covariáveis, a variável \\(T_i\\) segue:\n\\[T_i \\sim \\text{Gama}(\\alpha, \\beta_i), \\quad i=1,2,\\ldots,n\\]\nonde \\(\\beta_i\\) varia conforme os valores das covariáveis observadas para o elemento \\(i\\).\nParâmetro de forma \\(\\alpha\\) é comum a todos os indivíduos.\nRestrição: \\(\\beta_i &gt; 0\\) (parâmetro de taxa).\nSolução natural: permitir que as covariáveis entrem no modelo exponencialmente:\n\\[\\beta_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\]"
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-4",
-    "href": "Aula9.html#modelo-de-regressão-gama-4",
+    "objectID": "Aula9.html#importante-1",
+    "href": "Aula9.html#importante-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA",
-    "text": "MODELO DE REGRESSÃO GAMA\n\nFunções para \\(T_i\\) | \\(\\boldsymbol{x_i}\\)\nCom \\(\\beta_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\) e \\(\\alpha\\) comum, temos:\n\nFunção densidade de probabilidade:\n\\[f_i(t|\\boldsymbol{x_i}) = \\frac{e^{\\alpha \\boldsymbol{X_i}\\boldsymbol{\\beta}}}{\\Gamma(\\alpha)} t^{\\alpha-1} e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t}\\]\nFunção de sobrevivência (confiabilidade):\n\\[S_i(t|\\boldsymbol{x_i}) = 1 - \\frac{\\gamma(\\alpha, e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t)}{\\Gamma(\\alpha)}\\]\nFunção de risco:\n\\[\\lambda_i(t|\\boldsymbol{x_i}) = \\frac{f_i(t|\\boldsymbol{x_i})}{S_i(t|\\boldsymbol{x_i})} = \\frac{e^{\\alpha \\boldsymbol{X_i}\\boldsymbol{\\beta}} t^{\\alpha-1} e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t}}{\\Gamma(\\alpha) - \\gamma(\\alpha, e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t)}\\]"
+    "section": "IMPORTANTE",
+    "text": "IMPORTANTE\n\nPor que modelar \\(\\beta\\) e não \\(\\alpha\\)?\n\n\n\n\n\n\n\n\nParâmetro\nPapel\nModelagem\n\n\n\n\n\\(\\beta\\) (taxa)\nEscala do tempo\nAfeta o tempo médio: \\(\\mathbb{E}[T] = \\alpha/\\beta\\)\n\n\n\\(\\alpha\\) (forma)\nComportamento do risco\nDetermina se o risco é decrescente (\\(\\alpha&lt;1\\)), constante (\\(\\alpha=1\\)) ou crescente (\\(\\alpha&gt;1\\))\n\n\n\n\nMesma lógica do Weibull: covariáveis afetam a escala (tempo de vida), não a forma do risco."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-5",
-    "href": "Aula9.html#modelo-de-regressão-gama-5",
+    "objectID": "Aula9.html#definição-7",
+    "href": "Aula9.html#definição-7",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA",
-    "text": "MODELO DE REGRESSÃO GAMA\n\nFunção de Verossimilhança\n\nA função de verossimilhança é dada por:\n\\[\nL(\\boldsymbol{\\beta},\\alpha) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\n\\]\nSubstituindo as expressões:\n\\[\nL(\\boldsymbol{\\beta},\\alpha) = \\prod_{i=1}^n \\left[\\frac{e^{\\alpha \\boldsymbol{X_i}\\boldsymbol{\\beta}}}{\\Gamma(\\alpha)} t_i^{\\alpha-1} e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t_i}\\right]^{\\delta_i} \\left[1 - \\frac{\\gamma(\\alpha, e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t_i)}{\\Gamma(\\alpha)}\\right]^{1-\\delta_i}\n\\]\nA estimação dos parâmetros \\(\\boldsymbol{\\beta}\\) e \\(\\alpha\\) é feita maximizando esta função por meio de métodos numéricos."
+    "section": "DEFINIÇÃO",
+    "text": "DEFINIÇÃO\n\nCom \\(\\beta_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\) e \\(\\alpha\\) comum, temos:\n\nFunção densidade de probabilidade:\n\\[f_i(t|\\boldsymbol{x_i}) = \\frac{e^{\\alpha \\boldsymbol{X_i}\\boldsymbol{\\beta}}}{\\Gamma(\\alpha)} t^{\\alpha-1} e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t}\\]\nFunção de sobrevivência (confiabilidade):\n\\[S_i(t|\\boldsymbol{x_i}) = 1 - \\frac{\\gamma(\\alpha, e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t)}{\\Gamma(\\alpha)}\\]\nFunção de risco:\n\\[\\lambda_i(t|\\boldsymbol{x_i}) = \\frac{f_i(t|\\boldsymbol{x_i})}{S_i(t|\\boldsymbol{x_i})} = \\frac{e^{\\alpha \\boldsymbol{X_i}\\boldsymbol{\\beta}} t^{\\alpha-1} e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t}}{\\Gamma(\\alpha) - \\gamma(\\alpha, e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t)}\\]"
   },
   {
-    "objectID": "Aula9.html#interpretação-das-covariáveis-no-modelo-gama",
-    "href": "Aula9.html#interpretação-das-covariáveis-no-modelo-gama",
+    "objectID": "Aula9.html#função-de-verossimilhança-3",
+    "href": "Aula9.html#função-de-verossimilhança-3",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA",
-    "text": "INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA\n\nEfeito no tempo médio\n\nPara a Gama: \\(\\mathbb{E}[T_i|\\boldsymbol{x_i}] = \\frac{\\alpha}{\\beta_i} = \\alpha e^{-\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\)\nInterpretação: \\(e^{-\\beta_j}\\) é o fator multiplicativo no tempo médio para cada aumento de 1 unidade em \\(x_j\\).\n\nEfeito no risco (hazard)\n\nDiferente do Weibull: a Gama não tem riscos proporcionais (exceto quando \\(\\alpha=1\\), que é o caso exponencial).\nA razão de riscos varia com o tempo.\nComportamento do risco depende de \\(\\alpha\\):\n\n\n\n\\(\\alpha &lt; 1\\)\n\\(\\alpha = 1\\)\n\\(\\alpha &gt; 1\\)\n\n\n\n\nRisco decrescente\nRisco constante\nRisco crescente\n\n\n\n\nRelação com outros modelos\n\n\n\n\n\n\n\n\nCaso especial\nParâmetros\nModelo resultante\n\n\n\n\n\\(\\alpha = 1\\)\nGama(1, \\(\\beta\\))\nExponencial\n\n\n\\(\\alpha\\) inteiro\nGama(\\(k\\), \\(\\beta\\))\nErlang (soma de exponenciais)\n\n\n\\(\\alpha \\to \\infty\\)\nGama(\\(\\alpha\\), \\(\\beta=\\alpha/\\mu\\))\nAproxima Normal\n\n\n\nResumo da interpretação\n\n\n\n\n\n\n\n\n\nCaracterística\nGama\nWeibull\nLog-normal\n\n\n\n\nRiscos proporcionais\nNão (exceto \\(\\alpha=1\\))\nSim\nNão\n\n\nCurvas podem cruzar\nSim\nNão\nSim\n\n\n\\(e^{\\beta_j}\\) interpreta\nFator no tempo médio\nFator no percentil\nFator na mediana\n\n\nParâmetro de forma\n\\(\\alpha\\) (risco monótono)\n\\(\\gamma\\) (risco monótono)\n\\(\\sigma\\) (simetria no log)\n\n\nCaso especial\nExponencial (\\(\\alpha=1\\))\nExponencial (\\(\\gamma=1\\))\n-\n\n\n\nQuando usar Gama?\n\nCurvas de Kaplan-Meier se cruzam.\nO risco é monótono (crescente ou decrescente) mas não proporcional.\nDeseja-se um modelo mais flexível que o Weibull (forma do risco pode ser mais geral).\nOs dados sugerem cauda mais pesada que a Log-normal."
+    "section": "FUNÇÃO DE VEROSSIMILHANÇA",
+    "text": "FUNÇÃO DE VEROSSIMILHANÇA\n\n\nA função de verossimilhança é dada por:\n\\[\nL(\\boldsymbol{\\beta},\\alpha) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\n\\]\nSubstituindo as expressões:\n\\[\nL(\\boldsymbol{\\beta},\\alpha) = \\prod_{i=1}^n \\left[\\frac{e^{\\alpha \\boldsymbol{X_i}\\boldsymbol{\\beta}}}{\\Gamma(\\alpha)} t_i^{\\alpha-1} e^{-e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t_i}\\right]^{\\delta_i} \\left[1 - \\frac{\\gamma(\\alpha, e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}} t_i)}{\\Gamma(\\alpha)}\\right]^{1-\\delta_i}\n\\]\nA estimação dos parâmetros \\(\\boldsymbol{\\beta}\\) e \\(\\alpha\\) é feita maximizando esta função por meio de métodos numéricos."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-generalizado-1",
-    "href": "Aula9.html#modelo-de-regressão-gama-generalizado-1",
+    "objectID": "Aula9.html#interpretação-de-beta-6",
+    "href": "Aula9.html#interpretação-de-beta-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA GENERALIZADO",
-    "text": "MODELO DE REGRESSÃO GAMA GENERALIZADO\n\nRelembrando o modelo probabilístico Gama Generalizado (sem covariáveis)\n\n\\(T \\sim \\text{GG}(\\alpha, \\beta, \\kappa)\\)\nCaracterísticas:\n\nModelo de 3 parâmetros (forma, escala, e um parâmetro adicional de forma)\nFlexibilidade maior que os modelos anteriores\nInclui como casos especiais: Exponencial, Weibull, Gama e Log-normal\n\nFunção densidade de probabilidade (parametrização comum):\n\\[f(t) = \\frac{\\beta e^{\\kappa \\alpha} (\\beta t)^{\\alpha \\kappa - 1} e^{-(\\beta t)^\\alpha}}{\\Gamma(\\kappa)}\\]\nou na forma logarítmica (mais comum em regressão):\n\\[f(t) = \\frac{|\\alpha|}{\\sigma t \\Gamma(\\theta)} \\left(\\frac{t}{e^{\\mu}}\\right)^{\\alpha \\theta} e^{-\\left(\\frac{t}{e^{\\mu}}\\right)^\\alpha}\\]\nCasos especiais (dependendo dos parâmetros):\n\n\n\n\nModelo\nCondição\n\n\n\n\nExponencial\n\\(\\alpha = 1\\), \\(\\kappa = 1\\)\n\n\nWeibull\n\\(\\kappa = 1\\)\n\n\nGama\n\\(\\alpha = 1\\)\n\n\nLog-normal\n\\(\\alpha \\to 0\\)"
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\n\n\\(\\beta &gt; 0\\):\n\naumentam o valor de \\(e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\);\naumentam a taxa \\(\\beta_i\\);\naceleram a ocorrência do evento;\nfazem a sobrevivência decair mais rapidamente;\nreduzem o tempo esperado até o evento de interesse.\n\n\n\n\n\\(\\beta &lt; 0\\):\n\ndiminuem o valor de \\(e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\\);\ndiminuem a taxa \\(\\beta_i\\);\ndesaceleram a ocorrência do evento;\nfazem a sobrevivência decair mais lentamente;\naumentam o tempo esperado até o evento de interesse."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-generalizado-2",
-    "href": "Aula9.html#modelo-de-regressão-gama-generalizado-2",
+    "objectID": "Aula9.html#interpretação-de-beta-7",
+    "href": "Aula9.html#interpretação-de-beta-7",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA GENERALIZADO",
-    "text": "MODELO DE REGRESSÃO GAMA GENERALIZADO\n\nDefinição com covariáveis\n\nNo contexto com covariáveis, a variável \\(T_i\\) segue:\n\\[T_i \\sim \\text{GG}(\\mu_i, \\sigma, \\lambda), \\quad i=1,2,\\ldots,n\\]\n(parametrização em termos de \\(\\mu\\), \\(\\sigma\\) e \\(\\lambda\\) - mais comum em regressão)\nParâmetros:\n\n\\(\\mu_i\\) (posição) → modelado em função das covariáveis\n\\(\\sigma\\) (escala parâmetro) → comum a todos\n\\(\\lambda\\) (forma parâmetro) → comum a todos\n\nSolução natural: \\(\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta}\\) (link linear, pois \\(\\mu_i \\in \\mathbb{R}\\))"
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\nNo modelo Gama, as covariáveis entram diretamente no parâmetro de taxa:\n\n\\[\n\\beta_i = e^{\\boldsymbol{X_i}\\boldsymbol{\\beta}}\n\\]\n\nA média da distribuição Gama é dada por:\n\n\\[\nE(T_i)=\\frac{\\alpha}{\\beta_i}\n\\]\nonde \\(\\alpha\\) representa o parâmetro de forma.\n\nComo \\(\\alpha\\) é constante em relação às covariáveis, temos que:\n\ntaxas maiores implicam tempos médios menores;\ntaxas menores implicam tempos médios maiores."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-generalizado-3",
-    "href": "Aula9.html#modelo-de-regressão-gama-generalizado-3",
+    "objectID": "Aula9.html#introdução-6",
+    "href": "Aula9.html#introdução-6",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA GENERALIZADO",
-    "text": "MODELO DE REGRESSÃO GAMA GENERALIZADO\n\nPor que usar o Gama Generalizado?\n\nVantagens:\n\nModelo mais flexível da família paramétrica\nTeste de hipóteses para escolher modelos aninhados:\n\n\\(H_0: \\lambda = 1\\) → modelo Gama\n\\(H_0: \\lambda = 1\\) e \\(\\sigma = 1\\) (dependendo da parametrização) → Weibull\n\\(H_0: \\lambda \\to 0\\) → Log-normal\n\n\nDesvantagens:\n\nMais complexo (3 parâmetros)\nConvergência numérica pode ser problemática\nAmostras pequenas podem trazer instabilidade"
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nSeja \\(T \\sim GG(\\mu,\\sigma,Q)\\) com função densidade:\n\n\\[\nf(t \\mid \\mu,\\sigma,Q)\n=\n\\frac{|Q|(Q^{-2})^{Q^{-2}}}\n{\\sigma t \\Gamma(Q^{-2})}\n\\exp\\left[\nQ^{-2}\n\\left(\nQw - e^{Qw}\n\\right)\n\\right],\n\\quad t&gt;0\n\\]\nonde\n\\[\nw\n=\n\\frac{\\log(t)-\\mu}{\\sigma}.\n\\]\n\nOs parâmetros são:\n\n\\(\\mu \\in \\mathbb{R}\\): parâmetro de localização;\n\\(\\sigma &gt; 0\\): parâmetro de escala;\n\\(Q \\in \\mathbb{R}\\): parâmetro de forma."
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-generalizado-4",
-    "href": "Aula9.html#modelo-de-regressão-gama-generalizado-4",
+    "objectID": "Aula9.html#casos-particulares",
+    "href": "Aula9.html#casos-particulares",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA GENERALIZADO",
-    "text": "MODELO DE REGRESSÃO GAMA GENERALIZADO\n\nFunções para \\(T_i\\) | \\(\\boldsymbol{x_i}\\) (parametrização logarítmica)\nCom \\(\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta}\\), \\(\\sigma\\) e \\(\\lambda\\) comuns:\n\nFunção densidade de probabilidade:\n\\[f_i(t|\\boldsymbol{x_i}) = \\frac{|\\lambda|}{\\sigma t \\,\\Gamma(\\lambda^{-2})} \\left(\\frac{\\lambda^2 t}{e^{\\mu_i}}\\right)^{\\lambda^{-2}} e^{-\\lambda^{-2} \\left(\\frac{t}{e^{\\mu_i}}\\right)^\\lambda}\\]\nFunção de sobrevivência (confiabilidade):\n\\[S_i(t|\\boldsymbol{x_i}) = 1 - F_i(t|\\boldsymbol{x_i})\\]\n(expressa em termos da função gama incompleta)\nFunção de risco:\n\\[\\lambda_i(t|\\boldsymbol{x_i}) = \\frac{f_i(t|\\boldsymbol{x_i})}{S_i(t|\\boldsymbol{x_i})}\\]"
+    "section": "CASOS PARTICULARES",
+    "text": "CASOS PARTICULARES\n\n\nA distribuição gama generalizada engloba:\n\n\n\n\nValor dos parâmetros\nDistribuição obtida\n\n\n\n\n\\(Q \\rightarrow 0\\)\nLog-normal\n\n\n\\(Q = 1\\)\nWeibull\n\n\n\\(\\sigma = Q\\)\nGamma\n\n\n\\(Q = 1\\) e \\(\\sigma = 1\\)\nExponencial"
   },
   {
-    "objectID": "Aula9.html#modelo-de-regressão-gama-generalizado-5",
-    "href": "Aula9.html#modelo-de-regressão-gama-generalizado-5",
+    "objectID": "Aula9.html#definição-8",
+    "href": "Aula9.html#definição-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "MODELO DE REGRESSÃO GAMA GENERALIZADO",
-    "text": "MODELO DE REGRESSÃO GAMA GENERALIZADO\n\nFunção de Verossimilhança\n\nA função de verossimilhança é dada por:\n\\[\nL(\\boldsymbol{\\beta}, \\sigma, \\lambda) \\propto \\prod_{i=1}^n \\left[f_i(t_i|\\boldsymbol{x_i})\\right]^{\\delta_i} \\left[S_i(t_i|\\boldsymbol{x_i})\\right]^{1-\\delta_i}\n\\]\nA estimação dos parâmetros \\(\\boldsymbol{\\beta}\\), \\(\\sigma\\) e \\(\\lambda\\) é feita maximizando esta função por meio de métodos numéricos.\nAtenção: A verossimilhança do Gama Generalizado pode ser instável para certos valores de \\(\\lambda\\), exigindo valores iniciais adequados."
+    "section": "DEFINIÇÃO",
+    "text": "DEFINIÇÃO\n\n\nNo contexto com covariáveis, a variável \\(T_i\\) segue:\n\n\\[\nT_i \\sim GG(\\mu_i,\\sigma,Q),\n\\quad i=1,2,\\ldots,n\n\\]\nonde o parâmetro \\(\\mu_i\\) varia conforme os valores das covariáveis observadas para o indivíduo \\(i\\).\n\nOs parâmetros \\(\\sigma\\) e \\(Q\\) são comuns a todos os indivíduos.\nAssim, \\(\\mu_i=\\boldsymbol{X_i}\\boldsymbol{\\beta}\\)"
   },
   {
-    "objectID": "Aula9.html#interpretação-das-covariáveis-no-modelo-gama-generalizado",
-    "href": "Aula9.html#interpretação-das-covariáveis-no-modelo-gama-generalizado",
+    "objectID": "Aula9.html#interpretação-de-beta-8",
+    "href": "Aula9.html#interpretação-de-beta-8",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA GENERALIZADO",
-    "text": "INTERPRETAÇÃO DAS COVARIÁVEIS NO MODELO GAMA GENERALIZADO\n\nEfeito no tempo de vida\n\n\\(\\beta_j\\) mede o efeito no log-tempo (similar ao Log-normal):\n\\[\\mu_i = \\boldsymbol{X_i}\\boldsymbol{\\beta} = \\mathbb{E}[\\log(T_i)|\\boldsymbol{x_i}]\\]\nInterpretação direta: \\(e^{\\beta_j}\\) é o fator multiplicativo no percentil da distribuição.\n\nEfeito no risco (hazard)\n\nDepende dos parâmetros de forma (\\(\\lambda\\) e \\(\\sigma\\)):\n\n\\(\\lambda &gt; 0\\): risco pode ser crescente, decrescente ou em forma de U\n\\(\\lambda &lt; 0\\): risco pode ser decrescente ou em forma de sino invertido\n\\(\\lambda \\to 0\\): aproxima o Log-normal (risco não monótono)\n\n\nComparação entre modelos\n\n\n\n\n\n\n\n\n\nModelo\nParâmetros\nRiscos proporcionais?\nCurvas podem cruzar?\n\n\n\n\nGama Generalizado\n\\(\\mu\\), \\(\\sigma\\), \\(\\lambda\\)\nNão (geralmente)\nSim\n\n\nWeibull\n\\(\\alpha\\), \\(\\gamma\\)\nSim\nNão\n\n\nLog-normal\n\\(\\mu\\), \\(\\sigma\\)\nNão\nSim\n\n\nGama\n\\(\\alpha\\), \\(\\beta\\)\nNão\nSim\n\n\n\nQuando usar Gama Generalizado?\n\nVocê não tem certeza qual modelo paramétrico é o mais adequado.\nDeseja testar formalmente entre modelos aninhados (Weibull, Gama, Log-normal).\nAmostra suficientemente grande (estabiliza a estimação dos 3 parâmetros).\nOs dados apresentam comportamento complexo do risco (ex: risco crescente e depois decrescente).\n\nResumo da interpretação\n\n\n\n\n\n\n\nCaracterística\nGama Generalizado\n\n\n\n\n\\(e^{\\beta_j}\\) interpreta\nFator multiplicativo no percentil\n\n\nRiscos proporcionais?\nNão (em geral)\n\n\nFlexibilidade\nMáxima entre os paramétricos\n\n\nComplexidade\nAlta (3 parâmetros)\n\n\nUso recomendado\nAmostras grandes e comparação entre modelos"
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\n\n\\(\\beta &gt; 0\\):\n\naumentam o valor de \\(\\boldsymbol{X_i}\\boldsymbol{\\beta}\\);\naumentam o parâmetro \\(\\mu_i\\);\ndeslocam a distribuição para tempos maiores;\nfazem a sobrevivência decair mais lentamente;\naumentam o tempo esperado até a ocorrência do evento.\n\n\n\n\n\\(\\beta &lt; 0\\):\n\ndiminuem o valor de \\(\\boldsymbol{X_i}\\boldsymbol{\\beta}\\);\ndiminuem o parâmetro \\(\\mu_i\\);\ndeslocam a distribuição para tempos menores;\nfazem a sobrevivência decair mais rapidamente;\nreduzem o tempo esperado até a ocorrência do evento."
   },
   {
-    "objectID": "Aula9.html#escolha-do-modelo-visão-geral",
-    "href": "Aula9.html#escolha-do-modelo-visão-geral",
+    "objectID": "Aula9.html#razão-de-tempos-medianos",
+    "href": "Aula9.html#razão-de-tempos-medianos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "ESCOLHA DO MODELO: VISÃO GERAL",
-    "text": "ESCOLHA DO MODELO: VISÃO GERAL\n\nHierarquia dos modelos paramétricos\n\\[\n\\text{Exponencial} \\subset \\text{Weibull} \\subset \\text{Gama Generalizado}\n\\] \\[\n\\text{Exponencial} \\subset \\text{Gama} \\subset \\text{Gama Generalizado}\n\\] \\[\n\\text{Log-normal} \\subset \\text{Gama Generalizado} \\ (\\text{quando } \\lambda \\to 0)\n\\]\nCritérios para escolha\n\nAIC / BIC (menor valor → melhor ajuste)\nTeste de razão de verossimilhanças (para modelos aninhados)\nAnálise gráfica de resíduos (Cox-Snell, martingale, deviance)\nContexto do problema (interpretabilidade do modelo)\n\nRecomendação prática\n\nComece com Weibull (risco proporcional, interpretação direta)\nSe cruzar curvas → Log-normal ou Gama\nSe amostra grande e incerteza → Gama Generalizado (teste os casos especiais)"
+    "section": "RAZÃO DE TEMPOS MEDIANOS",
+    "text": "RAZÃO DE TEMPOS MEDIANOS\n\n\nA razão de tempos medianos compara a mediana do tempo de sobrevivência entre dois indivíduos com diferentes valores das covariáveis.\nDe forma geral: \\[\n\\text{RTM}\n=\n\\frac{\\text{Mediana}(T \\mid X=x+1)}\n{\\text{Mediana}(T \\mid X=x)}\n\\]\n\nvalores maiores que 1 indicam aumento no tempo até o evento;\nvalores menores que 1 indicam redução no tempo até o evento."
+  },
+  {
+    "objectID": "Aula9.html#primeiro-caso",
+    "href": "Aula9.html#primeiro-caso",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PRIMEIRO CASO",
+    "text": "PRIMEIRO CASO\n\n\nConsiderando as nossas parametrizações utilizadas, para as distribuições Weibull, LogNormal e Gama Generalizada, as covariáveis atuam diretamente acelerando ou desacelerando o tempo até a ocorrência do evento de interesse.\n\nQuanto maior o \\(\\beta\\) maior o tempo de ocorrência do evento de interesse.\nQuanto menor o \\(\\beta\\) menor o tempo de ocorrência do evento de interesse.\n\nNesse caso, pode-se provar que:\n\n\\[\n\\boxed{\\text{RTM}=e^\\beta}\n\\]"
+  },
+  {
+    "objectID": "Aula9.html#segundo-caso",
+    "href": "Aula9.html#segundo-caso",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SEGUNDO CASO",
+    "text": "SEGUNDO CASO\n\n\nConsiderando as nossas parametrizações utilizadas, para as distribuições Exponencial e Gama, as covariáveis atuam indiretamente acelerando ou desacelerando o tempo até a ocorrência do evento de interesse.\n\nQuanto maior o \\(\\beta\\) menor o tempo de ocorrência do evento de interesse.\nQuanto menor o \\(\\beta\\) maior o tempo de ocorrência do evento de interesse.\n\nNesse caso, pode-se provar que:\n\n\\[\n\\boxed{\\text{RTM}=e^{-\\beta}}\n\\]"
+  },
+  {
+    "objectID": "Aula9.html#interpretação-para-variável-quantitativa",
+    "href": "Aula9.html#interpretação-para-variável-quantitativa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO PARA VARIÁVEL QUANTITATIVA",
+    "text": "INTERPRETAÇÃO PARA VARIÁVEL QUANTITATIVA\n\n\nConsidere a covariável \\(X=\\text{idade}\\)\nSuponha, no modelo LogNormal: \\(\\beta=-0.04\\)\nEntão:\n\n\\[\n\\text{RTM}=e^{-0.04}\\approx0.961\n\\]\n\nInterpretação:\n\ncada aumento de 1 ano na idade multiplica a mediana do tempo de sobrevivência por aproximadamente 0.961;\nisso representa uma redução de aproximadamente 3.9% na mediana do tempo até o evento."
+  },
+  {
+    "objectID": "Aula9.html#interpretação-para-variável-qualitativa",
+    "href": "Aula9.html#interpretação-para-variável-qualitativa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO PARA VARIÁVEL QUALITATIVA",
+    "text": "INTERPRETAÇÃO PARA VARIÁVEL QUALITATIVA\n\n\nConsidere a covariável indicadora:\n\n\\[\nX=\n\\begin{cases}\n1,& \\text{fumante}\\\\\n0,& \\text{não fumante}\n\\end{cases}\n\\]\n\nSuponha, no modelo exponencial: $ $\nEntão: \\(\\text{RTM}=e^{-0.7}\\approx0.50\\)\nInterpretação:\n\na mediana do tempo até o evento para fumantes é aproximadamente metade da observada para não fumantes;\nportanto, fumantes apresentam ocorrência mais rápida do evento."
   },
   {
     "objectID": "Aula9.html#intervalos-de-confiança",
     "href": "Aula9.html#intervalos-de-confiança",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERVALOS DE CONFIANÇA",
-    "text": "INTERVALOS DE CONFIANÇA\n\n\nO mesmo raciocínio visto para a construção de intervalos de confiança para os parâmetros do modelo sem covariável se estende aos modelos com covariáveis.\nUm intervalo de confiança para cada parâmetro \\(\\beta_j\\) (nível de confiança \\(1-\\alpha\\)) é dado por:\n\\[\\hat{\\beta_j} \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{\\text{Var}}(\\hat{\\beta_j})}\\]\nonde:\n\n\\(\\hat{\\beta_j}\\) é a estimativa pontual (máxima verossimilhança)\n\\(z_{\\alpha/2}\\) é o quantil da distribuição Normal padrão\n\\(\\sqrt{\\widehat{\\text{Var}}(\\hat{\\beta_j})}\\) é o erro padrão da estimativa (extraído da matriz de variâncias-covariâncias)\n\nInterpretação: Com \\(1-\\alpha\\) de confiança, o verdadeiro valor de \\(\\beta_j\\) está dentro do intervalo.\nNa prática: Extraímos os erros padrão da matriz Hessiana (inverso da matriz de informações observada)."
+    "text": "INTERVALOS DE CONFIANÇA\n\n\nO mesmo raciocínio visto para a construção de intervalos de confiança para os parâmetros do modelo sem covariável se estende aos modelos com covariáveis.\nUm intervalo de confiança para cada parâmetro \\(\\beta_j\\) (nível de confiança \\(1-\\alpha\\)) é dado por:\n\\[\\hat{\\beta_j} \\pm z_{\\alpha/2} \\cdot \\sqrt{\\widehat{\\text{Var}}(\\hat{\\beta_j})}\\]\nonde:\n\n\\(\\hat{\\beta_j}\\) é a estimativa pontual (máxima verossimilhança)\n\\(z_{\\alpha/2}\\) é o quantil da distribuição Normal padrão\n\\(\\sqrt{\\widehat{\\text{Var}}(\\hat{\\beta_j})}\\) é o erro padrão da estimativa (extraído da matriz de variâncias-covariâncias)"
   },
   {
     "objectID": "Aula9.html#testes-de-hipóteses",
     "href": "Aula9.html#testes-de-hipóteses",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TESTES DE HIPÓTESES",
-    "text": "TESTES DE HIPÓTESES\n\n\nPara conduzir o teste de hipótese para cada parâmetro \\(\\beta_j\\):\n\\[H_0: \\beta_j = b_0 \\quad \\text{vs} \\quad H_1: \\beta_j \\neq b_0\\]\nA estatística do teste de Wald é:\n\\[W = \\frac{(\\hat{\\beta_j} - b_0)^2}{\\text{Var}(\\hat{\\beta_j})}\\]\nDistribuição sob \\(H_0\\): Qui-quadrado com 1 grau de liberdade:\n\\[W \\sim \\chi^2_{(1)}\\]\nDecisão: Rejeitamos \\(H_0\\) se \\(W &gt; \\chi^2_{1;1-\\alpha}\\) (valor crítico) ou se p-valor \\(&lt; \\alpha\\).\nA raiz quadrada da estatística de Wald:\n\\[Z = \\sqrt{W} = \\frac{\\hat{\\beta_j} - b_0}{\\sqrt{\\text{Var}(\\hat{\\beta_j})}}\\]\nPossui distribuição Normal padrão sob \\(H_0\\):\n\\[Z \\sim N(0,1)\\]"
+    "text": "TESTES DE HIPÓTESES\n\n\nPara conduzir o teste de hipótese para cada parâmetro \\(\\beta_j\\):\n\\[H_0: \\beta_j = b_0 \\quad \\text{vs} \\quad H_1: \\beta_j \\neq b_0\\]\nA estatística do teste de Wald é:\n\\[W = \\frac{(\\hat{\\beta_j} - b_0)^2}{\\text{Var}(\\hat{\\beta_j})}\\]\nDistribuição sob \\(H_0\\): Qui-quadrado com 1 grau de liberdade: \\(W \\sim \\chi^2_{(1)}\\)\nDecisão: Rejeitamos \\(H_0\\) se \\(W &gt; \\chi^2_{1;1-\\alpha}\\) (valor crítico) ou se p-valor \\(&lt; \\alpha\\)."
   },
   {
-    "objectID": "Aula9.html#interpretação-dos-coeficientes-1",
-    "href": "Aula9.html#interpretação-dos-coeficientes-1",
+    "objectID": "Aula9.html#testes-de-hipóteses-1",
+    "href": "Aula9.html#testes-de-hipóteses-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO DOS COEFICIENTES",
-    "text": "INTERPRETAÇÃO DOS COEFICIENTES\n\nVariável Qualitativa (Binária)\n\nUma proposta razoável de interpretação é fazer uso da razão de tempos medianos (Hosmer e Lemeshow, 1999).\nPara uma covariável binária \\(x_j\\) (0 = ausência, 1 = presença), a razão de tempos medianos é:\n\\[\\frac{t_{0,5}(x=1,\\hat{\\boldsymbol{\\beta}})}{t_{0,5}(x=0,\\hat{\\boldsymbol{\\beta}})} = e^{\\hat{\\beta_j}}\\]\nInterpretação: \\(e^{\\hat{\\beta_j}}\\) é o fator multiplicativo na mediana do tempo de sobrevivência quando a característica está presente (comparado à sua ausência).\n\nExemplo (Variável Qualitativa)\n\nContexto: Estudo de sobrevivência de pacientes com câncer.\nCovariável: Tratamento (0 = Placebo, 1 = Novo medicamento)\nResultado do ajuste: \\(\\hat{\\beta} = 0,5\\)\n\\[e^{0,5} \\approx 1,65\\]\nInterpretação: Pacientes que receberam o novo medicamento têm mediana de sobrevivência 65% maior do que pacientes do grupo placebo.\nAtenção: Essa interpretação se estende a variáveis qualitativas com mais de duas categorias (usando categorias de referência)."
+    "section": "TESTES DE HIPÓTESES",
+    "text": "TESTES DE HIPÓTESES\n\n\nA raiz quadrada da estatística de Wald:\n\\[Z = \\sqrt{W} = \\frac{\\hat{\\beta_j} - b_0}{\\sqrt{\\text{Var}(\\hat{\\beta_j})}}\\]\nPossui distribuição Normal padrão sob \\(H_0\\):\n\\[Z \\sim N(0,1)\\]"
   },
   {
-    "objectID": "Aula9.html#interpretação-dos-coeficientes-2",
-    "href": "Aula9.html#interpretação-dos-coeficientes-2",
+    "objectID": "Aula9.html#introdução-7",
+    "href": "Aula9.html#introdução-7",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "INTERPRETAÇÃO DOS COEFICIENTES",
-    "text": "INTERPRETAÇÃO DOS COEFICIENTES\n\nVariável Quantitativa (Contínua)\n\nPara uma variável contínua \\(x_j\\), a razão de tempos medianos é:\n\\[\\frac{t_{0,5}(x = c+1,\\hat{\\boldsymbol{\\beta}})}{t_{0,5}(x = c,\\hat{\\boldsymbol{\\beta}})} = e^{\\hat{\\beta_j}}\\]\nInterpretação: \\(e^{\\hat{\\beta_j}}\\) é o fator multiplicativo na mediana do tempo de sobrevivência para cada aumento de 1 unidade na variável contínua.\n\nExemplo 1 (Variável Quantitativa - Idade)\n\nContexto: Estudo de sobrevivência de pacientes com insuficiência cardíaca.\nCovariável: Idade (em anos)\nResultado do ajuste: \\(\\hat{\\beta} = -0,03\\)\n\\[e^{-0,03} \\approx 0,97\\]\nInterpretação: A cada aumento de 1 ano na idade, a mediana do tempo de sobrevivência é multiplicada por 0,97 (ou seja, reduz em 3%).\n\nExemplo 2 (Variável Quantitativa - Dosagem)\n\nContexto: Estudo de confiabilidade de componentes eletrônicos.\nCovariável: Temperatura de operação (em °C)\nResultado do ajuste: \\(\\hat{\\beta} = 0,02\\)\n\\[e^{0,02} \\approx 1,02\\]\nInterpretação: A cada aumento de 1°C na temperatura, a mediana do tempo até a falha é multiplicada por 1,02 (aumento de 2%).\n\nResumo da interpretação (para qualquer modelo paramétrico)\n\n\n\n\n\n\n\n\nTipo de variável\nExpressão\nInterpretação\n\n\n\n\nBinária\n\\(e^{\\beta_j}\\)\nFator multiplicativo na mediana (presença vs ausência)\n\n\nContínua\n\\(e^{\\beta_j}\\)\nFator multiplicativo na mediana (aumento de 1 unidade)\n\n\nQualitativa (&gt;2 categorias)\n\\(e^{\\beta_j}\\)\nFator multiplicativo na mediana (categoria vs referência)\n\n\n\nCuidados importantes\n\nA interpretação via razão de medianas é válida quando o modelo paramétrico tem efeito multiplicativo no tempo (Weibull, Log-normal, Gama, Gama Generalizado).\nPara o modelo Exponencial: A razão de medianas também funciona, mas cuidado pois a mediana é \\((\\log 2)/\\alpha\\).\nSinal do coeficiente:\n\n\\(\\beta_j &gt; 0\\) \\(\\rightarrow\\) \\(e^{\\beta_j} &gt; 1\\) \\(\\rightarrow\\) aumenta a mediana\n\\(\\beta_j &lt; 0\\) \\(\\rightarrow\\) \\(e^{\\beta_j} &lt; 1\\) \\(\\rightarrow\\) diminui a mediana"
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nEm modelos paramétricos de sobrevivência, precisamos tomar duas decisões principais:\n\nselecionar as covariáveis relevantes;\nescolher a distribuição mais adequada para os tempos de sobrevivência.\n\nComo essas duas decisões estão relacionadas, uma estratégia organizada de modelagem é fundamental."
+  },
+  {
+    "objectID": "Aula9.html#uso-dos-testes-log-rank-e-peto-peto",
+    "href": "Aula9.html#uso-dos-testes-log-rank-e-peto-peto",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "USO DOS TESTES LOG-RANK E PETO-PETO",
+    "text": "USO DOS TESTES LOG-RANK E PETO-PETO\n\n\nOs testes de comparação de curvas de sobrevivência podem ser utilizados como uma etapa inicial de seleção de variáveis.\nAs covariáveis categóricas são avaliadas individualmente por meio da comparação entre suas curvas de sobrevivência.\nUma estratégia comum consiste em:\n\najustar curvas de Kaplan-Meier para cada covariável categórica;\naplicar os testes Log-rank ou Peto-Peto;\nselecionar para a regressão variáveis com evidências de associação com a sobrevivência (p-valor &lt;0.25)."
+  },
+  {
+    "objectID": "Aula9.html#ideia-geral-da-estratégia",
+    "href": "Aula9.html#ideia-geral-da-estratégia",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "IDEIA GERAL DA ESTRATÉGIA",
+    "text": "IDEIA GERAL DA ESTRATÉGIA\n\n\nApós esse filtro inicial, a estratégia adotada será:\n\najustar inicialmente o modelo mais flexível;\nrealizar a seleção de variáveis nesse modelo;\nmanter a mesma estrutura de covariáveis;\najustar modelos mais simples;\ncomparar os modelos;\navaliar os diagnósticos finais.\n\nNeste contexto, utilizaremos inicialmente o modelo Gama Generalizado."
+  },
+  {
+    "objectID": "Aula9.html#por-que-começar-pelo-gama-generalizado",
+    "href": "Aula9.html#por-que-começar-pelo-gama-generalizado",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE COMEÇAR PELO GAMA GENERALIZADO?",
+    "text": "POR QUE COMEÇAR PELO GAMA GENERALIZADO?\n\n\nO modelo Gama Generalizado é bastante flexível e engloba diversos modelos clássicos como casos particulares.\nDependendo dos parâmetros, ele pode se aproximar de:\n\nmodelo exponencial;\nWeibull;\nlog-normal;\ngama.\n\nAssim, ele permite descrever diferentes formatos para a distribuição dos tempos e para a função de risco.\nIsso reduz o risco de selecionar variáveis com base em um modelo mais restritivo."
+  },
+  {
+    "objectID": "Aula9.html#seleção-de-variáveis-no-gama-generalizado",
+    "href": "Aula9.html#seleção-de-variáveis-no-gama-generalizado",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SELEÇÃO DE VARIÁVEIS NO GAMA GENERALIZADO",
+    "text": "SELEÇÃO DE VARIÁVEIS NO GAMA GENERALIZADO\n\n\nApós ajustar o modelo Gama Generalizado, a seleção das covariáveis pode considerar simultaneamente:\n\nsignificância estatística;\nqualidade de ajuste;\nplausibilidade clínica/científica.\n\nAs principais ferramentas utilizadas são:\n\nvalor-p;\nteste da razão de verossimilhanças (TRV);\nAIC e BIC;\nconhecimento do especialista."
+  },
+  {
+    "objectID": "Aula9.html#usando-o-valor-p",
+    "href": "Aula9.html#usando-o-valor-p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "USANDO O VALOR-P",
+    "text": "USANDO O VALOR-P\n\n\nO valor-p avalia evidências contra:\n\n\\[\nH_0:\\beta_j=0\n\\]\n\nInterpretação:\n\nvalores pequenos indicam evidências de associação;\nvalores grandes sugerem pouca evidência de efeito da covariável.\n\nEntretanto:\n\no valor-p não mede qualidade global do modelo;\nvariáveis importantes podem não apresentar significância em pequenas amostras."
+  },
+  {
+    "objectID": "Aula9.html#usando-o-teste-da-razão-de-verossimilhanças-trv",
+    "href": "Aula9.html#usando-o-teste-da-razão-de-verossimilhanças-trv",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)",
+    "text": "USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)\n\n\nO TRV compara dois modelos aninhados:\n\nmodelo completo;\nmodelo reduzido.\n\nA estatística é dada por:\n\n\\[\\Lambda = 2[\\ln L(\\text{complexo}) - \\ln L(\\text{simples})]\\]\nonde: - \\(ln L(\\text{complexo})\\): log-verossimilhança do modelo complexo - \\(ln L(\\text{simples})\\): log-verossimilhança do modelo mais simples.\n\nValores grandes do TRV indicam que a remoção da variável piora significativamente o ajuste."
+  },
+  {
+    "objectID": "Aula9.html#usando-o-aic-e-o-bic",
+    "href": "Aula9.html#usando-o-aic-e-o-bic",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "USANDO O AIC E O BIC",
+    "text": "USANDO O AIC E O BIC\n\nO Critério de Informação de Akaike (AIC) é dado por:\n\\[AIC = 2k - 2\\ln(\\hat{L})\\]\nO Critério de Informação Bayesiano (BIC) é dado por:\n\\[BIC = k \\cdot \\log(n) - 2\\ln(\\hat{L})\\]\nonde:\n\n\\(\\ln(\\hat{L})\\): log-verossimilhança;\n\\(k\\): número de parâmetros;\n\\(n\\): tamanho da amostra."
+  },
+  {
+    "objectID": "Aula9.html#usando-o-aic-e-o-bic-1",
+    "href": "Aula9.html#usando-o-aic-e-o-bic-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "USANDO O AIC E O BIC",
+    "text": "USANDO O AIC E O BIC\n\nOs critérios buscam equilíbrio entre:\n\nqualidade de ajuste;\ncomplexidade do modelo.\n\nModelos com menores valores de AIC e BIC são preferidos.\n\nO BIC penaliza modelos complexos de forma mais intensa, especialmente quando n é grande.\nAssim:\n\no AIC tende a favorecer modelos mais flexíveis;\no BIC tende a favorecer modelos mais parcimoniosos."
+  },
+  {
+    "objectID": "Aula9.html#importância-do-especialista",
+    "href": "Aula9.html#importância-do-especialista",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "IMPORTÂNCIA DO ESPECIALISTA",
+    "text": "IMPORTÂNCIA DO ESPECIALISTA\n\n\nNem toda decisão deve ser baseada exclusivamente em critérios automáticos.\nVariáveis importantes do ponto de vista:\nclínico;\nepidemiológico;\nbiológico;\noperacional;\n\npodem permanecer no modelo mesmo sem forte significância estatística.\nA interpretação prática e o conhecimento substantivo são fundamentais."
+  },
+  {
+    "objectID": "Aula9.html#fixando-a-estrutura-de-covariáveis",
+    "href": "Aula9.html#fixando-a-estrutura-de-covariáveis",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FIXANDO A ESTRUTURA DE COVARIÁVEIS",
+    "text": "FIXANDO A ESTRUTURA DE COVARIÁVEIS\n\n\nApós a seleção no modelo Gama Generalizado:\n\nmantém-se o mesmo conjunto de covariáveis;\najustam-se modelos paramétricos mais simples.\n\nIsso permite comparar apenas o efeito da distribuição escolhida, sem alterar a estrutura explicativa do modelo."
+  },
+  {
+    "objectID": "Aula9.html#ajustando-modelos-mais-simples",
+    "href": "Aula9.html#ajustando-modelos-mais-simples",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "AJUSTANDO MODELOS MAIS SIMPLES",
+    "text": "AJUSTANDO MODELOS MAIS SIMPLES\n\n\nCom as covariáveis já selecionadas, podem ser ajustados:\nmodelo exponencial;\nWeibull;\nlog-normal;\ngama;\nCada distribuição impõe diferentes formas para:\na função de risco;\no comportamento dos tempos de ocorrência do evento de interesse."
+  },
+  {
+    "objectID": "Aula9.html#comparando-os-modelos",
+    "href": "Aula9.html#comparando-os-modelos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARANDO OS MODELOS",
+    "text": "COMPARANDO OS MODELOS\n\nA comparação entre distribuições pode considerar:\n\nAIC;\nBIC;\nTRV\n\nEm geral:\n\nmenores valores de AIC/BIC indicam melhor ajuste;\nmaiores valores da estatística TRV favorecem o modelo gama generalizado."
+  },
+  {
+    "objectID": "Aula9.html#o-melhor-modelo-é-sempre-o-mais-complexo",
+    "href": "Aula9.html#o-melhor-modelo-é-sempre-o-mais-complexo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O MELHOR MODELO É SEMPRE O MAIS COMPLEXO?",
+    "text": "O MELHOR MODELO É SEMPRE O MAIS COMPLEXO?\n\n\nNem sempre.\nEmbora o Gama Generalizado seja mais flexível, modelos mais simples podem apresentar:\n\najuste semelhante;\ninterpretação mais fácil;\nmaior estabilidade;\nmenor variabilidade nas estimativas.\n\nAssim, um modelo mais simples pode ser preferido mesmo com pequena diferença no AIC."
+  },
+  {
+    "objectID": "Aula9.html#função-de-risco-ajustada",
+    "href": "Aula9.html#função-de-risco-ajustada",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÃO DE RISCO AJUSTADA",
+    "text": "FUNÇÃO DE RISCO AJUSTADA\n\n\nTambém é importante avaliar o comportamento da função de risco ajustada.\nCada distribuição produz formatos específicos:\n\nexponencial → risco constante;\nWeibull → risco crescente ou decrescente;\nlog-normal → risco unimodal;\ngama generalizado → maior flexibilidade.\n\nA plausibilidade do risco ajustado deve ser compatível com o fenômeno estudado."
   },
   {
     "objectID": "Aula7.html#parâmetros-populacionais",
