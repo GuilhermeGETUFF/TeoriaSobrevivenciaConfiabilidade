@@ -271,7 +271,7 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li><strong>Modelo de regressão linear múltiplo:</strong></li>
 </ul>
-<p><img data-src="images/REGRESS.png" style="width:60.0%"></p>
+<p><img data-src="Images/REGRESS.png" style="width:60.0%"></p>
 <ul>
 <li><span class="math inline">\(\boldsymbol{Y}\)</span>: vetor <span class="math inline">\(n \times 1\)</span> com as respostas</li>
 <li><span class="math inline">\(\boldsymbol{X}\)</span>: matriz <span class="math inline">\(n \times (k+1)\)</span> com <span class="math inline">\(k\)</span> covariáveis (primeira coluna de 1’s)</li>
@@ -649,7 +649,7 @@ E(T_i)=\kappa_i\Gamma\left(1+\frac{1}{\gamma}\right)
 </ul>
 </div>
 </section>
-<section id="definição-5" class="slide level2">
+<section id="definição-5" class="slide level2 scrollable">
 <h2><strong>DEFINIÇÃO</strong></h2>
 <div class="box-blue">
 <p>Com <span class="math inline">\(\mu_i = \boldsymbol{X_i}\boldsymbol{\beta}\)</span> e parâmetro de escala <span class="math inline">\(\sigma\)</span> (comum), temos:</p>
@@ -1095,7 +1095,7 @@ X=
 \end{cases}
 \]</span></p>
 <ul>
-<li><p>Suponha, no modelo <strong>exponencial</strong>: $ $</p></li>
+<li><p>Suponha, no modelo <strong>exponencial</strong>: <span class="math inline">\(\beta=0.7\)</span></p></li>
 <li><p>Então: <span class="math inline">\(\text{RTM}=e^{-0.7}\approx0.50\)</span></p></li>
 <li><p>Interpretação:</p>
 <ul>
@@ -1264,17 +1264,15 @@ H_0:\beta_j=0
 <h2><strong>USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O TRV <strong>compara dois modelos aninhados</strong>:
-<ul>
-<li><strong>modelo completo</strong>;</li>
-<li><strong>modelo reduzido</strong>.</li>
-</ul></li>
-<li>A <strong>estatística</strong> é dada por:</li>
+<li><p>O TRV <strong>compara dois modelos aninhados</strong>: <strong>modelo completo</strong> e <strong>modelo reduzido</strong>.</p></li>
+<li><p>A <strong>estatística</strong> é dada por:</p></li>
 </ul>
 <p><span class="math display">\[\Lambda = 2[\ln L(\text{complexo}) - \ln L(\text{simples})]\]</span></p>
-<p>onde: - <span class="math inline">\(ln L(\text{complexo})\)</span>: log-verossimilhança do modelo complexo - <span class="math inline">\(ln L(\text{simples})\)</span>: log-verossimilhança do modelo mais simples.</p>
+<p>onde:</p>
 <ul>
-<li>Valores <strong>grandes</strong> do TRV indicam que <strong>a remoção da variável piora significativamente o ajuste</strong>.</li>
+<li><p><span class="math inline">\(ln L(\text{complexo})\)</span>: log-verossimilhança do modelo complexo</p></li>
+<li><p><span class="math inline">\(ln L(\text{simples})\)</span>: log-verossimilhança do modelo mais simples.</p></li>
+<li><p>Valores <strong>grandes</strong> do TRV indicam que <strong>a remoção da variável piora significativamente o ajuste</strong>.</p></li>
 </ul>
 </div>
 </section>
@@ -1317,14 +1315,15 @@ H_0:\beta_j=0
 <div class="box-blue">
 <ul>
 <li><p>Nem toda decisão deve ser baseada exclusivamente em <strong>critérios automáticos</strong>.</p></li>
-<li><p>Variáveis importantes do ponto de vista:</p></li>
-<li><p>clínico;</p></li>
-<li><p>epidemiológico;</p></li>
-<li><p>biológico;</p></li>
-<li><p>operacional;</p></li>
+<li><p>Variáveis importantes do ponto de vista:</p>
+<ul>
+<li>clínico;</li>
+<li>epidemiológico;</li>
+<li>biológico;</li>
+<li>operacional; podem permanecer no modelo mesmo sem forte significância estatística.</li>
+</ul></li>
+<li><p>A <strong>interpretação prática e o conhecimento substantivo são fundamentais</strong>.</p></li>
 </ul>
-<p>podem permanecer no modelo mesmo sem forte significância estatística.</p>
-<p>A <strong>interpretação prática e o conhecimento substantivo são fundamentais</strong>.</p>
 </div>
 </section>
 <section id="fixando-a-estrutura-de-covariáveis" class="slide level2">
@@ -1344,30 +1343,36 @@ H_0:\beta_j=0
 <h2><strong>AJUSTANDO MODELOS MAIS SIMPLES</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Com as covariáveis já selecionadas, <strong>podem ser ajustados</strong>:</p></li>
-<li><p>modelo exponencial;</p></li>
-<li><p>Weibull;</p></li>
-<li><p>log-normal;</p></li>
-<li><p>gama;</p></li>
-<li><p>Cada <strong>distribuição impõe diferentes formas para</strong>:</p></li>
-<li><p>a <strong>função de risco</strong>;</p></li>
-<li><p>o comportamento dos <strong>tempos de ocorrência do evento de interesse</strong>.</p></li>
+<li>Com as covariáveis já selecionadas, <strong>podem ser ajustados</strong>:
+<ul>
+<li>modelo exponencial;</li>
+<li>Weibull;</li>
+<li>log-normal;</li>
+<li>gama;</li>
+</ul></li>
+<li>Cada <strong>distribuição impõe diferentes formas para</strong>:
+<ul>
+<li>a <strong>função de risco</strong>;</li>
+<li>o comportamento dos <strong>tempos de ocorrência do evento de interesse</strong>.</li>
+</ul></li>
 </ul>
 </div>
 </section>
 <section id="comparando-os-modelos" class="slide level2">
 <h2><strong>COMPARANDO OS MODELOS</strong></h2>
 <div class="box-blue">
-<p>A <strong>comparação entre distribuições pode considerar</strong>:</p>
+<ul>
+<li>A <strong>comparação entre distribuições pode considerar</strong>:
 <ul>
 <li>AIC;</li>
 <li>BIC;</li>
 <li>TRV</li>
-</ul>
-<p>Em geral:</p>
+</ul></li>
+<li>Em geral:
 <ul>
 <li><strong>menores</strong> <strong>valores de AIC/BIC</strong> indicam <strong>melhor ajuste</strong>;</li>
 <li><strong>maiores valores da estatística TRV</strong> favorecem <strong>o modelo gama generalizado</strong>.</li>
+</ul></li>
 </ul>
 </div>
 </section>

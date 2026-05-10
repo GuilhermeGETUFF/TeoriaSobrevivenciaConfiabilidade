@@ -347,7 +347,7 @@
     "href": "Aula9.html#interpretação-para-variável-qualitativa",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTERPRETAÇÃO PARA VARIÁVEL QUALITATIVA",
-    "text": "INTERPRETAÇÃO PARA VARIÁVEL QUALITATIVA\n\n\nConsidere a covariável indicadora:\n\n\\[\nX=\n\\begin{cases}\n1,& \\text{fumante}\\\\\n0,& \\text{não fumante}\n\\end{cases}\n\\]\n\nSuponha, no modelo exponencial: $ $\nEntão: \\(\\text{RTM}=e^{-0.7}\\approx0.50\\)\nInterpretação:\n\na mediana do tempo até o evento para fumantes é aproximadamente metade da observada para não fumantes;\nportanto, fumantes apresentam ocorrência mais rápida do evento."
+    "text": "INTERPRETAÇÃO PARA VARIÁVEL QUALITATIVA\n\n\nConsidere a covariável indicadora:\n\n\\[\nX=\n\\begin{cases}\n1,& \\text{fumante}\\\\\n0,& \\text{não fumante}\n\\end{cases}\n\\]\n\nSuponha, no modelo exponencial: \\(\\beta=0.7\\)\nEntão: \\(\\text{RTM}=e^{-0.7}\\approx0.50\\)\nInterpretação:\n\na mediana do tempo até o evento para fumantes é aproximadamente metade da observada para não fumantes;\nportanto, fumantes apresentam ocorrência mais rápida do evento."
   },
   {
     "objectID": "Aula9.html#intervalos-de-confiança",
@@ -417,7 +417,7 @@
     "href": "Aula9.html#usando-o-teste-da-razão-de-verossimilhanças-trv",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)",
-    "text": "USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)\n\n\nO TRV compara dois modelos aninhados:\n\nmodelo completo;\nmodelo reduzido.\n\nA estatística é dada por:\n\n\\[\\Lambda = 2[\\ln L(\\text{complexo}) - \\ln L(\\text{simples})]\\]\nonde: - \\(ln L(\\text{complexo})\\): log-verossimilhança do modelo complexo - \\(ln L(\\text{simples})\\): log-verossimilhança do modelo mais simples.\n\nValores grandes do TRV indicam que a remoção da variável piora significativamente o ajuste."
+    "text": "USANDO O TESTE DA RAZÃO DE VEROSSIMILHANÇAS (TRV)\n\n\nO TRV compara dois modelos aninhados: modelo completo e modelo reduzido.\nA estatística é dada por:\n\n\\[\\Lambda = 2[\\ln L(\\text{complexo}) - \\ln L(\\text{simples})]\\]\nonde:\n\n\\(ln L(\\text{complexo})\\): log-verossimilhança do modelo complexo\n\\(ln L(\\text{simples})\\): log-verossimilhança do modelo mais simples.\nValores grandes do TRV indicam que a remoção da variável piora significativamente o ajuste."
   },
   {
     "objectID": "Aula9.html#usando-o-aic-e-o-bic",
@@ -438,7 +438,7 @@
     "href": "Aula9.html#importância-do-especialista",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "IMPORTÂNCIA DO ESPECIALISTA",
-    "text": "IMPORTÂNCIA DO ESPECIALISTA\n\n\nNem toda decisão deve ser baseada exclusivamente em critérios automáticos.\nVariáveis importantes do ponto de vista:\nclínico;\nepidemiológico;\nbiológico;\noperacional;\n\npodem permanecer no modelo mesmo sem forte significância estatística.\nA interpretação prática e o conhecimento substantivo são fundamentais."
+    "text": "IMPORTÂNCIA DO ESPECIALISTA\n\n\nNem toda decisão deve ser baseada exclusivamente em critérios automáticos.\nVariáveis importantes do ponto de vista:\n\nclínico;\nepidemiológico;\nbiológico;\noperacional; podem permanecer no modelo mesmo sem forte significância estatística.\n\nA interpretação prática e o conhecimento substantivo são fundamentais."
   },
   {
     "objectID": "Aula9.html#fixando-a-estrutura-de-covariáveis",
@@ -452,14 +452,14 @@
     "href": "Aula9.html#ajustando-modelos-mais-simples",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "AJUSTANDO MODELOS MAIS SIMPLES",
-    "text": "AJUSTANDO MODELOS MAIS SIMPLES\n\n\nCom as covariáveis já selecionadas, podem ser ajustados:\nmodelo exponencial;\nWeibull;\nlog-normal;\ngama;\nCada distribuição impõe diferentes formas para:\na função de risco;\no comportamento dos tempos de ocorrência do evento de interesse."
+    "text": "AJUSTANDO MODELOS MAIS SIMPLES\n\n\nCom as covariáveis já selecionadas, podem ser ajustados:\n\nmodelo exponencial;\nWeibull;\nlog-normal;\ngama;\n\nCada distribuição impõe diferentes formas para:\n\na função de risco;\no comportamento dos tempos de ocorrência do evento de interesse."
   },
   {
     "objectID": "Aula9.html#comparando-os-modelos",
     "href": "Aula9.html#comparando-os-modelos",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "COMPARANDO OS MODELOS",
-    "text": "COMPARANDO OS MODELOS\n\nA comparação entre distribuições pode considerar:\n\nAIC;\nBIC;\nTRV\n\nEm geral:\n\nmenores valores de AIC/BIC indicam melhor ajuste;\nmaiores valores da estatística TRV favorecem o modelo gama generalizado."
+    "text": "COMPARANDO OS MODELOS\n\n\nA comparação entre distribuições pode considerar:\n\nAIC;\nBIC;\nTRV\n\nEm geral:\n\nmenores valores de AIC/BIC indicam melhor ajuste;\nmaiores valores da estatística TRV favorecem o modelo gama generalizado."
   },
   {
     "objectID": "Aula9.html#o-melhor-modelo-é-sempre-o-mais-complexo",
