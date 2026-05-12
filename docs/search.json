@@ -476,6 +476,132 @@
     "text": "FUNÇÃO DE RISCO AJUSTADA\n\n\nTambém é importante avaliar o comportamento da função de risco ajustada.\nCada distribuição produz formatos específicos:\n\nexponencial → risco constante;\nWeibull → risco crescente ou decrescente;\nlog-normal → risco unimodal;\ngama generalizado → maior flexibilidade.\n\nA plausibilidade do risco ajustado deve ser compatível com o fenômeno estudado."
   },
   {
+    "objectID": "Aula9.html#introdução-8",
+    "href": "Aula9.html#introdução-8",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUÇÃO",
+    "text": "INTRODUÇÃO\n\n\nApós ajustar um modelo paramétrico de sobrevivência, é fundamental avaliar:\n\nse a distribuição escolhida é adequada;\nse existem observações discrepantes;\nse o modelo descreve corretamente os dados.\n\nA análise de resíduos é uma das principais ferramentas para essa avaliação."
+  },
+  {
+    "objectID": "Aula9.html#objetivos-da-análise-de-resíduos",
+    "href": "Aula9.html#objetivos-da-análise-de-resíduos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "OBJETIVOS DA ANÁLISE DE RESÍDUOS",
+    "text": "OBJETIVOS DA ANÁLISE DE RESÍDUOS\n\n\nA análise residual permite investigar:\n\nqualidade global do ajuste;\nobservações influentes;\ndesvios sistemáticos;\ninadequação da distribuição;\nproblemas de especificação do modelo."
+  },
+  {
+    "objectID": "Aula9.html#objetivos-da-análise-de-resíduos-1",
+    "href": "Aula9.html#objetivos-da-análise-de-resíduos-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "OBJETIVOS DA ANÁLISE DE RESÍDUOS",
+    "text": "OBJETIVOS DA ANÁLISE DE RESÍDUOS\n\n\nResíduos muito discrepantes podem indicar:\n\noutliers;\nmá especificação;\ndistribuição inadequada;\nvariáveis omitidas.\n\nVeremos dois tipos de resíduos nessa disciplina para modelos paramétricos:\n\nResíduos Cox-Snell\nResíduos Quantílicos Aleatorizados"
+  },
+  {
+    "objectID": "Aula9.html#resíduos-de-cox-snell",
+    "href": "Aula9.html#resíduos-de-cox-snell",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RESÍDUOS DE COX-SNELL",
+    "text": "RESÍDUOS DE COX-SNELL\n\n\nOs resíduos de Cox-Snell são definidos por:\n\n\\[\nr_i=\\widehat{H}(t_i|\\boldsymbol{X_i})\n\\]\nonde:\n\\[\n\\widehat{H}(t_i|\\boldsymbol{X_i})\n=\n-\\log\\left[\\widehat{S}(t_i|\\boldsymbol{X_i})\\right]\n\\]\nrepresenta o risco acumulado estimado para o indivíduo \\(i\\).\n\nA ideia principal é transformar os tempos observados em uma nova variável que possua uma distribuição conhecida caso o modelo esteja corretamente especificado."
+  },
+  {
+    "objectID": "Aula9.html#por-que-o-risco-acumulado-vira-um-resíduo",
+    "href": "Aula9.html#por-que-o-risco-acumulado-vira-um-resíduo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE O RISCO ACUMULADO VIRA UM RESÍDUO?",
+    "text": "POR QUE O RISCO ACUMULADO VIRA UM RESÍDUO?\n\n\nEm regressão clássica, resíduos medem a discrepância entre:\n\nvalor observado;\nvalor ajustado.\n\nEm sobrevivência, essa diferença direta é mais difícil devido:\n\nà censura;\nà assimetria dos tempos;\nà natureza não negativa dos dados.\n\nA solução proposta por Cox e Snell foi transformar os tempos observados usando o risco acumulado estimado.\nEssa transformação “padroniza” os dados em uma escala comum."
+  },
+  {
+    "objectID": "Aula9.html#a-ideia-da-transformação",
+    "href": "Aula9.html#a-ideia-da-transformação",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A IDEIA DA TRANSFORMAÇÃO",
+    "text": "A IDEIA DA TRANSFORMAÇÃO\n\n\nSabemos que: \\(S(t)=e^{-H(t)}\\)\nAgora defina a variável \\(H(T)\\)\nComo \\(H(\\cdot)\\) é crescente: \\(P(H(T)&gt;t)=P(T&gt;H^{-1}(t))\\)\nMas: \\(P(T&gt;t)=S(t)\\)\nPortanto: \\(P(H(T)&gt;t)=S(H^{-1}(t))\\)\nSubstituindo: \\(S(t)=e^{-H(t)}\\)\nobtemos: \\(P(H(T)&gt;t)=e^{-t}\\)"
+  },
+  {
+    "objectID": "Aula9.html#por-que-a-distribuição-exponencial1",
+    "href": "Aula9.html#por-que-a-distribuição-exponencial1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE A DISTRIBUIÇÃO EXPONENCIAL(1)?",
+    "text": "POR QUE A DISTRIBUIÇÃO EXPONENCIAL(1)?\n\n\nLogo, a variável aleatória \\(H(T)\\) que representa a função de risco acumulada possui distribuição exponencial padrão.\nAssim: \\[\nH(T)\\sim\\text{Exponencial}(1)\n\\]\n\nquando o modelo está corretamente especificado."
+  },
+  {
+    "objectID": "Aula9.html#intuição-dos-resíduos-de-cox-snell",
+    "href": "Aula9.html#intuição-dos-resíduos-de-cox-snell",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTUIÇÃO DOS RESÍDUOS DE COX-SNELL",
+    "text": "INTUIÇÃO DOS RESÍDUOS DE COX-SNELL\n\n\nSe o modelo descreve corretamente os dados:\n\nos resíduos devem se comportar como uma exponencial padrão;\ntoda a estrutura do modelo é removida pela transformação do risco acumulado.\n\nMas, se:\n\na distribuição estiver errada;\nfaltarem covariáveis;\nexistir má especificação; então os resíduos deixam de seguir a exponencial padrão."
+  },
+  {
+    "objectID": "Aula9.html#na-prática",
+    "href": "Aula9.html#na-prática",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "NA PRÁTICA",
+    "text": "NA PRÁTICA\n\n\nNa prática:\n\ncalculam-se os resíduos: \\[\nr_i=\\widehat{H}(t_i|\\boldsymbol{X}_i)\n\\]\nestima-se o estimador de Kaplan-Meier desses resíduos, obtendo-se \\(\\widehat{S}(r_i)\\);\nconstroem-se os seguintes gráficos: \\(\\widehat{S}(r_i)\\) versus \\(e^{-r_i}\\) e \\(\\widehat{H}(r_i)\\) versus \\(r_i\\), em que:\n\n\n\\(e^{-r_i}\\) é a função de sobrevivência de uma distribuição exponencial padrão;\n\\(r_i\\) é o risco acumulado teórico da distribuição exponencial padrão.\n\nSe as curvas forem semelhantes àquelas esperadas sob uma distribuição exponencial padrão, então o modelo apresenta bom ajuste global."
+  },
+  {
+    "objectID": "Aula9.html#gráfico-dos-resíduos-de-cox-snell",
+    "href": "Aula9.html#gráfico-dos-resíduos-de-cox-snell",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "GRÁFICO DOS RESÍDUOS DE COX-SNELL",
+    "text": "GRÁFICO DOS RESÍDUOS DE COX-SNELL\n\n\nNo gráfico:\n\na curva empírica dos resíduos deve acompanhar o comportamento teórico da exponencial padrão;\n\nDesvios sistemáticos podem indicar:\n\ndistribuição inadequada;\nausência de covariáveis importantes;\nforma funcional incorreta;\nproblemas de ajuste nas caudas."
+  },
+  {
+    "objectID": "Aula9.html#exemplo",
+    "href": "Aula9.html#exemplo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO",
+    "text": "EXEMPLO\n\n\nVeja o exemplo de um modelo com bom ajuste segundo os resíduos de Cox-Snell:"
+  },
+  {
+    "objectID": "Aula9.html#resíduos-quantílicos",
+    "href": "Aula9.html#resíduos-quantílicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RESÍDUOS QUANTÍLICOS",
+    "text": "RESÍDUOS QUANTÍLICOS\n\n\nOs resíduos quantílicos aleatorizados são definidos por:\n\n\\[\nr_i=\\Phi^{-1}(u_i)\n\\]\nonde:\n\\[\nu_i=\\widehat{F}(t_i|\\boldsymbol{X}_i)\n\\]\ne:\n\n\\(\\widehat{F}(t_i|\\boldsymbol{X}_i)\\) é a função de distribuição acumulada estimada para o indivíduo \\(i\\);\n\\(\\Phi^{-1}(\\cdot)\\) representa a função quantil da distribuição normal padrão.\nA ideia principal é transformar os tempos observados em uma nova variável que possua distribuição normal padrão quando o modelo estiver corretamente especificado."
+  },
+  {
+    "objectID": "Aula9.html#por-que-usar-a-função-quantil-da-normal",
+    "href": "Aula9.html#por-que-usar-a-função-quantil-da-normal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE USAR A FUNÇÃO QUANTIL DA NORMAL?",
+    "text": "POR QUE USAR A FUNÇÃO QUANTIL DA NORMAL?\n\n\nSabemos que, para qualquer variável contínua \\(T\\), com função de distribuição acumulada \\(F(\\cdot)\\), \\(U=F(T)\\) segue uma distribuição uniforme no intervalo \\((0,1)\\).\nAssim, \\(U\\sim \\text{Uniforme}(0,1)\\) quando o modelo está corretamente especificado.\nAplicando a transformação: \\(R=\\Phi^{-1}(U)\\), obtemos:\n\n\\[\nR\\sim N(0,1)\n\\]\nou seja, os resíduos passam a seguir aproximadamente uma distribuição normal padrão."
+  },
+  {
+    "objectID": "Aula9.html#intuição-dos-resíduos-quantílicos",
+    "href": "Aula9.html#intuição-dos-resíduos-quantílicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTUIÇÃO DOS RESÍDUOS QUANTÍLICOS",
+    "text": "INTUIÇÃO DOS RESÍDUOS QUANTÍLICOS\n\n\nSe o modelo descreve corretamente os dados:\n\nos resíduos devem se comportar como uma normal padrão;\ntoda a estrutura do modelo é removida pela transformação via função distribuição acumulada.\n\nMas, se:\n\na distribuição estiver errada;\nfaltarem covariáveis;\nexistir má especificação; então os resíduos deixam de seguir a normal padrão."
+  },
+  {
+    "objectID": "Aula9.html#na-prática-1",
+    "href": "Aula9.html#na-prática-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "NA PRÁTICA",
+    "text": "NA PRÁTICA\n\n\nNa prática:\n\ncalculam-se os resíduos: \\(r_i=\\Phi^{-1}\\left[\\widehat{F}(t_i|\\boldsymbol{X}_i)\\right]\\) para observações não censuradas;\npara observações censuradas, utiliza-se uma versão aleatorizada: \\[\nu_i \\sim \\text{Uniforme}\n\\left(\n\\widehat{F}(t_i|\\boldsymbol{X}_i),1\n\\right)\n\\] e define-se: \\(r_i=\\Phi^{-1}(u_i)\\)\navalia-se se os resíduos seguem aproximadamente uma distribuição normal padrão;\nconstroem-se gráficos diagnósticos, como o gráfico Q-Q normal;"
+  },
+  {
+    "objectID": "Aula9.html#gráfico-q-q-normal-dos-resíduos",
+    "href": "Aula9.html#gráfico-q-q-normal-dos-resíduos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "GRÁFICO Q-Q NORMAL DOS RESÍDUOS",
+    "text": "GRÁFICO Q-Q NORMAL DOS RESÍDUOS\n\n\nNo gráfico Q-Q normal:\n\nos pontos devem ficar próximos da reta teórica;\ndesvios importantes sugerem inadequação do modelo.\n\nPadrões sistemáticos podem indicar:\n\ndistribuição inadequada;\nausência de covariáveis importantes;\nforma funcional incorreta;\nproblemas de ajuste nas caudas."
+  },
+  {
+    "objectID": "Aula9.html#exemplo-1",
+    "href": "Aula9.html#exemplo-1",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO",
+    "text": "EXEMPLO\n\n\nVeja o exemplo de um modelo com bom ajuste segundo os resíduos quantílicos:"
+  },
+  {
+    "objectID": "Aula9.html#comparação-cox-snell-vs-resíduos-quantílicos",
+    "href": "Aula9.html#comparação-cox-snell-vs-resíduos-quantílicos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARAÇÃO: COX-SNELL VS RESÍDUOS QUANTÍLICOS",
+    "text": "COMPARAÇÃO: COX-SNELL VS RESÍDUOS QUANTÍLICOS\n\n\n\n\n\n\n\n\n\nAspecto\nCox-Snell\nQuantílicos Aleatorizados\n\n\n\n\nIdeia principal\nTransformar os tempos pelo risco acumulado\nTransformar os tempos pela CDF e pela normal padrão\n\n\nDistribuição esperada\nExponencial(1)\nNormal padrão\n\n\nObjetivo principal\nAvaliar o ajuste global do modelo\nAvaliar ajuste global e identificar padrões locais\n\n\nInterpretação gráfica\nCurva estimada vs curva exponencial teórica\nQ-Q plot, histogramas e gráficos residuais\n\n\nFacilidade de interpretação\nModerada\nAlta\n\n\nSensibilidade a desvios\nMenor\nMaior\n\n\nTratamento da censura\nMais limitado\nMelhor adaptação via aleatorização\n\n\nDependência do tamanho amostral\nPode apresentar instabilidade em amostras pequenas\nGeralmente mais estável\n\n\nUso para detectar outliers\nMenos eficiente\nMais eficiente\n\n\nDiagnóstico de covariáveis\nLimitado\nMais informativo\n\n\nDiagnóstico visual\nMais global\nMais detalhado\n\n\nPopularidade atual\nClássico/tradicional\nMais moderno e amplamente recomendado"
+  },
+  {
     "objectID": "Aula7.html#parâmetros-populacionais",
     "href": "Aula7.html#parâmetros-populacionais",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",

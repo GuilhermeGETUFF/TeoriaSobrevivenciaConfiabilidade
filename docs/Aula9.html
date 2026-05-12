@@ -1407,6 +1407,372 @@ H_0:\beta_j=0
 <li><p>A <strong>plausibilidade do risco ajustado deve ser compatível com o fenômeno estudado</strong>.</p></li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="análise-de-resíduos" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ANÁLISE DE RESÍDUOS</strong></h1>
+
+</section>
+<section id="introdução-8" class="slide level2">
+<h2><strong>INTRODUÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Após ajustar um modelo paramétrico de sobrevivência, é fundamental avaliar:
+<ul>
+<li>se a <strong>distribuição escolhida</strong> é adequada;</li>
+<li>se existem <strong>observações discrepantes</strong>;</li>
+<li>se o modelo descreve corretamente os dados.</li>
+</ul></li>
+<li>A <strong>análise de resíduos</strong> é uma das principais ferramentas para essa avaliação.</li>
+</ul>
+</div>
+</section>
+<section id="objetivos-da-análise-de-resíduos" class="slide level2">
+<h2><strong>OBJETIVOS DA ANÁLISE DE RESÍDUOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>A análise residual permite investigar:
+<ul>
+<li><strong>qualidade global do ajuste</strong>;</li>
+<li><strong>observações influentes</strong>;</li>
+<li><strong>desvios sistemáticos</strong>;</li>
+<li><strong>inadequação da distribuição</strong>;</li>
+<li><strong>problemas de especificação</strong> do modelo.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="objetivos-da-análise-de-resíduos-1" class="slide level2">
+<h2><strong>OBJETIVOS DA ANÁLISE DE RESÍDUOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Resíduos muito discrepantes podem indicar:
+<ul>
+<li><strong>outliers</strong>;</li>
+<li><strong>má especificação</strong>;</li>
+<li><strong>distribuição inadequada</strong>;</li>
+<li><strong>variáveis omitidas</strong>.</li>
+</ul></li>
+<li>Veremos dois tipos de resíduos nessa disciplina para modelos paramétricos:
+<ul>
+<li><strong>Resíduos Cox-Snell</strong></li>
+<li><strong>Resíduos Quantílicos Aleatorizados</strong></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="resíduos-de-cox-snell" class="slide level2">
+<h2><strong>RESÍDUOS DE COX-SNELL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Os resíduos de Cox-Snell são definidos por:</li>
+</ul>
+<p><span class="math display">\[
+r_i=\widehat{H}(t_i|\boldsymbol{X_i})
+\]</span></p>
+<p>onde:</p>
+<p><span class="math display">\[
+\widehat{H}(t_i|\boldsymbol{X_i})
+=
+-\log\left[\widehat{S}(t_i|\boldsymbol{X_i})\right]
+\]</span></p>
+<p>representa o <strong>risco acumulado estimado</strong> para o indivíduo <span class="math inline">\(i\)</span>.</p>
+<ul>
+<li>A ideia principal é transformar os tempos observados em uma nova variável que possua uma <strong>distribuição conhecida</strong> caso o modelo esteja corretamente especificado.</li>
+</ul>
+</div>
+</section>
+<section id="por-que-o-risco-acumulado-vira-um-resíduo" class="slide level2">
+<h2><strong>POR QUE O RISCO ACUMULADO VIRA UM RESÍDUO?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Em regressão clássica, resíduos medem a discrepância entre:</p>
+<ul>
+<li>valor observado;</li>
+<li>valor ajustado.</li>
+</ul></li>
+<li><p>Em sobrevivência, essa diferença direta é mais difícil devido:</p>
+<ul>
+<li>à <strong>censura</strong>;</li>
+<li>à <strong>assimetria</strong> dos tempos;</li>
+<li>à natureza <strong>não negativa</strong> dos dados.</li>
+</ul></li>
+<li><p>A solução proposta por Cox e Snell foi transformar os tempos observados usando o <strong>risco acumulado estimado</strong>.</p></li>
+<li><p>Essa transformação “padroniza” os dados em uma escala comum.</p></li>
+</ul>
+</div>
+</section>
+<section id="a-ideia-da-transformação" class="slide level2 scrollable">
+<h2><strong>A IDEIA DA TRANSFORMAÇÃO</strong></h2>
+<div class="box-blue">
+<ol type="1">
+<li>Sabemos que: <span class="math inline">\(S(t)=e^{-H(t)}\)</span></li>
+<li>Agora defina a variável <span class="math inline">\(H(T)\)</span></li>
+<li>Como <span class="math inline">\(H(\cdot)\)</span> é crescente: <span class="math inline">\(P(H(T)&gt;t)=P(T&gt;H^{-1}(t))\)</span></li>
+<li>Mas: <span class="math inline">\(P(T&gt;t)=S(t)\)</span></li>
+<li>Portanto: <span class="math inline">\(P(H(T)&gt;t)=S(H^{-1}(t))\)</span></li>
+<li>Substituindo: <span class="math inline">\(S(t)=e^{-H(t)}\)</span></li>
+<li>obtemos: <span class="math inline">\(P(H(T)&gt;t)=e^{-t}\)</span></li>
+</ol>
+</div>
+</section>
+<section id="por-que-a-distribuição-exponencial1" class="slide level2">
+<h2><strong>POR QUE A DISTRIBUIÇÃO EXPONENCIAL(1)?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Logo, a variável aleatória <span class="math inline">\(H(T)\)</span> que representa a <strong>função de risco acumulada</strong> possui distribuição exponencial padrão.</p></li>
+<li><p>Assim: <span class="math display">\[
+H(T)\sim\text{Exponencial}(1)
+\]</span></p></li>
+</ul>
+<p>quando o modelo está corretamente especificado.</p>
+</div>
+</section>
+<section id="intuição-dos-resíduos-de-cox-snell" class="slide level2">
+<h2><strong>INTUIÇÃO DOS RESÍDUOS DE COX-SNELL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Se o modelo descreve corretamente os dados:
+<ul>
+<li>os resíduos devem se comportar como uma <strong>exponencial padrão</strong>;</li>
+<li>toda a estrutura do modelo é removida pela transformação do <strong>risco acumulado</strong>.</li>
+</ul></li>
+<li>Mas, se:
+<ul>
+<li>a distribuição estiver errada;</li>
+<li>faltarem covariáveis;</li>
+<li>existir má especificação; então os resíduos deixam de seguir a exponencial padrão.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="na-prática" class="slide level2">
+<h2><strong>NA PRÁTICA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Na prática:
+<ol type="1">
+<li><p>calculam-se os resíduos: <span class="math display">\[
+r_i=\widehat{H}(t_i|\boldsymbol{X}_i)
+\]</span></p></li>
+<li><p>estima-se o <strong>estimador de Kaplan-Meier</strong> desses resíduos, obtendo-se <span class="math inline">\(\widehat{S}(r_i)\)</span>;</p></li>
+<li><p>constroem-se os seguintes gráficos: <span class="math inline">\(\widehat{S}(r_i)\)</span> versus <span class="math inline">\(e^{-r_i}\)</span> e <span class="math inline">\(\widehat{H}(r_i)\)</span> versus <span class="math inline">\(r_i\)</span>, em que:</p></li>
+</ol>
+<ul>
+<li><span class="math inline">\(e^{-r_i}\)</span> é a <strong>função de sobrevivência</strong> de uma distribuição exponencial padrão;</li>
+<li><span class="math inline">\(r_i\)</span> é o <strong>risco acumulado teórico</strong> da distribuição exponencial padrão.</li>
+</ul></li>
+<li>Se as curvas forem semelhantes àquelas esperadas sob uma distribuição exponencial padrão, então o modelo apresenta <strong>bom ajuste global</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="gráfico-dos-resíduos-de-cox-snell" class="slide level2">
+<h2><strong>GRÁFICO DOS RESÍDUOS DE COX-SNELL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>No gráfico:
+<ul>
+<li>a curva empírica dos resíduos deve acompanhar o comportamento teórico da exponencial padrão;</li>
+</ul></li>
+<li>Desvios sistemáticos podem indicar:
+<ul>
+<li>distribuição inadequada;</li>
+<li>ausência de covariáveis importantes;</li>
+<li>forma funcional incorreta;</li>
+<li>problemas de ajuste nas caudas.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo" class="slide level2">
+<h2><strong>EXEMPLO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Veja o exemplo de um modelo com bom ajuste segundo os resíduos de Cox-Snell:</li>
+</ul>
+<p><img data-src="Images/Coxsnel.png" style="width:90.0%"></p>
+</div>
+</section>
+<section id="resíduos-quantílicos" class="slide level2">
+<h2><strong>RESÍDUOS QUANTÍLICOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Os <strong>resíduos quantílicos aleatorizados</strong> são definidos por:</li>
+</ul>
+<p><span class="math display">\[
+r_i=\Phi^{-1}(u_i)
+\]</span></p>
+<p>onde:</p>
+<p><span class="math display">\[
+u_i=\widehat{F}(t_i|\boldsymbol{X}_i)
+\]</span></p>
+<p>e:</p>
+<ul>
+<li><p><span class="math inline">\(\widehat{F}(t_i|\boldsymbol{X}_i)\)</span> é a <strong>função de distribuição acumulada estimada</strong> para o indivíduo <span class="math inline">\(i\)</span>;</p></li>
+<li><p><span class="math inline">\(\Phi^{-1}(\cdot)\)</span> representa a <strong>função quantil da distribuição normal padrão</strong>.</p></li>
+<li><p>A ideia principal é transformar os tempos observados em uma nova variável que possua <strong>distribuição normal padrão</strong> quando o modelo estiver corretamente especificado.</p></li>
+</ul>
+</div>
+</section>
+<section id="por-que-usar-a-função-quantil-da-normal" class="slide level2">
+<h2><strong>POR QUE USAR A FUNÇÃO QUANTIL DA NORMAL?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Sabemos que, para qualquer variável contínua <span class="math inline">\(T\)</span>, com função de distribuição acumulada <span class="math inline">\(F(\cdot)\)</span>, <span class="math inline">\(U=F(T)\)</span> segue uma distribuição uniforme no intervalo <span class="math inline">\((0,1)\)</span>.</p></li>
+<li><p>Assim, <span class="math inline">\(U\sim \text{Uniforme}(0,1)\)</span> quando o modelo está <strong>corretamente especificado</strong>.</p></li>
+<li><p>Aplicando a transformação: <span class="math inline">\(R=\Phi^{-1}(U)\)</span>, obtemos:</p></li>
+</ul>
+<p><span class="math display">\[
+R\sim N(0,1)
+\]</span></p>
+<p>ou seja, os resíduos passam a seguir aproximadamente uma <strong>distribuição normal padrão</strong>.</p>
+</div>
+</section>
+<section id="intuição-dos-resíduos-quantílicos" class="slide level2">
+<h2><strong>INTUIÇÃO DOS RESÍDUOS QUANTÍLICOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Se o modelo descreve corretamente os dados:
+<ul>
+<li>os resíduos devem se comportar como uma <strong>normal padrão</strong>;</li>
+<li>toda a estrutura do modelo é removida pela transformação via <strong>função distribuição acumulada</strong>.</li>
+</ul></li>
+<li>Mas, se:
+<ul>
+<li>a distribuição estiver errada;</li>
+<li>faltarem covariáveis;</li>
+<li>existir má especificação; então os resíduos deixam de seguir a <strong>normal padrão</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="na-prática-1" class="slide level2">
+<h2><strong>NA PRÁTICA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Na prática:
+<ol type="1">
+<li>calculam-se os resíduos: <span class="math inline">\(r_i=\Phi^{-1}\left[\widehat{F}(t_i|\boldsymbol{X}_i)\right]\)</span> para observações não censuradas;</li>
+<li>para observações censuradas, utiliza-se uma <strong>versão aleatorizada</strong>: <span class="math display">\[
+u_i \sim \text{Uniforme}
+\left(
+\widehat{F}(t_i|\boldsymbol{X}_i),1
+\right)
+\]</span> e define-se: <span class="math inline">\(r_i=\Phi^{-1}(u_i)\)</span></li>
+<li>avalia-se se os resíduos seguem aproximadamente uma <strong>distribuição normal padrão</strong>;</li>
+<li>constroem-se <strong>gráficos diagnósticos</strong>, como o gráfico Q-Q normal;</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="gráfico-q-q-normal-dos-resíduos" class="slide level2">
+<h2><strong>GRÁFICO Q-Q NORMAL DOS RESÍDUOS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>No gráfico Q-Q normal:
+<ul>
+<li>os pontos devem ficar próximos da <strong>reta teórica</strong>;</li>
+<li>desvios importantes sugerem <strong>inadequação do modelo</strong>.</li>
+</ul></li>
+<li>Padrões sistemáticos podem indicar:
+<ul>
+<li>distribuição inadequada;</li>
+<li>ausência de covariáveis importantes;</li>
+<li>forma funcional incorreta;</li>
+<li>problemas de ajuste nas caudas.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exemplo-1" class="slide level2">
+<h2><strong>EXEMPLO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Veja o exemplo de um modelo com <strong>bom ajuste</strong> segundo os resíduos quantílicos:</li>
+</ul>
+<p><img data-src="Images/Quantilico.png" style="width:45.0%"></p>
+</div>
+</section>
+<section id="comparação-cox-snell-vs-resíduos-quantílicos" class="slide level2 scrollable">
+<h2><strong>COMPARAÇÃO: COX-SNELL VS RESÍDUOS QUANTÍLICOS</strong></h2>
+<div class="box-blue">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspecto</th>
+<th><strong>Cox-Snell</strong></th>
+<th><strong>Quantílicos Aleatorizados</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ideia principal</strong></td>
+<td>Transformar os tempos pelo risco acumulado</td>
+<td>Transformar os tempos pela CDF e pela normal padrão</td>
+</tr>
+<tr class="even">
+<td><strong>Distribuição esperada</strong></td>
+<td>Exponencial(1)</td>
+<td>Normal padrão</td>
+</tr>
+<tr class="odd">
+<td><strong>Objetivo principal</strong></td>
+<td>Avaliar o ajuste global do modelo</td>
+<td>Avaliar ajuste global e identificar padrões locais</td>
+</tr>
+<tr class="even">
+<td><strong>Interpretação gráfica</strong></td>
+<td>Curva estimada vs curva exponencial teórica</td>
+<td>Q-Q plot, histogramas e gráficos residuais</td>
+</tr>
+<tr class="odd">
+<td><strong>Facilidade de interpretação</strong></td>
+<td>Moderada</td>
+<td>Alta</td>
+</tr>
+<tr class="even">
+<td><strong>Sensibilidade a desvios</strong></td>
+<td>Menor</td>
+<td>Maior</td>
+</tr>
+<tr class="odd">
+<td><strong>Tratamento da censura</strong></td>
+<td>Mais limitado</td>
+<td>Melhor adaptação via aleatorização</td>
+</tr>
+<tr class="even">
+<td><strong>Dependência do tamanho amostral</strong></td>
+<td>Pode apresentar instabilidade em amostras pequenas</td>
+<td>Geralmente mais estável</td>
+</tr>
+<tr class="odd">
+<td><strong>Uso para detectar outliers</strong></td>
+<td>Menos eficiente</td>
+<td>Mais eficiente</td>
+</tr>
+<tr class="even">
+<td><strong>Diagnóstico de covariáveis</strong></td>
+<td>Limitado</td>
+<td>Mais informativo</td>
+</tr>
+<tr class="odd">
+<td><strong>Diagnóstico visual</strong></td>
+<td>Mais global</td>
+<td>Mais detalhado</td>
+</tr>
+<tr class="even">
+<td><strong>Popularidade atual</strong></td>
+<td>Clássico/tradicional</td>
+<td>Mais moderno e amplamente recomendado</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 </section></section>
