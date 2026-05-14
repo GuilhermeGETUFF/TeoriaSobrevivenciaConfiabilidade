@@ -3430,11 +3430,11 @@
     "text": "PERCENTIL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição Weibull: \\[\nt_p = \\frac{\\left[-\\log(1-p)\\right]^{1/\\kappa}}{\\gamma}\n\\]\nExemplo: Mediana (\\(p = 0.5\\)):\\(t_{0.5} = \\frac{(\\log 2)^{1/\\kappa}}{\\gamma}\\)\nInterpretação:\n\n\\(\\gamma\\) maior → percentis menores (eventos mais rápidos).\n\\(\\kappa\\) pode acelerar ou desacelerar a ocorrência dos eventos."
   },
   {
-    "objectID": "Aula6.html#tempos-médio-e-médio-residual",
-    "href": "Aula6.html#tempos-médio-e-médio-residual",
+    "objectID": "Aula6.html#tempo-médio-e-vida-média-residual",
+    "href": "Aula6.html#tempo-médio-e-vida-média-residual",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TEMPOS MÉDIO E MÉDIO RESIDUAL",
-    "text": "TEMPOS MÉDIO E MÉDIO RESIDUAL\n\n\nNa distribuição Weibull, o tempo médio até o evento é: \\[\nE(T) = \\frac{1}{\\gamma} \\, \\Gamma\\left(1 + \\frac{1}{\\kappa}\\right)\n\\]\nNa distribuição Weibull, o tempo médio residual é dado por:\n\n\\[\nvmr(t) = \\kappa \\, \\Gamma\\left(1 + \\frac{1}{\\gamma}, \\left(\\frac{t}{\\kappa}\\right)^{\\gamma} \\right) \\, \\exp\\left( \\left(\\frac{t}{\\kappa}\\right)^{\\gamma} \\right) - t\n\\]\n\nA função gama, denotada por \\(\\Gamma(a)\\), é uma extensão do fatorial para números reais positivos, definida por \\[\n\\Gamma(a) = \\int_0^{\\infty} x^{a-1} e^{-x} \\, dx, \\quad a &gt; 0.\n\\]"
+    "section": "TEMPO MÉDIO E VIDA MÉDIA RESIDUAL",
+    "text": "TEMPO MÉDIO E VIDA MÉDIA RESIDUAL\n\n\nNa distribuição Weibull, considerando: \\[\nf(t)=\\frac{\\gamma}{\\kappa}\\left(\\frac{t}{\\kappa}\\right)^{\\gamma-1}\n\\exp\\left[-\\left(\\frac{t}{\\kappa}\\right)^\\gamma\\right],\n\\]\n\nem que \\(\\kappa &gt; 0\\) é o parâmetro de escala e \\(\\gamma &gt; 0\\) é o parâmetro de forma, o tempo médio até o evento é dado por:\n\\[\nE(T)=\\kappa \\, \\Gamma\\left(1+\\frac{1}{\\gamma}\\right)\n\\]\n\nA vida média residual da distribuição Weibull é dada por:\n\n\\[\nvmr(t)=\n\\kappa \\,\n\\Gamma\\left(\n1+\\frac{1}{\\gamma},\n\\left(\\frac{t}{\\kappa}\\right)^\\gamma\n\\right)\n\\exp\\left[\n\\left(\\frac{t}{\\kappa}\\right)^\\gamma\n\\right]\n-t\n\\]\n\nA função gama, denotada por \\(\\Gamma(a)\\), é uma extensão do fatorial para números reais positivos, definida por:\n\n\\[\n\\Gamma(a)=\n\\int_0^{\\infty}\nx^{a-1}e^{-x}\\,dx,\n\\quad a&gt;0\n\\]\n\nJá \\(\\Gamma(a,x)\\) representa a função gama incompleta superior."
   },
   {
     "objectID": "Aula6.html#aplicabilidade-3",
@@ -3570,8 +3570,8 @@
     "text": "PERCENTIL DA DISTRIBUIÇÃO LOGNORMAL\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição lognormal: \\[\nt_p = \\exp\\left(\\mu + \\sigma \\, z_p\\right)\n\\]\n\nonde \\(z_p = \\Phi^{-1}(p)\\) é o quantil da normal padrão\n\nExemplo: Mediana (\\(p = 0.5\\)): \\(t_{0.5} = \\exp(\\mu)\\)\nInterpretação:\n\n\\(\\mu\\) controla a escala temporal (posição)\n\\(\\sigma\\) controla a dispersão\nPercentis crescem exponencialmente com \\(\\mu\\)"
   },
   {
-    "objectID": "Aula6.html#tempos-médio-e-médio-residual-1",
-    "href": "Aula6.html#tempos-médio-e-médio-residual-1",
+    "objectID": "Aula6.html#tempos-médio-e-médio-residual",
+    "href": "Aula6.html#tempos-médio-e-médio-residual",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPOS MÉDIO E MÉDIO RESIDUAL",
     "text": "TEMPOS MÉDIO E MÉDIO RESIDUAL\n\n\nNa distribuição lognormal, o tempo médio até o evento é: \\[\nE(T) = \\exp\\left(\\mu + \\frac{\\sigma^2}{2}\\right)\n\\]\nNa distribuição lognormal, o tempo médio residual é: \\[\nvmr(t)=\\frac{e^{\\mu+\\frac{\\sigma^2}{2}}\n\\left[1-\\Phi\\left(\\frac{\\ln t-\\mu-\\sigma^2}{\\sigma}\\right)\\right]}\n{1-\\Phi\\left(\\frac{\\ln t-\\mu}{\\sigma}\\right)}-t\n\\]"
@@ -3717,8 +3717,8 @@
     "text": "PERCENTIL DA DISTRIBUIÇÃO GAMA\n\n\nO percentil de ordem \\(p\\) é o valor \\(t_p\\) tal que \\(P(T \\le t_p) = p\\)\nPara a distribuição Gama: \\[\nt_p = F^{-1}(p)\n\\]\nNão possui forma fechada simples\n→ obtido numericamente"
   },
   {
-    "objectID": "Aula6.html#tempos-médio-e-médio-residual-2",
-    "href": "Aula6.html#tempos-médio-e-médio-residual-2",
+    "objectID": "Aula6.html#tempos-médio-e-médio-residual-1",
+    "href": "Aula6.html#tempos-médio-e-médio-residual-1",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "TEMPOS MÉDIO E MÉDIO RESIDUAL",
     "text": "TEMPOS MÉDIO E MÉDIO RESIDUAL\n\n\nNa distribuição Gama, o tempo médio até o evento é: \\[\nE(T) = \\frac{\\alpha}{\\beta}\n\\]\nResumo:\n\n\\(\\beta\\) maior → eventos mais rápidos\n\\(\\alpha\\) maior → maior tempo médio\nInterpretação simples e direta\n\nPara a distribuição Gama, o tempo médio residual \\(vmr(t)\\) também é obtido numericamente."

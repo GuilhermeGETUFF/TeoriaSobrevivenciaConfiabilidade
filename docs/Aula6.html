@@ -1337,22 +1337,45 @@ t_p = \frac{\left[-\log(1-p)\right]^{1/\kappa}}{\gamma}
 </ul>
 </div>
 </section>
-<section id="tempos-médio-e-médio-residual" class="slide level2">
-<h2><strong>TEMPOS MÉDIO E MÉDIO RESIDUAL</strong></h2>
+<section id="tempo-médio-e-vida-média-residual" class="slide level2 scrollable">
+<h2><strong>TEMPO MÉDIO E VIDA MÉDIA RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Na distribuição Weibull, o tempo médio até o evento é: <span class="math display">\[
-E(T) = \frac{1}{\gamma} \, \Gamma\left(1 + \frac{1}{\kappa}\right)
+<li>Na distribuição Weibull, considerando: <span class="math display">\[
+f(t)=\frac{\gamma}{\kappa}\left(\frac{t}{\kappa}\right)^{\gamma-1}
+\exp\left[-\left(\frac{t}{\kappa}\right)^\gamma\right],
 \]</span></li>
-<li>Na distribuição Weibull, o tempo médio residual é dado por:</li>
 </ul>
+<p>em que <span class="math inline">\(\kappa &gt; 0\)</span> é o parâmetro de escala e <span class="math inline">\(\gamma &gt; 0\)</span> é o parâmetro de forma, o tempo médio até o evento é dado por:</p>
 <p><span class="math display">\[
-vmr(t) = \kappa \, \Gamma\left(1 + \frac{1}{\gamma}, \left(\frac{t}{\kappa}\right)^{\gamma} \right) \, \exp\left( \left(\frac{t}{\kappa}\right)^{\gamma} \right) - t
+E(T)=\kappa \, \Gamma\left(1+\frac{1}{\gamma}\right)
 \]</span></p>
 <ul>
-<li>A função gama, denotada por <span class="math inline">\(\Gamma(a)\)</span>, é uma extensão do fatorial para números reais positivos, definida por <span class="math display">\[
-\Gamma(a) = \int_0^{\infty} x^{a-1} e^{-x} \, dx, \quad a &gt; 0.
-\]</span></li>
+<li>A vida média residual da distribuição Weibull é dada por:</li>
+</ul>
+<p><span class="math display">\[
+vmr(t)=
+\kappa \,
+\Gamma\left(
+1+\frac{1}{\gamma},
+\left(\frac{t}{\kappa}\right)^\gamma
+\right)
+\exp\left[
+\left(\frac{t}{\kappa}\right)^\gamma
+\right]
+-t
+\]</span></p>
+<ul>
+<li>A função gama, denotada por <span class="math inline">\(\Gamma(a)\)</span>, é uma extensão do fatorial para números reais positivos, definida por:</li>
+</ul>
+<p><span class="math display">\[
+\Gamma(a)=
+\int_0^{\infty}
+x^{a-1}e^{-x}\,dx,
+\quad a&gt;0
+\]</span></p>
+<ul>
+<li>Já <span class="math inline">\(\Gamma(a,x)\)</span> representa a função gama incompleta superior.</li>
 </ul>
 </div>
 </section>
@@ -1834,7 +1857,7 @@ t_p = \exp\left(\mu + \sigma \, z_p\right)
 </ul>
 </div>
 </section>
-<section id="tempos-médio-e-médio-residual-1" class="slide level2">
+<section id="tempos-médio-e-médio-residual" class="slide level2">
 <h2><strong>TEMPOS MÉDIO E MÉDIO RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
@@ -2339,7 +2362,7 @@ t_p = F^{-1}(p)
 </ul>
 </div>
 </section>
-<section id="tempos-médio-e-médio-residual-2" class="slide level2">
+<section id="tempos-médio-e-médio-residual-1" class="slide level2">
 <h2><strong>TEMPOS MÉDIO E MÉDIO RESIDUAL</strong></h2>
 <div class="box-blue">
 <ul>
