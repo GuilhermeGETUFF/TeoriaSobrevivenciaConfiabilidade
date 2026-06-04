@@ -1869,6 +1869,454 @@
     "text": "EXERCÍCIO\n\nConsidere que o tempo do diagnóstico até a morte \\(T\\) de pacientes acometidos por uma certa enfermidade possui função de sobrevivência dada por\n\\[\nS(t) = e^{-t^\\gamma}, \\quad \\gamma &gt; 0\n\\]\nDetermine:\n\na função densidade de probabilidade \\(f(t)\\);\na função de risco \\(\\lambda(t)\\)."
   },
   {
+    "objectID": "Aula10.html#onde-estamos",
+    "href": "Aula10.html#onde-estamos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ONDE ESTAMOS",
+    "text": "ONDE ESTAMOS\n\n\nAté aqui, estudamos modelos de regressão paramétricos para dados de sobrevivência e confiabilidade.\nUtilizamos distribuições como:\n\nExponencial;\nWeibull;\nLog-normal;\nGama;\nGama Generalizada.\n\nEm todos os casos, foi necessário especificar uma distribuição probabilística para os tempos observados.\nOs efeitos das covariáveis foram incorporados por meio dos parâmetros desses modelos."
+  },
+  {
+    "objectID": "Aula10.html#o-que-aprendemos-com-os-modelos-paramétricos",
+    "href": "Aula10.html#o-que-aprendemos-com-os-modelos-paramétricos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE APRENDEMOS COM OS MODELOS PARAMÉTRICOS?",
+    "text": "O QUE APRENDEMOS COM OS MODELOS PARAMÉTRICOS?\n\nOs modelos paramétricos permitem:\n\nEstimar efeitos de covariáveis;\nObter curvas de sobrevivência ajustadas;\nComparar grupos;\nFazer previsões;\nEstimar probabilidades de sobrevivência em diferentes horizontes de tempo.\n\nQuando a distribuição é adequada, esses modelos costumam produzir excelentes resultados."
+  },
+  {
+    "objectID": "Aula10.html#uma-questão-fundamental",
+    "href": "Aula10.html#uma-questão-fundamental",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "UMA QUESTÃO FUNDAMENTAL",
+    "text": "UMA QUESTÃO FUNDAMENTAL\n\n\nConsidere um estudo sobre pacientes com câncer.\nNosso interesse é responder perguntas como:\n\nA idade afeta a sobrevivência?\nO tratamento A é superior ao tratamento B?\nO estágio da doença influencia o prognóstico?\nDeterminado biomarcador está associado ao risco de morte?\n\n\n\n\n\nPrecisamos realmente conhecer a distribuição dos tempos de sobrevivência para responder essas perguntas?"
+  },
+  {
+    "objectID": "Aula10.html#o-desafio-dos-modelos-paramétricos",
+    "href": "Aula10.html#o-desafio-dos-modelos-paramétricos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O DESAFIO DOS MODELOS PARAMÉTRICOS",
+    "text": "O DESAFIO DOS MODELOS PARAMÉTRICOS\n\n\nOs modelos paramétricos exigem uma hipótese importante:\n\nA distribuição dos tempos deve ser especificada previamente.\n\nA qualidade das inferências depende diretamente dessa escolha:\n\nExponencial\nWeibull\nLogNormal\nGama\nGama Generalizada"
+  },
+  {
+    "objectID": "Aula10.html#e-se-a-distribuição-estiver-errada",
+    "href": "Aula10.html#e-se-a-distribuição-estiver-errada",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "E SE A DISTRIBUIÇÃO ESTIVER ERRADA?",
+    "text": "E SE A DISTRIBUIÇÃO ESTIVER ERRADA?\n\n\nSuponha que os tempos de sobrevivência possuam uma distribuição complexa e desconhecida.\n\nMas o pesquisador ajusta um modelo Weibull.\n\nPossíveis consequências:\n\nestimativas viesadas;\nerros-padrão incorretos;\nintervalos de confiança inadequados;\ninterpretações equivocadas.\n\nA modelagem passa a depender fortemente da distribuição escolhida."
+  },
+  {
+    "objectID": "Aula10.html#o-que-normalmente-interessa-ao-pesquisador",
+    "href": "Aula10.html#o-que-normalmente-interessa-ao-pesquisador",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE NORMALMENTE INTERESSA AO PESQUISADOR?",
+    "text": "O QUE NORMALMENTE INTERESSA AO PESQUISADOR?\n\n\nNa prática, muitas vezes, o objetivo principal não é estimar:\n\nparâmetros de forma;\nparâmetros de escala;\ncaracterísticas da distribuição dos tempos.\n\nO interesse geralmente está em:\n\ncomparar tratamentos;\navaliar fatores prognósticos;\nidentificar fatores de risco;\nquantificar efeitos de covariáveis."
+  },
+  {
+    "objectID": "Aula10.html#uma-ideia-revolucionária",
+    "href": "Aula10.html#uma-ideia-revolucionária",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "UMA IDEIA REVOLUCIONÁRIA",
+    "text": "UMA IDEIA REVOLUCIONÁRIA\n\n\nEm 1972, David Cox propôs uma abordagem inovadora.\n\nModelar os efeitos das covariáveis sem precisar especificar completamente a distribuição dos tempos de sobrevivência.\n\nEssa proposta deu origem ao:\n\nModelo de Riscos Proporcionais de Cox\n\nOu, simplismente, Modelo de Cox."
+  },
+  {
+    "objectID": "Aula10.html#a-grande-sacada-do-modelo-de-cox",
+    "href": "Aula10.html#a-grande-sacada-do-modelo-de-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A GRANDE SACADA DO MODELO DE COX",
+    "text": "A GRANDE SACADA DO MODELO DE COX\n\n\nNos modelos paramétricos: \\[\nf(t), \\quad S(t) \\quad \\text{e} \\quad \\lambda(t)\n\\] precisam de formas específicas.\nNo modelo de Cox:\nnão assumimos Exponencial;\nnão assumimos Weibull;\nnão assumimos Log-normal;\nnão assumimos Gama;\nnão assumimos Gama Generalizada."
+  },
+  {
+    "objectID": "Aula10.html#o-que-o-modelo-procura-explicar",
+    "href": "Aula10.html#o-que-o-modelo-procura-explicar",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE O MODELO PROCURA EXPLICAR?",
+    "text": "O QUE O MODELO PROCURA EXPLICAR?\n\n\nO foco deixa de ser a distribuição dos tempos.\nO foco passa a ser:\n\nComo as covariáveis modificam o risco de ocorrência do evento.\n\nPerguntas típicas:\n\nQuanto o risco aumenta com a idade?\nQual o efeito do tratamento no risco?\nQuanto o tabagismo aumenta o risco?\nComo temperatura e pressão afetam o risco de falha de um equipamento?"
+  },
+  {
+    "objectID": "Aula10.html#por-que-o-modelo-de-cox-se-tornou-tão-popular",
+    "href": "Aula10.html#por-que-o-modelo-de-cox-se-tornou-tão-popular",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE O MODELO DE COX SE TORNOU TÃO POPULAR?",
+    "text": "POR QUE O MODELO DE COX SE TORNOU TÃO POPULAR?\n\n\nO modelo reúne características extremamente desejáveis:\n\nFlexibilidade;\nPoucas suposições distribucionais;\nFácil interpretação dos efeitos;\nAplicação em diferentes áreas;\nExcelente desempenho prático.\n\nPor isso, tornou-se o modelo mais utilizado na análise de sobrevivência/confiabilide."
+  },
+  {
+    "objectID": "Aula10.html#o-impacto-de-david-cox",
+    "href": "Aula10.html#o-impacto-de-david-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O IMPACTO DE DAVID COX",
+    "text": "O IMPACTO DE DAVID COX\n\n\nO artigo publicado por David Cox em 1972 é um dos trabalhos mais influentes da história da Estatística (Aparece entre os três mais citados da história na área).\nSeu modelo revolucionou áreas como:\n\nMedicina;\nEpidemiologia;\nSaúde Pública;\nEngenharia de Confiabilidade;\nEconomia;\nCiências Sociais.\n\nMais de 50 anos após sua publicação, continua sendo a principal ferramenta para análise de sobrevivência com covariáveis."
+  },
+  {
+    "objectID": "Aula10.html#o-que-vamos-aprender",
+    "href": "Aula10.html#o-que-vamos-aprender",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE VAMOS APRENDER?",
+    "text": "O QUE VAMOS APRENDER?\n\n\nNesta unidade estudaremos:\n\nFormulação do modelo de Cox;\nConceito de riscos proporcionais;\nRazão de riscos (hazard ratio);\nEstimação por verossimilhança parcial;\nInterpretação dos coeficientes;\nVerificação da suposição de proporcionalidade\nMedidas de qualidade de ajuste;"
+  },
+  {
+    "objectID": "Aula10.html#uma-situação-simples",
+    "href": "Aula10.html#uma-situação-simples",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "UMA SITUAÇÃO SIMPLES",
+    "text": "UMA SITUAÇÃO SIMPLES\n\n\nConsidere um estudo clínico randomizado com dois grupos:\n\nGrupo 0: tratamento padrão;\nGrupo 1: novo tratamento.\n\nDesejamos responder à seguinte pergunta:\n\n\nO novo tratamento altera o risco de ocorrência do evento de interesse?\n\n\nPara compreender a estrutura do modelo de Cox, começaremos por este caso simples."
+  },
+  {
+    "objectID": "Aula10.html#a-ideia-central-dos-riscos-proporcionais",
+    "href": "Aula10.html#a-ideia-central-dos-riscos-proporcionais",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A IDEIA CENTRAL DOS RISCOS PROPORCIONAIS",
+    "text": "A IDEIA CENTRAL DOS RISCOS PROPORCIONAIS\n\n\nDenote por:\n\n\\(\\lambda_0(t)\\): função de risco do grupo controle;\n\\(\\lambda_1(t)\\): função de risco do grupo tratado.\n\nO modelo de Cox parte da hipótese de que \\[\n\\frac{\\lambda_1(t)}{\\lambda_0(t)} = K\n\\] para todo instante \\(t\\).\nOu seja, a razão entre os riscos permanece constante ao longo do tempo."
+  },
+  {
+    "objectID": "Aula10.html#o-que-isso-significa-na-prática",
+    "href": "Aula10.html#o-que-isso-significa-na-prática",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE ISSO SIGNIFICA NA PRÁTICA?",
+    "text": "O QUE ISSO SIGNIFICA NA PRÁTICA?\n\n\nA hipótese de riscos proporcionais não significa que os riscos sejam constantes.\nOs riscos podem:\n\naumentar;\ndiminuir;\napresentar comportamentos complexos ao longo do tempo.\n\nO que permanece constante é apenas a proporção entre eles.\nExemplo:\n\nSe o risco de um grupo for o dobro do outro hoje, continuará sendo o dobro amanhã, na próxima semana ou em qualquer outro instante do acompanhamento."
+  },
+  {
+    "objectID": "Aula10.html#a-razão-de-riscos",
+    "href": "Aula10.html#a-razão-de-riscos",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A RAZÃO DE RISCOS",
+    "text": "A RAZÃO DE RISCOS\n\n\nA constante \\[\nK=\\frac{\\lambda_1(t)}{\\lambda_0(t)}\n\\] é denominada Razão de Riscos (Hazard Ratio).\nSua interpretação é simples:\n\n\\(K=1\\): riscos iguais;\n\\(K&gt;1\\): maior risco no grupo 1;\n\\(K&lt;1\\): menor risco no grupo 1.\n\nGrande parte da interpretação do modelo de Cox será baseada nessa quantidade."
+  },
+  {
+    "objectID": "Aula10.html#introduzindo-uma-covariável-indicadora",
+    "href": "Aula10.html#introduzindo-uma-covariável-indicadora",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTRODUZINDO UMA COVARIÁVEL INDICADORA",
+    "text": "INTRODUZINDO UMA COVARIÁVEL INDICADORA\n\n\nDefina a variável \\[\nx=\n\\begin{cases}\n0, & \\text{grupo controle} \\\\\n1, & \\text{grupo tratado}\n\\end{cases}\n\\] e represente a razão de riscos por \\[\nK=e^{\\beta}.\n\\]\nA utilização da função exponencial garante que a razão de riscos seja sempre positiva."
+  },
+  {
+    "objectID": "Aula10.html#surge-o-modelo-de-cox",
+    "href": "Aula10.html#surge-o-modelo-de-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "SURGE O MODELO DE COX",
+    "text": "SURGE O MODELO DE COX\n\n\nSubstituindo \\(K=e^\\beta\\), obtemos \\[\n\\lambda(t|x)\n=\n\\lambda_0(t)e^{\\beta x}.\n\\]\nEsta é a forma mais simples do modelo de Cox.\nObserve que:\n\n\\(\\lambda_0(t)\\) descreve o comportamento do risco de basse ao longo do tempo;\n\\(e^{\\beta x}\\) incorpora o efeito do grupo."
+  },
+  {
+    "objectID": "Aula10.html#interpretação-de-beta",
+    "href": "Aula10.html#interpretação-de-beta",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DE \\(\\beta\\)",
+    "text": "INTERPRETAÇÃO DE \\(\\beta\\)\n\n\nPara o grupo controle (\\(x=0\\)), \\[\n\\lambda(t|0)=\\lambda_0(t).\n\\]\nPara o grupo tratado (\\(x=1\\)), \\[\n\\lambda(t|1)=\\lambda_0(t)e^\\beta.\n\\]\nLogo, \\[\n\\frac{\\lambda(t|1)}\n{\\lambda(t|0)}\n=\ne^\\beta.\n\\]\nPortanto, \\(e^\\beta\\) representa a razão de riscos entre os grupos."
+  },
+  {
+    "objectID": "Aula10.html#interpretação-do-hazard-ratio",
+    "href": "Aula10.html#interpretação-do-hazard-ratio",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DO HAZARD RATIO",
+    "text": "INTERPRETAÇÃO DO HAZARD RATIO\n\n\nAssim:\n\nSe \\(e^\\beta=1\\), não existe diferença entre os grupos.\nSe \\(e^\\beta=1.50\\), o risco é 50% maior.\nSe \\(e^\\beta=2\\), o risco é duas vezes maior.\nSe \\(e^\\beta=0.80\\), o risco é 20% menor.\nSe \\(e^\\beta=0.50\\), o risco é reduzido pela metade.\n\nObserve que a interpretação é feita sobre o risco, e não diretamente sobre o tempo de sobrevivência."
+  },
+  {
+    "objectID": "Aula10.html#generalização-para-múltiplas-covariáveis",
+    "href": "Aula10.html#generalização-para-múltiplas-covariáveis",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "GENERALIZAÇÃO PARA MÚLTIPLAS COVARIÁVEIS",
+    "text": "GENERALIZAÇÃO PARA MÚLTIPLAS COVARIÁVEIS\n\n\nNa prática, normalmente observamos diversas características dos indivíduos.\nExemplos:\n\nidade;\nsexo;\ntratamento;\nbiomarcadores;\npressão arterial;\ntemperatura de operação.\n\nSejam \\(\\mathbf{x}=(x_1,x_2,\\ldots,x_p)^T\\) as covariáveis observadas."
+  },
+  {
+    "objectID": "Aula10.html#forma-geral-do-modelo-de-cox",
+    "href": "Aula10.html#forma-geral-do-modelo-de-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FORMA GERAL DO MODELO DE COX",
+    "text": "FORMA GERAL DO MODELO DE COX\n\n\nA expressão geral do modelo é \\[\n\\lambda(t|\\mathbf{x})\n=\n\\lambda_0(t)\ne^{\\boldsymbol{\\beta}^T\\mathbf{x}}.\n\\] ou, equivalentemente, \\[\n\\lambda(t|\\mathbf{x})\n=\n\\lambda_0(t)\ne^{\\beta_1x_1+\\cdots+\\beta_px_p}.\n\\]\nO modelo é composto por um componente não paramétrico e um componente paramétrico."
+  },
+  {
+    "objectID": "Aula10.html#o-componente-não-paramétrico",
+    "href": "Aula10.html#o-componente-não-paramétrico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O COMPONENTE NÃO PARAMÉTRICO",
+    "text": "O COMPONENTE NÃO PARAMÉTRICO\n\n\nA função \\[\n\\lambda_0(t)\n\\] é denominada função de risco basal.\nEla representa o risco de um indivíduo para o qual \\[\n\\mathbf{x}=\\mathbf{0}.\n\\]\n\nNenhuma forma específica é assumida para \\(\\lambda_0(t)\\).\n\nEssa é a principal característica que diferencia o modelo de Cox dos modelos paramétricos."
+  },
+  {
+    "objectID": "Aula10.html#o-componente-paramétrico",
+    "href": "Aula10.html#o-componente-paramétrico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O COMPONENTE PARAMÉTRICO",
+    "text": "O COMPONENTE PARAMÉTRICO\n\n\nO termo \\[\ne^{\\boldsymbol{\\beta}^T\\mathbf{x}}\n\\] descreve o efeito das covariáveis.\nAs quantidades \\[\n\\beta_1,\\beta_2,\\ldots,\\beta_p\n\\] medem o impacto de cada variável explicativa sobre o risco.\nAlém disso, \\[\ne^{\\boldsymbol{\\beta}^T\\mathbf{x}}&gt;0\n\\] para qualquer valor das covariáveis, garantindo que a função de risco seja sempre não negativa."
+  },
+  {
+    "objectID": "Aula10.html#por-que-não-existe-intercepto",
+    "href": "Aula10.html#por-que-não-existe-intercepto",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE NÃO EXISTE INTERCEPTO?",
+    "text": "POR QUE NÃO EXISTE INTERCEPTO?\n\n\nEm modelos lineares escrevemos \\[\n\\beta_0+\\beta_1x_1+\\cdots+\\beta_px_p.\n\\]\nNo modelo de Cox não existe um intercepto explícito.\nO motivo é que a função basal \\[\n\\lambda_0(t)\n\\] já desempenha esse papel.\nDizemos que o intercepto é absorvido pela função de risco basal."
+  },
+  {
+    "objectID": "Aula10.html#funções-associadas-ao-modelo",
+    "href": "Aula10.html#funções-associadas-ao-modelo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "FUNÇÕES ASSOCIADAS AO MODELO",
+    "text": "FUNÇÕES ASSOCIADAS AO MODELO\n\n\nA partir do modelo de Cox, segue que \\[\n\\Lambda(t|\\mathbf{x})\n=\n\\Lambda_0(t)\ne^{\\boldsymbol{\\beta}^T\\mathbf{x}}\n\\] e \\[\nS(t|\\mathbf{x})\n=\n\\exp\n\\left[\n-\\Lambda_0(t)\ne^{\\boldsymbol{\\beta}^T\\mathbf{x}}\n\\right].\n\\]\nEquivalentemente, \\[\nS(t|\\mathbf{x})\n=\nS_0(t)^{e^{\\boldsymbol{\\beta}^T\\mathbf{x}}}.\n\\] em que:\n\\(\\Lambda_0(t)\\) é a função basal de risco acumulado;\n\\(S_0(t)\\) é a função basal de sobrevivência."
+  },
+  {
+    "objectID": "Aula10.html#a-propriedade-mais-importante-do-modelo",
+    "href": "Aula10.html#a-propriedade-mais-importante-do-modelo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A PROPRIEDADE MAIS IMPORTANTE DO MODELO",
+    "text": "A PROPRIEDADE MAIS IMPORTANTE DO MODELO\n\n\nConsidere dois indivíduos com covariáveis \\[\n\\mathbf{x}_A\n\\quad\\text{e}\\quad\n\\mathbf{x}_B.\n\\]\nTemos \\[\n\\frac{\\lambda(t|\\mathbf{x}_A)}\n{\\lambda(t|\\mathbf{x}_B)}\n=\ne^{\\boldsymbol{\\beta}^T(\\mathbf{x}_A-\\mathbf{x}_B)}.\n\\]\nObserve que o tempo \\(t\\) desaparece da expressão (constante no tempo).\nEssa é a essência da hipótese de riscos proporcionais.\nA propriedade de proporcionalidade também vale para as funções de risco acumulado."
+  },
+  {
+    "objectID": "Aula10.html#como-identificar-uma-violação-da-hipótese",
+    "href": "Aula10.html#como-identificar-uma-violação-da-hipótese",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO IDENTIFICAR UMA VIOLAÇÃO DA HIPÓTESE?",
+    "text": "COMO IDENTIFICAR UMA VIOLAÇÃO DA HIPÓTESE?\n\n\nSe a razão entre os riscos muda ao longo do tempo, a hipótese de riscos proporcionais é violada.\nNessa situação:\n\no efeito das covariáveis deixa de ser constante;\na interpretação dos coeficientes torna-se inadequada;\no modelo de Cox pode produzir conclusões incorretas.\n\nPor isso, a verificação dessa hipótese é uma etapa fundamental da análise."
+  },
+  {
+    "objectID": "Aula10.html#exemplo-de-violação-dos-riscos-proporcionais",
+    "href": "Aula10.html#exemplo-de-violação-dos-riscos-proporcionais",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO DE VIOLAÇÃO DOS RISCOS PROPORCIONAIS",
+    "text": "EXEMPLO DE VIOLAÇÃO DOS RISCOS PROPORCIONAIS\n\n\nA figura a seguir apresenta as funções de risco acumulado de dois grupos em escala logarítmica.\n\n\n\n\n\n\n\nSe a hipótese de riscos proporcionais fosse válida, esperaríamos uma separação aproximadamente constante entre elas ao longo do tempo."
+  },
+  {
+    "objectID": "Aula10.html#interpretação-da-figura",
+    "href": "Aula10.html#interpretação-da-figura",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DA FIGURA",
+    "text": "INTERPRETAÇÃO DA FIGURA\n\n\nO Grupo 2 apresenta maior risco acumulado no início do acompanhamento.\n\nEntretanto, após determinado instante, o comportamento se inverte.\nAs curvas se aproximam e posteriormente se cruzam.\n\nEsse padrão indica que a razão entre os riscos não permanece constante ao longo do tempo.\n\nConsequência: A hipótese de riscos proporcionais é violada."
+  },
+  {
+    "objectID": "Aula10.html#como-seriam-curvas-compatíveis-com-o-modelo-de-cox",
+    "href": "Aula10.html#como-seriam-curvas-compatíveis-com-o-modelo-de-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO SERIAM CURVAS COMPATÍVEIS COM O MODELO DE COX?",
+    "text": "COMO SERIAM CURVAS COMPATÍVEIS COM O MODELO DE COX?\n\n\nSe a hipótese de riscos proporcionais fosse válida:\n\nas curvas não deveriam se cruzar;\na distância entre elas deveria permanecer aproximadamente constante na escala logarítmica;\na razão entre os riscos permaneceria constante ao longo de todo o acompanhamento.\n\nEsse é exatamente o comportamento esperado sob o modelo de Cox."
+  },
+  {
+    "objectID": "Aula10.html#como-estimar-os-coeficientes-do-modelo",
+    "href": "Aula10.html#como-estimar-os-coeficientes-do-modelo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO ESTIMAR OS COEFICIENTES DO MODELO?",
+    "text": "COMO ESTIMAR OS COEFICIENTES DO MODELO?\n\n\nApós definir o modelo de Cox, surge naturalmente uma pergunta:\n\nComo estimar os coeficientes \\(\\boldsymbol{\\beta}\\)?\n\nNos modelos paramétricos estudados anteriormente utilizamos o método da Máxima Verossimilhança.\n\nSeria natural tentar utilizar exatamente a mesma estratégia aqui.\n\nEntretanto, encontraremos um obstáculo importante."
+  },
+  {
+    "objectID": "Aula10.html#relembrando-o-modelo-de-cox",
+    "href": "Aula10.html#relembrando-o-modelo-de-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "RELEMBRANDO O MODELO DE COX",
+    "text": "RELEMBRANDO O MODELO DE COX\n\n\nPara cada indivíduo \\(i\\), \\[\n\\lambda_i(t|\\mathbf{x}_i)\n=\n\\lambda_0(t)\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}\n\\] e \\[\nS_i(t|\\mathbf{x}_i)\n=\nS_0(t)^{e^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}}.\n\\]\nObserve que o modelo possui:\n\num componente paramétrico: \\(\\boldsymbol{\\beta}\\);\num componente não paramétrico: \\(\\lambda_0(t)\\)."
+  },
+  {
+    "objectID": "Aula10.html#tentando-utilizar-máxima-verossimilhança",
+    "href": "Aula10.html#tentando-utilizar-máxima-verossimilhança",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TENTANDO UTILIZAR MÁXIMA VEROSSIMILHANÇA",
+    "text": "TENTANDO UTILIZAR MÁXIMA VEROSSIMILHANÇA\n\n\nPara dados censurados, a função de verossimilhança é \\[\nL(\\boldsymbol{\\beta})\n=\n\\prod_{i=1}^{n}\nf_i(t_i|\\mathbf{x}_i)^{\\delta_i}\nS_i(t_i|\\mathbf{x}_i)^{1-\\delta_i}.\n\\]\nComo \\[\nf(t)=\\lambda(t)S(t),\n\\] temos \\[\nL(\\boldsymbol{\\beta})\n=\n\\prod_{i=1}^{n}\n\\lambda_i(t_i|\\mathbf{x}_i)^{\\delta_i}\nS_i(t_i|\\mathbf{x}_i).\n\\]"
+  },
+  {
+    "objectID": "Aula10.html#onde-está-o-problema",
+    "href": "Aula10.html#onde-está-o-problema",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ONDE ESTÁ O PROBLEMA?",
+    "text": "ONDE ESTÁ O PROBLEMA?\n\n\nSubstituindo o modelo de Cox na expressão anterior, \\[\nL(\\boldsymbol{\\beta})\n=\n\\prod_{i=1}^{n}\n\\left[\n\\lambda_0(t_i)\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}\n\\right]^{\\delta_i}\nS_0(t_i)^{e^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}}.\n\\]\nObserve que a verossimilhança depende de \\[\n\\lambda_0(t).\n\\]\n\nMas essa função é desconhecida.\nE nenhuma forma paramétrica foi assumida para ela."
+  },
+  {
+    "objectID": "Aula10.html#o-grande-desafio",
+    "href": "Aula10.html#o-grande-desafio",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O GRANDE DESAFIO",
+    "text": "O GRANDE DESAFIO\n\n\nNos modelos paramétricos:\n\na distribuição dos tempos era especificada;\na função de risco possuía forma conhecida;\na maximização era direta.\n\nNo modelo de Cox, \\[\n\\lambda_0(t)\n\\] é completamente desconhecida.\nAssim, a estratégia tradicional de máxima verossimilhança não pode ser aplicada diretamente."
+  },
+  {
+    "objectID": "Aula10.html#verossimilhança-parcial",
+    "href": "Aula10.html#verossimilhança-parcial",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VEROSSIMILHANÇA PARCIAL",
+    "text": "VEROSSIMILHANÇA PARCIAL\n\n\nDavid Cox observou que, em muitas aplicações, o interesse principal não está em estimar \\[\n\\lambda_0(t),\n\\] mas sim os coeficientes \\[\n\\boldsymbol{\\beta}.\n\\]\nA pergunta passa a ser:\n\nÉ possível estimar \\(\\boldsymbol{\\beta}\\) sem precisar estimar \\(\\lambda_0(t)\\)?"
+  },
+  {
+    "objectID": "Aula10.html#a-solução-proposta-por-cox",
+    "href": "Aula10.html#a-solução-proposta-por-cox",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A SOLUÇÃO PROPOSTA POR COX",
+    "text": "A SOLUÇÃO PROPOSTA POR COX\n\n\nEm vez de modelar toda a distribuição dos tempos observados, Cox propôs analisar apenas:\n\nQuem apresentou o evento de interesse em cada instante.\n\nA partir dessa ideia surge a chamada\n\nMáxima Verossimilhança Parcial."
+  },
+  {
+    "objectID": "Aula10.html#o-conjunto-de-risco",
+    "href": "Aula10.html#o-conjunto-de-risco",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O CONJUNTO DE RISCO",
+    "text": "O CONJUNTO DE RISCO\n\n\nConsidere que existam \\[\nk \\leq n\n\\] ocorrências do evento distintas observadas nos tempos \\[\nt_1,t_2,\\ldots,t_k.\n\\]\nDefinimos \\[\nR(t_i)\n\\] como o conjunto dos indivíduos que permanecem sob risco imediatamente antes de \\(t_i\\).\nSomente esses indivíduos poderiam apresentar a ocorrência do evento naquele instante."
+  },
+  {
+    "objectID": "Aula10.html#a-contribuição-de-uma-ocorrência",
+    "href": "Aula10.html#a-contribuição-de-uma-ocorrência",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A CONTRIBUIÇÃO DE UMA OCORRÊNCIA",
+    "text": "A CONTRIBUIÇÃO DE UMA OCORRÊNCIA\n\n\nA probabilidade condicional de que o indivíduo que falhou em \\(t_i\\) seja justamente o indivíduo \\(i\\) é \\[\nL_i\n=\n\\frac{\\lambda_i(t_i)}\n{\\sum_{j\\in R(t_i)}\n\\lambda_j(t_i)}.\n\\]\nSubstituindo o modelo de Cox, \\[\nL_i\n=\n\\frac{\n\\lambda_0(t_i)e^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}\n}\n{\n\\sum_{j\\in R(t_i)}\n\\lambda_0(t_i)e^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_j}\n}.\n\\]"
+  },
+  {
+    "objectID": "Aula10.html#o-resultado-fundamental",
+    "href": "Aula10.html#o-resultado-fundamental",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O RESULTADO FUNDAMENTAL",
+    "text": "O RESULTADO FUNDAMENTAL\n\n\nComo \\(\\lambda_0(t_i)\\) aparece tanto no numerador quanto no denominador, \\[\nL_i\n=\n\\frac{\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}\n}\n{\n\\sum_{j\\in R(t_i)}\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_j}\n}.\n\\]\nA função de risco basal desaparece da expressão.\n\nEssa é a ideia central da verossimilhança parcial."
+  },
+  {
+    "objectID": "Aula10.html#a-função-de-verossimilhança-parcial",
+    "href": "Aula10.html#a-função-de-verossimilhança-parcial",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A FUNÇÃO DE VEROSSIMILHANÇA PARCIAL",
+    "text": "A FUNÇÃO DE VEROSSIMILHANÇA PARCIAL\n\n\nMultiplicando as contribuições de todos os tempos de ocorrência do evento de interesse, obtemos \\[\nL(\\boldsymbol{\\beta})\n=\n\\prod_{i=1}^{k}\n\\frac{\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}\n}\n{\n\\sum_{j\\in R(t_i)}\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_j}\n}.\n\\]\nEquivalentemente,\n\n\\[\nL(\\boldsymbol{\\beta})\n=\n\\prod_{i=1}^{n}\n\\left[\n\\frac{\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_i}\n}\n{\n\\sum_{j\\in R(t_i)}\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}_j}\n}\n\\right]^{\\delta_i}.\n\\]"
+  },
+  {
+    "objectID": "Aula10.html#por-que-isso-é-tão-importante",
+    "href": "Aula10.html#por-que-isso-é-tão-importante",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE ISSO É TÃO IMPORTANTE?",
+    "text": "POR QUE ISSO É TÃO IMPORTANTE?\n\n\nA verossimilhança parcial permite:\n\nestimar \\(\\boldsymbol{\\beta}\\);\nconstruir intervalos de confiança;\nrealizar testes de hipótese;\ninterpretar razões de risco.\n\nTudo isso sem especificar a forma de \\[\\lambda_0(t).\\]\nEssa é a principal inovação do modelo de Cox."
+  },
+  {
+    "objectID": "Aula10.html#e-os-empates",
+    "href": "Aula10.html#e-os-empates",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "E OS EMPATES?",
+    "text": "E OS EMPATES?\n\n\nA formulação original do modelo assume tempos contínuos.\nConsequentemente, não deveriam existir empates nos tempos de falha.\nNa prática, porém, os tempos costumam ser registrados em:\n\ndias;\nsemanas;\nmeses;\nanos.\n\nPortanto, empates podem ocorrer."
+  },
+  {
+    "objectID": "Aula10.html#tratamento-de-empates",
+    "href": "Aula10.html#tratamento-de-empates",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TRATAMENTO DE EMPATES",
+    "text": "TRATAMENTO DE EMPATES\n\n\nQuando existem empates, a verossimilhança parcial precisa ser modificada.\nAs principais abordagens são:\n\nBreslow;\nEfron;\nExata.\n\nNa prática, a aproximação de Efron é geralmente a mais recomendada."
+  },
+  {
+    "objectID": "Aula10.html#propriedades-dos-estimadores",
+    "href": "Aula10.html#propriedades-dos-estimadores",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "PROPRIEDADES DOS ESTIMADORES",
+    "text": "PROPRIEDADES DOS ESTIMADORES\n\n\nSob condições regulares, os estimadores obtidos pela verossimilhança parcial são:\n\nConsistentes;\nAssintoticamente normais;\nAssintoticamente eficientes.\n\nEssas propriedades permitem utilizar toda a teoria inferencial usual baseada em máxima verossimilhança."
+  },
+  {
+    "objectID": "Aula10.html#interpretação-dos-coeficientes",
+    "href": "Aula10.html#interpretação-dos-coeficientes",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DOS COEFICIENTES",
+    "text": "INTERPRETAÇÃO DOS COEFICIENTES\n\n\nAntes de interpretar os coeficientes estimados, vamos recordar o modelo:\n\n\\[\n\\lambda(t|\\mathbf{x})\n=\n\\lambda_0(t)\ne^{\\boldsymbol{\\beta}^{T}\\mathbf{x}}.\n\\] * Observe que: - o efeito das covariáveis atua de forma multiplicativa sobre a função de risco; - os coeficientes não alteram a forma de \\(\\lambda_0(t)\\); - eles apenas modificam o nível do risco. * A interpretação do modelo é baseada na propriedade de riscos proporcionais."
+  },
+  {
+    "objectID": "Aula10.html#a-chave-da-interpretação",
+    "href": "Aula10.html#a-chave-da-interpretação",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "A CHAVE DA INTERPRETAÇÃO",
+    "text": "A CHAVE DA INTERPRETAÇÃO\n\n\nConsidere dois indivíduos com covariáveis \\[\n\\mathbf{x}_i\n\\quad \\text{e} \\quad\n\\mathbf{x}_j.\n\\]\nPelo modelo de Cox, \\[\n\\frac{\\lambda(t|\\mathbf{x}_i)}\n{\\lambda(t|\\mathbf{x}_j)}\n=\ne^{\\boldsymbol{\\beta}^{T}\n(\\mathbf{x}_i-\\mathbf{x}_j)}.\n\\]\nEssa razão é denominada Razão de Riscos (Hazard Ratio) e constitui a principal medida de efeito do modelo."
+  },
+  {
+    "objectID": "Aula10.html#variáveis-qualitativas",
+    "href": "Aula10.html#variáveis-qualitativas",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "VARIÁVEIS QUALITATIVAS",
+    "text": "VARIÁVEIS QUALITATIVAS\n\nConsidere uma variável com três categorias: - Controle; - Grupo 1; - Grupo 2.  Suponha que o grupo Controle seja utilizado como categoria de referência. * Sejam \\(\\beta_1\\): efeito associado ao Grupo 1 e \\(\\beta_2\\): efeito associado ao Grupo 2."
+  },
+  {
+    "objectID": "Aula10.html#comparação-com-o-grupo-de-referência",
+    "href": "Aula10.html#comparação-com-o-grupo-de-referência",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMPARAÇÃO COM O GRUPO DE REFERÊNCIA",
+    "text": "COMPARAÇÃO COM O GRUPO DE REFERÊNCIA\n\n\nTemos \\[\n\\frac{\\lambda(t|\\text{Grupo 1})}\n{\\lambda(t|\\text{Controle})}\n=\ne^{\\beta_1}\n\\] e \\[\n\\frac{\\lambda(t|\\text{Grupo 2})}\n{\\lambda(t|\\text{Controle})}\n=\ne^{\\beta_2}.\n\\]\nLogo:\n\\(e^{\\beta_1}\\) é o hazard ratio do Grupo 1;\n\\(e^{\\beta_2}\\) é o hazard ratio do Grupo 2."
+  },
+  {
+    "objectID": "Aula10.html#exemplos-de-interpretação",
+    "href": "Aula10.html#exemplos-de-interpretação",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLOS DE INTERPRETAÇÃO",
+    "text": "EXEMPLOS DE INTERPRETAÇÃO\n\n\nSe \\[\ne^{\\beta_1}=1.50,\n\\] o Grupo 1 apresenta risco 50% maior que o grupo Controle.\nSe \\[\ne^{\\beta_2}=0.70,\n\\] o Grupo 2 apresenta risco 30% menor que o grupo Controle.\nLembre-se:\n\n\\(HR&gt;1\\) → maior risco;\n\\(HR&lt;1\\) → menor risco;\n\\(HR=1\\) → ausência de efeito."
+  },
+  {
+    "objectID": "Aula10.html#interpretação-de-uma-variável-numérica",
+    "href": "Aula10.html#interpretação-de-uma-variável-numérica",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DE UMA VARIÁVEL NUMÉRICA",
+    "text": "INTERPRETAÇÃO DE UMA VARIÁVEL NUMÉRICA\n\n\nConsidere uma covariável quantitativa \\(x_l\\).\nSejam dois indivíduos idênticos em todas as características, exceto pelo valor dessa covariável.\nSuponha que um indivíduo possua valor \\(c\\) e o outro valor \\(c+1\\)."
+  },
+  {
+    "objectID": "Aula10.html#efeito-de-uma-unidade",
+    "href": "Aula10.html#efeito-de-uma-unidade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EFEITO DE UMA UNIDADE",
+    "text": "EFEITO DE UMA UNIDADE\n\n\nTemos \\[\n\\frac{\\lambda(t|x_l=c+1)}\n{\\lambda(t|x_l=c)}\n=\ne^{\\beta_l}.\n\\]\nPortanto um aumento de uma unidade em \\(x_l\\) multiplica o risco por \\(e^{\\beta_l}\\)."
+  },
+  {
+    "objectID": "Aula10.html#exemplo-idade",
+    "href": "Aula10.html#exemplo-idade",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EXEMPLO: IDADE",
+    "text": "EXEMPLO: IDADE\n\n\nSuponha que a covariável seja a idade e que \\[\ne^{\\beta}=1.08.\n\\]\nNesse caso:\n\ncada aumento de 1 ano na idade aumenta o risco em aproximadamente 8%;\nindivíduos mais velhos tendem a apresentar maior risco de ocorrência do evento.\n\nA interpretação é sempre feita mantendo as demais covariáveis constantes."
+  },
+  {
+    "objectID": "Aula10.html#estimando-funções-relacionadas-a-lambda_0t",
+    "href": "Aula10.html#estimando-funções-relacionadas-a-lambda_0t",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMANDO FUNÇÕES RELACIONADAS A \\(\\lambda_0(t)\\)",
+    "text": "ESTIMANDO FUNÇÕES RELACIONADAS A \\(\\lambda_0(t)\\)\n\n\nEm muitas aplicações, o principal interesse está nos coeficientes de regressão \\(\\boldsymbol{\\beta}\\).\nEles permitem avaliar o efeito das covariáveis sobre o risco de ocorrência do evento.\nEntretanto, frequentemente desejamos responder perguntas adicionais:\n\nQual a probabilidade de sobreviver até determinado tempo?\nQual a mediana de sobrevivência de um indivíduo?\nComo comparar curvas de sobrevivência para diferentes perfis?\n\nPara responder essas questões, precisamos estimar funções associadas à função de risco basal."
+  },
+  {
+    "objectID": "Aula10.html#as-funções-basais-do-modelo",
+    "href": "Aula10.html#as-funções-basais-do-modelo",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "AS FUNÇÕES BASAIS DO MODELO",
+    "text": "AS FUNÇÕES BASAIS DO MODELO\n\n\nAs principais funções associadas ao componente basal são:\n\nFunção de risco acumulado basal \\[\n\\Lambda_0(t)\n=\n\\int_0^t \\lambda_0(u)du\n\\]\nFunção de sobrevivência basal \\[\nS_0(t)\n=\n\\exp\\{-\\Lambda_0(t)\\}.\n\\]\n\nEssas funções descrevem o comportamento de um indivíduo cujas covariáveis assumem valor zero."
+  },
+  {
+    "objectID": "Aula10.html#por-que-elas-são-importantes",
+    "href": "Aula10.html#por-que-elas-são-importantes",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "POR QUE ELAS SÃO IMPORTANTES?",
+    "text": "POR QUE ELAS SÃO IMPORTANTES?\n\n\nLembre-se de que a função de sobrevivência para um indivíduo com covariáveis \\(\\mathbf{x}\\) é dada por \\[\nS(t|\\mathbf{x})\n=\nS_0(t)^{\\exp\\{\\boldsymbol{\\beta}^{T}\\mathbf{x}\\}}.\n\\]\nPortanto:\n\nsem uma estimativa de \\(S_0(t)\\) não conseguimos estimar \\(S(t|\\mathbf{x})\\);\nsem \\(S(t|\\mathbf{x})\\) não conseguimos construir curvas de sobrevivência ajustadas;\ntambém não conseguimos estimar percentis ou medianas de sobrevivência.\n\nAssim, embora \\(\\boldsymbol{\\beta}\\) seja o foco principal, as funções basais continuam desempenhando papel fundamental."
+  },
+  {
+    "objectID": "Aula10.html#um-desafio-importante",
+    "href": "Aula10.html#um-desafio-importante",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "UM DESAFIO IMPORTANTE",
+    "text": "UM DESAFIO IMPORTANTE\n\n\nNos modelos paramétricos estudados anteriormente:\n\na distribuição do tempo era especificada;\n\\(\\lambda_0(t)\\) possuía forma conhecida;\ntodos os parâmetros eram estimados simultaneamente por máxima verossimilhança.\n\nNo modelo de Cox, a situação é diferente.\nA função de risco basal \\[\n\\lambda_0(t)\n\\] não possui forma paramétrica especificada.\nAlém disso, ela desaparece da verossimilhança parcial utilizada para estimar \\(\\boldsymbol{\\beta}\\)."
+  },
+  {
+    "objectID": "Aula10.html#como-estimar-a-função-de-risco-acumulado-basal",
+    "href": "Aula10.html#como-estimar-a-função-de-risco-acumulado-basal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "COMO ESTIMAR A FUNÇÃO DE RISCO ACUMULADO BASAL?",
+    "text": "COMO ESTIMAR A FUNÇÃO DE RISCO ACUMULADO BASAL?\n\n\nApós obtermos as estimativas dos coeficientes \\[\n\\hat{\\boldsymbol{\\beta}},\n\\]\npodemos estimar a função de risco acumulado basal por meio do estimador de Breslow: \\[\n\\hat{\\Lambda}_0(t)\n=\n\\sum_{j:t_j\\leq t}\n\\frac{d_j}\n{\\sum_{l\\in R(t_j)}\n\\exp\\{\\hat{\\boldsymbol{\\beta}}^{T}\\mathbf{x}_l\\}},\n\\] em que:\n\n\\(d_j\\) é o número de falhas observadas em \\(t_j\\);\n\\(R(t_j)\\) é o conjunto de risco imediatamente antes de \\(t_j\\)."
+  },
+  {
+    "objectID": "Aula10.html#interpretando-o-estimador-de-breslow",
+    "href": "Aula10.html#interpretando-o-estimador-de-breslow",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETANDO O ESTIMADOR DE BRESLOW",
+    "text": "INTERPRETANDO O ESTIMADOR DE BRESLOW\n\n\nObserve a semelhança com o estimador de Nelson-Aalen estudado anteriormente.\nSem covariáveis: \\[\n\\hat{\\Lambda}(t)\n=\n\\sum \\frac{d_j}{n_j}.\n\\]\nCom covariáveis: \\[\n\\hat{\\Lambda}_0(t)\n=\n\\sum\n\\frac{d_j}\n{\\sum_{l\\in R(t_j)}\n\\exp\\{\\hat{\\boldsymbol{\\beta}}^{T}\\mathbf{x}_l\\}}.\n\\]\nPor esse motivo, o estimador de Breslow pode ser visto como uma extensão do estimador de Nelson-Aalen para o contexto de regressão."
+  },
+  {
+    "objectID": "Aula10.html#características-da-estimativa",
+    "href": "Aula10.html#características-da-estimativa",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "CARACTERÍSTICAS DA ESTIMATIVA",
+    "text": "CARACTERÍSTICAS DA ESTIMATIVA\n\n\nAssim como ocorre com Nelson-Aalen:\n\n\\(\\hat{\\Lambda}_0(t)\\) é uma função escada;\nela apresenta saltos apenas nos tempos observados de falha;\npermanece constante entre dois tempos consecutivos de falha.\n\nConsequentemente, sua representação gráfica possui formato escalonado."
+  },
+  {
+    "objectID": "Aula10.html#estimando-a-função-de-sobrevivência-basal",
+    "href": "Aula10.html#estimando-a-função-de-sobrevivência-basal",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMANDO A FUNÇÃO DE SOBREVIVÊNCIA BASAL",
+    "text": "ESTIMANDO A FUNÇÃO DE SOBREVIVÊNCIA BASAL\n\n\nUma vez obtida a estimativa de \\(\\Lambda_0(t)\\), a função de sobrevivência basal é estimada por \\[\n\\hat{S}_0(t)\n=\n\\exp\\{-\\hat{\\Lambda}_0(t)\\}.\n\\]\nEssa relação é exatamente a mesma estudada anteriormente em análise de sobrevivência não paramétrica."
+  },
+  {
+    "objectID": "Aula10.html#estimando-a-sobrevivência-para-um-perfil-específico",
+    "href": "Aula10.html#estimando-a-sobrevivência-para-um-perfil-específico",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "ESTIMANDO A SOBREVIVÊNCIA PARA UM PERFIL ESPECÍFICO",
+    "text": "ESTIMANDO A SOBREVIVÊNCIA PARA UM PERFIL ESPECÍFICO\n\n\nFinalmente, podemos estimar a função de sobrevivência associada a qualquer conjunto de covariáveis: \\[\n\\hat{S}(t|\\mathbf{x})\n=\n\\left[\n\\hat{S}_0(t)\n\\right]^{\\exp\\{\\hat{\\boldsymbol{\\beta}}^{T}\\mathbf{x}\\}}.\n\\]\nEssa expressão permite construir curvas de sobrevivência ajustadas para diferentes perfis de indivíduos."
+  },
+  {
+    "objectID": "Aula10.html#o-que-o-software-faz-na-prática",
+    "href": "Aula10.html#o-que-o-software-faz-na-prática",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "O QUE O SOFTWARE FAZ NA PRÁTICA?",
+    "text": "O QUE O SOFTWARE FAZ NA PRÁTICA?\n\n\nAo ajustar um modelo de Cox, softwares como o R:\n\nEstimam \\(\\boldsymbol{\\beta}\\) por máxima verossimilhança parcial;\nEstimam \\(\\Lambda_0(t)\\) pelo método de Breslow;\nObtêm \\(\\hat{S}_0(t)\\);\nConstroem curvas de sobrevivência ajustadas para quaisquer valores das covariáveis.\n\nAssim, mesmo sendo um modelo semiparamétrico, conseguimos obter estimativas completas de sobrevivência."
+  },
+  {
     "objectID": "Aula1.html#a-importância-da-análise-de-sobrevivência",
     "href": "Aula1.html#a-importância-da-análise-de-sobrevivência",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
