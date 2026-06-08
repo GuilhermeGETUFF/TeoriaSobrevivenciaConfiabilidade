@@ -1915,7 +1915,7 @@
     "href": "Aula10.html#uma-ideia-revolucionária",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "UMA IDEIA REVOLUCIONÁRIA",
-    "text": "UMA IDEIA REVOLUCIONÁRIA\n\n\nEm 1972, David Cox propôs uma abordagem inovadora.\n\nModelar os efeitos das covariáveis sem precisar especificar completamente a distribuição dos tempos de sobrevivência.\n\nEssa proposta deu origem ao:\n\nModelo de Riscos Proporcionais de Cox\n\nOu, simplismente, Modelo de Cox."
+    "text": "UMA IDEIA REVOLUCIONÁRIA\n\n\nEm 1972, David Cox propôs uma abordagem inovadora.\n\nModelar os efeitos das covariáveis sem precisar especificar completamente a distribuição dos tempos de sobrevivência.\n\nEssa proposta deu origem ao:\n\nModelo de Riscos Proporcionais de Cox\n\nOu, simplesmente, Modelo de Cox."
   },
   {
     "objectID": "Aula10.html#a-grande-sacada-do-modelo-de-cox",
@@ -2146,7 +2146,7 @@
     "href": "Aula10.html#a-contribuição-de-uma-ocorrência",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "A CONTRIBUIÇÃO DE UMA OCORRÊNCIA",
-    "text": "A CONTRIBUIÇÃO DE UMA OCORRÊNCIA\n\n\nA ideia básica deste método é considerar a probabilidade condicional da \\(i\\)-ésima observação vir a apresentar o evento no tempo \\(t_i\\) conhecendo quais observações estão sob risco em \\(t_i\\)}.\nEsta probabilidade condicional, que é a razão entre o risco do indivíduo apresentar o evento em \\(t_i\\) e a soma dos riscos de ocorrência di evento de todos os indivíduos em risco, é a contribuição de cada indivíduo no tempo de ocorrência \\(t_i\\).\nA probabilidade condicional de que o indivíduo que apresentou o evento em \\(t_i\\) seja justamente o indivíduo \\(i\\) é \\[\nL_i\n=\n\\frac{\\lambda_i(t_i)}\n{\\sum_{j\\in R(t_i)}\n\\lambda_j(t_i)}.\n\\]"
+    "text": "A CONTRIBUIÇÃO DE UMA OCORRÊNCIA\n\n\nA ideia básica deste método é considerar a probabilidade condicional da \\(i\\)-ésima observação vir a apresentar o evento no tempo \\(t_i\\) conhecendo quais observações estão sob risco em \\(t_i\\).\nEsta probabilidade condicional, que é a razão entre o risco do indivíduo apresentar o evento em \\(t_i\\) e a soma dos riscos de ocorrência do evento de todos os indivíduos sob risco, é a contribuição de cada indivíduo no tempo de ocorrência \\(t_i\\).\nA probabilidade condicional de que o indivíduo que apresentou o evento em \\(t_i\\) seja justamente o indivíduo \\(i\\) é \\[\nL_i\n=\n\\frac{\\lambda_i(t_i)}\n{\\sum_{j\\in R(t_i)}\n\\lambda_j(t_i)}.\n\\]"
   },
   {
     "objectID": "Aula10.html#o-resultado-fundamental",
