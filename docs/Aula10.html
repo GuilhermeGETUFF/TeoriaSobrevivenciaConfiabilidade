@@ -169,15 +169,17 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <section id="o-que-aprendemos-com-os-modelos-paramétricos" class="slide level2">
 <h2><strong>O QUE APRENDEMOS COM OS MODELOS PARAMÉTRICOS?</strong></h2>
 <div class="box-blue">
-<p>Os <strong>modelos paramétricos</strong> permitem:</p>
+<ul>
+<li>Os <strong>modelos paramétricos</strong> permitem:
 <ul>
 <li><strong>Estimar efeitos</strong> de covariáveis;</li>
 <li>Obter <strong>curvas de sobrevivência ajustadas</strong>;</li>
 <li><strong>Comparar</strong> grupos;</li>
 <li>Fazer <strong>previsões</strong>;</li>
 <li>Estimar <strong>probabilidades de sobrevivência em diferentes horizontes</strong> de tempo.</li>
+</ul></li>
+<li>Quando a <strong>distribuição é adequada</strong>, esses modelos costumam <strong>produzir excelentes resultados</strong>.</li>
 </ul>
-<p>Quando a <strong>distribuição é adequada</strong>, esses modelos costumam <strong>produzir excelentes resultados</strong>.</p>
 </div>
 </section>
 <section id="uma-questão-fundamental" class="slide level2">
@@ -192,10 +194,6 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <li>O <strong>estágio</strong> da doença influencia o prognóstico?</li>
 <li>Determinado <strong>biomarcador</strong> está associado ao <strong>risco de morte</strong>?</li>
 </ul></li>
-</ul>
-</div>
-<div class="box-green">
-<ul>
 <li>Precisamos <strong>realmente conhecer</strong> a distribuição dos tempos de sobrevivência para responder essas perguntas?</li>
 </ul>
 </div>
@@ -208,13 +206,13 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <ul>
 <li><strong>A distribuição dos tempos</strong> deve ser especificada previamente.</li>
 </ul></li>
-<li>A qualidade das inferências depende diretamente dessa escolha:
+<li>A <strong>qualidade das inferências</strong> depende diretamente <strong>dessa escolha</strong>:
 <ul>
-<li>Exponencial</li>
-<li>Weibull</li>
-<li>LogNormal</li>
-<li>Gama</li>
-<li>Gama Generalizada</li>
+<li><strong>Exponencial</strong></li>
+<li><strong>Weibull</strong></li>
+<li><strong>LogNormal</strong></li>
+<li><strong>Gama</strong></li>
+<li><strong>Gama Generalizada</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -223,18 +221,18 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>E SE A DISTRIBUIÇÃO ESTIVER ERRADA?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Suponha que os tempos de sobrevivência possuam uma distribuição complexa e desconhecida.
+<li>Suponha que os <strong>tempos de sobrevivência possuam uma distribuição complexa</strong> e desconhecida.
 <ul>
-<li>Mas o pesquisador ajusta um modelo Weibull.</li>
+<li>Mas o pesquisador ajusta um <strong>modelo Weibull</strong>.</li>
 </ul></li>
-<li>Possíveis consequências:
+<li>Possíveis <strong>consequências</strong>:
 <ul>
-<li>estimativas viesadas;</li>
-<li>erros-padrão incorretos;</li>
-<li>intervalos de confiança inadequados;</li>
-<li>interpretações equivocadas.</li>
+<li><strong>estimativas viesadas</strong>;</li>
+<li><strong>erros-padrão incorretos</strong>;</li>
+<li><strong>intervalos de confiança inadequados</strong>;</li>
+<li><strong>interpretações equivocadas</strong>.</li>
 </ul></li>
-<li>A modelagem passa a depender fortemente da distribuição escolhida.</li>
+<li>A <strong>modelagem</strong> passa a depender <strong>fortemente</strong> da <strong>distribuição escolhida</strong>.</li>
 </ul>
 </div>
 </section>
@@ -242,18 +240,18 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>O QUE NORMALMENTE INTERESSA AO PESQUISADOR?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Na prática, muitas vezes, o objetivo principal não é estimar:
+<li>Na <strong>prática</strong>, muitas vezes, o <strong>objetivo principal</strong> não é estimar:
 <ul>
-<li>parâmetros de forma;</li>
-<li>parâmetros de escala;</li>
-<li>características da distribuição dos tempos.</li>
+<li><strong>parâmetros de forma</strong>;</li>
+<li><strong>parâmetros de escala</strong>;</li>
+<li><strong>características da distribuição dos tempos</strong>.</li>
 </ul></li>
 <li>O interesse geralmente está em:
 <ul>
-<li>comparar tratamentos;</li>
-<li>avaliar fatores prognósticos;</li>
-<li>identificar fatores de risco;</li>
-<li>quantificar efeitos de covariáveis.</li>
+<li>comparar <strong>tratamentos</strong>;</li>
+<li>avaliar <strong>fatores prognósticos</strong>;</li>
+<li>identificar <strong>fatores de risco</strong>;</li>
+<li>quantificar <strong>efeitos de covariáveis</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -262,15 +260,15 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>UMA IDEIA REVOLUCIONÁRIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Em 1972, David Cox propôs uma abordagem inovadora.
+<li>Em 1972, <strong>David Cox</strong> propôs uma <strong>abordagem inovadora</strong>.
 <ul>
-<li>Modelar os efeitos das covariáveis sem precisar especificar completamente a distribuição dos tempos de sobrevivência.</li>
+<li>Modelar os efeitos das <strong>covariáveis sem precisar especificar completamente a distribuição</strong> dos tempos de sobrevivência.</li>
 </ul></li>
-<li>Essa proposta deu origem ao:
+<li>Essa <strong>proposta</strong> deu origem ao:
 <ul>
-<li>Modelo de Riscos Proporcionais de Cox</li>
+<li>Modelo de <strong>Riscos Proporcionais de Cox</strong></li>
 </ul></li>
-<li>Ou, simplismente, Modelo de Cox.</li>
+<li>Ou, simplismente, <strong>Modelo de Cox</strong>.</li>
 </ul>
 </div>
 </section>
@@ -278,15 +276,17 @@ Prof.&nbsp;Guilherme Veloso (<a href="mailto:guilhermev@id.uff.br" class="email"
 <h2><strong>A GRANDE SACADA DO MODELO DE COX</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Nos modelos paramétricos: <span class="math display">\[
+<li><p>Nos modelos <strong>paramétricos</strong>: <span class="math display">\[
 f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
-\]</span> precisam de formas específicas.</li>
-<li>No modelo de Cox:</li>
-<li>não assumimos Exponencial;</li>
-<li>não assumimos Weibull;</li>
-<li>não assumimos Log-normal;</li>
-<li>não assumimos Gama;</li>
-<li>não assumimos Gama Generalizada.</li>
+\]</span> precisam de <strong>formas específicas</strong>.</p></li>
+<li><p>No <strong>modelo de Cox</strong>:</p>
+<ul>
+<li>não assumimos <strong>Exponencial</strong>;</li>
+<li>não assumimos <strong>Weibull</strong>;</li>
+<li>não assumimos <strong>Log-normal</strong>;</li>
+<li>não assumimos <strong>Gama</strong>;</li>
+<li>não assumimos <strong>Gama Generalizada</strong>.</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -294,17 +294,17 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <h2><strong>O QUE O MODELO PROCURA EXPLICAR?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O foco deixa de ser a distribuição dos tempos.</li>
-<li>O foco passa a ser:
+<li>O foco deixa de ser a <strong>distribuição dos tempos</strong>.</li>
+<li>O <strong>foco</strong> passa a ser:
 <ul>
-<li>Como as covariáveis modificam o risco de ocorrência do evento.</li>
+<li>Como as <strong>covariáveis modificam o risco</strong> de ocorrência do evento.</li>
 </ul></li>
-<li>Perguntas típicas:
+<li><strong>Perguntas típicas</strong>:
 <ul>
-<li>Quanto o risco aumenta com a idade?</li>
-<li>Qual o efeito do tratamento no risco?</li>
-<li>Quanto o tabagismo aumenta o risco?</li>
-<li>Como temperatura e pressão afetam o risco de falha de um equipamento?</li>
+<li>Quanto o <strong>risco</strong> aumenta com a idade?</li>
+<li>Qual o efeito do tratamento no <strong>risco</strong>?</li>
+<li>Quanto o tabagismo aumenta o <strong>risco</strong>?</li>
+<li>Como temperatura e pressão afetam o <strong>risco</strong> de falha de um equipamento?</li>
 </ul></li>
 </ul>
 </div>
@@ -313,15 +313,15 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <h2><strong>POR QUE O MODELO DE COX SE TORNOU TÃO POPULAR?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O modelo reúne características extremamente desejáveis:
+<li>O modelo reúne <strong>características extremamente</strong> desejáveis:
 <ul>
-<li>Flexibilidade;</li>
-<li>Poucas suposições distribucionais;</li>
-<li>Fácil interpretação dos efeitos;</li>
-<li>Aplicação em diferentes áreas;</li>
-<li>Excelente desempenho prático.</li>
+<li><strong>Flexibilidade</strong>;</li>
+<li><strong>Poucas suposições</strong> distribucionais;</li>
+<li>Fácil <strong>interpretação</strong> dos efeitos;</li>
+<li>Aplicação em <strong>diferentes áreas</strong>;</li>
+<li>Excelente <strong>desempenho prático</strong>.</li>
 </ul></li>
-<li>Por isso, tornou-se o modelo mais utilizado na análise de sobrevivência/confiabilide.</li>
+<li>Por isso, tornou-se <strong>o modelo mais utilizado</strong> na análise de sobrevivência/confiabilide.</li>
 </ul>
 </div>
 </section>
@@ -329,17 +329,15 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <h2><strong>O IMPACTO DE DAVID COX</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O artigo publicado por David Cox em 1972 é um dos trabalhos mais influentes da história da Estatística (Aparece entre os três mais citados da história na área).</li>
-<li>Seu modelo revolucionou áreas como:
+<li>O <strong>artigo publicado</strong> por <strong>David Cox</strong> em 1972 é um dos <strong>trabalhos mais influentes da história da Estatística (aparece entre os três mais citados da história na área)</strong>.</li>
+<li>Seu <strong>modelo revolucionou áreas</strong> como:
 <ul>
-<li>Medicina;</li>
-<li>Epidemiologia;</li>
-<li>Saúde Pública;</li>
-<li>Engenharia de Confiabilidade;</li>
-<li>Economia;</li>
-<li>Ciências Sociais.</li>
+<li><strong>Medicina</strong> e <strong>Epidemiologia</strong>;</li>
+<li><strong>Saúde Pública</strong>;</li>
+<li><strong>Confiabilidade</strong>;</li>
+<li><strong>Economia</strong> e <strong>Ciências Sociais</strong>.</li>
 </ul></li>
-<li>Mais de 50 anos após sua publicação, continua sendo a principal ferramenta para análise de sobrevivência com covariáveis.</li>
+<li><strong>Mais de 50 anos</strong> após sua publicação, continua sendo a <strong>principal ferramenta para análise de sobrevivência com covariáveis</strong>.</li>
 </ul>
 </div>
 </section>
@@ -347,15 +345,15 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <h2><strong>O QUE VAMOS APRENDER?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Nesta unidade estudaremos:
+<li>Nesta <strong>aula</strong> estudaremos:
 <ul>
-<li>Formulação do modelo de Cox;</li>
-<li>Conceito de riscos proporcionais;</li>
-<li>Razão de riscos (<em>hazard ratio</em>);</li>
-<li>Estimação por verossimilhança parcial;</li>
-<li>Interpretação dos coeficientes;</li>
-<li>Verificação da suposição de proporcionalidade</li>
-<li>Medidas de qualidade de ajuste;</li>
+<li><strong>Formulação</strong> do modelo de Cox;</li>
+<li>Conceito de <strong>riscos proporcionais</strong>;</li>
+<li><strong>Razão</strong> de riscos (<em>hazard ratio</em>);</li>
+<li>Estimação por <strong>verossimilhança parcial</strong>;</li>
+<li><strong>Interpretação</strong> dos coeficientes;</li>
+<li>Verificação da <strong>suposição de proporcionalidade</strong></li>
+<li>Medidas de <strong>qualidade de ajuste</strong>;</li>
 </ul></li>
 </ul>
 </div>
@@ -369,18 +367,18 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <h2><strong>UMA SITUAÇÃO SIMPLES</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Considere um estudo clínico randomizado com dois grupos:
+<li>Considere um <strong>estudo clínico randomizado</strong> com dois grupos:
 <ul>
 <li><strong>Grupo 0:</strong> tratamento padrão;</li>
 <li><strong>Grupo 1:</strong> novo tratamento.</li>
 </ul></li>
-<li>Desejamos responder à seguinte pergunta:</li>
+<li>Desejamos responder à <strong>seguinte pergunta</strong>:</li>
 </ul>
 <blockquote>
 <p>O novo tratamento altera o risco de ocorrência do evento de interesse?</p>
 </blockquote>
 <ul>
-<li>Para compreender a estrutura do modelo de Cox, começaremos por este caso simples.</li>
+<li>Para compreender a estrutura do modelo de Cox, começaremos por este <strong>caso simples</strong>.</li>
 </ul>
 </div>
 </section>
@@ -390,12 +388,12 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <ul>
 <li>Denote por:
 <ul>
-<li><span class="math inline">\(\lambda_0(t)\)</span>: função de risco do grupo controle;</li>
-<li><span class="math inline">\(\lambda_1(t)\)</span>: função de risco do grupo tratado.</li>
+<li><span class="math inline">\(\lambda_0(t)\)</span>: <strong>função de risco do grupo controle</strong>;</li>
+<li><span class="math inline">\(\lambda_1(t)\)</span>: <strong>função de risco do grupo tratado</strong>.</li>
 </ul></li>
-<li>O modelo de Cox parte da hipótese de que <span class="math display">\[
+<li>O <strong>modelo de Cox</strong> parte da <strong>hipótese</strong> de que <span class="math display">\[
 \frac{\lambda_1(t)}{\lambda_0(t)} = K
-\]</span> para todo instante <span class="math inline">\(t\)</span>.</li>
+\]</span> para <strong>todo</strong> instante <span class="math inline">\(t\)</span>.</li>
 <li>Ou seja, a <strong>razão entre os riscos permanece constante ao longo do tempo</strong>.</li>
 </ul>
 </div>
@@ -407,14 +405,14 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <li>A hipótese de riscos proporcionais <strong>não significa que os riscos sejam constantes</strong>.</li>
 <li>Os riscos podem:
 <ul>
-<li>aumentar;</li>
-<li>diminuir;</li>
-<li>apresentar comportamentos complexos ao longo do tempo.</li>
+<li><strong>aumentar</strong>;</li>
+<li><strong>diminuir</strong>;</li>
+<li><strong>apresentar comportamentos complexos ao longo do tempo</strong>.</li>
 </ul></li>
-<li>O que permanece constante é apenas a proporção entre eles.</li>
+<li>O que <strong>permanece constante</strong> é apenas a <strong>proporção</strong> entre eles.</li>
 <li>Exemplo:
 <ul>
-<li>Se o risco de um grupo for o dobro do outro hoje, continuará sendo o dobro amanhã, na próxima semana ou em qualquer outro instante do acompanhamento.</li>
+<li>Se o risco de um grupo for o <strong>dobro do outro hoje, continuará sendo o dobro amanhã</strong>, na <strong>próxima semana ou em qualquer outro instante</strong> do acompanhamento.</li>
 </ul></li>
 </ul>
 </div>
@@ -423,16 +421,16 @@ f(t), \quad S(t) \quad \text{e} \quad \lambda(t)
 <h2><strong>A RAZÃO DE RISCOS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A constante <span class="math display">\[
+<li>A <strong>constante</strong> <span class="math display">\[
 K=\frac{\lambda_1(t)}{\lambda_0(t)}
 \]</span> é denominada <strong>Razão de Riscos</strong> (<em>Hazard Ratio</em>).</li>
-<li>Sua interpretação é simples:
+<li>Sua <strong>interpretação</strong> é simples:
 <ul>
-<li><span class="math inline">\(K=1\)</span>: riscos iguais;</li>
-<li><span class="math inline">\(K&gt;1\)</span>: maior risco no grupo 1;</li>
-<li><span class="math inline">\(K&lt;1\)</span>: menor risco no grupo 1.</li>
+<li><span class="math inline">\(K=1\)</span>: <strong>riscos iguais</strong>;</li>
+<li><span class="math inline">\(K&gt;1\)</span>: <strong>maior risco</strong> no grupo 1;</li>
+<li><span class="math inline">\(K&lt;1\)</span>: <strong>menor risco</strong> no grupo 1.</li>
 </ul></li>
-<li>Grande parte da interpretação do modelo de Cox será baseada nessa quantidade.</li>
+<li>Grande parte da <strong>interpretação do modelo de Cox</strong> será baseada nessa <strong>quantidade</strong>.</li>
 </ul>
 </div>
 </section>
@@ -440,16 +438,16 @@ K=\frac{\lambda_1(t)}{\lambda_0(t)}
 <h2><strong>INTRODUZINDO UMA COVARIÁVEL INDICADORA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Defina a variável <span class="math display">\[
+<li>Defina a <strong>variável</strong> <span class="math display">\[
 x=
 \begin{cases}
 0, &amp; \text{grupo controle} \\
 1, &amp; \text{grupo tratado}
 \end{cases}
-\]</span> e represente a razão de riscos por <span class="math display">\[
+\]</span> e <strong>represente a razão de riscos</strong> por <span class="math display">\[
 K=e^{\beta}.
 \]</span></li>
-<li>A utilização da função exponencial garante que a razão de riscos seja sempre positiva.</li>
+<li>A utilização da <strong>função exponencial garante que a razão de riscos</strong> seja sempre positiva.</li>
 </ul>
 </div>
 </section>
@@ -462,11 +460,11 @@ K=e^{\beta}.
 =
 \lambda_0(t)e^{\beta x}.
 \]</span></p></li>
-<li><p>Esta é a forma mais simples do modelo de Cox.</p></li>
+<li><p>Esta é a <strong>forma mais simples do modelo de Cox</strong>.</p></li>
 <li><p>Observe que:</p>
 <ul>
-<li><span class="math inline">\(\lambda_0(t)\)</span> descreve o comportamento do risco de basse ao longo do tempo;</li>
-<li><span class="math inline">\(e^{\beta x}\)</span> incorpora o efeito do grupo.</li>
+<li><span class="math inline">\(\lambda_0(t)\)</span> descreve o <strong>comportamento do risco</strong> de base ao longo do tempo;</li>
+<li><span class="math inline">\(e^{\beta x}\)</span> <strong>incorpora o efeito do grupo</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -475,10 +473,10 @@ K=e^{\beta}.
 <h2><strong>INTERPRETAÇÃO DE <span class="math inline">\(\beta\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Para o grupo controle (<span class="math inline">\(x=0\)</span>), <span class="math display">\[
+<li><p>Para o <strong>grupo controle</strong> (<span class="math inline">\(x=0\)</span>), <span class="math display">\[
 \lambda(t|0)=\lambda_0(t).
 \]</span></p></li>
-<li><p>Para o grupo tratado (<span class="math inline">\(x=1\)</span>), <span class="math display">\[
+<li><p>Para o <strong>grupo tratado</strong> (<span class="math inline">\(x=1\)</span>), <span class="math display">\[
 \lambda(t|1)=\lambda_0(t)e^\beta.
 \]</span></p></li>
 <li><p>Logo, <span class="math display">\[
@@ -503,7 +501,7 @@ e^\beta.
 <li>Se <span class="math inline">\(e^\beta=0.80\)</span>, o risco é <strong>20% menor</strong>.</li>
 <li>Se <span class="math inline">\(e^\beta=0.50\)</span>, o risco é <strong>reduzido pela metade</strong>.</li>
 </ul></li>
-<li>Observe que a interpretação é feita sobre o <strong>risco</strong>, e não diretamente sobre o tempo de sobrevivência.</li>
+<li>Observe que a <strong>interpretação</strong> é feita sobre o <strong>risco</strong>, e não <strong>diretamente sobre o tempo de sobrevivência</strong>.</li>
 </ul>
 </div>
 </section>
@@ -511,17 +509,17 @@ e^\beta.
 <h2><strong>GENERALIZAÇÃO PARA MÚLTIPLAS COVARIÁVEIS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Na prática, normalmente observamos diversas características dos indivíduos.</li>
+<li>Na prática, normalmente <strong>observamos diversas características</strong> dos indivíduos.</li>
 <li>Exemplos:
 <ul>
-<li>idade;</li>
-<li>sexo;</li>
-<li>tratamento;</li>
-<li>biomarcadores;</li>
-<li>pressão arterial;</li>
-<li>temperatura de operação.</li>
+<li><strong>idade</strong>;</li>
+<li><strong>sexo</strong>;</li>
+<li><strong>tratamento</strong>;</li>
+<li><strong>biomarcadores</strong>;</li>
+<li><strong>pressão arterial</strong>;</li>
+<li><strong>temperatura de operação</strong>.</li>
 </ul></li>
-<li>Sejam <span class="math inline">\(\mathbf{x}=(x_1,x_2,\ldots,x_p)^T\)</span> as covariáveis observadas.</li>
+<li>Sejam <span class="math inline">\(\mathbf{x}=(x_1,x_2,\ldots,x_p)^T\)</span> as <strong>covariáveis observadas</strong>.</li>
 </ul>
 </div>
 </section>
@@ -551,13 +549,13 @@ e^{\beta_1x_1+\cdots+\beta_px_p}.
 <li>A função <span class="math display">\[
 \lambda_0(t)
 \]</span> é denominada <strong>função de risco basal</strong>.</li>
-<li>Ela representa o risco de um indivíduo para o qual <span class="math display">\[
+<li>Ela representa o <strong>risco de um indivíduo</strong> para o qual <span class="math display">\[
 \mathbf{x}=\mathbf{0}.
 \]</span>
 <ul>
-<li>Nenhuma forma específica é assumida para <span class="math inline">\(\lambda_0(t)\)</span>.</li>
+<li><strong>Nenhuma forma</strong> específica é assumida para <span class="math inline">\(\lambda_0(t)\)</span>.</li>
 </ul></li>
-<li>Essa é a principal característica que diferencia o modelo de Cox dos modelos paramétricos.</li>
+<li>Essa é a <strong>principal característica</strong> que diferencia o modelo de <strong>Cox</strong> dos <strong>modelos paramétricos</strong>.</li>
 </ul>
 </div>
 </section>
@@ -565,15 +563,13 @@ e^{\beta_1x_1+\cdots+\beta_px_p}.
 <h2><strong>O COMPONENTE PARAMÉTRICO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O termo <span class="math display">\[
-e^{\boldsymbol{\beta}^T\mathbf{x}}
-\]</span> descreve o efeito das covariáveis.</li>
-<li>As quantidades <span class="math display">\[
+<li>O <strong>termo</strong> <span class="math inline">\(e^{\boldsymbol{\beta}^T\mathbf{x}}\)</span> descreve o <strong>efeito das covariáveis</strong>.</li>
+<li>As <strong>quantidades</strong> <span class="math display">\[
 \beta_1,\beta_2,\ldots,\beta_p
 \]</span> medem o impacto de cada variável explicativa sobre o risco.</li>
 <li>Além disso, <span class="math display">\[
 e^{\boldsymbol{\beta}^T\mathbf{x}}&gt;0
-\]</span> para qualquer valor das covariáveis, garantindo que a função de risco seja sempre não negativa.</li>
+\]</span> para <strong>qualquer valor das covariáveis</strong>, garantindo que a função de risco seja sempre <strong>não negativa</strong>.</li>
 </ul>
 </div>
 </section>
@@ -581,13 +577,13 @@ e^{\boldsymbol{\beta}^T\mathbf{x}}&gt;0
 <h2><strong>POR QUE NÃO EXISTE INTERCEPTO?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Em modelos lineares escrevemos <span class="math display">\[
+<li>Em <strong>modelos lineares</strong> escrevemos <span class="math display">\[
 \beta_0+\beta_1x_1+\cdots+\beta_px_p.
 \]</span></li>
-<li>No modelo de Cox não existe um intercepto explícito.</li>
-<li>O motivo é que a função basal <span class="math display">\[
+<li>No <strong>modelo de Cox</strong> não existe um <strong>intercepto explícito</strong>.</li>
+<li>O motivo é que a <strong>função basal</strong> <span class="math display">\[
 \lambda_0(t)
-\]</span> já desempenha esse papel.</li>
+\]</span> já desempenha esse <strong>papel</strong>.</li>
 <li>Dizemos que o intercepto é <strong>absorvido pela função de risco basal</strong>.</li>
 </ul>
 </div>
@@ -596,12 +592,12 @@ e^{\boldsymbol{\beta}^T\mathbf{x}}&gt;0
 <h2><strong>FUNÇÕES ASSOCIADAS AO MODELO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A partir do modelo de Cox, segue que <span class="math display">\[
+<li>A partir do <strong>modelo de Cox</strong>, segue que <span class="math display">\[
 \Lambda(t|\mathbf{x})
 =
 \Lambda_0(t)
 e^{\boldsymbol{\beta}^T\mathbf{x}}
-\]</span> e <span class="math display">\[
+\textrm{ e }
 S(t|\mathbf{x})
 =
 \exp
@@ -615,8 +611,8 @@ S(t|\mathbf{x})
 =
 S_0(t)^{e^{\boldsymbol{\beta}^T\mathbf{x}}}.
 \]</span> em que:</li>
-<li><span class="math inline">\(\Lambda_0(t)\)</span> é a função basal de risco acumulado;</li>
-<li><span class="math inline">\(S_0(t)\)</span> é a função basal de sobrevivência.</li>
+<li><span class="math inline">\(\Lambda_0(t)\)</span> é a <strong>função basal de risco acumulado</strong>;</li>
+<li><span class="math inline">\(S_0(t)\)</span> é a <strong>função basal de sobrevivência</strong>.</li>
 </ul>
 </div>
 </section>
@@ -624,7 +620,7 @@ S_0(t)^{e^{\boldsymbol{\beta}^T\mathbf{x}}}.
 <h2><strong>A PROPRIEDADE MAIS IMPORTANTE DO MODELO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Considere dois indivíduos com covariáveis <span class="math display">\[
+<li>Considere <strong>dois indivíduos</strong> com covariáveis <span class="math display">\[
 \mathbf{x}_A
 \quad\text{e}\quad
 \mathbf{x}_B.
@@ -635,8 +631,8 @@ S_0(t)^{e^{\boldsymbol{\beta}^T\mathbf{x}}}.
 =
 e^{\boldsymbol{\beta}^T(\mathbf{x}_A-\mathbf{x}_B)}.
 \]</span></li>
-<li>Observe que o tempo <span class="math inline">\(t\)</span> desaparece da expressão (constante no tempo).</li>
-<li>Essa é a essência da hipótese de <strong>riscos proporcionais</strong>.</li>
+<li>Observe que o <strong>tempo</strong> <span class="math inline">\(t\)</span> <strong>desaparece da expressão</strong> (constante no tempo).</li>
+<li>Essa é a <strong>essência</strong> da hipótese de <strong>riscos proporcionais</strong>.</li>
 <li>A propriedade de proporcionalidade também vale para as <strong>funções de risco acumulado</strong>.</li>
 </ul>
 </div>
@@ -645,14 +641,14 @@ e^{\boldsymbol{\beta}^T(\mathbf{x}_A-\mathbf{x}_B)}.
 <h2><strong>COMO IDENTIFICAR UMA VIOLAÇÃO DA HIPÓTESE?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Se a razão entre os riscos muda ao longo do tempo, a hipótese de riscos proporcionais é violada.</li>
+<li>Se a <strong>razão</strong> entre os <strong>riscos muda ao longo do tempo</strong>, a hipótese de <strong>riscos proporcionais é violada</strong>.</li>
 <li>Nessa situação:
 <ul>
-<li>o efeito das covariáveis deixa de ser constante;</li>
-<li>a interpretação dos coeficientes torna-se inadequada;</li>
-<li>o modelo de Cox pode produzir conclusões incorretas.</li>
+<li>o <strong>efeito das covariáveis</strong> deixa de ser constante;</li>
+<li>a <strong>interpretação dos coeficientes</strong> torna-se inadequada;</li>
+<li>o <strong>modelo de Cox</strong> pode produzir conclusões incorretas.</li>
 </ul></li>
-<li>Por isso, a verificação dessa hipótese é uma etapa fundamental da análise.</li>
+<li>Por isso, a <strong>verificação dessa hipótese</strong> é uma etapa <strong>fundamental</strong> da análise.</li>
 </ul>
 </div>
 </section>
@@ -660,15 +656,15 @@ e^{\boldsymbol{\beta}^T(\mathbf{x}_A-\mathbf{x}_B)}.
 <h2><strong>EXEMPLO DE VIOLAÇÃO DOS RISCOS PROPORCIONAIS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A figura a seguir apresenta as funções de risco acumulado de dois grupos em escala logarítmica.</li>
+<li>A <strong>figura a seguir</strong> apresenta as <strong>funções de risco acumulado</strong> de dois grupos em <strong>escala logarítmica</strong>.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/riscosprop.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="Images/riscosprop.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
 <ul>
-<li>Se a hipótese de riscos proporcionais fosse válida, esperaríamos uma separação aproximadamente constante entre elas ao longo do tempo.</li>
+<li>Se a <strong>hipótese de riscos proporcionais</strong> fosse válida, <strong>esperaríamos uma separação aproximadamente constante</strong> entre elas ao longo do tempo.</li>
 </ul>
 </div>
 </section>
@@ -676,29 +672,29 @@ e^{\boldsymbol{\beta}^T(\mathbf{x}_A-\mathbf{x}_B)}.
 <h2><strong>INTERPRETAÇÃO DA FIGURA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O <strong>Grupo 2</strong> apresenta maior risco acumulado no início do acompanhamento.
+<li>O <strong>Grupo 2</strong> apresenta maior <strong>risco acumulado</strong> no início do acompanhamento.
 <ul>
-<li>Entretanto, após determinado instante, o comportamento se inverte.</li>
-<li>As curvas se aproximam e posteriormente se cruzam.</li>
+<li>Entretanto, <strong>após determinado instante</strong>, o comportamento se inverte.</li>
+<li>As <strong>curvas se aproximam</strong> e posteriormente se cruzam.</li>
 </ul></li>
-<li>Esse padrão indica que a razão entre os riscos não permanece constante ao longo do tempo.
+<li>Esse <strong>padrão</strong> indica que a razão entre os <strong>riscos não permanece</strong> constante ao <strong>longo do tempo</strong>.
 <ul>
-<li>Consequência: A hipótese de riscos proporcionais é violada.</li>
+<li>Consequência: A <strong>hipótese de riscos proporcionais é violada</strong>.</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="como-seriam-curvas-compatíveis-com-o-modelo-de-cox" class="slide level2">
-<h2><strong>COMO SERIAM CURVAS COMPATÍVEIS COM O MODELO DE COX?</strong></h2>
+<section id="curvas-compatíveis-com-o-modelo-de-cox" class="slide level2">
+<h2><strong>CURVAS COMPATÍVEIS COM O MODELO DE COX?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Se a hipótese de riscos proporcionais fosse válida:
+<li>Se a <strong>hipótese de riscos proporcionais fosse válida</strong>:
 <ul>
-<li>as curvas não deveriam se cruzar;</li>
-<li>a distância entre elas deveria permanecer aproximadamente constante na escala logarítmica;</li>
-<li>a razão entre os riscos permaneceria constante ao longo de todo o acompanhamento.</li>
+<li>as curvas <strong>não deveriam se cruzar</strong>;</li>
+<li>a <strong>distância entre elas deveria permanecer aproximadamente constante</strong> na escala logarítmica;</li>
+<li>a <strong>razão entre os riscos permaneceria constante</strong> ao longo de todo o acompanhamento.</li>
 </ul></li>
-<li>Esse é exatamente o comportamento esperado sob o modelo de Cox.</li>
+<li>Esse é <strong>exatamente o comportamento esperado sob o modelo de Cox</strong>.</li>
 </ul>
 </div>
 </section></section>
@@ -711,15 +707,15 @@ e^{\boldsymbol{\beta}^T(\mathbf{x}_A-\mathbf{x}_B)}.
 <h2><strong>COMO ESTIMAR OS COEFICIENTES DO MODELO?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Após definir o modelo de Cox, surge naturalmente uma pergunta:
+<li>Após definir o <strong>modelo de Cox</strong>, surge naturalmente uma <strong>pergunta</strong>:
 <ul>
-<li>Como estimar os coeficientes <span class="math inline">\(\boldsymbol{\beta}\)</span>?</li>
+<li>Como <strong>estimar os coeficientes</strong> <span class="math inline">\(\boldsymbol{\beta}\)</span>?</li>
 </ul></li>
-<li>Nos modelos paramétricos estudados anteriormente utilizamos o método da <strong>Máxima Verossimilhança</strong>.
+<li>Nos <strong>modelos paramétricos</strong> estudados anteriormente utilizamos o <strong>método</strong> da <strong>Máxima Verossimilhança</strong>.
 <ul>
-<li>Seria natural tentar utilizar exatamente a mesma estratégia aqui.</li>
+<li>Seria natural tentar utilizar exatamente a <strong>mesma estratégia aqui</strong>.</li>
 </ul></li>
-<li>Entretanto, encontraremos um obstáculo importante.</li>
+<li>Entretanto, <strong>encontraremos um obstáculo</strong> importante.</li>
 </ul>
 </div>
 </section>
@@ -727,7 +723,7 @@ e^{\boldsymbol{\beta}^T(\mathbf{x}_A-\mathbf{x}_B)}.
 <h2><strong>RELEMBRANDO O MODELO DE COX</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Para cada indivíduo <span class="math inline">\(i\)</span>, <span class="math display">\[
+<li>Para cada <strong>indivíduo</strong> <span class="math inline">\(i\)</span>, <span class="math display">\[
 \lambda_i(t|\mathbf{x}_i)
 =
 \lambda_0(t)
@@ -737,9 +733,9 @@ S_i(t|\mathbf{x}_i)
 =
 S_0(t)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 \]</span></li>
-<li>Observe que o modelo possui:
+<li>Observe que o <strong>modelo possui</strong>:
 <ul>
-<li>um componente <strong>paramétrico</strong>: <span class="math inline">\(\boldsymbol{\beta}\)</span>;</li>
+<li>um <strong>componente</strong> <strong>paramétrico</strong>: <span class="math inline">\(\boldsymbol{\beta}\)</span>;</li>
 <li>um componente <strong>não paramétrico</strong>: <span class="math inline">\(\lambda_0(t)\)</span>.</li>
 </ul></li>
 </ul>
@@ -749,7 +745,7 @@ S_0(t)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 <h2><strong>TENTANDO UTILIZAR MÁXIMA VEROSSIMILHANÇA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Para dados censurados, a função de verossimilhança é <span class="math display">\[
+<li>Para <strong>dados censurados</strong>, a função de <strong>verossimilhança</strong> é <span class="math display">\[
 L(\boldsymbol{\beta})
 =
 \prod_{i=1}^{n}
@@ -757,7 +753,7 @@ f_i(t_i|\mathbf{x}_i)^{\delta_i}
 S_i(t_i|\mathbf{x}_i)^{1-\delta_i}.
 \]</span></li>
 <li>Como <span class="math display">\[
-f(t)=\lambda(t)S(t),
+\lambda(t)=f(t)/S(t),
 \]</span> temos <span class="math display">\[
 L(\boldsymbol{\beta})
 =
@@ -772,7 +768,7 @@ S_i(t_i|\mathbf{x}_i).
 <h2><strong>ONDE ESTÁ O PROBLEMA?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Substituindo o modelo de Cox na expressão anterior, <span class="math display">\[
+<li>Substituindo o <strong>modelo de Cox</strong> na <strong>expressão anterior</strong>, <span class="math display">\[
 L(\boldsymbol{\beta})
 =
 \prod_{i=1}^{n}
@@ -782,12 +778,12 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}
 \right]^{\delta_i}
 S_0(t_i)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 \]</span></li>
-<li>Observe que a verossimilhança depende de <span class="math display">\[
+<li>Observe que a <strong>verossimilhança</strong> depende de <span class="math display">\[
 \lambda_0(t).
 \]</span>
 <ul>
-<li>Mas essa função é desconhecida.</li>
-<li>E nenhuma forma paramétrica foi assumida para ela.</li>
+<li>Mas essa <strong>função é desconhecida</strong>.</li>
+<li>E nenhuma forma <strong>paramétrica</strong> foi assumida para ela.</li>
 </ul></li>
 </ul>
 </div>
@@ -796,16 +792,16 @@ S_0(t_i)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 <h2><strong>O GRANDE DESAFIO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Nos modelos paramétricos:
+<li>Nos modelos <strong>paramétricos</strong>:
 <ul>
-<li>a distribuição dos tempos era especificada;</li>
-<li>a função de risco possuía forma conhecida;</li>
-<li>a maximização era direta.</li>
+<li>a <strong>distribuição dos tempos</strong> era especificada;</li>
+<li>a <strong>função de risco</strong> possuía forma conhecida;</li>
+<li>a <strong>maximização</strong> era direta.</li>
 </ul></li>
-<li>No modelo de Cox, <span class="math display">\[
+<li>No <strong>modelo de Cox</strong>, <span class="math display">\[
 \lambda_0(t)
-\]</span> é completamente desconhecida.</li>
-<li>Assim, a estratégia tradicional de máxima verossimilhança não pode ser aplicada diretamente.</li>
+\]</span> é completamente <strong>desconhecida</strong>.</li>
+<li>Assim, a <strong>estratégia tradicional</strong> de <strong>máxima verossimilhança</strong> não pode ser aplicada <strong>diretamente</strong>.</li>
 </ul>
 </div>
 </section>
@@ -813,12 +809,12 @@ S_0(t_i)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 <h2><strong>VEROSSIMILHANÇA PARCIAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>David Cox observou que, em muitas aplicações, o interesse principal não está em estimar <span class="math display">\[
+<li><p><strong>David Cox</strong> observou que, em muitas <strong>aplicações</strong>, o <strong>interesse principal</strong> não está em estimar <span class="math display">\[
 \lambda_0(t),
-\]</span> mas sim os coeficientes <span class="math display">\[
+\]</span> mas sim os <strong>coeficientes</strong> <span class="math display">\[
 \boldsymbol{\beta}.
 \]</span></p></li>
-<li><p>A pergunta passa a ser:</p>
+<li><p>A <strong>pergunta</strong> passa a ser:</p>
 <ul>
 <li>É possível estimar <span class="math inline">\(\boldsymbol{\beta}\)</span> sem precisar estimar <span class="math inline">\(\lambda_0(t)\)</span>?</li>
 </ul></li>
@@ -829,13 +825,13 @@ S_0(t_i)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 <h2><strong>A SOLUÇÃO PROPOSTA POR COX</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Em vez de modelar toda a distribuição dos tempos observados, Cox propôs analisar apenas:
+<li>Em vez de <strong>modelar toda a distribuição</strong> dos tempos observados, <strong>Cox</strong> propôs analisar apenas:
 <ul>
-<li>Quem apresentou o evento de interesse em cada instante.</li>
+<li>Quem <strong>apresentou</strong> o evento de interesse em cada <strong>instante</strong>.</li>
 </ul></li>
-<li>A partir dessa ideia surge a chamada
+<li>A partir dessa <strong>ideia</strong> surge a chamada
 <ul>
-<li>Máxima Verossimilhança Parcial.</li>
+<li><strong>Máxima Verossimilhança Parcial</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -844,15 +840,15 @@ S_0(t_i)^{e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}}.
 <h2><strong>O CONJUNTO DE RISCO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Considere que existam <span class="math display">\[
+<li>Considere que <strong>existam</strong> <span class="math display">\[
 k \leq n
-\]</span> ocorrências do evento distintas observadas nos tempos <span class="math display">\[
+\]</span> <strong>ocorrências</strong> do evento distintas <strong>observadas</strong> nos tempos <span class="math display">\[
 t_1,t_2,\ldots,t_k.
 \]</span></li>
 <li>Definimos <span class="math display">\[
 R(t_i)
-\]</span> como o conjunto dos indivíduos que permanecem sob risco imediatamente antes de <span class="math inline">\(t_i\)</span>.</li>
-<li>Somente esses indivíduos poderiam apresentar a ocorrência do evento naquele instante.</li>
+\]</span> como o <strong>conjunto dos indivíduos</strong> que permanecem sob risco <strong>imediatamente</strong> antes de <span class="math inline">\(t_i\)</span>.</li>
+<li>Somente esses <strong>indivíduos</strong> poderiam apresentar a ocorrência do evento <strong>naquele instante</strong>.</li>
 </ul>
 </div>
 </section>
@@ -860,14 +856,23 @@ R(t_i)
 <h2><strong>A CONTRIBUIÇÃO DE UMA OCORRÊNCIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A probabilidade condicional de que o indivíduo que falhou em <span class="math inline">\(t_i\)</span> seja justamente o indivíduo <span class="math inline">\(i\)</span> é <span class="math display">\[
+<li>A <strong>ideia básica</strong> deste método é considerar a <strong>probabilidade condicional</strong> da <span class="math inline">\(i\)</span>-ésima observação vir a <strong>apresentar o evento</strong> no tempo <span class="math inline">\(t_i\)</span> conhecendo quais <strong>observações</strong> estão sob risco em <span class="math inline">\(t_i\)</span>}.</li>
+<li>Esta <strong>probabilidade condicional</strong>, que é a razão entre o <strong>risco</strong> do indivíduo apresentar o evento em <span class="math inline">\(t_i\)</span> e a <strong>soma dos riscos</strong> de ocorrência di evento de todos os indivíduos em risco, é a <strong>contribuição</strong> de cada indivíduo no tempo de ocorrência <span class="math inline">\(t_i\)</span>.</li>
+<li>A <strong>probabilidade condicional</strong> de que o indivíduo que apresentou o evento em <span class="math inline">\(t_i\)</span> seja justamente o indivíduo <span class="math inline">\(i\)</span> é <span class="math display">\[
 L_i
 =
 \frac{\lambda_i(t_i)}
 {\sum_{j\in R(t_i)}
 \lambda_j(t_i)}.
 \]</span></li>
-<li>Substituindo o modelo de Cox, <span class="math display">\[
+</ul>
+</div>
+</section>
+<section id="o-resultado-fundamental" class="slide level2">
+<h2><strong>O RESULTADO FUNDAMENTAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Substituindo o <strong>modelo</strong> de Cox, <span class="math display">\[
 L_i
 =
 \frac{
@@ -877,15 +882,8 @@ L_i
 \sum_{j\in R(t_i)}
 \lambda_0(t_i)e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 }.
-\]</span></li>
-</ul>
-</div>
-</section>
-<section id="o-resultado-fundamental" class="slide level2">
-<h2><strong>O RESULTADO FUNDAMENTAL</strong></h2>
-<div class="box-blue">
-<ul>
-<li>Como <span class="math inline">\(\lambda_0(t_i)\)</span> aparece tanto no numerador quanto no denominador, <span class="math display">\[
+\]</span></p></li>
+<li><p>Como <span class="math inline">\(\lambda_0(t_i)\)</span> <strong>aparece tanto no numerador quanto no denominador</strong>, <span class="math display">\[
 L_i
 =
 \frac{
@@ -895,10 +893,10 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}
 \sum_{j\in R(t_i)}
 e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 }.
-\]</span></li>
-<li>A função de risco basal desaparece da expressão.
+\]</span></p></li>
+<li><p>A <strong>função de risco basal</strong> desaparece da expressão.</p>
 <ul>
-<li>Essa é a ideia central da verossimilhança parcial.</li>
+<li>Essa é a <strong>ideia central</strong> da <strong>verossimilhança parcial</strong>.</li>
 </ul></li>
 </ul>
 </div>
@@ -907,7 +905,7 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 <h2><strong>A FUNÇÃO DE VEROSSIMILHANÇA PARCIAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Multiplicando as contribuições de todos os tempos de ocorrência do evento de interesse, obtemos <span class="math display">\[
+<li>Multiplicando as <strong>contribuições de todos os tempos de ocorrência</strong> do evento de interesse, obtemos <span class="math display">\[
 L(\boldsymbol{\beta})
 =
 \prod_{i=1}^{k}
@@ -919,7 +917,7 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_i}
 e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 }.
 \]</span></li>
-<li>Equivalentemente,</li>
+<li><strong>Equivalentemente</strong>,</li>
 </ul>
 <p><span class="math display">\[
 L(\boldsymbol{\beta})
@@ -941,47 +939,33 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 <h2><strong>POR QUE ISSO É TÃO IMPORTANTE?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A verossimilhança parcial permite:
+<li>A <strong>verossimilhança parcial</strong> permite:
 <ul>
 <li>estimar <span class="math inline">\(\boldsymbol{\beta}\)</span>;</li>
-<li>construir intervalos de confiança;</li>
-<li>realizar testes de hipótese;</li>
-<li>interpretar razões de risco.</li>
+<li><strong>construir intervalos de confiança</strong>;</li>
+<li><strong>realizar testes de hipótese</strong>;</li>
+<li>interpretar <strong>razões de risco</strong>.</li>
 </ul></li>
-<li>Tudo isso sem especificar a forma de <span class="math display">\[\lambda_0(t).\]</span></li>
-<li>Essa é a principal inovação do modelo de Cox.</li>
+<li>Tudo isso <strong>sem especificar</strong> a forma de <span class="math display">\[\lambda_0(t).\]</span></li>
+<li>Essa é a <strong>principal inovação do modelo de Cox</strong>.</li>
 </ul>
 </div>
 </section>
-<section id="e-os-empates" class="slide level2">
-<h2><strong>E OS EMPATES?</strong></h2>
+<section id="como-estimamos-boldsymbolbeta" class="slide level2">
+<h2><strong>COMO ESTIMAMOS <span class="math inline">\(\boldsymbol{\beta}\)</span>?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A formulação original do modelo assume tempos contínuos.</li>
-<li>Consequentemente, não deveriam existir empates nos tempos de falha.</li>
-<li>Na prática, porém, os tempos costumam ser registrados em:
+<li>A <strong>maximização</strong> da verossimilhança parcial <strong>não possui solução analítica</strong>.</li>
+<li>Portanto, os <strong>coeficientes</strong> do modelo são obtidos por <strong>métodos numéricos iterativos</strong>.</li>
+<li>O algoritmo mais utilizado é o <strong>Newton-Raphson</strong>.</li>
+<li>O procedimento consiste em:
 <ul>
-<li>dias;</li>
-<li>semanas;</li>
-<li>meses;</li>
-<li>anos.</li>
+<li>escolher <strong>valores iniciais</strong> para <span class="math inline">\(\boldsymbol{\beta}\)</span>;</li>
+<li>calcular o <strong>vetor escore</strong> e a matriz <strong>Hessiana</strong>;</li>
+<li>atualizar <strong>sucessivamente</strong> as estimativas;</li>
+<li>repetir o <strong>processo</strong> até a convergência.</li>
 </ul></li>
-<li>Portanto, empates podem ocorrer.</li>
-</ul>
-</div>
-</section>
-<section id="tratamento-de-empates" class="slide level2">
-<h2><strong>TRATAMENTO DE EMPATES</strong></h2>
-<div class="box-blue">
-<ul>
-<li>Quando existem empates, a verossimilhança parcial precisa ser modificada.</li>
-<li>As principais abordagens são:
-<ul>
-<li><strong>Breslow</strong>;</li>
-<li><strong>Efron</strong>;</li>
-<li><strong>Exata</strong>.</li>
-</ul></li>
-<li>Na prática, a aproximação de <strong>Efron</strong> é geralmente a mais recomendada.</li>
+<li>Na prática, todo <strong>esse processo é realizado automaticamente</strong> pelos softwares estatísticos.</li>
 </ul>
 </div>
 </section>
@@ -989,13 +973,13 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 <h2><strong>PROPRIEDADES DOS ESTIMADORES</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Sob condições regulares, os estimadores obtidos pela verossimilhança parcial são:
+<li>Sob condições regulares, os estimadores obtidos pela <strong>verossimilhança parcial</strong> são:
 <ul>
 <li><strong>Consistentes</strong>;</li>
 <li><strong>Assintoticamente normais</strong>;</li>
 <li><strong>Assintoticamente eficientes</strong>.</li>
 </ul></li>
-<li>Essas propriedades permitem utilizar toda a teoria inferencial usual baseada em máxima verossimilhança.</li>
+<li>Essas propriedades permitem utilizar toda a teoria <strong>inferencial</strong> usual baseada em máxima verossimilhança.</li>
 </ul>
 </div>
 </section>
@@ -1003,40 +987,58 @@ e^{\boldsymbol{\beta}^{T}\mathbf{x}_j}
 <h2><strong>INTERPRETAÇÃO DOS COEFICIENTES</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Antes de interpretar os coeficientes estimados, vamos recordar o modelo:</li>
+<li><strong>Antes de interpretar os coeficientes</strong> estimados, vamos recordar o modelo:</li>
 </ul>
 <p><span class="math display">\[
 \lambda(t|\mathbf{x})
 =
 \lambda_0(t)
 e^{\boldsymbol{\beta}^{T}\mathbf{x}}.
-\]</span> * Observe que: - o efeito das covariáveis atua de forma <strong>multiplicativa</strong> sobre a função de risco; - os coeficientes não alteram a forma de <span class="math inline">\(\lambda_0(t)\)</span>; - eles apenas modificam o nível do risco. * A interpretação do modelo é baseada na propriedade de <strong>riscos proporcionais</strong>.</p>
+\]</span></p>
+<ul>
+<li>Observe que:
+<ul>
+<li>o <strong>efeito das covariáveis</strong> atua de forma <strong>multiplicativa</strong> sobre a função de risco;</li>
+<li>os <strong>coeficientes</strong> não alteram a forma de <span class="math inline">\(\lambda_0(t)\)</span>;</li>
+<li>eles apenas <strong>modificam</strong> o nível do risco.</li>
+</ul></li>
+<li>A <strong>interpretação do modelo</strong> é baseada na propriedade de <strong>riscos proporcionais</strong>.</li>
+</ul>
 </div>
 </section>
 <section id="a-chave-da-interpretação" class="slide level2">
 <h2><strong>A CHAVE DA INTERPRETAÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Considere dois indivíduos com covariáveis <span class="math display">\[
+<li>Considere <strong>dois indivíduos</strong> com covariáveis <span class="math display">\[
 \mathbf{x}_i
 \quad \text{e} \quad
 \mathbf{x}_j.
 \]</span></li>
-<li>Pelo modelo de Cox, <span class="math display">\[
+<li>Pelo <strong>modelo de Cox</strong>, <span class="math display">\[
 \frac{\lambda(t|\mathbf{x}_i)}
 {\lambda(t|\mathbf{x}_j)}
 =
 e^{\boldsymbol{\beta}^{T}
 (\mathbf{x}_i-\mathbf{x}_j)}.
 \]</span></li>
-<li>Essa razão é denominada <strong>Razão de Riscos (<em>Hazard Ratio</em>)</strong> e constitui a principal medida de efeito do modelo.</li>
+<li>Essa razão é denominada <strong>Razão de Riscos (<em>Hazard Ratio</em>)</strong> e constitui a principal <strong>medida de efeito do modelo</strong>.</li>
 </ul>
 </div>
 </section>
 <section id="variáveis-qualitativas" class="slide level2">
 <h2><strong>VARIÁVEIS QUALITATIVAS</strong></h2>
 <div class="box-blue">
-<p><em>Considere uma variável com três categorias: - Controle; - Grupo 1; - Grupo 2. </em> Suponha que o grupo Controle seja utilizado como categoria de referência. * Sejam <span class="math inline">\(\beta_1\)</span>: efeito associado ao Grupo 1 e <span class="math inline">\(\beta_2\)</span>: efeito associado ao Grupo 2.</p>
+<ul>
+<li>Considere uma <strong>variável com três categorias</strong>:
+<ul>
+<li>Controle;</li>
+<li>Grupo 1;</li>
+<li>Grupo 2.</li>
+</ul></li>
+<li>Suponha que o <strong>grupo Controle</strong> seja <strong>utilizado como categoria de referência</strong>.</li>
+<li>Sejam <span class="math inline">\(\beta_1\)</span>: efeito associado ao Grupo 1 e <span class="math inline">\(\beta_2\)</span>: efeito associado ao <strong>Grupo 2</strong>.</li>
+</ul>
 </div>
 </section>
 <section id="comparação-com-o-grupo-de-referência" class="slide level2">
@@ -1054,9 +1056,11 @@ e^{\beta_1}
 =
 e^{\beta_2}.
 \]</span></li>
-<li>Logo:</li>
+<li>Logo:
+<ul>
 <li><span class="math inline">\(e^{\beta_1}\)</span> é o <em>hazard ratio</em> do Grupo 1;</li>
 <li><span class="math inline">\(e^{\beta_2}\)</span> é o <em>hazard ratio</em> do Grupo 2.</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -1064,12 +1068,8 @@ e^{\beta_2}.
 <h2><strong>EXEMPLOS DE INTERPRETAÇÃO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Se <span class="math display">\[
-e^{\beta_1}=1.50,
-\]</span> o Grupo 1 apresenta risco <strong>50% maior</strong> que o grupo Controle.</li>
-<li>Se <span class="math display">\[
-e^{\beta_2}=0.70,
-\]</span> o Grupo 2 apresenta risco <strong>30% menor</strong> que o grupo Controle.</li>
+<li>Se <span class="math inline">\(e^{\beta_1}=1.50,\)</span> o <strong>Grupo 1</strong> apresenta risco <strong>50% maior</strong> que o grupo Controle.</li>
+<li>Se <span class="math inline">\(e^{\beta_2}=0.70,\)</span> o <strong>Grupo 2</strong> apresenta risco <strong>30% menor</strong> que o grupo Controle.</li>
 <li>Lembre-se:
 <ul>
 <li><span class="math inline">\(HR&gt;1\)</span> → maior risco;</li>
@@ -1083,23 +1083,16 @@ e^{\beta_2}=0.70,
 <h2><strong>INTERPRETAÇÃO DE UMA VARIÁVEL NUMÉRICA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Considere uma covariável quantitativa <span class="math inline">\(x_l\)</span>.</li>
-<li>Sejam dois indivíduos idênticos em todas as características, exceto pelo valor dessa covariável.</li>
-<li>Suponha que um indivíduo possua valor <span class="math inline">\(c\)</span> e o outro valor <span class="math inline">\(c+1\)</span>.</li>
-</ul>
-</div>
-</section>
-<section id="efeito-de-uma-unidade" class="slide level2">
-<h2><strong>EFEITO DE UMA UNIDADE</strong></h2>
-<div class="box-blue">
-<ul>
+<li>Considere uma <strong>covariável quantitativa</strong> <span class="math inline">\(x_l\)</span>.</li>
+<li>Sejam <strong>dois indivíduos idênticos em todas as características</strong>, exceto pelo valor dessa covariável.</li>
+<li>Suponha que um <strong>indivíduo</strong> possua valor <span class="math inline">\(c\)</span> e o outro valor <span class="math inline">\(c+1\)</span>.</li>
 <li>Temos <span class="math display">\[
 \frac{\lambda(t|x_l=c+1)}
 {\lambda(t|x_l=c)}
 =
 e^{\beta_l}.
 \]</span></li>
-<li>Portanto um aumento de uma unidade em <span class="math inline">\(x_l\)</span> multiplica o risco por <span class="math inline">\(e^{\beta_l}\)</span>.</li>
+<li>Portanto um <strong>aumento de uma unidade</strong> em <span class="math inline">\(x_l\)</span> multiplica o risco por <span class="math inline">\(e^{\beta_l}\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -1107,15 +1100,15 @@ e^{\beta_l}.
 <h2><strong>EXEMPLO: IDADE</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Suponha que a covariável seja a idade e que <span class="math display">\[
+<li>Suponha que a <strong>covariável seja a idade</strong> e que <span class="math display">\[
 e^{\beta}=1.08.
 \]</span></li>
 <li>Nesse caso:
 <ul>
-<li>cada aumento de 1 ano na idade aumenta o risco em aproximadamente 8%;</li>
-<li>indivíduos mais velhos tendem a apresentar maior risco de ocorrência do evento.</li>
+<li><strong>cada aumento de 1 ano</strong> na idade aumenta o <strong>risco</strong> em aproximadamente 8%;</li>
+<li><strong>indivíduos mais velhos</strong> tendem a apresentar <strong>maior risco</strong> de ocorrência do evento.</li>
 </ul></li>
-<li>A interpretação é sempre feita mantendo as demais covariáveis constantes.</li>
+<li>A interpretação é sempre feita mantendo as <strong>demais covariáveis constantes</strong>.</li>
 </ul>
 </div>
 </section>
@@ -1123,15 +1116,15 @@ e^{\beta}=1.08.
 <h2><strong>ESTIMANDO FUNÇÕES RELACIONADAS A <span class="math inline">\(\lambda_0(t)\)</span></strong></h2>
 <div class="box-blue">
 <ul>
-<li>Em muitas aplicações, o principal interesse está nos coeficientes de regressão <span class="math inline">\(\boldsymbol{\beta}\)</span>.</li>
-<li>Eles permitem avaliar o efeito das covariáveis sobre o risco de ocorrência do evento.</li>
-<li>Entretanto, frequentemente desejamos responder perguntas adicionais:
+<li>Em <strong>muitas aplicações</strong>, o <strong>principal interesse</strong> está nos coeficientes de regressão <span class="math inline">\(\boldsymbol{\beta}\)</span>.</li>
+<li>Eles <strong>permitem avaliar o efeito das covariáveis</strong> sobre o risco de ocorrência do evento.</li>
+<li>Entretanto, <strong>frequentemente desejamos</strong> responder perguntas adicionais:
 <ul>
-<li>Qual a probabilidade de sobreviver até determinado tempo?</li>
-<li>Qual a mediana de sobrevivência de um indivíduo?</li>
-<li>Como comparar curvas de sobrevivência para diferentes perfis?</li>
+<li>Qual a <strong>probabilidade</strong> de sobreviver até determinado tempo?</li>
+<li>Qual a <strong>mediana</strong> de sobrevivência de um indivíduo?</li>
+<li>Como <strong>comparar curvas de sobrevivência</strong> para diferentes perfis?</li>
 </ul></li>
-<li>Para responder essas questões, precisamos estimar funções associadas à função de risco basal.</li>
+<li>Para <strong>responder essas questões</strong>, precisamos estimar funções associadas à <strong>função de risco basal</strong>.</li>
 </ul>
 </div>
 </section>
@@ -1139,20 +1132,20 @@ e^{\beta}=1.08.
 <h2><strong>AS FUNÇÕES BASAIS DO MODELO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>As principais funções associadas ao componente basal são:
+<li>As <strong>principais funções</strong> associadas ao componente basal são:
 <ul>
-<li>Função de risco acumulado basal <span class="math display">\[
+<li><strong>Função de risco acumulado</strong> basal <span class="math display">\[
 \Lambda_0(t)
 =
 \int_0^t \lambda_0(u)du
 \]</span></li>
-<li>Função de sobrevivência basal <span class="math display">\[
+<li><strong>Função de sobrevivência</strong> basal <span class="math display">\[
 S_0(t)
 =
 \exp\{-\Lambda_0(t)\}.
 \]</span></li>
 </ul></li>
-<li>Essas funções descrevem o comportamento de um indivíduo cujas covariáveis assumem valor zero.</li>
+<li>Essas <strong>funções descrevem o comportamento</strong> de um indivíduo cujas <strong>covariáveis</strong> assumem valor zero.</li>
 </ul>
 </div>
 </section>
@@ -1160,18 +1153,18 @@ S_0(t)
 <h2><strong>POR QUE ELAS SÃO IMPORTANTES?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Lembre-se de que a função de sobrevivência para um indivíduo com covariáveis <span class="math inline">\(\mathbf{x}\)</span> é dada por <span class="math display">\[
+<li>Lembre-se de que a <strong>função de sobrevivência</strong> para um indivíduo com covariáveis <span class="math inline">\(\mathbf{x}\)</span> é dada por <span class="math display">\[
 S(t|\mathbf{x})
 =
 S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 \]</span></li>
 <li>Portanto:
 <ul>
-<li>sem uma estimativa de <span class="math inline">\(S_0(t)\)</span> não conseguimos estimar <span class="math inline">\(S(t|\mathbf{x})\)</span>;</li>
-<li>sem <span class="math inline">\(S(t|\mathbf{x})\)</span> não conseguimos construir curvas de sobrevivência ajustadas;</li>
-<li>também não conseguimos estimar percentis ou medianas de sobrevivência.</li>
+<li>sem uma <strong>estimativa</strong> de <span class="math inline">\(S_0(t)\)</span> não conseguimos estimar <span class="math inline">\(S(t|\mathbf{x})\)</span>;</li>
+<li>sem <span class="math inline">\(S(t|\mathbf{x})\)</span> não conseguimos construir curvas de <strong>sobrevivência ajustadas</strong>;</li>
+<li>também não conseguimos estimar <strong>percentis</strong> ou <strong>medianas</strong> de sobrevivência.</li>
 </ul></li>
-<li>Assim, embora <span class="math inline">\(\boldsymbol{\beta}\)</span> seja o foco principal, as funções basais continuam desempenhando papel fundamental.</li>
+<li>Assim, embora <span class="math inline">\(\boldsymbol{\beta}\)</span> seja o foco principal, as <strong>funções basais continuam desempenhando papel fundamental</strong>.</li>
 </ul>
 </div>
 </section>
@@ -1179,17 +1172,17 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 <h2><strong>UM DESAFIO IMPORTANTE</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Nos modelos paramétricos estudados anteriormente:
+<li>Nos <strong>modelos paramétricos estudados anteriormente</strong>:
 <ul>
-<li>a distribuição do tempo era especificada;</li>
+<li>a <strong>distribuição</strong> do tempo era especificada;</li>
 <li><span class="math inline">\(\lambda_0(t)\)</span> possuía forma conhecida;</li>
-<li>todos os parâmetros eram estimados simultaneamente por máxima verossimilhança.</li>
+<li>todos os <strong>parâmetros</strong> eram estimados simultaneamente por <strong>máxima verossimilhança</strong>.</li>
 </ul></li>
-<li>No modelo de Cox, a situação é diferente.</li>
-<li>A função de risco basal <span class="math display">\[
+<li>No <strong>modelo de Cox</strong>, a situação é diferente.</li>
+<li>A <strong>função de risco</strong> basal <span class="math display">\[
 \lambda_0(t)
-\]</span> não possui forma paramétrica especificada.</li>
-<li>Além disso, ela desaparece da verossimilhança parcial utilizada para estimar <span class="math inline">\(\boldsymbol{\beta}\)</span>.</li>
+\]</span> não possui forma <strong>paramétrica</strong> especificada.</li>
+<li>Além disso, ela <strong>desaparece da verossimilhança parcial</strong> utilizada para estimar <span class="math inline">\(\boldsymbol{\beta}\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -1197,10 +1190,10 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 <h2><strong>COMO ESTIMAR A FUNÇÃO DE RISCO ACUMULADO BASAL?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Após obtermos as estimativas dos coeficientes <span class="math display">\[
+<li>Após <strong>obtermos as estimativas</strong> dos coeficientes <span class="math display">\[
 \hat{\boldsymbol{\beta}},
 \]</span></li>
-<li>podemos estimar a função de risco acumulado basal por meio do estimador de Breslow: <span class="math display">\[
+<li>podemos estimar a <strong>função de risco acumulado basal</strong> por meio do estimador de Breslow: <span class="math display">\[
 \hat{\Lambda}_0(t)
 =
 \sum_{j:t_j\leq t}
@@ -1209,8 +1202,8 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 \exp\{\hat{\boldsymbol{\beta}}^{T}\mathbf{x}_l\}},
 \]</span> em que:
 <ul>
-<li><span class="math inline">\(d_j\)</span> é o número de falhas observadas em <span class="math inline">\(t_j\)</span>;</li>
-<li><span class="math inline">\(R(t_j)\)</span> é o conjunto de risco imediatamente antes de <span class="math inline">\(t_j\)</span>.</li>
+<li><span class="math inline">\(d_j\)</span> é o <strong>número de falhas</strong> observadas em <span class="math inline">\(t_j\)</span>;</li>
+<li><span class="math inline">\(R(t_j)\)</span> é o <strong>conjunto de risco</strong> imediatamente antes de <span class="math inline">\(t_j\)</span>.</li>
 </ul></li>
 </ul>
 </div>
@@ -1219,21 +1212,13 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 <h2><strong>INTERPRETANDO O ESTIMADOR DE BRESLOW</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Observe a semelhança com o estimador de Nelson-Aalen estudado anteriormente.</li>
-<li>Sem covariáveis: <span class="math display">\[
-\hat{\Lambda}(t)
-=
-\sum \frac{d_j}{n_j}.
-\]</span></li>
-<li>Com covariáveis: <span class="math display">\[
-\hat{\Lambda}_0(t)
-=
-\sum
-\frac{d_j}
-{\sum_{l\in R(t_j)}
-\exp\{\hat{\boldsymbol{\beta}}^{T}\mathbf{x}_l\}}.
-\]</span></li>
-<li>Por esse motivo, o estimador de Breslow pode ser visto como uma extensão do estimador de Nelson-Aalen para o contexto de regressão.</li>
+<li>Observe a <strong>semelhança</strong> com o estimador de Nelson-Aalen estudado anteriormente.</li>
+<li><strong>Sem covariáveis</strong>: <span class="math inline">\(\hat{\Lambda}(t)=\sum \frac{d_j}{n_j}.\)</span></li>
+<li><strong>Com covariáveis</strong>: <span class="math inline">\(\hat{\Lambda}_0(t)=\sum\frac{d_j}{\sum_{l\in R(t_j)}\exp\{\hat{\boldsymbol{\beta}}^{T}\mathbf{x}_l\}}.\)</span>
+<ul>
+<li>O <strong>denominador</strong> pode ser interpretado como o tamanho efetivo da <strong>população em risco</strong>, mas ponderado pelos <strong>riscos relativos</strong> estimados.</li>
+</ul></li>
+<li>Por esse motivo, o <strong>estimador de Breslow pode ser visto como uma extensão</strong> do estimador de Nelson-Aalen para o <strong>contexto de regressão</strong> de Cox.</li>
 </ul>
 </div>
 </section>
@@ -1241,13 +1226,13 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 <h2><strong>CARACTERÍSTICAS DA ESTIMATIVA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Assim como ocorre com Nelson-Aalen:
+<li>Assim como ocorre com <strong>Nelson-Aalen</strong>:
 <ul>
-<li><span class="math inline">\(\hat{\Lambda}_0(t)\)</span> é uma função escada;</li>
-<li>ela apresenta saltos apenas nos tempos observados de falha;</li>
-<li>permanece constante entre dois tempos consecutivos de falha.</li>
+<li><span class="math inline">\(\hat{\Lambda}_0(t)\)</span> é uma <strong>função escada</strong>;</li>
+<li>ela <strong>apresenta saltos</strong> apenas nos tempos observados de <strong>ocorrência do evento de interesse</strong>;</li>
+<li><strong>permanece constante</strong> entre dois tempos consecutivos de ocorrência do evento de interesse.</li>
 </ul></li>
-<li>Consequentemente, sua representação gráfica possui formato escalonado.</li>
+<li>Consequentemente, sua <strong>representação gráfica</strong> possui formato escalonado.</li>
 </ul>
 </div>
 </section>
@@ -1255,12 +1240,12 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 <h2><strong>ESTIMANDO A FUNÇÃO DE SOBREVIVÊNCIA BASAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Uma vez obtida a estimativa de <span class="math inline">\(\Lambda_0(t)\)</span>, a função de sobrevivência basal é estimada por <span class="math display">\[
+<li>Uma vez obtida a <strong>estimativa</strong> de <span class="math inline">\(\Lambda_0(t)\)</span>, a <strong>função de sobrevivência basal</strong> é estimada por <span class="math display">\[
 \hat{S}_0(t)
 =
 \exp\{-\hat{\Lambda}_0(t)\}.
 \]</span></li>
-<li>Essa relação é exatamente a mesma estudada anteriormente em análise de sobrevivência não paramétrica.</li>
+<li>Essa <strong>relação</strong> é exatamente a mesma estudada anteriormente em <strong>análise de sobrevivência não paramétrica</strong>.</li>
 </ul>
 </div>
 </section>
@@ -1268,29 +1253,252 @@ S_0(t)^{\exp\{\boldsymbol{\beta}^{T}\mathbf{x}\}}.
 <h2><strong>ESTIMANDO A SOBREVIVÊNCIA PARA UM PERFIL ESPECÍFICO</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Finalmente, podemos estimar a função de sobrevivência associada a qualquer conjunto de covariáveis: <span class="math display">\[
+<li>Finalmente, <strong>podemos estimar a função de sobrevivência</strong> associada a qualquer conjunto de covariáveis: <span class="math display">\[
 \hat{S}(t|\mathbf{x})
 =
 \left[
 \hat{S}_0(t)
 \right]^{\exp\{\hat{\boldsymbol{\beta}}^{T}\mathbf{x}\}}.
 \]</span></li>
-<li>Essa expressão permite construir curvas de sobrevivência ajustadas para diferentes perfis de indivíduos.</li>
+<li>Essa expressão <strong>permite construir curvas</strong> de sobrevivência ajustadas para <strong>diferentes perfis de indivíduos</strong>.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="adequação-do-modelo" class="title-slide slide level1 center" data-background-image="Capa.png" data-background-size="cover" data-background-opacity="." style="text-align:center; color:blue;">
+<h1><strong>ADEQUAÇÃO DO MODELO</strong></h1>
+
+</section>
+<section id="a-mesma-preocupação-de-sempre" class="slide level2">
+<h2><strong>A MESMA PREOCUPAÇÃO DE SEMPRE</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Após ajustar um modelo de Cox</strong>, surge a mesma pergunta que apareceu nos <strong>modelos paramétricos</strong>:
+<ul>
+<li>O <strong>modelo ajustou adequadamente</strong> os dados?</li>
+</ul></li>
+<li><strong>Nenhum modelo</strong> deve ser interpretado antes da avaliação de sua adequação.</li>
+<li>Assim, além de <strong>estimar os coeficientes</strong>, precisamos verificar:
+<ul>
+<li><strong>qualidade global</strong> do ajuste;</li>
+<li><strong>importância das covariáveis</strong>;</li>
+<li><strong>capacidade explicativa</strong> do modelo;</li>
+<li><strong>validade da hipótese</strong> de riscos proporcionais.</li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="o-que-o-software-faz-na-prática" class="slide level2">
-<h2><strong>O QUE O SOFTWARE FAZ NA PRÁTICA?</strong></h2>
+<section id="o-que-podemos-aproveitar-dos-modelos-paramétricos" class="slide level2">
+<h2><strong>O QUE PODEMOS APROVEITAR DOS MODELOS PARAMÉTRICOS?</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Ao ajustar um modelo de Cox, softwares como o R:
-<ol type="1">
-<li>Estimam <span class="math inline">\(\boldsymbol{\beta}\)</span> por máxima verossimilhança parcial;</li>
-<li>Estimam <span class="math inline">\(\Lambda_0(t)\)</span> pelo método de Breslow;</li>
-<li>Obtêm <span class="math inline">\(\hat{S}_0(t)\)</span>;</li>
-<li>Constroem curvas de sobrevivência ajustadas para quaisquer valores das covariáveis.</li>
-</ol></li>
-<li>Assim, mesmo sendo um modelo semiparamétrico, conseguimos obter estimativas completas de sobrevivência.</li>
+<li><strong>Diversas ferramentas</strong> estudadas anteriormente <strong>continuam</strong> úteis no contexto do <strong>modelo de Cox</strong>.</li>
+<li>Por exemplo:
+<ul>
+<li><strong>testes de significância</strong> para os coeficientes;</li>
+<li><strong>análise de resíduos</strong>;</li>
+<li><strong>comparação entre modelos</strong> concorrentes;</li>
+<li><strong>critérios de informação</strong>.</li>
+</ul></li>
+<li>Portanto, boa parte da lógica utilizada nos <strong>modelos paramétricos</strong> permanece válida.</li>
+</ul>
+</div>
+</section>
+<section id="testes-para-os-coeficientes" class="slide level2">
+<h2><strong>TESTES PARA OS COEFICIENTES</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Os <strong>coeficientes</strong> do modelo podem ser avaliados por <strong>meio de testes de hipótese</strong>.</li>
+<li>Os <strong>procedimentos</strong> mais utilizados são:
+<ul>
+<li><strong>Teste de Wald</strong>;</li>
+<li><strong>Teste da Razão de Verossimilhanças</strong>;</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="critérios-de-informação" class="slide level2">
+<h2><strong>CRITÉRIOS DE INFORMAÇÃO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Os <strong>critérios de informação</strong> também podem ser utilizados para comparar <strong>modelos de Cox</strong>.</li>
+<li>Os <strong>mais comuns</strong> são: <span class="math display">\[
+AIC
+\]</span> e <span class="math display">\[
+BIC,
+\]</span> em que <strong>menores valores</strong> indicam melhor equilíbrio entre <strong>ajuste e complexidade</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="podemos-comparar-um-modelo-de-cox-com-um-modelo-paramétrico-usando-aic" class="slide level2">
+<h2><strong>PODEMOS COMPARAR UM MODELO DE COX COM UM MODELO PARAMÉTRICO USANDO AIC?</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Em geral, <strong>não é recomendado</strong> utilizar <strong>AIC ou BIC</strong> para comparar diretamente um <strong>modelo de Cox</strong> com modelos paramétricos.<br>
+</li>
+<li>A razão é que esses modelos utilizam <strong>funções de verossimilhança diferentes</strong>.</li>
+<li>Assim:
+<ul>
+<li><strong>Comparar Cox vs Cox</strong>.</li>
+<li><strong>Comparar Weibull vs Log-normal</strong>.</li>
+</ul></li>
+<li>Comparações entre <strong>modelos semiparamétricos e paramétricos</strong> devem ser feitas com cautela.</li>
+</ul>
+</div>
+</section>
+<section id="resíduos-de-cox-snell" class="slide level2">
+<h2><strong>RESÍDUOS DE COX-SNELL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Assim como nos <strong>modelos paramétricos</strong>, os <strong>resíduos de Cox-Snell</strong> podem ser utilizados para avaliar a <strong>qualidade global do ajuste</strong>.</li>
+<li>A ideia é simples:
+<ul>
+<li>se o <strong>modelo estiver corretamente especificado</strong>;</li>
+<li>os <strong>resíduos devem se comportar aproximadamente como uma distribuição Exponencial(1)</strong>.</li>
+</ul></li>
+<li>Desvios <strong>importantes</strong> podem indicar inadequação do modelo.</li>
+</ul>
+</div>
+</section>
+<section id="a-hipótese-de-riscos-proporcionais" class="slide level2">
+<h2><strong>A HIPÓTESE DE RISCOS PROPORCIONAIS</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Existe uma <strong>verificação</strong> que é praticamente exclusiva do <strong>modelo de Cox</strong>:
+<ul>
+<li>A hipótese de <strong>riscos proporcionais</strong>.</li>
+</ul></li>
+<li>Lembre-se de que toda <strong>a interpretação</strong> do modelo depende da propriedade <span class="math display">\[
+\frac{\lambda_i(t)}
+{\lambda_j(t)}
+=
+\text{constante}.
+\]</span></li>
+<li>Se essa hipótese não for razoável, os <strong>coeficientes estimados</strong> podem perder <strong>significado</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="como-avaliar-a-proporcionalidade" class="slide level2">
+<h2><strong>COMO AVALIAR A PROPORCIONALIDADE?</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Diversas técnicas</strong> foram propostas para verificar essa hipótese.</li>
+<li>Nesta disciplina, <strong>utilizaremos</strong> principalmente:
+<ul>
+<li>Resíduos de Schoenfeld.</li>
+</ul></li>
+<li>Essas ferramentas <strong>constituem os procedimentos</strong> mais utilizados na prática.</li>
+</ul>
+</div>
+</section>
+<section id="a-ideia" class="slide level2">
+<h2><strong>A IDEIA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Os <strong>resíduos de Schoenfeld</strong> são a ferramenta mais utilizada para <strong>verificar a hipótese</strong> de <strong>riscos proporcionais</strong>.</li>
+<li>Eles são <strong>calculados apenas nos tempos</strong> em que ocorre uma ocorrência do evento.</li>
+<li>A <strong>ideia básica</strong> é comparar:
+<ul>
+<li>o <strong>valor observado</strong> da covariável no <strong>indivíduo</strong> que apresentou o evento;</li>
+<li>o <strong>valor esperado dessa covariável entre todos</strong> os indivíduos <strong>sob risco</strong> naquele instante.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="definição-matemática" class="slide level2">
+<h2><strong>DEFINIÇÃO MATEMÁTICA</strong></h2>
+<div class="box-blue">
+<ul>
+<li><strong>Considere</strong> o tempo de ocorrÊncia do evento <span class="math inline">\(t_i\)</span>.</li>
+<li>Para a <strong>covariável</strong> <span class="math inline">\(X_k\)</span>, o resíduo de <strong>Schoenfeld</strong> é definido por</li>
+</ul>
+<p><span class="math display">\[
+r_{ik}
+=
+x_{ik}
+-
+\frac{
+\sum_{j \in R(t_i)}
+x_{jk}\exp(\mathbf{x}_j'\boldsymbol{\beta})
+}{
+\sum_{j \in R(t_i)}
+\exp(\mathbf{x}_j'\boldsymbol{\beta})
+}
+\]</span></p>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(x_{ik}\)</span> é o <strong>valor observado</strong> da covariável para o indivíduo que falhou;</li>
+<li><span class="math inline">\(R(t_i)\)</span> é o <strong>conjunto de indivíduos</strong> sob risco em <span class="math inline">\(t_i\)</span>;</li>
+<li>o <strong>segundo termo corresponde ao valor esperado</strong> da covariável no conjunto de risco.</li>
+</ul>
+</div>
+</section>
+<section id="análise-gráfica" class="slide level2">
+<h2><strong>ANÁLISE GRÁFICA</strong></h2>
+<div class="box-blue">
+<ul>
+<li>A <strong>forma mais comum</strong> de utilização consiste em <strong>construir</strong> um gráfico para cada covariável do modelo.</li>
+<li>Frequentemente é <strong>adicionada uma curva suavizada</strong> para facilitar a interpretação.</li>
+<li>Se a hipótese de <strong>riscos proporcionais</strong> for válida:
+<ul>
+<li>os <strong>pontos devem oscilar</strong> aleatoriamente em <strong>torno de zero</strong>;</li>
+<li>a <strong>curva suavizada</strong> deve permanecer <strong>aproximadamente horizontal</strong>.</li>
+</ul></li>
+<li>Não deve <strong>existir tendência crescente ou decrescente ao longo do tempo</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="exemplo" class="slide level2">
+<h2><strong>EXEMPLO</strong></h2>
+<div class="box-blue">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/riscosprop1.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="interpretando-o-exemplo" class="slide level2">
+<h2><strong>INTERPRETANDO O EXEMPLO</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Considere <strong>os dois gráficos</strong> apresentados.
+<ul>
+<li>No <strong>gráfico da esquerda</strong>, não há tendência evidente ao longo do tempo.</li>
+<li>A <strong>curva suavizada</strong> permanece aproximadamente horizontal.</li>
+</ul></li>
+<li>Neste caso, <strong>não há evidências contra a hipótese</strong> de riscos proporcionais.</li>
+<li>Já no <strong>gráfico da direita</strong>:
+<ul>
+<li><strong>existe uma tendência</strong> sistemática;</li>
+<li>a <strong>curva suavizada</strong> varia ao longo do tempo.</li>
+</ul></li>
+<li>Isso <strong>sugere possível violação da hipótese</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="teste-de-schoenfeld" class="slide level2">
+<h2><strong>TESTE DE SCHOENFELD</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Além da <strong>inspeção visual</strong>, podemos <strong>formalizar a análise por meio de testes estatísticos</strong>.</p></li>
+<li><p>A ideia é <strong>verificar se existe associação entre</strong>:</p>
+<ul>
+<li><strong>resíduos de Schoenfeld</strong>;</li>
+<li><strong>tempo de acompanhamento</strong>.</li>
+</ul></li>
+</ul>
+<p>Hipóteses:</p>
+<p><span class="math display">\[
+H_0:
+\text{riscos proporcionais}
+\]</span></p>
+<p><span class="math display">\[
+H_1:
+\text{riscos não proporcionais}
+\]</span></p>
+<ul>
+<li>Valores-<span class="math inline">\(p\)</span> pequenos <strong>indicam evidências contra a hipótese</strong> de proporcionalidade.</li>
 </ul>
 </div>
 
