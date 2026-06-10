@@ -2366,11 +2366,32 @@
     "text": "DEFINIÇÃO MATEMÁTICA\n\n\nConsidere o tempo de ocorrÊncia do evento \\(t_i\\).\nPara a covariável \\(X_k\\), o resíduo de Schoenfeld é definido por\n\n\\[\nr_{ik}\n=\nx_{ik}\n-\n\\frac{\n\\sum_{j \\in R(t_i)}\nx_{jk}\\exp(\\mathbf{x}_j'\\boldsymbol{\\beta})\n}{\n\\sum_{j \\in R(t_i)}\n\\exp(\\mathbf{x}_j'\\boldsymbol{\\beta})\n}\n\\]\nem que:\n\n\\(x_{ik}\\) é o valor observado da covariável para o indivíduo que falhou;\n\\(R(t_i)\\) é o conjunto de indivíduos sob risco em \\(t_i\\);\no segundo termo corresponde ao valor esperado da covariável no conjunto de risco."
   },
   {
-    "objectID": "Aula10.html#análise-gráfica",
-    "href": "Aula10.html#análise-gráfica",
+    "objectID": "Aula10.html#resíduos-de-schoenfeld-escalonados",
+    "href": "Aula10.html#resíduos-de-schoenfeld-escalonados",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "ANÁLISE GRÁFICA",
-    "text": "ANÁLISE GRÁFICA\n\n\nA forma mais comum de utilização consiste em construir um gráfico para cada covariável do modelo.\nFrequentemente é adicionada uma curva suavizada para facilitar a interpretação.\nSe a hipótese de riscos proporcionais for válida:\n\nos pontos devem oscilar aleatoriamente em torno de zero;\na curva suavizada deve permanecer aproximadamente horizontal.\n\nNão deve existir tendência crescente ou decrescente ao longo do tempo."
+    "section": "RESÍDUOS DE SCHOENFELD ESCALONADOS",
+    "text": "RESÍDUOS DE SCHOENFELD ESCALONADOS\n\n\nOs resíduos de Schoenfeld originalmente definidos possuem interpretação local em cada tempo de falha.\nPara avaliar a hipótese de riscos proporcionais, utiliza-se uma versão transformada desses resíduos, denominada resíduos de Schoenfeld escalonados.\nEssa transformação incorpora a variabilidade dos coeficientes estimados no modelo.\nO objetivo é obter uma quantidade diretamente relacionada à possível evolução temporal do efeito das covariáveis.\nSob a hipótese de riscos proporcionais, espera-se que o efeito de uma covariável permaneça constante ao longo do tempo:\n\n\\[\n\\beta_k(t)=\\beta_k\n\\]"
+  },
+  {
+    "objectID": "Aula10.html#interpretação-gráfica",
+    "href": "Aula10.html#interpretação-gráfica",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO GRÁFICA",
+    "text": "INTERPRETAÇÃO GRÁFICA\n\n\nO gráfico é construído em função do tempo.\nOs pontos representam os resíduos de Schoenfeld escalonados.\nUma curva suavizada é utilizada para resumir o comportamento médio desses resíduos ao longo do acompanhamento.\nA análise concentra-se na forma da curva e não nos valores individuais dos pontos.\nA principal questão é verificar se existe evidência de que o efeito da covariável esteja se modificando ao longo do tempo."
+  },
+  {
+    "objectID": "Aula10.html#hipótese-de-riscos-proporcionais",
+    "href": "Aula10.html#hipótese-de-riscos-proporcionais",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "HIPÓTESE DE RISCOS PROPORCIONAIS",
+    "text": "HIPÓTESE DE RISCOS PROPORCIONAIS\n\n\nSe a hipótese de riscos proporcionais for válida, o efeito da covariável deve permanecer constante durante todo o período de observação.\nNesse caso:\n\n\\[\n\\beta_k(t)=\\beta_k\n\\]\n\nConsequentemente, não deve existir tendência sistemática nos resíduos ao longo do tempo.\nA curva suavizada deve apresentar comportamento aproximadamente horizontal."
+  },
+  {
+    "objectID": "Aula10.html#evidências-de-violação",
+    "href": "Aula10.html#evidências-de-violação",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "EVIDÊNCIAS DE VIOLAÇÃO",
+    "text": "EVIDÊNCIAS DE VIOLAÇÃO\n\nA hipótese de riscos proporcionais pode ser questionada quando:  a curva suavizada apresenta tendência crescente; * a curva suavizada apresenta tendência decrescente; * existem padrões sistemáticos ao longo do tempo. * Essas situações sugerem que o efeito da covariável não permanece constante durante o acompanhamento.\n\nEXEMPLO\n\n\n\n\n\n\n\n\n\nINTERPRETANDO O EXEMPLO\n\n\nConsidere os dois gráficos apresentados.\n\nNo gráfico da esquerda, não há tendência evidente ao longo do tempo.\nA curva suavizada permanece aproximadamente horizontal.\n\nNeste caso, não há evidências contra a hipótese de riscos proporcionais.\nJá no gráfico da direita:\n\nexiste uma tendência sistemática;\na curva suavizada varia ao longo do tempo.\n\nIsso sugere possível violação da hipótese.\n\n\n\n\nTESTE FORMAL\n\n\nAlém da inspeção gráfica, é possível realizar um teste formal para avaliar a hipótese de riscos proporcionais.\nAs hipóteses são:\n\n\\[\nH_0:\\beta_k(t)=\\beta_k\n\\]\n\\[\nH_1:\\beta_k(t)\\neq\\beta_k\n\\]\n\nA hipótese nula afirma que o efeito da covariável permanece constante ao longo do tempo.\n\n\n\n\n\nIDEIA DO TESTE\n\n** O teste investiga a existência de associação entre os resíduos de Schoenfeld escalonados e o tempo.\nSob a hipótese de riscos proporcionais:\n\nnão deve existir relação sistemática entre essas quantidades;\nos resíduos devem apresentar comportamento aleatório ao longo do tempo.\n\n** A presença de associação significativa sugere que o efeito da covariável varia durante o acompanhamento.\n\n\n\nINTERPRETAÇÃO DO VALOR-P\n\nA decisão é baseada no valor-p do teste.  Valores-p elevados indicam ausência de evidências contra a hipótese de riscos proporcionais. * Valores-p reduzidos indicam evidências de que o efeito da covariável varia ao longo do tempo. * Portanto, quanto menor o valor-p, maior a evidência de violação da hipótese de riscos proporcionais.\n\n\n\nTESTE GLOBAL\n\n\nAlém dos testes individuais para cada covariável, pode-se avaliar simultaneamente todas as covariáveis do modelo.\nAs hipóteses são: \\[\nH_0:\\text{Todas as covariáveis satisfazem a hipótese de riscos proporcionais}\n\\]\n\n\\[\nH_1:\\text{Pelo menos uma covariável viola a hipótese de riscos proporcionais}\n\\]\n\nEsse procedimento fornece uma avaliação global da adequação da suposição de riscos proporcionais ao modelo."
   },
   {
     "objectID": "Aula10.html#exemplo",
@@ -2387,11 +2408,32 @@
     "text": "INTERPRETANDO O EXEMPLO\n\n\nConsidere os dois gráficos apresentados.\n\nNo gráfico da esquerda, não há tendência evidente ao longo do tempo.\nA curva suavizada permanece aproximadamente horizontal.\n\nNeste caso, não há evidências contra a hipótese de riscos proporcionais.\nJá no gráfico da direita:\n\nexiste uma tendência sistemática;\na curva suavizada varia ao longo do tempo.\n\nIsso sugere possível violação da hipótese."
   },
   {
-    "objectID": "Aula10.html#teste-de-schoenfeld",
-    "href": "Aula10.html#teste-de-schoenfeld",
+    "objectID": "Aula10.html#teste-formal",
+    "href": "Aula10.html#teste-formal",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "TESTE DE SCHOENFELD",
-    "text": "TESTE DE SCHOENFELD\n\n\nAlém da inspeção visual, podemos formalizar a análise por meio de testes estatísticos.\nA ideia é verificar se existe associação entre:\n\nresíduos de Schoenfeld;\ntempo de acompanhamento.\n\n\nHipóteses:\n\\[\nH_0:\n\\text{riscos proporcionais}\n\\]\n\\[\nH_1:\n\\text{riscos não proporcionais}\n\\]\n\nValores-\\(p\\) pequenos indicam evidências contra a hipótese de proporcionalidade."
+    "section": "TESTE FORMAL",
+    "text": "TESTE FORMAL\n\n\nAlém da inspeção gráfica, é possível realizar um teste formal para avaliar a hipótese de riscos proporcionais.\nAs hipóteses são:\n\n\\[\nH_0:\\beta_k(t)=\\beta_k\n\\]\n\\[\nH_1:\\beta_k(t)\\neq\\beta_k\n\\]\n\nA hipótese nula afirma que o efeito da covariável permanece constante ao longo do tempo."
+  },
+  {
+    "objectID": "Aula10.html#ideia-do-teste",
+    "href": "Aula10.html#ideia-do-teste",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "IDEIA DO TESTE",
+    "text": "IDEIA DO TESTE\n\n** O teste investiga a existência de associação entre os resíduos de Schoenfeld escalonados e o tempo.\nSob a hipótese de riscos proporcionais:\n\nnão deve existir relação sistemática entre essas quantidades;\nos resíduos devem apresentar comportamento aleatório ao longo do tempo.\n\n** A presença de associação significativa sugere que o efeito da covariável varia durante o acompanhamento."
+  },
+  {
+    "objectID": "Aula10.html#interpretação-do-valor-p",
+    "href": "Aula10.html#interpretação-do-valor-p",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "INTERPRETAÇÃO DO VALOR-P",
+    "text": "INTERPRETAÇÃO DO VALOR-P\n\nA decisão é baseada no valor-p do teste.  Valores-p elevados indicam ausência de evidências contra a hipótese de riscos proporcionais. * Valores-p reduzidos indicam evidências de que o efeito da covariável varia ao longo do tempo. * Portanto, quanto menor o valor-p, maior a evidência de violação da hipótese de riscos proporcionais."
+  },
+  {
+    "objectID": "Aula10.html#teste-global",
+    "href": "Aula10.html#teste-global",
+    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
+    "section": "TESTE GLOBAL",
+    "text": "TESTE GLOBAL\n\n\nAlém dos testes individuais para cada covariável, pode-se avaliar simultaneamente todas as covariáveis do modelo.\nAs hipóteses são: \\[\nH_0:\\text{Todas as covariáveis satisfazem a hipótese de riscos proporcionais}\n\\]\n\n\\[\nH_1:\\text{Pelo menos uma covariável viola a hipótese de riscos proporcionais}\n\\]\n\nEsse procedimento fornece uma avaliação global da adequação da suposição de riscos proporcionais ao modelo."
   },
   {
     "objectID": "Aula1.html#a-importância-da-análise-de-sobrevivência",

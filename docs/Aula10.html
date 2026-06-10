@@ -1433,21 +1433,53 @@ x_{jk}\exp(\mathbf{x}_j'\boldsymbol{\beta})
 </ul>
 </div>
 </section>
-<section id="análise-gráfica" class="slide level2">
-<h2><strong>ANÁLISE GRÁFICA</strong></h2>
+<section id="resíduos-de-schoenfeld-escalonados" class="slide level2">
+<h2><strong>RESÍDUOS DE SCHOENFELD ESCALONADOS</strong></h2>
 <div class="box-blue">
 <ul>
-<li>A <strong>forma mais comum</strong> de utilização consiste em <strong>construir</strong> um gráfico para cada covariável do modelo.</li>
-<li>Frequentemente é <strong>adicionada uma curva suavizada</strong> para facilitar a interpretação.</li>
-<li>Se a hipótese de <strong>riscos proporcionais</strong> for válida:
+<li>Os resíduos de Schoenfeld originalmente definidos possuem interpretação local em cada tempo de falha.</li>
+<li>Para avaliar a hipótese de riscos proporcionais, utiliza-se uma versão transformada desses resíduos, denominada <strong>resíduos de Schoenfeld escalonados</strong>.</li>
+<li>Essa transformação incorpora a variabilidade dos coeficientes estimados no modelo.</li>
+<li>O objetivo é obter uma quantidade diretamente relacionada à possível evolução temporal do efeito das covariáveis.</li>
+<li>Sob a hipótese de riscos proporcionais, espera-se que o efeito de uma covariável permaneça constante ao longo do tempo:</li>
+</ul>
+<p><span class="math display">\[
+\beta_k(t)=\beta_k
+\]</span></p>
+</div>
+</section>
+<section id="interpretação-gráfica" class="slide level2">
+<h2><strong>INTERPRETAÇÃO GRÁFICA</strong></h2>
+<div class="box-blue">
 <ul>
-<li>os <strong>pontos devem oscilar</strong> aleatoriamente em <strong>torno de zero</strong>;</li>
-<li>a <strong>curva suavizada</strong> deve permanecer <strong>aproximadamente horizontal</strong>.</li>
-</ul></li>
-<li>Não deve <strong>existir tendência crescente ou decrescente ao longo do tempo</strong>.</li>
+<li>O gráfico é construído em função do tempo.</li>
+<li>Os pontos representam os resíduos de Schoenfeld escalonados.</li>
+<li>Uma curva suavizada é utilizada para resumir o comportamento médio desses resíduos ao longo do acompanhamento.</li>
+<li>A análise concentra-se na forma da curva e não nos valores individuais dos pontos.</li>
+<li>A principal questão é verificar se existe evidência de que o efeito da covariável esteja se modificando ao longo do tempo.</li>
 </ul>
 </div>
 </section>
+<section id="hipótese-de-riscos-proporcionais" class="slide level2">
+<h2><strong>HIPÓTESE DE RISCOS PROPORCIONAIS</strong></h2>
+<div class="box-blue">
+<ul>
+<li><p>Se a hipótese de riscos proporcionais for válida, o efeito da covariável deve permanecer constante durante todo o período de observação.</p></li>
+<li><p>Nesse caso:</p></li>
+</ul>
+<p><span class="math display">\[
+\beta_k(t)=\beta_k
+\]</span></p>
+<ul>
+<li><p>Consequentemente, não deve existir tendência sistemática nos resíduos ao longo do tempo.</p></li>
+<li><p>A curva suavizada deve apresentar comportamento aproximadamente horizontal.</p></li>
+</ul>
+</div>
+</section>
+<section id="evidências-de-violação" class="slide level2">
+<h2><strong>EVIDÊNCIAS DE VIOLAÇÃO</strong></h2>
+<div class="box-blue">
+<p><em>A hipótese de riscos proporcionais pode ser questionada quando: </em> a curva suavizada apresenta tendência crescente; * a curva suavizada apresenta tendência decrescente; * existem padrões sistemáticos ao longo do tempo. * Essas situações sugerem que o efeito da covariável não permanece constante durante o acompanhamento.</p>
 <section id="exemplo" class="slide level2">
 <h2><strong>EXEMPLO</strong></h2>
 <div class="box-blue">
@@ -1477,32 +1509,63 @@ x_{jk}\exp(\mathbf{x}_j'\boldsymbol{\beta})
 </ul>
 </div>
 </section>
-<section id="teste-de-schoenfeld" class="slide level2">
-<h2><strong>TESTE DE SCHOENFELD</strong></h2>
+<section id="teste-formal" class="slide level2">
+<h2><strong>TESTE FORMAL</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Além da <strong>inspeção visual</strong>, podemos <strong>formalizar a análise por meio de testes estatísticos</strong>.</p></li>
-<li><p>A ideia é <strong>verificar se existe associação entre</strong>:</p>
-<ul>
-<li><strong>resíduos de Schoenfeld</strong>;</li>
-<li><strong>tempo de acompanhamento</strong>.</li>
-</ul></li>
+<li>Além da inspeção gráfica, é possível realizar um teste formal para avaliar a hipótese de riscos proporcionais.</li>
+<li>As hipóteses são:</li>
 </ul>
-<p>Hipóteses:</p>
 <p><span class="math display">\[
-H_0:
-\text{riscos proporcionais}
+H_0:\beta_k(t)=\beta_k
 \]</span></p>
 <p><span class="math display">\[
-H_1:
-\text{riscos não proporcionais}
+H_1:\beta_k(t)\neq\beta_k
 \]</span></p>
 <ul>
-<li>Valores-<span class="math inline">\(p\)</span> pequenos <strong>indicam evidências contra a hipótese</strong> de proporcionalidade.</li>
+<li>A hipótese nula afirma que o efeito da covariável permanece constante ao longo do tempo.</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="ideia-do-teste" class="slide level2">
+<h2><strong>IDEIA DO TESTE</strong></h2>
+<div class="box-blue">
+<p>** O teste investiga a existência de associação entre os resíduos de Schoenfeld escalonados e o tempo.</p>
+<p>Sob a hipótese de riscos proporcionais:</p>
+<ul>
+<li>não deve existir relação sistemática entre essas quantidades;</li>
+<li>os resíduos devem apresentar comportamento aleatório ao longo do tempo.</li>
+</ul>
+<p>** A presença de associação significativa sugere que o efeito da covariável varia durante o acompanhamento.</p>
+</div>
+</section>
+<section id="interpretação-do-valor-p" class="slide level2">
+<h2><strong>INTERPRETAÇÃO DO VALOR-P</strong></h2>
+<div class="box-blue">
+<p><em>A decisão é baseada no valor-p do teste. </em> Valores-p elevados indicam ausência de evidências contra a hipótese de riscos proporcionais. * Valores-p reduzidos indicam evidências de que o efeito da covariável varia ao longo do tempo. * Portanto, quanto menor o valor-p, maior a evidência de violação da hipótese de riscos proporcionais.</p>
+</div>
+</section>
+<section id="teste-global" class="slide level2">
+<h2><strong>TESTE GLOBAL</strong></h2>
+<div class="box-blue">
+<ul>
+<li>Além dos testes individuais para cada covariável, pode-se avaliar simultaneamente todas as covariáveis do modelo.</li>
+<li>As hipóteses são: <span class="math display">\[
+H_0:\text{Todas as covariáveis satisfazem a hipótese de riscos proporcionais}
+\]</span></li>
+</ul>
+<p><span class="math display">\[
+H_1:\text{Pelo menos uma covariável viola a hipótese de riscos proporcionais}
+\]</span></p>
+<ul>
+<li>Esse procedimento fornece uma avaliação global da adequação da suposição de riscos proporcionais ao modelo.</li>
 </ul>
 </div>
 
 
+</section>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
