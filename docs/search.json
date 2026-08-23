@@ -1159,7 +1159,7 @@
     "href": "Aula5.html#ideia-da-variância",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "IDEIA DA VARIÂNCIA",
-    "text": "IDEIA DA VARIÂNCIA\n\n\nEm cada tempo de ocorrência de evento \\(t_j\\), o teste de Log-Rank compara o número de eventos observado com o número esperado sob \\(H_0\\).\nMesmo que \\(H_0\\) seja verdadeira, diferenças entre observado e esperado podem ocorrer naturalmente ao acaso.\nPor isso, o teste considera uma variância \\(V_j\\), que representa quanto essa diferença pode variar em cada tempo.\nIdeia: a variância total funciona como uma medida da variabilidade esperada ao acaso, permitindo ponderar a diferença entre o número de eventos observado e esperado."
+    "text": "IDEIA DA VARIÂNCIA\n\n\nEm cada tempo de ocorrência de evento \\(t_j\\), o teste de Log-Rank compara o número de eventos observado com o número esperado sob \\(H_0\\).\nMesmo que \\(H_0\\) seja verdadeira, diferenças entre observado e esperado podem ocorrer naturalmente ao acaso.\nPor isso, o teste considera uma variância, que representa quanto essa diferença pode variar em cada tempo.\nIdeia: a variância total funciona como uma medida da variabilidade esperada ao acaso, permitindo ponderar a diferença entre o número de eventos observado e esperado."
   },
   {
     "objectID": "Aula5.html#estatística-de-teste-caso-geral",
@@ -1390,7 +1390,7 @@
     "href": "Aula5.html#qual-correção-escolher",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "QUAL CORREÇÃO ESCOLHER",
-    "text": "QUAL CORREÇÃO ESCOLHER\n\n\nBonferroni: é simples e conservador.\n\nHolm-Bonferroni: mais poderoso, preferido quando se quer detectar diferenças reais sem aumentar o erro tipo I.\nSempre defina o nível global \\(\\alpha\\) antes do teste e ajuste os subtestes de acordo."
+    "text": "QUAL CORREÇÃO ESCOLHER\n\n\nBonferroni: é simples e conservador.\n\nHolm-Bonferroni: mais poderoso, preferido quando se quer detectar diferenças reais sem aumentar o erro tipo I.\n\nSempre defina o nível global \\(\\alpha\\) antes do teste e ajuste os subtestes de acordo."
   },
   {
     "objectID": "Aula3.html#introdução-1",

@@ -922,7 +922,7 @@ T = \frac{(O_1 - E_1)^2}{\mathrm{Var}(O_1 - E_1)}
 <ul>
 <li><p>Em cada tempo de ocorrência de evento <span class="math inline">\(t_j\)</span>, o teste de Log-Rank compara o número de eventos <strong>observado</strong> com o número <strong>esperado</strong> sob <span class="math inline">\(H_0\)</span>.</p></li>
 <li><p>Mesmo que <span class="math inline">\(H_0\)</span> seja verdadeira, diferenças entre observado e esperado podem ocorrer <strong>naturalmente ao acaso</strong>.</p></li>
-<li><p>Por isso, o teste considera uma variância <span class="math inline">\(V_j\)</span>, que representa <strong>quanto essa diferença pode variar em cada tempo</strong>.</p></li>
+<li><p>Por isso, o teste considera uma variância, que representa <strong>quanto essa diferença pode variar em cada tempo</strong>.</p></li>
 <li><p><strong>Ideia:</strong> a variância total funciona como uma medida da <strong>variabilidade esperada ao acaso</strong>, permitindo ponderar a diferença entre o número de eventos <strong>observado e esperado</strong>.</p></li>
 </ul>
 </div>
@@ -1697,10 +1697,11 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 <h2><strong>QUAL CORREÇÃO ESCOLHER</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p><strong>Bonferroni:</strong> é simples e conservador.<br>
-</p></li>
-<li><p><strong>Holm-Bonferroni:</strong> mais poderoso, preferido quando se quer <strong>detectar diferenças reais</strong> sem aumentar o erro tipo I.</p></li>
-<li><p>Sempre <strong>defina o nível global <span class="math inline">\(\alpha\)</span></strong> antes do teste e ajuste os subtestes de acordo.</p></li>
+<li><strong>Bonferroni:</strong> é simples e conservador.<br>
+</li>
+<li><strong>Holm-Bonferroni:</strong> mais poderoso, preferido quando se quer <strong>detectar diferenças reais</strong> sem aumentar o erro tipo I.<br>
+</li>
+<li>Sempre <strong>defina o nível global <span class="math inline">\(\alpha\)</span></strong> antes do teste e ajuste os subtestes de acordo.</li>
 </ul>
 </div>
 
