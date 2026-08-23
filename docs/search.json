@@ -1155,18 +1155,11 @@
     "text": "CASO DE DOIS GRUPOS\n\n\nQuando \\(K=2\\), a estatística de teste é: \\[\nT = \\frac{(O_1 - E_1)^2}{\\mathrm{Var}(O_1 - E_1)}\n\\]\nBasta usar um grupo (o outro é redundante), pois \\((O_1 - E_1) = -(O_2 - E_2)\\)\nSob \\(H_0\\), pode-se provar que \\(T \\sim \\chi^2_1\\) (qui-quadrado com 1 grau de liberdade).\nComparamos:\n\no que aconteceu (\\(O_1\\))\ncom o que esperaríamos ao acaso (\\(E_1\\))\nPadronizando pela variabilidade natural desse processo"
   },
   {
-    "objectID": "Aula5.html#ideia-central-da-variância",
-    "href": "Aula5.html#ideia-central-da-variância",
+    "objectID": "Aula5.html#ideia-da-variância",
+    "href": "Aula5.html#ideia-da-variância",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "IDEIA CENTRAL DA VARIÂNCIA",
-    "text": "IDEIA CENTRAL DA VARIÂNCIA\n\n\nEm cada tempo \\(t_j\\), há:\n\n\\(n(t_j)\\) em risco\n\n\\(n_1(t_j)\\) no grupo 1\n\n\\(d(t_j)\\) eventos\n\nSob \\(H_0\\), os \\(d(t_j)\\) eventos são distribuídos aleatoriamente sem reposição e\n\n\\[\nd_1(t_j) \\sim \\text{Hipergeométrica}\n\\]"
-  },
-  {
-    "objectID": "Aula5.html#ideia-central-da-variância-1",
-    "href": "Aula5.html#ideia-central-da-variância-1",
-    "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
-    "section": "IDEIA CENTRAL DA VARIÂNCIA",
-    "text": "IDEIA CENTRAL DA VARIÂNCIA\n\nPortanto,\n\\[\n\\mathrm{Var}(O_1 - E_1) = \\sum_{j}^J \\mathrm{Var}(d_1(t_j))\n\\]\n\nCada tempo é um “quase experimento independente”, baseado no conjunto de risco naquele instante\nO teste de Log-Rank soma pequenas variações aleatórias (hipergeométricas) ao longo do tempo"
+    "section": "IDEIA DA VARIÂNCIA",
+    "text": "IDEIA DA VARIÂNCIA\n\n\nEm cada tempo de ocorrência de evento \\(t_j\\), o teste de Log-Rank compara o número de eventos observado com o número esperado sob \\(H_0\\).\nMesmo que \\(H_0\\) seja verdadeira, diferenças entre observado e esperado podem ocorrer naturalmente ao acaso.\nPor isso, o teste considera uma variância \\(V_j\\), que representa quanto essa diferença pode variar em cada tempo.\nIdeia: a variância total funciona como uma medida da variabilidade esperada ao acaso, permitindo ponderar a diferença entre o número de eventos observado e esperado."
   },
   {
     "objectID": "Aula5.html#estatística-de-teste-caso-geral",
@@ -1362,7 +1355,7 @@
     "href": "Aula5.html#correção-de-holm-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CORREÇÃO DE HOLM-BONFERRONI",
-    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(m-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas de acordo com as comparações realizadas."
+    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(m-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas de acordo com as comparações realizadas.\n\n\nAssim, começamos sendo muito rigorosos e vamos relaxando o critério à medida que avançamos pelos p-valores.\nLogo, a estratégia é menos conservadora que a de Bonferroni"
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-4",
@@ -1383,7 +1376,7 @@
     "href": "Aula5.html#dados-de-hepatite-holm-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "DADOS DE HEPATITE (HOLM-BONFERRONI)",
-    "text": "DADOS DE HEPATITE (HOLM-BONFERRONI)\n\n\nPasso 1: organizar os p-valores dos subtestes\n\nGrupo 1 × Grupo 2: \\(p = 0.1\\)\n\nGrupo 1 × Grupo 3: \\(p = 0.005\\)\n\nGrupo 2 × Grupo 3: \\(p = 0.0047\\)\n\nPasso 2: ordenar do menor para o maior\n\n\\(p_1 = 0.0047\\) (Grupo 2 × 3)\n\n\\(p_2 = 0.005\\) (Grupo 1 × 3)\n\n\\(p_3 = 0.1\\) (Grupo 1 × 2)\n\nPasso 3: aplicar Holm-Bonferroni\n\nComparar \\(p_1\\) com \\(\\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\\) → \\(0.0047 &lt; 0.017\\) → rejeita H₀\n\nComparar \\(p_2\\) com \\(0.05 / (3 - 2 + 1) = 0.025\\) → \\(0.005 &lt; 0.025\\) → rejeita H₀\n\nComparar \\(p_3\\) com \\(0.05 / (3 - 3 + 1) = 0.05\\) → \\(0.1 &gt; 0.05\\) → não rejeita H₀\n\n✅ Resultado: mesma conclusão prática do Bonferroni, mas Holm é menos conservador e ajusta de forma incremental"
+    "text": "DADOS DE HEPATITE (HOLM-BONFERRONI)\n\n\nPasso 1: organizar os p-valores dos subtestes\n\nGrupo 1 × Grupo 2: \\(p = 0.1\\)\n\nGrupo 1 × Grupo 3: \\(p = 0.005\\)\n\nGrupo 2 × Grupo 3: \\(p = 0.0047\\)\n\nPasso 2: ordenar do menor para o maior\n\n\\(p_1 = 0.0047\\) (Grupo 2 × 3)\n\n\\(p_2 = 0.005\\) (Grupo 1 × 3)\n\n\\(p_3 = 0.1\\) (Grupo 1 × 2)\n\nPasso 3: aplicar Holm-Bonferroni\n\nComparar \\(p_1\\) com \\(\\alpha / (m - i + 1) = 0.05 / (3 - 1 + 1) = 0.017\\) → \\(0.0047 &lt; 0.017\\) → rejeita H₀\n\nComparar \\(p_2\\) com \\(0.05 / (3 - 2 + 1) = 0.025\\) → \\(0.005 &lt; 0.025\\) → rejeita H₀\n\nComparar \\(p_3\\) com \\(0.05 / (3 - 3 + 1) = 0.05\\) → \\(0.1 &gt; 0.05\\) → não rejeita H₀\n\n*Resultado: mesma conclusão prática do Bonferroni, mas Holm é menos conservador** e ajusta de forma incremental"
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-5",

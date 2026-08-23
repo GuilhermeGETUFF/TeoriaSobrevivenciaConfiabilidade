@@ -916,35 +916,14 @@ T = \frac{(O_1 - E_1)^2}{\mathrm{Var}(O_1 - E_1)}
 </ul>
 </div>
 </section>
-<section id="ideia-central-da-variância" class="slide level2">
-<h2><strong>IDEIA CENTRAL DA VARIÂNCIA</strong></h2>
+<section id="ideia-da-variância" class="slide level2">
+<h2><strong>IDEIA DA VARIÂNCIA</strong></h2>
 <div class="box-blue">
 <ul>
-<li>Em cada tempo <span class="math inline">\(t_j\)</span>, há:
-<ul>
-<li><span class="math inline">\(n(t_j)\)</span> em risco<br>
-</li>
-<li><span class="math inline">\(n_1(t_j)\)</span> no grupo 1<br>
-</li>
-<li><span class="math inline">\(d(t_j)\)</span> eventos</li>
-</ul></li>
-<li>Sob <span class="math inline">\(H_0\)</span>, os <span class="math inline">\(d(t_j)\)</span> eventos são distribuídos <strong>aleatoriamente sem reposição</strong> e</li>
-</ul>
-<p><span class="math display">\[
-d_1(t_j) \sim \text{Hipergeométrica}
-\]</span></p>
-</div>
-</section>
-<section id="ideia-central-da-variância-1" class="slide level2">
-<h2><strong>IDEIA CENTRAL DA VARIÂNCIA</strong></h2>
-<div class="box-blue">
-<p>Portanto,</p>
-<p><span class="math display">\[
-\mathrm{Var}(O_1 - E_1) = \sum_{j}^J \mathrm{Var}(d_1(t_j))
-\]</span></p>
-<ul>
-<li>Cada tempo é um “quase experimento independente”, baseado no conjunto de risco naquele instante</li>
-<li>O teste de Log-Rank soma pequenas variações aleatórias (hipergeométricas) ao longo do tempo</li>
+<li><p>Em cada tempo de ocorrência de evento <span class="math inline">\(t_j\)</span>, o teste de Log-Rank compara o número de eventos <strong>observado</strong> com o número <strong>esperado</strong> sob <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>Mesmo que <span class="math inline">\(H_0\)</span> seja verdadeira, diferenças entre observado e esperado podem ocorrer <strong>naturalmente ao acaso</strong>.</p></li>
+<li><p>Por isso, o teste considera uma variância <span class="math inline">\(V_j\)</span>, que representa <strong>quanto essa diferença pode variar em cada tempo</strong>.</p></li>
+<li><p><strong>Ideia:</strong> a variância total funciona como uma medida da <strong>variabilidade esperada ao acaso</strong>, permitindo ponderar a diferença entre o número de eventos <strong>observado e esperado</strong>.</p></li>
 </ul>
 </div>
 </section>
@@ -1539,8 +1518,11 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 </li>
 <li>Comparar cada p-valor <span class="math inline">\(p_i\)</span> com <span class="math inline">\(\alpha/(m-i+1)\)</span>, onde <span class="math inline">\(i\)</span> é a posição do p-valor ordenado.<br>
 </li>
-<li>Rejeitar as hipóteses nulas de acordo com as comparações realizadas.</li>
+<li>Rejeitar as hipóteses nulas de acordo com as comparações realizadas.<br>
+</li>
 </ol></li>
+<li>Assim, começamos sendo muito rigorosos e vamos relaxando o critério à medida que avançamos pelos p-valores.</li>
+<li>Logo, a estratégia é menos conservadora que a de Bonferroni</li>
 </ul>
 </div>
 </section>
@@ -1670,7 +1652,7 @@ grupos=Grupo 3 13       13     7.47      4.08      7.98
 </li>
 <li>Comparar <span class="math inline">\(p_3\)</span> com <span class="math inline">\(0.05 / (3 - 3 + 1) = 0.05\)</span> → <span class="math inline">\(0.1 &gt; 0.05\)</span> → <strong>não rejeita H₀</strong></li>
 </ul></li>
-<li>✅ <strong>Resultado:</strong> mesma conclusão prática do Bonferroni, mas <strong>Holm é menos conservador</strong> e ajusta de forma incremental</li>
+<li>*Resultado:<strong> mesma conclusão prática do Bonferroni, mas </strong>Holm é menos conservador** e ajusta de forma incremental</li>
 </ul>
 </div>
 </section>
