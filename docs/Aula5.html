@@ -1506,23 +1506,25 @@ grupos=Grupo 3 13       13     6.49    6.5190   10.4447
 </ul>
 </div>
 </section>
-<section id="correção-de-holm-bonferroni" class="slide level2">
+<section id="correção-de-holm-bonferroni" class="slide level2 scrollable">
 <h2><strong>CORREÇÃO DE HOLM-BONFERRONI</strong></h2>
 <div class="box-blue">
 <ul>
-<li>O método de <strong>Holm</strong> é uma versão <strong>menos conservadora</strong> que Bonferroni.<br>
-</li>
-<li>Procedimento:
+<li><p>O método de <strong>Holm</strong> é uma versão <strong>menos conservadora</strong> que Bonferroni.<br>
+</p></li>
+<li><p><strong>Procedimento:</strong></p>
 <ol type="1">
-<li>Ordenar os p-valores dos subtestes do menor para o maior.<br>
-</li>
-<li>Comparar cada p-valor <span class="math inline">\(p_i\)</span> com <span class="math inline">\(\alpha/(m-i+1)\)</span>, onde <span class="math inline">\(i\)</span> é a posição do p-valor ordenado.<br>
-</li>
-<li>Rejeitar as hipóteses nulas de acordo com as comparações realizadas.<br>
-</li>
+<li><p>Ordenar os p-valores dos subtestes <strong>do menor para o maior</strong>: <span class="math display">\[
+p_{(1)} \leq p_{(2)} \leq \cdots \leq p_{(m)}
+\]</span></p></li>
+<li><p>Começando pelo menor p-valor, comparar sequencialmente: <span class="math display">\[
+p_{(i)} \quad \text{com} \quad \frac{\alpha}{m-i+1}
+\]</span></p></li>
+<li><p>Se <span class="math inline">\(p_{(i)} \leq \alpha/(m-i+1)\)</span>, <strong>rejeitar <span class="math inline">\(H_0\)</span> e seguir para o próximo p-valor</strong>.</p></li>
+<li><p>Se <span class="math inline">\(p_{(i)} &gt; \alpha/(m-i+1)\)</span>, <strong>não rejeitar <span class="math inline">\(H_0\)</span> e interromper o procedimento</strong>. As hipóteses restantes também <strong>não são rejeitadas</strong>.</p></li>
 </ol></li>
-<li>Assim, começamos sendo muito rigorosos e vamos relaxando o critério à medida que avançamos pelos p-valores.</li>
-<li>Logo, a estratégia é menos conservadora que a de Bonferroni</li>
+<li><p>Assim, começamos com um critério mais rigoroso e vamos <strong>relaxando o nível de significância</strong> enquanto as hipóteses são rejeitadas.</p></li>
+<li><p>O procedimento é <strong>menos conservador que Bonferroni</strong>, mas continua controlando o erro tipo I familiar (FWER).</p></li>
 </ul>
 </div>
 </section>

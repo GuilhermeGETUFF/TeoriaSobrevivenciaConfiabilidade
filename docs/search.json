@@ -1355,7 +1355,7 @@
     "href": "Aula5.html#correção-de-holm-bonferroni",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "CORREÇÃO DE HOLM-BONFERRONI",
-    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior.\n\nComparar cada p-valor \\(p_i\\) com \\(\\alpha/(m-i+1)\\), onde \\(i\\) é a posição do p-valor ordenado.\n\nRejeitar as hipóteses nulas de acordo com as comparações realizadas.\n\n\nAssim, começamos sendo muito rigorosos e vamos relaxando o critério à medida que avançamos pelos p-valores.\nLogo, a estratégia é menos conservadora que a de Bonferroni"
+    "text": "CORREÇÃO DE HOLM-BONFERRONI\n\n\nO método de Holm é uma versão menos conservadora que Bonferroni.\n\nProcedimento:\n\nOrdenar os p-valores dos subtestes do menor para o maior: \\[\np_{(1)} \\leq p_{(2)} \\leq \\cdots \\leq p_{(m)}\n\\]\nComeçando pelo menor p-valor, comparar sequencialmente: \\[\np_{(i)} \\quad \\text{com} \\quad \\frac{\\alpha}{m-i+1}\n\\]\nSe \\(p_{(i)} \\leq \\alpha/(m-i+1)\\), rejeitar \\(H_0\\) e seguir para o próximo p-valor.\nSe \\(p_{(i)} &gt; \\alpha/(m-i+1)\\), não rejeitar \\(H_0\\) e interromper o procedimento. As hipóteses restantes também não são rejeitadas.\n\nAssim, começamos com um critério mais rigoroso e vamos relaxando o nível de significância enquanto as hipóteses são rejeitadas.\nO procedimento é menos conservador que Bonferroni, mas continua controlando o erro tipo I familiar (FWER)."
   },
   {
     "objectID": "Aula5.html#exemplo-dados-de-hepatite-4",
