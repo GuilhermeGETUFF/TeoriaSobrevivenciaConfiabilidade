@@ -1978,14 +1978,14 @@
     "href": "Aula10.html#introduzindo-uma-covariável-indicadora",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "INTRODUZINDO UMA COVARIÁVEL INDICADORA",
-    "text": "INTRODUZINDO UMA COVARIÁVEL INDICADORA\n\n\nDefina a variável \\[\nx=\n\\begin{cases}\n0, & \\text{grupo controle} \\\\\n1, & \\text{grupo tratado}\n\\end{cases}\n\\] e represente a razão de riscos por \\[\nK=e^{\\beta}.\n\\]\nA utilização da função exponencial garante que a razão de riscos seja sempre positiva."
+    "text": "INTRODUZINDO UMA COVARIÁVEL INDICADORA\n\n\nDefina a variável \\[\nx=\n\\begin{cases}\n0, & \\text{grupo controle} \\\\\n1, & \\text{grupo tratado}\n\\end{cases}\n\\] e represente a razão de riscos por \\[\nK=e^{\\beta x},\n\\]\nA utilização da função exponencial garante que a razão de riscos seja sempre positiva."
   },
   {
     "objectID": "Aula10.html#surge-o-modelo-de-cox",
     "href": "Aula10.html#surge-o-modelo-de-cox",
     "title": "ANÁLISE DE SOBREVIVÊNCIA E CONFIABILIDADE",
     "section": "SURGE O MODELO DE COX",
-    "text": "SURGE O MODELO DE COX\n\n\nSubstituindo \\(K=e^\\beta\\), obtemos \\[\n\\lambda(t|x)\n=\n\\lambda_0(t)e^{\\beta x}.\n\\]\nEsta é a forma mais simples do modelo de Cox.\nObserve que:\n\n\\(\\lambda_0(t)\\) descreve o comportamento do risco de base ao longo do tempo;\n\\(e^{\\beta x}\\) incorpora o efeito do grupo."
+    "text": "SURGE O MODELO DE COX\n\n\nSubstituindo \\(K=e^{\\beta x}\\), obtemos \\[\n\\lambda(t|x)\n=\n\\lambda_0(t)e^{\\beta x}.\n\\]\nEsta é a forma mais simples do modelo de Cox.\nObserve que:\n\n\\(\\lambda_0(t)\\) descreve o comportamento do risco de base ao longo do tempo;\n\\(e^{\\beta x}\\) incorpora o efeito do grupo."
   },
   {
     "objectID": "Aula10.html#interpretação-de-beta",

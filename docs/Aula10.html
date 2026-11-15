@@ -445,7 +445,7 @@ x=
 1, &amp; \text{grupo tratado}
 \end{cases}
 \]</span> e <strong>represente a razão de riscos</strong> por <span class="math display">\[
-K=e^{\beta}.
+K=e^{\beta x},
 \]</span></li>
 <li>A utilização da <strong>função exponencial garante que a razão de riscos</strong> seja sempre positiva.</li>
 </ul>
@@ -455,7 +455,7 @@ K=e^{\beta}.
 <h2><strong>SURGE O MODELO DE COX</strong></h2>
 <div class="box-blue">
 <ul>
-<li><p>Substituindo <span class="math inline">\(K=e^\beta\)</span>, obtemos <span class="math display">\[
+<li><p>Substituindo <span class="math inline">\(K=e^{\beta x}\)</span>, obtemos <span class="math display">\[
 \lambda(t|x)
 =
 \lambda_0(t)e^{\beta x}.
@@ -1623,7 +1623,7 @@ H_1:\text{Pelo menos uma covariável viola a hipótese de riscos proporcionais}
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
