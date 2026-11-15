@@ -1480,6 +1480,8 @@ x_{jk}\exp(\mathbf{x}_j'\boldsymbol{\beta})
 <h2><strong>EVIDÊNCIAS DE VIOLAÇÃO</strong></h2>
 <div class="box-blue">
 <p><em>A hipótese de riscos proporcionais pode ser questionada quando: </em> a curva suavizada apresenta tendência crescente; * a curva suavizada apresenta tendência decrescente; * existem padrões sistemáticos ao longo do tempo. * Essas situações sugerem que o efeito da covariável não permanece constante durante o acompanhamento.</p>
+</div>
+</section>
 <section id="exemplo" class="slide level2">
 <h2><strong>EXEMPLO</strong></h2>
 <div class="box-blue">
@@ -1526,24 +1528,32 @@ H_1:\beta_k(t)\neq\beta_k
 <li>A hipótese nula afirma que o efeito da covariável permanece constante ao longo do tempo.</li>
 </ul>
 </div>
-<hr>
 </section>
 <section id="ideia-do-teste" class="slide level2">
 <h2><strong>IDEIA DO TESTE</strong></h2>
 <div class="box-blue">
-<p>** O teste investiga a existência de associação entre os resíduos de Schoenfeld escalonados e o tempo.</p>
-<p>Sob a hipótese de riscos proporcionais:</p>
+<ul>
+<li><p>O teste investiga a existência de associação entre os resíduos de Schoenfeld escalonados e o tempo.</p></li>
+<li><p>Sob a hipótese de riscos proporcionais:</p>
 <ul>
 <li>não deve existir relação sistemática entre essas quantidades;</li>
 <li>os resíduos devem apresentar comportamento aleatório ao longo do tempo.</li>
+</ul></li>
+<li><p>A presença de associação significativa sugere que o efeito da covariável varia durante o acompanhamento.</p></li>
 </ul>
-<p>** A presença de associação significativa sugere que o efeito da covariável varia durante o acompanhamento.</p>
 </div>
 </section>
 <section id="interpretação-do-valor-p" class="slide level2">
 <h2><strong>INTERPRETAÇÃO DO VALOR-P</strong></h2>
 <div class="box-blue">
-<p><em>A decisão é baseada no valor-p do teste. </em> Valores-p elevados indicam ausência de evidências contra a hipótese de riscos proporcionais. * Valores-p reduzidos indicam evidências de que o efeito da covariável varia ao longo do tempo. * Portanto, quanto menor o valor-p, maior a evidência de violação da hipótese de riscos proporcionais.</p>
+<ul>
+<li>A decisão é baseada no valor-p do teste.
+<ul>
+<li>Valores-p elevados indicam ausência de evidências contra a hipótese de riscos proporcionais.</li>
+<li>Valores-p reduzidos indicam evidências de que o efeito da covariável varia ao longo do tempo.</li>
+</ul></li>
+<li>Portanto, quanto menor o valor-p, maior a evidência de violação da hipótese de riscos proporcionais.</li>
+</ul>
 </div>
 </section>
 <section id="teste-global" class="slide level2">
@@ -1564,8 +1574,6 @@ H_1:\text{Pelo menos uma covariável viola a hipótese de riscos proporcionais}
 </div>
 
 
-</section>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
